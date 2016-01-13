@@ -32,11 +32,11 @@
 
         </div>
         <div class="footer-right">
-            <a class="footer-logo" href="#"><img src="<?php echo base_url();?>content/img/footer/footer-logo.png" alt="Ukrainian real brides" width="232px" height="131px" /></a>
+            <a class="footer-logo" href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/footer-logo.png" alt="Ukrainian real brides" width="232px" height="131px" /></a>
             <ul>
-                <li><a href="#"><img src="<?php echo base_url();?>content/img/footer/sprite-youtube.png" alt="YouTube" width="26px" height="31px"></a></li>
-                <li><a href="#"><img src="<?php echo base_url();?>content/img/footer/sprite-instagram.png" alt="Instagram" width="26px" height="31px"></a></li>
-                <li><a href="#"><img src="<?php echo base_url();?>content/img/footer/sprite-forsquare.png" alt="Foursquare" width="26px" height="31px"></a></li>
+                <li><a href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/sprite-youtube.png" alt="YouTube" width="26px" height="31px"></a></li>
+                <li><a href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/sprite-instagram.png" alt="Instagram" width="26px" height="31px"></a></li>
+                <li><a href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/sprite-forsquare.png" alt="Foursquare" width="26px" height="31px"></a></li>
             </ul>
         </div>
         <div class="footer-bottom">
@@ -52,7 +52,7 @@
 <!-- Footer Ends Here -->
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>/content/js/responsiveslides.js" type="text/javascript" ></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>/content/js/jquery.form.js"></script>
+    <script src="<?php echo base_url(); ?>/content/user_interface/js/responsiveslides.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>/content/user_interface/js/jquery.form.js"></script>
     </body>
 </html>

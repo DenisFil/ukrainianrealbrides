@@ -6,21 +6,21 @@
 <div class="gallery-holder">
     <ul id="gallery" class="list">
         <li>
-            <img src="<?php echo base_url(); ?>content/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
             <div class="gallery-box">
                 <span>Start <br> chat now!</span>
                 <a class="girls-online" href="#">Girls online</a>
             </div>
         </li>
         <li class="first">
-            <img src="<?php echo base_url(); ?>content/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
             <div class="gallery-box">
                 <span>Start <br> chat now!</span>
                 <a class="girls-online" href="#">Girls online</a>
             </div>
         </li>
         <li>
-            <img src="<?php echo base_url(); ?>content/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
             <div class="gallery-box">
                 <span>Start <br> chat now!</span>
                 <a class="girls-online" href="#">Girls online</a>
@@ -34,32 +34,32 @@
         <h2>Our Services</h2>
         <div class="detail-box">
             <h3>Messaging</h3>
-            <img src="<?php echo base_url(); ?>content/img/main/messaging.png" alt="Messaging" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" alt="Messaging" />
             <a class="detail-button" href="#">Detail</a>
         </div>
         <div class="detail-box">
             <h3>Chat</h3>
-            <img src="<?php echo base_url(); ?>content/img/main/chat.png" alt="Chat" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
             <a class="detail-button" href="#">Detail</a>
         </div>
         <div class="detail-box">
             <h3>Video Chat</h3>
-            <img src="<?php echo base_url(); ?>content/img/main/video-chat.png" alt="Video chat" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
             <a class="detail-button" href="#">Detail</a>
         </div>
         <div class="detail-box">
             <h3>Gift service</h3>
-            <img src="<?php echo base_url(); ?>content/img/main/gift-service.png" alt="Gift service" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" alt="Gift service" />
             <a class="detail-button" href="#">Detail</a>
         </div>
         <div class="detail-box">
             <h3 class="h3-third">Very important service</h3>
-            <img src="<?php echo base_url(); ?>content/img/main/very-important-service.png" alt="Very important service" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" alt="Very important service" />
             <a class="detail-button" href="#">Detail</a>
         </div>
         <div class="detail-box last">
             <h3>Romance tours</h3>
-            <img src="<?php echo base_url(); ?>content/img/main/romance-tours.png" alt="Romance tours" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" alt="Romance tours" />
             <a class="detail-button" href="#">Detail</a>
         </div>
 
@@ -68,15 +68,15 @@
         <h2>Girls of the month</h2>
         <div class="frame-girl-holder">
             <div class="frame-girl first-image">
-                <img src="<?php echo base_url(); ?>content/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
+                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
                 <a href="#"><span>View Profile</span></a>
             </div>
             <div class="frame-girl">
-                <img src="<?php echo base_url(); ?>content/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
+                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
                 <a href="#"><span>View Profile</span></a>
             </div>
             <div class="frame-girl last-image">
-                <img src="<?php echo base_url(); ?>content/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
+                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
                 <a href="#"><span>View Profile</span></a>
             </div>
         </div>
@@ -85,22 +85,22 @@
         <h2>Feel the excellence</h2>
         <div class="content-bottom">
             <div class="title-box">
-                <span><img src="<?php echo base_url(); ?>content/img/main/real.png"></span>
+                <span><img src="<?php echo base_url(); ?>content/user_interface/img/main/real.png"></span>
                 <h2>100% Real</h2>
                 <mark>All girl registrated only after ID identifaction</mark>
             </div>
             <div class="title-box">
-                <span><img src="<?php echo base_url(); ?>content/img/main/safety.png"></span>
+                <span><img src="<?php echo base_url(); ?>content/user_interface/img/main/safety.png"></span>
                 <h2>Feel Safety</h2>
                 <mark>We are using strongest enscrytion SSL certificat</mark>
             </div>
             <div class="title-box">
-                <span><img src="<?php echo base_url(); ?>content/img/main/care.png"></span>
+                <span><img src="<?php echo base_url(); ?>content/user_interface/img/main/care.png"></span>
                 <h2>Care</h2>
                 <mark>We do care about you and you desiers</mark>
             </div>
             <div class="title-box last">
-                <span><img src="<?php echo base_url(); ?>content/img/main/value.png"></span>
+                <span><img src="<?php echo base_url(); ?>content/user_interface/img/main/value.png"></span>
                 <h2>Best Value</h2>
                 <mark>Invest your time to meet your Bride</mark>
             </div>
@@ -117,7 +117,7 @@
 <div class="gallery-holder">
     <ul id="gallery-2" class="list">
         <li>
-            <img src="<?php echo base_url(); ?>content/img/main/bg-gallery-2.jpg" width="1800px" height="764px" alt="Couple">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800px" height="764px" alt="Couple">
             <div class="gallery-box-second">
                 <strong>Mikle and Natalya</strong>
                 <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
@@ -131,7 +131,7 @@
             </div>
         </li>
         <li>
-            <img src="<?php echo base_url(); ?>content/img/main/bg-gallery-2.jpg" width="1800px" height="764px" alt="Couple">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800px" height="764px" alt="Couple">
             <div class="gallery-box-second">
                 <strong>Mikle and Natalya</strong>
                 <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
@@ -145,7 +145,7 @@
             </div>
         </li>
         <li>
-            <img src="<?php echo base_url(); ?>content/img/main/bg-gallery-2.jpg" alt="Just merried" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" alt="Just merried" />
             <div class="gallery-box-second">
                 <strong>Mikle and Natalya</strong>
                 <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
