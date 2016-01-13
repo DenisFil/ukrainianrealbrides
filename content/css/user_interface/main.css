@@ -63,7 +63,7 @@
 }
 .list_tabs li.list_here a,
 .list_tabs li a:hover{ 
-	background: url("../img/main/bg-switcher.png") no-repeat 50% 50%, rgba(255,255,255,0.8);
+	background: url("../../img/main/bg-switcher.png") no-repeat 50% 50%, rgba(255,255,255,0.8);
 	width: 100%;
 	height: 100%;
 }
@@ -78,7 +78,7 @@
 	margin-top: -31px;
 	z-index: 10;
 }
-.prev, .next{background: url("../img/main/arrow.png") no-repeat;}
+.prev, .next{background: url("../../img/main/arrow.png") no-repeat;}
 .prev{
 	transform:rotate(180deg);
 	-webkit-transform:rotate(180deg);
@@ -125,7 +125,7 @@
 	position: absolute;
 	left: 0px;
 	top: -19px;
-	background: url("../img/main/bg-gallery-box.png") no-repeat;
+	background: url("../../img/main/bg-gallery-box.png") no-repeat;
 	width: 267px;
 	height: 55px;
 }
@@ -196,7 +196,7 @@
 	margin: 0 auto;
 }
 .frame-girl {
-	background: url("../img/main/frame.png") no-repeat;
+	background: url("../../img/main/frame.png") no-repeat;
 	padding: 32px;
 	margin: 0 33px 0 0;
 	display: inline-block;
@@ -217,7 +217,7 @@
 	line-height: 21px;
 	border-radius: 10px;
 	padding: 15px 17px 15px 39px;
-	background: #fff url("../img/main/view-profile.png") no-repeat 15px 47%;
+	background: #fff url("../../img/main/view-profile.png") no-repeat 15px 47%;
 	box-shadow: 3px 3px 10px rgba(0,0,0,0.3), -3px 3px 10px rgba(0,0,0,0.3), 3px -3px 10px rgba(0,0,0,0.3), -3px -3px 10px rgba(0,0,0,0.3);
 	opacity: 0.5;
 }
@@ -234,7 +234,7 @@
 	top: 4px;
 	width: 100%;
 	height: 100%;
-	background: url("../img/main/flower.png") 0 0 no-repeat;
+	background: url("../../img/main/flower.png") 0 0 no-repeat;
 }
 .frame-girl.last-image:after {
 	left: auto;
@@ -267,7 +267,7 @@
 .title-box h2 {
 	font-size: 30px;
 	line-height: 32px;
-	background: url("../img/main/bg-h2-second.png") no-repeat 50% 100%;
+	background: url("../../img/main/bg-h2-second.png") no-repeat 50% 100%;
 	padding: 0 0 28px 0;
 	margin: 21px 0 29px 0;
 	text-transform: capitalize;
@@ -372,17 +372,17 @@
 	margin: 0 14px 0 0;
 }
 .gallery-box-second .img-vector-one {
-	background: url("../img/main/gallery-sprites.png") no-repeat 0 0;
+	background: url("../../img/main/gallery-sprites.png") no-repeat 0 0;
 	width: 26px;
 	height: 27px;
 	margin: 0 19px 0 0;
 }
 .gallery-box-second .img-vector-two {
-	background: url("../img/main/gallery-sprites.png") no-repeat -26px 0;
+	background: url("../../img/main/gallery-sprites.png") no-repeat -26px 0;
 	margin: 0 15px 0 0;
 }
 .gallery-box-second .img-vector-three {
-	background: url("../img/main/gallery-sprites.png") no-repeat -60px 0;
+	background: url("../../img/main/gallery-sprites.png") no-repeat -60px 0;
 }
 .gallery-second-button {
 	font-size: 19px;

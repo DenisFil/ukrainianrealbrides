@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1, target-densityDPI=device-dpi"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/css/header.css" type="text/css" />
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/css/main.css" type="text/css" />
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/css/footer.css" type="text/css" />
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/css/user_interface/header.css" type="text/css" />
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/css/user_interface/<?php echo $css; ?>.css" type="text/css" />
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/css/user_interface/footer.css" type="text/css" />
     <!--<link media="all" rel="stylesheet" href="css/sorry.css" type="text/css" />-->
     <!--[if lt IE 7]><!--
 <link rel="stylesheet" type="text/css" href="css/lt7.css" media="screen"/>-->
@@ -25,7 +25,7 @@
                 <span>Language:</span>
 						<span>
 							<select class="select" name="" id="">
-                                <option value="">Eng</option>
+                                <option value="" selected>Eng</option>
                             </select>
 						</span>
             </div>
@@ -36,7 +36,13 @@
         </div>
         <nav class="nav">
             <ul>
-                <li><a href="#">Women profiles</a></li>
+                <?php if ($user_sex == ''){ ?>
+                    <li><a href="#">Profiles</a></li>
+                <?php }elseif ($user_sex == 1){ ?>
+                    <li><a href="#">Women profiles</a></li>
+                <?php }elseif ($user_sex == 2){ ?>
+                    <li><a href="#">Man profiles</a></li>
+                <?php } ?>
                 <li><a href="#">Search</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#">Blog</a></li>
@@ -47,3 +53,15 @@
     </header>
 </div>
 <!-- Header Ends Here -->
+
+<!--Sign up modal start-->
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+<!--Sign up modal end-->

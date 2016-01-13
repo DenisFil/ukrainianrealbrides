@@ -1,76 +1,76 @@
 @font-face {
     font-family: 'BanderaProMedium';
-    src: url('../fonts/BanderaProMedium.eot');
-    src: url('../fonts/BanderaProMedium.eot') format('embedded-opentype'),
-         url('../fonts/BanderaProMedium.woff2') format('woff2'),
-         url('../fonts/BanderaProMedium.woff') format('woff'),
-         url('../fonts/BanderaProMedium.ttf') format('truetype'),
-         url('../fonts/BanderaProMedium.svg#BanderaProMedium') format('svg');
+    src: url('../../fonts/BanderaProMedium.eot');
+    src: url('../../fonts/BanderaProMedium.eot') format('embedded-opentype'),
+         url('../../fonts/BanderaProMedium.woff2') format('woff2'),
+         url('../../fonts/BanderaProMedium.woff') format('woff'),
+         url('../../fonts/BanderaProMedium.ttf') format('truetype'),
+         url('../../fonts/BanderaProMedium.svg#BanderaProMedium') format('svg');
 }
 @font-face {
     font-family: 'BanderaProLight';
-    src: url('../fonts/BanderaProLight.eot');
-    src: url('../fonts/BanderaProLight.eot') format('embedded-opentype'),
-         url('../fonts/BanderaProLight.woff2') format('woff2'),
-         url('../fonts/BanderaProLight.woff') format('woff'),
-         url('../fonts/BanderaProLight.ttf') format('truetype'),
-         url('../fonts/BanderaProLight.svg#BanderaProLight') format('svg');
+    src: url('../../fonts/BanderaProLight.eot');
+    src: url('../../fonts/BanderaProLight.eot') format('embedded-opentype'),
+         url('../../fonts/BanderaProLight.woff2') format('woff2'),
+         url('../../fonts/BanderaProLight.woff') format('woff'),
+         url('../../fonts/BanderaProLight.ttf') format('truetype'),
+         url('../../fonts/BanderaProLight.svg#BanderaProLight') format('svg');
 }
 @font-face {
     font-family: 'BanderaProBold';
-    src: url('../fonts/BanderaProBold.eot');
-    src: url('../fonts/BanderaProBold.eot') format('embedded-opentype'),
-         url('../fonts/BanderaProBold.woff2') format('woff2'),
-         url('../fonts/BanderaProBold.woff') format('woff'),
-         url('../fonts/BanderaProBold.ttf') format('truetype'),
-         url('../fonts/BanderaProBold.svg#BanderaProBold') format('svg');
+    src: url('../../fonts/BanderaProBold.eot');
+    src: url('../../fonts/BanderaProBold.eot') format('embedded-opentype'),
+         url('../../fonts/BanderaProBold.woff2') format('woff2'),
+         url('../../fonts/BanderaProBold.woff') format('woff'),
+         url('../../fonts/BanderaProBold.ttf') format('truetype'),
+         url('../../fonts/BanderaProBold.svg#BanderaProBold') format('svg');
 }
 @font-face {
     font-family: 'LatoLight';
-    src: url('../fonts/LatoLight.eot');
-    src: url('../fonts/LatoLight.eot') format('embedded-opentype'),
-         url('../fonts/LatoLight.woff2') format('woff2'),
-         url('../fonts/LatoLight.woff') format('woff'),
-         url('../fonts/LatoLight.ttf') format('truetype'),
-         url('../fonts/LatoLight.svg#LatoLight') format('svg');
+    src: url('../../fonts/LatoLight.eot');
+    src: url('../../fonts/LatoLight.eot') format('embedded-opentype'),
+         url('../../fonts/LatoLight.woff2') format('woff2'),
+         url('../../fonts/LatoLight.woff') format('woff'),
+         url('../../fonts/LatoLight.ttf') format('truetype'),
+         url('../../fonts/LatoLight.svg#LatoLight') format('svg');
 }
 @font-face {
     font-family: 'LatoBold';
-    src: url('../fonts/LatoBold.eot');
-    src: url('../fonts/LatoBold.eot') format('embedded-opentype'),
-         url('../fonts/LatoBold.woff2') format('woff2'),
-         url('../fonts/LatoBold.woff') format('woff'),
-         url('../fonts/LatoBold.ttf') format('truetype'),
-         url('../fonts/LatoBold.svg#LatoBold') format('svg');
+    src: url('../../fonts/LatoBold.eot');
+    src: url('../../fonts/LatoBold.eot') format('embedded-opentype'),
+         url('../../fonts/LatoBold.woff2') format('woff2'),
+         url('../../fonts/LatoBold.woff') format('woff'),
+         url('../../fonts/LatoBold.ttf') format('truetype'),
+         url('../../fonts/LatoBold.svg#LatoBold') format('svg');
 }
 @font-face {
     font-family: 'LatoRegular';
-    src: url('../fonts/LatoRegular.eot');
-    src: url('../fonts/LatoRegular.eot') format('embedded-opentype'),
-         url('../fonts/LatoRegular.woff2') format('woff2'),
-         url('../fonts/LatoRegular.woff') format('woff'),
-         url('../fonts/LatoRegular.ttf') format('truetype'),
-         url('../fonts/LatoRegular.svg#LatoRegular') format('svg');
+    src: url('../../fonts/LatoRegular.eot');
+    src: url('../../fonts/LatoRegular.eot') format('embedded-opentype'),
+         url('../../fonts/LatoRegular.woff2') format('woff2'),
+         url('../../fonts/LatoRegular.woff') format('woff'),
+         url('../../fonts/LatoRegular.ttf') format('truetype'),
+         url('../../fonts/LatoRegular.svg#LatoRegular') format('svg');
 }
 @font-face {
     font-family: 'LatoWebMedium';
-    src: url('../fonts/Lato-Medium.eot'); 
-    src: url('../fonts/Lato-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/Lato-Medium.woff2') format('woff2'), /* Modern Browsers */
-         url('../fonts/Lato-Medium.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/Lato-Medium.ttf') format('truetype');
+    src: url('../../fonts/Lato-Medium.eot');
+    src: url('../../fonts/Lato-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../../fonts/Lato-Medium.woff2') format('woff2'), /* Modern Browsers */
+         url('../../fonts/Lato-Medium.woff') format('woff'), /* Modern Browsers */
+         url('../../fonts/Lato-Medium.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
 @font-face {
     font-family: 'latosemibold';
-    src: url('../fonts/lato-semibold-webfont.eot');
-    src: url('../fonts/lato-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/lato-semibold-webfont.woff2') format('woff2'),
-         url('../fonts/lato-semibold-webfont.woff') format('woff'),
-         url('../fonts/lato-semibold-webfont.ttf') format('truetype'),
-         url('../fonts/lato-semibold-webfont.svg#latosemibold') format('svg');
+    src: url('../../fonts/lato-semibold-webfont.eot');
+    src: url('../../fonts/lato-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/lato-semibold-webfont.woff2') format('woff2'),
+         url('../../fonts/lato-semibold-webfont.woff') format('woff'),
+         url('../../fonts/lato-semibold-webfont.ttf') format('truetype'),
+         url('../../fonts/lato-semibold-webfont.svg#latosemibold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -124,7 +124,7 @@ h2 {
 	color: #000;
 	margin: 0 0 34px 0; 
 	padding: 0 0 31px 0;
-	background: url("../img/main/bg-h2.png") no-repeat 50% 100%;
+	background: url("../../img/main/bg-h2.png") no-repeat 50% 100%;
 	font-weight: normal;
 	text-align: center;
 	background-size:auto;
@@ -148,7 +148,7 @@ h4 {
 /*Header Starts Here*/
 .header-holder {
 	width: 100%;
-	background: url("../img/header/bg-line.png") repeat-x 0 41px;
+	background: url("../../img/header/bg-line.png") repeat-x 0 41px;
 }
 #header {
 	width: 1170px;
@@ -168,7 +168,7 @@ h4 {
 	position: absolute;
 	left: 586px;
 	top: 0;
-	background: url("../img/header/logo.png") 0 0;
+	background: url("../../img/header/logo.png") 0 0;
 	display: block;
 	width: 289px;
 	height: 190px;
@@ -199,7 +199,7 @@ h4 {
 	right: 0;
 	width:100%;
 	height:100%;
-	background: url(../img/header/select.png) no-repeat 95% 0;
+	background: url(../../img/header/select.png) no-repeat 95% 0;
 }
 .selectArea .center{
 	display:block;
@@ -255,7 +255,7 @@ h4 {
  	outline: none;
  	margin: 0 0 0 0;
  	padding: 0 0 0 12px;
- 	background: #fff url("../img/header/login.png") no-repeat 14% 50%;
+ 	background: #fff url("../../img/header/login.png") no-repeat 14% 50%;
  	cursor: pointer;
  	color: rgba(0,0,0,0.7);
  }
@@ -266,7 +266,7 @@ h4 {
 	vertical-align: middle;
 	padding: 0 0 0 10%;
 	margin: 0 0 0 11px;
- 	background: #e83c32 url("../img/header/bg-button.png") no-repeat 20% 50%;
+ 	background: #e83c32 url("../../img/header/bg-button.png") no-repeat 20% 50%;
  	border-radius: 10px;
  	height: 26px;
  	width: 89px;
@@ -297,7 +297,7 @@ h4 {
 .nav ul li {
 	float: left;
 	padding: 0 0 0 4.86%;
-	background: url("../img/header/bg-nav.png") no-repeat 21% 64%;
+	background: url("../../img/header/bg-nav.png") no-repeat 21% 64%;
 }
 .nav ul li:first-child {
 	float: left;

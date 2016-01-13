@@ -22,7 +22,7 @@
 .footer-left ul li {
 	padding: 0 0 0 20px;
 	margin: 0 0 7px;
-	background: url("../img/header/bg-nav.png") no-repeat 5px 56%;
+	background: url("../../img/header/bg-nav.png") no-repeat 5px 56%;
 }
 .footer-left ul li a{
 	font-family: 'LatoBold';
@@ -100,7 +100,7 @@
 .page-bottom {
 	width: 100%;
 	padding: 52px 0 0;
-	background: url("../img/header/bg-line.png") repeat-x;
+	background: url("../../img/header/bg-line.png") repeat-x;
 	border-top: 3px solid #fff;
 }
 /*Footer ends here*/
