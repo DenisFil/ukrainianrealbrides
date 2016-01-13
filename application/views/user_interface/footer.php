@@ -52,7 +52,8 @@
 <!-- Footer Ends Here -->
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>/content/user_interface/js/responsiveslides.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>content/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>/content/user_interface/js/responsiveslides.js" type="text/javascript" ></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>/content/user_interface/js/jquery.form.js"></script>
     </body>
 </html>

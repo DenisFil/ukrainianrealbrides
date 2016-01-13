@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1, target-densityDPI=device-dpi"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
+
+    <!--Bootstrap css-->
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/bootstrap/css/bootstrap.min.css" />
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/bootstrap/css/bootstrap-theme.min.css" />
+    <!--Bootstrap css end-->
+
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/header.css" type="text/css" />
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/<?php echo $css; ?>.css" type="text/css" />
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/footer.css" type="text/css" />
@@ -31,7 +37,7 @@
             </div>
             <div class="header-right">
                 <button type="button" class="login">Login</button>
-                <button type="button" class="sign-up">Sign up</button>
+                <a href="#signUp-modal" role="button" data-toggle="modal"><button type="button" class="sign-up">Sign up</button></a>
             </div>
         </div>
         <nav class="nav">
@@ -53,3 +59,40 @@
     </header>
 </div>
 <!-- Header Ends Here -->
+
+<!--SignUp modal start-->
+<div class="modal fade" id="signUp-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Registration</h2>
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-push-1">
+                            <input class="form-control" placeholder="Name" autofocus tabindex="1">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div  class="col-lg-10 col-lg-push-1">
+                            <input class="form-control" placeholder="Email Address" tabindex="2">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div  class="col-lg-10 col-lg-push-1">
+                            <input class="form-control" placeholder="Password" tabindex="3">
+                        </div>
+                    </div>
+                </form>
+
+                <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
+                <p id="privacy">
+                    <a href="#" class="link">terms & conditions</a> and <a href="#" class="link">privacy policy</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--SignUp modal ends-->

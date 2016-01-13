@@ -308,4 +308,33 @@ h4 {
 	background:none;
 	margin: 0 0 0 21%;
 }
+
+#signUp-modal .modal-dialog{
+	width: 352px;
+}
+
+.form-control{
+	border: 1px solid #000;
+	font-size: 22px;
+	height: 48px;
+	border-radius: 10px;
+}
+
+#signUp{
+	height: 50px;
+	font-size: 25px;
+	margin-left: 70px;
+}
+
+.link{
+	text-decoration: underline;
+	font-size: 14px;
+	color: #c2c2c2;
+}
+
+#privacy{
+	text-align: center;
+	margin-top: 15px;
+	color: #c2c2c2;
+}
 /*Header Ends Here*/
