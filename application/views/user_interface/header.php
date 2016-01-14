@@ -73,30 +73,36 @@
 
                 <h2>Registration</h2>
 
-                <form class="form-horizontal">
-                    <div class="form-group">
+                <form class="form-horizontal" id="signup-form">
+                    <div class="form-group has-feedback" id="user-name-feedback">
                         <div class="col-lg-10 col-lg-push-1">
-                            <input class="form-control" placeholder="Name" autofocus tabindex="1">
+                            <input type="text" class="form-control" placeholder="Name" autofocus tabindex="1" id="user-name">
+                            <span id="user-name-error" class="glyphicon form-control-feedback"></span>
+                            <span id="user-name-error-text"></span>
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-feedback" id="user-email-feedback">
                         <div  class="col-lg-10 col-lg-push-1">
-                            <input class="form-control" placeholder="Email Address" tabindex="2">
+                            <input type="text" class="form-control" placeholder="Email Address" tabindex="2" id="user-email">
+                            <span id="user-email-error" class="glyphicon form-control-feedback"></span>
+                            <span id="user-email-error-text"></span>
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-feedback" id="user-password-feedback">
                         <div  class="col-lg-10 col-lg-push-1">
-                            <input class="form-control" placeholder="Password" tabindex="3">
+                            <input type="password" class="form-control" placeholder="Password" tabindex="3" id="user-password">
+                            <span id="user-password-error" class="glyphicon form-control-feedback"></span>
+                            <span id="user-password-error-text"></span>
                         </div>
                     </div>
+
+                    <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
+                    <p id="privacy">
+                        <a href="#" class="link">terms & conditions</a> and <a href="#" class="link">privacy policy</a>.
+                    </p>
                 </form>
-
-                <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
-                <p id="privacy">
-                    <a href="#" class="link">terms & conditions</a> and <a href="#" class="link">privacy policy</a>.
-                </p>
             </div>
             <div class="otbivka"></div>
             <div class="modal-footer">
