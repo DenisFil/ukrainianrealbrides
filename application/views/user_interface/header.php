@@ -65,6 +65,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <div class="exit">
+                        <img src="<?php echo base_url(); ?>content/user_interface/img/pop-ups/exit.png">
+                    </div>
+                </button>
+
                 <h2>Registration</h2>
 
                 <form class="form-horizontal">
@@ -90,6 +96,13 @@
                 <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
                 <p id="privacy">
                     <a href="#" class="link">terms & conditions</a> and <a href="#" class="link">privacy policy</a>.
+                </p>
+            </div>
+            <div class="otbivka"></div>
+            <div class="modal-footer">
+                <p id="modal-signup-footer">
+                    <span>Already register?</span>
+                    <a href="#">Login now</a>
                 </p>
             </div>
         </div>
