@@ -22,10 +22,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/main.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-10.645162">
+=======
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3966346">
+>>>>>>> backend
               <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
               <folding />
             </state>
@@ -34,14 +41,56 @@
       </file>
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/user_interface/header.php">
+<<<<<<< HEAD
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-28.258064">
+              <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
+              <folding />
+=======
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.064516">
               <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="signup.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/user_interface/js/signup.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+              <folding>
+                <element signature="e#255#427#0" expanded="false" />
+                <element signature="e#502#795#0" expanded="false" />
+                <element signature="e#865#988#0" expanded="false" />
+                <element signature="e#1146#1304#0" expanded="false" />
+                <element signature="e#1384#1686#0" expanded="false" />
+                <element signature="e#1838#2486#0" expanded="false" />
+                <element signature="e#2553#3643#0" expanded="false" />
+                <element signature="e#3712#4389#0" expanded="false" />
+                <element signature="e#4523#5268#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/user_interface/signup_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.967742">
+              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+              <folding>
+                <element signature="n#get_user_email#0;n#Signup_model#0;n#!!top" expanded="false" />
+                <element signature="n#insert_new_user#0;n#Signup_model#0;n#!!top" expanded="false" />
+                <element signature="n#confirm_email#0;n#Signup_model#0;n#!!top" expanded="false" />
+              </folding>
+>>>>>>> backend
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="signup.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content/user_interface/js/signup.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -84,6 +133,20 @@
                 <element signature="n#__construct#0;n#Signup#0;n#!!top" expanded="false" />
                 <element signature="n#index#0;n#Signup#0;n#!!top" expanded="false" />
                 <element signature="n#email#0;n#Signup#0;n#!!top" expanded="false" />
+=======
+      <file leaf-file-name="signup.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/user_interface/signup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.5161295">
+              <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+              <folding>
+                <element signature="n#__construct#0;n#Signup#0;n#!!top" expanded="false" />
+                <element signature="n#index#0;n#Signup#0;n#!!top" expanded="false" />
+                <element signature="e#428#725#0#PHP" expanded="false" />
+                <element signature="e#2065#2160#0#PHP" expanded="false" />
+                <element signature="n#email#0;n#Signup#0;n#!!top" expanded="false" />
+                <element signature="n#confirm_email#0;n#Signup#0;n#!!top" expanded="false" />
+>>>>>>> backend
               </folding>
             </state>
           </provider>
@@ -120,10 +183,17 @@
         <option value="$PROJECT_DIR$/content/user_interface/css/header.css" />
         <option value="$PROJECT_DIR$/application/views/user_interface/footer.php" />
         <option value="$PROJECT_DIR$/application/controllers/main.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/application/models/user_interface/signup_model.php" />
         <option value="$PROJECT_DIR$/application/views/user_interface/header.php" />
         <option value="$PROJECT_DIR$/content/user_interface/js/signup.js" />
         <option value="$PROJECT_DIR$/application/controllers/user_interface/signup.php" />
+=======
+        <option value="$PROJECT_DIR$/application/views/user_interface/header.php" />
+        <option value="$PROJECT_DIR$/content/user_interface/js/signup.js" />
+        <option value="$PROJECT_DIR$/application/controllers/user_interface/signup.php" />
+        <option value="$PROJECT_DIR$/application/models/user_interface/signup_model.php" />
+>>>>>>> backend
       </list>
     </option>
   </component>
@@ -213,6 +283,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -276,6 +347,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="user_interface" />
+=======
+              <option name="myItemId" value="controllers" />
+>>>>>>> backend
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,7 +444,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
       <option name="time" value="2" />
+=======
+      <option name="time" value="3" />
+>>>>>>> backend
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -378,6 +456,131 @@
     <entry file="file://$PROJECT_DIR$/application/controllers/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+=======
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_interface/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/user_interface/js/signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
+          <folding>
+            <element signature="e#255#427#0" expanded="false" />
+            <element signature="e#502#795#0" expanded="false" />
+            <element signature="e#865#988#0" expanded="false" />
+            <element signature="e#1146#1304#0" expanded="false" />
+            <element signature="e#1384#1686#0" expanded="false" />
+            <element signature="e#1838#2486#0" expanded="false" />
+            <element signature="e#2553#3643#0" expanded="false" />
+            <element signature="e#3712#4389#0" expanded="false" />
+            <element signature="e#4523#5268#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/user_interface/signup_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding>
+            <element signature="n#get_user_email#0;n#Signup_model#0;n#!!top" expanded="false" />
+            <element signature="n#insert_new_user#0;n#Signup_model#0;n#!!top" expanded="false" />
+            <element signature="n#confirm_email#0;n#Signup_model#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user_interface/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#__construct#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#index#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="e#428#725#0#PHP" expanded="false" />
+            <element signature="e#2065#2160#0#PHP" expanded="false" />
+            <element signature="n#email#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#confirm_email#0;n#Signup#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_interface/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/user_interface/js/signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
+          <folding>
+            <element signature="e#255#427#0" expanded="false" />
+            <element signature="e#502#795#0" expanded="false" />
+            <element signature="e#865#988#0" expanded="false" />
+            <element signature="e#1146#1304#0" expanded="false" />
+            <element signature="e#1384#1686#0" expanded="false" />
+            <element signature="e#1838#2486#0" expanded="false" />
+            <element signature="e#2553#3643#0" expanded="false" />
+            <element signature="e#3712#4389#0" expanded="false" />
+            <element signature="e#4523#5268#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/user_interface/signup_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding>
+            <element signature="n#get_user_email#0;n#Signup_model#0;n#!!top" expanded="false" />
+            <element signature="n#insert_new_user#0;n#Signup_model#0;n#!!top" expanded="false" />
+            <element signature="n#confirm_email#0;n#Signup_model#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user_interface/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#__construct#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#index#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="e#428#725#0#PHP" expanded="false" />
+            <element signature="e#2065#2160#0#PHP" expanded="false" />
+            <element signature="n#email#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#confirm_email#0;n#Signup#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> backend
           <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
           <folding />
         </state>
@@ -395,7 +598,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
           <folding />
+=======
+>>>>>>> backend
         </state>
       </provider>
     </entry>
@@ -438,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -481,7 +686,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.290323">
           <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user_interface/main_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.0240383">
+          <caret line="147" column="70" selection-start-line="147" selection-start-column="70" selection-end-line="147" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46634614">
+          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50240386">
+          <caret line="372" column="40" selection-start-line="372" selection-start-column="40" selection-end-line="372" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34735578">
+          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../www/application/views/first_page/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../www/application/views/first_page/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="25.548388">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../www/application/views/operator/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42307693">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../www/application/views/operator/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.07932692">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -545,12 +805,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70913464">
           <caret line="51" column="91" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="91" />
+<<<<<<< HEAD
           <folding />
+=======
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/user_interface/css/header.css">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89068323">
+          <caret line="369" column="15" selection-start-line="369" selection-start-column="15" selection-end-line="369" selection-end-column="15" />
+>>>>>>> backend
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/user_interface/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.89068323">
           <caret line="369" column="15" selection-start-line="369" selection-start-column="15" selection-end-line="369" selection-end-column="15" />
           <folding />
@@ -588,6 +859,63 @@
           <folding>
             <element signature="n#get_user_email#0;n#Signup_model#0;n#!!top" expanded="false" />
             <element signature="n#insert_new_user#0;n#Signup_model#0;n#!!top" expanded="false" />
+=======
+        <state vertical-scroll-proportion="0.81490386">
+          <caret line="57" column="111" selection-start-line="57" selection-start-column="111" selection-end-line="57" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/libraries/Form_validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5516812">
+          <caret line="1249" column="5" selection-start-line="1241" selection-start-column="4" selection-end-line="1249" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test1/testAndiGroup/public/js/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="27" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test1/testAndiGroup/application/controllers/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6875">
+          <caret line="78" column="73" selection-start-line="77" selection-start-column="12" selection-end-line="78" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user_interface/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+          <folding>
+            <element signature="n#__construct#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#index#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="e#428#725#0#PHP" expanded="false" />
+            <element signature="e#2065#2160#0#PHP" expanded="false" />
+            <element signature="n#email#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#confirm_email#0;n#Signup#0;n#!!top" expanded="false" />
+>>>>>>> backend
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/content/user_interface/js/signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
+=======
+    <entry file="file://$PROJECT_DIR$/application/models/user_interface/signup_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.967742">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+          <folding>
+            <element signature="n#get_user_email#0;n#Signup_model#0;n#!!top" expanded="false" />
+            <element signature="n#insert_new_user#0;n#Signup_model#0;n#!!top" expanded="false" />
+            <element signature="n#confirm_email#0;n#Signup_model#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -595,7 +923,8 @@
     <entry file="file://$PROJECT_DIR$/content/user_interface/js/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+>>>>>>> backend
           <folding>
             <element signature="e#255#427#0" expanded="false" />
             <element signature="e#502#795#0" expanded="false" />
@@ -612,7 +941,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user_interface/header.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-28.258064">
+=======
+        <state vertical-scroll-proportion="-14.064516">
+>>>>>>> backend
           <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
           <folding />
         </state>
@@ -620,7 +953,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/main.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-10.645162">
+=======
+        <state vertical-scroll-proportion="0.3966346">
+>>>>>>> backend
           <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
