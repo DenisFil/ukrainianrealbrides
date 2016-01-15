@@ -13,7 +13,6 @@
 
         public function insert_new_user($user_data)
         {
-            $query = $this->db->insert('users', $user_data);
             $email_data['confirm_hash'] = $user_data['email_hash'];
             unset($user_data['email_hash']);
             $query = $this->db->insert('users', $user_data);

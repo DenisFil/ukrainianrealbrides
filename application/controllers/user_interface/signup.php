@@ -24,10 +24,6 @@
                 if ($validation_result === TRUE)
                 {
                     $user_data['password'] = md5($user_data['password']);
-
-                    $query = $this->signup_model->insert_new_user($user_data);
-                    if ($query === TRUE)
-                    {
                     $user_data['register_date'] = time();
                     $user_data['email_hash'] = md5(time() . $user_data['name']);
                     $query = $this->signup_model->insert_new_user($user_data);
