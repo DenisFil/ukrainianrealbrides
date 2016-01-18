@@ -4,25 +4,32 @@ $(document).ready(function(){
   /************************Добавление удаление классов****************************/
     //Добавление ксласснов и текста error`ов
         function addErrorClass (id, error){
-            $(id + '-feedback').addClass('has-error');
-            $(id + '-error').addClass('glyphicon-remove');
+            $(id).addClass('error');
             $(id + '-error-text').text(error);
         }
 
     //Удалеие классов и текста error`ов
         function removeClass (id){
-            $(id + '-feedback').removeClass('has-error');
-            $(id + '-error').removeClass('glyphicon-remove');
+            $(id).removeClass('error');
             $(id + '-error-text').text('');
-            $(id + '-feedback').removeClass('has-success');
-            $(id + '-error').removeClass('glyphicon-ok');
+            /*$(id + '-feedback').removeClass('has-success');
+            $(id + '-error').removeClass('glyphicon-ok');*/
         }
 
     //Добавление класса success
         function addSuccessClass(id){
-            $(id + '-feedback').addClass('has-success');
-            $(id + '-error').addClass('glyphicon-ok');
+            $(id).addClass('success');
         }
+
+    //Обычное отображение пароля
+        $('#icon').click(function(){
+            var type = $('#user-password').attr('type');
+                if (type == 'password'){
+                    $('#user-password').attr('type', 'text');
+                }else{
+                    $('#user-password').attr('type', 'password');
+                }
+        });
 
   /************************Проверка правил валидации*******************************/
     //Обязательное заполнение поля

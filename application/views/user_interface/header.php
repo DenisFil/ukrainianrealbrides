@@ -90,10 +90,10 @@
                         </div>
                     </div>
 
-                    <div class="form-group has-feedback" id="user-password-feedback">
+                    <div class="form-group" id="user-password-feedback">
                         <div  class="col-lg-10 col-lg-push-1">
                             <input type="password" class="form-control" placeholder="Password" tabindex="3" id="user-password">
-                            <span id="user-password-error" class="glyphicon form-control-feedback"></span>
+                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" id="icon">
                             <span id="user-password-error-text"></span>
                         </div>
                     </div>

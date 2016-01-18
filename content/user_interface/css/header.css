@@ -369,4 +369,28 @@ h4 {
 .modal-body > .close{
 	opacity: 1.0;
 }
+
+/*#user-password{
+	background-image: url('../img/pop-ups/password_button.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}*/
+
+#user-password{
+	float: left;
+}
+
+#icon{
+	float: left;
+	margin-left: -26px;
+	margin-top: 16px;
+}
+
+.error{
+	border: 1px solid #ff0000;
+}
+
+.success{
+	border: 1px solid #008000;
+}
 /*Header Ends Here*/
