@@ -74,18 +74,16 @@
                 <h2>Registration</h2>
 
                 <form class="form-horizontal" id="signup-form">
-                    <div class="form-group has-feedback" id="user-name-feedback">
+                    <div class="form-group" id="user-name-feedback">
                         <div class="col-lg-10 col-lg-push-1">
                             <input type="text" class="form-control" placeholder="Name" autofocus tabindex="1" id="user-name">
-                            <span id="user-name-error" class="glyphicon form-control-feedback"></span>
                             <span id="user-name-error-text"></span>
                         </div>
                     </div>
 
-                    <div class="form-group has-feedback" id="user-email-feedback">
+                    <div class="form-group" id="user-email-feedback">
                         <div  class="col-lg-10 col-lg-push-1">
                             <input type="text" class="form-control" placeholder="Email Address" tabindex="2" id="user-email">
-                            <span id="user-email-error" class="glyphicon form-control-feedback"></span>
                             <span id="user-email-error-text"></span>
                         </div>
                     </div>
