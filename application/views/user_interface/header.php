@@ -97,6 +97,7 @@
                     </div>
 
                     <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
+                    <div class="fb-login-button" data-scope="public_profile,email" onlogin="checkLoginState();"></div>
                     <p id="privacy">
                         <a href="#" class="link">terms & conditions</a> and <a href="#" class="link">privacy policy</a>.
                     </p>
