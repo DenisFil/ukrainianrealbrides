@@ -308,4 +308,89 @@ h4 {
 	background:none;
 	margin: 0 0 0 21%;
 }
+
+#signUp-modal .modal-dialog{
+	width: 352px;
+}
+
+.form-control{
+	border: 1px solid #000;
+	font-size: 22px;
+	height: 48px;
+	border-radius: 10px;
+}
+
+#signUp{
+	height: 50px;
+	font-size: 25px;
+	margin-left: 70px;
+}
+
+.link{
+	text-decoration: underline;
+	font-size: 14px;
+	color: #c2c2c2;
+}
+
+#privacy{
+	text-align: center;
+	margin-top: 15px;
+	color: #c2c2c2;
+}
+
+.otbivka{
+	background: url("../img/pop-ups/otbivka.png") no-repeat;
+	height: 15px;
+}
+
+#modal-signup-footer{
+	font-size: 20px;
+	text-align: center;
+}
+
+#modal-signup-footer > a{
+	color: #ff0000;
+	text-decoration: underline;
+}
+
+.exit{
+	height: 40px;
+	width: 40px;
+	padding: 11px 11px;
+	background-color: #fff;
+	border-radius: 20px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-top: -16px;
+	margin-right: -16px;
+}
+
+.modal-body > .close{
+	opacity: 1.0;
+}
+
+/*#user-password{
+	background-image: url('../img/pop-ups/password_button.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}*/
+
+#user-password{
+	float: left;
+}
+
+#icon{
+	float: left;
+	margin-left: -26px;
+	margin-top: 16px;
+}
+
+.error{
+	border: 1px solid #ff0000;
+}
+
+.success{
+	border: 1px solid #008000;
+}
 /*Header Ends Here*/
