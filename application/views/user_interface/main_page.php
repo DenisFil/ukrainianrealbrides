@@ -35,32 +35,32 @@
         <div class="detail-box">
             <h3>Messaging</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" alt="Messaging" />
-            <a class="detail-button" href="#">Detail</a>
+            <a class="detail-button" href="#messaging-modal" data-toggle="modal" >Detail</a>
         </div>
         <div class="detail-box">
             <h3>Chat</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
-            <a class="detail-button" href="#">Detail</a>
+            <a class="detail-button" href="#chat-modal">Detail</a>
         </div>
         <div class="detail-box">
             <h3>Video Chat</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
-            <a class="detail-button" href="#">Detail</a>
+            <a class="detail-button" href="#video-chat-modal">Detail</a>
         </div>
         <div class="detail-box">
             <h3>Gift service</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" alt="Gift service" />
-            <a class="detail-button" href="#">Detail</a>
+            <a class="detail-button" href="#gift-modal">Detail</a>
         </div>
         <div class="detail-box">
             <h3 class="h3-third">Very important service</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" alt="Very important service" />
-            <a class="detail-button" href="#">Detail</a>
+            <a class="detail-button" href="#important-service-modal">Detail</a>
         </div>
         <div class="detail-box last">
             <h3>Romance tours</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" alt="Romance tours" />
-            <a class="detail-button" href="#">Detail</a>
+            <a class="detail-button" href="#romance-tours-modal">Detail</a>
         </div>
 
     </div>
@@ -167,6 +167,25 @@
             <input class="email" type="text" placeholder="Email" />
         </div>
         <button class="subscribe-button" type="button">Get started</button>
+    </div>
+</div>
+
+<!-- Services modal -->
+<div class="modal fade services-modal" id="messaging-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <div class="exit">
+                        <img src="<?php echo base_url(); ?>content/user_interface/img/pop-ups/exit.png">
+                    </div>
+                </button>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" alt="Messaging" />
+                <h2>Messaging</h2>     
+                <span>Messaging Plus is the most powerful all-in-one messenger app: texting (SMS & MMS) with emoji and stickers, group chat, video chat and "everything" sharing.</span>
+                <button type="button" class="btn btn-danger">To Service</button>
+            </div>
+        </div>
     </div>
 </div>
 <!-- Main Ends Here -->

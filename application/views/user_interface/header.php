@@ -16,9 +16,9 @@
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/<?php echo $css; ?>.css" type="text/css" />
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/footer.css" type="text/css" />
     <!--<link media="all" rel="stylesheet" href="css/sorry.css" type="text/css" />-->
-    <!--[if lt IE 7]><!--
+    <!--[if lt IE 7]>
 <link rel="stylesheet" type="text/css" href="css/lt7.css" media="screen"/>-->
-<![endif]-->
+<!-- <![endif]--> 
 </head>
 <body>
 
@@ -66,9 +66,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <div class="exit">
-                        <img src="<?php echo base_url(); ?>content/user_interface/img/pop-ups/exit.png">
-                    </div>
+                    <div class="exit"></div>
                 </button>
 
                 <h2>Registration</h2>
