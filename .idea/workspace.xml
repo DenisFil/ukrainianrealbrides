@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signup.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="signup.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/user_interface/signup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.225806">
-              <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.63461536">
+              <caret line="86" column="68" selection-start-line="86" selection-start-column="68" selection-end-line="86" selection-end-column="68" />
               <folding>
                 <element signature="n#__construct#0;n#Signup#0;n#!!top" expanded="false" />
                 <element signature="n#index#0;n#Signup#0;n#!!top" expanded="false" />
@@ -60,10 +60,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="constants.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.580645">
+              <caret line="91" column="47" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/user_interface/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6826923">
+            <state vertical-scroll-proportion="-6.967742">
               <caret line="103" column="67" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
               <folding />
             </state>
@@ -73,9 +83,12 @@
       <file leaf-file-name="facebook.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/libraries/facebook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.1290324">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-3.548387">
+              <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+              <folding>
+                <element signature="n#get_token#0;n#Facebook#0;n#!!top" expanded="false" />
+                <element signature="n#get_data#0;n#Facebook#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,7 +140,6 @@
         <option value="$PROJECT_DIR$/application/libraries/Facebook/FacebookBatchResponse.php" />
         <option value="$PROJECT_DIR$/application/libraries/Facebook/Facebook.php" />
         <option value="$PROJECT_DIR$/application/libraries/Fbconnect.php" />
-        <option value="$PROJECT_DIR$/application/controllers/user_interface/signup.php" />
         <option value="$PROJECT_DIR$/application/controllers/user_interface/fbauth/fbconnect.php" />
         <option value="$PROJECT_DIR$/application/controllers/user_interface/fbauth/fbauth.php" />
         <option value="$PROJECT_DIR$/content/user_interface/js/signup.js" />
@@ -136,9 +148,10 @@
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DRa0.892/fbauth/home.php" />
         <option value="$PROJECT_DIR$/application/config/facebook.php" />
         <option value="$PROJECT_DIR$/application/config/autoload.php" />
+        <option value="$PROJECT_DIR$/application/views/user_interface/header.php" />
         <option value="$PROJECT_DIR$/application/config/constants.php" />
         <option value="$PROJECT_DIR$/application/libraries/facebook.php" />
-        <option value="$PROJECT_DIR$/application/views/user_interface/header.php" />
+        <option value="$PROJECT_DIR$/application/controllers/user_interface/signup.php" />
       </list>
     </option>
   </component>
@@ -631,31 +644,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/user_interface/signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.225806">
-          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-          <folding>
-            <element signature="n#__construct#0;n#Signup#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#Signup#0;n#!!top" expanded="false" />
-            <element signature="n#email#0;n#Signup#0;n#!!top" expanded="false" />
-            <element signature="n#confirm_email#0;n#Signup#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.580645">
-          <caret line="91" column="52" selection-start-line="91" selection-start-column="52" selection-end-line="91" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -676,19 +668,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/libraries/facebook.php">
+    <entry file="file://$PROJECT_DIR$/application/views/user_interface/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1290324">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="-6.967742">
+          <caret line="103" column="67" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user_interface/header.php">
+    <entry file="file://$PROJECT_DIR$/application/libraries/facebook.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6826923">
-          <caret line="103" column="67" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
+        <state vertical-scroll-proportion="-3.548387">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding>
+            <element signature="n#get_token#0;n#Facebook#0;n#!!top" expanded="false" />
+            <element signature="n#get_data#0;n#Facebook#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.580645">
+          <caret line="91" column="47" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user_interface/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63461536">
+          <caret line="86" column="68" selection-start-line="86" selection-start-column="68" selection-end-line="86" selection-end-column="68" />
+          <folding>
+            <element signature="n#__construct#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#index#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#email#0;n#Signup#0;n#!!top" expanded="false" />
+            <element signature="n#confirm_email#0;n#Signup#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

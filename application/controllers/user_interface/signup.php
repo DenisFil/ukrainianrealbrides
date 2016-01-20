@@ -74,4 +74,22 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                     echo "Email confirmed success";
                 }
         }
+
+//  Facebook авторизация
+        public function fbauth()
+        {
+            if ($this->input->get('code'))
+            {
+                $this->load->library('facebook');
+                $result = $this->facebook->get_token($this->input->get('code'));
+                    if($result)
+                    {
+                        var_dump($this->facebook->get_data($result));
+                    }
+            }
+            else
+            {
+                exit ('Parametrs error');
+            }
+        }
     }
