@@ -128,27 +128,41 @@ $(document).ready(function(){
         });
 
   /*****************************Отправка формы*********************************/
-    $(document).on('click', '#signUp', function(){
-        //Получение введенных данных
-        var data = {
-            name: $('#user-name').val(),
-            email: $('#user-email').val(),
-            password: $('#user-password').val()
-        };
-        var html = '<h3>Thank you!</h3><p>For complete registration we sent to your ' + data.email + ' mail.</p><p>Please check you email.</p>';
+  //Обработчик фомы
+        function userData(){
+          //Получение введенных данных
+          var data = {
+              name: $('#user-name').val(),
+              email: $('#user-email').val(),
+              password: $('#user-password').val()
+          };
+          var html = '<h3>Thank you!</h3><p>For complete registration we sent to your ' + data.email + ' mail.</p><p>Please check you email.</p>';
 
-        //Запись в базу
-        $.ajax({
-            type: 'post',
-            data: data,
-            url: baseUrl + 'user_interface/signup',
-            dataType: 'json',
-            success: function(data){
-                if (data.result == 1){
-                    $('#signup-form').empty();
-                    $('#signup-form').append(html);
-                }
-            }
-        });
-   });
+          //Запись в базу
+          $.ajax({
+              type: 'post',
+              data: data,
+              url: baseUrl + 'user_interface/signup',
+              dataType: 'json',
+              success: function(data){
+                  if (data.result == 1){
+                      $('#signup-form').empty();
+                      $('#signup-form').append(html);
+                  }
+              }
+          });
+        }
+
+  //Отправка формы по клику
+    $(document).on('click', '#signUp', function(){
+        userData();
+    });
+
+  //Отправка формы по нажатию Enter`a
+    document.onkeyup = function (e) {
+        e = e || window.event;
+        if (e.keyCode === 13) {
+            userData();
+        }
+    }
 });
