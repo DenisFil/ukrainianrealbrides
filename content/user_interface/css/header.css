@@ -96,6 +96,7 @@ form, fieldset {
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 }
+
 mark {background: none;}
 ul, ol {margin: 0; padding: 0; list-style: none;}
 img {border-style: none;}
@@ -308,11 +309,81 @@ h4 {
 	background:none;
 	margin: 0 0 0 21%;
 }
-
+/*Sign-up modal*/
 #signUp-modal .modal-dialog{
 	width: 352px;
 }
+.form-control{
+	border: 1px solid #000;
+	font-size: 22px;
+	height: 48px;
+	border-radius: 10px;
+}
+#signUp{
+	height: 50px;
+	font-size: 25px;
+	margin-left: 70px;
+}
 
+.link{
+	text-decoration: underline;
+	font-size: 14px;
+	color: #c2c2c2;
+}
+
+#privacy{
+	text-align: center;
+	margin-top: 15px;
+	color: #c2c2c2;
+}
+
+.otbivka{
+	background: url("../img/pop-ups/otbivka.png") no-repeat;
+	height: 15px;
+}
+
+#modal-signup-footer{
+	font-size: 20px;
+	text-align: center;
+}
+
+#modal-signup-footer > a{
+	color: #ff0000;
+	text-decoration: underline;
+}
+
+.modal-body > .close{
+	opacity: 1.0;
+}
+
+/*#user-password{
+	background-image: url('../img/pop-ups/password_button.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}*/
+
+#user-password{
+	float: left;
+}
+
+#icon{
+	float: left;
+	margin-left: -26px;
+	margin-top: 16px;
+}
+
+.error{
+	border: 1px solid #ff0000;
+}
+
+.success{
+	border: 1px solid #008000;
+}
+
+/*Login modal*/
+#login-modal .modal-dialog{
+	width: 352px;
+}
 .form-control{
 	border: 1px solid #000;
 	font-size: 22px;
@@ -353,19 +424,21 @@ h4 {
 	text-decoration: underline;
 }
 
-.exit{
-	height: 40px;
-	width: 40px;
-	padding: 11px 11px;
-	background-color: #fff;
-	border-radius: 20px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	margin-top: -16px;
-	margin-right: -16px;
+.exit {
+    height: 41px;
+    width: 41px;
+    background: #fff url("../img/pop-ups/exit.png") no-repeat 50% 50%;
+    border-radius: 30px;
+    position: absolute;
+    right: -19px;
+    top: -14px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+    text-align: center;
 }
-
+.exit:hover {
+	transform: rotate(180deg);
+}
 .modal-body > .close{
 	opacity: 1.0;
 }
