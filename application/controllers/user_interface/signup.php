@@ -15,9 +15,9 @@
             $user_data = $this->input->post();
             $this->load->library('form_validation');
             $rules = array(
-                array('field' => 'name', 'rules' => 'required|min_length[3]|max_length[20]|alpha'),
-                array('field' => 'email', 'rules' => 'required'),
-                array('field' => 'password', 'rules' => 'required|min_length[3]|max_length[20]|alpha_numeric')
+                array('field' => 'name', 'rules' => 'required|min_length[3]|max_length[20]|alpha|trim'),
+                array('field' => 'email', 'rules' => 'required|trim'),
+                array('field' => 'password', 'rules' => 'required|min_length[3]|max_length[20]|alpha_numeric|trim')
             );
             $this->form_validation->set_rules($rules);
             $validation_result = $this->form_validation->run($user_data);
@@ -73,5 +73,23 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                 {
                     echo "Email confirmed success";
                 }
+        }
+
+//  Facebook авторизация
+        public function fbauth()
+        {
+            if ($this->input->get('code'))
+            {
+                $this->load->library('facebook');
+                $result = $this->facebook->get_token($this->input->get('code'));
+                    if($result)
+                    {
+                        var_dump($this->facebook->get_data($result));
+                    }
+            }
+            else
+            {
+                exit ('Parametrs error');
+            }
         }
     }
