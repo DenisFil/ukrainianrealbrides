@@ -40,27 +40,27 @@
         <div class="detail-box">
             <h3>Chat</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
-            <a href="#messaging-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+            <a href="#chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
         <div class="detail-box">
             <h3>Video Chat</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
-            <a href="#messaging-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+            <a href="#video-chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
         <div class="detail-box">
             <h3>Gift service</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" alt="Gift service" />
-            <a href="#messaging-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+            <a href="#gift-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
         <div class="detail-box">
             <h3 class="h3-third">Very important service</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" alt="Very important service" />
-            <a href="#messaging-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+            <a href="#important-service-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
         <div class="detail-box last">
             <h3>Romance tours</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" alt="Romance tours" />
-            <a href="#messaging-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+            <a href="#romance-tours-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
 
     </div>
