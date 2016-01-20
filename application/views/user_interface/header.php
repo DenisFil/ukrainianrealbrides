@@ -99,6 +99,10 @@
                     <p id="privacy">
                         <a href="#" class="link">terms & conditions</a> and <a href="#" class="link">privacy policy</a>.
                     </p>
+                    <p>
+                        <?php $href = URL_AUTH."?"."client_id=".CLIENT_ID."&redirect_uri=".urlencode(REDIRECT)."&response_type=code"; ?>
+                        <a href="<?php echo $href; ?>">Facebook</a>
+                    </p>
                 </form>
             </div>
             <div class="otbivka"></div>
