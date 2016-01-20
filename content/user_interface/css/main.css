@@ -1,4 +1,3 @@
-Main Starts Here*/
 .main-h1 {
 	margin: 0 auto;
 	width: 1170px;
@@ -10,19 +9,19 @@ Main Starts Here*/
 	box-shadow: 0 0 12px rgba(0,0,0,0.5);
 }
 .list {
-  position: relative;
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  overflow: hidden;
-  width: 100%;
+	position: relative;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 100%;
 }
 .list>li {
-  position: absolute;
-  display: none;
-  width: 100%;
-  left: 0;
-  top: 0;
+	position: absolute;
+	display: none;
+	width: 100%;
+	left: 0;
+	top: 0;
 }
 .list>li.first. {
 	position: relative;
@@ -118,6 +117,10 @@ Main Starts Here*/
 	color: #e83c32;
 	background: rgba(0,0,0,0);
 	transition: all 0.6s;
+	-webkit-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+	-ms-transition: all 0.6s;
+	-o-transition: all 0.6s;
 }
 .list li .gallery-box span:before {
 	content: "";
@@ -172,6 +175,8 @@ Main Starts Here*/
 	width: 80px;
 	font-size: 19px;
 	line-height: 20px;
+	outline: none;
+	background: rgba(0,0,0,0);
 }
 .detail-button:hover {
     color: #e86f66;
@@ -179,8 +184,12 @@ Main Starts Here*/
     border: 2px solid #e83c32; 
     color: #fff;
     transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
     background: #e83c32; 
-}
+}	
 .h3-third {
     padding: 3px 0 0 0;
 }
@@ -224,6 +233,10 @@ Main Starts Here*/
 .frame-girl a span:hover {
 	opacity: 1;
 	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-ms-transition: all 1s;
+	-o-transition: all 1s;
 }
 .frame-girl.first-image:before,
 .frame-girl.last-image:after {
@@ -240,6 +253,10 @@ Main Starts Here*/
 	left: auto;
 	right: -251px;
 	transform: scale(-1,1);
+	-webkit-transform: scale(-1,1);
+	-moz-transform: scale(-1,1);
+	-ms-transform: scale(-1,1);
+	-o-transform: scale(-1,1);
 }
 .frame-girl.last {
 	margin: 0;
@@ -288,10 +305,18 @@ Main Starts Here*/
 .title-box img {
 	display: inline-block;
 	padding: 32px 0 0;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
 }
 .title-box span:hover img {
-	transform: rotate(12deg);
-	transition: all 1s;
+	transform: scale(1.15);
+	-webkit-transform: scale(1.15);
+	-moz-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	-o-transform: scale(1.15);
 }
 .title-box.last {
 	margin: 0;
@@ -314,6 +339,10 @@ Main Starts Here*/
     border: 2px solid #e83c32; 
     color: #fff;
     transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
     background: #e83c32; 
 }
 .watch-us-holder {
@@ -399,6 +428,10 @@ Main Starts Here*/
 	background: #fff;
 	color: #000;
 	transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
 }
 .subscribe-holder {
 	width: 100%;
@@ -453,6 +486,10 @@ Main Starts Here*/
 	background: #fff;
 	color: #e83c32;
 	transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
 }
 /*Services modal's*/
 .services-modal .modal-dialog {
@@ -467,6 +504,7 @@ Main Starts Here*/
 }
 .services-modal .modal-dialog .modal-body img{
 	display: inline-block;
+    padding: 0 0 10px 0;
 }
 .services-modal .modal-dialog .modal-body h2{
 	padding: 0 0 41px 0;
@@ -495,6 +533,7 @@ Main Starts Here*/
 	box-shadow: none;
 	text-shadow: none;
 }
+
 
 
 /*Main ends here

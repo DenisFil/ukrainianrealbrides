@@ -83,6 +83,18 @@
 	height: 62px;
 	border-radius: 100px;
 	border: 2px solid #e83c32;
+	transition: all 0.4s;
+	-webkit-transition:all 0.4s;
+	-moz-transition:all 0.4s;
+	-ms-transition:all 0.4s;
+	-o-transition:all 0.4s;
+}
+.footer-right ul li:hover {
+	transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	-o-transform: scale(0.9);
 }
 .footer-right ul li:last-child {
 	margin: 0;
