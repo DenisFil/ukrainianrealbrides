@@ -256,7 +256,7 @@ h4 {
  	outline: none;
  	margin: 0 0 0 0;
  	padding: 0 0 0 12px;
- 	background: #fff url("../img/header/login.png") no-repeat 14% 50%;
+ 	background: #fff url("../img/header/login.png") no-repeat 14% 43%;
  	cursor: pointer;
  	color: rgba(0,0,0,0.7);
  }
@@ -267,7 +267,7 @@ h4 {
 	vertical-align: middle;
 	padding: 0 0 0 10%;
 	margin: 0 0 0 11px;
- 	background: #e83c32 url("../img/header/bg-button.png") no-repeat 20% 50%;
+ 	background: #e83c32 url("../img/header/bg-button.png") no-repeat 20% 44%;
  	border-radius: 10px;
  	height: 26px;
  	width: 89px;
@@ -309,9 +309,23 @@ h4 {
 	background:none;
 	margin: 0 0 0 21%;
 }
-/*Sign-up modal*/
-#signUp-modal .modal-dialog{
-	width: 352px;
+/*Sign-up, login modal's*/
+.modal-content {
+	border-radius: 9px;
+}
+.modal-body {
+	position: relative;
+    padding: 22px 0px 0px 0px;
+    text-align: center;
+	font-family: 'LatoRegular';
+}
+.modal-body h2 {
+    margin: 0 0 20px 0;
+    padding: 0 0 41px 0;
+}
+.form-row {
+	display: block;
+	text-align: center;
 }
 .form-control{
 	border: 1px solid #000;
@@ -319,111 +333,75 @@ h4 {
 	height: 48px;
 	border-radius: 10px;
 }
-#signUp{
-	height: 50px;
-	font-size: 25px;
-	margin-left: 70px;
-}
-
-.link{
-	text-decoration: underline;
-	font-size: 14px;
-	color: #c2c2c2;
-}
-
-#privacy{
-	text-align: center;
-	margin-top: 15px;
-	color: #c2c2c2;
-}
-
-.otbivka{
-	background: url("../img/pop-ups/otbivka.png") no-repeat;
-	height: 15px;
-}
-
-#modal-signup-footer{
+.modal-bottom{
+	background: url("../img/pop-ups/modal-bg.png") repeat-x 0 0;
 	font-size: 20px;
+	line-height: 22px;
 	text-align: center;
+	padding: 33px 0 32px 0;
 }
-
-#modal-signup-footer > a{
-	color: #ff0000;
+.modal-bottom span{
+	color: #000;
+    font-family: 'BanderaProMedium';
+    font-size: 20px;
+    line-height: 22px;
+}
+.modal-bottom span a {
+	color: #e83c32;
 	text-decoration: underline;
 }
-
-.modal-body > .close{
+.modal-body>.close{
 	opacity: 1.0;
 }
-
 /*#user-password{
 	background-image: url('../img/pop-ups/password_button.png');
 	background-repeat: no-repeat;
 	background-position: right;
 }*/
-
-#user-password{
-	float: left;
-}
-
-#icon{
-	float: left;
-	margin-left: -26px;
-	margin-top: 16px;
-}
-
-.error{
-	border: 1px solid #ff0000;
-}
-
-.success{
-	border: 1px solid #008000;
-}
-
-/*Login modal*/
-#login-modal .modal-dialog{
-	width: 352px;
+.modal-dialog{
+	width: 354px;
 }
 .form-control{
-	border: 1px solid #000;
+	border: 1px solid rgba(0,0,0,0.3);
 	font-size: 22px;
-	height: 48px;
-	border-radius: 10px;
-}
-
-#signUp{
+	line-height: 24px;
+	width: 281px;
 	height: 50px;
-	font-size: 25px;
-	margin-left: 70px;
+	border-radius: 10px;
+	color: #000;
+	padding: 0 15px;
+	outline: none;
 }
-
-.link{
-	text-decoration: underline;
-	font-size: 14px;
-	color: #c2c2c2;
+.form-control:focus {
+	box-shadow: 0 0 3px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
 }
-
-#privacy{
-	text-align: center;
-	margin-top: 15px;
-	color: #c2c2c2;
+.error{
+	box-shadow: 0 0 3px rgba(255,0,0,0.5);
+	border: 1px solid rgba(255,0,0,0.5);
 }
-
-.otbivka{
-	background: url("../img/pop-ups/otbivka.png") no-repeat;
-	height: 15px;
+.success{
+	box-shadow: 0 0 3px rgba(0,204,0,0.3);
+	border: 1px solid rgba(0,204,0,0.3);
 }
-
-#modal-signup-footer{
-	font-size: 20px;
-	text-align: center;
+.form-row {
+	position: relative;
+	margin: 0 auto 0;
+	width: 281px;
+	height: 71px;
 }
-
-#modal-signup-footer > a{
-	color: #ff0000;
-	text-decoration: underline;
+.form-row.last-form {
+    margin: 0 auto 9px;
+    height: auto;
 }
-
+.form-row .view-password{
+	position: absolute;
+	right: 14px;
+	top: 18px;
+	display: block;
+	width: 26px;
+	height: 16px;
+}
 .exit {
     height: 41px;
     width: 41px;
@@ -434,36 +412,67 @@ h4 {
     top: -14px;
     box-shadow: 0 0 12px rgba(0,0,0,0.3);
     transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
     text-align: center;
 }
 .exit:hover {
 	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
 }
-.modal-body > .close{
-	opacity: 1.0;
-}
-
 /*#user-password{
 	background-image: url('../img/pop-ups/password_button.png');
 	background-repeat: no-repeat;
 	background-position: right;
 }*/
-
-#user-password{
-	float: left;
+.forget-password {
+	display: block;
+	margin: 0 0 15px 0;
 }
-
-#icon{
-	float: left;
-	margin-left: -26px;
-	margin-top: 16px;
+.forget-password a{
+	color: #acacac;
+	font-size: 14px;
+	line-height: 16px;
+	text-decoration: underline;
 }
-
-.error{
-	border: 1px solid #ff0000;
+#login-form .btn-danger {
+	width: 180px;
+	margin: 0 auto 15px;
 }
-
-.success{
-	border: 1px solid #008000;
+#signup-form .btn-danger {
+	width: 203px;
+	margin: 0 auto 15px;
+}
+.form-error-message {
+	color: #e83c32;
+	font-size: 12px;
+	line-height: 14px;
+	padding: 0 0 0 7px;
+}
+.terms-conditions {
+	font-size: 14px;
+	line-height: 16px;
+	color: rgba(0,0,0,0.5);
+	display: block;
+ 	margin: 0 0 15px 0;
+}
+.terms-conditions a{
+	text-decoration: underline;
+	color: rgba(0,0,0,0.5);
+	font-family: 'LatoRegular';
+}
+.btn-facebook, .btn-google-plus {
+	margin: 0 5px 10px 5px;
+}
+.btn-xs, .btn-group-xs>.btn {
+    padding: 5px 5px;
+}
+#login-modal .modal-bottom {
+	margin: 15px 0 0 0;
 }
 /*Header Ends Here*/
