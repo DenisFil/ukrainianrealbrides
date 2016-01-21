@@ -45,11 +45,11 @@
         </div>
         <nav class="nav">
             <ul>
-                <?php if ($user_sex == ''){ ?>
+                <?php if ($gender == ''){ ?>
                     <li><a href="#">Profiles</a></li>
-                <?php }elseif ($user_sex == 1){ ?>
+                <?php }elseif ($gender == 1){ ?>
                     <li><a href="#">Women profiles</a></li>
-                <?php }elseif ($user_sex == 2){ ?>
+                <?php }elseif ($gender == 2){ ?>
                     <li><a href="#">Man profiles</a></li>
                 <?php } ?>
                 <li><a href="#">Search</a></li>
@@ -89,10 +89,7 @@
                         <span id="user-password-error-text" class="form-error-message"></span>
                     </div>
                     <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
-
-                    <?php $href = URL_AUTH."?"."client_id=".CLIENT_ID."&redirect_uri=".urlencode(REDIRECT)."&response_type=code"; ?>
-
-                    <a href="<?php echo $href; ?>"><button class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i> | Sign up with Facebook</button></a>
+                    <a href="<?php echo $loginUrl; ?>"><button type="button" class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i> | Sign up with Facebook</button></a>
 
                     <a href="#"><button class="btn btn-social btn-xs btn-google-plus"><i class="fa fa-google-plus"></i> | Sign up with Google+</button></a>
 
@@ -129,7 +126,7 @@
                     </div>
                         <span class="forget-password"><a href="#">Forgot login or password?</a></span>
                     <button type="button" class="btn btn-danger" id="login">Log In</button>
-                    <a href="<?php echo $href; ?>"><button class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i>  | Sign in with Facebook</button></a>
+                    <a href="#"><button class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i>  | Sign in with Facebook</button></a>
                     <a href="#"><button class="btn btn-social btn-xs btn-google-plus"><i class="fa fa-google-plus"></i>  | Sign in with Google+</button></a>
                 </form>
             </div>

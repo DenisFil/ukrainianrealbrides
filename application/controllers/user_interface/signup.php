@@ -98,7 +98,6 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
             if (isset($accessToken)) {
                 $_SESSION['facebook_access_token'] = (string)$accessToken;
             }
-
             try {
                 $response = $fb->get('/me?fields=first_name,last_name,email,gender', $accessToken);
             } catch (Facebook\Exceptions\FacebookSDKException $e) {
