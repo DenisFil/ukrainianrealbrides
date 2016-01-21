@@ -34,6 +34,28 @@
                 }
         }
 
+        public function insert_new_user_from_facebook($user_data)
+        {
+            $query = $this->db->insert('users', $user_data);
+
+            $user_id = $this->db->  select('id')->
+                                    from('users')->
+                                    where('email', $user_data['email'])->
+                                    get()->
+                                    result();
+            $email_data['user_id'] = $user_id[0]->id;
+            $email_data['email_status'] = 1;
+            $query_email = $this->db->insert('confirm_email', $email_data);
+                if ($query && $query_email === TRUE)
+                {
+                    return TRUE;
+                }
+                else
+                {
+                    return FALSE;
+                }
+        }
+
         public function confirm_email($hash)
         {
             $data['email_status'] = 1;

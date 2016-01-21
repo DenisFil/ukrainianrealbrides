@@ -1,4 +1,5 @@
 <?php
+require_once 'C:/OpenServer/domains/ukrainianrealbrides/application/third_party/Facebook/autoload.php';
     class Signup extends CI_Controller
     {
         public function __construct()
@@ -76,20 +77,59 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
         }
 
 //  Facebook авторизация
-        public function fbauth()
+        public function fbsignup()
         {
-            if ($this->input->get('code'))
-            {
-                $this->load->library('facebook');
-                $result = $this->facebook->get_token($this->input->get('code'));
-                    if($result)
-                    {
-                        var_dump($this->facebook->get_data($result));
-                    }
+            $fb = new Facebook\Facebook([
+                'app_id' => '427767240752729',
+                'app_secret' => '38e3ede8c5b2b8ce1682536bcff55823',
+                'default_graph_version' => 'v2.5'
+            ]);
+            $helper = $fb->getRedirectLoginHelper();
+            try {
+                $accessToken = $helper->getAccessToken();
+            } catch (Facebook\Exceptions\FacebookResponseException $e) {
+                echo 'Graph returned an error: ' . $e->getMessage();
+                exit;
+            } catch (Facebook\Exceptions\FacebookSDKException $e) {
+                echo 'Facebook SDK returned an error: ' . $e->getMessage();
+                exit;
             }
-            else
-            {
-                exit ('Parametrs error');
+
+            if (isset($accessToken)) {
+                $_SESSION['facebook_access_token'] = (string)$accessToken;
             }
+
+            try {
+                $response = $fb->get('/me?fields=first_name,last_name,email,gender', $accessToken);
+            } catch (Facebook\Exceptions\FacebookSDKException $e) {
+                // . . .
+                exit;
+            }
+
+            $user_data = $response->getDecodedBody();
+            unset($user_data['id']);
+                if ($user_data['gender'] == 'male')
+                {
+                    $user_data['gender'] = 1;
+                }
+                elseif ($user_data['gender'] == 'female')
+                {
+                    $user_data['gender'] = 2;
+                }
+                else
+                {
+                    $user_data['gender'] = 0;
+                }
+            $user_data['name'] = $user_data['first_name'];
+            unset($user_data['first_name']);
+            $user_data['lastname'] = $user_data['last_name'];
+            unset($user_data['last_name']);
+            $user_data['register_date'] = time();
+
+            $query = $this->signup_model->insert_new_user_from_facebook($user_data);
+                /*if ($query === TRUE)
+                {
+
+                }*/
         }
     }
