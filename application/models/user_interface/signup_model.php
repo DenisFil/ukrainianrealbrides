@@ -34,7 +34,7 @@
                 }
         }
 
-        public function insert_new_user_from_facebook($user_data)
+        public function insert_new_user_from_social_network($user_data)
         {
             $query = $this->db->insert('users', $user_data);
 
@@ -61,5 +61,22 @@
             $data['email_status'] = 1;
             $query = $this->db->update('confirm_email', $data, array('confirm_hash' => $hash));
             return $query;
+        }
+
+        public function uniqueness_email($email)
+        {
+            $query = $this->db->    select('id')->
+                                    from('users')->
+                                    where('email', $email)->
+                                    get()->
+                                    result();
+            if (count($query) > 0)
+            {
+                return FALSE;
+            }
+            else
+            {
+                return TRUE;
+            }
         }
     }

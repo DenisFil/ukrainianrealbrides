@@ -23,7 +23,7 @@ require_once 'C:/OpenServer/domains/ukrainianrealbrides/application/third_party/
                 }
 
             $this->load->view('user_interface/header', $data);
-            $this->load->view('google');
+            $this->load->view('user_interface/main_page');
             $this->load->view('user_interface/footer');
         }
     }

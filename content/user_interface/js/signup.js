@@ -1,6 +1,22 @@
 $(document).ready(function(){
     var baseUrl = 'http://ukrainianrealbrides.int/';
 
+    /****************************Смена модальных окон******************************/
+        function changeModal(window){
+            $('.close').click();
+            setTimeout(function(){$('#' + window + '-button').click();}, 500);
+        }
+
+        $('#login-modal-start').click(function(){
+            var window = $(this).attr('name');
+            changeModal(window);
+        });
+
+        $('#signup-modal-start').click(function(){
+            var window = $(this).attr('name');
+            changeModal(window);
+        });
+
   /************************Добавление удаление классов****************************/
     //Добавление ксласснов и текста error`ов
         function addErrorClass (id, error){
@@ -12,8 +28,6 @@ $(document).ready(function(){
         function removeClass (id){
             $(id).removeClass('error');
             $(id + '-error-text').text('');
-            /*$(id + '-feedback').removeClass('has-success');
-            $(id + '-error').removeClass('glyphicon-ok');*/
         }
 
     //Добавление класса success
@@ -22,13 +36,21 @@ $(document).ready(function(){
         }
 
     //Обычное отображение пароля
-        $('#icon').click(function(){
-            var type = $('#user-password').attr('type');
-                if (type == 'password'){
-                    $('#user-password').attr('type', 'text');
-                }else{
-                    $('#user-password').attr('type', 'password');
+        function viewPassword(window){
+            var type = $('#' + window + 'user-password').attr('type');
+            if (type == 'password'){
+                $('#' + window + 'user-password').attr('type', 'text');
+            }else{
+                $('#' + window + 'user-password').attr('type', 'password');
+            }
+        }
+
+        $('.icon').click(function(){
+            var window = $(this).attr('name');
+                if (window != ''){
+                    window = window + '-';
                 }
+            viewPassword(window);
         });
 
   /************************Проверка правил валидации*******************************/
@@ -165,4 +187,65 @@ $(document).ready(function(){
             userData();
         }
     }
+
+  /******************************Google авторизация****************************/
+    $('#google-signup').click(function(){
+        initGapi();
+
+        function initGapi()
+        {
+            gapi.load('auth2', function()
+            {
+                GoogleAuth = gapi.auth2.init({
+                    client_id: '146371657817-gtln93fv8s6l781t0sh564e3av0fprug.apps.googleusercontent.com',
+                    scope: 'https://www.googleapis.com/auth/userinfo.email'
+                });
+
+                GoogleAuth.isSignedIn.listen(function(isSignedIn)
+                {
+                    if(isSignedIn)
+                    {
+                        onSignIn();
+                    }
+                    else
+                    {
+                        console.log('listener say false');
+                    }
+                });
+
+                GoogleAuth.signIn().then(onFailure);
+            });
+        }
+
+        function onSignIn()
+        {
+            var googleUser = GoogleAuth.currentUser.get();
+
+            var profile = googleUser.getBasicProfile();
+            var userData = {
+                name: profile.getName(),
+                email: profile.getEmail()
+            };
+            console.log(userData);
+            $.ajax({
+                type: 'post',
+                data: userData,
+                url: baseUrl + 'user_interface/signup/google_signup',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                    if (data.result === true){
+                        location.reload();
+                    }else{
+                        alert('User with this email already register');
+                    }
+                }
+            });
+        }
+
+        function onFailure(error)
+        {
+            console.log(error);
+        }
+    });
 });

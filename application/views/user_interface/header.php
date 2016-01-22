@@ -39,8 +39,8 @@
 						</span>
             </div>
             <div class="header-right">
-                <a href="#login-modal" role="button" data-toggle="modal"><button type="button" class="login">Login</button></a>
-                <a href="#signUp-modal" role="button" data-toggle="modal"><button type="button" class="sign-up">Sign up</button></a>
+                <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Login</button></a>
+                <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
             </div>
         </div>
         <nav class="nav">
@@ -87,14 +87,14 @@
                     <div class="form-row">
                         <input type="password" class="form-control" placeholder="Password" tabindex="2" id="user-password">
                         <span class="view-password">
-                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" id="icon">
+                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="">
                         </span>
                         <span id="user-password-error-text" class="form-error-message"></span>
                     </div>
                     <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
                     <a href="<?php echo $facebook_login_url; ?>"><button type="button" class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i> | Sign up with Facebook</button></a>
 
-                    <a href="#"><button class="btn btn-social btn-xs btn-google-plus"><i class="fa fa-google-plus"></i> | Sign up with Google+</button></a>
+                    <button type="button" class="btn btn-social btn-xs btn-google-plus" id="google-signup"><i class="fa fa-google-plus"></i> | Sign up with Google+</button>
 
                     <span class="terms-conditions">
                         <a href="#">terms & conditions</a> and <a href="#">privacy policy</a>.
@@ -102,7 +102,7 @@
                 </form>
             </div>
             <div class="modal-bottom">
-                <span>Already register? <a href="#login-modal" data-toggle="modal">Login now</a></span>
+                <span>Already register? <a href="#" id="login-modal-start" name="login">Log in now</a></span>
             </div>
 
         </div>
@@ -119,12 +119,12 @@
                 <h2>Login</h2>
                 <form class="form-horizontal" id="login-form">
                     <div class="form-row">
-                        <input type="text" class="form-control" placeholder="Email Address" tabindex="2" id="user-email">
+                        <input type="text" class="form-control" placeholder="Email Address" tabindex="2" id="login-user-email">
                     </div>
                     <div class="form-row last-form">
-                        <input type="password" class="form-control" placeholder="Password" tabindex="2" id="user-password">
+                        <input type="password" class="form-control" placeholder="Password" tabindex="2" id="login-user-password">
                         <span class="view-password">
-                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" id="icon">
+                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="login">
                         </span>
                     </div>
                         <span class="forget-password"><a href="#">Forgot login or password?</a></span>
@@ -134,7 +134,7 @@
                 </form>
             </div>
             <div class="modal-bottom">
-                <span>Not with us? <a href="#">Sign Up</a> now</span>
+                <span>Not with us? <a href="#" id="signup-modal-start" name="signup">Sign Up</a> now</span>
             </div>
         </div>
     </div>
