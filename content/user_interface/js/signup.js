@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var baseUrl = 'http://ukrainianrealbrides.int/';
+
     /****************************Смена модальных окон******************************/
         function changeModal(window){
             $('.close').click();
@@ -27,8 +28,6 @@ $(document).ready(function(){
         function removeClass (id){
             $(id).removeClass('error');
             $(id + '-error-text').text('');
-            /*$(id + '-feedback').removeClass('has-success');
-            $(id + '-error').removeClass('glyphicon-ok');*/
         }
 
     //Добавление класса success
@@ -37,13 +36,21 @@ $(document).ready(function(){
         }
 
     //Обычное отображение пароля
-        $('#icon').click(function(){
-            var type = $('#user-password').attr('type');
-                if (type == 'password'){
-                    $('#user-password').attr('type', 'text');
-                }else{
-                    $('#user-password').attr('type', 'password');
+        function viewPassword(window){
+            var type = $('#' + window + 'user-password').attr('type');
+            if (type == 'password'){
+                $('#' + window + 'user-password').attr('type', 'text');
+            }else{
+                $('#' + window + 'user-password').attr('type', 'password');
+            }
+        }
+
+        $('.icon').click(function(){
+            var window = $(this).attr('name');
+                if (window != ''){
+                    window = window + '-';
                 }
+            viewPassword(window);
         });
 
   /************************Проверка правил валидации*******************************/
