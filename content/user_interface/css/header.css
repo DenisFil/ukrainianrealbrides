@@ -277,16 +277,58 @@ h4 {
  	cursor: pointer;
  }
 .nav {
-	text-align: center;
 	width:1173px; 
-}
-.nav ul {
 	overflow: hidden;
 }
-.nav ul li a {
+.logo-place {
+	width: 22.22%;
+	float: left;
+	display: block;
+	padding: 10px;
+}
+.nav .nav-left {
+	overflow: hidden;
+	float: left;
+	width: 38.8%;
+	text-align: right;
+}
+.nav .nav-left li {
+	display: inline-block;
+    padding: 0 0 0 6%;
+    margin: 0 0 0 7%;
+	background: url("../img/header/bg-nav.png") no-repeat 0 11px;
+}
+.nav .nav-left li:first-child {
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+.nav .nav-left li:last-child {
+    padding: 0 0 0 6%;
+    margin: 0 4% 0 7%;
+}
+.nav .nav-right {
+	overflow: hidden;
+	float: right;
+	width: 38.8%;
+	text-align: left;
+}
+.nav .nav-right li {
+	display: inline-block;
+	padding: 0 0 0 11.7%;
+	background: url("../img/header/bg-nav.png") no-repeat 24px 11px;
+}
+.nav .nav-right li:first-child {
+	background: none;
+	padding: 0 0 0 4%; 
+}
+.nav ul li a{
+	color: #000;
 	font-family: 'LatoBold';
 	font-size: 20px;
 	line-height: 22px;
+	display: inline-block;
+	text-decoration: none;
 }
 .nav ul li a:hover {
 	color:#e83c32;
@@ -295,20 +337,7 @@ h4 {
 	-ms-transition:all 0.4s;
 	-o-transition:all 0.4s;
 }
-.nav ul li {
-	float: left;
-	padding: 0 0 0 4.86%;
-	background: url("../img/header/bg-nav.png") no-repeat 21% 64%;
-}
-.nav ul li:first-child {
-	float: left;
-	padding: 0 0 0 3.5%; 
-	background: none;
-}
-.nav ul li:nth-child(4) {
-	background:none;
-	margin: 0 0 0 21%;
-}
+
 /*Sign-up, login modal's*/
 .modal-content {
 	border-radius: 9px;
@@ -348,7 +377,6 @@ h4 {
 }
 .modal-bottom span a {
 	color: #e83c32;
-	text-decoration: underline;
 }
 .modal-body>.close{
 	opacity: 1.0;
