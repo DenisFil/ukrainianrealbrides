@@ -132,6 +132,7 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                     $user_data['lastname'] = $user_data['last_name'];
                     unset($user_data['last_name']);
                     $user_data['register_date'] = time();
+                    $user_data['social_network'] = 'facebook';
 
                     $query = $this->signup_model->insert_new_user_from_social_network($user_data);
                     /*if ($query === TRUE)
@@ -161,6 +162,7 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                     $user_data['name'] = $name[0];
                     $user_data['lastname'] = $name[1];
                     $user_data['register_date'] = time();
+                    $user_data['social_network'] = 'google';
                     $query['result'] = $this->signup_model->insert_new_user_from_social_network($user_data);
                     echo json_encode($query);
                 }

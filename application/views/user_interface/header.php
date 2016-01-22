@@ -39,8 +39,8 @@
 						</span>
             </div>
             <div class="header-right">
-                <a href="#login-modal" role="button" data-toggle="modal"><button type="button" class="login">Login</button></a>
-                <a href="#signUp-modal" role="button" data-toggle="modal"><button type="button" class="sign-up">Sign up</button></a>
+                <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Login</button></a>
+                <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
             </div>
         </div>
         <nav class="nav">
@@ -102,7 +102,7 @@
                 </form>
             </div>
             <div class="modal-bottom">
-                <span>Already register? <a href="#login-modal" data-toggle="modal">Login now</a></span>
+                <span>Already register? <a href="#" id="login-modal-start" name="login">Log in now</a></span>
             </div>
 
         </div>
@@ -134,7 +134,7 @@
                 </form>
             </div>
             <div class="modal-bottom">
-                <span>Not with us? <a href="#">Sign Up</a> now</span>
+                <span>Not with us? <a href="#" id="signup-modal-start" name="signup">Sign Up</a> now</span>
             </div>
         </div>
     </div>

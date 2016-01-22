@@ -1,5 +1,20 @@
 $(document).ready(function(){
     var baseUrl = 'http://ukrainianrealbrides.int/';
+    /****************************Смена модальных окон******************************/
+        function changeModal(window){
+            $('.close').click();
+            setTimeout(function(){$('#' + window + '-button').click();}, 500);
+        }
+
+        $('#login-modal-start').click(function(){
+            var window = $(this).attr('name');
+            changeModal(window);
+        });
+
+        $('#signup-modal-start').click(function(){
+            var window = $(this).attr('name');
+            changeModal(window);
+        });
 
   /************************Добавление удаление классов****************************/
     //Добавление ксласснов и текста error`ов
@@ -226,5 +241,4 @@ $(document).ready(function(){
             console.log(error);
         }
     });
-
 });
