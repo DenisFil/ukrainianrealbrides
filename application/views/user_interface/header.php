@@ -44,7 +44,7 @@
             </div>
         </div>
         <nav class="nav">
-            <ul>
+            <ul class="nav-left">
                 <?php if ($gender == ''){ ?>
                     <li><a href="#">Profiles</a></li>
                 <?php }elseif ($gender == 1){ ?>
@@ -54,6 +54,9 @@
                 <?php } ?>
                 <li><a href="#">Search</a></li>
                 <li><a href="#services">Services</a></li>
+            </ul>
+            <div class="logo-place"></div>
+            <ul class="nav-right">
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Support</a></li>
                 <li><a href="#">About us</a></li>
@@ -126,8 +129,8 @@
                     </div>
                         <span class="forget-password"><a href="#">Forgot login or password?</a></span>
                     <button type="button" class="btn btn-danger" id="login">Log In</button>
-                    <a href="#"><button class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i>  | Sign in with Facebook</button></a>
-                    <a href="#"><button class="btn btn-social btn-xs btn-google-plus"><i class="fa fa-google-plus"></i>  | Sign in with Google+</button></a>
+                    <a href="#"><button class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i>  | Log in with Facebook</button></a>
+                    <a href="#"><button class="btn btn-social btn-xs btn-google-plus"><i class="fa fa-google-plus"></i>  | Log in with Google+</button></a>
                 </form>
             </div>
             <div class="modal-bottom">
