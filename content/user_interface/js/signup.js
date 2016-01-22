@@ -165,4 +165,66 @@ $(document).ready(function(){
             userData();
         }
     }
+
+  /******************************Google авторизация****************************/
+    $('#google-signup').click(function(){
+        initGapi();
+
+        function initGapi()
+        {
+            gapi.load('auth2', function()
+            {
+                GoogleAuth = gapi.auth2.init({
+                    client_id: '146371657817-gtln93fv8s6l781t0sh564e3av0fprug.apps.googleusercontent.com',
+                    scope: 'https://www.googleapis.com/auth/userinfo.email'
+                });
+
+                GoogleAuth.isSignedIn.listen(function(isSignedIn)
+                {
+                    if(isSignedIn)
+                    {
+                        onSignIn();
+                    }
+                    else
+                    {
+                        console.log('listener say false');
+                    }
+                });
+
+                GoogleAuth.signIn().then(onFailure);
+            });
+        }
+
+        function onSignIn()
+        {
+            var googleUser = GoogleAuth.currentUser.get();
+
+            var profile = googleUser.getBasicProfile();
+            var userData = {
+                name: profile.getName(),
+                email: profile.getEmail()
+            };
+            console.log(userData);
+            $.ajax({
+                type: 'post',
+                data: userData,
+                url: baseUrl + 'user_interface/signup/google_signup',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                    if (data.result === true){
+                        location.reload();
+                    }else{
+                        alert('User with this email already register');
+                    }
+                }
+            });
+        }
+
+        function onFailure(error)
+        {
+            console.log(error);
+        }
+    });
+
 });

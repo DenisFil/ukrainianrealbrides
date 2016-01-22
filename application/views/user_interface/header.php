@@ -94,7 +94,7 @@
                     <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
                     <a href="<?php echo $facebook_login_url; ?>"><button type="button" class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i> | Sign up with Facebook</button></a>
 
-                    <a href="#"><button class="btn btn-social btn-xs btn-google-plus"><i class="fa fa-google-plus"></i> | Sign up with Google+</button></a>
+                    <button type="button" class="btn btn-social btn-xs btn-google-plus" id="google-signup"><i class="fa fa-google-plus"></i> | Sign up with Google+</button>
 
                     <span class="terms-conditions">
                         <a href="#">terms & conditions</a> and <a href="#">privacy policy</a>.

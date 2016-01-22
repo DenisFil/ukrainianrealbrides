@@ -10,7 +10,6 @@ require_once 'C:/OpenServer/domains/ukrainianrealbrides/application/third_party/
         }
 
 //  Валидация данных формы и запись нового пользователя
-
         public function index()
         {
             $user_data = $this->input->post();
@@ -107,28 +106,64 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
 
             $user_data = $response->getDecodedBody();
             unset($user_data['id']);
-                if ($user_data['gender'] == 'male')
+
+// Проверка уникальности email`a
+            $email_query = $this->signup_model->uniqueness_email($user_data['email']);
+                if ($email_query === FALSE)
                 {
-                    $user_data['gender'] = 1;
-                }
-                elseif ($user_data['gender'] == 'female')
-                {
-                    $user_data['gender'] = 2;
+                    echo 'User with this email already register';
                 }
                 else
                 {
-                    $user_data['gender'] = 0;
+                    if ($user_data['gender'] == 'male')
+                    {
+                        $user_data['gender'] = 1;
+                    }
+                    elseif ($user_data['gender'] == 'female')
+                    {
+                        $user_data['gender'] = 2;
+                    }
+                    else
+                    {
+                        $user_data['gender'] = 0;
+                    }
+                    $user_data['name'] = $user_data['first_name'];
+                    unset($user_data['first_name']);
+                    $user_data['lastname'] = $user_data['last_name'];
+                    unset($user_data['last_name']);
+                    $user_data['register_date'] = time();
+
+                    $query = $this->signup_model->insert_new_user_from_social_network($user_data);
+                    /*if ($query === TRUE)
+                    {
+
+                    }*/
                 }
-            $user_data['name'] = $user_data['first_name'];
-            unset($user_data['first_name']);
-            $user_data['lastname'] = $user_data['last_name'];
-            unset($user_data['last_name']);
-            $user_data['register_date'] = time();
 
-            $query = $this->signup_model->insert_new_user_from_facebook($user_data);
-                /*if ($query === TRUE)
+        }
+
+//  Google авторизация
+        public function google_signup()
+        {
+            $user_data = $this->input->post();
+//  Проверка уникальности пользователя
+            $email_query = $this->signup_model->uniqueness_email($user_data['email']);
+                if ($email_query === FALSE)
                 {
+                    $query['result'] = FALSE;
+                    echo json_encode($query);
+                }
+                else
+                {
+//  Запись нового пользователя
+                    $name = explode(' ', $user_data['name']);
+                    unset($user_data['name']);
+                    $user_data['name'] = $name[0];
+                    $user_data['lastname'] = $name[1];
+                    $user_data['register_date'] = time();
+                    $query['result'] = $this->signup_model->insert_new_user_from_social_network($user_data);
+                    echo json_encode($query);
+                }
 
-                }*/
         }
     }
