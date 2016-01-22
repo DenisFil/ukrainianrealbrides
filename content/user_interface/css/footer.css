@@ -28,14 +28,14 @@
 	font-family: 'LatoBold';
 	font-size: 20px;
 	line-height: 22px;
-}
-.footer-left ul li a:hover{
-	color: #e83c32;
 	transition:all 0.4s;
 	-webkit-transition:all 0.4s;
 	-moz-transition:all 0.4s;
 	-ms-transition:all 0.4s;
 	-o-transition:all 0.4s;
+}
+.footer-left ul li a:hover{
+	color: #e83c32;
 }
 .footer-bottom {
 	width: 1170px;
@@ -49,14 +49,25 @@
 	line-height: 17px;
 	padding: 10px 0 0 4px;
 	float: left;
+	overflow: hidden;
 }
-.footer-copyrights span {
-	padding: 0 50px 0 0;
+.footer-copyrights ul{
+	float: left;
+
 }
-.footer-copyrights a {
+.footer-copyrights ul li{
+	float: left;
+	margin: 0 5px 0 0;
+}
+.footer-copyrights ul li a {
 	color:#0068b4;
 	text-decoration: underline;
 }
+.footer-copyrights span {
+	padding: 0 50px 0 0;
+	float: left;
+}
+
 .footer-bottom .tel {
     font-family: 'LatoWebMedium';
     font-size: 29px;
@@ -79,35 +90,59 @@
 	float: left;
 	margin: 0 23px 0 0;
 	text-align: center;
-	width: 62px;
-	height: 62px;
-	border-radius: 100px;
-	border: 2px solid #e83c32;
-	transition: all 0.4s;
-	-webkit-transition:all 0.4s;
-	-moz-transition:all 0.4s;
-	-ms-transition:all 0.4s;
-	-o-transition:all 0.4s;
 }
-.footer-right ul li:hover {
-	transform: scale(0.9);
-	-webkit-transform: scale(0.9);
-	-moz-transform: scale(0.9);
-	-ms-transform: scale(0.9);
-	-o-transform: scale(0.9);
+.footer-right ul li a span {
+	width: 26px;
+	height: 31px;
+	display: inline-block;
+	background: url("../img/footer/social-sprites.png") no-repeat;
+	margin-top: 13px;
+}
+.footer-right ul .insta-sprite a span {
+	background-position: -26px 0;
+	width: 28px;
+}
+.footer-right ul .forsquare-sprite a span {
+	background-position: -54px 0;
+}
+.footer-right ul .youtube-sprite a:hover,
+.footer-right ul .insta-sprite a:hover,
+.footer-right ul .forsquare-sprite a:hover {
+	background-color: #e83c32;
+}
+.footer-right ul .youtube-sprite a:hover span,
+.footer-right ul .insta-sprite a:hover span,
+.footer-right ul .forsquare-sprite a:hover span {
+	background: url("../img/footer/social-sprites-hover.png") no-repeat;
+	transition: all 0.6s;
+	-webkit-transition:all 0.6s;
+	-moz-transition:all 0.6s;
+	-ms-transition:all 0.6s;
+	-o-transition:all 0.6s;
+}
+.footer-right ul .youtube-sprite a:hover span {
+	background-position: 0 0;
+}
+.footer-right ul .insta-sprite a:hover span {
+	background-position: -26px 0;
+}
+.footer-right ul .forsquare-sprite a:hover span {
+	background-position: -54px 0;
 }
 .footer-right ul li:last-child {
 	margin: 0;
 }
 .footer-right ul li a{
+	width: 62px;
+	height: 62px;
+	border-radius: 100px;
+	border: 2px solid #e83c32;
 	display: block;
-	height: 100%;
-	width: 100%;
-	padding: 13px 0 0 0;
-	text-align: center;
-}
-.footer-right ul li a img{
-	margin: 0 auto;
+	transition: all 0.6s;
+	-webkit-transition:all 0.6s;
+	-moz-transition:all 0.6s;
+	-ms-transition:all 0.6s;
+	-o-transition:all 0.6s;
 }
 .page-bottom {
 	width: 100%;

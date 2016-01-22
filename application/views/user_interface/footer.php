@@ -27,6 +27,7 @@
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Security</a></li>
+                    <li><a href="#">Partners</a></li>
                 </ul>
             </div>
 
@@ -34,15 +35,19 @@
         <div class="footer-right">
             <a class="footer-logo" href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/footer-logo.png" alt="Ukrainian real brides" width="232px" height="131px" /></a>
             <ul>
-                <li><a href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/sprite-youtube.png" alt="YouTube" width="26px" height="31px"></a></li>
-                <li><a href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/sprite-instagram.png" alt="Instagram" width="26px" height="31px"></a></li>
-                <li><a href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/sprite-forsquare.png" alt="Foursquare" width="26px" height="31px"></a></li>
+                <li class="youtube-sprite"><a href="#"><span></span></a></li>
+                <li class="insta-sprite"><a href="#"><span></span></a></li>
+                <li class="forsquare-sprite"><a href="#"><span></span></a></li>
             </ul>
         </div>
         <div class="footer-bottom">
             <div class="footer-copyrights">
                 <span>UkrainianRealBrides 2001-2015 &copy; All rights reserved.</span>
-                <a href="">Contact Us Privacy Policy Termas And Conditions</a>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Termas And Conditions</a></li>
+                </ul>
             </div>
             <span class="tel">+1-541-754-3010</span>
         </div>

@@ -28,7 +28,7 @@
 <!-- Header Starts Here -->
 <div class="header-holder">
     <header id="header">
-        <a class="logo" href="">Ukrainian real brides</a>
+        <a class="logo" href="<?php echo base_url(); ?>">Ukrainian real brides</a>
         <div class="header-top">
             <div class="header-left">
                 <span>Language:</span>

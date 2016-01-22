@@ -109,8 +109,10 @@ input, select, textarea {
 a {
 	color: #000;
 	text-decoration: none;
+	outline: none;
 }
 a:hover {text-decoration: none;}
+a:focus {outline: none;}
 h1 {
 	font-family: 'BanderaProMedium';
 	font-size: 35px;
@@ -329,13 +331,13 @@ h4 {
 	line-height: 22px;
 	display: inline-block;
 	text-decoration: none;
-}
-.nav ul li a:hover {
-	color:#e83c32;
 	-webkit-transition:all 0.4s;
 	-moz-transition:all 0.4s;
 	-ms-transition:all 0.4s;
 	-o-transition:all 0.4s;
+}
+.nav ul li a:hover {
+	color:#e83c32;
 }
 
 /*Sign-up, login modal's*/
