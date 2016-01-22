@@ -108,19 +108,19 @@
 	background: #e83c32;
 	border: none;
 	outline: none;
-	border-radius: 10px;
+	border: 1px solid #e83c32;
+	border-radius: 5px;
 	font-weight: normal;
 	text-align: center;
-	border: 1px solid #e83c32;
-}
-.list li .girls-online:hover {
-	color: #e83c32;
-	background: rgba(0,0,0,0);
 	transition: all 0.6s;
 	-webkit-transition: all 0.6s;
 	-moz-transition: all 0.6s;
 	-ms-transition: all 0.6s;
 	-o-transition: all 0.6s;
+}
+.list li .girls-online:hover {
+	color: #e83c32;
+	background: rgba(0,0,0,0);
 }
 .list li .gallery-box span:before {
 	content: "";
@@ -131,6 +131,7 @@
 	background: url("../img/main/bg-gallery-box.png") no-repeat;
 	width: 267px;
 	height: 55px;
+	opacity: 1;
 }
 .list li .gallery-box span {
 	font-family: 'LatoLight';
@@ -156,6 +157,15 @@
 	float: left;
 	width: 184px;
 	margin: 0 12px 0 0;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.detail-box:hover {
+    border: 1px solid #e83c32; 
+    box-shadow: 0 0 3px #e83c32;
 }
 .detail-box.last {
 	margin: 0;
@@ -177,19 +187,20 @@
 	line-height: 20px;
 	outline: none;
 	background: rgba(0,0,0,0);
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
 }
 .detail-button:hover {
     color: #e86f66;
     text-decoration:none;
     border: 2px solid #e83c32; 
     color: #fff;
-    transition: all 0.4s;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -ms-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    background: #e83c32; 
-}	
+    background-color: #e83c32; 
+}
+
 .h3-third {
     padding: 3px 0 0 0;
 }
@@ -229,14 +240,15 @@
 	background: #fff url("../img/main/view-profile.png") no-repeat 15px 47%;
 	box-shadow: 3px 3px 10px rgba(0,0,0,0.3), -3px 3px 10px rgba(0,0,0,0.3), 3px -3px 10px rgba(0,0,0,0.3), -3px -3px 10px rgba(0,0,0,0.3);
 	opacity: 0.5;
-}
-.frame-girl a span:hover {
-	opacity: 1;
+	color: #000;
 	transition: all 1s;
 	-webkit-transition: all 1s;
 	-moz-transition: all 1s;
 	-ms-transition: all 1s;
 	-o-transition: all 1s;
+}
+.frame-girl a span:hover {
+	opacity: 1;
 }
 .frame-girl.first-image:before,
 .frame-girl.last-image:after {
@@ -321,29 +333,31 @@
 .title-box.last {
 	margin: 0;
 }
-.content-bottom-button {
+.content-bottom-button,
+.content-bottom-button:focus {
     border-radius: 10px;
     color: #e86f66;
     border: 2px solid #e83c32;
     font-family: 'LatoRegular';
 	font-size: 30px;
 	line-height: 32px;
-	padding: 19px 0 26px 0;
+	padding: 19px 0 21px 0;
 	width: 290px;
 	margin: 64px auto 0;
 	display: block;
-}
-.content-bottom-button:hover {
-    color: #e86f66;
-    text-decoration:none;
-    border: 2px solid #e83c32; 
-    color: #fff;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -ms-transition: all 0.4s;
     -o-transition: all 0.4s;
-    background: #e83c32; 
+	outline: none;
+	text-decoration: none;
+}
+.content-bottom-button:hover {
+    background-color: #e83c32; 
+    text-decoration:none;
+    border: 2px solid #e83c32; 
+    color: #fff;
 }
 .watch-us-holder {
 	width: 100%;
@@ -413,7 +427,8 @@
 .gallery-box-second .img-vector-three {
 	background: url("../img/main/gallery-sprites.png") no-repeat -60px 0;
 }
-.gallery-second-button {
+.gallery-second-button,
+.gallery-second-button:focus {
 	font-size: 19px;
 	line-height: 21px;
 	border: 1px solid #fff;
@@ -423,15 +438,17 @@
 	width: 100%;
 	color: #fff;
 	text-align: center;
-}
-.gallery-second-button:hover {
-	background: #fff;
-	color: #000;
 	transition: all 0.4s;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -ms-transition: all 0.4s;
     -o-transition: all 0.4s;
+    text-decoration: none;
+    outline: none;
+}
+.gallery-second-button:hover {
+	background: #fff;
+	color: #000;
 }
 .subscribe-holder {
 	width: 100%;
@@ -481,15 +498,15 @@
     cursor: pointer;
 	border: 2px solid #e83c32;
 	float: left;
-}
-.subscribe-button:hover {
-	background: #fff;
-	color: #e83c32;
 	transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
+}
+.subscribe-button:hover {
+	background: #fff;
+	color: #e83c32;
 }
 /*Services modal's*/
 .services-modal .modal-dialog {
