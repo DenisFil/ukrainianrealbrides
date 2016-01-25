@@ -200,16 +200,16 @@ $(document).ready(function(){
         }
 
   //Отправка формы по клику
-    $(document).on('click', '#signUp', function(){
+        $(document).on('click', '#signUp', function(){
         userSignup();
     });
 
-    $('#login').click(function(){
+        $('#login').click(function(){
         userLogin();
     });
 
   //Отправка формы по нажатию Enter`a
-    $(document).on('keydown', function(e){
+        $(document).on('keydown', function(e){
         if (e.keyCode === 13) {
             var display = $('#signUp-modal').css('display');
             console.log(display);
@@ -220,9 +220,9 @@ $(document).ready(function(){
             }
         }
     });
-    
+
   /******************************Google авторизация****************************/
-    $('#google-signup').click(function(){
+        $('#google-signup').click(function(){
         initGapi();
 
         function initGapi()

@@ -54,7 +54,7 @@
                 <?php }elseif ($gender == 1){ ?>
                     <li><a href="#">Women profiles</a></li>
                 <?php }elseif ($gender == 2){ ?>
-                    <li><a href="#">Man profiles</a></li>
+                    <li><a href="#">Men profiles</a></li>
                 <?php } ?>
                 <li><a href="#">Search</a></li>
                 <li><a href="#services">Services</a></li>
