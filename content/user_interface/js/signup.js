@@ -209,18 +209,18 @@ $(document).ready(function(){
     });
 
   //Отправка формы по нажатию Enter`a
-    document.onkeyup = function (e) {
-        e = e || window.event;
+    $(document).on('keydown', function(e){
         if (e.keyCode === 13) {
             var display = $('#signUp-modal').css('display');
+            console.log(display);
             if (display == 'block'){
                 userSignup();
             }else{
                 userLogin();
             }
         }
-    };
-
+    });
+    
   /******************************Google авторизация****************************/
     $('#google-signup').click(function(){
         initGapi();
