@@ -7,6 +7,7 @@ require_once 'C:/OpenServer/domains/ukrainianrealbrides/application/third_party/
             parent::__construct();
 
             $this->load->model('user_interface/signup_model');
+            $this->load->model('user_interface/login_model');
         }
 
 //  Валидация данных формы и запись нового пользователя
@@ -137,6 +138,14 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                     $query = $this->signup_model->insert_new_user_from_social_network($user_data);
                     if ($query === TRUE)
                     {
+                        $query = $this->login_model->get_user_data($user_data['email']);
+                        $session_data = array(
+                            'gender' => $query[0]->gender,
+                            'name' => $query[0]->name,
+                            'lastname' => $query[0]->lastname,
+                            'id' => $query[0]->id
+                        );
+                        $this->session->set_userdata($session_data);
                         header('Location: ' . base_url() . 'user_interface/personal_area');
                     }
                 }
@@ -164,6 +173,15 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                     $user_data['register_date'] = time();
                     $user_data['social_network'] = 'google';
                     $query['result'] = $this->signup_model->insert_new_user_from_social_network($user_data);
+                    $query_data = $this->login_model->get_user_data($user_data['email']);
+                    $session_data = array(
+                        'gender' => $query_data[0]->gender,
+                        'name' => $query_data[0]->name,
+                        'lastname' => $query_data[0]->lastname,
+                        'id' => $query_data[0]->id
+                    );
+                    $this->session->set_userdata($session_data);
+
                     echo json_encode($query);
                 }
 

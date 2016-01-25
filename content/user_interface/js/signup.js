@@ -150,8 +150,8 @@ $(document).ready(function(){
         });
 
   /*****************************Отправка формы*********************************/
-  //Обработчик фомы
-        function userData(){
+  //Обработчик фомы регистрации
+        function userSignup(){
           //Получение введенных данных
           var data = {
               name: $('#user-name').val(),
@@ -175,18 +175,51 @@ $(document).ready(function(){
           });
         }
 
+  //Обработчик формы авторизации
+        function userLogin(){
+            //Получение данных
+            var data = {
+                email: $('#login-user-email').val(),
+                password: $('#login-user-password').val()
+            };
+
+            //Проверка введенных данных на существование
+            $.ajax({
+                type: 'post',
+                data: data,
+                url: baseUrl + 'user_interface/login',
+                dataType: 'json',
+                success: function(data){
+                    if (data.result == 1){
+                        location.replace(baseUrl + 'user_interface/personal_area');
+                    }else{
+                        alert(data.error);
+                    }
+                }
+            });
+        }
+
   //Отправка формы по клику
     $(document).on('click', '#signUp', function(){
-        userData();
+        userSignup();
+    });
+
+    $('#login').click(function(){
+        userLogin();
     });
 
   //Отправка формы по нажатию Enter`a
     document.onkeyup = function (e) {
         e = e || window.event;
         if (e.keyCode === 13) {
-            userData();
+            var display = $('#signUp-modal').css('display');
+            if (display == 'block'){
+                userSignup();
+            }else{
+                userLogin();
+            }
         }
-    }
+    };
 
   /******************************Google авторизация****************************/
     $('#google-signup').click(function(){
