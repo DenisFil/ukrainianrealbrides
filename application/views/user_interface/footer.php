@@ -49,17 +49,18 @@
                     <li><a href="#">Termas And Conditions</a></li>
                 </ul>
             </div>
-            <span class="tel">+1-541-754-3010</span>
+            <span class="tel">+1-917-722-5338</span>
         </div>
     </div>
 </footer>
 <div class="page-bottom"></div>
 <!-- Footer Ends Here -->
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/responsiveslides.js" type="text/javascript" ></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.form.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/signup.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>content/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/responsiveslides.js" type="text/javascript" ></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.form.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/signup.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jcarousel.responsive.js"></script>
     </body>
 </html>
