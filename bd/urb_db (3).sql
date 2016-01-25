@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 21 2016 г., 18:22
+-- Время создания: Янв 25 2016 г., 18:34
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.6.3
 
@@ -34,13 +34,6 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
   KEY `ci_sessions_timestamp` (`timestamp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `ci_sessions`
---
-
-INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
-('57e99f51c32bd902691920df4e64fe50391f7c2c', '127.0.0.1', 1453389740, '__ci_last_regenerate|i:1453389740;FBRLH_state|s:32:"a030bb9c787f9fdf1568153ee17a70c8";');
-
 -- --------------------------------------------------------
 
 --
@@ -69,6 +62,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_status` int(2) NOT NULL DEFAULT '0' COMMENT '0 - не активирован, 1 - активирован',
   `register_date` int(15) NOT NULL,
   `gender` int(2) NOT NULL DEFAULT '0' COMMENT '0 - не определен, 1 - мужчина, 2 - женщина',
+  `social_network` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

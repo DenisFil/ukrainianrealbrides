@@ -12,11 +12,11 @@ require_once 'C:/OpenServer/domains/ukrainianrealbrides/application/third_party/
 
             $helper = $fb->getRedirectLoginHelper();
             $permissions = ['public_profile', 'email'];
-            $loginUrl = $helper->getLoginUrl(base_url() . 'user_interface/signup/fbsignup', $permissions);
+            $facebook_login_url = $helper->getLoginUrl(base_url() . 'user_interface/signup/fbsignup', $permissions);
 
             $data['css'] = 'main';
             $data['gender'] = '';
-            $data['loginUrl'] = $loginUrl;
+            $data['facebook_login_url'] = $facebook_login_url;
                 if ($this->session->userdata('gender'))
                 {
                     $data['gender'] = $this->session->userdata('gender');

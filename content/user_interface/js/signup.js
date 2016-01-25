@@ -1,6 +1,22 @@
 $(document).ready(function(){
     var baseUrl = 'http://ukrainianrealbrides.int/';
 
+    /****************************Смена модальных окон******************************/
+        function changeModal(window){
+            $('.close').click();
+            setTimeout(function(){$('#' + window + '-button').click();}, 500);
+        }
+
+        $('#login-modal-start').click(function(){
+            var window = $(this).attr('name');
+            changeModal(window);
+        });
+
+        $('#signup-modal-start').click(function(){
+            var window = $(this).attr('name');
+            changeModal(window);
+        });
+
   /************************Добавление удаление классов****************************/
     //Добавление ксласснов и текста error`ов
         function addErrorClass (id, error){
@@ -12,8 +28,6 @@ $(document).ready(function(){
         function removeClass (id){
             $(id).removeClass('error');
             $(id + '-error-text').text('');
-            /*$(id + '-feedback').removeClass('has-success');
-            $(id + '-error').removeClass('glyphicon-ok');*/
         }
 
     //Добавление класса success
@@ -22,13 +36,21 @@ $(document).ready(function(){
         }
 
     //Обычное отображение пароля
-        $('#icon').click(function(){
-            var type = $('#user-password').attr('type');
-                if (type == 'password'){
-                    $('#user-password').attr('type', 'text');
-                }else{
-                    $('#user-password').attr('type', 'password');
+        function viewPassword(window){
+            var type = $('#' + window + 'user-password').attr('type');
+            if (type == 'password'){
+                $('#' + window + 'user-password').attr('type', 'text');
+            }else{
+                $('#' + window + 'user-password').attr('type', 'password');
+            }
+        }
+
+        $('.icon').click(function(){
+            var window = $(this).attr('name');
+                if (window != ''){
+                    window = window + '-';
                 }
+            viewPassword(window);
         });
 
   /************************Проверка правил валидации*******************************/
@@ -128,8 +150,8 @@ $(document).ready(function(){
         });
 
   /*****************************Отправка формы*********************************/
-  //Обработчик фомы
-        function userData(){
+  //Обработчик фомы регистрации
+        function userSignup(){
           //Получение введенных данных
           var data = {
               name: $('#user-name').val(),
@@ -153,16 +175,109 @@ $(document).ready(function(){
           });
         }
 
+  //Обработчик формы авторизации
+        function userLogin(){
+            //Получение данных
+            var data = {
+                email: $('#login-user-email').val(),
+                password: $('#login-user-password').val()
+            };
+
+            //Проверка введенных данных на существование
+            $.ajax({
+                type: 'post',
+                data: data,
+                url: baseUrl + 'user_interface/login',
+                dataType: 'json',
+                success: function(data){
+                    if (data.result == 1){
+                        location.replace(baseUrl + 'user_interface/personal_area');
+                    }else{
+                        alert(data.error);
+                    }
+                }
+            });
+        }
+
   //Отправка формы по клику
-    $(document).on('click', '#signUp', function(){
-        userData();
+        $(document).on('click', '#signUp', function(){
+        userSignup();
+    });
+
+        $('#login').click(function(){
+        userLogin();
     });
 
   //Отправка формы по нажатию Enter`a
-    document.onkeyup = function (e) {
-        e = e || window.event;
+        $(document).on('keydown', function(e){
         if (e.keyCode === 13) {
-            userData();
+            var display = $('#signUp-modal').css('display');
+            console.log(display);
+            if (display == 'block'){
+                userSignup();
+            }else{
+                userLogin();
+            }
         }
-    }
+    });
+
+  /******************************Google авторизация****************************/
+        $('#google-signup').click(function(){
+        initGapi();
+
+        function initGapi()
+        {
+            gapi.load('auth2', function()
+            {
+                GoogleAuth = gapi.auth2.init({
+                    client_id: '146371657817-gtln93fv8s6l781t0sh564e3av0fprug.apps.googleusercontent.com',
+                    scope: 'https://www.googleapis.com/auth/userinfo.email'
+                });
+
+                GoogleAuth.isSignedIn.listen(function(isSignedIn)
+                {
+                    if(isSignedIn)
+                    {
+                        onSignIn();
+                    }
+                    else
+                    {
+                        console.log('listener say false');
+                    }
+                });
+
+                GoogleAuth.signIn().then(onFailure);
+            });
+        }
+
+        function onSignIn()
+        {
+            var googleUser = GoogleAuth.currentUser.get();
+
+            var profile = googleUser.getBasicProfile();
+            var userData = {
+                name: profile.getName(),
+                email: profile.getEmail()
+            };
+            console.log(userData);
+            $.ajax({
+                type: 'post',
+                data: userData,
+                url: baseUrl + 'user_interface/signup/google_signup',
+                dataType: 'json',
+                success: function(data){
+                    if (data.result === true){
+                        location.replace(baseUrl + 'user_interface/personal_area');
+                    }else{
+                        alert('User with this email already register');
+                    }
+                }
+            });
+        }
+
+        function onFailure(error)
+        {
+            console.log(error);
+        }
+    });
 });
