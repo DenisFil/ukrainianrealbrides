@@ -123,7 +123,7 @@
                 <h2>Login</h2>
                 <form class="form-horizontal" id="login-form">
                     <div class="form-row">
-                        <input type="text" class="form-control" placeholder="Email Address" tabindex="2" id="login-user-email">
+                        <input type="text" class="form-control" placeholder="Email Address" tabindex="2" id="login-user-email" autofocus>
                     </div>
                     <div class="form-row last-form">
                         <input type="password" class="form-control" placeholder="Password" tabindex="2" id="login-user-password">
