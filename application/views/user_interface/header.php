@@ -39,8 +39,12 @@
 						</span>
             </div>
             <div class="header-right">
-                <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Login</button></a>
-                <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
+                <?php if($this->session->userdata('id')): ?>
+                    <span>Hello, <?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></span><a href="<?php echo base_url(); ?>user_interface/logout">Exit</a>
+                <?php else: ?>
+                    <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Log in</button></a>
+                    <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
+                <?php endif; ?>
             </div>
         </div>
         <nav class="nav">

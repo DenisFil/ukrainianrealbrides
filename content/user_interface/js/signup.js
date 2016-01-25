@@ -233,9 +233,8 @@ $(document).ready(function(){
                 url: baseUrl + 'user_interface/signup/google_signup',
                 dataType: 'json',
                 success: function(data){
-                    console.log(data);
                     if (data.result === true){
-                        location.reload();
+                        location.replace(baseUrl + 'user_interface/personal_area');
                     }else{
                         alert('User with this email already register');
                     }

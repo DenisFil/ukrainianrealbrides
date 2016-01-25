@@ -17,7 +17,7 @@ console.log(data);
             dataType: 'json',
             success: function(data){
                 if (data.result == 1){
-                    location.reload();
+                    location.replace(baseUrl + 'user_interface/personal_area');
                 }else{
                     alert(data.error);
                 }

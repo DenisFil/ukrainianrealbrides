@@ -135,10 +135,10 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                     $user_data['social_network'] = 'facebook';
 
                     $query = $this->signup_model->insert_new_user_from_social_network($user_data);
-                    /*if ($query === TRUE)
+                    if ($query === TRUE)
                     {
-
-                    }*/
+                        header('Location: ' . base_url() . 'user_interface/personal_area');
+                    }
                 }
 
         }
