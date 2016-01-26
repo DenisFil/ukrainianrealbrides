@@ -3,6 +3,9 @@
     {
         public function index()
         {
+            $this->load->model('user_interface/personal_area_model');
+
+            $data['new_messages'] = $this->personal_area_model->get_new_messages($this->session->userdata('id'));
             $data['css'] = 'personal_area';
             $data['gender'] = '';
                 if ($this->session->userdata('gender'))

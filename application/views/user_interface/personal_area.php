@@ -11,7 +11,7 @@
 					<img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/messaging-small.png" width="40" height="50" alt="Messaging">
 					<div class="profile-box-right">
 						<h4>Messaging</h4>
-						<a class="inbox" href="">Inbox: 3</a>
+						<a class="inbox" href="">Inbox: <?php echo $new_messages; ?></a>
 					</div>
 				</li>
 				<li>
