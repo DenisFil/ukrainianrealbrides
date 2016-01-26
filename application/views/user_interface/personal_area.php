@@ -3,7 +3,11 @@
 	<div class="profile-block">
 		<h2>Welcome Jack</h2>
 		<span class="profile-photo">
-			<img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/profile-photo.jpg" width="186" height="281"> 
+								    <label class="file_upload">
+					 		<img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png" width="34" height="27" alt="Upload image">
+					    	<span>Add Photo</span>
+					        <input type="file">
+					    </label>
 		</span>
 		<div class="profile-main">
 			<ul>

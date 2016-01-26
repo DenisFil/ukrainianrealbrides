@@ -249,6 +249,7 @@ h4 {
 }
  .header-right {
  	float: right;
+ 	overflow: hidden;
  }
 .header-right .login{
  	float: left;
@@ -509,4 +510,13 @@ h4 {
 #login-modal .modal-bottom {
 	margin: 15px 0 0 0;
 }
-/*Header Ends Here*/
+/*Signed in header*/
+.profile-name {
+	color: #000;
+	font-size: 16px;
+	line-height: 18px;
+    font-family: 'BanderaProMedium';
+    float: left;
+    display: block;
+    border-right: 1px solid #ccc;
+}
