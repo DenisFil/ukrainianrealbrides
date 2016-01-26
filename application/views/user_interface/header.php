@@ -3,7 +3,7 @@
 <head>
     <title>Ukrainian Real Brides</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, maximum-scale=1, target-densityDPI=device-dpi"/>
+    <meta name="viewport" content="width=device-width, maximum-scale=1"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
 
@@ -40,7 +40,12 @@
             </div>
             <div class="header-right">
                 <?php if($this->session->userdata('id')): ?>
-                    <span>Hello, <?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></span><a href="<?php echo base_url(); ?>user_interface/logout">Exit</a>
+                    
+                    <span class="profile-name">Jack Stevenson</span>
+                    <a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings">Profile Settings</a>
+                    <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out.png" width="14" height="14" alt="Log out">Exit</a>
+                    
+
                 <?php else: ?>
                     <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Log in</button></a>
                     <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
