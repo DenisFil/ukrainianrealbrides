@@ -24,7 +24,8 @@
                                       result();
             $email_data['user_id'] = $user_id[0]->id;
             $query_email = $this->db->insert('confirm_email', $email_data);
-                if ($query && $query_email === TRUE)
+            $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
+                if ($query && $query_email && $query_credits === TRUE)
                 {
                     return TRUE;
                 }
@@ -46,7 +47,8 @@
             $email_data['user_id'] = $user_id[0]->id;
             $email_data['email_status'] = 1;
             $query_email = $this->db->insert('confirm_email', $email_data);
-                if ($query && $query_email === TRUE)
+            $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
+                if ($query && $query_email && $query_credits === TRUE)
                 {
                     return TRUE;
                 }

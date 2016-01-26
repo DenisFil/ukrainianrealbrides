@@ -3,7 +3,11 @@
 	<div class="profile-block">
 		<h2>Welcome <?php echo $this->session->userdata('name'); ?></h2>
 		<span class="profile-photo">
-			<img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/profile-photo.jpg" width="186" height="281"> 
+			<?php if($avatar): ?>
+				<img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/profile-photo.jpg" width="186" height="281">
+			<?php else: ?>
+				<input type="file">
+			<?php endif; ?>
 		</span>
 		<div class="profile-main">
 			<ul>
@@ -18,14 +22,14 @@
 					<img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/chat-small.png" width="48" height="50" alt="Messaging">
 					<div class="profile-box-right">
 						<h4>Chat</h4>
-						<a class="online" href="">Online: 0</a>
+						<a class="online" href="">Online: <?php echo $users_online; ?></a>
 					</div>
 				</li>
 				<li class="video-chat">
 					<img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/video-chat-small.png" width="49" height="50" alt="Messaging">
 					<div class="profile-box-right">
 						<h4>Video Chat</h4>
-						<a class="online" href="">Online: 0</a>
+						<a class="online" href="">Online: <?php echo $users_online; ?></a>
 					</div>
 				</li>
 				<li class="invite-friend">
@@ -33,7 +37,7 @@
 					<a href="#">Send</a>
 				</li>
 				<li class="balance">
-					<h4>Balance: 350cr</h4>
+					<h4>Balance: <?php echo $credits; ?>cr</h4>
 					<a href="#">Refill</a>
 				</li>
 			</ul>

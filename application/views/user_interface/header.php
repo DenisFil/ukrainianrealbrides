@@ -71,6 +71,7 @@
 <!-- Header Ends Here -->
 
 <!--SignUp modal start-->
+<?php if(!$this->session->userdata('id')): ?>
 <div class="modal fade" id="signUp-modal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -143,4 +144,5 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
 <!--SignUp modal ends-->

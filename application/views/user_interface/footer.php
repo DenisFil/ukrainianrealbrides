@@ -62,7 +62,7 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/responsiveslides.js" type="text/javascript" ></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.form.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/signup.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/facebook.js"></script>
+    <?php if(!$this->session->userdata('id')): ?><script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/facebook.js"></script><?php endif; ?>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jcarousel.responsive.js"></script>
     </body>
