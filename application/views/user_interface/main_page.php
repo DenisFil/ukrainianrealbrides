@@ -6,21 +6,21 @@
 <div class="gallery-holder">
     <ul id="gallery" class="list">
         <li>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800" height="642" alt="">
             <div class="gallery-box">
                 <span>Start <br> chat now!</span>
                 <a class="girls-online" href="#">Girls online</a>
             </div>
         </li>
         <li class="first">
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800" height="642" alt="">
             <div class="gallery-box">
                 <span>Start <br> chat now!</span>
                 <a class="girls-online" href="#">Girls online</a>
             </div>
         </li>
         <li>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800px" height="642px" alt="">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800" height="642" alt="">
             <div class="gallery-box">
                 <span>Start <br> chat now!</span>
                 <a class="girls-online" href="#">Girls online</a>
@@ -68,15 +68,15 @@
         <h2>Girls of the month</h2>
         <div class="frame-girl-holder">
             <div class="frame-girl first-image">
-                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
+                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
                 <a href="#"><span>View Profile</span></a>
             </div>
             <div class="frame-girl">
-                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
+                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
                 <a href="#"><span>View Profile</span></a>
             </div>
             <div class="frame-girl last-image">
-                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239px" height="352px" alt="Girl of the month" />
+                <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
                 <a href="#"><span>View Profile</span></a>
             </div>
         </div>
@@ -117,7 +117,7 @@
 <div class="gallery-holder">
     <ul id="gallery-2" class="list">
         <li>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800px" height="764px" alt="Couple">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800" height="764" alt="Couple">
             <div class="gallery-box-second">
                 <strong>Mikle and Natalya</strong>
                 <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
@@ -131,7 +131,7 @@
             </div>
         </li>
         <li>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800px" height="764px" alt="Couple">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800" height="764" alt="Couple">
             <div class="gallery-box-second">
                 <strong>Mikle and Natalya</strong>
                 <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>

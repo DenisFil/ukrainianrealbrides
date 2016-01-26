@@ -118,7 +118,7 @@ h1 {
 	font-size: 35px;
 	line-height: 37px;
 	text-align: center;
-	padding: 67px 0 46px 0;
+	padding-bottom: 46px;
 }
 h2 {
 	font-family: 'BanderaProMedium';
@@ -152,6 +152,7 @@ h4 {
 .header-holder {
 	width: 100%;
 	background: url("../img/header/bg-line.png") repeat-x 0 41px;
+	padding-bottom: 67px;
 }
 #header {
 	width: 1170px;
