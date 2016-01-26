@@ -40,11 +40,40 @@
             </div>
             <div class="header-right">
                 <?php if($this->session->userdata('id')): ?>
-                    
-                    <span class="profile-name">Jack Stevenson</span>
-                    <a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings">Profile Settings</a>
-                    <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out.png" width="14" height="14" alt="Log out">Exit</a>
-                    
+                    <div class="header-signed">
+                        <span class="profile-name">Jack Stevenson</span>
+                        <ul class="status-bar">
+                            <li class="mail-status points">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em>3</em>
+                            </li>
+                            <li class="chat-status">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em>0</em>
+                            </li>
+                            <li class="video-chat-status points">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em>0</em>
+                            </li>
+                            <li class="credit-status">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em>0</em>
+                            </li>
+                        </ul>
+                        <div class="profile-panel">
+                            <a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings"></a>
+                            <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out.png" width="14" height="14" alt="Log out"></a>
+                        </div>
+                    </div>
+
 
                 <?php else: ?>
                     <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Log in</button></a>
@@ -76,7 +105,6 @@
 <!-- Header Ends Here -->
 
 <!--SignUp modal start-->
-<?php if(!$this->session->userdata('id')): ?>
 <div class="modal fade" id="signUp-modal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -101,7 +129,7 @@
                         </span>
                         <span id="user-password-error-text" class="form-error-message"></span>
                     </div>
-                    <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
+                    <button type="button" class="btn btn-danger" id="signUp">Registration</button>
                     <a href="#"><button type="button" class="btn btn-social btn-xs btn-facebook" id="fb-button"><i class="fa fa-facebook"></i> | Sign up with Facebook</button></a>
 
                     <button type="button" class="btn btn-social btn-xs btn-google-plus" id="google-signup"><i class="fa fa-google-plus"></i> | Sign up with Google+</button>
@@ -112,7 +140,7 @@
                 </form>
             </div>
             <div class="modal-bottom">
-                <span>Already register? <a href="#" id="login-modal-start" name="login">Log in now</a></span>
+                <span>Already register? <a href="#" id="login-modal-start" name="login">Log in</a> now</span>
             </div>
 
         </div>
@@ -149,5 +177,4 @@
         </div>
     </div>
 </div>
-<?php endif; ?>
 <!--SignUp modal ends-->

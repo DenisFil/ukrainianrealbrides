@@ -511,12 +511,88 @@ h4 {
 	margin: 15px 0 0 0;
 }
 /*Signed in header*/
+.header-signed {
+	overflow: hidden;
+}
 .profile-name {
+	padding: 5px 12px 0 0;
 	color: #000;
 	font-size: 16px;
 	line-height: 18px;
     font-family: 'BanderaProMedium';
     float: left;
     display: block;
+}
+.status-bar {
+	overflow: hidden;
+	float: left;
+	padding: 3px 11px 0 13px; 
     border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.status-bar li {
+	float: left;
+	overflow: hidden;
+	margin: 0 9px 0 0; 
+}
+.status-bar li a {
+	display: block;
+	width: 22px;
+	height: 22px;
+	background: rgba(0,0,0,0.3);
+	border-radius: 30px;
+	float: left;
+	text-align: center;
+	margin-right: 4px; 
+}
+.status-bar li a span {
+	display: inline-block;
+	width: 12px;
+	height: 11px;
+	background: url("../img/header/profile-status.png") no-repeat 0 0;
+	margin-top: 6px;
+}
+.status-bar li em {
+	float: left;
+	padding-top: 4px;
+    font-family: 'LatoWebMedium';
+    color: rgba(0,0,0,0.4);
+    font-style: normal;
+}
+.status-bar .chat-status a span{
+	background-position: -12px 0;
+}
+.status-bar .video-chat-status a span{
+	background-position: -24px 0;
+	width: 13px;
+}
+.status-bar .credit-status a span{
+	background-position: -37px 0;
+	width: 13px;
+}
+.status-bar .credit-status {
+	margin: 0;
+}
+.status-bar .credit-status a{	
+	background: #e83c32;
+}
+.status-bar .credit-status em{	
+	color: #e83c32;
+}
+.profile-panel {
+	float: left;
+	overflow: hidden;
+	padding-top: 7px;
+}
+.profile-panel a {
+	display: block;
+	float: left;
+	font-size: 0;
+	margin-left: 8px;
+}
+.status-bar li.points a{
+	background: #009993;
+}
+.status-bar li.points em {
+    color: #009993;
 }
