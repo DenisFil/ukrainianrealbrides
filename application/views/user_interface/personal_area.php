@@ -1,7 +1,7 @@
 <!-- Personal-area page -->
 <div class="personal-area">
 	<div class="profile-block">
-		<h2>Welcome Jack</h2>
+		<h2>Welcome <?php echo $this->session->userdata('name'); ?></h2>
 		<span class="profile-photo">
 			<img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/profile-photo.jpg" width="186" height="281"> 
 		</span>
