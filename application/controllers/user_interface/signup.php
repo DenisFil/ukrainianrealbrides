@@ -1,5 +1,4 @@
 <?php
-require_once 'C:/OpenServer/domains/ukrainianrealbrides/application/third_party/Facebook/autoload.php';
     class Signup extends CI_Controller
     {
         public function __construct()
@@ -77,45 +76,33 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
         }
 
 //  Facebook авторизация
-        public function fbsignup()
+        public function fb_signup()
         {
-            $fb = new Facebook\Facebook([
-                'app_id' => '427767240752729',
-                'app_secret' => '38e3ede8c5b2b8ce1682536bcff55823',
-                'default_graph_version' => 'v2.5'
-            ]);
-            $helper = $fb->getRedirectLoginHelper();
-            try {
-                $accessToken = $helper->getAccessToken();
-            } catch (Facebook\Exceptions\FacebookResponseException $e) {
-                echo 'Graph returned an error: ' . $e->getMessage();
-                exit;
-            } catch (Facebook\Exceptions\FacebookSDKException $e) {
-                echo 'Facebook SDK returned an error: ' . $e->getMessage();
-                exit;
-            }
-
-            if (isset($accessToken)) {
-                $_SESSION['facebook_access_token'] = (string)$accessToken;
-            }
-            try {
-                $response = $fb->get('/me?fields=first_name,last_name,email,gender', $accessToken);
-            } catch (Facebook\Exceptions\FacebookSDKException $e) {
-                // . . .
-                exit;
-            }
-
-            $user_data = $response->getDecodedBody();
-            unset($user_data['id']);
-
-// Проверка уникальности email`a
+            $user_data = $this->input->post();
             $email_query = $this->signup_model->uniqueness_email($user_data['email']);
                 if ($email_query === FALSE)
                 {
-                    echo 'User with this email already register';
+                    $query_data = $this->login_model->get_user_data($user_data['email']);
+                    $session_data = array(
+                        'gender' => $query_data[0]->gender,
+                        'name' => $query_data[0]->name,
+                        'lastname' => $query_data[0]->lastname,
+                        'id' => $query_data[0]->id
+                    );
+                    $this->session->set_userdata($session_data);
+                    $result['result'] = TRUE;
+
+                    echo json_encode($result);
                 }
                 else
                 {
+                    unset($user_data['id']);
+                    $user_data['name'] = $user_data['first_name'];
+                    unset($user_data['first_name']);
+                    $user_data['lastname'] = $user_data['last_name'];
+                    unset($user_data['last_name']);
+                    $user_data['register_date'] = time();
+                    $user_data['social_network'] = 'facebook';
                     if ($user_data['gender'] == 'male')
                     {
                         $user_data['gender'] = 1;
@@ -124,32 +111,18 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                     {
                         $user_data['gender'] = 2;
                     }
-                    else
-                    {
-                        $user_data['gender'] = 0;
-                    }
-                    $user_data['name'] = $user_data['first_name'];
-                    unset($user_data['first_name']);
-                    $user_data['lastname'] = $user_data['last_name'];
-                    unset($user_data['last_name']);
-                    $user_data['register_date'] = time();
-                    $user_data['social_network'] = 'facebook';
+                    $result['result'] = $this->signup_model->insert_new_user_from_social_network($user_data);
+                    $query_data = $this->login_model->get_user_data($user_data['email']);
+                    $session_data = array(
+                        'gender' => $query_data[0]->gender,
+                        'name' => $query_data[0]->name,
+                        'lastname' => $query_data[0]->lastname,
+                        'id' => $query_data[0]->id
+                    );
+                    $this->session->set_userdata($session_data);
 
-                    $query = $this->signup_model->insert_new_user_from_social_network($user_data);
-                    if ($query === TRUE)
-                    {
-                        $query = $this->login_model->get_user_data($user_data['email']);
-                        $session_data = array(
-                            'gender' => $query[0]->gender,
-                            'name' => $query[0]->name,
-                            'lastname' => $query[0]->lastname,
-                            'id' => $query[0]->id
-                        );
-                        $this->session->set_userdata($session_data);
-                        header('Location: ' . base_url() . 'user_interface/personal_area');
-                    }
+                    echo json_encode($result);
                 }
-
         }
 
 //  Google авторизация
@@ -160,8 +133,17 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
             $email_query = $this->signup_model->uniqueness_email($user_data['email']);
                 if ($email_query === FALSE)
                 {
-                    $query['result'] = FALSE;
-                    echo json_encode($query);
+                    $query_data = $this->login_model->get_user_data($user_data['email']);
+                    $session_data = array(
+                        'gender' => $query_data[0]->gender,
+                        'name' => $query_data[0]->name,
+                        'lastname' => $query_data[0]->lastname,
+                        'id' => $query_data[0]->id
+                    );
+                    $this->session->set_userdata($session_data);
+                    $result['result'] = TRUE;
+
+                    echo json_encode($result);
                 }
                 else
                 {
@@ -173,6 +155,7 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                     $user_data['register_date'] = time();
                     $user_data['social_network'] = 'google';
                     $query['result'] = $this->signup_model->insert_new_user_from_social_network($user_data);
+
                     $query_data = $this->login_model->get_user_data($user_data['email']);
                     $session_data = array(
                         'gender' => $query_data[0]->gender,

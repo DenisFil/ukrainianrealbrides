@@ -96,7 +96,7 @@
                         <span id="user-password-error-text" class="form-error-message"></span>
                     </div>
                     <button type="button" class="btn btn-danger" id="signUp">Register Now</button>
-                    <a href="<?php echo $facebook_login_url; ?>"><button type="button" class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i> | Sign up with Facebook</button></a>
+                    <a href="#"><button type="button" class="btn btn-social btn-xs btn-facebook" id="fb-button"><i class="fa fa-facebook"></i> | Sign up with Facebook</button></a>
 
                     <button type="button" class="btn btn-social btn-xs btn-google-plus" id="google-signup"><i class="fa fa-google-plus"></i> | Sign up with Google+</button>
 
@@ -133,7 +133,7 @@
                     </div>
                         <span class="forget-password"><a href="#">Forgot login or password?</a></span>
                     <button type="button" class="btn btn-danger" id="login">Log In</button>
-                    <a href="#"><button class="btn btn-social btn-xs btn-facebook"><i class="fa fa-facebook"></i>  | Log in with Facebook</button></a>
+                    <a href="#"><button type="button" class="btn btn-social btn-xs btn-facebook" id="fb-button-login"><i class="fa fa-facebook"></i> | Log In with Facebook</button></a>
                     <a href="#"><button class="btn btn-social btn-xs btn-google-plus"><i class="fa fa-google-plus"></i>  | Log in with Google+</button></a>
                 </form>
             </div>
