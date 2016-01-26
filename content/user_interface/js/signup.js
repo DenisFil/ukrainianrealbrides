@@ -231,7 +231,7 @@ $(document).ready(function(){
             {
                 GoogleAuth = gapi.auth2.init({
                     client_id: '146371657817-gtln93fv8s6l781t0sh564e3av0fprug.apps.googleusercontent.com',
-                    scope: 'https://www.googleapis.com/auth/userinfo.email'
+                    scope: 'https://www.googleapis.com/auth/plus.me'
                 });
 
                 GoogleAuth.isSignedIn.listen(function(isSignedIn)
@@ -253,13 +253,13 @@ $(document).ready(function(){
         function onSignIn()
         {
             var googleUser = GoogleAuth.currentUser.get();
-
+            console.log(googleUser);
             var profile = googleUser.getBasicProfile();
+            console.log(profile);
             var userData = {
                 name: profile.getName(),
                 email: profile.getEmail()
             };
-            console.log(userData);
             $.ajax({
                 type: 'post',
                 data: userData,
