@@ -32,11 +32,11 @@
         <div class="header-top">
             <div class="header-left">
                 <span>Language:</span>
-						<span>
-							<select class="select" name="" id="">
-                                <option value="" selected>Eng</option>
-                            </select>
-						</span>
+				<span>
+					<select class="select" name="" id="">
+                        <option value="" selected>Eng</option>
+                    </select>
+				</span>
             </div>
             <div class="header-right">
                 <?php if($this->session->userdata('id')): ?>

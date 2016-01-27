@@ -5,7 +5,7 @@
 		<span class="profile-photo">
 		    <label class="file_upload">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png" width="34" height="27" alt="Upload image">
-                <span>Add Photo</span>
+                <span>Add Profile Photo</span>
                 <input type="file">
             </label>
 		</span>

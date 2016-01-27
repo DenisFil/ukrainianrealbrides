@@ -161,7 +161,7 @@ h4 {
 }
 .header-top {
 	width: 100%;
-	padding: 8px 0 69px 0;
+	padding: 9px 0 69px 0;
 	overflow: hidden;
 	font-family: 'LatoWebMedium';
 	font-size: 14px;
@@ -526,7 +526,7 @@ h4 {
 .status-bar {
 	overflow: hidden;
 	float: left;
-	padding: 3px 11px 0 13px; 
+	padding: 3px 11px 1px 13px; 
     border-right: 1px solid #ccc;
     border-left: 1px solid #ccc;
 }

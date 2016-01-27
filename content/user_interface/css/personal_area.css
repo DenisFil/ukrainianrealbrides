@@ -72,7 +72,7 @@
 	line-height: 18px;
     font-family: 'latosemibold';
 }
-.profile-box-right .inbox{
+.profile-box-right a.points{
 	color: #02d2ca;
 }
 .profile-box-right .online{
