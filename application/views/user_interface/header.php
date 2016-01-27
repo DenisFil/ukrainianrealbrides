@@ -41,31 +41,33 @@
             <div class="header-right">
                 <?php if($this->session->userdata('id')): ?>
                     <div class="header-signed">
-                        <span class="profile-name">Jack Stevenson</span>
+                        <span class="profile-name">
+                            <?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?>
+                        </span>
                         <ul class="status-bar">
                             <li class="mail-status points">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em>3</em>
+                                <em><?php echo $new_messages; ?></em>
                             </li>
                             <li class="chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em>0</em>
+                                <em><?php echo $users_online; ?></em>
                             </li>
                             <li class="video-chat-status points">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em>0</em>
+                                <em><?php echo $users_online; ?></em>
                             </li>
                             <li class="credit-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em>0</em>
+                                <em><?php echo $credits; ?></em>
                             </li>
                         </ul>
                         <div class="profile-panel">
@@ -73,7 +75,6 @@
                             <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out.png" width="14" height="14" alt="Log out"></a>
                         </div>
                     </div>
-
 
                 <?php else: ?>
                     <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Log in</button></a>
@@ -104,6 +105,7 @@
 </div>
 <!-- Header Ends Here -->
 
+<?php if(!$this->session->userdata('id')): ?>
 <!--SignUp modal start-->
 <div class="modal fade" id="signUp-modal">
     <div class="modal-dialog">
@@ -178,3 +180,4 @@
     </div>
 </div>
 <!--SignUp modal ends-->
+<?php endif; ?>
