@@ -99,24 +99,42 @@
     <h4>Favorites</h4>
     <div class="jcarousel">
         <ul>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
-            <li><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143"
-                     height="182" alt="Favorites"></li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
+            <li>
+                <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/favorites.jpg" width="143" height="182" alt="Favorites">
+                <a class="delete-photo" href=""></a>
+            </li>
         </ul>
     </div>
     <a href="#" class="jcarousel-control-prev"></a>

@@ -69,15 +69,15 @@
         <div class="frame-girl-holder">
             <div class="frame-girl first-image">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
-                <a href="#"><span>View Profile</span></a>
+                <a href="#login-modal" data-toggle="modal"><span>View Profile</span></a>
             </div>
             <div class="frame-girl">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
-                <a href="#"><span>View Profile</span></a>
+                <a href="#login-modal" data-toggle="modal"><span>View Profile</span></a>
             </div>
             <div class="frame-girl last-image">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
-                <a href="#"><span>View Profile</span></a>
+                <a href="#login-modal" data-toggle="modal"><span>View Profile</span></a>
             </div>
         </div>
     </div>
@@ -119,13 +119,12 @@
         <li>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800" height="764" alt="Couple">
             <div class="gallery-box-second">
-                <strong>Mikle and Natalya</strong>
-                <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
-                <p>This Sabbat confront the silence and the monotonous, soothing sound of wheels. Pleasant warm fluffy kitten was located in the lap of the girl. Subdued light car, train and dimensional rocking ...</p>
+                <strong>Alberto and Lara</strong>
+                <p>It was the love from the first sight. He decided to change his life and came to Ukraine with his 6 year old daughter that to meet a special woman, who will become the love of his life. When he saw her, he has realized the Universe has heard him and with the help of Ukrainian Real Brides he met this special woman, a woman he was dreaming about. Now, they are happily married.</p>
+                <p>And more wonderful things are going to happen in their life.</p>
                 <ul>
-                    <li><span class="img-vector-one"></span>6 Years together</li>
-                    <li><span class="img-vector-two"></span>2 Childrens</li>
-                    <li><span class="img-vector-three"></span>1 Dog</li>
+                    <li><span class="img-vector-one"></span>3 Years together</li>
+                    <li><span class="img-vector-two"></span>1 Children</li>
                 </ul>
                 <a class="gallery-second-button" href="">Read more Succesesful stories at our blog</a>
             </div>
@@ -133,13 +132,12 @@
         <li>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800" height="764" alt="Couple">
             <div class="gallery-box-second">
-                <strong>Mikle and Natalya</strong>
-                <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
-                <p>This Sabbat confront the silence and the monotonous, soothing sound of wheels. Pleasant warm fluffy kitten was located in the lap of the girl. Subdued light car, train and dimensional rocking ...</p>
+                <strong>Alberto and Lara</strong>
+                <p>It was the love from the first sight. He decided to change his life and came to Ukraine with his 6 year old daughter that to meet a special woman, who will become the love of his life. When he saw her, he has realized the Universe has heard him and with the help of Ukrainian Real Brides he met this special woman, a woman he was dreaming about. Now, they are happily married.</p>
+                <p>And more wonderful things are going to happen in their life.</p>
                 <ul>
-                    <li><span class="img-vector-one"></span>6 Years together</li>
-                    <li><span class="img-vector-two"></span>2 Childrens</li>
-                    <li><span class="img-vector-three"></span>1 Dog</li>
+                    <li><span class="img-vector-one"></span>3 Years together</li>
+                    <li><span class="img-vector-two"></span>1 Children</li>
                 </ul>
                 <a class="gallery-second-button" href="">Read more Succesesful stories at our blog</a>
             </div>
@@ -147,13 +145,12 @@
         <li>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" alt="Just merried" />
             <div class="gallery-box-second">
-                <strong>Mikle and Natalya</strong>
-                <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
-                <p>This Sabbat confront the silence and the monotonous, soothing sound of wheels. Pleasant warm fluffy kitten was located in the lap of the girl. Subdued light car, train and dimensional rocking ...</p>
+                <strong>Alberto and Lara</strong>
+                <p>It was the love from the first sight. He decided to change his life and came to Ukraine with his 6 year old daughter that to meet a special woman, who will become the love of his life. When he saw her, he has realized the Universe has heard him and with the help of Ukrainian Real Brides he met this special woman, a woman he was dreaming about. Now, they are happily married.</p>
+                <p>And more wonderful things are going to happen in their life.</p>
                 <ul>
-                    <li><span class="img-vector-one"></span>6 Years together</li>
-                    <li><span class="img-vector-two"></span>2 Childrens</li>
-                    <li><span class="img-vector-three"></span>1 Dog</li>
+                    <li><span class="img-vector-one"></span>3 Years together</li>
+                    <li><span class="img-vector-two"></span>1 Children</li>
                 </ul>
                 <a class="gallery-second-button" href="">Read more Succesesful stories at our blog</a>
             </div>
