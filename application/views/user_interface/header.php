@@ -45,29 +45,29 @@
                             <?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?>
                         </span>
                         <ul class="status-bar">
-                            <li class="mail-status points">
+                            <li class="mail-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em><?php echo $new_messages; ?></em>
+                                <em name="mail"><?php echo $new_messages; ?></em>
                             </li>
                             <li class="chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em><?php echo $users_online; ?></em>
+                                <em name="chat"><?php echo $users_online; ?></em>
                             </li>
-                            <li class="video-chat-status points">
+                            <li class="video-chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em><?php echo $users_online; ?></em>
+                                <em name="video-chat"><?php echo $users_online; ?></em>
                             </li>
                             <li class="credit-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em><?php echo $credits; ?></em>
+                                <em name="credit"><?php echo $credits; ?></em>
                             </li>
                         </ul>
                         <div class="profile-panel">
