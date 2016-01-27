@@ -49,25 +49,25 @@
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em name="mail"><?php echo $new_messages; ?></em>
+                                <em><?php echo $new_messages; ?></em>
                             </li>
                             <li class="chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em name="chat"><?php echo $users_online; ?></em>
+                                <em><?php echo $users_online; ?></em>
                             </li>
                             <li class="video-chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em name="video-chat"><?php echo $users_online; ?></em>
+                                <em><?php echo $users_online; ?></em>
                             </li>
                             <li class="credit-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em name="credit"><?php echo $credits; ?></em>
+                                <em><?php echo $credits; ?></em>
                             </li>
                         </ul>
                         <div class="profile-panel">
