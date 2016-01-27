@@ -73,9 +73,9 @@
     font-family: 'latosemibold';
 }
 .profile-box-right a.points{
-	color: #02d2ca;
+	color: #009993;
 }
-.profile-box-right .online{
+.profile-box-right .inbox-online {
 	color: rgba(0,0,0,0.5);
 }
 .profile-main ul li img{
