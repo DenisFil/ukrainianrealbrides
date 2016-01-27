@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 26 2016 г., 19:38
+-- Время создания: Янв 27 2016 г., 18:52
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.6.3
 
@@ -39,7 +39,11 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
-('2da24c44c5352842019658c1a1ae238939b6abeb', '127.0.0.1', 1453823807, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435333832333334393b67656e6465727c733a313a2231223b6e616d657c733a31303a22d094d0b5d0bdd0b8d181223b6c6173746e616d657c733a31363a22d0a4d0b8d0bbd0b8d0bfd0bfd0bed0b2223b69647c733a313a2231223b);
+('2da24c44c5352842019658c1a1ae238939b6abeb', '127.0.0.1', 1453823807, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435333832333334393b67656e6465727c733a313a2231223b6e616d657c733a31303a22d094d0b5d0bdd0b8d181223b6c6173746e616d657c733a31363a22d0a4d0b8d0bbd0b8d0bfd0bfd0bed0b2223b69647c733a313a2231223b),
+('0c61edad31cde877297c24d1ac373fe0b8e7fb41', '127.0.0.1', 1453884046, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435333837373638343b67656e6465727c733a313a2231223b6e616d657c733a31303a22d094d0b5d0bdd0b8d181223b6c6173746e616d657c733a31363a22d0a4d0b8d0bbd0b8d0bfd0bfd0bed0b2223b69647c733a313a2231223b),
+('a2064754946dcd10c6a1df24afb0131d42227704', '127.0.0.1', 1453888408, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435333838363331303b67656e6465727c733a313a2231223b6e616d657c733a31303a22d094d0b5d0bdd0b8d181223b6c6173746e616d657c733a31363a22d0a4d0b8d0bbd0b8d0bfd0bfd0bed0b2223b69647c733a313a2231223b),
+('99e10854159a88ffd1373f7b48e50b8ff7ca4210', '127.0.0.1', 1453894457, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435333839343435373b67656e6465727c733a313a2231223b6e616d657c733a31303a22d094d0b5d0bdd0b8d181223b6c6173746e616d657c733a31363a22d0a4d0b8d0bbd0b8d0bfd0bfd0bed0b2223b69647c733a313a2231223b),
+('a738d72c6f774a53cd31cabf20d43d5809f6de6f', '127.0.0.1', 1453904258, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435333930343235383b67656e6465727c733a313a2231223b6e616d657c733a31303a22d094d0b5d0bdd0b8d181223b6c6173746e616d657c733a31363a22d0a4d0b8d0bbd0b8d0bfd0bfd0bed0b2223b69647c733a313a2231223b);
 
 -- --------------------------------------------------------
 
@@ -70,16 +74,15 @@ INSERT INTO `confirm_email` (`user_id`, `confirm_hash`, `email_status`) VALUES
 CREATE TABLE IF NOT EXISTS `men_details` (
   `user_id` int(10) NOT NULL,
   `credits` int(10) NOT NULL,
-  `avatar` varchar(50) NOT NULL,
-  `photos` varchar(50) NOT NULL
+  `avatar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `men_details`
 --
 
-INSERT INTO `men_details` (`user_id`, `credits`, `avatar`, `photos`) VALUES
-(1, 0, '', '');
+INSERT INTO `men_details` (`user_id`, `credits`, `avatar`) VALUES
+(1, 0, 'ead2c58ff0aea2eb44516358705745cf');
 
 -- --------------------------------------------------------
 
@@ -132,6 +135,17 @@ INSERT INTO `users` (`id`, `password`, `name`, `lastname`, `email`, `user_status
 CREATE TABLE IF NOT EXISTS `users_online` (
   `user_id` int(10) NOT NULL,
   `last_online` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user_photos`
+--
+
+CREATE TABLE IF NOT EXISTS `user_photos` (
+  `user_id` int(10) NOT NULL,
+  `photo_link` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

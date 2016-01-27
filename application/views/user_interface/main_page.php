@@ -110,7 +110,26 @@
     <div class="watch-us-holder">
         <h2>Watch Us</h2>
         <div class="watch-us">
-            <iframe src="https://player.vimeo.com/video/150326813?color=fff&title=0&byline=0&portrait=0" width="1170" height="658" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:1170px;padding-left:0px; padding-right:144px;margin:0px auto 0px;">
+                <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
+                    <ul class="amazingslider-slides" style="display:none;">
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video01.jpg" />
+                        <video preload="none" src="https://www.youtube.com/embed/edY1zhyvY3Q" ></video>
+                        </li>
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video02.jpg" alt="Alberto and Lara love story"  title="Alberto and Lara love story" />
+                        <video preload="none" src="https://www.youtube.com/embed/m59eZ6E5tHA" ></video>
+                        </li>
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video03.jpg" />
+                        <video preload="none" src="https://www.youtube.com/embed/MqhqSRs1cVo" ></video>
+                        </li>
+                    </ul>
+                    <ul class="amazingslider-thumbnails" style="display:none;">
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video01-tn.jpg" /></li>
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video02-tn.jpg" alt="Alberto and Lara love story" title="Alberto and Lara love story" /></li>
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video03-tn.jpg" /></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </main>

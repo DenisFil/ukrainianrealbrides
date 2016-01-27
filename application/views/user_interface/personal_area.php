@@ -6,7 +6,7 @@
 		    <label class="file_upload">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png" width="34" height="27" alt="Upload image">
                 <span>Add Profile Photo</span>
-                <input type="file">
+                <form id="avatar"><input type="file" id="avatar-photo" name="avatar"></form>
             </label>
 		</span>
         <div class="profile-main">
@@ -139,4 +139,14 @@
     </div>
     <a href="#" class="jcarousel-control-prev"></a>
     <a href="#" class="jcarousel-control-next"></a>
+</div>
+
+<div class="modal" id="new-avatar">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="" id="new-user-avatar">
+            </div>
+        </div>
+    </div>
 </div>
