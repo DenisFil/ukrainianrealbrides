@@ -286,6 +286,10 @@
 }
 .jcarousel-control-next {
 	transform: scale(-1,1);
+	-webkit-transform: scale(-1,1);
+	-moz-transform: scale(-1,1);
+	-ms-transform: scale(-1,1);
+	-o-transform: scale(-1,1);
     right: 2%;
 }
 .delete-photo {
@@ -297,6 +301,7 @@
 	height: 18px;
 	background: rgba(0,0,0,0.2) url("../img/personal-area/delete-photo.png") no-repeat 50% 50%;
 	background-size: 12px 12px;
+	transition:all 0.8s;
 	-webkit-transition:all 0.8s;
 	-moz-transition:all 0.8s;
 	-ms-transition:all 0.8s;
