@@ -261,6 +261,7 @@
     width: 143px;
     float: left;
     margin-right: 9px; 
+    position: relative;
 }
 .jcarousel li:last-child {
     margin-right: 0; 
@@ -287,4 +288,33 @@
 	transform: scale(-1,1);
     right: 2%;
 }
-
+.delete-photo {
+	position: absolute;
+	opacity: 0;
+	top: 2px;
+	right: 2px;
+	width: 18px;
+	height: 18px;
+	background: rgba(0,0,0,0.2) url("../img/personal-area/delete-photo.png") no-repeat 50% 50%;
+	background-size: 12px 12px;
+	-webkit-transition:all 0.8s;
+	-moz-transition:all 0.8s;
+	-ms-transition:all 0.8s;
+	-o-transition:all 0.8s;
+}
+.jcarousel li:hover .delete-photo{
+	opacity:1;
+}
+.jcarousel li .delete-photo:hover {
+	color: #fff;
+}
+#new-avatar .modal-content {
+	max-width: 100%; 
+	max-height: 100%;
+	padding: 30px;
+}
+#new-avatar .modal-body img {
+	max-width: 604px;
+	max-height: 604px;
+	display: inline-block;
+}
