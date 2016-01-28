@@ -17,6 +17,7 @@
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/footer.css" type="text/css" />
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/social-buttons.css" type="text/css" />
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/font-awesome.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>content/videosliderengine/amazingslider-1.css">
 
     <!--<link media="all" rel="stylesheet" href="css/sorry.css" type="text/css" />-->
     <!--[if lt IE 7]>
