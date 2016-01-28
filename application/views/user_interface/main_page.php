@@ -1,4 +1,3 @@
-Main Starts Here -->
 <div class="main-h1">
     <h1>Life only starts when love comes, start your life with us</h1>
 </div>
