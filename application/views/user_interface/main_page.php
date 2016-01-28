@@ -69,15 +69,15 @@
         <div class="frame-girl-holder">
             <div class="frame-girl first-image">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
-                <a href="#"><span>View Profile</span></a>
+                <a href="#login-modal" data-toggle="modal"><span>View Profile</span></a>
             </div>
             <div class="frame-girl">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
-                <a href="#"><span>View Profile</span></a>
+                <a href="#login-modal" data-toggle="modal"><span>View Profile</span></a>
             </div>
             <div class="frame-girl last-image">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/girl.jpg" width="239" height="352" alt="Girl of the month" />
-                <a href="#"><span>View Profile</span></a>
+                <a href="#login-modal" data-toggle="modal"><span>View Profile</span></a>
             </div>
         </div>
     </div>
@@ -110,7 +110,26 @@
     <div class="watch-us-holder">
         <h2>Watch Us</h2>
         <div class="watch-us">
-            <iframe src="https://player.vimeo.com/video/150326813?color=fff&title=0&byline=0&portrait=0" width="1170" height="658" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:1170px;padding-left:0px; padding-right:144px;margin:0px auto 0px;">
+                <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
+                    <ul class="amazingslider-slides" style="display:none;">
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video01.jpg" />
+                        <video preload="none" src="https://www.youtube.com/embed/edY1zhyvY3Q" ></video>
+                        </li>
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video02.jpg" alt="Alberto and Lara love story"  title="Alberto and Lara love story" />
+                        <video preload="none" src="https://www.youtube.com/embed/m59eZ6E5tHA" ></video>
+                        </li>
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video03.jpg" />
+                        <video preload="none" src="https://www.youtube.com/embed/MqhqSRs1cVo" ></video>
+                        </li>
+                    </ul>
+                    <ul class="amazingslider-thumbnails" style="display:none;">
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video01-tn.jpg" /></li>
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video02-tn.jpg" alt="Alberto and Lara love story" title="Alberto and Lara love story" /></li>
+                        <li><img src="<?php echo base_url(); ?>content/user_interface/img/main/video-slider/video03-tn.jpg" /></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </main>
@@ -119,13 +138,12 @@
         <li>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800" height="764" alt="Couple">
             <div class="gallery-box-second">
-                <strong>Mikle and Natalya</strong>
-                <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
-                <p>This Sabbat confront the silence and the monotonous, soothing sound of wheels. Pleasant warm fluffy kitten was located in the lap of the girl. Subdued light car, train and dimensional rocking ...</p>
+                <strong>Alberto and Lara</strong>
+                <p>It was the love from the first sight. He decided to change his life and came to Ukraine with his 6 year old daughter that to meet a special woman, who will become the love of his life. When he saw her, he has realized the Universe has heard him and with the help of Ukrainian Real Brides he met this special woman, a woman he was dreaming about. Now, they are happily married.</p>
+                <p>And more wonderful things are going to happen in their life.</p>
                 <ul>
-                    <li><span class="img-vector-one"></span>6 Years together</li>
-                    <li><span class="img-vector-two"></span>2 Childrens</li>
-                    <li><span class="img-vector-three"></span>1 Dog</li>
+                    <li><span class="img-vector-one"></span>3 Years together</li>
+                    <li><span class="img-vector-two"></span>1 Children</li>
                 </ul>
                 <a class="gallery-second-button" href="">Read more Succesesful stories at our blog</a>
             </div>
@@ -133,13 +151,12 @@
         <li>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" width="1800" height="764" alt="Couple">
             <div class="gallery-box-second">
-                <strong>Mikle and Natalya</strong>
-                <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
-                <p>This Sabbat confront the silence and the monotonous, soothing sound of wheels. Pleasant warm fluffy kitten was located in the lap of the girl. Subdued light car, train and dimensional rocking ...</p>
+                <strong>Alberto and Lara</strong>
+                <p>It was the love from the first sight. He decided to change his life and came to Ukraine with his 6 year old daughter that to meet a special woman, who will become the love of his life. When he saw her, he has realized the Universe has heard him and with the help of Ukrainian Real Brides he met this special woman, a woman he was dreaming about. Now, they are happily married.</p>
+                <p>And more wonderful things are going to happen in their life.</p>
                 <ul>
-                    <li><span class="img-vector-one"></span>6 Years together</li>
-                    <li><span class="img-vector-two"></span>2 Childrens</li>
-                    <li><span class="img-vector-three"></span>1 Dog</li>
+                    <li><span class="img-vector-one"></span>3 Years together</li>
+                    <li><span class="img-vector-two"></span>1 Children</li>
                 </ul>
                 <a class="gallery-second-button" href="">Read more Succesesful stories at our blog</a>
             </div>
@@ -147,13 +164,12 @@
         <li>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery-2.jpg" alt="Just merried" />
             <div class="gallery-box-second">
-                <strong>Mikle and Natalya</strong>
-                <p>January. Frost. Railway station. Railway carriage. Impenetrable darkness of a winter night riddled torque snow, not moonlight. The outside world is endowed with features of chaos: it is dominated by the cold, the darkness, the howling wind and random motion. And there, in the train, all the way around... </p>
-                <p>This Sabbat confront the silence and the monotonous, soothing sound of wheels. Pleasant warm fluffy kitten was located in the lap of the girl. Subdued light car, train and dimensional rocking ...</p>
+                <strong>Alberto and Lara</strong>
+                <p>It was the love from the first sight. He decided to change his life and came to Ukraine with his 6 year old daughter that to meet a special woman, who will become the love of his life. When he saw her, he has realized the Universe has heard him and with the help of Ukrainian Real Brides he met this special woman, a woman he was dreaming about. Now, they are happily married.</p>
+                <p>And more wonderful things are going to happen in their life.</p>
                 <ul>
-                    <li><span class="img-vector-one"></span>6 Years together</li>
-                    <li><span class="img-vector-two"></span>2 Childrens</li>
-                    <li><span class="img-vector-three"></span>1 Dog</li>
+                    <li><span class="img-vector-one"></span>3 Years together</li>
+                    <li><span class="img-vector-two"></span>1 Children</li>
                 </ul>
                 <a class="gallery-second-button" href="">Read more Succesesful stories at our blog</a>
             </div>

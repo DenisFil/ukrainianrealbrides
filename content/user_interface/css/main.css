@@ -378,8 +378,8 @@
 	width: 410px;
 	display: block;
 	position: absolute;
-	right: 15%;
-	top: 5%;
+	right: 13%;
+	top: 6%;
 	font-family: 'LatoLight';
 }
 .gallery-box-second strong {
@@ -393,7 +393,7 @@
 }
 .gallery-box-second p {
 	font-size: 15px;
-	line-height: 22px;
+	line-height: 23px;
 	color: #fff;
 	margin: 0 0 21px;
 	display: block;
@@ -407,6 +407,9 @@
 	padding: 0 0 20px 0;
 	font-size: 25px;
 	line-height: 27px;
+}
+.gallery-box-second>ul>li:last-child{
+	padding-bottom: 40px;
 }
 .gallery-box-second span{
 	width: 34px;
@@ -551,7 +554,17 @@
 	box-shadow: none;
 	text-shadow: none;
 }
-
-
-
+.social-buttons-row {
+	overflow: hidden;
+	width: 100%;
+}
+#error-login-users .login {
+	margin-bottom: 15px; 
+}
+.social-buttons-row a {
+	float: left;
+}
+#error-login-users .modal-dialog {
+	width: 400px;
+}
 /*Main ends here

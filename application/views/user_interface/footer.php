@@ -67,5 +67,7 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/personal_area.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jcarousel.responsive.js"></script>
+    <script src="<?php echo base_url(); ?>content/user_interface/js/video-slider/amazingslider.js"></script>
+    <script src="<?php echo base_url(); ?>content/user_interface/js/video-slider/initslider-1.js"></script>
     </body>
 </html>
