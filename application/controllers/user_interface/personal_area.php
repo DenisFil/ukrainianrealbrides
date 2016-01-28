@@ -10,24 +10,27 @@
 
         public function index()
         {
-            $user_id = $this->session->userdata('id');
+            if ($this->session->userdata('id'))
+            {
+                $user_id = $this->session->userdata('id');
 
-            $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
-            $photos = $this->personal_area_model->get_photos($user_id);
-            $data['photo_count'] = count($photos);
-            $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
-            $data['users_online'] = $this->personal_area_model->users_online(time());
-            $data['credits'] = $this->personal_area_model->user_credits($user_id);
-            $data['css'] = 'personal_area';
-            $data['gender'] = '';
+                $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
+                $photos = $this->personal_area_model->get_photos($user_id);
+                $data['photo_count'] = count($photos);
+                $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
+                $data['users_online'] = $this->personal_area_model->users_online(time());
+                $data['credits'] = $this->personal_area_model->user_credits($user_id);
+                $data['css'] = 'personal_area';
+                $data['gender'] = '';
                 if ($this->session->userdata('gender'))
                 {
                     $data['gender'] = $this->session->userdata('gender');
                 }
 
-            $this->load->view('user_interface/header', $data);
-            $this->load->view('user_interface/personal_area');
-            $this->load->view('user_interface/footer');
+                $this->load->view('user_interface/header', $data);
+                $this->load->view('user_interface/personal_area');
+                $this->load->view('user_interface/footer');
+            }
         }
 
 //Загрузка аватара
