@@ -34,14 +34,14 @@
             return $query[0]->credits;
         }
 
-        public function get_fotos($id)
+        public function get_avatar($id)
         {
             $query = $this->db->    select('avatar')->
                                     from('men_details')->
                                     where('user_id', $id)->
                                     get()->
                                     result();
-            return $query;
+            return $query[0]->avatar;
         }
 
         public function add_avatar($data)
@@ -49,6 +49,16 @@
             $id = $data['user_id'];
             unset($data['user_id']);
             $query = $this->db->update('men_details', $data, array('user_id' => $id));
+            return $query;
+        }
+
+        public function get_photos($id)
+        {
+            $query = $this->db->    select('photo_link')->
+                                    from('user_photos')->
+                                    where('user_id', $id)->
+                                    get()->
+                                    result();
             return $query;
         }
     }
