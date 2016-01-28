@@ -35,7 +35,7 @@
             //Загрузка фотографий
             $config = array(
                 'upload' => array(
-                    'upload_path' => './content/profiles/temporary_files',
+                    'upload_path' => './content/profiles/avatars',
                     'allowed_types' => 'jpg',
                     'remove_spaces' => TRUE,
                     'encrypt_name' => TRUE
@@ -51,14 +51,14 @@
                     $config['image_lib'] = array(
                         'width' => array(
                             'image_library' => 'gd2',
-                            'source_image' => './content/profiles/temporary_files/' . $data['upload_data']['file_name'],
+                            'source_image' => './content/profiles/avatars/' . $data['upload_data']['file_name'],
                             'new_image' => './content/profiles/avatars/' . $data['upload_data']['raw_name'] . '_full.jpg',
                             'maintain_ratio' => TRUE,
                             'width' => '604'
                         ),
                         'height' => array(
                             'image_library' => 'gd2',
-                            'source_image' => './content/profiles/temporary_files/' . $data['upload_data']['file_name'],
+                            'source_image' => './content/profiles/avatars/' . $data['upload_data']['file_name'],
                             'new_image' => './content/profiles/avatars/' . $data['upload_data']['raw_name'] . '_full.jpg',
                             'maintain_ratio' => TRUE,
                             'height' => '604'
@@ -75,7 +75,7 @@
                         $this->load->library('image_lib', $config['image_lib']['height']);
                     }
                     $this->image_lib->resize();
-                    unlink('./content/profiles/temporary_files/' . $data['upload_data']['file_name']);
+                    unlink('./content/profiles/avatars/' . $data['upload_data']['file_name']);
 
                     //Сохранение фото
                     $photo_data = array(
