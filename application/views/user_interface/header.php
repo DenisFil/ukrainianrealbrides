@@ -43,7 +43,7 @@
                 <?php if($this->session->userdata('id')): ?>
                     <div class="header-signed">
                         <span class="profile-name">
-                            <?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?>
+                            <a href="<?php echo base_url(); ?>user_interface/personal_area"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></a>
                         </span>
                         <ul class="status-bar">
                             <li class="mail-status">

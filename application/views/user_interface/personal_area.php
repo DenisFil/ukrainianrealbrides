@@ -47,7 +47,7 @@
             <div class="profile-bottom">
                 <div class="profile-bottom-left">
                     <h4>My Photo</h4>
-                    <span class="photo-page-number">3/6</span>
+                    <span class="photo-page-number"><?php echo $photo_count; ?>/6</span>
                     <div class="profile-photos">
                         <div class="profile-photos-block">
 							<span class="middle-photo">
@@ -145,7 +145,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <div class="exit"></div>
+                </button>
+                <h4>Create your avatar</h4> 
                 <img src="" id="new-user-avatar">
+                <p>Crop your profile photo here</p>
             </div>
         </div>
     </div>
