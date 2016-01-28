@@ -47,7 +47,7 @@
             <div class="profile-bottom">
                 <div class="profile-bottom-left">
                     <h4>My Photo</h4>
-                    <span class="photo-page-number">3/6</span>
+                    <span class="photo-page-number"><?php echo $photo_count; ?>/6</span>
                     <div class="profile-photos">
                         <div class="profile-photos-block">
 							<span class="middle-photo">

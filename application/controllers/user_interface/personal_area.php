@@ -12,8 +12,9 @@
         {
             $user_id = $this->session->userdata('id');
 
-            $photos = $this->personal_area_model->get_fotos($user_id);
-            $data['avatar'] = $photos[0]->avatar;
+            $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
+            $photos = $this->personal_area_model->get_photos($user_id);
+            $data['photo_count'] = count($photos);
             $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
             $data['users_online'] = $this->personal_area_model->users_online(time());
             $data['credits'] = $this->personal_area_model->user_credits($user_id);
