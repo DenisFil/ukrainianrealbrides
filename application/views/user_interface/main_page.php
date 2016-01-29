@@ -1,8 +1,8 @@
-<!-- Main Starts Here -->
 <div class="main-h1">
     <h1>Life only starts when love comes, start your life with us</h1>
 </div>
 
+<!-- Gallery main-top -->
 <div class="gallery-holder">
     <ul id="gallery" class="list">
         <li>
@@ -28,6 +28,8 @@
         </li>
     </ul>
 </div>
+<!-- Gallery main-top -->
+
 <main id="main">
     <div class="content-top">
         <a name="services"></a>
@@ -132,6 +134,8 @@
             </div>
     </div>
 </main>
+
+<!-- Gallery main-bottom -->
 <div class="gallery-holder">
     <ul id="gallery-2" class="list">
         <li>
@@ -175,6 +179,8 @@
         </li>
     </ul>
 </div>
+<!-- Gallery main-bottom END-->
+
 <div class="subscribe-holder">
     <div class="subscribe">
         <span>Start today!</span>
@@ -278,4 +284,4 @@
 </div>
 
 
-<!-- Main Ends Here -->
+<!-- Main Ends Here
