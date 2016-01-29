@@ -563,23 +563,7 @@
 	display: block;
 	padding: 0 0 29px 0;
 }
-.btn-danger {
-	margin: 0 auto;
-	padding: 0;
-	font-family: 'LatoRegular';
-	width: 175px;
-	height: 51px;
-	display: block;
-	color: #fff;
-	font-size: 23px;
-	line-height: 25px;
-	background: #e83c32;
-	border: none;
-	border-radius: 10px;
-	text-transform: capitalize;
-	box-shadow: none;
-	text-shadow: none;
-}
+
 .social-buttons-row {
 	overflow: hidden;
 	width: 100%;

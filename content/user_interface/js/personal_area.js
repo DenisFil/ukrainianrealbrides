@@ -35,7 +35,7 @@ $(document).ready(function(){
             success: function(data){
                 if (data.result == 1){
                     $('#new-user-avatar').attr('src', data.link);
-                    $('#new-avatar').show();
+                    $('#avatar-link').click();
                 }
             }
         });
