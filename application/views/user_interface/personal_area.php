@@ -145,7 +145,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <div class="exit"></div>
+                </button>
+                <h4>Create your avatar</h4> 
                 <img src="" id="new-user-avatar">
+                <p>Crop your profile photo here</p>
             </div>
         </div>
     </div>
