@@ -34,8 +34,12 @@ $(document).ready(function(){
             dataType: 'json',
             success: function(data){
                 if (data.result == 1){
-                    $('#new-user-avatar').attr('src', data.link);
+                    $('.new-user-avatar').attr('src', data.link);
                     $('#avatar-link').click();
+                    $('#target').Jcrop({
+                        aspectRatio: 1,
+                        setSelect: [275, 100, 400, 300]
+                    });
                 }
             }
         });

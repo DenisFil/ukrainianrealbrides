@@ -150,7 +150,7 @@
                     <div class="exit"></div>
                 </button>
                 <h4>Create your avatar</h4> 
-                <img src="" id="new-user-avatar">
+                <img src="" class="new-user-avatar" id="target">
                 <p>Crop your profile photo here</p>
             </div>
         </div>
