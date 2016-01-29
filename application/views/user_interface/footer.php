@@ -52,8 +52,9 @@
             <span class="tel">+1-917-722-5338</span>
         </div>
     </div>
+    <div class="page-bottom"></div>
 </footer>
-<div class="page-bottom"></div>
+
 <!-- Footer Ends Here -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
