@@ -69,5 +69,7 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jcarousel.responsive.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/videosliderengine/amazingslider.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/videosliderengine/initslider-1.js"></script>
+
+<script src="http://jcrop-cdn.tapmodo.com/v2.0.0-RC1/js/Jcrop.js"></script>
     </body>
 </html>

@@ -3,11 +3,15 @@
     <div class="profile-block">
         <h2>Welcome <?php echo $this->session->userdata('name'); ?></h2>
 		<span class="profile-photo">
+<!-- 
 		    <label class="file_upload">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png" width="34" height="27" alt="Upload image">
                 <span>Add Profile Photo</span>
                 <form id="avatar"><input type="file" id="avatar-photo" name="avatar"></form>
             </label>
+ -->
+            <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/profile-photo.jpg" width="186" height="281" alt="Profile photo">
+
 		</span>
         <div class="profile-main">
             <ul>
@@ -153,7 +157,7 @@
                     <div class="exit"></div>
                 </button>
                 <h4>Create your avatar</h4> 
-                <img src="" id="new-user-avatar">
+                <img src="" class="new-user-avatar" id="target">
                 <p>Crop your profile photo here</p>
             </div>
         </div>
