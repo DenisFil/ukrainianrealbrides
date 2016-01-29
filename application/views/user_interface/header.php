@@ -12,6 +12,8 @@
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/bootstrap/css/bootstrap-theme.min.css" />
     <!--Bootstrap css end-->
 
+    <link rel="stylesheet" href="http://jcrop-cdn.tapmodo.com/v2.0.0-RC1/css/Jcrop.css" type="text/css">
+
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/header.css" type="text/css" />
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/<?php echo $css; ?>.css" type="text/css" />
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/footer.css" type="text/css" />
@@ -93,7 +95,7 @@
                     <li><a href="#">Men profiles</a></li>
                 <?php } ?>
                 <li><a href="#">Search</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
             </ul>
             <div class="logo-place"></div>
             <ul class="nav-right">
