@@ -182,7 +182,7 @@
                     <button type="button" class="btn btn-danger" id="invite">Invite</button>
                 </form>
                 <div class="modal-bottom">
-                <span>Send invitation letter to your friends</span>
+                <span>Send invitation letter to your friend</span>
             </div>
             </div>
 

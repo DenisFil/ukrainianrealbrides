@@ -35,7 +35,7 @@
         <div class="footer-right">
             <a class="footer-logo" href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/footer-logo.png" alt="Ukrainian real brides" width="232px" height="131px" /></a>
             <ul>
-                <li class="youtube-sprite"><a href="#"><span></span></a></li>
+                <li class="youtube-sprite"><a href="https://www.youtube.com/channel/UCh3M5uJ4v01u-7VN7l1bFvQ" target="_blank"><span></span></a></li>
                 <li class="insta-sprite"><a href="#"><span></span></a></li>
                 <li class="forsquare-sprite"><a href="#"><span></span></a></li>
             </ul>
