@@ -23,7 +23,6 @@ $(document).ready(function(){
 
 //Загрузка фото
     $('#avatar-photo').change(function(){
-        console.log('hello');
         var avatar = new FormData($('#avatar')[0]);
         $.ajax({
             type: 'post',
@@ -40,6 +39,25 @@ $(document).ready(function(){
                         aspectRatio: 0.66,
                         minSize: [186, 281],
                         setSelect: [275, 100, 400, 300]
+                    });
+
+                    $('#save-avatar').click(function(){
+                        var coordinates = {
+                            coordinates: $('.jcrop-current').attr('style'),
+                            link: $('#target').attr('src')
+                        };
+                        console.log(coordinates);
+                        $.ajax({
+                            type: 'post',
+                            data: coordinates,
+                            url: baseUrl + 'user_interface/personal_area/crop_avatar',
+                            dataType: 'json',
+                            success: function(data){
+                                if (data.result == 1){
+                                    location.reload();
+                                }
+                            }
+                        });
                     });
                 }
             }
