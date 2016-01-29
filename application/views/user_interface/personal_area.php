@@ -152,6 +152,7 @@
                 <h4>Create your avatar</h4> 
                 <img src="" class="new-user-avatar" id="target">
                 <p>Crop your profile photo here</p>
+                <button type="button" class="btn btn-success" id="save-avatar">Save photo</button>
             </div>
         </div>
     </div>

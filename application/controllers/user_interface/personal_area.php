@@ -97,4 +97,33 @@
                 }
             echo json_encode($result);
         }
+
+//Кроп аватара
+        public function crop_avatar()
+        {
+            $coordinates = $this->input->post();
+            $link = $this->personal_area_model->get_avatar($this->session->userdata('id'));
+            $coordinates = explode('; ', $coordinates['coordinates']);
+            $coordinates_data = array();
+                foreach ($coordinates as $value)
+                {
+                    $param = explode(': ', $value);
+                    $param[2] = explode('px', $param[1]);
+                    $coordinates_data[$param[0]] = $param[2][0];
+                }
+            $full = './content/profiles/avatars/' . $link . '_full.jpg';
+            $avatar = './content/profiles/avatars/' . $link . '_avatar.jpg';
+            copy($full, $avatar);
+            $config['image_lib'] = array(
+                'image_library' => 'gd2',
+                'source_image' => './content/profiles/avatars/' . $link . '_avatar.jpg',
+                'x_axis' => $coordinates_data['left'],
+                'y_axis' => $coordinates_data['top'],
+                'width' => $coordinates_data['width'],
+                'height' => $coordinates_data['height']
+            );
+            $this->load->library('image_lib', $config['image_lib']);
+            $this->image_lib->crop();
+            echo json_encode($result = array('result' => 1));
+        }
     }
