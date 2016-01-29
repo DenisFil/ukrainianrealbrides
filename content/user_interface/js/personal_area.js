@@ -37,7 +37,8 @@ $(document).ready(function(){
                     $('.new-user-avatar').attr('src', data.link);
                     $('#avatar-link').click();
                     $('#target').Jcrop({
-                        aspectRatio: 1,
+                        aspectRatio: 0.66,
+                        minSize: [186, 281],
                         setSelect: [275, 100, 400, 300]
                     });
                 }
