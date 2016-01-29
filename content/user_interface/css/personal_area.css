@@ -67,7 +67,7 @@
 	text-transform: capitalize;
 }
 .profile-box-right a{
-	display: block;
+	display: inline-block;
 	font-size: 16px;
 	line-height: 18px;
     font-family: 'latosemibold';
@@ -327,7 +327,7 @@
 }
 #new-avatar .modal-body img {
 	max-width: 604px;
-	max-height: 604px;
+	max-height: 550px;
 	display: inline-block;
 }
 #new-avatar h4 {
@@ -338,4 +338,14 @@
 }
 #new-avatar p {
 	margin-top: 10px;
+}
+.modal-bottom span {
+	padding: 0 12px;
+}
+#invite-modal .btn-danger {
+	width: 170px;
+	margin: 0 auto 20px;
+}
+#invite-modal .modal-bottom {
+    padding: 33px 0 27px 0;
 }

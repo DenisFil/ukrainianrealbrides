@@ -37,7 +37,7 @@
                 </li>
                 <li class="invite-friend">
                     <h4>Invite Friend</h4>
-                    <a href="#">Send</a>
+                    <a href="#invite-modal" data-toggle="modal">Send</a>
                 </li>
                 <li class="balance">
                     <h4>Balance: <?php echo $credits; ?>cr</h4>
@@ -95,6 +95,7 @@
     </div>
 </div>
 
+<!-- jcarousel photo gallery -->
 <div class="jcarousel-wrapper">
     <h4>Favorites</h4>
     <div class="jcarousel">
@@ -140,7 +141,9 @@
     <a href="#" class="jcarousel-control-prev"></a>
     <a href="#" class="jcarousel-control-next"></a>
 </div>
+<!-- jcarousel photo gallery END -->
 
+<!-- Profile photo crop modal -->
 <a href="#new-avatar" id="avatar-link" role="button" data-toggle="modal"></a>
 <div class="modal fade" id="new-avatar">
     <div class="modal-dialog">
@@ -156,3 +159,34 @@
         </div>
     </div>
 </div>
+<!-- Profile photo crop modal END -->
+
+<!-- Invite modal -->
+<div class="modal fade" id="invite-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <div class="exit"></div>
+                </button>
+                <h2>Invite friend</h2>
+                <form class="form-horizontal" id="login-form">
+                    <div class="form-row">
+                        <input type="text" class="form-control" placeholder="Name" autofocus tabindex="1" id="user-name">
+                        <span id="user-name-error-text" class="form-error-message"></span>
+                    </div>
+                    <div class="form-row last-form">
+                            <input type="text" class="form-control" placeholder="Email Address" tabindex="2" id="user-email">
+                            <span id="user-email-error-text" class="form-error-message"></span>
+                    </div>
+                    <button type="button" class="btn btn-danger" id="invite">Invite</button>
+                </form>
+                <div class="modal-bottom">
+                <span>Send invitation letter to your friends</span>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Invite modal END -->

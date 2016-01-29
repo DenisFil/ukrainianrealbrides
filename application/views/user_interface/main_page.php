@@ -146,7 +146,7 @@
                 <p>And more wonderful things are going to happen in their life.</p>
                 <ul>
                     <li><span class="img-vector-one"></span>3 Years together</li>
-                    <li><span class="img-vector-two"></span>1 Children</li>
+                    <li><span class="img-vector-two"></span>1 Child</li>
                 </ul>
                 <a class="gallery-second-button" href="">Read more Succesesful stories at our blog</a>
             </div>
