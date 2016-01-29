@@ -141,7 +141,8 @@
     <a href="#" class="jcarousel-control-next"></a>
 </div>
 
-<div class="modal" id="new-avatar">
+<a href="#new-avatar" id="avatar-link" role="button" data-toggle="modal"></a>
+<div class="modal fade" id="new-avatar">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
