@@ -326,7 +326,7 @@
 }
 #new-avatar .modal-dialog {
 	max-width: 644px;
-	min-width: 384px;
+	/*min-width: 384px;*/
 	width: auto;
 	text-align: center;
 }
@@ -338,7 +338,7 @@
 }
 #new-avatar .modal-body img {
 	max-width: 604px;
-	max-height: 550px;
+	max-height: 604px;
 	display: inline-block;
 }
 #new-avatar h4 {

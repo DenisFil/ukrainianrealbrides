@@ -126,6 +126,37 @@
             );
             $this->load->library('image_lib', $config['image_lib']);
             $this->image_lib->crop();
+            $this->image_lib->clear();
+
+            $preview = './content/profiles/avatars/' . $link . '_preview.jpg';
+            copy($avatar, $preview);
+
+            echo json_encode($result = array('result' => 1, 'link' => base_url() . 'content/profiles/avatars/' . $link . '_preview.jpg', 'width' => $coordinates_data['width']));
+        }
+
+        public function crop_preview()
+        {
+            $coordinates = $this->input->post();
+            $link = $this->personal_area_model->get_avatar($this->session->userdata('id'));
+            $coordinates = explode('; ', $coordinates['coordinates']);
+            $coordinates_data = array();
+                foreach ($coordinates as $value)
+                {
+                    $param = explode(': ', $value);
+                    $param[2] = explode('px', $param[1]);
+                    $coordinates_data[$param[0]] = $param[2][0];
+                }
+            $config['image_lib'] = array(
+                'image_library' => 'gd2',
+                'source_image' => './content/profiles/avatars/' . $link . '_preview.jpg',
+                'maintain_ratio' => FALSE,
+                'x_axis' => $coordinates_data['left'],
+                'y_axis' => $coordinates_data['top'],
+                'width' => $coordinates_data['width'],
+                'height' => $coordinates_data['height']
+            );
+            $this->load->library('image_lib', $config['image_lib']);
+            $x = $this->image_lib->crop();
             echo json_encode($result = array('result' => 1));
         }
     }

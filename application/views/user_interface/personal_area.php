@@ -156,7 +156,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     <div class="exit"></div>
                 </button>
-                <h4>Create your avatar</h4> 
+                <h4>Create your avatar</h4>
                 <img src="" class="new-user-avatar" id="target">
                 <p>Crop your profile photo here</p>
                 <button type="button" class="btn btn-success" id="save-avatar">Save photo</button>

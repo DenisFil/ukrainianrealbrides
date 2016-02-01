@@ -38,10 +38,10 @@ $(document).ready(function(){
                     $('#target').Jcrop({
                         aspectRatio: 0.66,
                         minSize: [186, 281],
-                        setSelect: [275, 100, 400, 300]
+                        setSelect: [0, 0, 0, 0]
                     });
 
-                    $('#save-avatar').click(function(){
+                    $(document).on('click', '#save-avatar', function() {
                         var coordinates = {
                             coordinates: $('.jcrop-current').attr('style'),
                             link: $('#target').attr('src')
@@ -51,6 +51,40 @@ $(document).ready(function(){
                             type: 'post',
                             data: coordinates,
                             url: baseUrl + 'user_interface/personal_area/crop_avatar',
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data.result == 1) {
+                                    $('.exit').click();
+                                    if (data.width < 260) {
+                                        $('.modal-body h4').attr('style', 'width: 186px; display: inline-block;');
+                                        $('.modal-body p').attr('style', 'width: 186px;');
+                                    }
+                                    $('#save-avatar').attr('id', 'save-preview');
+                                    $('.modal-body h4').text('').text('Create your preview photo');
+                                    $('.modal-body p').text('').text('Crop your preview photo here');
+                                    $('.new-user-avatar').attr('src', data.link);
+                                    $('.jcrop-active').attr('style', '').attr('style', 'width: ' + data.width + ';');
+                                    setTimeout(function () {
+                                        $('#avatar-link').click();
+                                    }, 500);
+                                    $('#target').Jcrop({
+                                        aspectRatio: 1,
+                                        minSize: [100, 100],
+                                        setSelect: [0, 0, 0, 0]
+                                    });
+                                    $('.jcrop-shades').attr('style', 'display: none;');
+                                }
+                            }
+                        });
+                    });
+                    $(document).on('click', '#save-preview', function(){
+                        var crop = {
+                            coordinates: $('.jcrop-current').attr('style')
+                        };
+                        $.ajax({
+                            type: 'post',
+                            data: crop,
+                            url: baseUrl + 'user_interface/personal_area/crop_preview',
                             dataType: 'json',
                             success: function(data){
                                 if (data.result == 1){
