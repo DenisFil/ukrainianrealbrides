@@ -116,7 +116,7 @@
                 <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
                     <ul class="amazingslider-slides" style="display:none;">
                         <li><img src="<?php echo base_url(); ?>content/user_interface/img/main//video01.jpg" alt="Ukrainian Real Brides presentation"  title="Ukrainian Real Brides presentation" />
-                        <video preload="none" src="https://www.youtube.com/embed/edY1zhyvY3Q" ></video>
+                        <video preload="none" src="https://youtu.be/WQSPUJJMfk0" ></video>
                         </li>
                         <li><img src="<?php echo base_url(); ?>content/user_interface/img/main//video02.jpg" alt="Alberto and Lara love story"  title="Alberto and Lara love story" />
                         <video preload="none" src="https://www.youtube.com/embed/m59eZ6E5tHA" ></video>
@@ -216,7 +216,7 @@
                 </button>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
                 <h2>Chat</h2>     
-                <span>What can be better than live communication with the beautiful women, who are here just waiting for you? That is why we have our additional service – text chat. Yes, chat to her and get to know each other better. Don’t hesitate and just chat to Ukrainian Real Brides!</span>
+                <span>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</span>
                 <button type="button" class="btn btn-danger">To Service</button>
             </div>
         </div>
@@ -230,7 +230,7 @@
                     <div class="exit"></div>
                 </button>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
-                <h2>Video Chat</h2>     
+                <h2>Video chat</h2>     
                 <span>What can be better than live communication with the beautiful women, who are here just waiting for you? That is why we have our additional service – video chat. Yes, chat to her and get to know each other better. Don’t hesitate and just chat to Ukrainian Real Brides!</span>
                 <button type="button" class="btn btn-danger">To Service</button>
             </div>
@@ -282,6 +282,5 @@
         </div>
     </div>
 </div>
-
 
 <!-- Main Ends Here

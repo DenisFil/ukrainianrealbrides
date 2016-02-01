@@ -146,7 +146,7 @@
 }
 .page-bottom {
 	width: 100%;
-	padding: 52px 0 0;
+	padding-bottom: 52px;
 	background: url("../img/header/bg-line.png") repeat-x;
 	border-top: 3px solid #fff;
 }
