@@ -1,0 +1,215 @@
+.payments {
+	width: 100%;
+}
+.credit-packs {
+	max-width: 1170px;
+    padding: 0 0.85% 0 0.85%;
+	margin: 0 auto 59px;
+}
+.credit-packs:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.credits-box {
+	width: 23.05%;
+	margin-right: 23.1px; 
+	background: url("../img/pop-ups/modal-bg.png") repeat-x 0 15px;
+	text-align: center;
+	border: 1px solid #000;
+	border-radius: 9px;
+	padding-top: 51px;
+	padding-bottom: 30px;
+   	font-family: 'BanderaProMedium';
+   	float: left;
+}
+.credits-box img {
+	display: inline-block;
+	margin: 0 0 42px 42px; 
+}
+.payments .credits-box h2 {
+	margin-bottom: 58px;
+	padding: 0;
+	background: none;
+	text-transform: uppercase;
+	font-size: 32px;
+	line-height: 34px;
+}
+.payments .credits-box.silver h2 {
+	margin-bottom: 48px;
+}
+.credits-box.silver img {
+    margin: 0 0 42px 8px;
+}
+.credits-box.silver strong {
+    margin-bottom: 23px;
+}
+.credits-box.silver span {
+    margin-bottom: 17px;
+}
+
+.credits-box.gold{
+	width: 24.7%;
+	margin-top: -18px;
+	background: url("../img/payment/bg-gold.png") repeat-x 0 26px;
+	padding-top: 58px;
+	padding-bottom: 32px;
+}
+.payments .credits-box.gold h2 {
+	margin-bottom: 31px;
+	font-size: 43px;
+	line-height: 45px;
+}
+.credits-box.gold img {
+	margin: 0 0 18px 0px;
+}
+.credits-box.gold strong {
+    margin-bottom: 12px;
+}
+.credits-box.gold strong p{
+    margin: 0;
+}
+.credits-box.gold span {
+    margin-bottom: 27px;
+}
+.credits-box.gold .detail-button {
+    color: #fff;
+    background: #e83c32;
+	padding: 7px 37px 10px 36px;
+    font-family: 'LatoRegular';
+    margin: 0 auto;
+	font-size: 34px;
+	line-height: 36px;
+}
+.credits-box.gold .detail-button:hover {
+    color: #e83c32;
+    background: #fff;
+}
+.credits-box.platinum {
+	margin: 0 0 19px;
+}
+.payments .credits-box.platinum h2 {
+	margin-bottom: 19px;
+}
+.credits-box.platinum img {
+    margin: 0 0 12px 8px;
+}
+.credits-box.platinum strong {
+    margin-bottom: 10px;
+}
+.credits-box.platinum span {
+    margin-bottom: 27px;
+}
+.credits-box strong {
+	display: block;
+	margin-bottom: 34px;
+	font-size: 50px;
+	line-height: 52px;
+	font-weight: normal;
+}
+.credits-box strong em{
+	display: inline-block;
+	font-size: 30px;
+	line-height: 32px;
+	font-style: normal;
+}
+.credits-box strong p{
+	font-size: 20px;
+	line-height: 22px;
+	display: block;
+	margin-top: 2px; 
+}
+.credits-box span{
+	display: block;
+	font-size: 26px;
+	line-height: 28px;
+	margin-bottom:29px;
+	color: rgba(0,0,0,0.5);
+}
+.payments h3 {
+	font-size: 28px;
+	line-height: 30px;
+	padding-bottom: 58px; 
+}
+.payments h2 {
+	padding-top: 4px;
+	margin-bottom: 17px;
+}
+.payments .detail-button {
+	display: inline-block;
+    color: #e83c32;
+    padding: 4px 27px 7px 25px;
+    font-family: 'LatoRegular';
+    margin: 0 auto;
+	font-size: 24px;
+	line-height: 26px;
+}
+.payments .detail-button:hover {
+    color: #fff;
+    background: #e83c32;
+}
+.payment-methods {
+	max-width: 1170px;
+	margin: 0 auto 64px;
+}
+.payment-methods:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.payment-methods li img {
+	display: inline-block;
+}
+.payment-methods li a {
+	display: block;
+}
+.payment-methods li {
+	float: left;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: url("../img/payment/grayscale.svg");
+	filter: gray;
+	opacity: 0.3;
+}
+.payment-methods li:hover{
+	filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+    -webkit-filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+.verisign {
+	margin-left: 2%;
+    margin-right: 6.9%; 
+}
+.ssl {
+	margin-right: 5.5%;
+}
+.ssl a img{
+	margin-top: 12px;
+}
+.liqpay {
+	margin-right: 6%;
+}
+.liqpay a img{
+	margin-top: 10px;
+}
+.visa {
+	margin-right: 7.9%;
+}
+.visa a img{
+	margin-top: 12px;
+}
+.mastercard {
+	margin-right: 0;
+}
+.mastercard a img{
+	margin-top: 3px;
+}

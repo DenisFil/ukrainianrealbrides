@@ -67,7 +67,7 @@
                                 <em><?php echo $users_online; ?></em>
                             </li>
                             <li class="credit-status">
-                                <a href="#">
+                                <a href="<?php echo base_url(); ?>/user_interface/payment">
                                     <span></span>
                                 </a>
                                 <em><?php echo $credits; ?></em>
