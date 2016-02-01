@@ -90,6 +90,7 @@
 
                     $result['result'] = 1;
                     $result['link'] = base_url() . 'content/profiles/avatars/' . $data['upload_data']['raw_name'] . '_full.jpg';
+                    $this->image_lib->clear();
                 }
                 else
                 {
@@ -117,6 +118,7 @@
             $config['image_lib'] = array(
                 'image_library' => 'gd2',
                 'source_image' => './content/profiles/avatars/' . $link . '_avatar.jpg',
+                'maintain_ratio' => FALSE,
                 'x_axis' => $coordinates_data['left'],
                 'y_axis' => $coordinates_data['top'],
                 'width' => $coordinates_data['width'],
