@@ -75,7 +75,7 @@
     font-style: normal;
 }
 body {
-	margin: 0 auto 485px;
+	margin: 0 auto 0;
 	color: #000;
 	background: #fff;
 	font: 15px/17px 'Lato-Light';
