@@ -54,7 +54,7 @@
     </div>
     <div class="page-bottom"></div>
 </footer>
-</div>
+
 <!-- Footer Ends Here -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -72,6 +72,6 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>content/videosliderengine/initslider-1.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/main.js"></script>
 
-<script src="http://jcrop-cdn.tapmodo.com/v2.0.0-RC1/js/Jcrop.js"></script>
+    <script src="http://jcrop-cdn.tapmodo.com/v2.0.0-RC1/js/Jcrop.js"></script>
     </body>
 </html>

@@ -13,7 +13,7 @@
 }
 .credits-box {
 	width: 23.05%;
-	margin-right: 23.1px; 
+	margin-right: 2%; 
 	background: url("../img/pop-ups/modal-bg.png") repeat-x 0 15px;
 	text-align: center;
 	border: 1px solid #000;
@@ -49,7 +49,7 @@
 }
 
 .credits-box.gold{
-	width: 24.7%;
+	width: 24.85%;
 	margin-top: -18px;
 	background: url("../img/payment/bg-gold.png") repeat-x 0 26px;
 	padding-top: 58px;
@@ -126,10 +126,13 @@
 	margin-bottom:29px;
 	color: rgba(0,0,0,0.5);
 }
-.payments h3 {
+.payments>.credit-packs>span {
+	font-family: 'LatoRegular';
 	font-size: 28px;
 	line-height: 30px;
 	padding-bottom: 58px; 
+	display: block;
+	text-align: center;
 }
 .payments h2 {
 	padding-top: 4px;
@@ -212,29 +215,79 @@
 	max-width: 1170px;
 	margin: 0 auto;
 	overflow: hidden;
+	margin-bottom: 72px;
 }
 .price-box {
-	width: 24.27%;
+	width: 24.4%;
+	float: left;
 	background: #ebebeb;
+	overflow: hidden;
+	border-radius: 8px; 
+	margin-right: 0.8%;
 }
 .price-box img {
-	display: block;
+	display: inline-block;
 	float: left;
-	margin-left: 18px;
+}
+.price-box.messaging-price{
+	padding: 21px 0 24px 29px;
+}
+.price-box.messaging-price img{
+	margin: 4px 18px 0 0;
+}
+.price-box.chat-price{
+	padding: 21px 0 18px 26px;
+}
+.price-box.chat-price img{
+	margin: 4px 16px 0 0;
+}
+.price-box.video-chat-price{
+	padding: 21px 0 20px 26px;
+}
+.price-box.video-chat-price img{
+	margin: 0 20px 0 0;
+}
+.price-box.presentation-price{
+	margin: 0;
+}
+.price-box.presentation-price{
+	padding: 21px 0 23px 27px;
+}
+.price-box.presentation-price img{
+	margin: 0 15px 0 0;
 }
 .price-box-right {
 	float: left;
 }
 .price-box h4 {
     font-family: 'BanderaProBold';
+    margin-bottom: 11px;
     font-size: 22px;
     line-height: 24px;
     padding: 0;
     display: block;
     text-transform: capitalize;
+    position: relative;
+}
+
+.price-box-right h4:after {
+	content: "";
+	position: absolute;
+	display: block;
+    left: 1px;
+    top: 29px;
+	background: -webkit-linear-gradient(left, #e83c32, #e83c32);
+	width: 114px;
+	height: 1px;
 }
 .price-box-right span {
+	margin-bottom: 1px;
+}
+.price-box-right span,
+.price-box-right em {
     font-family: 'LatoWebMedium';
     font-size: 16px;
     line-height: 18px;
+    display: block;
+    font-style: normal;
 }
