@@ -42,19 +42,29 @@
 	</div>
 		<ul class="payment-methods">
 			<li class="verisign">
-				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/verisign.png" width="158" height="79" alt=""></a>
+				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/verisign.jpg" width="158" height="79" alt=""></a>
 			</li>
 			<li class="ssl">
-				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/ssl.png" width="158" height="68" alt=""></a>
+				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/ssl.jpg" width="158" height="68" alt=""></a>
 			</li>
 			<li class="liqpay">
-				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/liqpay.png" width="256" height="74" alt=""></a>
+				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/liqpay.jpg" width="256" height="74" alt=""></a>
 			</li>
 			<li class="visa">
-				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/visa.png" width="107" height="67" alt=""></a>
+				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/visa.jpg" width="107" height="67" alt=""></a>
 			</li>
 			<li class="mastercard">
-				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/mastercard.png" width="126" height="76" alt=""></a>
+				<a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/payment/mastercard.jpg" width="126" height="76" alt=""></a>
 			</li>			
 		</ul>
+		<div class="services-price">
+			<div class="price-box">
+				<img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="61" height="69" alt="Messaging" />
+				<div class="price-box-right">
+					<h4>Messaging</h4>
+					<span>Letter write/read 16 credits</span>
+				</div>
+
+			</div>
+		</div>
 </div>

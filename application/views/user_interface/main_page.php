@@ -34,7 +34,7 @@
     <div class="content-top">
         <a name="services"></a>
         <h2>Our Services</h2>
-        <div class="detail-box">
+        <div class="detail-box messaging-service">
             <h3>Messaging</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" alt="Messaging" />
             <a href="#messaging-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
