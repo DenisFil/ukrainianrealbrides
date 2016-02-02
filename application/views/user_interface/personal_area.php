@@ -45,7 +45,7 @@
                 </li>
                 <li class="balance">
                     <h4>Balance: <?php echo $credits; ?>cr</h4>
-                    <a href="#">Refill</a>
+                    <a href="<?php echo base_url(); ?>/user_interface/payment">Refill</a>
                 </li>
             </ul>
             <div class="profile-bottom">

@@ -15,6 +15,8 @@
         {
             $email_data['confirm_hash'] = $user_data['email_hash'];
             unset($user_data['email_hash']);
+            $invite_data['invite_code'] = $user_data['invite'];
+            unset($user_data['invite']);
             $query = $this->db->insert('users', $user_data);
 
             $user_id = $this->db->    select('id')->
@@ -25,6 +27,7 @@
             $email_data['user_id'] = $user_id[0]->id;
             $query_email = $this->db->insert('confirm_email', $email_data);
             $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
+            $query_invite = $this->db->insert();
                 if ($query && $query_email && $query_credits === TRUE)
                 {
                     return TRUE;

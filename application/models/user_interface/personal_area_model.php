@@ -61,4 +61,10 @@
                                     result();
             return $query;
         }
+
+        public function invite_friend($data)
+        {
+            $query = $this->db->insert('invites', $data);
+            return $query;
+        }
     }

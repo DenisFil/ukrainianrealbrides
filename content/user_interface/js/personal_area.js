@@ -21,9 +21,30 @@ $(document).ready(function(){
         }
     });
 
-//Загрузка фото
+//Отправка приглашений друзьям
+    $('#invite').click(function(){
+        var data = {
+            name: $('#user-name').val(),
+            email: $('#user-email').val()
+        };
+        $.ajax({
+            type: 'post',
+            data: data,
+            url: baseUrl + 'user_interface/personal_area/invite_friend',
+            dataType: 'json',
+            success: function(data){
+                if (data.result == 1){
+                    location.reload();
+                }
+            }
+        });
+    });
+
+/******************************Загрузка аватара************************************/
     $('#avatar-photo').change(function(){
         var avatar = new FormData($('#avatar')[0]);
+
+        //Загрузка и сохранение фото
         $.ajax({
             type: 'post',
             processData: false,
@@ -33,6 +54,8 @@ $(document).ready(function(){
             dataType: 'json',
             success: function(data){
                 if (data.result == 1){
+
+                    //Кроп для аватара
                     $('.new-user-avatar').attr('src', data.link);
                     $('#avatar-link').click();
                     $('#target').Jcrop({
@@ -41,12 +64,12 @@ $(document).ready(function(){
                         setSelect: [0, 0, 0, 0]
                     });
 
+                    //Сохранение аватара
                     $(document).on('click', '#save-avatar', function() {
                         var coordinates = {
                             coordinates: $('.jcrop-current').attr('style'),
                             link: $('#target').attr('src')
                         };
-                        console.log(coordinates);
                         $.ajax({
                             type: 'post',
                             data: coordinates,
@@ -56,6 +79,8 @@ $(document).ready(function(){
                                 if (data.result == 1) {
                                     $('.exit').click();
                                     if (data.width < 260) {
+
+                                        //Перестройка модального окна
                                         $('.modal-body h4').attr('style', 'width: 186px; display: inline-block;');
                                         $('.modal-body p').attr('style', 'width: 186px;');
                                     }
@@ -67,6 +92,8 @@ $(document).ready(function(){
                                     setTimeout(function () {
                                         $('#avatar-link').click();
                                     }, 500);
+
+                                    //Кроп preview фото
                                     $('#target').Jcrop({
                                         aspectRatio: 1,
                                         minSize: [100, 100],
@@ -77,6 +104,8 @@ $(document).ready(function(){
                             }
                         });
                     });
+
+                    //Сохранение preview
                     $(document).on('click', '#save-preview', function(){
                         var crop = {
                             coordinates: $('.jcrop-current').attr('style')

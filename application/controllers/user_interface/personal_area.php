@@ -134,6 +134,7 @@
             echo json_encode($result = array('result' => 1, 'link' => base_url() . 'content/profiles/avatars/' . $link . '_preview.jpg', 'width' => $coordinates_data['width']));
         }
 
+//Кроп preview фото
         public function crop_preview()
         {
             $coordinates = $this->input->post();
@@ -158,5 +159,34 @@
             $this->load->library('image_lib', $config['image_lib']);
             $x = $this->image_lib->crop();
             echo json_encode($result = array('result' => 1));
+        }
+
+        public function invite_friend()
+        {
+            $data = $this->input->post();
+
+            $invite_data = array(
+                'invite_code' => md5(time()),
+                'invite_time' => time(),
+                'invite_from_user' => $this->session->userdata('id')
+            );
+
+            $this->load->library('email');
+            $this->email->from('info@ukrainianrealbrides.com', 'Ukrainian Real Brides');
+            $this->email->to($data['email']);
+            $this->email->subject('Invite from your friend.');
+            $this->email->message('Hello,' . $data['name'] . '! Your friend ' . $this->session->userdata('name') . ' ' . $this->session->userdata('lastname') . ' invite you to project Ukrainian Real Brides. After Registration you will get bonus. Click on this link and join us: ' . base_url() . '?invite_code=' . $invite_data['invite_code']);
+            $send = $this->email->send();
+
+            $query = $this->personal_area_model->invite_friend($invite_data);
+                if ($send == TRUE && $query == TRUE)
+                {
+                    $result['result'] = 1;
+                }
+                else
+                {
+                    $result['result'] = 0;
+                }
+            echo json_encode($result);
         }
     }
