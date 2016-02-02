@@ -3,15 +3,15 @@
     <div class="profile-block">
         <h2>Welcome <?php echo $this->session->userdata('name'); ?></h2>
 		<span class="profile-photo">
-<!--
+            <?php if (!$avatar): ?>
 		    <label class="file_upload">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png" width="34" height="27" alt="Upload image">
                 <span>Add Profile Photo</span>
                 <form id="avatar"><input type="file" id="avatar-photo" name="avatar"></form>
             </label>
- -->
-            <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/profile-photo.jpg" width="186" height="281" alt="Profile photo">
-
+            <?php else: ?>
+            <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $avatar; ?>_avatar.jpg" width="186" height="281" alt="Profile photo">
+            <?php endif; ?>
 		</span>
         <div class="profile-main">
             <ul>
@@ -45,7 +45,7 @@
                 </li>
                 <li class="balance">
                     <h4>Balance: <?php echo $credits; ?>cr</h4>
-                    <a href="#">Refill</a>
+                    <a href="<?php echo base_url(); ?>/user_interface/payment">Refill</a>
                 </li>
             </ul>
             <div class="profile-bottom">
@@ -156,9 +156,10 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     <div class="exit"></div>
                 </button>
-                <h4>Create your avatar</h4> 
+                <h4>Create your avatar</h4>
                 <img src="" class="new-user-avatar" id="target">
                 <p>Crop your profile photo here</p>
+                <button type="button" class="btn btn-success" id="save-avatar">Save photo</button>
             </div>
         </div>
     </div>

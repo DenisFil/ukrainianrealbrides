@@ -90,6 +90,7 @@
 
                     $result['result'] = 1;
                     $result['link'] = base_url() . 'content/profiles/avatars/' . $data['upload_data']['raw_name'] . '_full.jpg';
+                    $this->image_lib->clear();
                 }
                 else
                 {
@@ -117,6 +118,7 @@
             $config['image_lib'] = array(
                 'image_library' => 'gd2',
                 'source_image' => './content/profiles/avatars/' . $link . '_avatar.jpg',
+                'maintain_ratio' => FALSE,
                 'x_axis' => $coordinates_data['left'],
                 'y_axis' => $coordinates_data['top'],
                 'width' => $coordinates_data['width'],
@@ -124,6 +126,67 @@
             );
             $this->load->library('image_lib', $config['image_lib']);
             $this->image_lib->crop();
+            $this->image_lib->clear();
+
+            $preview = './content/profiles/avatars/' . $link . '_preview.jpg';
+            copy($avatar, $preview);
+
+            echo json_encode($result = array('result' => 1, 'link' => base_url() . 'content/profiles/avatars/' . $link . '_preview.jpg', 'width' => $coordinates_data['width']));
+        }
+
+//Кроп preview фото
+        public function crop_preview()
+        {
+            $coordinates = $this->input->post();
+            $link = $this->personal_area_model->get_avatar($this->session->userdata('id'));
+            $coordinates = explode('; ', $coordinates['coordinates']);
+            $coordinates_data = array();
+                foreach ($coordinates as $value)
+                {
+                    $param = explode(': ', $value);
+                    $param[2] = explode('px', $param[1]);
+                    $coordinates_data[$param[0]] = $param[2][0];
+                }
+            $config['image_lib'] = array(
+                'image_library' => 'gd2',
+                'source_image' => './content/profiles/avatars/' . $link . '_preview.jpg',
+                'maintain_ratio' => FALSE,
+                'x_axis' => $coordinates_data['left'],
+                'y_axis' => $coordinates_data['top'],
+                'width' => $coordinates_data['width'],
+                'height' => $coordinates_data['height']
+            );
+            $this->load->library('image_lib', $config['image_lib']);
+            $x = $this->image_lib->crop();
             echo json_encode($result = array('result' => 1));
+        }
+
+        public function invite_friend()
+        {
+            $data = $this->input->post();
+
+            $invite_data = array(
+                'invite_code' => md5(time()),
+                'invite_time' => time(),
+                'invite_from_user' => $this->session->userdata('id')
+            );
+
+            $this->load->library('email');
+            $this->email->from('info@ukrainianrealbrides.com', 'Ukrainian Real Brides');
+            $this->email->to($data['email']);
+            $this->email->subject('Invite from your friend.');
+            $this->email->message('Hello,' . $data['name'] . '! Your friend ' . $this->session->userdata('name') . ' ' . $this->session->userdata('lastname') . ' invite you to project Ukrainian Real Brides. After Registration you will get bonus. Click on this link and join us: ' . base_url() . '?invite_code=' . $invite_data['invite_code'] . '&name=' . $data['name'] . '&email=' . $data['email']);
+            $send = $this->email->send();
+
+            $query = $this->personal_area_model->invite_friend($invite_data);
+                if ($send == TRUE && $query == TRUE)
+                {
+                    $result['result'] = 1;
+                }
+                else
+                {
+                    $result['result'] = 0;
+                }
+            echo json_encode($result);
         }
     }

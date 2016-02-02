@@ -149,17 +149,43 @@ $(document).ready(function(){
             });
         });
 
+    //Проверка приглашения
+        function getUrlVars(){
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
   /*****************************Отправка формы*********************************/
   //Обработчик фомы регистрации
         function userSignup(){
+          //Проверка приглашения
+          var letter = getUrlVars();
+          var invite;
+              if (letter.invite_code){
+                  invite = 1;
+              }else{
+                  invite = 0;
+              }
+      console.log(letter);
           //Получение введенных данных
           var data = {
               name: $('#user-name').val(),
               email: $('#user-email').val(),
-              password: $('#user-password').val()
+              password: $('#user-password').val(),
+              invite: ''
           };
+            if (invite == 1){
+                data.invite = letter.invite_code;
+            }
           var html = '<h3>Thank you!</h3><p>For complete registration we sent to your ' + data.email + ' mail.</p><p>Please check you email.</p>';
-
+console.log(data);
           //Запись в базу
           $.ajax({
               type: 'post',
