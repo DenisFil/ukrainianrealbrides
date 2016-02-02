@@ -45,25 +45,26 @@
             <a href="#chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
         <div class="detail-box">
-            <h3>Video Chat</h3>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
-            <a href="#video-chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
-        </div>
-        <div class="detail-box">
             <h3>Gift service</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" alt="Gift service" />
             <a href="#gift-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
-        <div class="detail-box">
-            <h3 class="h3-third">Very important service</h3>
+        <div class="detail-box third">
+            <h3>Very important service</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" alt="Very important service" />
             <a href="#important-service-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
-        <div class="detail-box last">
+        <div class="detail-box">
             <h3>Romance tours</h3>
             <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" alt="Romance tours" />
             <a href="#romance-tours-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
+        <div class="detail-box last">
+            <h3>Video Chat</h3>
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
+            <a href="#video-chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+        </div>
+
 
     </div>
     <div class="content-middle">
