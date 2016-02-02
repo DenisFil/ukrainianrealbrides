@@ -188,11 +188,17 @@
 	display: block;
 	float: left;
 	margin-right: 10px; 
+	position: relative;
+}
+.middle-photo.upload {
+	
 }
 .small-photo {
 	float: left;
-	margin: 0 8px 8px 0; 
+	margin: 0 8px 8px 0;
+	position: relative;
 }
+
 .file_upload {
 	width: 22%;
 	float: right;
@@ -315,7 +321,9 @@
 	-ms-transition:all 0.8s;
 	-o-transition:all 0.8s;
 }
-.jcarousel li:hover .delete-photo{
+.jcarousel li:hover .delete-photo,
+.small-photo:hover .delete-photo,
+.middle-photo:hover .delete-photo {
 	opacity:1;
 }
 .jcarousel li .delete-photo:hover {

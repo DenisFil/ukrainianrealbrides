@@ -56,9 +56,10 @@
                         <div class="profile-photos-block">
                             <?php if($photo_count > 0): ?>
                                 <span class="middle-photo">
-                                    <a href="#"><img
-                                            src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[0]->photo_link; ?>_preview.jpg"
-                                            width="208" height="123" alt="Middle profile photo"></a>
+                                    <a href="#">
+                                        <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[0]->photo_link; ?>_preview.jpg" width="208" height="123" alt="Middle profile photo">
+                                    </a>
+                                    <a class="delete-photo" href="#"></a>
                                 </span>
                             <?php if ($photo_count > 1): ?>
                                 <?php for($i = 1; $i < $photo_count; $i++): ?>
@@ -66,15 +67,14 @@
                                     <a href="#">
                                         <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[$i]->photo_link; ?>_preview.jpg" width="98" height="58" alt="Small profile photo">
                                     </a>
+                                    <a class="delete-photo" href="#"></a>
                                 </span>
                                 <?php endfor; ?>
                             <?php endif; ?>
                             <?php endif; ?>
                         </div>
                         <label class="file_upload">
-                            <img
-                                src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"
-                                width="34" height="27" alt="Upload image"">
+                            <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"  width="34" height="27" alt="Upload image">
                             <span>Add Photo</span>
                             <form id="photo"><input type="file" id="upload-photo" name="photo"></form>
                         </label>
