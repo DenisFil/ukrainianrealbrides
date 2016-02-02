@@ -1,12 +1,8 @@
 /*Footer starts here*/
 #footer {
-	content: "";
-	display: block;
+
 	width: 100%;
-	height: 485px;
 	background: #ebebeb;
-	position: absolute;
-	bottom: 0;
 
 }
 .footer-holder {
