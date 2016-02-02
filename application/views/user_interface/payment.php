@@ -1,7 +1,7 @@
 <div class="payments">
 	<div class="credit-packs">
 		<h2>Сhoose your Credits Pack</h2>
-		<h3>Sub Hender</h3>	
+		<span>Sub Hender</span>	
 		<div class="credits-box bronze">
 			<h2>bronze</h2>	
 			<img src="<?php echo base_url(); ?>content/user_interface/img/payment/bronze.png" width="168" height="84" alt="Bronze credit pack">
@@ -58,13 +58,37 @@
 			</li>			
 		</ul>
 		<div class="services-price">
-			<div class="price-box">
+			<div class="price-box messaging-price">
 				<img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="61" height="69" alt="Messaging" />
 				<div class="price-box-right">
 					<h4>Messaging</h4>
-					<span>Letter write/read 16 credits</span>
+					<span>Letter write/read</span>
+					<em>16 credits</em>
 				</div>
-
+			</div>
+			<div class="price-box chat-price">
+				<img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="76" height="74" alt="Chat" />
+				<div class="price-box-right">
+					<h4>Chat</h4>
+					<span>Text chat 1 min</span>
+					<em>1 credit</em>
+				</div>
+			</div>
+			<div class="price-box video-chat-price">
+				<img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" width="78" height="76" alt="Video chat" />
+				<div class="price-box-right">
+					<h4>Video Chat</h4>
+					<span>Video chat 1 min</span>
+					<em>2 credits</em>
+				</div>
+			</div>
+			<div class="price-box presentation-price">
+				<img src="<?php echo base_url(); ?>content/user_interface/img/payment/presentation.png" width="57" height="73" alt="Presentation" />
+				<div class="price-box-right">
+					<h4>Presentation</h4>
+					<span>View Video</span>
+					<em>20 credits</em>
+				</div>
 			</div>
 		</div>
 </div>
