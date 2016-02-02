@@ -54,7 +54,6 @@ $(document).ready(function(){
             dataType: 'json',
             success: function(data){
                 if (data.result == 1){
-
                     //Кроп для аватара
                     $('.new-user-avatar').attr('src', data.link);
                     $('#avatar-link').click();
@@ -117,6 +116,52 @@ $(document).ready(function(){
                             dataType: 'json',
                             success: function(data){
                                 if (data.result == 1){
+                                    location.reload();
+                                }
+                            }
+                        });
+                    });
+                }
+            }
+        });
+    });
+
+/*********************************Загрузка фото***********************************/
+    $('#upload-photo').change(function(){
+        var photo = new FormData($('#photo')[0]);
+
+        $.ajax({
+            type: 'post',
+            processData: false,
+            contentType: false,
+            data: photo,
+            url: baseUrl + 'user_interface/personal_area/loading_photo',
+            dataType: 'json',
+            success: function(data){
+                if (data.result == 1){
+                    //Кроп для аватара
+                    $('.new-user-avatar').attr('src', data.link);
+                    $('#avatar-link').click();
+                    $('#target').Jcrop({
+                        aspectRatio: 1.69,
+                        minSize: [196, 116],
+                        setSelect: [0, 0, 0, 0]
+                    });
+                    var photoName = data.photo_name;
+
+                    //Сохранение аватара
+                    $(document).on('click', '#save-avatar', function() {
+                        var coordinates = {
+                            coordinates: $('.jcrop-current').attr('style'),
+                            link: photoName
+                        };
+                        $.ajax({
+                            type: 'post',
+                            data: coordinates,
+                            url: baseUrl + 'user_interface/personal_area/crop_photo',
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data.result == 1) {
                                     location.reload();
                                 }
                             }

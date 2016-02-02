@@ -10,7 +10,7 @@
                 <form id="avatar"><input type="file" id="avatar-photo" name="avatar"></form>
             </label>
             <?php else: ?>
-            <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $avatar; ?>_avatar.jpg" width="186" height="281" alt="Profile photo">
+            <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id') . '/' . $avatar; ?>_avatar.jpg" width="186" height="281" alt="Profile photo">
             <?php endif; ?>
 		</span>
         <div class="profile-main">
@@ -51,31 +51,31 @@
             <div class="profile-bottom">
                 <div class="profile-bottom-left">
                     <h4>My Photo</h4>
-                    <span class="photo-page-number"><?php echo $photo_count; ?>/6</span>
+                    <span class="photo-page-number"><?php echo $photo_count; ?>/5</span>
                     <div class="profile-photos">
                         <div class="profile-photos-block">
-							<span class="middle-photo">
-								<a href="#"><img
-                                        src="<?php echo base_url(); ?>content/user_interface/img/personal-area/middle-photo.jpg"
-                                        width="172" height="124" alt="Middle profile photo"></a>
-							</span>
-							<span class="small-photo">
-								<a href="#"><img
-                                        src="<?php echo base_url(); ?>content/user_interface/img/personal-area/small-photo-01.jpg"
-                                        width="98" height="58" alt="Small profile photo"></a>
-							</span>
-							<span class="small-photo">
-								<a href="#"><img
-                                        src="<?php echo base_url(); ?>content/user_interface/img/personal-area/small-photo-02.jpg"
-                                        width="98" height="58" alt="Small profile photo"></a>
-							</span>
+                            <?php if($photo_count > 0): ?>
+                                <span class="middle-photo">
+                                    <a href="#"><img
+                                            src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[0]->photo_link; ?>_preview.jpg"
+                                            width="196" height="116" alt="Middle profile photo"></a>
+                                </span>
+                            <?php if ($photo_count > 1): ?>
+                                <?php for($i = 1; $i < $photo_count; $i++): ?>
+                                    <span class="small-photo">
+                                        <a href="#"><img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[$i]->photo_link; ?>_preview.jpg"
+                                                width="98" height="58" alt="Small profile photo"></a>
+                                    </span>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+                            <?php endif; ?>
                         </div>
                         <label class="file_upload">
                             <img
                                 src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"
-                                width="34" height="27" alt="Upload image">
+                                width="34" height="27" alt="Upload image"">
                             <span>Add Photo</span>
-                            <input type="file">
+                            <form id="photo"><input type="file" id="upload-photo" name="photo"></form>
                         </label>
                     </div>
                 </div>

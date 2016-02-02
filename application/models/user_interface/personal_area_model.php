@@ -67,4 +67,9 @@
             $query = $this->db->insert('invites', $data);
             return $query;
         }
+
+        public function add_photo($data)
+        {
+            $query = $this->db->insert('user_photos', $data);
+        }
     }
