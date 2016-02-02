@@ -12,7 +12,8 @@ $(document).ready(function(){
     }
 
     var letter = getUrlVars();
-        if (letter){
+    console.log(letter);
+        if (letter.name){
             $('#signup-button').click();
             $('#user-name').val(letter.name);
             $('#user-email').val(letter.email);
