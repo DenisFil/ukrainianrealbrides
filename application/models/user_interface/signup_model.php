@@ -13,21 +13,47 @@
 
         public function insert_new_user($user_data)
         {
+            //Сортировка данных
             $email_data['confirm_hash'] = $user_data['email_hash'];
             unset($user_data['email_hash']);
-            $invite_data['invite_code'] = $user_data['invite'];
+            $invite = $user_data['invite'];
             unset($user_data['invite']);
             $query = $this->db->insert('users', $user_data);
 
+            //Получение ID нового юзера
             $user_id = $this->db->    select('id')->
                                       from('users')->
                                       where('email', $user_data['email'])->
                                       get()->
                                       result();
+
+            //Запись данных для подтверждения email`a
             $email_data['user_id'] = $user_id[0]->id;
             $query_email = $this->db->insert('confirm_email', $email_data);
-            $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
-            $query_invite = $this->db->insert();
+                if ($invite != '')
+                {
+                    //Запись бонусов по кредитам для пригласившего и приглашенного
+                    $from_user_id = $this->db-> select('invite_from_user')->
+                                                from('invites')->
+                                                where('invite_code', $invite)->
+                                                get()->
+                                                result();
+                    $get_from_credits = $this->db-> select('credits')->
+                                                    from('men_details')->
+                                                    where('user_id', $from_user_id[0]->invite_from_user)->
+                                                    get()->
+                                                    result();
+                    $credits = $get_from_credits[0]->credits + 100;
+
+                    $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 50));
+                    $this->db->update('men_details', array('credits' => $credits), array('user_id' => $from_user_id[0]->invite_from_user));
+                    $query_invite = $this->db->update('invites', array('user_id' => $user_id[0]->id), array('invite_code' => $invite));
+                }
+                else
+                {
+                    $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
+                }
+
                 if ($query && $query_email && $query_credits === TRUE)
                 {
                     return TRUE;

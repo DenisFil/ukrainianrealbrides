@@ -175,7 +175,7 @@
             $this->email->from('info@ukrainianrealbrides.com', 'Ukrainian Real Brides');
             $this->email->to($data['email']);
             $this->email->subject('Invite from your friend.');
-            $this->email->message('Hello,' . $data['name'] . '! Your friend ' . $this->session->userdata('name') . ' ' . $this->session->userdata('lastname') . ' invite you to project Ukrainian Real Brides. After Registration you will get bonus. Click on this link and join us: ' . base_url() . '?invite_code=' . $invite_data['invite_code']);
+            $this->email->message('Hello,' . $data['name'] . '! Your friend ' . $this->session->userdata('name') . ' ' . $this->session->userdata('lastname') . ' invite you to project Ukrainian Real Brides. After Registration you will get bonus. Click on this link and join us: ' . base_url() . '?invite_code=' . $invite_data['invite_code'] . '&name=' . $data['name'] . '&email=' . $data['email']);
             $send = $this->email->send();
 
             $query = $this->personal_area_model->invite_friend($invite_data);
