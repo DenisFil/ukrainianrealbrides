@@ -174,9 +174,18 @@ $(document).ready(function(){
 
 /********************************Просмотр фото************************************/
     $('.photo-view').click(function(){
-        var link = $(this).children().attr('src');
-        $('#user-photo').children().attr('src', link);
-        var nextLink = $(this).parent().next().children().children().attr('src');
-        $('#user-photo').attr('href', nextLink);
+        var set = $('.profile-photos-block img');
+        $('.profile-photos-block').on('click', 'img', function () {
+            var index = set.index(this);
+            console.log(index);
+        });
+        $.ajax({
+            type: 'post',
+            url: baseUrl + '',
+            dataType: 'json',
+            success: function(data){
+                
+            }
+        });
     });
 });

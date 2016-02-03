@@ -16,6 +16,7 @@
 
                 $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
                 $photos['photos'] = $this->personal_area_model->get_photos($user_id);
+                $photos['photos'] = array_reverse($photos['photos']);
                 $data['photo_count'] = count($photos['photos']);
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
                 $data['users_online'] = $this->personal_area_model->users_online(time());
