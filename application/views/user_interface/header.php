@@ -21,10 +21,6 @@
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/font-awesome.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>content/videosliderengine/amazingslider-1.css">
 
-    <!--<link media="all" rel="stylesheet" href="css/sorry.css" type="text/css" />-->
-    <!--[if lt IE 7]>
-<link rel="stylesheet" type="text/css" href="css/lt7.css" media="screen"/>-->
-<!-- <![endif]--> 
 </head>
 <body>
 
@@ -151,7 +147,9 @@
         </div>
     </div>
 </div>
+<!--SignUp modal ends-->
 
+<!--Login modal start-->
 <div class="modal fade" id="login-modal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -182,5 +180,5 @@
         </div>
     </div>
 </div>
-<!--SignUp modal ends-->
+<!--Login modal ends-->
 <?php endif; ?>

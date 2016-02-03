@@ -171,4 +171,21 @@ $(document).ready(function(){
             }
         });
     });
+
+/********************************Просмотр фото************************************/
+    $('.photo-view').click(function(){
+        var set = $('.profile-photos-block img');
+        $('.profile-photos-block').on('click', 'img', function () {
+            var index = set.index(this);
+            console.log(index);
+        });
+        $.ajax({
+            type: 'post',
+            url: baseUrl + '',
+            dataType: 'json',
+            success: function(data){
+                
+            }
+        });
+    });
 });
