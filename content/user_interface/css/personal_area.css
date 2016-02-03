@@ -177,24 +177,36 @@
 }
 .profile-photos {
 	width: 100%;
-	float: left;
-}
-.profile-photos-block {
-	width: 78%;
 	overflow: hidden;
-	float: left;
 }
 .middle-photo {
 	display: block;
+	width: 208px;
+	height: 123px;
 	float: left;
 	margin-right: 10px; 
+	position: relative;
+}
+.middle-photo.upload {
+	
 }
 .small-photo {
 	float: left;
-	margin: 0 8px 8px 0; 
+	width: 98px;
+	height: 58px;
+	margin: 0 8px 8px 0;
+	position: relative;
+}
+.file_upload.small_upload {
+	margin: 0;
+	padding: 12px 0 0 0;
+}
+.file_upload.small_upload span {
+	display: none;
 }
 .file_upload {
-	width: 22%;
+	width: 100%;
+	height: 100%;
 	float: right;
 	border: 1px dashed rgba(0,0,0,0.5);
     position: relative;
@@ -315,7 +327,9 @@
 	-ms-transition:all 0.8s;
 	-o-transition:all 0.8s;
 }
-.jcarousel li:hover .delete-photo{
+.jcarousel li:hover .delete-photo,
+.small-photo:hover .delete-photo,
+.middle-photo:hover .delete-photo {
 	opacity:1;
 }
 .jcarousel li .delete-photo:hover {
