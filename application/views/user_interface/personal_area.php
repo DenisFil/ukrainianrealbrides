@@ -55,12 +55,12 @@
             <div class="profile-bottom">
                 <div class="profile-bottom-left">
                     <h4>My Photo</h4>
-                    <span class="photo-page-number"><?php echo $photo_count; ?>/5</span>
+                    <span class="photo-page-number"><?php echo $photo_count; ?>/7</span>
                     <div class="profile-photos">
                         <div class="profile-photos-block">
                             <?php if($photo_count == 0): ?>
                             <span class="middle-photo">
-                                <label class="file_upload">
+                                <label class="file-upload">
                                     <img
                                         src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"
                                         width="34" height="27" alt="Upload image"">
@@ -85,7 +85,7 @@
                                     <?php endfor; ?>
 
                                     <span class="small-photo">
-                                        <label class="file_upload small_upload">
+                                        <label class="file-upload small-upload">
                                             <img
                                                 src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"
                                                 width="34" height="27" alt="Upload image"">
