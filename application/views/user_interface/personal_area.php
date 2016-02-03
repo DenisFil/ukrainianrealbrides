@@ -3,7 +3,7 @@
         <h2>Welcome <?php echo $this->session->userdata('name'); ?></h2>
 		<span class="profile-photo">
             <?php if (!$avatar): ?>
-		    <label class="file_upload">
+		    <label class="file-upload">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png" width="34" height="27" alt="Upload image">
                 <span>Add Profile Photo</span>
                 <form id="avatar"><input type="file" id="avatar-photo" name="avatar"></form>
@@ -11,6 +11,7 @@
             <?php else: ?>
             <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id') . '/' . $avatar; ?>_avatar.jpg" width="186" height="281" alt="Profile photo">
             <?php endif; ?>
+            <a class="delete-photo" href="#"></a>
 		</span>
         <div class="profile-main">
             <ul>
@@ -54,7 +55,7 @@
                     <div class="profile-photos">
                         <?php //if($photo_count > 0): ?>
                         <span class="middle-photo">
-                            <label class="file_upload">
+                            <label class="file-upload">
                                 <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"  width="34" height="27" alt="Upload image">
                                 <span>Add Photo</span>
                                 <form id="photo"><input type="file" id="upload-photo" name="photo"></form>
@@ -67,7 +68,7 @@
                                 <!-- <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[$i]->photo_link; ?>_preview.jpg" width="98" height="58" alt="Small profile photo"> -->
                             </a>
                             <a class="delete-photo" href="#"></a>
-                                <label class="file_upload small_upload">
+                                <label class="file-upload small-upload">
                                 <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"  width="34" height="27" alt="Upload image">
                                 <span>Add Photo</span>
                                 <form id="photo"><input type="file" id="upload-photo" name="photo"></form>
@@ -84,7 +85,7 @@
                     <div class="profile-videos">
                         <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/profile-video.jpg"
                              width="173" height="124" alt="Profile video">
-                        <label class="file_upload">
+                        <label class="file-upload">
                             <img
                                 src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-video.png"
                                 width="24" height="26" alt="Upload image">

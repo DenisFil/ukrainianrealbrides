@@ -17,6 +17,7 @@
 }
 .profile-photo {
 	float: left;
+	position: relative;
 	display: block;
 	width: 186px;
 	height: 281px;
@@ -27,7 +28,7 @@
 	height: auto;
 	max-height: 281px;
 }
-.profile-photo .file_upload {
+.profile-photo .file-upload {
 	width: 100%;
 	height: 100%;
 	border: 1px dashed rgba(0,0,0,0.5);
@@ -36,11 +37,11 @@
     vertical-align: middle;
     padding-top: 110px;
 }
-.profile-photo .file_upload img{
+.profile-photo .file-upload img{
 	display: inline-block;
 	margin-bottom: 8px;
 }
-.profile-photo .file_upload span {
+.profile-photo .file-upload span {
 	font-size: 17px;
 	line-height: 19px;
 	color: rgba(0,0,0,0.5);
@@ -197,14 +198,14 @@
 	margin: 0 8px 8px 0;
 	position: relative;
 }
-.file_upload.small_upload {
+.file-upload.small-upload {
 	margin: 0;
 	padding: 12px 0 0 0;
 }
-.file_upload.small_upload span {
+.file-upload.small-upload span {
 	display: none;
 }
-.file_upload {
+.file-upload {
 	width: 100%;
 	height: 100%;
 	float: right;
@@ -214,18 +215,18 @@
     padding: 35px 0 33px 0;
     text-align: center;
 }
-.file_upload img{
+.file-upload img{
 	display: inline-block;
 	margin-bottom: 8px;
 }
-.file_upload span {
+.file-upload span {
 	font-size: 17px;
 	line-height: 19px;
 	color: rgba(0,0,0,0.5);
     font-family: 'LatoRegular';
     display: block;
 }
-.file_upload input[type=file]{
+.file-upload input[type=file]{
     position: absolute;
     left: 0;
     top: 0;
@@ -241,7 +242,7 @@
 	overflow: hidden;
 	text-align: center;
 }
-.profile-bottom-right .profile-videos .file_upload{
+.profile-bottom-right .profile-videos .file-upload{
 	padding: 35px 0 33px 0;
 	width: 49%;
 }
@@ -329,7 +330,8 @@
 }
 .jcarousel li:hover .delete-photo,
 .small-photo:hover .delete-photo,
-.middle-photo:hover .delete-photo {
+.middle-photo:hover .delete-photo,
+.profile-photo:hover .delete-photo {
 	opacity:1;
 }
 .jcarousel li .delete-photo:hover {
