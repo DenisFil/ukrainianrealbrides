@@ -56,15 +56,16 @@
                         <div class="profile-photos-block">
                             <?php if($photo_count > 0): ?>
                                 <span class="middle-photo">
-                                    <a href="#"><img
-                                            src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[0]->photo_link; ?>_preview.jpg"
-                                            width="196" height="116" alt="Middle profile photo"></a>
+                                    <a href="#photo-modal" role="button" data-toggle="modal" class="photo-view">
+                                        <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[0]->photo_link; ?>_preview.jpg" width="196" height="116" alt="Middle profile photo">
+                                    </a>
                                 </span>
                             <?php if ($photo_count > 1): ?>
                                 <?php for($i = 1; $i < $photo_count; $i++): ?>
                                     <span class="small-photo">
-                                        <a href="#"><img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[$i]->photo_link; ?>_preview.jpg"
-                                                width="98" height="58" alt="Small profile photo"></a>
+                                        <a href="#photo-modal" role="button" data-toggle="modal" class="photo-view">
+                                            <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[$i]->photo_link; ?>_preview.jpg" width="98" height="58" alt="Small profile photo">
+                                        </a>
                                     </span>
                                 <?php endfor; ?>
                             <?php endif; ?>
@@ -195,3 +196,18 @@
     </div>
 </div>
 <!-- Invite modal END -->
+
+<!--Photo modal-->
+<div class="modal fade" id="photo-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="#" id="user-photo">
+                    <img src="">
+                </a>
+                <button type="button" class="btn btn-danger">Delete this photo</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Photo modal END-->

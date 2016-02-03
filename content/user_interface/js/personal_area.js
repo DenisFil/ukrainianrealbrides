@@ -171,4 +171,12 @@ $(document).ready(function(){
             }
         });
     });
+
+/********************************Просмотр фото************************************/
+    $('.photo-view').click(function(){
+        var link = $(this).children().attr('src');
+        $('#user-photo').children().attr('src', link);
+        var nextLink = $(this).parent().next().children().children().attr('src');
+        $('#user-photo').attr('href', nextLink);
+    });
 });
