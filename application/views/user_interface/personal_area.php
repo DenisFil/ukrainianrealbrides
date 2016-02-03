@@ -3,14 +3,19 @@
         <h2>Welcome <?php echo $this->session->userdata('name'); ?></h2>
 		<span class="profile-photo">
             <?php if (!$avatar): ?>
-		    <label class="file_upload">
+		    <label class="file-upload">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png" width="34" height="27" alt="Upload image">
                 <span>Add Profile Photo</span>
                 <form id="avatar"><input type="file" id="avatar-photo" name="avatar"></form>
             </label>
             <?php else: ?>
             <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id') . '/' . $avatar; ?>_avatar.jpg" width="186" height="281" alt="Profile photo">
+            <div class="avatar-buttons">
+                <a class="edit" href="#">Edit</a>
+                <a class="preview" href="#">Preview</a>
+            </div>
             <?php endif; ?>
+            <a class="delete-photo" href="#"></a>
 		</span>
         <div class="profile-main">
             <ul>
@@ -113,7 +118,7 @@
                     <div class="profile-videos">
                         <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/profile-video.jpg"
                              width="173" height="124" alt="Profile video">
-                        <label class="file_upload">
+                        <label class="file-upload">
                             <img
                                 src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-video.png"
                                 width="24" height="26" alt="Upload image">
