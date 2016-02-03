@@ -175,16 +175,32 @@ $(document).ready(function(){
 /********************************Просмотр фото************************************/
     $('.photo-view').click(function(){
         var set = $('.profile-photos-block img');
+        var index;
         $('.profile-photos-block').on('click', 'img', function () {
-            var index = set.index(this);
-            console.log(index);
+            index = set.index(this);
         });
         $.ajax({
             type: 'post',
-            url: baseUrl + '',
+            url: baseUrl + 'user_interface/personal_area/get_photos',
             dataType: 'json',
             success: function(data){
-                
+                var selector = '#user-photo';
+                $(selector).prev().text(index+1 + '/' + data.count);
+                $(selector).children().attr('src', baseUrl + 'content/profiles/photo/' + data.folder + '/' + data.photos[index] + '_full.jpg');
+                $(selector).children().click(function(){
+                    if (index + 1 <= data.count) {
+                        index = index + 1;
+                        $(selector).prev().text(index + 1 + '/' + data.count);
+                        $(selector).children().attr('src', '');
+                        $(selector).children().attr('src', baseUrl + 'content/profiles/photo/' + data.folder + '/' + data.photos[index] + '_full.jpg');
+                    }
+                    if (index + 1 > data.count){
+                        index = 0;
+                        $(selector).prev().text(index+1 + '/' + data.count);
+                        $(selector).children().attr('src', '');
+                        $(selector).children().attr('src', baseUrl + 'content/profiles/photo/' + data.folder + '/' + data.photos[index] + '_full.jpg');
+                    }
+                });
             }
         });
     });

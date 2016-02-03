@@ -194,9 +194,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-<!-- Invite modal END
-=======
 <!-- Invite modal END -->
 
 <!--Photo modal-->
@@ -204,13 +201,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <a href="#" id="user-photo">
+                <span></span>
+                <button type="button" id="user-photo">
                     <img src="">
-                </a>
+                </button>
                 <button type="button" class="btn btn-danger">Delete this photo</button>
             </div>
         </div>
     </div>
 </div>
 <!--Photo modal END-->
->>>>>>> personalArea

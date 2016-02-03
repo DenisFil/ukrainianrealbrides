@@ -307,4 +307,18 @@
                 }
             echo json_encode($result);
         }
+
+//Получение фото
+        public function get_photos()
+        {
+            $query = $this->personal_area_model->get_photos($this->session->userdata('id'));
+            $photos['photos'] = array();
+                foreach ($query as $value)
+                {
+                    array_unshift($photos['photos'], $value->photo_link);
+                }
+            $photos['count'] = count($photos['photos']);
+            $photos['folder'] = $this->session->userdata('id');
+            echo json_encode($photos);
+        }
     }
