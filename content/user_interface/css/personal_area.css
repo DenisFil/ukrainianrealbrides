@@ -15,6 +15,49 @@
 	display: block;
 	clear: both;
 }
+.avatar-buttons {
+	position: absolute;
+	bottom: 13px;
+	left: 11%;
+	overflow: hidden;
+}
+.edit,
+.preview {
+	font-size: 13px;
+	line-height: 15px;
+    font-family: 'LatoWebMedium';
+	text-align: center;
+	display: block;
+	float: left;
+	color: #000;
+	width: 70px;
+	padding: 8px 0 6px 0;
+	margin: 0 10px 0 0;
+	border-radius: 10px;
+	opacity: 0.5;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+}
+.edit:hover,
+.preview:hover {
+	opacity: 1;
+	color: #000;
+	text-decoration: none;
+}
+.edit {
+	background: #fff
+url("../img/personal-area/edit.png") no-repeat 28% 47%;
+	padding-left: 7px;
+}
+.preview {
+background: #fff 
+url("../img/personal-area/preview.png") no-repeat 12% 48%;
+    margin: 0;
+    padding-left: 18px;
+}
 .profile-photo {
 	float: left;
 	position: relative;
@@ -24,6 +67,11 @@
 	box-shadow: 0 0 12px rgba(0,0,0,0.4);
 }
 .profile-photo>img {
+	width: 100%;
+	height: auto;
+	max-height: 281px;
+}
+.profile-photo>img:after {
 	width: 100%;
 	height: auto;
 	max-height: 281px;
