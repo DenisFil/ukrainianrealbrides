@@ -33,7 +33,7 @@
                 $this->load->view('user_interface/footer');
             }
         }
-
+/**********************************Аватар****************************************/
 //Загрузка аватара
         public function loading_avatar()
         {
@@ -171,6 +171,22 @@
             echo json_encode($result = array('result' => 1));
         }
 
+//Удаление аватара
+        public function delete_avatar()
+        {
+            $user_id = $this->session->userdata('id');
+            $query = $this->personal_area_model->get_avatar($user_id);
+            $this->personal_area_model->delete_avatar($user_id);
+            $ends = array('_full', '_avatar', '_preview');
+                foreach ($ends as $value)
+                {
+                    unlink('./content/profiles/avatars/' . $user_id . '/' . $query . $value . '.jpg');
+                }
+
+            echo json_encode($result = array('result' => 1));
+        }
+
+/*************************************Фото***************************************/
 //Загрузка фото
         public function loading_photo()
         {
@@ -278,6 +294,20 @@
             echo json_encode($result = array('result' => 1));
         }
 
+//Получение фото
+        public function get_photos()
+        {
+            $query = $this->personal_area_model->get_photos($this->session->userdata('id'));
+            $photos['photos'] = array();
+            foreach ($query as $value)
+            {
+                array_unshift($photos['photos'], $value->photo_link);
+            }
+            $photos['count'] = count($photos['photos']);
+            $photos['folder'] = $this->session->userdata('id');
+            echo json_encode($photos);
+        }
+
 //Приглашение друзей
         public function invite_friend()
         {
@@ -306,19 +336,5 @@
                     $result['result'] = 0;
                 }
             echo json_encode($result);
-        }
-
-//Получение фото
-        public function get_photos()
-        {
-            $query = $this->personal_area_model->get_photos($this->session->userdata('id'));
-            $photos['photos'] = array();
-                foreach ($query as $value)
-                {
-                    array_unshift($photos['photos'], $value->photo_link);
-                }
-            $photos['count'] = count($photos['photos']);
-            $photos['folder'] = $this->session->userdata('id');
-            echo json_encode($photos);
         }
     }

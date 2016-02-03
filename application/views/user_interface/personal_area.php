@@ -15,7 +15,7 @@
                 <a class="preview" href="#">Preview</a>
             </div>
             <?php endif; ?>
-            <a class="delete-photo" href="#"></a>
+            <a role="button" class="delete-photo" id="delete-avatar"></a>
 		</span>
         <div class="profile-main">
             <ul>

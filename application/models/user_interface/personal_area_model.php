@@ -52,6 +52,11 @@
             return $query;
         }
 
+        public function delete_avatar($id)
+        {
+            $this->db->update('men_details', array('avatar' => ''), array('user_id' => $id));
+        }
+
         public function get_photos($id)
         {
             $query = $this->db->    select('photo_link')->

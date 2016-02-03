@@ -40,8 +40,8 @@ $(document).ready(function(){
         });
     });
 
-/******************************Загрузка аватара************************************/
-    $('#avatar-photo').change(function(){
+/******************************Аватара************************************/
+    function photoLoad(){
         var avatar = new FormData($('#avatar')[0]);
 
         //Загрузка и сохранение фото
@@ -121,6 +121,26 @@ $(document).ready(function(){
                             }
                         });
                     });
+                }
+            }
+        });
+    }
+
+//Загрузка аватара
+    $('#avatar-photo').change(function(){
+        photoLoad();
+    });
+
+//Удаление аватара
+    $('#delete-avatar').click(function(){
+        $.ajax({
+            type: 'post',
+            url: baseUrl + 'user_interface/personal_area/delete_avatar',
+            dataType: 'json',
+            success: function(data){
+                console.log(data);
+                if (data.result == 1){
+                    location.reload();
                 }
             }
         });
