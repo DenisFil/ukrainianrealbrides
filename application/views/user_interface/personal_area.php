@@ -16,7 +16,7 @@
         <div class="profile-main">
             <ul>
                 <li>
-                    <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/messaging-small.png"
+                    <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png"
                          width="40" height="50" alt="Messaging">
                     <div class="profile-box-right">
                         <h4>Messaging</h4>
@@ -24,7 +24,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/chat-small.png"
+                    <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png"
                          width="48" height="50" alt="Messaging">
                     <div class="profile-box-right">
                         <h4>Chat</h4>
@@ -32,7 +32,7 @@
                     </div>
                 </li>
                 <li class="video-chat">
-                    <img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/video-chat-small.png"
+                    <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png"
                          width="49" height="50" alt="Messaging">
                     <div class="profile-box-right">
                         <h4>Video Chat</h4>

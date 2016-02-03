@@ -34,36 +34,37 @@
     <div class="content-top">
         <a name="services"></a>
         <h2>Our Services</h2>
-        <div class="detail-box messaging-service">
+        <div class="detail-box messaging-box">
             <h3>Messaging</h3>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" alt="Messaging" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="63" height="71" alt="Messaging" />
             <a href="#messaging-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
-        <div class="detail-box">
+        <div class="detail-box chat-box">
             <h3>Chat</h3>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="76" height="74" alt="Chat" />
             <a href="#chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
-        <div class="detail-box">
-            <h3>Gift service</h3>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" alt="Gift service" />
-            <a href="#gift-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
-        </div>
-        <div class="detail-box third">
-            <h3>Very important service</h3>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" alt="Very important service" />
-            <a href="#important-service-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
-        </div>
-        <div class="detail-box">
-            <h3>Romance tours</h3>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" alt="Romance tours" />
-            <a href="#romance-tours-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
-        </div>
-        <div class="detail-box last">
+        <div class="detail-box video-chat-box">
             <h3>Video Chat</h3>
-            <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" width="81" height="79" alt="Video chat" />
             <a href="#video-chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
         </div>
+        <div class="detail-box gift-box">
+            <h3>Gift service</h3>
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" width="69" height="98" alt="Gift service" />
+            <a href="#gift-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+        </div>
+        <div class="detail-box important-box">
+            <h3>Very important service</h3>
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" width="100" height="73" alt="Very important service" />
+            <a href="#important-service-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+        </div>
+        <div class="detail-box romance-box">
+            <h3>Romance tours</h3>
+            <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" width="83" height="67" alt="Romance tours" />
+            <a href="#romance-tours-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+        </div>
+
 
 
     </div>
