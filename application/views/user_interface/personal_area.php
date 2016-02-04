@@ -10,7 +10,7 @@
             </label>
             <?php else: ?>
             <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id') . '/' . $avatar; ?>_avatar.jpg" width="186" height="281" alt="Profile photo">
-            <a class="delete-photo" href="#"></a>
+            <a class="#delete-avatar" href="#"></a>
             <div class="avatar-buttons">
                 <label class="edit">
                     <span>Edit</span>
