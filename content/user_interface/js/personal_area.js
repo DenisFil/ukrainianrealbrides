@@ -214,6 +214,26 @@ $(document).ready(function(){
         });
     });
 
+//Удаление фото
+    $('.delete-photo').click(function() {
+        /*console.log('hello');
+        var set = $('.profile-photos-block .delete-photo');
+        $('.profile-photos-block').on('click', '.delete-photo', function () {
+            var index = set.index(this);*/
+            $.ajax({
+                type: 'post',
+                data: {index: 0},
+                url: baseUrl + 'user_interface/personal_area/delete_photo',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.result == 1) {
+                        //location.reload();
+                    }
+                }
+            });
+        });
+    });
+
 /********************************Просмотр фото************************************/
     $('.photo-view').click(function(){
         var set = $('.profile-photos-block img');

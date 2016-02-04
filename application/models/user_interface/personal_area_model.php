@@ -67,14 +67,20 @@
             return $query;
         }
 
+        public function add_photo($data)
+        {
+            $query = $this->db->insert('user_photos', $data);
+        }
+
+        public function delete_photo($photo)
+        {
+            $query = $this->db->delete('user_photos', array('photo_link' => $photo));
+            return $query;
+        }
+
         public function invite_friend($data)
         {
             $query = $this->db->insert('invites', $data);
             return $query;
-        }
-
-        public function add_photo($data)
-        {
-            $query = $this->db->insert('user_photos', $data);
         }
     }

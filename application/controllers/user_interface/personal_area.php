@@ -321,13 +321,42 @@
         {
             $query = $this->personal_area_model->get_photos($this->session->userdata('id'));
             $photos['photos'] = array();
-            foreach ($query as $value)
-            {
-                array_unshift($photos['photos'], $value->photo_link);
-            }
+                foreach ($query as $value)
+                {
+                    array_unshift($photos['photos'], $value->photo_link);
+                }
             $photos['count'] = count($photos['photos']);
             $photos['folder'] = $this->session->userdata('id');
             echo json_encode($photos);
+        }
+
+//Удаление фото
+        public function delete_photo()
+        {
+            $query = $this->personal_area_model->get_photos($this->session->userdata('id'));
+            $photos['photos'] = array();
+                foreach ($query as $value)
+                {
+                    array_unshift($photos['photos'], $value->photo_link);
+                }
+            $index = $this->input->post();
+            var_dump($index);exit;
+            $photo = $photos['photos'][$index];
+            $delete_query = $this->personal_area_model->delete_photo($photo);
+                if ($delete_query === TRUE)
+                {
+                    $ends = array('_full', '_preview');
+                    foreach ($ends as $value)
+                    {
+                        unlink('./content/profiles/avatars/' . $this->session->userdata('id') . '/' . $photo . $value . '.jpg');
+                    }
+                    $result['result'] = 1;
+                }
+                else
+                {
+                    $result['result'] =0;
+                }
+            echo json_encode($result);
         }
 
 //Приглашение друзей
