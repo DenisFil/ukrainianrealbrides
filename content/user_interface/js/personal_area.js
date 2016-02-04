@@ -216,7 +216,6 @@ $(document).ready(function(){
 
 //Удаление фото
     $('.delete-photo').click(function() {
-        console.log('hello');
         var set = $('.profile-photos-block .delete-photo');
         $('.profile-photos-block').on('click', '.delete-photo', function () {
             var index = {
@@ -236,6 +235,23 @@ $(document).ready(function(){
         });
     });
 
+    $('.delete-photo-button').click(function(){
+        var index = {
+            index: $(this).attr('id')
+        };
+        $.ajax({
+            type: 'post',
+            data: index,
+            url: baseUrl + 'user_interface/personal_area/delete_photo',
+            dataType: 'json',
+            success: function(data){
+                if (data.result == 1) {
+                    location.reload();
+                }
+            }
+        });
+    });
+
 /********************************Просмотр фото************************************/
     $('.photo-view').click(function(){
         var set = $('.profile-photos-block img');
@@ -251,18 +267,21 @@ $(document).ready(function(){
                 var selector = '#user-photo';
                 $(selector).prev().text(index+1 + '/' + data.count);
                 $(selector).children().attr('src', baseUrl + 'content/profiles/photo/' + data.folder + '/' + data.photos[index] + '_full.jpg');
+                $('.delete-photo-button').attr('id', index);
                 $(selector).children().click(function(){
                     if (index + 1 <= data.count) {
                         index = index + 1;
                         $(selector).prev().text(index + 1 + '/' + data.count);
                         $(selector).children().attr('src', '');
                         $(selector).children().attr('src', baseUrl + 'content/profiles/photo/' + data.folder + '/' + data.photos[index] + '_full.jpg');
+                        $('.delete-photo-button').attr('id', index);
                     }
                     if (index + 1 > data.count){
                         index = 0;
                         $(selector).prev().text(index+1 + '/' + data.count);
                         $(selector).children().attr('src', '');
                         $(selector).children().attr('src', baseUrl + 'content/profiles/photo/' + data.folder + '/' + data.photos[index] + '_full.jpg');
+                        $('.delete-photo-button').attr('id', index);
                     }
                 });
             }
