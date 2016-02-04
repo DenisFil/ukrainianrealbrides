@@ -245,6 +245,9 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <div class="exit"></div>
+                </button>
                 <span></span>
                 <button type="button" id="user-photo">
                     <img src="">
