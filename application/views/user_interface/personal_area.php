@@ -252,7 +252,7 @@
                 <button type="button" id="user-photo">
                     <img src="">
                 </button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-danger delete-photo-button">Delete</button>
             </div>
         </div>
     </div>
