@@ -10,6 +10,7 @@
             </label>
             <?php else: ?>
             <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id') . '/' . $avatar; ?>_avatar.jpg" width="186" height="281" alt="Profile photo">
+            <a class="delete-photo" href="#"></a>
             <div class="avatar-buttons">
                 <label class="edit">
                     <span>Edit</span>
@@ -21,7 +22,6 @@
                 <a class="preview" href="#">Preview</a>
             </div>
             <?php endif; ?>
-            <a role="button" class="delete-photo" id="delete-avatar"></a>
 		</span>
         <div class="profile-main">
             <ul>
@@ -73,6 +73,7 @@
                                     <span>Add Photo</span>
                                     <form id="photo"><input type="file" id="upload-photo" name="photo"></form>
                                 </label>
+
                             </span>
                             <?php else: ?>
                                 <?php if ($photo_count >= 1 && $photo_count <= 6): ?>
@@ -80,12 +81,14 @@
                                         <a href="#photo-modal" role="button" data-toggle="modal" class="photo-view">
                                             <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[0]->photo_link; ?>_preview.jpg" width="196" height="116" alt="Middle profile photo">
                                         </a>
+                                        <a class="delete-photo" href="#"></a>
                                     </span>
 
                                     <?php for($i = 1; $i < $photo_count; $i++): ?>
                                         <span class="small-photo">
                                             <a href="#photo-modal" role="button" data-toggle="modal" class="photo-view">
                                                 <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[$i]->photo_link; ?>_preview.jpg" width="98" height="58" alt="Small profile photo">
+                                                <a class="delete-photo" href="#"></a>
                                             </a>
                                         </span>
                                     <?php endfor; ?>
@@ -103,6 +106,7 @@
                                     <span class="middle-photo">
                                         <a href="#photo-modal" role="button" data-toggle="modal" class="photo-view">
                                             <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[0]->photo_link; ?>_preview.jpg" width="196" height="116" alt="Middle profile photo">
+                                            <a class="delete-photo" href="#"></a>
                                         </a>
                                     </span>
 
@@ -110,6 +114,7 @@
                                         <span class="small-photo">
                                             <a href="#photo-modal" role="button" data-toggle="modal" class="photo-view">
                                                 <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[$i]->photo_link; ?>_preview.jpg" width="98" height="58" alt="Small profile photo">
+                                                <a class="delete-photo" href="#"></a>
                                             </a>
                                         </span>
                                     <?php endfor; ?>
