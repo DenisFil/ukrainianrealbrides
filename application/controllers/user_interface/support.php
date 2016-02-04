@@ -3,6 +3,7 @@
     {
         public function index()
         {
+            $this->load->model('user_interface/personal_area_model');
             $data = array();
             if ($this->session->userdata('id'))
             {
