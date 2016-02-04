@@ -70,7 +70,7 @@
                             </li>
                         </ul>
                         <div class="profile-panel">
-                            <a href="#"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings"></a>
+                            <a href="<?php echo base_url(); ?>/user_interface/profile_settings"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings"></a>
                             <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out.png" width="14" height="14" alt="Log out"></a>
                         </div>
                     </div>

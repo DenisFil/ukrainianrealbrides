@@ -366,7 +366,8 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 	-o-transform: scale(-1,1);
     right: 2%;
 }
-.delete-photo {
+.delete-photo,
+#delete-avatar {
 	position: absolute;
 	opacity: 0;
 	top: 2px;
@@ -384,7 +385,7 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 .jcarousel li:hover .delete-photo,
 .small-photo:hover .delete-photo,
 .middle-photo:hover .delete-photo,
-.profile-photo:hover .delete-photo {
+.profile-photo:hover #delete-avatar {
 	opacity:1;
 }
 .jcarousel li .delete-photo:hover {
