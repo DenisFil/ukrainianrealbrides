@@ -262,6 +262,7 @@
                         $this->load->library('image_lib', $config['image_lib']['height']);
                     }
                     $this->image_lib->resize();
+                    $this->image_lib->clear();
                     unlink('./content/profiles/photo/' . $user_id . '/' . $data['upload_data']['file_name']);
 
                     //Сохранение фото
@@ -271,10 +272,22 @@
                     );
                     $this->personal_area_model->add_photo($photo_data);
 
+                    //Наложение ватермарка
+                    $config['watermark'] = array(
+                        'image_library' => 'gd2',
+                        'source_image' => './content/profiles/photo/' . $user_id . '/' . $data['upload_data']['raw_name'] . '_full.jpg',
+                        'wm_type' => 'overlay',
+                        'wm_overlay_path' => './content/user_interface/img/watermark.png',
+                        'opacity' => 1,
+                        'padding' => 10,
+                        'wm_hor_alignment' => 'right',
+                    );
+                    $this->image_lib->initialize($config['watermark']);
+                    $this->image_lib->watermark();
+
                     $result['result'] = 1;
                     $result['link'] = base_url() . 'content/profiles/photo/' . $user_id . '/' . $data['upload_data']['raw_name'] . '_full.jpg';
                     $result['photo_name'] = $data['upload_data']['raw_name'];
-                    $this->image_lib->clear();
                 }
                 else
                 {
