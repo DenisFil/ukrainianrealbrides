@@ -186,6 +186,28 @@
             echo json_encode($result = array('result' => 1));
         }
 
+//Изменение аватара
+        public function change_avatar(){
+            $avatar['avatar'] = $this->personal_area_model->get_avatar($this->session->userdata('id'));
+            echo json_encode($avatar);
+        }
+
+        public function delete_old_avatar()
+        {
+            $avatar = $this->input->post();
+            $user_id = $this->session->userdata('id');
+            $ends = array('_full', '_avatar', '_preview');
+            foreach ($ends as $value)
+            {
+                unlink('./content/profiles/avatars/' . $user_id . '/' . $avatar['avatar'] . $value . '.jpg');
+                $data = array(
+                    'user_id' => $user_id,
+                    'avatar' => $avatar['avatar']
+                );
+                $this->personal_area_model->add_avatar($data);
+            }
+        }
+
 /*************************************Фото***************************************/
 //Загрузка фото
         public function loading_photo()

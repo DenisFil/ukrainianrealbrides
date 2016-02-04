@@ -11,7 +11,13 @@
             <?php else: ?>
             <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id') . '/' . $avatar; ?>_avatar.jpg" width="186" height="281" alt="Profile photo">
             <div class="avatar-buttons">
-                <a class="edit" href="#">Edit</a>
+                <label class="edit">
+                    <span>Edit</span>
+                    <form id="avatar">
+                        <input type="file" class="change-avatar" name="avatar">
+                    </form>
+                </label>
+
                 <a class="preview" href="#">Preview</a>
             </div>
             <?php endif; ?>
@@ -63,7 +69,7 @@
                                 <label class="file-upload">
                                     <img
                                         src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"
-                                        width="34" height="27" alt="Upload image"">
+                                        width="34" height="27" alt="Upload image">
                                     <span>Add Photo</span>
                                     <form id="photo"><input type="file" id="upload-photo" name="photo"></form>
                                 </label>
@@ -88,7 +94,7 @@
                                         <label class="file-upload small-upload">
                                             <img
                                                 src="<?php echo base_url(); ?>content/user_interface/img/personal-area/upload-image.png"
-                                                width="34" height="27" alt="Upload image"">
+                                                width="34" height="27" alt="Upload image">
                                             <span>Add Photo</span>
                                             <form id="photo"><input type="file" id="upload-photo" name="photo"></form>
                                         </label>
@@ -238,7 +244,7 @@
                 <button type="button" id="user-photo">
                     <img src="">
                 </button>
-                <button type="button" class="btn btn-danger">Delete this photo</button>
+                <button type="button" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>

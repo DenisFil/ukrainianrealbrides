@@ -16,7 +16,7 @@
         {
             $query = $this->db->    select('user_id')->
                                     from('users_online')->
-                                    join('users', 'users.id=users_online.user_id')->
+                                    join('user_profiles', 'user_profiles.id=users_online.user_id')->
                                     where('last_online >', $time)->
                                     where('gender', 2)->
                                     get()->
