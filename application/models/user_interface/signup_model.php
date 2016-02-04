@@ -4,7 +4,7 @@
         public function get_user_email($email)
         {
             $query = $this->db->    select('id')->
-                                    from('users')->
+                                    from('user_profiles')->
                                     where('email', $email)->
                                     get()->
                                     result();
@@ -22,7 +22,7 @@
 
             //Получение ID нового юзера
             $user_id = $this->db->    select('id')->
-                                      from('users')->
+                                      from('user_profiles')->
                                       where('email', $user_data['email'])->
                                       get()->
                                       result();
@@ -66,10 +66,10 @@
 
         public function insert_new_user_from_social_network($user_data)
         {
-            $query = $this->db->insert('users', $user_data);
+            $query = $this->db->insert('user_profiles', $user_data);
 
             $user_id = $this->db->  select('id')->
-                                    from('users')->
+                                    from('user_profiles')->
                                     where('email', $user_data['email'])->
                                     get()->
                                     result();
@@ -97,7 +97,7 @@
         public function uniqueness_email($email)
         {
             $query = $this->db->    select('id')->
-                                    from('users')->
+                                    from('user_profiles')->
                                     where('email', $email)->
                                     get()->
                                     result();

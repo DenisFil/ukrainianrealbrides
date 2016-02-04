@@ -40,8 +40,8 @@ $(document).ready(function(){
         });
     });
 
-/******************************Загрузка аватара************************************/
-    $('#avatar-photo').change(function(){
+/******************************Аватар*************************************/
+    function photoLoad(){
         var avatar = new FormData($('#avatar')[0]);
 
         //Загрузка и сохранение фото
@@ -124,6 +124,48 @@ $(document).ready(function(){
                 }
             }
         });
+    }
+
+//Загрузка аватара
+    $('#avatar-photo').change(function(){
+        photoLoad();
+    });
+
+//Удаление аватара
+    $('#delete-avatar').click(function(){
+        $.ajax({
+            type: 'post',
+            url: baseUrl + 'user_interface/personal_area/delete_avatar',
+            dataType: 'json',
+            success: function(data){
+                console.log(data);
+                if (data.result == 1){
+                    location.reload();
+                }
+            }
+        });
+    });
+
+//Изменение аватара
+    $('.change-avatar').change(function(){
+        $.ajax({
+            type: 'post',
+            url: baseUrl + 'user_interface/personal_area/change_avatar',
+            dataType: 'json',
+            success: function(data){
+                if (data.avatar){
+                    photoLoad();
+                    var avatar = {
+                        avatar: data.avatar
+                    };
+                        $.ajax({
+                            type: 'post',
+                            data: avatar,
+                            url: baseUrl + 'user_interface/personal_area/delete_old_avatar'
+                        });
+                }
+            }
+        });
     });
 
 /*********************************Загрузка фото***********************************/
@@ -169,6 +211,28 @@ $(document).ready(function(){
                     });
                 }
             }
+        });
+    });
+
+//Удаление фото
+    $('.delete-photo').click(function() {
+        console.log('hello');
+        var set = $('.profile-photos-block .delete-photo');
+        $('.profile-photos-block').on('click', '.delete-photo', function () {
+            var index = {
+                index: set.index(this)
+            };
+            $.ajax({
+                type: 'post',
+                data: index,
+                url: baseUrl + 'user_interface/personal_area/delete_photo',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.result == 1) {
+                        location.reload();
+                    }
+                }
+            });
         });
     });
 

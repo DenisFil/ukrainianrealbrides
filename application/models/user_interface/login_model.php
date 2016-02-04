@@ -4,7 +4,7 @@
         public function get_user_data ($email)
         {
             $query = $this->db->    select('id, password, name, lastname, gender')->
-                                    from('users')->
+                                    from('user_profiles')->
                                     where('email', $email)->
                                     get()->
                                     result();

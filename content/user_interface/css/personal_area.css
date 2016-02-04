@@ -381,6 +381,8 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 	-moz-transition:all 0.8s;
 	-ms-transition:all 0.8s;
 	-o-transition:all 0.8s;
+	border: none;
+	outline: none;
 }
 .jcarousel li:hover .delete-photo,
 .small-photo:hover .delete-photo,

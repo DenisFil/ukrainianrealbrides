@@ -96,7 +96,7 @@
             <div class="logo-place"></div>
             <ul class="nav-right">
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Support</a></li>
+                <li><a href="<?php echo base_url(); ?>/user_interface/support">Support</a></li>
                 <li><a href="#">About us</a></li>
             </ul>
         </nav>
