@@ -340,15 +340,14 @@
                     array_unshift($photos['photos'], $value->photo_link);
                 }
             $index = $this->input->post();
-            var_dump($index);exit;
-            $photo = $photos['photos'][$index];
+            $photo = $photos['photos'][$index['index']];
             $delete_query = $this->personal_area_model->delete_photo($photo);
                 if ($delete_query === TRUE)
                 {
                     $ends = array('_full', '_preview');
                     foreach ($ends as $value)
                     {
-                        unlink('./content/profiles/avatars/' . $this->session->userdata('id') . '/' . $photo . $value . '.jpg');
+                        unlink('./content/profiles/photo/' . $this->session->userdata('id') . '/' . $photo . $value . '.jpg');
                     }
                     $result['result'] = 1;
                 }
