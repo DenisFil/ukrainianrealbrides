@@ -236,10 +236,10 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 	width: 208px;
 	height: 123px;
 	float: left;
-	margin-right: 10px; 
+	margin: 0 10px 5px 0; 
 	position: relative;
 }
-.middle-photo img {
+.middle-photo>a>img {
 	width: 100%;
 	height: 100%;
 }
@@ -401,7 +401,8 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 #photo-modal .modal-body {
     padding: 10px;
 }
-#photo-modal .modal-content {
+#photo-modal .modal-content,
+#new-avatar .modal-content {
 	display: inline-block;
 }
 #photo-modal .modal-body img {
