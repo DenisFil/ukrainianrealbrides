@@ -234,7 +234,6 @@ $(document).ready(function(){
             });
         });
     });
-
     $('.delete-photo-button').click(function(){
         var index = {
             index: $(this).attr('id')

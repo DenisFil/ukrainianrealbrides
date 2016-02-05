@@ -74,6 +74,25 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'LatoItalic';
+    src: url('../fonts/LatoItalic.eot');
+    src: url('../fonts/LatoItalic.eot') format('embedded-opentype'),
+         url('../fonts/LatoItalic.woff2') format('woff2'),
+         url('../fonts/LatoItalic.woff') format('woff'),
+         url('../fonts/LatoItalic.ttf') format('truetype'),
+         url('../fonts/LatoItalic.svg#LatoItalic') format('svg');
+}
+@font-face {
+    font-family: 'LatoBoldItalic';
+    src: url('../fonts/LatoBoldItalic.eot');
+    src: url('../fonts/LatoBoldItalic.eot') format('embedded-opentype'),
+         url('../fonts/LatoBoldItalic.woff2') format('woff2'),
+         url('../fonts/LatoBoldItalic.woff') format('woff'),
+         url('../fonts/LatoBoldItalic.ttf') format('truetype'),
+         url('../fonts/LatoBoldItalic.svg#LatoBoldItalic') format('svg');
+}
+
 body {
 	margin: 0 auto 0;
 	color: #000;
