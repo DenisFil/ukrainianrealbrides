@@ -11,7 +11,7 @@ $(document).ready(function(){
 jQuery.fn.customSelect = function(_options) {
 var _options = jQuery.extend({
 	selectStructure: '<div class="selectArea"><span class="left"></span><span class="center"></span><a href="#" class="selectButton"></a><div class="disabled"></div></div>',
-	hideOnMouseOut: false,
+	hideOnMouseOut: true,
 	copyClass: true,
 	selectText: '.center',
 	selectBtn: '.selectButton',
