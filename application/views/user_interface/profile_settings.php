@@ -17,6 +17,7 @@
 	    <div role="tabpanel" class="active tab-pane" id="messaging-tab">
 	    	<div class="tab-body">
                 <h2>General</h2>     
+<<<<<<< HEAD
                 <p>All fields are required. Please, set your profile info.</p>
                 <form action="#">
 	                <div class="profile-form-row">
@@ -60,6 +61,10 @@
 						</em>		
 	                </div>
 				</form>
+=======
+                <p>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</p>
+                <button type="button" class="btn btn-danger">To Service</button>
+>>>>>>> backend
 	    	</div>
 	    </div>
 	    <div role="tabpanel" class="tab-pane fade" id="chat-tab">
