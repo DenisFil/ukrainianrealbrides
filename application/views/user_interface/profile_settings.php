@@ -16,9 +16,50 @@
 	  <div class="tab-content">
 	    <div role="tabpanel" class="active tab-pane" id="messaging-tab">
 	    	<div class="tab-body">
-                <h2>General</h2>     
-                <p>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</p>
-                <button type="button" class="btn btn-danger">To Service</button>
+                <h2>General</h2>   
+                <p>All fields are required. Please, set your profile info.</p>
+                <form action="#">
+	                <div class="profile-form-row">
+	                	<span>First name</span>
+	                	<input class="profile-form" type="text" placeholder="Your name">			
+	                </div>
+	                <div class="profile-form-row">
+	                	<span>Last name</span>
+	                	<input class="profile-form" type="text" placeholder="Your last name">			
+	                </div>
+	                <div class="profile-form-row">
+		                <span>Gender</span>
+						<em class="profile-select">
+							<select class="select" name="" id="">
+		                        <option value="" selected>Male</option>
+		                        <option value="" selected>Female</option>
+		                    </select>
+						</em>		
+	                </div>
+	                <div class="profile-form-row">
+		                <span>Country</span>
+						<em class="profile-select">
+							<select class="select" name="" id="">
+		                        <option value="" selected>Usa</option>
+		                        <option value="" selected>Canada</option>
+		                    </select>
+						</em>		
+	                </div>
+	                <div class="profile-form-row">
+		                <span>Birthday</span>
+						<em class="profile-select">
+							<select class="year" name="" id="">
+		                        <option value="" selected>Year</option>
+		                    </select>
+		                    <select class="monts" name="" id="">
+		                        <option value="" selected>Month</option>
+		                    </select>
+		                    <select class="day" name="" id="">
+		                        <option value="" selected>Day</option>
+		                    </select>
+						</em>		
+	                </div>
+				</form>
 	    	</div>
 	    </div>
 	    <div role="tabpanel" class="tab-pane fade" id="chat-tab">
