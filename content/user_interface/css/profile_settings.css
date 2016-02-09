@@ -69,7 +69,8 @@
 	line-height: 25px;
 	margin:12px 20px 0 0;
 }
-.profile-form-row input{
+.profile-form-row input,
+.location-drop {
 	float: right;
 	background: #fff;
 	padding: 0 22px;
@@ -181,4 +182,27 @@
 }
 .btn.skip {
 	background:#FA8072; 
+}
+.location-drop {
+	display: none;
+	position: absolute;
+	top: 53px;
+	right: 0;
+	height: auto;
+	max-height: 150px;
+	width: 300px;
+	overflow: auto;
+	padding: 0;
+}
+.location-drop span {
+    display: block;
+    transition: all 0.5s;
+	padding: 5px;
+}
+.location-drop span:hover {
+    background: #e83c32;
+    color: #fff;
+}
+.profile-form-row {
+	position: relative;
 }

@@ -64,15 +64,11 @@
 		                </div>
 	                </div>
 	                <div class="profile-form-row">
-		                <span>Country</span>
-						<label>
-						    <select>
-						        <option selected> Your country</option>
-						        <option>USA</option>
-						        <option>Canada</option>
-						        <option>Mexico</option>
-						    </select>
-						</label>		
+	                	<span>Country</span>
+	                	<input class="profile-form" type="text" placeholder="Your location">
+	                	<div class="location-drop">
+	                		<span></span>
+	                	</div>	
 	                </div>
 				</form>
 				<div class="buttons-row">
