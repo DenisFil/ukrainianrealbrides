@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    var baseUrl = 'http://ukrainianrealbrides.int/';
+
     function getUrlVars(){
         var vars = [], hash;
         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
