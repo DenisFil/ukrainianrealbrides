@@ -10,10 +10,6 @@
 	font-size: 18px;
 	line-height: 20px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> backend
 .tab-body {
 	width: 585px;
 	padding: 30px 0 0;
@@ -44,7 +40,6 @@
 .tab-body h2 {
 	background: none;
 	padding: 0;
-<<<<<<< HEAD
 	margin-bottom: 10px;
 	font-size: 30px;
 	line-height: 32px;
@@ -162,9 +157,3 @@
 	color: #fff;
 	text-decoration:none;
 }
-=======
-}
-.gift-service-tab {
-	padding-top: 45px;
-}
->>>>>>> backend

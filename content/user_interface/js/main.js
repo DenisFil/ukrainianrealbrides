@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    var baseUrl = 'http://ukrainianrealbrides.int/';
+
     function getUrlVars(){
         var vars = [], hash;
         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -12,10 +14,31 @@ $(document).ready(function(){
     }
 
     var letter = getUrlVars();
-    console.log(letter);
         if (letter.name){
             $('#signup-button').click();
             $('#user-name').val(letter.name);
             $('#user-email').val(letter.email);
         }
+
+//Нижняя форма для регистрации
+    $('.subscribe-button').click(function(){
+        var email = {
+            email: $('.email').val()
+        };
+        $.ajax({
+            type: 'post',
+            data: email,
+            url: baseUrl + 'user_interface/signup/email',
+            dataType: 'json',
+            success: function(data){
+                if (data.result == 0){
+                    $('#login-button').click();
+                    $('#login-user-email').val(email.email);
+                }else{
+                    $('#signup-button').click();
+                    $('#user-email').val(email.email);
+                }
+            }
+        });
+    });
 });

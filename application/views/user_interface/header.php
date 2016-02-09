@@ -83,13 +83,15 @@
         </div>
         <nav class="nav">
             <ul class="nav-left">
-                <?php if ($gender == ''){ ?>
-                    <li><a href="#">Profiles</a></li>
-                <?php }elseif ($gender == 1){ ?>
+                <?php if ($this->session->userdata('id')): ?>
+                    <?php if ($gender == 1 || $gender == ''): ?>
+                        <li><a href="#">Women profiles</a></li>
+                    <?php elseif ($gender == 2): ?>
+                        <li><a href="#">Men profiles</a></li>
+                    <?php endif; ?>
+                <?php else: ?>
                     <li><a href="#">Women profiles</a></li>
-                <?php }elseif ($gender == 2){ ?>
-                    <li><a href="#">Men profiles</a></li>
-                <?php } ?>
+                <?php endif; ?>
                 <li><a href="#">Search</a></li>
                 <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
             </ul>
