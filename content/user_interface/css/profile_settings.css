@@ -59,7 +59,7 @@
 .tab-body form {
 	display: inline-block;
 }
-.general-form {
+.settings-form {
 	padding-bottom: 30px;
 }
 .profile-form-row>span{
@@ -69,8 +69,16 @@
 	line-height: 25px;
 	margin:12px 20px 0 0;
 }
+.tab-body em {
+	font-family: 'BanderaProMedium';
+	font-size: 15px;
+	line-height: 17px;
+	font-style: normal;
+	color: #e63715;
+}
 .profile-form-row input,
-.location-drop {
+.location-drop,
+.profile-form-row textarea {
 	float: right;
 	background: #fff;
 	padding: 0 22px;
@@ -84,7 +92,11 @@
     line-height: 22px;
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 }
-.profile-form-row input:focus,
+.profile-form-row textarea {
+	
+}
+
+.profile-form input:focus,
 .profile-form-row label select:focus {
 	box-shadow: 0 0 3px rgba(0,0,0,0.3), 0 0 2px rgba(0,0,0,0.3) inset;
 	border: 1px solid rgba(0,0,0,0.3);
@@ -134,7 +146,7 @@
 }
 .birthday {
 	float: right;
-	width: 69%;
+	width: 67%;
 }
 .birthday select{
 	float: left;
@@ -169,6 +181,11 @@
     font-family: 'LatoBold';
     font-size: 23px;
     line-height: 25px;
+}
+#personal-tab .buttons-row .btn,
+#background-tab .buttons-row .btn {
+	width: 31%;
+
 }
 .btn.save {
 	background: #32CD32;
