@@ -19,16 +19,16 @@
                 <form class="general-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>First name</span>
-	                	<input class="profile-form" type="text" placeholder="Your name">			
+	                	<input class="profile-form" type="text" placeholder="Your name" id="user-name">
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Last name</span>
-	                	<input class="profile-form" type="text" placeholder="Your surname">			
+	                	<input class="profile-form" type="text" placeholder="Your surname" id="user-lastname">
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Gender</span>
 						<label>
-						    <select>
+						    <select id="gender">
 						        <option selected>Male</option>
 						        <option>Female</option>
 						    </select>
@@ -40,34 +40,37 @@
 			                <label>
 								<select>
 								    <option selected>DD</option>
-								    <option>01</option>
-								    <option>02</option>
-								    <option>03</option>
+								    <?php for ($i = 1; $i <= 31; $i++): ?>
+										<option><?php echo $i; ?></option>
+									<?php endfor; ?>
 								</select>
 							</label>
 							<label>
 								<select>
 								    <option selected>MM</option>
-								    <option>01</option>
-								    <option>02</option>
-								    <option>03</option>
+								    <?php for ($i = 1; $i <= 12; $i++): ?>
+										<option><?php echo $i; ?></option>
+									<?php endfor; ?>
 								</select>
 							</label>
 							<label class="year">
 								<select>
 								    <option selected>YYYY</option>
-								    <option>1970</option>
-								    <option>1971</option>
-								    <option>1972</option>
+									<?php $year = getdate(); ?>
+								    <?php for($i = $year['year'] - 90; $i <= $year['year'] - 18; $i++): ?>
+										<option><?php echo $i; ?></option>
+									<?php endfor; ?>
 								</select>
 							</label>	
 		                </div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Country</span>
-	                	<input class="profile-form" type="text" placeholder="Your location">
+	                	<input class="profile-form" type="text" placeholder="Your location" id="user-country">
 	                	<div class="location-drop">
-	                		<span></span>
+	                		<?php foreach ($countries as $value): ?>
+								<span class="country"><?php echo $value->country_name; ?></span>
+							<?php endforeach; ?>
 	                	</div>	
 	                </div>
 				</form>
