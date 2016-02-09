@@ -4,78 +4,84 @@
 	<h2>Profile Settings</h2>
 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs nav-justified" role="tablist">
-	    <li role="presentation" class="active"><a href="#messaging-tab" aria-controls="messaging-tab" role="tab" data-toggle="tab">General</a></li>
-	    <li role="presentation"><a href="#chat-tab" aria-controls="chat-tab" role="tab" data-toggle="tab">Personal</a></li>
-	    <li role="presentation"><a href="#video-chat-tab" aria-controls="video-chat-tab" role="tab" data-toggle="tab">Personal</a></li>
+	    <li role="presentation" class="active"><a href="#general-tab" aria-controls="messaging-tab" role="tab" data-toggle="tab">General</a></li>
 	    <li role="presentation"><a href="#gift-service-chat" aria-controls="gift-service-chat" role="tab" data-toggle="tab">Personal</a></li>
-	    <li role="presentation"><a href="#important-service-tab" aria-controls="important-service-tab" role="tab" data-toggle="tab">VIS</a></li>
+	    <li role="presentation"><a href="#important-service-tab" aria-controls="important-service-tab" role="tab" data-toggle="tab">Personal</a></li>
 	    <li role="presentation"><a href="#romance-tours-tab" aria-controls="romance-tours-tab" role="tab" data-toggle="tab">Personal</a></li>
 	  </ul>
 
 	  <!-- Tab panes -->
 	  <div class="tab-content">
-	    <div role="tabpanel" class="active tab-pane" id="messaging-tab">
+	    <div role="tabpanel" class="active tab-pane" id="general-tab">
 	    	<div class="tab-body">
-                <h2>General</h2>   
-                <p>All fields are required. Please, set your profile info.</p>
-                <form action="#">
+                <h2>Profile information</h2>     
+                <p>All fields are required. Please, set your profile info in fields below.</p>
+                <form class="general-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>First name</span>
 	                	<input class="profile-form" type="text" placeholder="Your name">			
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Last name</span>
-	                	<input class="profile-form" type="text" placeholder="Your last name">			
+	                	<input class="profile-form" type="text" placeholder="Your surname">			
 	                </div>
 	                <div class="profile-form-row">
-		                <span>Gender</span>
-						<em class="profile-select">
-							<select class="select" name="" id="">
-		                        <option value="" selected>Male</option>
-		                        <option value="" selected>Female</option>
-		                    </select>
-						</em>		
-	                </div>
-	                <div class="profile-form-row">
-		                <span>Country</span>
-						<em class="profile-select">
-							<select class="select" name="" id="">
-		                        <option value="" selected>Usa</option>
-		                        <option value="" selected>Canada</option>
-		                    </select>
-						</em>		
+	                	<span>Gender</span>
+						<label>
+						    <select>
+						        <option selected>Male</option>
+						        <option>Female</option>
+						    </select>
+						</label>		
 	                </div>
 	                <div class="profile-form-row">
 		                <span>Birthday</span>
-						<em class="profile-select">
-							<select class="year" name="" id="">
-		                        <option value="" selected>Year</option>
-		                    </select>
-		                    <select class="monts" name="" id="">
-		                        <option value="" selected>Month</option>
-		                    </select>
-		                    <select class="day" name="" id="">
-		                        <option value="" selected>Day</option>
-		                    </select>
-						</em>		
+		                <div class="birthday">
+			                <label>
+								<select>
+								    <option selected>DD</option>
+								    <option>01</option>
+								    <option>02</option>
+								    <option>03</option>
+								</select>
+							</label>
+							<label>
+								<select>
+								    <option selected>MM</option>
+								    <option>01</option>
+								    <option>02</option>
+								    <option>03</option>
+								</select>
+							</label>
+							<label class="year">
+								<select>
+								    <option selected>YYYY</option>
+								    <option>1970</option>
+								    <option>1971</option>
+								    <option>1972</option>
+								</select>
+							</label>	
+		                </div>
+	                </div>
+	                <div class="profile-form-row">
+		                <span>Country</span>
+						<label>
+						    <select>
+						        <option selected> Your country</option>
+						        <option>USA</option>
+						        <option>Canada</option>
+						        <option>Mexico</option>
+						    </select>
+						</label>		
 	                </div>
 				</form>
-	    	</div>
-	    </div>
-	    <div role="tabpanel" class="tab-pane fade" id="chat-tab">
-	    	<div class="tab-body">
-				<img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
-                <h2>Chat service</h2>     
-                <p>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</p>
-                <button type="button" class="btn btn-danger">To Service</button>
-	    	</div>
-	    </div>
-	    <div role="tabpanel" class="tab-pane fade" id="video-chat-tab">
-	    	<div class="tab-body">
-				<img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
-                <h2>Video chat service</h2>     
-                <p>What can be better than live communication with the beautiful women, who are here just waiting for you? That is why we have our additional service – video chat. Yes, chat to her and get to know each other better. Don’t hesitate and just chat to Ukrainian Real Brides!</p>
-                <button type="button" class="btn btn-danger">To Service</button>
+				<div class="buttons-row">
+					<!-- <button type="button" class="btn">Previous</button> -->
+<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
+					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
+					<button type="button" class="btn"><a href="#" class="settings-controls">Next</a></button>
+
+				</div>
 	    	</div>
 	    </div>
 	    <div role="tabpanel" class="tab-pane fade" id="gift-service-chat">

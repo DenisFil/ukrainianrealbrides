@@ -23,6 +23,10 @@
    	font-family: 'BanderaProMedium';
    	float: left;
 }
+.credits-box:hover {
+    border: 1px solid #e83c32;
+    box-shadow: 0 0 3px #e83c32;
+}
 .credits-box img {
 	display: inline-block;
 	margin: 0 0 42px 42px; 
