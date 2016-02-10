@@ -49,7 +49,6 @@
 }
 .profile-form-row {
 	display: block;
-	height: 60px;
 }
 .profile-form-row:after {
 	content:"";
@@ -60,7 +59,7 @@
 	display: inline-block;
 }
 .settings-form {
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 }
 .profile-form-row>span{
 	float: left;
@@ -68,6 +67,11 @@
 	font-size: 23px;
 	line-height: 25px;
 	margin:12px 20px 0 0;
+}
+.form-block {
+	height: 70px;
+	float: right;
+	width: 67%;
 }
 .tab-body em {
 	font-family: 'BanderaProMedium';
@@ -79,7 +83,6 @@
 .profile-form-row input,
 .location-drop,
 .profile-form-row textarea {
-	float: right;
 	background: #fff;
 	padding: 0 22px;
 	width: 300px;
@@ -144,27 +147,26 @@
     width: 13px;
     height: 9px;
 }
-.birthday {
-	float: right;
-	width: 67%;
+.birthday-block {
+
 }
-.birthday select{
+.birthday-block select{
 	float: left;
 	width: 100%;
 	padding: 0 15px;
 }
-.birthday label:last-child{
+.birthday-block label:last-child{
 	margin: 0;
 }
-.birthday label{
+.birthday-block label{
 	float: left;
 	margin-right: 2%;
 	width: 30%;
 }
-.birthday .year {
+.birthday-block .year {
 	width: 36%;
 }
-.birthday .year select {
+.birthday-block .year select {
 	padding: 0 20px;
 }
 .buttons-row {
@@ -223,4 +225,9 @@
 }
 .profile-form-row {
 	position: relative;
+}
+.profile-form-row:after {
+	content: "";
+	clear: both;
+	display: block;
 }

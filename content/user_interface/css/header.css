@@ -423,6 +423,7 @@ h4 {
 .form-row {
 	display: block;
 	text-align: center;
+
 }
 .form-control{
 	border: 1px solid #000;
@@ -473,8 +474,8 @@ h4 {
 	border: 1px solid rgba(0,0,0,0.3);
 }
 .error{
-	box-shadow: 0 0 3px rgba(255,0,0,0.5);
-	border: 1px solid rgba(255,0,0,0.5);
+	box-shadow: 0 0 3px rgba(255,0,0,0.5) !important;
+	border: 1px solid rgba(255,0,0,0.5) !important;
 }
 .success{
 	box-shadow: 0 0 3px rgba(0,204,0,0.3);
@@ -548,7 +549,9 @@ h4 {
 	color: #e83c32;
 	font-size: 12px;
 	line-height: 14px;
-	padding: 0 0 0 7px;
+	padding-top: 2px;
+	font-weight: normal;
+	display: block;
 }
 .terms-conditions {
 	font-size: 14px;
