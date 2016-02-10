@@ -20,10 +20,12 @@
 	                <div class="profile-form-row">
 	                	<span>First name</span>
 	                	<input class="profile-form" type="text" placeholder="Your name" id="user-name">
+						<span class="error"></span>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Last name</span>
 	                	<input class="profile-form" type="text" placeholder="Your surname" id="user-lastname">
+						<span class="error"></span>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Gender</span>
@@ -32,13 +34,14 @@
 						        <option selected>Male</option>
 						        <option>Female</option>
 						    </select>
-						</label>		
+						</label>
+						<span class="error"></span>
 	                </div>
 	                <div class="profile-form-row">
 		                <span>Birthday</span>
 		                <div class="birthday">
 			                <label>
-								<select>
+								<select id="day">
 								    <option selected>DD</option>
 								    <?php for ($i = 1; $i <= 31; $i++): ?>
 										<option><?php echo $i; ?></option>
@@ -46,7 +49,7 @@
 								</select>
 							</label>
 							<label>
-								<select>
+								<select id="month">
 								    <option selected>MM</option>
 								    <?php for ($i = 1; $i <= 12; $i++): ?>
 										<option><?php echo $i; ?></option>
@@ -54,19 +57,21 @@
 								</select>
 							</label>
 							<label class="year">
-								<select>
+								<select id="year">
 								    <option selected>YYYY</option>
 									<?php $year = getdate(); ?>
-								    <?php for($i = $year['year'] - 90; $i <= $year['year'] - 18; $i++): ?>
+								    <?php for($i = $year['year'] - 18; $i >= $year['year'] - 90; $i--): ?>
 										<option><?php echo $i; ?></option>
 									<?php endfor; ?>
 								</select>
-							</label>	
+							</label>
 		                </div>
+						<span class="error"></span>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Country</span>
 	                	<input class="profile-form" type="text" placeholder="Your location" id="user-country">
+						<span class="error"></span>
 	                	<div class="location-drop">
 	                		<?php foreach ($countries as $value): ?>
 								<span class="country"><?php echo $value->country_name; ?></span>
@@ -78,7 +83,7 @@
 					<!-- <button type="button" class="btn">Previous</button> -->
 <!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
 					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
-					<button type="button" class="btn"><a href="#" class="settings-controls">Next</a></button>
+					<button type="button" class="btn next"><a href="#" class="settings-controls">Next</a></button>
 
 				</div>
 	    	</div>

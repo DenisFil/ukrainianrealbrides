@@ -59,8 +59,40 @@ $(document).ready(function(){
         }
     }
 
+    function requiredFromButton(indexSpan){
+        $('.profile-form-row .error').each(function(index){
+             if (index == indexSpan){
+                 $(this).text('Sorry, this field is required');
+             }
+        });
+    }
+
 //Проверка введенных данных
     $('#user-name').blur(function(){
+        required('#user-name');
+    });
 
+    $('#user-country').blur(function(){
+        required('#user-country');
+    });
+
+    $('.save, .next').click(function(){
+        var data = {
+            name: $('#user-name').val(),
+            lastname: $('#user-lastname').val(),
+            gender: $('#gender').val(),
+            day: $('#day').val(),
+            month: $('#month').val(),
+            year: $('#year').val(),
+            country: $('#user-country').val()
+        };
+
+        /*$.each(data, function(index, value){
+            if (value == '' && index != 1){
+                requiredFromButton(index);
+            }
+
+        });*/
+        console.log(data);
     });
 });
