@@ -31,6 +31,15 @@ $(document).ready(function(){
 
     $(selector).blur(function(){
         setTimeout(function(){ $('.location-drop').hide(); }, 100);
+        var pattern =  $(selector).val();
+        $('.location-drop span').each(function(){
+            var search = $(this).text().indexOf(pattern) + 1;
+            if (search == 0){
+                $(this).hide();
+            }else{
+                $(this).show();
+            }
+        });
     });
 
     $(document).on('input', selector, function(){
@@ -48,6 +57,15 @@ $(document).ready(function(){
     $(document).on('click', '.country', function(){
         var country = $(this).text();
         $(selector).val(country);
+        var pattern =  $(selector).val();
+        $('.location-drop span').each(function(){
+            var search = $(this).text().indexOf(pattern) + 1;
+            if (search == 0){
+                $(this).hide();
+            }else{
+                $(this).show();
+            }
+        });
     });
 
 //Проверка обязательного заполнения поля
