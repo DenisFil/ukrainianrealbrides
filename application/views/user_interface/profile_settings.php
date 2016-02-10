@@ -82,13 +82,12 @@
 	                	<span>Country <em>*</em></span>
 	                	<div class="form-block">
 		                	<input class="profile-form form-control" type="text" placeholder="Your location" id="user-country">
-							<strong class="form-error-message"></strong>
 		                	<div class="location-drop">
 		                		<?php foreach ($countries as $value): ?>
 									<span class="country"><?php echo $value->country_name; ?></span>
 								<?php endforeach; ?>
 		                	</div>	
-		                	<strong class="form-error-message"></strong>
+							<strong class="form-error-message"></strong>
 		                </div>	
 	                </div>
 				</form>
@@ -108,71 +107,83 @@
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Height</span>
-						<label>
-						    <select>
-						        <option selected>155</option>
-						        <option>156</option>
-						        <option>157</option>
-						    </select>
-						</label>		
+	                	<div class="form-block">
+							<label>
+							    <select>
+							        <option selected>155</option>
+							        <option>156</option>
+							        <option>157</option>
+							    </select>
+							</label>		
+	                	</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Weight</span>
-	                	<label>
-						    <select>
-						        <option selected>70</option>
-						        <option>71</option>
-						        <option>72</option>
-						    </select>
-						</label>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>70</option>
+							        <option>71</option>
+							        <option>72</option>
+							    </select>
+							</label>
+	                	</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Eyes color</span>
-	                	<label>
-						    <select>
-						        <option selected>Blue</option>
-						        <option>Brown</option>
-						        <option>Amber</option>
-						        <option>Gray</option>
-						        <option>Green</option>
-						        <option>Hazel</option>
-						    </select>
-						</label>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>Blue</option>
+							        <option>Brown</option>
+							        <option>Amber</option>
+							        <option>Gray</option>
+							        <option>Green</option>
+							        <option>Hazel</option>
+							    </select>
+							</label>		
+	                	</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Hair color</span>
-	                	<label>
-						    <select>
-						        <option selected>Blonde</option>
-						        <option>Gray</option>
-						        <option>Blonde</option>
-						        <option>Black</option>
-						        <option>Redhead</option>
-						    </select>
-						</label>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>Blonde</option>
+							        <option>Gray</option>
+							        <option>Blonde</option>
+							        <option>Black</option>
+							        <option>Redhead</option>
+							    </select>
+							</label>
+						</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Children</span>
-	                	<label>
-						    <select>
-						        <option selected>0</option>
-						        <option>1</option>
-						        <option>2</option>
-						        <option>3</option>
-						        <option>4</option>
-						    </select>
-						</label>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>0</option>
+							        <option>1</option>
+							        <option>2</option>
+							        <option>3</option>
+							        <option>4</option>
+							    </select>
+							</label>
+						</div>	
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Religion</span>
-	                	<label>
-						    <select>
-						        <option selected>Atheism</option>
-						        <option>Christianity</option>
-						        <option>Islam</option>
-						        <option>Judaism</option>
-						    </select>
-						</label>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>Atheism</option>
+							        <option>Christianity</option>
+							        <option>Islam</option>
+							        <option>Judaism</option>
+							    </select>
+							</label>
+						</div>	
 	                </div>
 				</form>
 				<div class="buttons-row">
@@ -192,39 +203,49 @@
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Education</span>
-						<label>
-						    <select>
-						        <option selected>Master</option>
-						        <option>Bachelor</option>
-						        <option>Short-cycle tertiary</option>
-						    </select>
-						</label>		
+	                	<div class="form-block">
+							<label>
+							    <select>
+							        <option selected>Master's degree</option>
+							        <option>Bachelor</option>
+							        <option>Short-cycle tertiary</option>
+							    </select>
+							</label>
+						</div>	
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Drinking</span>
-	                	<label>
-						    <select>
-						        <option selected>No</option>
-						        <option>Yes</option>
-						    </select>
-						</label>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>No</option>
+							        <option>Yes</option>
+							    </select>
+							</label>
+						</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Smoking</span>
-	                	<label>
-						    <select>
-						        <option selected>No</option>
-						        <option>Yes</option>
-						    </select>
-						</label>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>No</option>
+							        <option>Yes</option>
+							    </select>
+							</label>
+						</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Hobbies</span>
-	                	<input class="profile-form" type="text" placeholder="Your hobbies">			
+	                	<div class="form-block">
+	                		<input class="profile-form" type="text" placeholder="Your hobbies">	
+	                	</div>	
 	                </div>
-	                <div class="profile-form-row">
+	                <div class="profile-form-row aboutme">
 	                	<span>About me</span>
-	                	<input class="profile-form" type="textarea" placeholder="Tell something about you">	
+	                	<div class="form-block">
+	                		<textarea placeholder="Write something about you" class="profile-form"  cols="30" rows="5"></textarea>
+	                	</div>
 	                </div>
 				</form>
 				<div class="buttons-row">
@@ -237,13 +258,45 @@
 				</div>
 	    	</div>    	
 	    </div>
-	    <div role="tabpanel" class="tab-pane fade" id="security-tab">
+	    <div role="tabpanel" class="tab-pane fade" id="partner-tab">
 	    	<div class="tab-body">
-                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" alt="Romance tours" />
-                <h2>Romance tours service</h2>     
-                <p>You feel it is time to meet Ladies in real? Time to touch her hand, see her eyes and listen to her wonderful voice? You want to hug your lady and feel the smell of her beautiful hair? You desire to start the life full of romance and tender emotions? Then come to Ukraine as soon as possible! One meeting is worth lots of words. We will be very glad to meet you and help with everything in your romantic Tour.</p>
-                <button type="button" class="btn btn-danger">To Service</button>
-	    	</div>	    	
+                <h2>Partner</h2>     
+                <p>In the fields below , select the preferences of your partner</p>
+                <form class="settings-form" action="#">
+	                <div class="profile-form-row">
+	                	<span>Age</span>
+	                	<div class="form-block">
+							<label>
+							    <select>
+							        <option selected></option>
+							        <option>Bachelor</option>
+							        <option>Short-cycle tertiary</option>
+							    </select>
+							</label>
+						</div>	
+	                </div>
+	                <div class="profile-form-row">
+	                	<span>Children</span>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>No</option>
+							        <option>Yes</option>
+							    </select>
+							</label>
+						</div>
+	                </div>
+	               
+				</form>
+				<div class="buttons-row">
+					<!-- <button type="button" class="btn">Previous</button> -->
+<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
+					<button type="button" class="btn"><a href="#" class="settings-controls">Prev</a></button>
+					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
+					<button type="button" class="btn"><a href="#" class="settings-controls">Next</a></button>
+
+				</div>
+	    	</div>    	
 	    </div>
 	  </div>
 

@@ -58,6 +58,15 @@
 .tab-body form {
 	display: inline-block;
 }
+.profile-form-row.aboutme .form-block textarea{
+	height: 200px;
+	overflow: auto;
+	padding: 11px 22px;
+	resize: none;
+}
+.profile-form-row.aboutme {
+	height: 200px;
+}
 .settings-form {
 	padding-bottom: 20px;
 }
@@ -99,7 +108,8 @@
 	
 }
 
-.profile-form input:focus,
+.profile-form-row .form-block input:focus,
+.profile-form-row .form-block textarea:focus,
 .profile-form-row label select:focus {
 	box-shadow: 0 0 3px rgba(0,0,0,0.3), 0 0 2px rgba(0,0,0,0.3) inset;
 	border: 1px solid rgba(0,0,0,0.3);
@@ -129,6 +139,10 @@
 /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     select {padding-right:18px}
+}
+.profile-form-row select option:hover {
+	background: red;
+
 }
 
 .profile-form-row label {
@@ -185,7 +199,8 @@
     line-height: 25px;
 }
 #personal-tab .buttons-row .btn,
-#background-tab .buttons-row .btn {
+#background-tab .buttons-row .btn,
+#partner-tab .buttons-row .btn  {
 	width: 31%;
 
 }
