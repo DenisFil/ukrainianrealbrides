@@ -33,7 +33,7 @@
 
         </div>
         <div class="footer-right">
-            <a class="footer-logo" href="#"><img src="<?php echo base_url();?>content/user_interface/img/footer/footer-logo.png" alt="Ukrainian real brides" width="232px" height="131px" /></a>
+            <a class="footer-logo" href="<?php  echo base_url(); ?>"><img src="<?php echo base_url();?>content/user_interface/img/footer/footer-logo.png" alt="Ukrainian real brides" width="232px" height="131px" /></a>
             <ul>
                 <li class="youtube-sprite"><a href="https://www.youtube.com/channel/UCh3M5uJ4v01u-7VN7l1bFvQ" target="_blank"><span></span></a></li>
                 <li class="insta-sprite"><a href="#"><span></span></a></li>
@@ -42,7 +42,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-copyrights">
-                <span>UkrainianRealBrides 2001-2015 &copy; All rights reserved.</span>
+                <span>UkrainianRealBrides 2001-<?php $year = getdate(); echo $year['year']; ?> &copy; All rights reserved.</span>
                 <ul>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Privacy Policy</a></li>
@@ -65,6 +65,7 @@
         <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/facebook.js"></script>
     <?php endif; ?>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/personal_area.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/personal_settings.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jcarousel.responsive.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/videosliderengine/amazingslider.js"></script>

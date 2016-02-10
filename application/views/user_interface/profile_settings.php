@@ -20,55 +20,63 @@
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>First name <em>*</em></span>
-	                	<input class="profile-form" type="text" placeholder="Your name">			
+	                	<input class="profile-form" type="text" placeholder="Your name" id="user-name">
+						<span class="error"></span>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Last name</span>
-	                	<input class="profile-form" type="text" placeholder="Your surname">			
+	                	<input class="profile-form" type="text" placeholder="Your surname" id="user-lastname">
+						<span class="error"></span>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Gender <em>*</em></span>
 						<label>
-						    <select>
+						    <select id="gender">
 						        <option selected>Male</option>
 						        <option>Female</option>
 						    </select>
-						</label>		
+						</label>
+						<span class="error"></span>
 	                </div>
 	                <div class="profile-form-row">
 		                <span>Birthday <em>*</em></span>
 		                <div class="birthday">
 			                <label>
-								<select>
+								<select id="day">
 								    <option selected>DD</option>
-								    <option>01</option>
-								    <option>02</option>
-								    <option>03</option>
+								    <?php for ($i = 1; $i <= 31; $i++): ?>
+										<option><?php echo $i; ?></option>
+									<?php endfor; ?>
 								</select>
 							</label>
 							<label>
-								<select>
+								<select id="month">
 								    <option selected>MM</option>
-								    <option>01</option>
-								    <option>02</option>
-								    <option>03</option>
+								    <?php for ($i = 1; $i <= 12; $i++): ?>
+										<option><?php echo $i; ?></option>
+									<?php endfor; ?>
 								</select>
 							</label>
 							<label class="year">
-								<select>
+								<select id="year">
 								    <option selected>YYYY</option>
-								    <option>1970</option>
-								    <option>1971</option>
-								    <option>1972</option>
+									<?php $year = getdate(); ?>
+								    <?php for($i = $year['year'] - 18; $i >= $year['year'] - 90; $i--): ?>
+										<option><?php echo $i; ?></option>
+									<?php endfor; ?>
 								</select>
-							</label>	
+							</label>
 		                </div>
+						<span class="error"></span>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Country <em>*</em></span>
-	                	<input class="profile-form" type="text" placeholder="Your location">
+	                	<input class="profile-form" type="text" placeholder="Your location" id="user-country">
+						<span class="error"></span>
 	                	<div class="location-drop">
-	                		<span></span>
+	                		<?php foreach ($countries as $value): ?>
+								<span class="country"><?php echo $value->country_name; ?></span>
+							<?php endforeach; ?>
 	                	</div>	
 	                </div>
 				</form>
@@ -76,7 +84,7 @@
 					<!-- <button type="button" class="btn">Previous</button> -->
 <!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
 					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
-					<button type="button" class="btn"><a href="#" class="settings-controls">Next</a></button>
+					<button type="button" class="btn next"><a href="#" class="settings-controls">Next</a></button>
 
 				</div>
 	    	</div>

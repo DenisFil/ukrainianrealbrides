@@ -219,6 +219,7 @@
 .location-drop span:hover {
     background: #e83c32;
     color: #fff;
+	cursor: pointer;
 }
 .profile-form-row {
 	position: relative;
