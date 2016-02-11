@@ -14,6 +14,12 @@
                                                 where('user_id', $id)->
                                                 get()->
                                                 result());
+            $country = $this->db->  select('country_name')->
+                                    from('countries')->
+                                    where('country_id', $query[1][0]->country)->
+                                    get()->
+                                    result();
+            $query[1][0]->country = $country[0]->country_name;
             return $query;
         }
 

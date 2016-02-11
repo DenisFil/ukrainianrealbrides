@@ -36,6 +36,8 @@
         {
             $user_id = $this->session->userdata('id');
             $user_data = $this->profile_settings_model->get_user_data($user_id);
+            $birthday = explode('.', $user_data[1][0]->birthday);
+            $user_data[1][0]->birthday = $birthday;
             echo json_encode($user_data);
         }
 

@@ -19,6 +19,11 @@ $(document).ready(function(){
             if (data[1][0].country != 0){
                 $('#user-country').val(data[1][0].country);
             }
+            if (data[1][0].birthday){
+                $('#day').val(data[1][0].birthday[0]);
+                $('#month').val(data[1][0].birthday[1]);
+                $('#year').val(data[1][0].birthday[2]);
+            }
         }
     });
 
