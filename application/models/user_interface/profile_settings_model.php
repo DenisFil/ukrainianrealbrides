@@ -19,7 +19,15 @@
                                     where('country_id', $query[1][0]->country)->
                                     get()->
                                     result();
-            $query[1][0]->country = $country[0]->country_name;
+            if (!empty($country))
+            {
+                $query[1][0]->country = $country[0]->country_name;
+            }
+            else
+            {
+                $query[1][0]->country = '';
+            }
+
             return $query;
         }
 

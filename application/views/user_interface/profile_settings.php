@@ -122,7 +122,7 @@
 											array_push($ft, $ft_intermediate . "' " . $inches . "''");
 										?>
 
-										<option><?php echo $i . ' sm (' . $ft[$i - 150] . ')'; ?></option>
+										<option><?php echo $i . ' cm (' . $ft[$i - 150] . ')'; ?></option>
 									<?php endfor; ?>
 							    </select>
 							</label>		
