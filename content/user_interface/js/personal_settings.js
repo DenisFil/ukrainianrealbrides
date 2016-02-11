@@ -19,35 +19,55 @@ $(document).ready(function(){
             if (data[1][0].country != 0){
                 $('#user-country').val(data[1][0].country);
             }
+            if (data[1][0].birthday){
+                $('#day').val(data[1][0].birthday[0]);
+                $('#month').val(data[1][0].birthday[1]);
+                $('#year').val(data[1][0].birthday[2]);
+            }
+            $('#height').val(data[1][0].height);
+            $('#weight').val(data[1][0].weight);
+            $('#eyes').val(data[1][0].eyes_color);
+            $('#hair').val(data[1][0].hair_color);
+            $('#children').val(data[1][0].children);
+            $('#religion').val(data[1][0].religion);
+            $('#education').val(data[1][0].education);
+            $('#drinking').val(data[1][0].drinking);
+            $('#smoking').val(data[1][0].smoking);
+            $('#hobbies').val(data[1][0].hobbies);
+            $('#about').val(data[1][0].about_me);
         }
     });
 
 //Выбор страны
     var selector = '#user-country';
 
-    $(selector).focus(function(){
-        $('.location-drop').show();
-    });
-
-    $(selector).blur(function(){
-        setTimeout(function(){ $('.location-drop').hide(); }, 100);
-    });
-
-    $(document).on('input', selector, function(){
+    function dropCountry(){
         var pattern =  $(selector).val();
         $('.location-drop span').each(function(){
             var search = $(this).text().indexOf(pattern) + 1;
-                if (search == 0){
-                    $(this).hide();
-                }else{
-                    $(this).show();
-                }
+            if (search == 0){
+                $(this).hide();
+            }else{
+                $(this).show();
+            }
         });
+    }
+
+    $(selector).focus(function(){
+        $('.location-drop').show();
+    }).blur(function(){
+        setTimeout(function(){ $('.location-drop').hide(); }, 100);
+        dropCountry();
+    });
+
+    $(document).on('input', selector, function(){
+        dropCountry();
     });
 
     $(document).on('click', '.country', function(){
         var country = $(this).text();
         $(selector).val(country);
+        dropCountry();
     });
 
 //Проверка обязательного заполнения поля
@@ -55,44 +75,119 @@ $(document).ready(function(){
         var value = $(field).val();
 
         if (value == ''){
-            $('.error').text('Sorry, this field is required');
+            $(field).next().text('Sorry, this field is required');
+            $(field).addClass('error');
         }
     }
 
+    function onFocus(field){
+        $(field).next().text('');
+        $(field).removeClass('error');
+    }
+
     function requiredFromButton(indexSpan){
-        $('.profile-form-row .error').each(function(index){
+        $('.profile-form-row .form-error-message').each(function(index){
              if (index == indexSpan){
-                 $(this).text('Sorry, this field is required');
+                 var selector = '.form-error-message';
+                 $(selector).eq(index).text('Sorry, this field is required');
+                 $(selector).eq(index).prev().addClass('error');
              }
         });
     }
 
 //Проверка введенных данных
-    $('#user-name').blur(function(){
-        required('#user-name');
+    $('#user-name, #user-country').blur(function(){
+        var field = '#' + $(this).attr('id');
+        required(field);
+    }).focus(function(){
+        var field = '#' + $(this).attr('id');
+        onFocus(field);
     });
 
-    $('#user-country').blur(function(){
-        required('#user-country');
+    $('#day, #month, #year').focus(function(){
+        $('.birthday-block').next().text('');
     });
 
-    $('.save, .next').click(function(){
+//Запись в БД
+    function saveData(){
+        //Проверка заполнения даты рождения
+        var birthday = {
+            day: $('#day').val(),
+            month: $('#month').val(),
+            year: $('#year').val()
+        };
+
+        if (birthday.day == 'DD' || birthday.month == 'MM' || birthday.year == 'YYYY'){
+            $('.birthday-block').next().text('Sorry, this field is required');
+        }
+
+        //Проверка заполнения полей формы
         var data = {
             name: $('#user-name').val(),
             lastname: $('#user-lastname').val(),
             gender: $('#gender').val(),
-            day: $('#day').val(),
-            month: $('#month').val(),
-            year: $('#year').val(),
-            country: $('#user-country').val()
+            birthday: birthday.day + '.' + birthday.month + '.' + birthday.year,
+            country: $('#user-country').val(),
+            height: $('#height').val(),
+            weight: $('#weight').val(),
+            eyes_color: $('#eyes').val(),
+            hair_color: $('#hair').val(),
+            children: $('#children').val(),
+            religion: $('#religion').val(),
+            education: $('#education').val(),
+            drinking: $('#drinking').val(),
+            smoking: $('#smoking').val(),
+            hobbies: $('#hobbies').val(),
+            about_me: $('#about').val()
         };
 
-        /*$.each(data, function(index, value){
+        var dataArray = [data.name, data.lastname, data.gender, data.birthday, data.country];
+
+        $.each(dataArray, function(index, value){
             if (value == '' && index != 1){
                 requiredFromButton(index);
             }
+        });
 
-        });*/
-        console.log(data);
+        if ($('.form-error-message').text() == ''){
+            $.ajax({
+                type: 'post',
+                data: data,
+                url: baseUrl + 'user_interface/profile_settings/insert_data'
+            });
+        }
+        return true;
+    }
+
+    $('.save').click(function(){
+        var result = saveData();
+        if (result === true){
+            location.reload();
+        }
+    });
+
+    $('.next').click(function(){
+        var result = saveData();
+        if (result === true){
+            $('.nav-tabs li').each(function(index){
+                var className = $(this).attr('class');
+                if (className == 'active'){
+                    $('.nav-tabs li').eq(index).next().children().click().addClass('active');
+                    $('body').animate({'scrollTop' : 170}, 'slow');
+                    return false;
+                }
+            });
+        }
+    });
+
+    $('.prev').click(function(){
+        $('.nav-tabs li').each(function(index){
+            var className = $(this).attr('class');
+            if (className == 'active'){
+                $('.nav-tabs li').eq(index).prev().children().click().addClass('active');
+                $('body').animate({'scrollTop' : 170}, 'slow');
+                return false;
+            }
+        });
     });
 });
