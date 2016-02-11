@@ -1,36 +1,5 @@
-<<<<<<< HEAD
-  $(function() {
-    $( "#slider-range" ).slider({
-      range: true,
-      min: 21,
-      max: 50,
-      values: [ 25, 40 ],
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-      }
-    });
-    $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - " + $( "#slider-range" ).slider( "values", 1 ) );
-  });
-
-  $(function() {
-    $( "#slider-height" ).slider({
-      range: true,
-      min: 40,
-      max: 100,
-      values: [ 40, 60 ],
-      slide: function( event, ui ) {
-        $( "#height-amount" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-      }
-    });
-    $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - " + $( "#slider-range" ).slider( "values", 1 ) );
-  });
-=======
 
 
-
->>>>>>> slider
 /*! jQuery UI - v1.11.4 - 2016-02-11
 * http://jqueryui.com
 * Includes: core.js, widget.js, mouse.js, position.js, draggable.js, resizable.js, slider.js
@@ -4539,9 +4508,6 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
 
 
 
-<<<<<<< HEAD
-}));
-=======
 }));
 
 
@@ -4598,4 +4564,4 @@ $('.ui-slider-range').append('<span class="price-range-both value"><i>$' + $('#s
 $('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#slider').slider('values', 0) + '</span>');
 
 $('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#slider').slider('values', 1) + '</span>');
->>>>>>> slider
+
