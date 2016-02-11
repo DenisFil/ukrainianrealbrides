@@ -94,8 +94,8 @@
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
 <!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
-					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
-					<button type="button" class="btn next"><a href="#" class="settings-controls">Next</a></button>
+					<button type="button" class="btn save">Save</button>
+					<button type="button" class="btn next">Next</button>
 
 				</div>
 	    	</div>

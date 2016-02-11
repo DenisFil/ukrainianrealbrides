@@ -36,6 +36,24 @@
         {
             $user_id = $this->session->userdata('id');
             $user_data = $this->profile_settings_model->get_user_data($user_id);
+            $birthday = explode('.', $user_data[1][0]->birthday);
+            $user_data[1][0]->birthday = $birthday;
             echo json_encode($user_data);
+        }
+
+        public function insert_data()
+        {
+            $user_data = $this->input->post();
+            $user_id = $this->session->userdata('id');
+            $query = $this->profile_settings_model->insert_data($user_data, $user_id);
+                if ($query === TRUE)
+                {
+                    $result['result'] = 1;
+                }
+                else
+                {
+                    $result['result'] = 2;
+                }
+            echo json_encode($result);
         }
     }

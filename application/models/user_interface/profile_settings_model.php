@@ -14,6 +14,12 @@
                                                 where('user_id', $id)->
                                                 get()->
                                                 result());
+            $country = $this->db->  select('country_name')->
+                                    from('countries')->
+                                    where('country_id', $query[1][0]->country)->
+                                    get()->
+                                    result();
+            $query[1][0]->country = $country[0]->country_name;
             return $query;
         }
 
@@ -24,5 +30,45 @@
                                     get()->
                                     result();
             return $query;
+        }
+
+        public function insert_data($data, $id)
+        {
+            if ($data['gender'] == 'Male')
+            {
+                $data['gender'] = 1;
+            }
+            else
+            {
+                $data['gender'] = 2;
+            }
+
+            $country_id = $this->db->   select('country_id')->
+                                        from('countries')->
+                                        where('country_name', $data['country'])->
+                                        get()->
+                                        result();
+
+            $general_data = array(
+                'name' => $data['name'],
+                'lastname' => $data['lastname'],
+                'gender' => $data['gender']
+            );
+
+            $other_data = array(
+                'birthday' => $data['birthday'],
+                'country' => $country_id[0]->country_id
+            );
+
+            $general_query = $this->db->update('user_profiles', $general_data, array('id' => $id));
+            $other_query = $this->db->update('men_details', $other_data, array('user_id' => $id));
+                if ($general_query === TRUE && $other_query === TRUE)
+                {
+                    return TRUE;
+                }
+                else
+                {
+                    return FALSE;
+                }
         }
     }
