@@ -47,7 +47,7 @@
 	                </div>
 	                <div class="profile-form-row">
 		                <span>Birthday <em>*</em></span>
-		                <div class="form-block">
+		                <div class="form-block birthday">
 		                	<div class="birthday-block">
 				                <label>
 									<select id="day">
@@ -275,14 +275,9 @@
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Age</span>
-	                	<div class="form-block">
-							<label>
-							    <select>
-							        <option selected></option>
-							        <option>Bachelor</option>
-							        <option>Short-cycle tertiary</option>
-							    </select>
-							</label>
+	                	<div class="form-block age">
+	                		<input type="text" id="amount" class="age-range" readonly>
+							<div id="slider-range"></div>
 						</div>	
 	                </div>
 	                <div class="profile-form-row">
@@ -290,13 +285,89 @@
 	                	<div class="form-block">
 		                	<label>
 							    <select>
-							        <option selected>No</option>
-							        <option>Yes</option>
+							        <option selected>None</option>
+							        <option>1-2</option>
+							        <option>2-3</option>
+							        <option>>3</option>
 							    </select>
 							</label>
 						</div>
 	                </div>
-	               
+					<div class="profile-form-row">
+	                	<span>Height (sm)</span>
+	                	<div class="form-block age">
+	                		<input type="text" id="height-amount" class="age-range" readonly>
+							<div id="slider-height"></div>
+						</div>	
+	                </div>
+	                <div class="profile-form-row">
+	                	<span>Weight</span>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>70</option>
+							        <option>71</option>
+							        <option>72</option>
+							    </select>
+							</label>
+	                	</div>
+	                </div>
+	                <div class="profile-form-row">
+	                	<span>Eyes color</span>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>Blue</option>
+							        <option>Brown</option>
+							        <option>Amber</option>
+							        <option>Gray</option>
+							        <option>Green</option>
+							        <option>Hazel</option>
+							    </select>
+							</label>		
+	                	</div>
+	                </div>
+	                <div class="profile-form-row">
+	                	<span>Hair color</span>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>Blonde</option>
+							        <option>Gray</option>
+							        <option>Blonde</option>
+							        <option>Black</option>
+							        <option>Redhead</option>
+							    </select>
+							</label>
+						</div>
+	                </div>
+	                <div class="profile-form-row">
+	                	<span>Children</span>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>0</option>
+							        <option>1</option>
+							        <option>2</option>
+							        <option>3</option>
+							        <option>4</option>
+							    </select>
+							</label>
+						</div>	
+	                </div>
+	                <div class="profile-form-row">
+	                	<span>Religion</span>
+	                	<div class="form-block">
+		                	<label>
+							    <select>
+							        <option selected>Atheism</option>
+							        <option>Christianity</option>
+							        <option>Islam</option>
+							        <option>Judaism</option>
+							    </select>
+							</label>
+						</div>	
+	                </div>
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
@@ -304,7 +375,6 @@
 					<button type="button" class="btn"><a href="#" class="settings-controls">Prev</a></button>
 					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
 					<button type="button" class="btn"><a href="#" class="settings-controls">Next</a></button>
-
 				</div>
 	    	</div>    	
 	    </div>
