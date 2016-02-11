@@ -109,7 +109,7 @@
 	                	<span>Height</span>
 	                	<div class="form-block">
 							<label>
-							    <select>
+							    <select id="height">
 									<option selected></option>
 									<?php $ft = array(); ?>
 							        <?php for ($i = 150; $i <= 210; $i++): ?>
@@ -132,7 +132,7 @@
 	                	<span>Weight</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
+							    <select id="weight">
 							        <option selected></option>
 									<?php for ($i = 40; $i <= 130; $i++): ?>
 										<?php $lbs = round($i*2.20462, 1); ?>
@@ -146,7 +146,7 @@
 	                	<span>Eyes color</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
+							    <select id="eyes">
 									<option selected></option>
 							        <?php $eyes = array('Amber', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'); ?>
 									<?php foreach ($eyes as $value): ?>
@@ -160,7 +160,7 @@
 	                	<span>Hair color</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
+							    <select id="hair">
 							        <option selected></option>
 									<?php $hair = array('Black', 'Brown', 'Blond', 'Auburn', 'Chestnut', 'Red', 'Gray and white'); ?>
 									<?php foreach ($hair as $value): ?>
@@ -174,7 +174,7 @@
 	                	<span>Children</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
+							    <select id="children">
 							        <option selected>None</option>
 									<?php for ($i = 1; $i <= 5; $i++): ?>
 										<option><?php echo $i; ?></option>
@@ -187,7 +187,7 @@
 	                	<span>Religion</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
+							    <select id="religion">
 							        <option selected></option>
 									<?php $religion = array('Christian', 'Buddhist', 'Catholik', 'Jewish', 'Muslin', 'Hindu', 'Atheist', 'Other'); ?>
 									<?php foreach ($religion as $value): ?>
@@ -201,7 +201,7 @@
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
 <!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
-					<button type="button" class="btn">Prev</button>
+					<button type="button" class="btn prev">Prev</button>
 					<button type="button" class="btn save">Save</button>
 					<button type="button" class="btn next">Next</button>
 				</div>
@@ -216,7 +216,7 @@
 	                	<span>Education</span>
 	                	<div class="form-block">
 							<label>
-							    <select>
+							    <select id="education">
 							        <option selected>Master's degree</option>
 							        <option>Bachelor</option>
 							        <option>Short-cycle tertiary</option>
@@ -228,7 +228,7 @@
 	                	<span>Drinking</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
+							    <select id="drinking">
 							        <option selected>No</option>
 							        <option>Yes</option>
 							    </select>
@@ -239,7 +239,7 @@
 	                	<span>Smoking</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
+							    <select id="smoking">
 							        <option selected>No</option>
 							        <option>Yes</option>
 							    </select>
@@ -249,23 +249,22 @@
 	                <div class="profile-form-row">
 	                	<span>Hobbies</span>
 	                	<div class="form-block">
-	                		<input class="profile-form" type="text" placeholder="Your hobbies">	
+	                		<input class="profile-form" type="text" placeholder="Your hobbies" id="hobbies">
 	                	</div>	
 	                </div>
 	                <div class="profile-form-row aboutme">
 	                	<span>About me</span>
 	                	<div class="form-block">
-	                		<textarea placeholder="Write something about you" class="profile-form"  cols="30" rows="5"></textarea>
+	                		<textarea placeholder="Write something about you" class="profile-form"  cols="30" rows="5" id="about"></textarea>
 	                	</div>
 	                </div>
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
 <!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
-					<button type="button" class="btn"><a href="#" class="settings-controls">Prev</a></button>
-					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
-					<button type="button" class="btn"><a href="#" class="settings-controls">Next</a></button>
-
+					<button type="button" class="btn prev">Prev</button>
+					<button type="button" class="btn save">Save</button>
+					<button type="button" class="btn next">Next</button>
 				</div>
 	    	</div>    	
 	    </div>

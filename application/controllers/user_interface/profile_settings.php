@@ -45,15 +45,6 @@
         {
             $user_data = $this->input->post();
             $user_id = $this->session->userdata('id');
-            $query = $this->profile_settings_model->insert_data($user_data, $user_id);
-                /*if ($query === TRUE)
-                {
-                    $result['result'] = 1;
-                }
-                else
-                {
-                    $result['result'] = 2;
-                }
-            echo json_encode($result);*/
+            $this->profile_settings_model->insert_data($user_data, $user_id);
         }
     }

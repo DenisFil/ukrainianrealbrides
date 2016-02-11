@@ -9,7 +9,7 @@
                                             where('id', $id)->
                                             get()->
                                             result());
-            array_push($query, $this->db->      select('birthday, country')->
+            array_push($query, $this->db->      select('birthday, country, height, weight, eyes_color, hair_color, children, religion, education, drinking, smoking, hobbies, about_me')->
                                                 from('men_details')->
                                                 where('user_id', $id)->
                                                 get()->
@@ -54,14 +54,11 @@
                 'lastname' => $data['lastname'],
                 'gender' => $data['gender']
             );
-
-            $other_data = array(
-                'birthday' => $data['birthday'],
-                'country' => $country_id[0]->country_id
-            );
+            unset($data['name'], $data['lastname'], $data['gender']);
+            $data['country'] = $country_id[0]->country_id;
 
             $general_query = $this->db->update('user_profiles', $general_data, array('id' => $id));
-            $other_query = $this->db->update('men_details', $other_data, array('user_id' => $id));
+            $other_query = $this->db->update('men_details', $data, array('user_id' => $id));
                 if ($general_query === TRUE && $other_query === TRUE)
                 {
                     return TRUE;

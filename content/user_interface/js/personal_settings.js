@@ -24,6 +24,17 @@ $(document).ready(function(){
                 $('#month').val(data[1][0].birthday[1]);
                 $('#year').val(data[1][0].birthday[2]);
             }
+            $('#height').val(data[1][0].height);
+            $('#weight').val(data[1][0].weight);
+            $('#eyes').val(data[1][0].eyes_color);
+            $('#hair').val(data[1][0].hair_color);
+            $('#children').val(data[1][0].children);
+            $('#religion').val(data[1][0].religion);
+            $('#education').val(data[1][0].education);
+            $('#drinking').val(data[1][0].drinking);
+            $('#smoking').val(data[1][0].smoking);
+            $('#hobbies').val(data[1][0].hobbies);
+            $('#about').val(data[1][0].about_me);
         }
     });
 
@@ -116,7 +127,18 @@ $(document).ready(function(){
             lastname: $('#user-lastname').val(),
             gender: $('#gender').val(),
             birthday: birthday.day + '.' + birthday.month + '.' + birthday.year,
-            country: $('#user-country').val()
+            country: $('#user-country').val(),
+            height: $('#height').val(),
+            weight: $('#weight').val(),
+            eyes_color: $('#eyes').val(),
+            hair_color: $('#hair').val(),
+            children: $('#children').val(),
+            religion: $('#religion').val(),
+            education: $('#education').val(),
+            drinking: $('#drinking').val(),
+            smoking: $('#smoking').val(),
+            hobbies: $('#hobbies').val(),
+            about_me: $('#about').val()
         };
 
         var dataArray = [data.name, data.lastname, data.gender, data.birthday, data.country];
@@ -151,10 +173,21 @@ $(document).ready(function(){
                 var className = $(this).attr('class');
                 if (className == 'active'){
                     $('.nav-tabs li').eq(index).next().children().click().addClass('active');
-                    $('body').animate({'scrollTop' : 0}, 'slow');
+                    $('body').animate({'scrollTop' : 170}, 'slow');
                     return false;
                 }
             });
         }
+    });
+
+    $('.prev').click(function(){
+        $('.nav-tabs li').each(function(index){
+            var className = $(this).attr('class');
+            if (className == 'active'){
+                $('.nav-tabs li').eq(index).prev().children().click().addClass('active');
+                $('body').animate({'scrollTop' : 170}, 'slow');
+                return false;
+            }
+        });
     });
 });
