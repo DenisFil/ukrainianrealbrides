@@ -110,9 +110,20 @@
 	                	<div class="form-block">
 							<label>
 							    <select>
-							        <option selected>155</option>
-							        <option>156</option>
-							        <option>157</option>
+									<option selected></option>
+									<?php $ft = array(); ?>
+							        <?php for ($i = 150; $i <= 210; $i++): ?>
+										<?php
+											$inches = round($i/2.54, 2);
+											$intermediate = round($inches/12, 2);
+											$ft_intermediate = floor($intermediate);
+											$intermediate = $intermediate - $ft_intermediate;
+											$inches = round($intermediate*12);
+											array_push($ft, $ft_intermediate . "' " . $inches . "''");
+										?>
+
+										<option><?php echo $i . ' sm (' . $ft[$i - 150] . ')'; ?></option>
+									<?php endfor; ?>
 							    </select>
 							</label>		
 	                	</div>
@@ -122,9 +133,11 @@
 	                	<div class="form-block">
 		                	<label>
 							    <select>
-							        <option selected>70</option>
-							        <option>71</option>
-							        <option>72</option>
+							        <option selected></option>
+									<?php for ($i = 40; $i <= 130; $i++): ?>
+										<?php $lbs = round($i*2.20462, 1); ?>
+										<option><?php echo $i . 'kg (' . $lbs . ' lbs)'; ?></option>
+									<?php endfor; ?>
 							    </select>
 							</label>
 	                	</div>
@@ -134,12 +147,11 @@
 	                	<div class="form-block">
 		                	<label>
 							    <select>
-							        <option selected>Blue</option>
-							        <option>Brown</option>
-							        <option>Amber</option>
-							        <option>Gray</option>
-							        <option>Green</option>
-							        <option>Hazel</option>
+									<option selected></option>
+							        <?php $eyes = array('Amber', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'); ?>
+									<?php foreach ($eyes as $value): ?>
+										<option><?php echo $value; ?></option>
+									<?php endforeach; ?>
 							    </select>
 							</label>		
 	                	</div>
@@ -149,11 +161,11 @@
 	                	<div class="form-block">
 		                	<label>
 							    <select>
-							        <option selected>Blonde</option>
-							        <option>Gray</option>
-							        <option>Blonde</option>
-							        <option>Black</option>
-							        <option>Redhead</option>
+							        <option selected></option>
+									<?php $hair = array('Black', 'Brown', 'Blond', 'Auburn', 'Chestnut', 'Red', 'Gray and white'); ?>
+									<?php foreach ($hair as $value): ?>
+										<option><?php echo $value; ?></option>
+									<?php endforeach; ?>
 							    </select>
 							</label>
 						</div>
@@ -163,11 +175,10 @@
 	                	<div class="form-block">
 		                	<label>
 							    <select>
-							        <option selected>0</option>
-							        <option>1</option>
-							        <option>2</option>
-							        <option>3</option>
-							        <option>4</option>
+							        <option selected>None</option>
+									<?php for ($i = 1; $i <= 5; $i++): ?>
+										<option><?php echo $i; ?></option>
+									<?php endfor; ?>
 							    </select>
 							</label>
 						</div>	
@@ -177,10 +188,11 @@
 	                	<div class="form-block">
 		                	<label>
 							    <select>
-							        <option selected>Atheism</option>
-							        <option>Christianity</option>
-							        <option>Islam</option>
-							        <option>Judaism</option>
+							        <option selected></option>
+									<?php $religion = array('Christian', 'Buddhist', 'Catholik', 'Jewish', 'Muslin', 'Hindu', 'Atheist', 'Other'); ?>
+									<?php foreach ($religion as $value): ?>
+										<option><?php echo $value; ?></option>
+									<?php endforeach; ?>
 							    </select>
 							</label>
 						</div>	
@@ -189,10 +201,9 @@
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
 <!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
-					<button type="button" class="btn"><a href="#" class="settings-controls">Prev</a></button>
-					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
-					<button type="button" class="btn"><a href="#" class="settings-controls">Next</a></button>
-
+					<button type="button" class="btn">Prev</button>
+					<button type="button" class="btn save">Save</button>
+					<button type="button" class="btn next">Next</button>
 				</div>
 	    	</div>
 	    </div>

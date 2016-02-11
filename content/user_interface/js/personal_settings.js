@@ -44,9 +44,7 @@ $(document).ready(function(){
 
     $(selector).focus(function(){
         $('.location-drop').show();
-    });
-
-    $(selector).blur(function(){
+    }).blur(function(){
         setTimeout(function(){ $('.location-drop').hide(); }, 100);
         dropCountry();
     });
@@ -99,7 +97,8 @@ $(document).ready(function(){
         $('.birthday-block').next().text('');
     });
 
-    $('.save, .next').click(function(){
+//Запись в БД
+    function saveData(){
         //Проверка заполнения даты рождения
         var birthday = {
             day: $('#day').val(),
@@ -132,12 +131,28 @@ $(document).ready(function(){
             $.ajax({
                 type: 'post',
                 data: data,
-                url: baseUrl + 'user_interface/profile_settings/insert_data',
-                dataType: 'json',
-                success: function(data){
-                    if (data.result == 1){
-                        location.reload();
-                    }
+                url: baseUrl + 'user_interface/profile_settings/insert_data'
+            });
+        }
+        return true;
+    }
+
+    $('.save').click(function(){
+        var result = saveData();
+        if (result === true){
+            location.reload();
+        }
+    });
+
+    $('.next').click(function(){
+        var result = saveData();
+        if (result === true){
+            $('.nav-tabs li').each(function(index){
+                var className = $(this).attr('class');
+                if (className == 'active'){
+                    $('.nav-tabs li').eq(index).next().children().click().addClass('active');
+                    $('body').animate({'scrollTop' : 0}, 'slow');
+                    return false;
                 }
             });
         }
