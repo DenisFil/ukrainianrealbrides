@@ -210,8 +210,8 @@
 	background: #32CD32;
 
 }
-.btn.save a {
-		color: #fff;
+.btn.save {
+	color: #fff;
 }
 .btn.skip a {
 	color: #fff;
@@ -266,25 +266,76 @@
 }
 .profile-form-row .form-block.age {
 	width: 300px;
+	padding-top: 25px;
+}
+.slider-row {
+
+}
+
+/*jQuery UIslider*/
+.value {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin: 0 0 0 -20px;
+  width: 40px;
+  text-align: center;
+  display: block;
+  
+  /* optional */
+  
+  font-weight: normal;
+  font-family: 'latosemibold';
+  font-size: 17px;
+  line-height: 19px;
+}
+
+.price-range-both.value {
+  width: 100px;
+  margin: 0 0 0 -50px;
+  top: 26px;
+}
+
+.price-range-both {
+  display: none; 
+}
+
+.value i {
+  font-style: normal;
 }
 
 
-/*jQuery UIslider*/
-/*!
- * jQuery UI CSS Framework 1.11.4
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- *
- * http://api.jqueryui.com/category/theming/
- */
 
-/* Layout helpers
-----------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .ui-helper-hidden {
-	display: none;
+	display: block;
 }
 .ui-helper-hidden-accessible {
 	border: 0;
@@ -602,7 +653,7 @@ box-shadow: 0 2px 3px #000;
 #e83c32 url("../img/header/range.png") no-repeat 50% 50%;
 box-shadow: 0 2px 3px #000;
 	font-weight: normal;
-	color: #ffffff;
+	color: #000;
 }
 .ui-state-active a,
 .ui-state-active a:link,
@@ -713,3 +764,4 @@ box-shadow: 0 2px 3px #000;
 	filter: Alpha(Opacity=30); /* support: IE8 */
 	border-radius: 8px;
 }
+*/*/

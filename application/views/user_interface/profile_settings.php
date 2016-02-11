@@ -276,25 +276,12 @@
 	                <div class="profile-form-row">
 	                	<span>Age</span>
 	                	<div class="form-block age">
-	                		<input type="text" id="amount" class="age-range" readonly>
-							<div id="slider-range"></div>
+							<div id="slider"></div>
 						</div>	
 	                </div>
-	                <div class="profile-form-row">
-	                	<span>Children</span>
-	                	<div class="form-block">
-		                	<label>
-							    <select>
-							        <option selected>None</option>
-							        <option>1-2</option>
-							        <option>2-3</option>
-							        <option>>3</option>
-							    </select>
-							</label>
-						</div>
-	                </div>
+
 					<div class="profile-form-row">
-	                	<span>Height (sm)</span>
+	                	<span>Height</span>
 	                	<div class="form-block age">
 	                		<input type="text" id="height-amount" class="age-range" readonly>
 							<div id="slider-height"></div>
@@ -303,13 +290,7 @@
 	                <div class="profile-form-row">
 	                	<span>Weight</span>
 	                	<div class="form-block">
-		                	<label>
-							    <select>
-							        <option selected>70</option>
-							        <option>71</option>
-							        <option>72</option>
-							    </select>
-							</label>
+
 	                	</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -346,14 +327,13 @@
 	                	<div class="form-block">
 		                	<label>
 							    <select>
-							        <option selected>0</option>
-							        <option>1</option>
-							        <option>2</option>
-							        <option>3</option>
-							        <option>4</option>
+							        <option selected>None</option>
+							        <option>1-2</option>
+							        <option>2-3</option>
+							        <option>>3</option>
 							    </select>
 							</label>
-						</div>	
+						</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Religion</span>
@@ -372,9 +352,9 @@
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
 <!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
-					<button type="button" class="btn"><a href="#" class="settings-controls">Prev</a></button>
-					<button type="button" class="btn save"><a href="#" class="settings-controls">Save</a></button>
-					<button type="button" class="btn"><a href="#" class="settings-controls">Next</a></button>
+					<button type="button" class="btn">Prev</button>
+					<button type="button" class="btn save">Save</button>
+					<button type="button" class="btn">Next</a></button>
 				</div>
 	    	</div>    	
 	    </div>
