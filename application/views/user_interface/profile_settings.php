@@ -83,6 +83,7 @@
 	                	<div class="form-block">
 		                	<input class="profile-form form-control" type="text" placeholder="Your location" id="user-country">
 		                	<div class="location-drop">
+								<?php /*var_dump($countries); */?>
 		                		<?php foreach ($countries as $value): ?>
 									<span class="country"><?php echo $value->country_name; ?></span>
 								<?php endforeach; ?>
