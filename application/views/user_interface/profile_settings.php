@@ -82,12 +82,12 @@
 	                	<span>Country <em>*</em></span>
 	                	<div class="form-block">
 		                	<input class="profile-form form-control" type="text" placeholder="Your location" id="user-country">
+							<strong class="form-error-message"></strong>
 		                	<div class="location-drop">
 		                		<?php foreach ($countries as $value): ?>
 									<span class="country"><?php echo $value->country_name; ?></span>
 								<?php endforeach; ?>
-		                	</div>	
-							<strong class="form-error-message"></strong>
+		                	</div>
 		                </div>	
 	                </div>
 				</form>
@@ -122,7 +122,7 @@
 											array_push($ft, $ft_intermediate . "' " . $inches . "''");
 										?>
 
-										<option><?php echo $i . ' sm (' . $ft[$i - 150] . ')'; ?></option>
+										<option><?php echo $i . ' cm (' . $ft[$i - 150] . ')'; ?></option>
 									<?php endfor; ?>
 							    </select>
 							</label>		

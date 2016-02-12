@@ -19,7 +19,7 @@ $(document).ready(function(){
             if (data[1][0].country != 0){
                 $('#user-country').val(data[1][0].country);
             }
-            if (data[1][0].birthday){
+            if (data[1][0].birthday != 0){
                 $('#day').val(data[1][0].birthday[0]);
                 $('#month').val(data[1][0].birthday[1]);
                 $('#year').val(data[1][0].birthday[2]);
@@ -55,7 +55,9 @@ $(document).ready(function(){
 
     $(selector).focus(function(){
         $('.location-drop').show();
-    }).blur(function(){
+    });
+
+    $(selector).blur(function(){
         setTimeout(function(){ $('.location-drop').hide(); }, 100);
         dropCountry();
     });
