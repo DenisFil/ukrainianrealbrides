@@ -11,7 +11,7 @@
 	line-height: 20px;
 }
 .tab-body {
-	width: 470px;
+	width: 40%;
 	padding: 30px 0 0;
 	margin: 0 auto;
 	text-align: center;
@@ -35,7 +35,7 @@
 	font-size: 18px;
     line-height: 25px;
     display: block;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
 }
 .tab-body h2 {
 	background: none;
@@ -56,7 +56,7 @@
 	clear: both;
 }
 .tab-body form {
-	display: inline-block;
+	display: block;
 }
 .profile-form-row.aboutme .form-block textarea{
 	height: 200px;
@@ -76,15 +76,14 @@
 	font-size: 23px;
 	line-height: 25px;
 	margin:12px 20px 0 0;
+	width: 30%;
 }
 .form-block {
+	width: 64%;
 	height: 70px;
 	float: right;
 }
-.form-block.birthday {
-	width: 67%;
-}
-.tab-body em {
+#general-tab .tab-body em {
 	font-family: 'BanderaProMedium';
 	font-size: 15px;
 	line-height: 17px;
@@ -164,7 +163,7 @@
     height: 9px;
 }
 .birthday-block {
-
+	overflow: hidden;
 }
 .birthday-block select{
 	float: left;
@@ -264,9 +263,32 @@
 	background: none;
 	box-shadow: none;
 }
-.profile-form-row .form-block.age {
-	width: 300px;
-	padding-top: 25px;
+.profile-form-row .form-block.settings-range {
+	padding-top: 15px;
+	overflow: hidden;
+}
+.left-range,
+.right-range {
+	color: #cdcdcd;
+    font-family: 'LatoRegular';
+    font-size: 17px;
+    line-height: 19px;
+    font-style: normal;
+}
+.left-range {
+		float: left;
+		width: 25px;
+		text-align: left;
+}
+.right-range {
+		float: left;
+		width: 25px;
+		text-align: right;
+}
+.slider-wrap {
+	float: left;
+	width: 250px;
+	margin-top: 9px;
 }
 .slider-row {
 

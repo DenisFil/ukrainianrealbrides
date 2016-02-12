@@ -47,7 +47,7 @@
 	                </div>
 	                <div class="profile-form-row">
 		                <span>Birthday <em>*</em></span>
-		                <div class="form-block birthday">
+		                <div class="form-block">
 		                	<div class="birthday-block">
 				                <label>
 									<select id="day">
@@ -277,52 +277,13 @@
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Age</span>
-	                	<div class="form-block age">
-							<div id="slider"></div>
+	                	<div class="form-block settings-range">
+	                		<em class="left-range">21</em>
+	                		<div class="slider-wrap">
+	                			<div id="slider"></div>
+	                		</div>
+	                		<em class="right-range">60</em>
 						</div>	
-	                </div>
-
-					<div class="profile-form-row">
-	                	<span>Height</span>
-	                	<div class="form-block age">
-	                		<input type="text" id="height-amount" class="age-range" readonly>
-							<div id="slider-height"></div>
-						</div>	
-	                </div>
-	                <div class="profile-form-row">
-	                	<span>Weight</span>
-	                	<div class="form-block">
-
-	                	</div>
-	                </div>
-	                <div class="profile-form-row">
-	                	<span>Eyes color</span>
-	                	<div class="form-block">
-		                	<label>
-							    <select>
-							        <option selected>Blue</option>
-							        <option>Brown</option>
-							        <option>Amber</option>
-							        <option>Gray</option>
-							        <option>Green</option>
-							        <option>Hazel</option>
-							    </select>
-							</label>		
-	                	</div>
-	                </div>
-	                <div class="profile-form-row">
-	                	<span>Hair color</span>
-	                	<div class="form-block">
-		                	<label>
-							    <select>
-							        <option selected>Blonde</option>
-							        <option>Gray</option>
-							        <option>Blonde</option>
-							        <option>Black</option>
-							        <option>Redhead</option>
-							    </select>
-							</label>
-						</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Children</span>
@@ -330,25 +291,40 @@
 		                	<label>
 							    <select>
 							        <option selected>None</option>
-							        <option>1-2</option>
-							        <option>2-3</option>
-							        <option>>3</option>
+							        <option>1</option>
+							        <option>2</option>
+							        <option>3</option>
 							    </select>
 							</label>
 						</div>
 	                </div>
 	                <div class="profile-form-row">
-	                	<span>Religion</span>
+	                	<span>Drinking</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
-							        <option selected>Atheism</option>
-							        <option>Christianity</option>
-							        <option>Islam</option>
-							        <option>Judaism</option>
+							    <select id="drinking">
+							        <option selected>No</option>
+							        <option>Yes</option>
 							    </select>
 							</label>
-						</div>	
+						</div>
+	                </div>
+	                <div class="profile-form-row">
+	                	<span>Smoking</span>
+	                	<div class="form-block">
+		                	<label>
+							    <select id="smoking">
+							        <option selected>No</option>
+							        <option>Yes</option>
+							    </select>
+							</label>
+						</div>
+	                </div>
+	                <div class="profile-form-row aboutme">
+	                	<span>About my partner</span>
+	                	<div class="form-block">
+	                		<textarea placeholder="Write something about the way you see your partner" class="profile-form"  cols="30" rows="5" id="about"></textarea>
+	                	</div>
 	                </div>
 				</form>
 				<div class="buttons-row">
