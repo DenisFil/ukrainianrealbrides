@@ -217,9 +217,11 @@
 	                	<div class="form-block">
 							<label>
 							    <select id="education">
-							        <option selected>Master's degree</option>
-							        <option>Bachelor</option>
-							        <option>Short-cycle tertiary</option>
+							        <option selected></option>
+									<?php $education = array('Second school', 'High school', 'College', 'University', 'Doctorate', 'Still studying'); ?>
+									<?php foreach ($education as $value): ?>
+										<option><?php echo $value; ?></option>
+									<?php endforeach; ?>
 							    </select>
 							</label>
 						</div>	
