@@ -546,12 +546,15 @@ h4 {
 	margin: 0 auto 15px;
 }
 .form-error-message {
-	color: #e83c32;
-	font-size: 12px;
-	line-height: 14px;
-	padding-top: 2px;
-	font-weight: normal;
-	display: block;
+    color: #e83c32;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 2px;
+    font-weight: normal;
+    display: block;
+    width: 100%;
+    height: 20px;
+    text-align: center;
 }
 .terms-conditions {
 	font-size: 14px;

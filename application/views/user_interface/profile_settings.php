@@ -40,9 +40,8 @@
 							        <option selected>Male</option>
 							        <option>Female</option>
 							    </select>
-							<strong class="form-error-message"></strong>
 							</label>
-
+							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -93,12 +92,11 @@
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
-<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
+					<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
 					<button type="button" class="btn save">Save</button>
 					<button type="button" class="btn next">Next</button>
-
 				</div>
-	    	</div>
+			</div>
 	    </div>
 	    <div role="tabpanel" class="tab-pane fade" id="personal-tab">
 	    	<div class="tab-body">
@@ -125,7 +123,8 @@
 										<option><?php echo $i . ' sm (' . $ft[$i - 150] . ')'; ?></option>
 									<?php endfor; ?>
 							    </select>
-							</label>		
+							</label>	
+							<strong class="form-error-message"></strong>
 	                	</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -140,6 +139,7 @@
 									<?php endfor; ?>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 	                	</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -153,7 +153,8 @@
 										<option><?php echo $value; ?></option>
 									<?php endforeach; ?>
 							    </select>
-							</label>		
+							</label>
+							<strong class="form-error-message"></strong>
 	                	</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -168,6 +169,7 @@
 									<?php endforeach; ?>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -181,6 +183,7 @@
 									<?php endfor; ?>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>	
 	                </div>
 	                <div class="profile-form-row">
@@ -195,12 +198,13 @@
 									<?php endforeach; ?>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>	
 	                </div>
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
-<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
+					<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
 					<button type="button" class="btn prev">Prev</button>
 					<button type="button" class="btn save">Save</button>
 					<button type="button" class="btn next">Next</button>
@@ -222,6 +226,7 @@
 							        <option>Short-cycle tertiary</option>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>	
 	                </div>
 	                <div class="profile-form-row">
@@ -233,6 +238,7 @@
 							        <option>Yes</option>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -244,24 +250,27 @@
 							        <option>Yes</option>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Hobbies</span>
 	                	<div class="form-block">
 	                		<input class="profile-form" type="text" placeholder="Your hobbies" id="hobbies">
+							<strong class="form-error-message"></strong>
 	                	</div>	
 	                </div>
 	                <div class="profile-form-row aboutme">
 	                	<span>About me</span>
 	                	<div class="form-block">
 	                		<textarea placeholder="Write something about you" class="profile-form"  cols="30" rows="5" id="about"></textarea>
+							<strong class="form-error-message"></strong>
 	                	</div>
 	                </div>
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
-<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
+					<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
 					<button type="button" class="btn prev">Prev</button>
 					<button type="button" class="btn save">Save</button>
 					<button type="button" class="btn next">Next</button>
@@ -280,7 +289,7 @@
 	                		<div class="slider-wrap">
 	                			<div id="slider"></div>
 	                		</div>
-	                		<em class="right-range">60</em>
+	                		<em class="right-range">90</em>
 						</div>	
 	                </div>
 	                <div class="profile-form-row">
@@ -294,6 +303,7 @@
 							        <option>3</option>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -305,6 +315,7 @@
 							        <option>Yes</option>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
 	                <div class="profile-form-row">
@@ -316,26 +327,84 @@
 							        <option>Yes</option>
 							    </select>
 							</label>
+							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
 	                <div class="profile-form-row aboutme">
 	                	<span>About my partner</span>
 	                	<div class="form-block">
 	                		<textarea placeholder="Write something about the way you see your partner" class="profile-form"  cols="30" rows="5" id="about"></textarea>
+							<strong class="form-error-message"></strong>
 	                	</div>
 	                </div>
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
-<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
-					<button type="button" class="btn">Prev</button>
+					<!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
+					<button type="button" class="btn prev">Prev</button>
 					<button type="button" class="btn save">Save</button>
-					<button type="button" class="btn">Next</a></button>
+					<button type="button" class="btn next">Next</button>
 				</div>
-	    	</div>    	
+	    	</div>  
+	    </div>
+	    <div role="tabpanel" class="tab-pane fade" id="security-tab">
+	    	<div class="tab-body">
+                <h2>Security</h2>     
+                <p>Here you can change your account settings.</p>
+                <form class="settings-form" action="#">
+	                <div class="profile-form-row separate">
+	                	<span>E-mail</span>
+	                	<div class="form-block">
+	                		<div class="change-block">
+	                			<input class="profile-form form-control" type="text" placeholder="Account email" id="user-name">
+	                			<button type="button" class="btn btn-default">Change</button>
+	                		</div>
+							<strong class="form-error-message"></strong>
+	                	</div>
+	                </div>
+	                <div class="profile-form-row separate">
+	                	<span>Password</span>
+	                	<div class="form-block change-pass">
+	                		<input class="profile-form form-control" type="text" placeholder="New password" id="user-name">
+	                		<div class="change-block">
+	                			<input class="profile-form form-control" type="text" placeholder="Confirm password" id="user-name">
+	                			<button type="button" class="btn btn-default">Change</button>
+	                		</div>
+							<strong class="form-error-message"></strong>
+	                	</div>
+	                </div>
+	                <div class="profile-form-row checkboxes">
+	                	<span>Notifications</span>
+	                	<div class="form-block">
+							<div class="squaredThree">
+							    <input type="checkbox" value="None" id="news-checkbox" name="check" checked />
+							    <label for="news-checkbox"></label>
+							</div>
+							<p>News and updates</p> 
+	                	</div> 
+	                	<div class="form-block">
+							<div class="squaredThree">
+							    <input type="checkbox" value="None" id="messages-checkbox" name="check" checked />
+							    <label for="messages-checkbox"></label>
+							</div>
+							<p>Messages and invitations</p> 
+	                	</div> 
+	                	<div class="form-block">
+							<div class="squaredThree">
+							    <input type="checkbox" value="None" id="promo-checkbox" name="check" checked />
+							    <label for="promo-checkbox"></label>
+							</div>
+							<p>Promo</p> 
+	                	</div> 
+	                </div>
+				</form>
+				<div class="buttons-row">
+					<button type="button" class="btn prev">Previous</button>
+					<button type="button" class="btn save">Save</button>
+				</div>
+	    	</div>
 	    </div>
 	  </div>
-
 	</div>
 	<!-- Services page END -->
 </div>

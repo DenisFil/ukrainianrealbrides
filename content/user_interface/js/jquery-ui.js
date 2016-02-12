@@ -4519,10 +4519,8 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
       var x2 = $div2.offset().left;
       var w2 = 40;
       var r2 = x2 + w2;
-
       if (r1 < x2 || x1 > r2) return false;
       return true;
-
 }
 
 // // slider call
@@ -4530,8 +4528,8 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
 $('#slider').slider({
       range: true,
       min: 18,
-      max: 60,
-      values: [21, 40],
+      max: 90,
+      values: [25, 40],
       slide: function(event, ui) {
 
             $('.ui-slider-handle:eq(0) .price-range-min').html('' + ui.values[0]);
