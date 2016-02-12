@@ -55,7 +55,9 @@ $(document).ready(function(){
 
     $(selector).focus(function(){
         $('.location-drop').show();
-    }).blur(function(){
+    });
+
+    $(selector).blur(function(){
         setTimeout(function(){ $('.location-drop').hide(); }, 100);
         dropCountry();
     });
