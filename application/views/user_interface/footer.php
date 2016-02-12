@@ -64,13 +64,11 @@
     <?php if(!$this->session->userdata('id')): ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/facebook.js"></script>
     <?php endif; ?>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/personal_area.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/personal_settings.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/<?php echo $css; ?>.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jcarousel.responsive.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/videosliderengine/amazingslider.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/videosliderengine/initslider-1.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/main.js"></script>
     <script src="http://jcrop-cdn.tapmodo.com/v2.0.0-RC1/js/Jcrop.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery-ui.js"></script>
 

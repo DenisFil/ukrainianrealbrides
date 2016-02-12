@@ -41,10 +41,67 @@
             echo json_encode($user_data);
         }
 
-        public function insert_data()
+        public function insert_general_data()
         {
-            $user_data = $this->input->post();
-            $user_id = $this->session->userdata('id');
-            $this->profile_settings_model->insert_data($user_data, $user_id);
+            $data = $this->input->post();
+            $query = $this->profile_settings_model->insert_general_data($data, $this->session->userdata('id'));
+
+            if ($query === TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
+        }
+
+        public function insert_personal_data()
+        {
+            $data = $this->input->post();
+            $query = $this->profile_settings_model->insert_personal_data($data, $this->session->userdata('id'));
+
+            if ($query === TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
+        }
+
+        public function insert_background_data()
+        {
+            $data = $this->input->post();
+            $query = $this->profile_settings_model->insert_background_data($data, $this->session->userdata('id'));
+
+            if ($query === TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
+        }
+
+        public function insert_partner_data()
+        {
+            $data = $this->input->post();
+            $query = $this->profile_settings_model->insert_partner_data($data, $this->session->userdata('id'));
+
+            if ($query === TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
         }
     }

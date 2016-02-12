@@ -4530,7 +4530,7 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
 $('#slider').slider({
       range: true,
       min: 18,
-      max: 60,
+      max: 90,
       values: [21, 40],
       slide: function(event, ui) {
 

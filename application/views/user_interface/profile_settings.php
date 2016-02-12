@@ -278,22 +278,20 @@
 	                <div class="profile-form-row">
 	                	<span>Age</span>
 	                	<div class="form-block settings-range">
-	                		<em class="left-range">21</em>
+	                		<em class="left-range">18</em>
 	                		<div class="slider-wrap">
 	                			<div id="slider"></div>
 	                		</div>
-	                		<em class="right-range">60</em>
+	                		<em class="right-range">90</em>
 						</div>	
 	                </div>
 	                <div class="profile-form-row">
 	                	<span>Children</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select>
+							    <select id="partner-children">
 							        <option selected>None</option>
-							        <option>1</option>
-							        <option>2</option>
-							        <option>3</option>
+							        <option>Have</option>
 							    </select>
 							</label>
 						</div>
@@ -302,9 +300,11 @@
 	                	<span>Drinking</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select id="drinking">
-							        <option selected>No</option>
-							        <option>Yes</option>
+							    <select id="partner-drinking">
+							        <?php $attitude = array('Don`t care', 'Negative', 'Positive'); ?>
+									<?php foreach ($attitude as $value): ?>
+										<option><?php echo $value; ?></option>
+									<?php endforeach; ?>
 							    </select>
 							</label>
 						</div>
@@ -313,9 +313,10 @@
 	                	<span>Smoking</span>
 	                	<div class="form-block">
 		                	<label>
-							    <select id="smoking">
-							        <option selected>No</option>
-							        <option>Yes</option>
+							    <select id="partner-smoking">
+									<?php foreach ($attitude as $value): ?>
+										<option><?php echo $value; ?></option>
+									<?php endforeach; ?>
 							    </select>
 							</label>
 						</div>
@@ -323,16 +324,16 @@
 	                <div class="profile-form-row aboutme">
 	                	<span>About my partner</span>
 	                	<div class="form-block">
-	                		<textarea placeholder="Write something about the way you see your partner" class="profile-form"  cols="30" rows="5" id="about"></textarea>
+	                		<textarea placeholder="Write something about partner of your dream" class="profile-form"  cols="30" rows="5" id="about-my-partner"></textarea>
 	                	</div>
 	                </div>
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
 <!-- 					<button type="button" class="btn skip"><a href="#" class="settings-controls">Skip</a></button> -->
-					<button type="button" class="btn">Prev</button>
+					<button type="button" class="btn prev">Prev</button>
 					<button type="button" class="btn save">Save</button>
-					<button type="button" class="btn">Next</a></button>
+					<button type="button" class="btn next">Next</a></button>
 				</div>
 	    	</div>    	
 	    </div>
