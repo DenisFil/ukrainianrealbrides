@@ -224,6 +224,7 @@ $(document).ready(function(){
             var className = $(this).attr('class');
             if (className == 'active') {
                 saveData(index);
+                return false;
             }
         });
     });
