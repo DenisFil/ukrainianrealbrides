@@ -20,8 +20,30 @@
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/social-buttons.css" type="text/css" />
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/font-awesome.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>content/videosliderengine/amazingslider-1.css">
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript">
+        $(function(){
+     var shrinkHeader = 194;
+      $(window).scroll(function() {
+        var scroll = getCurrentScroll();
+          if ( scroll >= shrinkHeader ) {
+               $('.header-holder').addClass('shrink');
+            }
+            else {
+                $('.header-holder').removeClass('shrink');
+            }
+      });
+    function getCurrentScroll() {
+        return window.pageYOffset || document.documentElement.scrollTop;
+        }
+    });
+</script>
+
 
 </head>
+
+
+
 <body>
 
 <!-- Header Starts Here -->
@@ -31,11 +53,11 @@
         <div class="header-top">
             <div class="header-left">
                 <span>Language:</span>
-				<span>
-					<select class="select" name="" id="">
-                        <option value="" selected>Eng</option>
-                    </select>
-				</span>
+                    <label>
+                        <select>
+                            <option selected>Eng</option>
+                        </select>
+                    </label>
             </div>
             <div class="header-right">
                 <?php if($this->session->userdata('id')): ?>
@@ -83,13 +105,15 @@
         </div>
         <nav class="nav">
             <ul class="nav-left">
-                <?php if ($gender == ''){ ?>
-                    <li><a href="#">Profiles</a></li>
-                <?php }elseif ($gender == 1){ ?>
+                <?php if ($this->session->userdata('id')): ?>
+                    <?php if ($gender == 1 || $gender == ''): ?>
+                        <li><a href="#">Women profiles</a></li>
+                    <?php elseif ($gender == 2): ?>
+                        <li><a href="#">Men profiles</a></li>
+                    <?php endif; ?>
+                <?php else: ?>
                     <li><a href="#">Women profiles</a></li>
-                <?php }elseif ($gender == 2){ ?>
-                    <li><a href="#">Men profiles</a></li>
-                <?php } ?>
+                <?php endif; ?>
                 <li><a href="#">Search</a></li>
                 <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
             </ul>

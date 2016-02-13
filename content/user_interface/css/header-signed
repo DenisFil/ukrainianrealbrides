@@ -1,0 +1,18 @@
+.header-holder {
+	width: 100%;
+	background: url("../img/header/bg-line.png") repeat-x 0 41px;
+	padding-bottom: 67px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 194px;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    background: #fff;
+}
+.header-holder.shrink {
+
+}
