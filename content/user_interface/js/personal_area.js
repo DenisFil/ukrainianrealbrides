@@ -216,10 +216,6 @@ $(document).ready(function(){
 
 //Удаление фото
     $('.delete-photo').click(function() {
-<<<<<<< HEAD
-        console.log('hello');
-=======
->>>>>>> backend
         var set = $('.profile-photos-block .delete-photo');
         $('.profile-photos-block').on('click', '.delete-photo', function () {
             var index = {
@@ -239,8 +235,6 @@ $(document).ready(function(){
         });
     });
 
-<<<<<<< HEAD
-=======
     $('.delete-photo-button').click(function(){
         var index = {
             index: $(this).attr('id')
@@ -258,7 +252,6 @@ $(document).ready(function(){
         });
     });
 
->>>>>>> backend
 /********************************Просмотр фото************************************/
     $('.photo-view').click(function(){
         var set = $('.profile-photos-block img');
