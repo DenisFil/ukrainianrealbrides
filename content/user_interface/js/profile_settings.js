@@ -129,98 +129,101 @@ $(document).ready(function(){
         });
     }
 
+    function saveData(index){
+        switch (index){
+            case 0:
+                var birthday = {
+                    day: $('#day').val(),
+                    month: $('#month').val(),
+                    year: $('#year').val()
+                };
+
+                if (birthday.day == 'DD' || birthday.month == 'MM' || birthday.year == 'YYYY'){
+                    $('.birthday-block').next().text('Sorry, this field is required');
+                }
+
+                var generalData = {
+                    name: $('#user-name').val(),
+                    lastname: $('#user-lastname').val(),
+                    gender: $('#gender').val(),
+                    birthday: birthday.day + '.' + birthday.month + '.' + birthday.year,
+                    country: $('#user-country').val()
+                };
+
+                var dataArray = [generalData.name, generalData.lastname, generalData.gender, generalData.birthday, generalData.country];
+
+                $.each(dataArray, function(index, value){
+                    if (value == '' && index != 1){
+                        requiredFromButton(index);
+                    }
+                });
+
+                $('.form-error-message').each(function(){
+                    var text = $(this).text();
+                    if (text != ''){
+                        return false;
+                    }
+                    return false;
+                });
+
+                $.ajax({
+                    type: 'post',
+                    data: generalData,
+                    url: baseUrl + 'user_interface/profile_settings/insert_general_data',
+                    dataType: 'json',
+                    success: function(data){
+                        if (data.result == 1){
+                            location.reload();
+                        }
+                    }
+                });
+                break;
+            case 1:
+                var personalData = {
+                    height: $('#height').val(),
+                    weight: $('#weight').val(),
+                    eyes_color: $('#eyes').val(),
+                    hair_color: $('#hair').val(),
+                    children: $('#children').val(),
+                    religion: $('#religion').val()
+                };
+                var dataName = 'personal';
+                ajaxRequest(personalData, dataName);
+                break;
+            case 2:
+                var backgroundData = {
+                    education: $('#education').val(),
+                    drinking: $('#drinking').val(),
+                    smoking: $('#smoking').val(),
+                    hobbies: $('#hobbies').val(),
+                    about_me: $('#about').val()
+                };
+                dataName = 'background';
+                ajaxRequest(backgroundData, dataName);
+                break;
+            case 3:
+                var ageRange = {
+                    from: $('.price-range-min').text(),
+                    to: $('.price-range-max').text()
+                };
+                var partnerData = {
+                    age: ageRange.from + '/' + ageRange.to,
+                    partner_children: $('#partner-children'),
+                    partner_drinking: $('#partner-drinking'),
+                    partner_smoking: $('#partner-smoking'),
+                    about_my_partner: $('#about-my-partner')
+                };
+                dataName = 'partner';
+                ajaxRequest(partnerData, dataName);
+                break;
+        }
+    }
+
     $('.save').click(function(){
         $('.nav-tabs li').each(function(index){
             var className = $(this).attr('class');
-            if (className == 'active'){
-
-                switch (index){
-                    case 0:
-                        var birthday = {
-                            day: $('#day').val(),
-                            month: $('#month').val(),
-                            year: $('#year').val()
-                        };
-
-                        if (birthday.day == 'DD' || birthday.month == 'MM' || birthday.year == 'YYYY'){
-                            $('.birthday-block').next().text('Sorry, this field is required');
-                        }
-
-                        var generalData = {
-                            name: $('#user-name').val(),
-                            lastname: $('#user-lastname').val(),
-                            gender: $('#gender').val(),
-                            birthday: birthday.day + '.' + birthday.month + '.' + birthday.year,
-                            country: $('#user-country').val()
-                        };
-
-                        var dataArray = [generalData.name, generalData.lastname, generalData.gender, generalData.birthday, generalData.country];
-
-                        $.each(dataArray, function(index, value){
-                            if (value == '' && index != 1){
-                                requiredFromButton(index);
-                            }
-                        });
-
-                        $('.form-error-message').each(function(){
-                            var text = $(this).text();
-                            if (text != ''){
-                                return false;
-                            }
-                            return false;
-                        });
-
-                        $.ajax({
-                            type: 'post',
-                            data: generalData,
-                            url: baseUrl + 'user_interface/profile_settings/insert_general_data',
-                            dataType: 'json',
-                            success: function(data){
-                                if (data.result == 1){
-                                    location.reload();
-                                }
-                            }
-                        });
-                        break;
-                    case 1:
-                        var personalData = {
-                            height: $('#height').val(),
-                            weight: $('#weight').val(),
-                            eyes_color: $('#eyes').val(),
-                            hair_color: $('#hair').val(),
-                            children: $('#children').val(),
-                            religion: $('#religion').val()
-                        };
-                        var dataName = 'personal';
-                        ajaxRequest(personalData, dataName);
-                        break;
-                    case 2:
-                        var backgroundData = {
-                            education: $('#education').val(),
-                            drinking: $('#drinking').val(),
-                            smoking: $('#smoking').val(),
-                            hobbies: $('#hobbies').val(),
-                            about_me: $('#about').val()
-                        };
-                        dataName = 'background';
-                        ajaxRequest(backgroundData, dataName);
-                        break;
-                    case 3:
-                        var ageRange = {
-                            from: $('.price-range-min').text(),
-                            to: $('.price-range-max').text()
-                        };
-                        var partnerData = {
-                            age: ageRange.from + '/' + ageRange.to,
-                            partner_children: $('#partner-children'),
-                            partner_drinking: $('#partner-drinking'),
-                            partner_smoking: $('#partner-smoking'),
-                            about_my_partner: $('#about-my-partner')
-                        };
-                        dataName = 'partner';
-                        ajaxRequest(partnerData, dataName);
-                        break;
-                }
+            if (className == 'active') {
+                saveData(index);
             }
         });
     });
