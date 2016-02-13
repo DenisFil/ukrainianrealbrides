@@ -117,32 +117,6 @@ $(document).ready(function(){
     });
 
 //Запись в БД
-    function saveData(){
-        //Проверка заполнения даты рождения
-
-
-        /**/
-
-        /*var data = {
-            ,
-            ,
-            ,
-
-        };*/
-
-        //Проверка заполнения полей формы
-       /* */
-
-       /* if ($('.form-error-message').text() == ''){
-            $.ajax({
-                type: 'post',
-                data: data,
-                url: baseUrl + 'user_interface/profile_settings/insert_data'
-            });
-        }*/
-        return true;
-    }
-
     function ajaxRequest(data, dataName){
         $.ajax({
             type: 'post',
@@ -180,7 +154,7 @@ $(document).ready(function(){
                             country: $('#user-country').val()
                         };
 
-                        var dataArray = [data.name, data.lastname, data.gender, data.birthday, data.country];
+                        var dataArray = [generalData.name, generalData.lastname, generalData.gender, generalData.birthday, generalData.country];
 
                         $.each(dataArray, function(index, value){
                             if (value == '' && index != 1){
@@ -251,28 +225,26 @@ $(document).ready(function(){
         });
     });
 
-    $('.next').click(function(){
-        var result = saveData();
-        if (result === true){
-            $('.nav-tabs li').each(function(index){
-                var className = $(this).attr('class');
-                if (className == 'active'){
-                    $('.nav-tabs li').eq(index).next().children().click().addClass('active');
-                    $('body').animate({'scrollTop' : 170}, 'slow');
-                    return false;
-                }
-            });
-        }
-    });
-
-    $('.prev').click(function(){
+    function tabChange(direction){
         $('.nav-tabs li').each(function(index){
             var className = $(this).attr('class');
             if (className == 'active'){
-                $('.nav-tabs li').eq(index).prev().children().click().addClass('active');
+                if (direction == 'next'){
+                    $('.nav-tabs li').eq(index).next().children().click();
+                }else{
+                    $('.nav-tabs li').eq(index).prev().children().click();
+                }
                 $('body').animate({'scrollTop' : 170}, 'slow');
                 return false;
             }
         });
+    }
+
+    $('.next').click(function(){
+        tabChange('next');
+    });
+
+    $('.prev').click(function(){
+        tabChange('prev');
     });
 });
