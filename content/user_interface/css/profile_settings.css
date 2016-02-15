@@ -29,14 +29,30 @@
 	display: inline-block;
 	padding-bottom: 10px;
 }
-.tab-body p {
+.tab-body p{
 	font-family: 'LatoRegular';
 	font-size: 18px;
     line-height: 25px;
     display: block;
-    padding-bottom: 25px;
     text-align: center;
 }
+.save-message-block {
+    visibility: hidden;
+    display: block;
+    text-align: center;
+    margin: 0 0 0 0;
+    padding-left: 35px;
+    font-family: 'latosemibold';
+    font-size: 20px;
+    line-height: 30px;
+    color: #8ac049;
+    background: url("../img/personal-area/saved.png") no-repeat 0 50%;
+    margin: 5px auto 15px;
+    width: 75%;
+}
+.save-message-block.successfully-saved {
+    visibility: visible;
+}	
 .tab-body h2 {
 	background: none;
 	padding: 0;
@@ -339,37 +355,7 @@
 .value i {
   font-style: normal;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Ui slider */
 .ui-helper-hidden {
 	display: block;
 }

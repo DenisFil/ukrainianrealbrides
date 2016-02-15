@@ -17,6 +17,7 @@
 	    	<div class="tab-body">
                 <h2>Profile information</h2>     
                 <p>All fields with <em> * </em> are required. Please, set your profile info in fields below.</p>
+                <span class="save-message-block">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>First name <em>*</em></span>
@@ -102,6 +103,7 @@
 	    	<div class="tab-body">
                 <h2>Personal</h2>     
                 <p>Select your personal information</p>
+                <span class="save-message-block">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Height</span>
@@ -215,6 +217,7 @@
 	    	<div class="tab-body">
                 <h2>Background</h2>     
                 <p>Select your additional information</p>
+                <span class="save-message-block">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Education</span>
@@ -283,6 +286,7 @@
 	    	<div class="tab-body">
                 <h2>Partner</h2>     
                 <p>In the fields below , select the preferences of your partner</p>
+                <span class="save-message-block">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Age</span>
@@ -354,6 +358,7 @@
 	    	<div class="tab-body">
                 <h2>Security</h2>     
                 <p>Here you can change your account settings.</p>
+                <span class="save-message-block">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row separate">
 	                	<span>E-mail</span>
