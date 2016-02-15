@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var baseUrl = 'http://ukrainianrealbrides.int/';
 
 //Загрузка существующих данных
@@ -6,21 +6,21 @@ $(document).ready(function(){
         type: 'post',
         url: baseUrl + 'user_interface/profile_settings/user_data',
         dataType: 'json',
-        success: function(data){
+        success: function (data) {
 
             $('#user-name').val(data[0][0].name);
             $('#user-lastname').val(data[0][0].lastname);
 
-            if (data[0][0].gender == 1 || data[0][0].gender == 0){
+            if (data[0][0].gender == 1 || data[0][0].gender == 0) {
                 $('#gender').val('Male');
             }
-            if (data[0][0].gender == 2){
+            if (data[0][0].gender == 2) {
                 $('#gender').val('Female');
             }
-            if (data[1][0].country != 0){
+            if (data[1][0].country != 0) {
                 $('#user-country').val(data[1][0].country);
             }
-            if (data[1][0].birthday != 0){
+            if (data[1][0].birthday != 0) {
                 $('#day').val(data[1][0].birthday[0]);
                 $('#month').val(data[1][0].birthday[1]);
                 $('#year').val(data[1][0].birthday[2]);
@@ -36,7 +36,7 @@ $(document).ready(function(){
             $('#smoking').val(data[1][0].smoking);
             $('#hobbies').val(data[1][0].hobbies);
             $('#about').val(data[1][0].about_me);
-            if (data[2]){
+            if (data[2]) {
                 $('#partner-children').val(data[2][0].partner_children);
                 $('#partner-drinking').val(data[2][0].partner_drinking);
                 $('#partner-smoking').val(data[2][0].partner_smoking);
@@ -48,91 +48,93 @@ $(document).ready(function(){
 //Выбор страны
     var selector = '#user-country';
 
-    function dropCountry(){
-        var pattern =  $(selector).val();
-        $('.location-drop span').each(function(){
+    function dropCountry() {
+        var pattern = $(selector).val();
+        $('.location-drop span').each(function () {
             var search = $(this).text().indexOf(pattern) + 1;
-            if (search == 0){
+            if (search == 0) {
                 $(this).hide();
-            }else{
+            } else {
                 $(this).show();
             }
         });
     }
 
-    $(selector).focus(function(){
+    $(selector).focus(function () {
         dropCountry();
         $('.location-drop').show();
     });
 
-    $(selector).blur(function(){
-        setTimeout(function(){ $('.location-drop').hide(); }, 100);
+    $(selector).blur(function () {
+        setTimeout(function () {
+            $('.location-drop').hide();
+        }, 100);
         dropCountry();
     });
 
-    $(document).on('input', selector, function(){
+    $(document).on('input', selector, function () {
         dropCountry();
     });
 
-    $(document).on('click', '.country', function(){
+    $(document).on('click', '.country', function () {
         var country = $(this).text();
         $(selector).val(country);
         dropCountry();
     });
 
 //Проверка обязательного заполнения поля
-    function required(field){
+    function required(field) {
         var value = $(field).val();
 
-        if (value == ''){
+        if (value == '') {
             $(field).next().text('Sorry, this field is required');
             $(field).addClass('error');
         }
     }
 
-    function onFocus(field){
+    function onFocus(field) {
         $(field).next().text('');
         $(field).removeClass('error');
     }
 
-    function requiredFromButton(indexSpan){
-        $('.profile-form-row .form-error-message').each(function(index){
-             if (index == indexSpan){
-                 var selector = '.form-error-message';
-                 $(selector).eq(index).text('Sorry, this field is required');
-                 $(selector).eq(index).prev().addClass('error');
-             }
+    function requiredFromButton(indexSpan) {
+        $('.profile-form-row .form-error-message').each(function (index) {
+            if (index == indexSpan) {
+                var selector = '.form-error-message';
+                $(selector).eq(index).text('Sorry, this field is required');
+                $(selector).eq(index).prev().addClass('error');
+            }
         });
     }
 
 //Проверка введенных данных
-    $('#user-name, #user-country').blur(function(){
+    $('#user-name, #user-country').blur(function () {
         var field = '#' + $(this).attr('id');
         required(field);
-    }).focus(function(){
+    }).focus(function () {
         var field = '#' + $(this).attr('id');
         onFocus(field);
     });
 
-    $('#day, #month, #year').focus(function(){
+    $('#day, #month, #year').focus(function () {
         $('.birthday-block').next().text('');
     });
 
 //Запись в БД
-    function ajaxRequest(data, dataName){
+    function ajaxRequest(data, dataName) {
         $.ajax({
             type: 'post',
             data: data,
             url: baseUrl + 'user_interface/profile_settings/insert_' + dataName + '_data',
             dataType: 'json',
-            success: function(data){
+            success: function (data) {
 
             }
         });
     }
 
-    function saveData(index){
-        switch (index){
+    function saveData(index) {
+        switch (index) {
             case 0:
                 var birthday = {
                     day: $('#day').val(),
@@ -140,7 +142,7 @@ $(document).ready(function(){
                     year: $('#year').val()
                 };
 
-                if (birthday.day == 'DD' || birthday.month == 'MM' || birthday.year == 'YYYY'){
+                if (birthday.day == 'DD' || birthday.month == 'MM' || birthday.year == 'YYYY') {
                     $('.birthday-block').next().text('Sorry, this field is required');
                 }
 
@@ -154,30 +156,13 @@ $(document).ready(function(){
 
                 var dataArray = [generalData.name, generalData.lastname, generalData.gender, generalData.birthday, generalData.country];
 
-                $.each(dataArray, function(index, value){
-                    if (value == '' && index != 1){
+                $.each(dataArray, function (index, value) {
+                    if (value == '' && index != 1) {
                         requiredFromButton(index);
                     }
                 });
-
-                $('.form-error-message').each(function(){
-                    var text = $(this).text();
-                    if (text != ''){
-                        return false;
-                    }else{
-                        $.ajax({
-                            type: 'post',
-                            data: generalData,
-                            url: baseUrl + 'user_interface/profile_settings/insert_general_data',
-                            dataType: 'json',
-                            success: function(data){
-                                if (data.result == 1){
-                                    location.reload();
-                                }
-                            }
-                        });
-                    }
-                });
+                var dataName = 'general';
+                ajaxRequest(generalData, dataName);
                 break;
             case 1:
                 var personalData = {
@@ -188,7 +173,7 @@ $(document).ready(function(){
                     children: $('#children').val(),
                     religion: $('#religion').val()
                 };
-                var dataName = 'personal';
+                dataName = 'personal';
                 ajaxRequest(personalData, dataName);
                 break;
             case 2:
@@ -220,35 +205,75 @@ $(document).ready(function(){
         }
     }
 
-    $('.save').click(function(){
-        $('.nav-tabs li').each(function(index){
-            var className = $(this).attr('class');
-            if (className == 'active') {
-                saveData(index);
+
+    function checkErrors() {
+        var result;
+        $('.form-error-message').each(function (index) {
+            if ($('.form-error-message').eq(index).text() != ''){
+                result = 0;
+                return false;
+            }else{
+                result = 1;
             }
         });
+        return result;
+    }
+
+    $('.save').click(function () {
+        var errors = checkErrors();
+        if (errors == 1){
+            $('.nav-tabs li').each(function (index) {
+                var className = $(this).attr('class');
+                if (className == 'active') {
+                    saveData(index);
+                }
+            });
+        }else{
+            return false;
+        }
+
     });
 
-    function tabChange(direction){
-        $('.nav-tabs li').each(function(index){
+    function tabChange(direction) {
+        $('.nav-tabs li').each(function (index) {
             var className = $(this).attr('class');
-            if (className == 'active'){
-                if (direction == 'next'){
+            if (className == 'active') {
+                if (direction == 'next') {
                     $('.nav-tabs li').eq(index).next().children().click();
-                }else{
+                } else {
                     $('.nav-tabs li').eq(index).prev().children().click();
                 }
-                $('body').animate({'scrollTop' : 170}, 'slow');
+                $('body').animate({'scrollTop': 170}, 'slow');
                 return false;
             }
         });
     }
 
-    $('.next').click(function(){
-        tabChange('next');
+    $('.next').click(function () {
+        var errors = checkErrors();
+        if (errors == 1){
+            $('.nav-tabs li').each(function (index) {
+                var className = $(this).attr('class');
+                if (className == 'active') {
+                    saveData(index);
+                }
+            });
+
+            setTimeout(function() { tabChange('next'); }, 2000);
+        }
     });
 
-    $('.prev').click(function(){
-        tabChange('prev');
+    $('.prev').click(function () {
+        var errors = checkErrors();
+        if (errors == 1){
+            $('.nav-tabs li').each(function (index) {
+                var className = $(this).attr('class');
+                if (className == 'active') {
+                    saveData(index);
+                }
+            });
+
+            setTimeout(function() { tabChange('prev'); }, 2000);
+        }
     });
 });
