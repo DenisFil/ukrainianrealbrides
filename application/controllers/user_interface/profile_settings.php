@@ -36,9 +36,16 @@
         {
             $user_id = $this->session->userdata('id');
             $user_data = $this->profile_settings_model->get_user_data($user_id);
-            $birthday = explode('.', $user_data[1][0]->birthday);
-            $user_data[1][0]->birthday = $birthday;
+            $user_data[1][0]->birthday = explode('.', $user_data[1][0]->birthday);
+
             echo json_encode($user_data);
+        }
+
+        public function user_data_age()
+        {
+            $partner_age = $this->profile_settings_model->get_user_data_age($this->session->userdata('id'));
+            $partner_age = explode('/', $partner_age[0]->age);
+            echo json_encode($partner_age);
         }
 
         public function insert_general_data()

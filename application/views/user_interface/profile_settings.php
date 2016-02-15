@@ -340,7 +340,7 @@
 	                <div class="profile-form-row aboutme">
 	                	<span>About my partner</span>
 	                	<div class="form-block">
-	                		<textarea placeholder="Write something about the way you see your partner" class="profile-form"  cols="30" rows="5" id="about"></textarea>
+	                		<textarea placeholder="Write something about the way you see your partner" class="profile-form"  cols="30" rows="5" id="about-my-partner"></textarea>
 							<strong class="form-error-message"></strong>
 	                	</div>
 	                </div>

@@ -7,6 +7,7 @@ $(document).ready(function(){
         url: baseUrl + 'user_interface/profile_settings/user_data',
         dataType: 'json',
         success: function(data){
+
             $('#user-name').val(data[0][0].name);
             $('#user-lastname').val(data[0][0].lastname);
 
@@ -35,12 +36,12 @@ $(document).ready(function(){
             $('#smoking').val(data[1][0].smoking);
             $('#hobbies').val(data[1][0].hobbies);
             $('#about').val(data[1][0].about_me);
-            /*if (data[2]){
+            if (data[2]){
                 $('#partner-children').val(data[2][0].partner_children);
                 $('#partner-drinking').val(data[2][0].partner_drinking);
                 $('#partner-smoking').val(data[2][0].partner_smoking);
                 $('#about-my-partner').val(data[2][0].about_my_partner);
-            }*/
+            }
         }
     });
 
@@ -60,6 +61,7 @@ $(document).ready(function(){
     }
 
     $(selector).focus(function(){
+        dropCountry();
         $('.location-drop').show();
     });
 
@@ -162,19 +164,18 @@ $(document).ready(function(){
                     var text = $(this).text();
                     if (text != ''){
                         return false;
-                    }
-                    return false;
-                });
-
-                $.ajax({
-                    type: 'post',
-                    data: generalData,
-                    url: baseUrl + 'user_interface/profile_settings/insert_general_data',
-                    dataType: 'json',
-                    success: function(data){
-                        if (data.result == 1){
-                            location.reload();
-                        }
+                    }else{
+                        $.ajax({
+                            type: 'post',
+                            data: generalData,
+                            url: baseUrl + 'user_interface/profile_settings/insert_general_data',
+                            dataType: 'json',
+                            success: function(data){
+                                if (data.result == 1){
+                                    location.reload();
+                                }
+                            }
+                        });
                     }
                 });
                 break;
@@ -208,10 +209,10 @@ $(document).ready(function(){
                 };
                 var partnerData = {
                     age: ageRange.from + '/' + ageRange.to,
-                    partner_children: $('#partner-children'),
-                    partner_drinking: $('#partner-drinking'),
-                    partner_smoking: $('#partner-smoking'),
-                    about_my_partner: $('#about-my-partner')
+                    partner_children: $('#partner-children').val(),
+                    partner_drinking: $('#partner-drinking').val(),
+                    partner_smoking: $('#partner-smoking').val(),
+                    about_my_partner: $('#about-my-partner').val()
                 };
                 dataName = 'partner';
                 ajaxRequest(partnerData, dataName);
@@ -224,7 +225,6 @@ $(document).ready(function(){
             var className = $(this).attr('class');
             if (className == 'active') {
                 saveData(index);
-                return false;
             }
         });
     });
