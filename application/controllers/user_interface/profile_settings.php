@@ -111,4 +111,19 @@
             }
             echo json_encode($result);
         }
+
+        public function change_email()
+        {
+            $new_email = $this->input->post();
+            $query = $this->profile_settings_model->change_email($new_email, $this->session->userdata('id'));
+            if ($query === TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
+        }
     }

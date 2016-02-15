@@ -10,6 +10,7 @@ $(document).ready(function () {
 
             $('#user-name').val(data[0][0].name);
             $('#user-lastname').val(data[0][0].lastname);
+            $('#email-change').val(data[0][0].email);
 
             if (data[0][0].gender == 1 || data[0][0].gender == 0) {
                 $('#gender').val('Male');
@@ -42,6 +43,10 @@ $(document).ready(function () {
                 $('#partner-smoking').val(data[2][0].partner_smoking);
                 $('#about-my-partner').val(data[2][0].about_my_partner);
             }
+
+            /*if (data[0][0].social_network == ''){
+                $('#email-change, #new-password, #confirm-new-password').removeAttr('disabled');
+            }*/
         }
     });
 
@@ -120,6 +125,66 @@ $(document).ready(function () {
         $('.birthday-block').next().text('');
     });
 
+/****************************Вкладка Security************************************/
+    //Активация кнопки
+    $(document).on('input', '#email-change, #new-password, #confirm-new-password', function(){
+        var selector = '#' + $(this).attr('id');
+        if (selector === '#email-change'){
+            $('#email-change').next().removeClass('btn-default').addClass('btn-success');
+        }else{
+            $('#confirm-new-password').next().removeClass('btn-default').addClass('btn-success');
+        }
+    });
+
+    //Изменение Email`a
+    function emailChange(){
+        var selector = '#email-change';
+        var newEmail = {
+            email: $(selector).val()
+        };
+        var pattern = '@';
+        var search = newEmail.email.indexOf(pattern) + 1;
+        $(selector).focus(function(){
+            $(selector).removeClass('error').parent().next().text('');
+        });
+            if (search == 0){
+                $(selector).addClass('error').parent().next().text('Please enter valid email');
+            }else{
+                $.ajax({
+                    type: 'post',
+                    data: newEmail,
+                    url: baseUrl + 'user_interface/profile_settings/change_email',
+                    dataType: 'json',
+                    success: function(data){
+                        if (data.result == 1){
+                            $('.nav-tabs li').each(function (index) {
+                                var className = $(this).attr('class');
+                                if (className == 'active') {
+                                    $('.save-message-block').text('Request for change email was submitted. Please check your new email to confirm it.');
+                                    $('.tab-body').eq(index).children().next().next().addClass('successfully-saved');
+                                    $('#email-change').next().addClass('btn-default').removeClass('btn-success');
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+    }
+
+    //Изменение данных
+    $('.change-button').click(function(){
+        var buttonStatus = $(this).attr('class');
+        buttonStatus = buttonStatus.split(' ');
+        if (buttonStatus[2] == 'btn-success'){
+            var change = $(this).prev().attr('id');
+            if (change == 'email-change'){
+                emailChange();
+            }else{
+                passwordChange();
+            }
+        }
+    });
+
 //Запись в БД
     function ajaxRequest(data, dataName) {
         $.ajax({
@@ -128,7 +193,14 @@ $(document).ready(function () {
             url: baseUrl + 'user_interface/profile_settings/insert_' + dataName + '_data',
             dataType: 'json',
             success: function (data) {
-
+                if (data.result == 1){
+                    $('.nav-tabs li').each(function (index) {
+                        var className = $(this).attr('class');
+                        if (className == 'active') {
+                            $('.tab-body').eq(index).children().next().next().addClass('successfully-saved');
+                        }
+                    });
+                }
             }
         });
     }
@@ -205,7 +277,6 @@ $(document).ready(function () {
         }
     }
 
-
     function checkErrors() {
         var result;
         $('.form-error-message').each(function (index) {
@@ -217,6 +288,21 @@ $(document).ready(function () {
             }
         });
         return result;
+    }
+
+    function tabChange(direction) {
+        $('.nav-tabs li').each(function (index) {
+            var className = $(this).attr('class');
+            if (className == 'active') {
+                if (direction == 'next') {
+                    $('.nav-tabs li').eq(index).next().children().click();
+                } else {
+                    $('.nav-tabs li').eq(index).prev().children().click();
+                }
+                $('body').animate({'scrollTop': 170}, 'slow');
+                return false;
+            }
+        });
     }
 
     $('.save').click(function () {
@@ -234,27 +320,13 @@ $(document).ready(function () {
 
     });
 
-    function tabChange(direction) {
-        $('.nav-tabs li').each(function (index) {
-            var className = $(this).attr('class');
-            if (className == 'active') {
-                if (direction == 'next') {
-                    $('.nav-tabs li').eq(index).next().children().click();
-                } else {
-                    $('.nav-tabs li').eq(index).prev().children().click();
-                }
-                $('body').animate({'scrollTop': 170}, 'slow');
-                return false;
-            }
-        });
-    }
-
     $('.next').click(function () {
         var errors = checkErrors();
         if (errors == 1){
             $('.nav-tabs li').each(function (index) {
                 var className = $(this).attr('class');
                 if (className == 'active') {
+                    $('.tab-body').eq(index + 1).children().next().next().removeClass('successfully-saved');
                     saveData(index);
                 }
             });
@@ -269,6 +341,7 @@ $(document).ready(function () {
             $('.nav-tabs li').each(function (index) {
                 var className = $(this).attr('class');
                 if (className == 'active') {
+                    $('.tab-body').eq(index - 1).children().next().next().removeClass('successfully-saved');
                     saveData(index);
                 }
             });
