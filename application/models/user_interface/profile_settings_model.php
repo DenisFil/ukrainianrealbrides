@@ -36,6 +36,16 @@
             return $query;
         }
 
+        public function get_user_data_age($id)
+        {
+            $query = $this->db->    select('age')->
+                                    from('about_my_partner')->
+                                    where('user_id', $id)->
+                                    get()->
+                                    result();
+            return $query;
+        }
+
         public function get_countries()
         {
             $query = $this->db->    select('country_name')->

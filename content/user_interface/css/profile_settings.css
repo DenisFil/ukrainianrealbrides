@@ -14,7 +14,6 @@
 	width: 40%;
 	padding: 30px 0 0;
 	margin: 0 auto;
-	text-align: center;
 }
 .nav-tabs.nav-justified>li>a {
     border-bottom: 2px solid #a0a0a0;
@@ -36,6 +35,7 @@
     line-height: 25px;
     display: block;
     padding-bottom: 25px;
+    text-align: center;
 }
 .tab-body h2 {
 	background: none;
@@ -80,7 +80,6 @@
 }
 .form-block {
 	width: 64%;
-	height: 70px;
 	float: right;
 }
 #general-tab .tab-body em {
@@ -105,11 +104,7 @@
     line-height: 22px;
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 }
-.profile-form-row textarea {
-	
-}
-
-.profile-form-row .form-block input:focus,
+.profile-form-row .form-block .profile-form:focus,
 .profile-form-row .form-block textarea:focus,
 .profile-form-row label select:focus {
 	box-shadow: 0 0 3px rgba(0,0,0,0.3), 0 0 2px rgba(0,0,0,0.3) inset;
@@ -143,12 +138,9 @@
 }
 .profile-form-row select option:hover {
 	background: red;
-
 }
-
 .profile-form-row label {
 	position:relative;
-	float: right;
 	margin: 0;
 }
 .profile-form-row label:after {
@@ -187,9 +179,7 @@
 .buttons-row {
 	overflow: hidden;
 	width: 100%;
-}
-.buttons-row a{
-
+	text-align: center;
 }
 .buttons-row .btn {
 	width: 47%;
@@ -207,16 +197,12 @@
 }
 .btn.save {
 	background: #32CD32;
-
 }
 .btn.save {
 	color: #fff;
 }
-.btn.skip a {
-	color: #fff;
-}
-.btn.skip {
-	background:#FA8072; 
+#security-tab .buttons-row .btn {
+	width: 47%;
 }
 .location-drop {
 	display: none;
@@ -242,10 +228,9 @@
 .profile-form-row {
 	position: relative;
 }
-.profile-form-row:after {
-	content: "";
-	clear: both;
-	display: block;
+.separate {
+	border-bottom: 1px solid #ebebeb;
+    margin-bottom: 20px;
 }
 .age-range {
 	border: none;
@@ -258,6 +243,34 @@
 	font-size: 18px;
 	line-height: 18px;
 }
+.form-block .change-block {
+	overflow: hidden;
+}
+.change-block .profile-form {
+	float: left;
+	width: 210px;
+}
+.form-block.change-pass>.profile-form {
+	width: 210px;
+	margin-bottom: 10px;
+}
+.change-block .btn {
+	float: right;
+    border: none;
+    height: 50px;
+    width: 85px;
+    border-radius: 10px;
+    font-family: 'LatoBold';
+    font-size: 17px;
+    line-height: 19px;
+}
+.change-block .btn.btn-default {
+    color: #000;
+    background: #ebebeb;
+}.change-block .btn.btn-success {
+    color: #fff;
+    background: #32CD32;
+}
 .profile-form-row .form-block .age-range:focus {
 	border: none;
 	background: none;
@@ -265,6 +278,7 @@
 }
 .profile-form-row .form-block.settings-range {
 	padding-top: 15px;
+    padding-bottom: 36px;
 	overflow: hidden;
 }
 .left-range,
@@ -773,4 +787,68 @@ box-shadow: 0 2px 3px #000;
 	filter: Alpha(Opacity=30); /* support: IE8 */
 	border-radius: 8px;
 }
-*/*/
+.profile-form-row.checkboxes span{
+    width: 100%;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+.profile-form-row.checkboxes .form-block {
+	width: 100%;
+	margin-bottom: 15px;
+	padding-left: 25px;
+}
+.profile-form-row p{
+	margin: 0;
+	padding: 0;
+	float: left;
+	line-height: 20px;
+}
+/*Checkbox*/
+/* .squaredThree */
+.squaredThree {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+}
+.squaredThree label {
+	display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: -webkit-linear-gradient(top, #222222 0%, #45484d 100%); */
+    /* background: linear-gradient(to bottom, #222222 0%, #45484d 100%); */
+    border-radius: 4px;
+    /* background: #ebebeb; */
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.4);
+}
+.squaredThree label:after {
+	content: '';
+    width: 19px;
+    height: 9px;
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    border: 4px solid #e83c32;
+    /* border-radius: 10px; */
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.squaredThree label:hover::after {
+  opacity: 0.3;
+}
+.squaredThree input[type=checkbox] {
+  visibility: hidden;
+  width: 20px;
+}
+.squaredThree input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+/* end .squaredThree */

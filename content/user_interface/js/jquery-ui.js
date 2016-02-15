@@ -5,6 +5,8 @@
 * Includes: core.js, widget.js, mouse.js, position.js, draggable.js, resizable.js, slider.js
 * Copyright jQuery Foundation and other contributors; Licensed MIT */
 
+var baseUrl = 'http://ukrainianrealbrides.int/';
+
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 
@@ -4519,19 +4521,37 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
       var x2 = $div2.offset().left;
       var w2 = 40;
       var r2 = x2 + w2;
-
       if (r1 < x2 || x1 > r2) return false;
       return true;
-
 }
 
 // // slider call
+function fromTo(){
+	var age = {
+		from: 25,
+		to: 40
+	};
+
+	$.ajax({
+		type: 'post',
+		async: false,
+		url: baseUrl + 'user_interface/profile_settings/user_data_age',
+		dataType: 'json',
+		success: function(data){
+			age.from = data[0];
+			age.to = data[1];
+		}
+	});
+
+	return age;
+}
+var age = fromTo();
 
 $('#slider').slider({
       range: true,
       min: 18,
       max: 90,
-      values: [21, 40],
+      values: [age.from, age.to],
       slide: function(event, ui) {
 
             $('.ui-slider-handle:eq(0) .price-range-min').html('' + ui.values[0]);

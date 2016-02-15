@@ -19,7 +19,7 @@
                     </form>
                 </label>
 
-                <a class="preview" href="#">Preview</a>
+                <a class="preview" href="<?php echo base_url(); ?>/user_interface/profile_preview">Preview</a>
             </div>
             <?php endif; ?>
 		</span>
