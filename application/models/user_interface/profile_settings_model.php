@@ -32,6 +32,11 @@
             {
                 $query[1][0]->country = '';
             }
+            array_push($query, $this->db->  select('news, messages, promo')->
+                                            from('notifications')->
+                                            where('user_id', $id)->
+                                            get()->
+                                            result());
 
             return $query;
         }
@@ -127,6 +132,28 @@
             {
                 $query = $this->db->update('change_data', $data, array('user_id' => $id));
             }
+
+            $confirm_data = array(
+                'confirm_hash' => md5(time() . $id),
+                'email_status' => 0
+            );
+            $query_confirm_email = $this->db->update('confirm_email', $confirm_data, array('user_id' => $id));
+
+            if ($query === TRUE && $query_confirm_email === TRUE)
+            {
+                return $confirm_data['confirm_hash'];
+            }
+        }
+
+        public function change_password($password, $id)
+        {
+            $query = $this->db->update('user_profiles', $password, array('id' => $id));
+            return $query;
+        }
+
+        public function notifications ($notifications, $id)
+        {
+            $query = $this->db->update('notifications', $notifications, array('user_id' => $id));
             return $query;
         }
     }

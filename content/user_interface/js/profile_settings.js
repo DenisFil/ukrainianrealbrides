@@ -7,7 +7,6 @@ $(document).ready(function () {
         url: baseUrl + 'user_interface/profile_settings/user_data',
         dataType: 'json',
         success: function (data) {
-
             $('#user-name').val(data[0][0].name);
             $('#user-lastname').val(data[0][0].lastname);
             $('#email-change').val(data[0][0].email);
@@ -37,16 +36,25 @@ $(document).ready(function () {
             $('#smoking').val(data[1][0].smoking);
             $('#hobbies').val(data[1][0].hobbies);
             $('#about').val(data[1][0].about_me);
-            if (data[2]) {
+            if (data[2].length > 0) {
                 $('#partner-children').val(data[2][0].partner_children);
                 $('#partner-drinking').val(data[2][0].partner_drinking);
                 $('#partner-smoking').val(data[2][0].partner_smoking);
                 $('#about-my-partner').val(data[2][0].about_my_partner);
             }
+            if (data[3][0].news == 0){
+                $('#news-checkbox').removeAttr('checked');
+            }
+            if (data[3][0].messages == 0){
+                $('#messages-checkbox').removeAttr('checked');
+            }
+            if (data[3][0].promo == 0){
+                $('#promo-checkbox').removeAttr('checked');
+            }
 
-            /*if (data[0][0].social_network == ''){
+            if (data[0][0].social_network == '') {
                 $('#email-change, #new-password, #confirm-new-password').removeAttr('disabled');
-            }*/
+            }
         }
     });
 
@@ -68,9 +76,7 @@ $(document).ready(function () {
     $(selector).focus(function () {
         dropCountry();
         $('.location-drop').show();
-    });
-
-    $(selector).blur(function () {
+    }).blur(function () {
         setTimeout(function () {
             $('.location-drop').hide();
         }, 100);
@@ -125,61 +131,107 @@ $(document).ready(function () {
         $('.birthday-block').next().text('');
     });
 
-/****************************Вкладка Security************************************/
-    //Активация кнопки
-    $(document).on('input', '#email-change, #new-password, #confirm-new-password', function(){
+    /****************************Вкладка Security************************************/
+        //Активация кнопки
+    $(document).on('input', '#email-change, #new-password, #confirm-new-password', function () {
         var selector = '#' + $(this).attr('id');
-        if (selector === '#email-change'){
+        if (selector === '#email-change') {
             $('#email-change').next().removeClass('btn-default').addClass('btn-success');
-        }else{
+        } else {
             $('#confirm-new-password').next().removeClass('btn-default').addClass('btn-success');
         }
     });
 
     //Изменение Email`a
-    function emailChange(){
+    function emailChange() {
         var selector = '#email-change';
         var newEmail = {
             email: $(selector).val()
         };
         var pattern = '@';
         var search = newEmail.email.indexOf(pattern) + 1;
-        $(selector).focus(function(){
+        $(selector).focus(function () {
             $(selector).removeClass('error').parent().next().text('');
         });
-            if (search == 0){
-                $(selector).addClass('error').parent().next().text('Please enter valid email');
-            }else{
-                $.ajax({
-                    type: 'post',
-                    data: newEmail,
-                    url: baseUrl + 'user_interface/profile_settings/change_email',
-                    dataType: 'json',
-                    success: function(data){
-                        if (data.result == 1){
-                            $('.nav-tabs li').each(function (index) {
-                                var className = $(this).attr('class');
-                                if (className == 'active') {
-                                    $('.save-message-block').text('Request for change email was submitted. Please check your new email to confirm it.');
-                                    $('.tab-body').eq(index).children().next().next().addClass('successfully-saved');
-                                    $('#email-change').next().addClass('btn-default').removeClass('btn-success');
-                                }
-                            });
-                        }
+        if (search == 0) {
+            $(selector).addClass('error').parent().next().text('Please enter valid email');
+        } else {
+            $.ajax({
+                type: 'post',
+                data: newEmail,
+                url: baseUrl + 'user_interface/profile_settings/change_email',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.result == 1) {
+                        $('.nav-tabs li').each(function (index) {
+                            var className = $(this).attr('class');
+                            if (className == 'active') {
+                                $('.save-message-block').text('Request for change email was submitted. Please check your new email to confirm it.');
+                                $('.tab-body').eq(index).children().next().next().addClass('successfully-saved');
+                                $('#email-change').next().addClass('btn-default').removeClass('btn-success');
+                            }
+                        });
                     }
-                });
+                }
+            });
+        }
+    }
+
+    //Изменение пароля
+    function passwordChange() {
+        var newPassword = $('#new-password').val();
+        var confirmPassword = $('#confirm-new-password').val();
+        if (newPassword != confirmPassword) {
+            $('#confirm-new-password').parent().next().text('Passwords must match.');
+            $('#confirm-new-password, #new-password').addClass('error').focus(function () {
+                $('#confirm-new-password').parent().next().text('');
+                $(this).removeClass('error');
+            });
+        } else {
+            var pass = {
+                password: newPassword
+            };
+            $.ajax({
+                type: 'post',
+                data: pass,
+                url: baseUrl + 'user_interface/profile_settings/change_password',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.result == 1) {
+                        $('.nav-tabs li').each(function (index) {
+                            var className = $(this).attr('class');
+                            if (className == 'active') {
+                                $('.save-message-block').text('Your password was successfully changed.');
+                                $('.tab-body').eq(index).children().next().next().addClass('successfully-saved');
+                                $('#confirm-new-password').next().addClass('btn-default').removeClass('btn-success');
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    }
+
+    //Изменение подписок
+    function notificationsChange() {
+        var notifications = [];
+        $('.squaredThree input').each(function (index) {
+            if ($(this).prop('checked')){
+                notifications.push(index);
             }
+        });
+        return notifications;
     }
 
     //Изменение данных
-    $('.change-button').click(function(){
+    $('.change-button').click(function () {
         var buttonStatus = $(this).attr('class');
         buttonStatus = buttonStatus.split(' ');
-        if (buttonStatus[2] == 'btn-success'){
+        if (buttonStatus[2] == 'btn-success') {
             var change = $(this).prev().attr('id');
-            if (change == 'email-change'){
+            if (change == 'email-change') {
                 emailChange();
-            }else{
+            } else {
                 passwordChange();
             }
         }
@@ -193,7 +245,7 @@ $(document).ready(function () {
             url: baseUrl + 'user_interface/profile_settings/insert_' + dataName + '_data',
             dataType: 'json',
             success: function (data) {
-                if (data.result == 1){
+                if (data.result == 1) {
                     $('.nav-tabs li').each(function (index) {
                         var className = $(this).attr('class');
                         if (className == 'active') {
@@ -234,7 +286,10 @@ $(document).ready(function () {
                     }
                 });
                 var dataName = 'general';
-                ajaxRequest(generalData, dataName);
+                var errors = checkErrors();
+                if (errors != 0) {
+                    ajaxRequest(generalData, dataName);
+                }
                 break;
             case 1:
                 var personalData = {
@@ -280,11 +335,11 @@ $(document).ready(function () {
     function checkErrors() {
         var result;
         $('.form-error-message').each(function (index) {
-            if ($('.form-error-message').eq(index).text() != ''){
-                result = 0;
+            var newResult;
+            if ($('.form-error-message').eq(index).text() != '') {
+                newResult = 0;
+                result = newResult;
                 return false;
-            }else{
-                result = 1;
             }
         });
         return result;
@@ -296,8 +351,10 @@ $(document).ready(function () {
             if (className == 'active') {
                 if (direction == 'next') {
                     $('.nav-tabs li').eq(index).next().children().click();
+                    $('.save-message-block').text('All changes are successfully saved.');
                 } else {
                     $('.nav-tabs li').eq(index).prev().children().click();
+                    $('.save-message-block').text('All changes are successfully saved.');
                 }
                 $('body').animate({'scrollTop': 170}, 'slow');
                 return false;
@@ -306,47 +363,66 @@ $(document).ready(function () {
     }
 
     $('.save').click(function () {
-        var errors = checkErrors();
-        if (errors == 1){
-            $('.nav-tabs li').each(function (index) {
-                var className = $(this).attr('class');
-                if (className == 'active') {
-                    saveData(index);
-                }
-            });
-        }else{
-            return false;
-        }
-
+        $('.nav-tabs li').each(function (index) {
+            var className = $(this).attr('class');
+            if (className == 'active') {
+                saveData(index);
+            }
+        });
     });
 
     $('.next').click(function () {
+        $('.nav-tabs li').each(function (index) {
+            var className = $(this).attr('class');
+            if (className == 'active') {
+                $('.tab-body').eq(index + 1).children().next().next().removeClass('successfully-saved');
+                saveData(index);
+            }
+        });
         var errors = checkErrors();
-        if (errors == 1){
-            $('.nav-tabs li').each(function (index) {
-                var className = $(this).attr('class');
-                if (className == 'active') {
-                    $('.tab-body').eq(index + 1).children().next().next().removeClass('successfully-saved');
-                    saveData(index);
-                }
-            });
-
-            setTimeout(function() { tabChange('next'); }, 2000);
+        if (errors != 0) {
+            setTimeout(function () {
+                tabChange('next');
+            }, 2000);
         }
     });
 
     $('.prev').click(function () {
-        var errors = checkErrors();
-        if (errors == 1){
-            $('.nav-tabs li').each(function (index) {
-                var className = $(this).attr('class');
-                if (className == 'active') {
-                    $('.tab-body').eq(index - 1).children().next().next().removeClass('successfully-saved');
-                    saveData(index);
-                }
-            });
+        $('.nav-tabs li').each(function (index) {
+            var className = $(this).attr('class');
+            if (className == 'active') {
+                $('.tab-body').eq(index - 1).children().next().next().removeClass('successfully-saved');
+                saveData(index);
+            }
+        });
 
-            setTimeout(function() { tabChange('prev'); }, 2000);
-        }
+        setTimeout(function () {
+            tabChange('prev');
+        }, 2000);
+    });
+
+    $('#save-notifications').click(function() {
+        var notifications = notificationsChange();
+        notifications = {
+            0: notifications[0],
+            1: notifications[1],
+            2: notifications[2]
+        };
+        $.ajax({
+            type: 'post',
+            data: notifications,
+            url: baseUrl + 'user_interface/profile_settings/notifications',
+            dataType: 'json',
+            success: function(data){
+                if (data.result == 1){
+                    $('.nav-tabs li').each(function (index) {
+                        var className = $(this).attr('class');
+                        if (className == 'active') {
+                            $('.tab-body').eq(index).children().next().next().addClass('successfully-saved');
+                        }
+                    });
+                }
+            }
+        });
     });
 });

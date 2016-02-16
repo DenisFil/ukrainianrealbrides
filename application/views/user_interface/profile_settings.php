@@ -364,7 +364,7 @@
 	                	<span>E-mail</span>
 	                	<div class="form-block">
 	                		<div class="change-block">
-	                			<input class="profile-form form-control" type="text" placeholder="Account email" id="email-change">
+	                			<input class="profile-form form-control" type="text" placeholder="Account email" id="email-change" disabled>
 	                			<button type="button" class="btn change-button btn-default">Change</button>
 	                		</div>
 							<strong class="form-error-message"></strong>
@@ -373,9 +373,9 @@
 	                <div class="profile-form-row separate">
 	                	<span>Password</span>
 	                	<div class="form-block change-pass">
-	                		<input class="profile-form form-control" type="password" placeholder="New password" id="new-password">
+	                		<input class="profile-form form-control" type="password" placeholder="New password" id="new-password" disabled>
 	                		<div class="change-block">
-	                			<input class="profile-form form-control" type="password" placeholder="Confirm password" id="confirm-new-password">
+	                			<input class="profile-form form-control" type="password" placeholder="Confirm password" id="confirm-new-password" disabled>
 	                			<button type="button" class="btn change-button btn-default">Change</button>
 	                		</div>
 							<strong class="form-error-message"></strong>
@@ -408,7 +408,7 @@
 				</form>
 				<div class="buttons-row">
 					<button type="button" class="btn prev">Previous</button>
-					<button type="button" class="btn save">Save</button>
+					<button type="button" class="btn save" id="save-notifications">Save</button>
 				</div>
 	    	</div>
 	    </div>
