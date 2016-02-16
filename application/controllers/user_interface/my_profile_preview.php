@@ -4,11 +4,13 @@
         public function index()
         {
             $this->load->model('user_interface/personal_area_model');
+            $this->load->model('user_interface/my_profile_preview_model');
 
             if ($this->session->userdata('id'))
             {
                 $user_id = $this->session->userdata('id');
 
+                $data['all_data'] = $this->my_profile_preview_model->get_user_data($this->session->userdata('id'));
                 $data['avatar'] = $this->personal_area_model->get_avatar($this->session->userdata('id'));
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
                 $data['users_online'] = $this->personal_area_model->users_online(time());
