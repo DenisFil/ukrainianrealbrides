@@ -6,7 +6,7 @@
 			<button class="add-to-favorites" type="button"></button>
 		</div>
 		<div class="profile-preview-center">
-			<span class="profile-preview-name"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></span>
+			<span class="profile-preview-name"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?>, <?php echo $all_data[1][0]->birthday; ?></span>
 			<span class="profile-preview-status"><?php echo $all_data[0][0]->country_name; ?> <em>Online</em></span>
 
 			<!-- Profile info TABS -->
