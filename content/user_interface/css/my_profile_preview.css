@@ -210,15 +210,14 @@
 
 .grid-sizer,
 .grid-item {
-  width: 33.333%;
+  width: 200px;
 }
 
 .grid-item {
   float: left;
-  
 }
 
 .grid-item img {
-  display: block;
-  max-width: 100%;
+  display: inline;
+  max-width: 90%;
 }
