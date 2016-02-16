@@ -59,7 +59,7 @@ $(document).ready(function(){
                     $('#avatar-link').click();
                     $('#target').Jcrop({
                         aspectRatio: 0.66,
-                        minSize: [186, 281],
+                        minSize: [264, 400],
                         setSelect: [0, 0, 0, 0]
                     });
 

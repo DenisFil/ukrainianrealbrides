@@ -358,7 +358,7 @@
 	    	<div class="tab-body">
                 <h2>Security</h2>     
                 <p>Here you can change your account settings.</p>
-                <span class="save-message-block successfully-saved">All changes are successfully saved.</span>
+                <span class="save-message-block">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row separate">
 	                	<span>E-mail</span>

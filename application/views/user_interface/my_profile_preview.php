@@ -6,8 +6,8 @@
 			<button class="add-to-favorites" type="button"></button>
 		</div>
 		<div class="profile-preview-center">
-			<span class="profile-preview-name">Marina Khvorostova</span>
-			<span class="profile-preview-status">Ukraine, Kharkiv <em>Online</em></span>
+			<span class="profile-preview-name"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></span>
+			<span class="profile-preview-status"><?php echo $all_data[0][0]->country_name; ?> <em>Online</em></span>
 
 			<!-- Profile info TABS -->
 			<div class="profile-prewiev-tabs">
@@ -26,44 +26,44 @@
 									<div class="charachters-left">
 										<span>Height</span>
 									</div>
-									<span class="characters-right">172 cm (4`11")</span>
+									<span class="characters-right">
+										<?php if ($all_data[1][0]->height): ?>
+											<?php echo $all_data[1][0]->height; ?>
+										<?php else: ?>
+											<a href="#">Ask information</a>
+										<?php endif; ?>
+									</span>
 								</li>
 								<li>
 									<div class="charachters-left">
 										<span>Weight</span>
 									</div>
-									<span class="characters-right">45 kg (6 lb)</span>
+									<span class="characters-right"><?php echo $all_data[1][0]->weight; ?></span>
 								</li>
 								<li>
 									<div class="charachters-left">
 										<span>Eyes color</span>
 									</div>
-									<span class="characters-right">Blue</span>
+									<span class="characters-right"><?php echo $all_data[1][0]->eyes_color; ?></span>
 								</li>
 								<li>
 									<div class="charachters-left">
 										<span>Hair color</span>
 									</div>
-									<span class="characters-right">Blonde</span>
-								</li>
-								<li>
-									<div class="charachters-left">
-										<span>Country</span>
-									</div>
-									<span class="characters-right">USA</span>
+									<span class="characters-right"><?php echo $all_data[1][0]->hair_color; ?></span>
 								</li>
 								<li>
 									<div class="charachters-left">
 										<span>Children</span>
 									</div>
-									<span class="characters-right">No</span>
+									<span class="characters-right"><?php echo $all_data[1][0]->children; ?></span>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="preview-about-me-tab">
 					    <div class="tab-body">
-							dddd
+							<?php echo $all_data[1][0]->about_me; ?>
 					    </div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="preview-about-partner-tab">
