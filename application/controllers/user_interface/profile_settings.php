@@ -36,9 +36,16 @@
         {
             $user_id = $this->session->userdata('id');
             $user_data = $this->profile_settings_model->get_user_data($user_id);
-            $birthday = explode('.', $user_data[1][0]->birthday);
-            $user_data[1][0]->birthday = $birthday;
+            $user_data[1][0]->birthday = explode('.', $user_data[1][0]->birthday);
+
             echo json_encode($user_data);
+        }
+
+        public function user_data_age()
+        {
+            $partner_age = $this->profile_settings_model->get_user_data_age($this->session->userdata('id'));
+            $partner_age = explode('/', $partner_age[0]->age);
+            echo json_encode($partner_age);
         }
 
         public function insert_general_data()
@@ -94,6 +101,89 @@
             $data = $this->input->post();
             $query = $this->profile_settings_model->insert_partner_data($data, $this->session->userdata('id'));
 
+            if ($query === TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
+        }
+
+        public function change_email()
+        {
+            $new_email = $this->input->post();
+            $query = $this->profile_settings_model->change_email($new_email, $this->session->userdata('id'));
+            if (!empty($query))
+            {
+                //Отправка письма с подтверждением email`a
+                $this->load->library('email');
+                $this->email->from('info@ukrainianrealbrides.com', 'Ukrainian Real Brides');
+                $this->email->to($new_email);
+                $this->email->subject('E-mail change.');
+                $this->email->message('Hello! Please follow the link below to finish your registration at ukrainianrealbrides.com. Click here: ' . base_url() . 'user_interface/signup/confirm_email?email_hash=' . $query);
+                $send = $this->email->send();
+
+                if ($send === TRUE)
+                {
+                    $result['result'] = 1;
+                }
+                else
+                {
+                    $result['result'] = 0;
+                }
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
+        }
+
+        public function change_password()
+        {
+            $password = $this->input->post();
+            $password = array('password' => md5($password['password']));
+            $query = $this->profile_settings_model->change_password($password, $this->session->userdata('id'));
+            if ($query === TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
+        }
+
+        public function notifications()
+        {
+            $notifications = $this->input->post();
+            $notifications_data = array('promo' => 0, 'messages' => 0, 'news' => 0);
+            foreach ($notifications as $value)
+            {
+                if ($value == 2)
+                {
+                    $notifications_data['promo'] = 1;
+                }
+                else
+                {
+                    if ($value == 1)
+                    {
+                        $notifications_data['messages'] = 1;
+                    }
+                    else
+                    {
+                        if ($value == 0)
+                        {
+                            $notifications_data['news'] = 1;
+                        }
+                    }
+                }
+            }
+            $query = $this->profile_settings_model->notifications($notifications_data, $this->session->userdata('id'));
             if ($query === TRUE)
             {
                 $result['result'] = 1;
