@@ -156,7 +156,6 @@
 			  <div class="item">
 				  <a href="#photo-modal" role="button" data-toggle="modal">
 					  <img src="<?php echo base_url(); ?>/content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $value->photo_link; ?>_full.jpg" alt="Photo gallery" class="photos" />
-					  <img src="<?php echo base_url(); ?>/content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $value->photo_link; ?>_full.jpg" alt="Photo gallery" />
 				  </a>
 			  </div>
 		  <?php endforeach; ?>
