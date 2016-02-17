@@ -4,8 +4,7 @@ $(document).ready(function() {
 	$('#content').masonry({
 		columnWidth: 348,
 		itemSelector: '.item',
-		isFitWidth: true,
-		isAnimated: !Modernizr.csstransitions
+		isFitWidth: true
 	}).imagesLoaded(function() {
 		$(this).masonry('reload');
 	});
