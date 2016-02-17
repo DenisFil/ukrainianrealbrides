@@ -66,6 +66,18 @@
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->children; ?></span>
 								</li>
+								<li>
+									<div class="characters-left">
+										<span>Smoking</span>
+									</div>
+									<span class="characters-right">No</span>
+								</li>
+								<li>
+									<div class="characters-left">
+										<span>Drinking</span>
+									</div>
+									<span class="characters-right">No</span>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -105,7 +117,8 @@
 									<div class="characters-left">
 										<span>About my partner:</span>
 									</div>
-									<span class="characters-right">I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin</span>
+									<span class="characters-right">I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
+									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin</span>
 								</li>
 							</ul>
 						</div>
