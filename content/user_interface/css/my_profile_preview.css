@@ -41,12 +41,14 @@
     width: 100%;
     height: auto;
 }
+
 .profile-preview-center {
     float: left;
     width: 46.8%;
     padding-top: 22px;
     margin-right: 2.2%;
 }
+
 .profile-preview-name {
     display: block;
     font-family: 'BanderaProMedium';
@@ -55,6 +57,7 @@
     padding-left: 3%;
     margin-bottom: 10px;
 }
+
 .profile-preview-status {
     display: block;
     font-family: 'LatoRegular';
@@ -134,7 +137,6 @@
     background: #fff;
     padding-right: 4px;
 }
-
 .characters-right,
 .characters-right a {
     float: left;
@@ -272,11 +274,9 @@
     -o-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
     transition: left .4s ease-in-out, top .4s ease-in-out .4s;
 }
-
 /* .item:nth-child(3n) {
     margin-right: 0;
 } */
-
 .item img {
     width: 333px;
     height: auto;
