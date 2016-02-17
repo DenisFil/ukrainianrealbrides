@@ -8,10 +8,14 @@
             <button class="add-to-favorites" type="button"></button>
         </div>
         <div class="profile-preview-center">
-            <span
-                class="profile-preview-name"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?>
-                , <?php echo $all_data[1][0]->birthday; ?></span>
-            <span class="profile-preview-status"><?php echo $all_data[0][0]->country_name; ?> <em>Online</em></span>
+            <span class="profile-preview-name">
+				<?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?>
+                , <?php echo $all_data[1][0]->birthday; ?>
+			</span>
+            <span class="profile-preview-status">
+				<?php echo $all_data[0][0]->country_name; ?>
+				<em>Online</em>
+			</span>
 
             <!-- Profile info TABS -->
             <div class="profile-prewiev-tabs">
@@ -70,13 +74,13 @@
 									<div class="characters-left">
 										<span>Smoking</span>
 									</div>
-									<span class="characters-right">No</span>
+									<span class="characters-right"><?php echo $all_data[1][0]->smoking; ?></span>
 								</li>
 								<li>
 									<div class="characters-left">
 										<span>Drinking</span>
 									</div>
-									<span class="characters-right">No</span>
+									<span class="characters-right"><?php echo $all_data[1][0]->drinking; ?></span>
 								</li>
 							</ul>
 						</div>
@@ -93,32 +97,36 @@
 									<div class="characters-left">
 										<span>Age</span>
 									</div>
-									<span class="characters-right">25 - 40</span>
+									<span class="characters-right"><?php echo $all_data[2][0]->age; ?></span>
 								</li>
 								<li>
 									<div class="characters-left">
 										<span>Children</span>
 									</div>
-									<span class="characters-right">1</span>
+									<span class="characters-right"><?php echo $all_data[2][0]->partner_children; ?></span>
 								</li>
 								<li>
 									<div class="characters-left">
 										<span>Drinking</span>
 									</div>
-									<span class="characters-right">No</span>
+									<span class="characters-right"><?php echo $all_data[2][0]->partner_drinking; ?></span>
 								</li>
 								<li>
 									<div class="characters-left">
 										<span>Smoking</span>
 									</div>
-									<span class="characters-right">No</span>
+									<span class="characters-right"><?php echo $all_data[2][0]->partner_smoking; ?></span>
 								</li>
 								<li class="about-block">
 									<div class="characters-left">
 										<span>About my partner:</span>
 									</div>
-									<span class="characters-right">I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
+									<span class="characters-right" id="about-my-partner">I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
+									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for QuentinI am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
+									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for QuentinI am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
+									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for QuentinI am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
 									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin</span>
+									<button type="button" style="display:none;">Show more</button>
 								</li>
 							</ul>
 						</div>

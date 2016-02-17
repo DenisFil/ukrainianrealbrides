@@ -20,6 +20,9 @@
                 $birthday_days = ($birthday_array[2] * 365) + ($birthday_array[1] * 30) + $birthday_array[0];
                 $data['all_data'][1][0]->birthday = floor(($today_days - $birthday_days) / 365);
 
+                $partner_age = explode('/', $data['all_data'][2][0]->age);
+                $data['all_data'][2][0]->age = $partner_age[0] . ' - ' . $partner_age[1];
+
                 $data['photos'] = $this->personal_area_model->get_photos($user_id);
                 $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
