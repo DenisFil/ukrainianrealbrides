@@ -68,7 +68,40 @@
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="preview-about-partner-tab">
 					    <div class="tab-body">
-							dsasdasd
+						<div class="tab-body">
+							<ul class="profile-characters">
+								<li>
+									<div class="charachters-left">
+										<span>Age</span>
+									</div>
+									<span class="characters-right">25 - 40</span>
+								</li>
+								<li>
+									<div class="charachters-left">
+										<span>Children</span>
+									</div>
+									<span class="characters-right">1</span>
+								</li>
+								<li>
+									<div class="charachters-left">
+										<span>Drinking</span>
+									</div>
+									<span class="characters-right">No</span>
+								</li>
+								<li>
+									<div class="charachters-left">
+										<span>Smoking</span>
+									</div>
+									<span class="characters-right">No</span>
+								</li>
+								<li>
+									<div class="charachters-left">
+										<span>About my partner</span>
+									</div>
+									<span class="characters-right"></span>
+								</li>
+							</ul>
+						</div>
 					    </div>
 					</div>
 				</div>
@@ -111,73 +144,58 @@
 		</div>
 	</div>
 
-<div class="profile-preview-bottom">
-  <div id="content" class="container clearfix">
-    
-    
-    <div class="item">
-    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image02.jpg" alt="Photo gallery" />
-    </div>
+	<div class="profile-preview-bottom">
+	  <div id="content" class="container clearfix">
+	    
+	    
+	    <div class="item">
+	    	<a href="#photo-modal" role="button" data-toggle="modal">
+	    		<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image02.jpg" alt="Photo gallery" />	
+	    	</a>
+	    </div>
 
-    <div class="item featured">
-    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image03.jpg" alt="Photo gallery" />
-    </div>
+	    <div class="item">
+	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image03.jpg" alt="Photo gallery" />
+	    </div>
 
-    <div class="item">
-    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image05.jpg" alt="Photo gallery" />
-    </div>
-    
-    <div class="item featured">
-    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image06.jpg" alt="Photo gallery" />
-    </div>
-    
-    <div class="item">
-    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image07.jpg" alt="Photo gallery" />
-    </div>
-    
-    <div class="item">
-    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image04.jpg" alt="Photo gallery" />
-    </div>
-    
-    <div class="item">
-    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image08.jpg" alt="Photo gallery" />
-    </div>
-    
-  </div>
+	    <div class="item">
+	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image05.jpg" alt="Photo gallery" />
+	    </div>
+	    
+	    <div class="item">
+	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image06.jpg" alt="Photo gallery" />
+	    </div>
+	    
+	    <div class="item">
+	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image07.jpg" alt="Photo gallery" />
+	    </div>
+	    
+	    <div class="item">
+	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image04.jpg" alt="Photo gallery" />
+	    </div>
+	    
+	    <div class="item">
+	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image08.jpg" alt="Photo gallery" />
+	    </div>
+	    
+	  </div>
+	</div>
 </div>
 
-
-
-<!-- <div class="profile-preview-bottom">
-	<div class="grid">
-  <div class="grid-sizer"></div>
-  <div class="grid-item">
-    <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image01.jpg" alt="Photo gallery" />
-  </div>
-  <div class="grid-item">
-    <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image02.jpg" alt="Photo gallery" />
-  </div>
-  <div class="grid-item">
-    <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image03.jpg" alt="Photo gallery" />
-  </div>
-  <div class="grid-item">
-    <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image04.jpg" alt="Photo gallery" />
-  </div>
-  <div class="grid-item">
-    <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image05.jpg" alt="Photo gallery" />
-  </div>
-  <div class="grid-item">
-    <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image06.jpg" alt="Photo gallery" />
-  </div>
-  <div class="grid-item">
-    <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image07.jpg" alt="Photo gallery" />
-  </div>
-  <div class="grid-item">
-    <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image08.jpg" alt="Photo gallery" />
-  </div>
+<!--Photo modal-->
+<div class="modal fade" id="photo-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <div class="exit"></div>
+                </button>
+                <span></span>
+                <button type="button" id="user-photo">
+	    			<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image02.jpg" alt="Photo gallery" />
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-</div> -->
-
-
-
-</div>
+<!--Photo modal END-->

@@ -113,13 +113,16 @@
 	background: #fff;
 	padding-right: 4px;
 }
-.characters-right {
-	width: 54%;
+.characters-right,
+.characters-right a {
 	float: left;
     font-family: 'LatoBold';
 	color: #949494;
 	font-size: 18px;
 	line-height: 25px;
+}
+.characters-right a {
+	
 }
 .profile-preview-right {
 	float: left;
@@ -231,14 +234,43 @@
 	width: 333px;
 	height: auto;
 }
-/* .featured {
-	width: 620px;
-}
-
-.featured img {
-  width: 620px;
-  height: auto;
-} */
 .container {
 	padding: 0;
+}
+
+/* modal */
+
+#photo-modal .modal-dialog {
+	max-width: 644px;
+	/*min-width: 384px;*/
+	width: auto;
+	text-align: center;
+}
+#photo-modal .modal-body {
+    padding: 10px;
+}
+#photo-modal .modal-content{
+	display: inline-block;
+}
+#photo-modal .modal-body img {
+	max-width: 604px;
+	max-height: 604px;
+	display: inline-block;
+}
+.modal-bottom span {
+	padding: 0 12px;
+}
+#user-photo{
+	border: none;
+	padding: 0;
+	margin-bottom: 10px;
+	outline: none;
+			transition: all 0.5s;
+}
+.modal-body span {
+	margin-bottom: 10px;
+	font-size: 18px;
+	line-height: 20px;
+    font-family: 'BanderaProBold';
+    display: block;
 }
