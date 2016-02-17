@@ -98,7 +98,7 @@
 									<div class="charachters-left">
 										<span>About my partner</span>
 									</div>
-									<span class="characters-right"></span>
+									<span class="characters-right">I am looking for i am looking for Quentin</span>
 								</li>
 							</ul>
 						</div>
