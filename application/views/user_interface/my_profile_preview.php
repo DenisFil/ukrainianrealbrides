@@ -161,37 +161,6 @@
 				  </a>
 			  </div>
 		  <?php endforeach; ?>
-	    
-	   <!-- <div class="item">
-	    	<a href="#photo-modal" role="button" data-toggle="modal">
-	    		<img src="<?php /*echo base_url(); */?>content/user_interface/img/profile-preview/image02.jpg" alt="Photo gallery" />
-	    	</a>
-	    </div>
-
-	    <div class="item">
-	    	<img src="<?php /*echo base_url(); */?>content/user_interface/img/profile-preview/image03.jpg" alt="Photo gallery" />
-	    </div>
-
-	    <div class="item">
-	    	<img src="<?php /*echo base_url(); */?>content/user_interface/img/profile-preview/image05.jpg" alt="Photo gallery" />
-	    </div>
-	    
-	    <div class="item">
-	    	<img src="<?php /*echo base_url(); */?>content/user_interface/img/profile-preview/image06.jpg" alt="Photo gallery" />
-	    </div>
-	    
-	    <div class="item">
-	    	<img src="<?php /*echo base_url(); */?>content/user_interface/img/profile-preview/image07.jpg" alt="Photo gallery" />
-	    </div>
-	    
-	    <div class="item">
-	    	<img src="<?php /*echo base_url(); */?>content/user_interface/img/profile-preview/image04.jpg" alt="Photo gallery" />
-	    </div>
-	    
-	    <div class="item">
-	    	<img src="<?php /*echo base_url(); */?>content/user_interface/img/profile-preview/image08.jpg" alt="Photo gallery" />
-	    </div>-->
-	    
 	  </div>
 	</div>
 </div>
