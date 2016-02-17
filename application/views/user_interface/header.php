@@ -114,7 +114,7 @@
                 <?php else: ?>
                     <li><a href="#">Women profiles</a></li>
                 <?php endif; ?>
-                <li><a href="#">Search</a></li>
+                <li><a href="<?php echo base_url(); ?>/user_interface/search">Search</a></li>
                 <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
             </ul>
             <div class="logo-place"></div>

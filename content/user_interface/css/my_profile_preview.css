@@ -67,7 +67,6 @@
     padding-left: 16px;
     margin-bottom: 40px;
 }
-
 .profile-preview-status em {
     color: #03c4bc;
     font-style: normal;
@@ -85,7 +84,9 @@
 
 .tab-body {
     width: 100%;
-    padding: 30px 0 0 18px;
+    height: 296px;
+    overflow: auto;
+    padding: 27px 0 0 18px;
 }
 
 .nav-tabs.nav-justified > li > a {
@@ -109,7 +110,7 @@
 .profile-characters li {
     display: block;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
 }
 
 .profile-characters li:last-child {
@@ -136,7 +137,6 @@
     background: #fff;
     padding-right: 4px;
 }
-
 .characters-right,
 .characters-right a {
     float: left;
@@ -242,7 +242,7 @@
 }
 
 /* =============================================================================
-   Chrome Frame Prompt
+   Masonry
    ========================================================================== */
 
 .chromeframe {
@@ -274,11 +274,9 @@
     -o-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
     transition: left .4s ease-in-out, top .4s ease-in-out .4s;
 }
-
-.item:nth-child(3n) {
+/* .item:nth-child(3n) {
     margin-right: 0;
-}
-
+} */
 .item img {
     width: 333px;
     height: auto;

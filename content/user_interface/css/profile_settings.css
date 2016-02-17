@@ -36,18 +36,21 @@
     text-align: center;
 }
 .save-message-block {
+    width: 100%;
     visibility: hidden;
     display: block;
     text-align: center;
     margin: 0 0 0 0;
-    padding-left: 35px;
     font-family: 'latosemibold';
     font-size: 20px;
     line-height: 30px;
     color: #8ac049;
-    background: url("../img/personal-area/saved.png") no-repeat 0 50%;
     margin: 5px auto 15px;
-    width: 75%;
+}
+.save-message-block img {
+	display: inline-block;
+	margin: 0 10px 5px 0;
+    padding: 0;
 }
 .save-message-block.successfully-saved {
     visibility: visible;
