@@ -9,7 +9,7 @@
             if ($this->session->userdata('id'))
             {
                 $user_id = $this->session->userdata('id');
-                $data['all_data'] = $this->my_profile_preview_model->get_user_data($this->session->userdata('id'));
+                $data['all_data'] = $this->my_profile_preview_model->get_user_data($user_id);
 
                 $this->load->helper('date');
                 $datestring = '%j.%n.%Y';
@@ -21,7 +21,8 @@
                 $age = floor(($today_days - $birthday_days) / 365);
                 $data['all_data'][1][0]->birthday = $age;
 
-                $data['avatar'] = $this->personal_area_model->get_avatar($this->session->userdata('id'));
+                $data['photos'] = $this->personal_area_model->get_photos($user_id);
+                $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
                 $data['users_online'] = $this->personal_area_model->users_online(time());
                 $data['credits'] = $this->personal_area_model->user_credits($user_id);
