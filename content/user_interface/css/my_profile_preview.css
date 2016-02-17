@@ -21,13 +21,14 @@
 
 .add-to-favorites {
     content: "";
-    display: block;
-    height: 41px;
+    display: inline-block;
+    height: 38px;
+    width: 26px;
     position: absolute;
-    left: 0;
+    left: 4%;
     top: 0;
-    width: 100%;
-    background: url("../img/profile-preview/avatar-bg.png") no-repeat 10px 0;
+    /* width: 100%; */
+    background: url("../img/profile-preview/avatar-bg.png") no-repeat 0 0;
     background-size: 27px 38px;
     cursor: pointer;
     border: none;
@@ -114,8 +115,7 @@
 .profile-characters li:last-child {
     margin-bottom: 0;
 }
-
-.profile-characters li .charachters-left {
+.profile-characters li .characters-left {
     font-family: 'LatoRegular';
     font-size: 20px;
     line-height: 22px;
@@ -124,8 +124,15 @@
     width: 46%;
     background: url("../img/profile-preview/preview-dot.png") repeat-x 0 85%;
 }
-
-.profile-characters li .charachters-left span {
+.profile-characters .about-block .characters-left {
+	width: 100%;
+	background: none;
+	margin-bottom: 10px;
+}
+.profile-characters .about-block .characters-right {
+	width: 100%;
+}
+.profile-characters li .characters-left span {
     background: #fff;
     padding-right: 4px;
 }

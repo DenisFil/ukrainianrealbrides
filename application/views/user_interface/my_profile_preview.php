@@ -31,7 +31,7 @@
                         <div class="tab-body">
                             <ul class="profile-characters">
                                 <li>
-                                    <div class="charachters-left">
+                                    <div class="characters-left">
                                         <span>Height</span>
                                     </div>
 									<span class="characters-right">
@@ -43,25 +43,25 @@
 									</span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Weight</span>
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->weight; ?></span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Eyes color</span>
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->eyes_color; ?></span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Hair color</span>
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->hair_color; ?></span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Children</span>
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->children; ?></span>
@@ -75,42 +75,40 @@
 					    </div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="preview-about-partner-tab">
-					    <div class="tab-body">
 						<div class="tab-body">
 							<ul class="profile-characters">
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Age</span>
 									</div>
 									<span class="characters-right">25 - 40</span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Children</span>
 									</div>
 									<span class="characters-right">1</span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Drinking</span>
 									</div>
 									<span class="characters-right">No</span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Smoking</span>
 									</div>
 									<span class="characters-right">No</span>
 								</li>
-								<li>
-									<div class="charachters-left">
-										<span>About my partner</span>
+								<li class="about-block">
+									<div class="characters-left">
+										<span>About my partner:</span>
 									</div>
-									<span class="characters-right"></span>
+									<span class="characters-right">I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin</span>
 								</li>
 							</ul>
 						</div>
-					    </div>
 					</div>
 				</div>
 			</div>
@@ -158,6 +156,7 @@
 			  <div class="item">
 				  <a href="#photo-modal" role="button" data-toggle="modal">
 					  <img src="<?php echo base_url(); ?>/content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $value->photo_link; ?>_full.jpg" alt="Photo gallery" class="photos" />
+					  <img src="<?php echo base_url(); ?>/content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $value->photo_link; ?>_full.jpg" alt="Photo gallery" />
 				  </a>
 			  </div>
 		  <?php endforeach; ?>
