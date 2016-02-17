@@ -18,8 +18,7 @@
                 $today_days = ($today_array[2] * 365) + ($today_array[1] * 30) + $today_array[0];
                 $birthday_array = explode('.', $data['all_data'][1][0]->birthday);
                 $birthday_days = ($birthday_array[2] * 365) + ($birthday_array[1] * 30) + $birthday_array[0];
-                $age = floor(($today_days - $birthday_days) / 365);
-                $data['all_data'][1][0]->birthday = $age;
+                $data['all_data'][1][0]->birthday = floor(($today_days - $birthday_days) / 365);
 
                 $data['photos'] = $this->personal_area_model->get_photos($user_id);
                 $data['avatar'] = $this->personal_area_model->get_avatar($user_id);

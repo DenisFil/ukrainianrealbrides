@@ -157,7 +157,7 @@
 		  <?php foreach ($photos as $value): ?>
 			  <div class="item">
 				  <a href="#photo-modal" role="button" data-toggle="modal">
-					  <img src="<?php echo base_url(); ?>/content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $value->photo_link; ?>_full.jpg" alt="Photo gallery" />
+					  <img src="<?php echo base_url(); ?>/content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $value->photo_link; ?>_full.jpg" alt="Photo gallery" class="photos" />
 				  </a>
 			  </div>
 		  <?php endforeach; ?>
@@ -175,7 +175,7 @@
                 </button>
                 <span></span>
                 <button type="button" id="user-photo">
-	    			<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image02.jpg" alt="Photo gallery" />
+	    			<img src="" alt="Photo gallery" />
                 </button>
             </div>
         </div>
