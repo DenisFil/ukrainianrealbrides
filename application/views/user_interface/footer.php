@@ -74,6 +74,5 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/script.js"></script>
 
-
     </body>
 </html>

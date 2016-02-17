@@ -229,6 +229,7 @@
 	width: 300px;
 	overflow: auto;
 	padding: 0;
+	z-index: 10;
 }
 .location-drop span {
     display: block;
@@ -278,13 +279,17 @@
     font-family: 'LatoBold';
     font-size: 17px;
     line-height: 19px;
+    outline: none;
 }
 .change-block .btn.btn-default {
     color: #000;
     background: #ebebeb;
-}.change-block .btn.btn-success {
+    outline: none;
+}
+.change-block .btn.btn-success {
     color: #fff;
     background: #32CD32;
+    outline: none;
 }
 .profile-form-row .form-block .age-range:focus {
 	border: none;

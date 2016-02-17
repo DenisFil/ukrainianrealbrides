@@ -90,6 +90,13 @@
 		                	</div>
 		                </div>	
 	                </div>
+	                <div class="profile-form-row">
+	                	<span>City</span>
+		                <div class="form-block">
+		                	<input class="profile-form form-control" type="text" placeholder="Your city" id="#">
+							<strong class="form-error-message"></strong>
+						</div>
+	                </div>
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
@@ -103,7 +110,8 @@
 	    	<div class="tab-body">
                 <h2>Personal</h2>     
                 <p>Select your personal information</p>
-                <span class="save-message-block">All changes are successfully saved.</span>
+                <span class="save-message-block"><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/saved.png"
+                         width="24" height="24" alt="Messaging">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Height</span>

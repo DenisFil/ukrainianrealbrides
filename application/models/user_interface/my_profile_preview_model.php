@@ -11,7 +11,7 @@
                                             get()->
                                             result());
 
-            array_push($query, $this->db->  select('height, weight, eyes_color, hair_color, children, about_me')->
+            array_push($query, $this->db->  select('height, weight, eyes_color, hair_color, children, about_me,birthday')->
                                             from('user_details')->
                                             where('user_id', $id)->
                                             get()->

@@ -1,59 +1,67 @@
 <div class="profile-preview-holder">
-	<div class="profile-preview">
-		<h2>Profile view</h2>
-		<div class="profile-preview-left">
-			<img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id'); ?>/<?php echo $avatar; ?>_avatar.jpg" alt="Profile photo" width="297" height="450">
-			<button class="add-to-favorites" type="button"></button>
-		</div>
-		<div class="profile-preview-center">
-			<span class="profile-preview-name"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></span>
-			<span class="profile-preview-status"><?php if ($all_data[0][0]->country_name) {echo $all_data[0][0]->country_name;} ?> <em>Online</em></span>
+    <div class="profile-preview">
+        <h2>Profile view</h2>
+        <div class="profile-preview-left">
+            <img
+                src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id'); ?>/<?php echo $avatar; ?>_avatar.jpg"
+                alt="Profile photo" width="297" height="450">
+            <button class="add-to-favorites" type="button"></button>
+        </div>
+        <div class="profile-preview-center">
+            <span
+                class="profile-preview-name"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?>
+                , <?php echo $all_data[1][0]->birthday; ?></span>
+            <span class="profile-preview-status"><?php echo $all_data[0][0]->country_name; ?> <em>Online</em></span>
 
-			<!-- Profile info TABS -->
-			<div class="profile-prewiev-tabs">
-				<!-- Tabs nav -->
-				<ul class="nav nav-tabs nav-justified" role="tablist">
-					<li role="presentation" class="active"><a href="#preview-personal-tab" aria-controls="preview-personal-tab" role="tab" data-toggle="tab">Personal</a></li>
-					<li role="presentation"><a href="#preview-about-me-tab" aria-controls="preview-about-me-tab" role="tab" data-toggle="tab">About me</a></li> 
-					<li role="presentation"><a href="#preview-about-partner-tab" aria-controls="preview-aboutme-tab" role="tab" data-toggle="tab">About partner</a></li> 
-				</ul>
+            <!-- Profile info TABS -->
+            <div class="profile-prewiev-tabs">
+                <!-- Tabs nav -->
+                <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li role="presentation" class="active"><a href="#preview-personal-tab"
+                                                              aria-controls="preview-personal-tab" role="tab"
+                                                              data-toggle="tab">Personal</a></li>
+                    <li role="presentation"><a href="#preview-about-me-tab" aria-controls="preview-about-me-tab"
+                                               role="tab" data-toggle="tab">About me</a></li>
+                    <li role="presentation"><a href="#preview-about-partner-tab" aria-controls="preview-aboutme-tab"
+                                               role="tab" data-toggle="tab">About partner</a></li>
+                </ul>
 
-				<div class="tab-content">
-					<div role="tabpanel" class="active tab-pane" id="preview-personal-tab">
-						<div class="tab-body">
-							<ul class="profile-characters">
-								<li>
-									<div class="charachters-left">
-										<span>Height</span>
-									</div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="active tab-pane" id="preview-personal-tab">
+                        <div class="tab-body">
+                            <ul class="profile-characters">
+                                <li>
+                                    <div class="characters-left">
+                                        <span>Height</span>
+                                    </div>
 									<span class="characters-right">
 										<?php if ($all_data[1][0]->height): ?>
-											<?php echo $all_data[1][0]->height; ?>
-										<?php else: ?>
-											<a href="#">Ask information</a>
-										<?php endif; ?>
+                                            <?php echo $all_data[1][0]->height; ?>
+                                        <?php else: ?>
+                                            <a href="#">Ask information</a>
+                                        <?php endif; ?>
 									</span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Weight</span>
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->weight; ?></span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Eyes color</span>
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->eyes_color; ?></span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Hair color</span>
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->hair_color; ?></span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Children</span>
 									</div>
 									<span class="characters-right"><?php echo $all_data[1][0]->children; ?></span>
@@ -67,42 +75,40 @@
 					    </div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="preview-about-partner-tab">
-					    <div class="tab-body">
 						<div class="tab-body">
 							<ul class="profile-characters">
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Age</span>
 									</div>
 									<span class="characters-right">25 - 40</span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Children</span>
 									</div>
 									<span class="characters-right">1</span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Drinking</span>
 									</div>
 									<span class="characters-right">No</span>
 								</li>
 								<li>
-									<div class="charachters-left">
+									<div class="characters-left">
 										<span>Smoking</span>
 									</div>
 									<span class="characters-right">No</span>
 								</li>
-								<li>
-									<div class="charachters-left">
-										<span>About my partner</span>
+								<li class="about-block">
+									<div class="characters-left">
+										<span>About my partner:</span>
 									</div>
-									<span class="characters-right">I am looking for i am looking for Quentin</span>
+									<span class="characters-right">I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin</span>
 								</li>
 							</ul>
 						</div>
-					    </div>
 					</div>
 				</div>
 			</div>
@@ -146,38 +152,13 @@
 
 	<div class="profile-preview-bottom">
 	  <div id="content" class="container clearfix">
-	    
-	    
-	    <div class="item">
-	    	<a href="#photo-modal" role="button" data-toggle="modal">
-	    		<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image02.jpg" alt="Photo gallery" />	
-	    	</a>
-	    </div>
-
-	    <div class="item">
-	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image03.jpg" alt="Photo gallery" />
-	    </div>
-
-	    <div class="item">
-	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image05.jpg" alt="Photo gallery" />
-	    </div>
-	    
-	    <div class="item">
-	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image06.jpg" alt="Photo gallery" />
-	    </div>
-	    
-	    <div class="item">
-	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image07.jpg" alt="Photo gallery" />
-	    </div>
-	    
-	    <div class="item">
-	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image04.jpg" alt="Photo gallery" />
-	    </div>
-	    
-	    <div class="item">
-	    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image08.jpg" alt="Photo gallery" />
-	    </div>
-	    
+		  <?php foreach ($photos as $value): ?>
+			  <div class="item">
+				  <a href="#photo-modal" role="button" data-toggle="modal">
+					  <img src="<?php echo base_url(); ?>/content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $value->photo_link; ?>_full.jpg" alt="Photo gallery" />
+				  </a>
+			  </div>
+		  <?php endforeach; ?>
 	  </div>
 	</div>
 </div>
