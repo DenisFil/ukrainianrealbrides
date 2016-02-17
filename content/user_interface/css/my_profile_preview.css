@@ -2,18 +2,18 @@
 	width: 100%;
 }
 .profile-preview {
-	max-width: 1039px;
+	max-width: 1046px;
 	margin: 0 auto;
 	overflow: hidden;
 /* 	padding: 0 4.9% 0 5%; */
-	padding-bottom: 25px;
+	padding-bottom: 21px;
 	border-bottom: 2px solid #b2b2b2;
 }
 .profile-preview-left {
-	width: 28.59%;
+	max-width: 28.4%;
 	float: left;
 	position: relative;
-	margin-right: 2%;
+	margin-right: 2.2%;
 	border-top: 3px solid #ff382d;
 }
 .add-to-favorites {
@@ -38,9 +38,9 @@
 }
 .profile-preview-center {
 	float: left;
-	width: 46.48%;
+	width: 46.8%;
     padding-top: 22px;
-    margin-right: 3.1%;
+    margin-right: 2.2%;
 }
 .profile-preview-name {
 	display: block;
@@ -75,7 +75,7 @@
 }
 .tab-body {
 	width: 100%;
-	padding: 27px 0 0 18px;
+	padding: 30px 0 0 18px;
 }
 .nav-tabs.nav-justified>li>a {
     border-bottom: 2px solid #a0a0a0;
@@ -123,24 +123,24 @@
 }
 .profile-preview-right {
 	float: left;
-	width: 19.6%;
+	width: 20.4%;
 }
 .profile-preview-right ul li {
-	margin-bottom: 12px;
+	margin-bottom: 11px;
 }
 .profile-preview-right ul li:last-child {
 	margin-bottom: 0;
 }
 .profile-preview-right ul li a {
 	border: 1px solid #000;
-	padding: 15px 0 17px 16px;
+	padding: 18px 0 18px 18px;
 	display: block;
 	border-radius: 10px;
 	overflow: hidden;
 }
 .profile-preview-right ul li a img {
 	float: left;
-	margin-right: 12px; 
+	margin-right: 19px; 
 }
 .profile-preview-right ul li a span{
 	float: left;
@@ -151,16 +151,16 @@
     padding-top: 13px;
 }
 .profile-preview-right ul li .preview-gift {
-    padding: 6px 0 15px 21px;
+    padding: 8px 0 17px 22px;
 }
 .profile-preview-right ul li .preview-gift img{
-	margin-right: 12px; 
+	margin-right: 19px; 
 }
 .profile-preview-right ul li .preview-gift span{
     padding-top: 18px;
 }
 .profile-preview-right ul li .preview-tour {
-    padding: 3px 0 7px 16px;
+    padding: 7px 0 7px 15px;
 }
 .profile-preview-right ul li .preview-tour img{
 	margin-right: 14px;
@@ -170,55 +170,75 @@
     padding-top: 0;
 }
 .profile-preview-right ul li .preview-chat {
-    padding: 12px 0 17px 18px;
+    padding: 17px 0 16px 19px;
 }
 .profile-preview-right ul li .preview-chat img{
-	margin-right: 12px;
+	margin-right: 15px;
 }
 .profile-preview-right ul li .preview-chat span{
     padding-top: 2px;
 }
 .profile-preview-right ul li .preview-video {
-    padding: 12px 0 16px 13px;
+    padding: 16px 0 16px 16px;
 }
 .profile-preview-right ul li .preview-video img{
-	margin-right: 7px;
+	margin-right: 19px;
 }
 .profile-preview-right ul li .preview-video span{
-    padding-top: 4px;
+    padding-top: 2px;
 }
 .profile-preview-bottom {
-	max-width: 1039px;
+	max-width: 1046px;
 	margin: 0 auto;
 	padding-top: 21px;
 /* 	padding: 0 4.9% 0 5%; */
 }
 
 
-.grid {
-  background: #DDD;
+/* =============================================================================
+   Chrome Frame Prompt
+   ========================================================================== */
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+/* ==|== primary styles =====================================================
+   Author: Luke Shumard (lukeshumard.com)
+   ========================================================================== */
+
+#content {
+	/*width: 980px;*/
+	/*width: 95%;*/
+	width: auto;
+	margin: 0 auto;
 }
 
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
+.item {
+	display: block;
+	float: left;
+	width: 333px;
+	margin: 0 15px 16px 0;
+	-webkit-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+	-moz-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+	-ms-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+	-o-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+	transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+}
+.item:nth-child(3n) {
+	margin-right: 0; 
+}
+.item img {
+	width: 333px;
+	height: auto;
+}
+/* .featured {
+	width: 620px;
 }
 
-/* ---- .grid-item ---- */
-
-.grid-sizer,
-.grid-item {
-  width: 33.333%;
-}
-
-.grid-item {
-  float: left;
-  
-}
-
-.grid-item img {
-  display: block;
-  max-width: 100%;
+.featured img {
+  width: 620px;
+  height: auto;
+} */
+.container {
+	padding: 0;
 }

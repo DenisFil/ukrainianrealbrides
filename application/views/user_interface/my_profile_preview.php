@@ -7,7 +7,7 @@
 		</div>
 		<div class="profile-preview-center">
 			<span class="profile-preview-name"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></span>
-			<span class="profile-preview-status"><?php echo $all_data[0][0]->country_name; ?> <em>Online</em></span>
+			<span class="profile-preview-status"><?php if ($all_data[0][0]->country_name) {echo $all_data[0][0]->country_name;} ?> <em>Online</em></span>
 
 			<!-- Profile info TABS -->
 			<div class="profile-prewiev-tabs">
@@ -78,6 +78,12 @@
 		<div class="profile-preview-right">
 			<ul>
 				<li>
+					<a class="preview-chat" href="#">
+						<img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="48" height="47" alt="Invite to chat" />
+						<span>Invite to chat</span>
+					</a>
+				</li>
+				<li>
 					<a href="#">
 						<img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="44" height="44" alt="Send letter" />
 						<span>Send Letter</span>
@@ -96,12 +102,6 @@
 					</a>
 				</li>
 				<li>
-					<a class="preview-chat" href="#">
-						<img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="48" height="47" alt="Invite to chat" />
-						<span>Invite to chat</span>
-					</a>
-				</li>
-				<li>
 					<a class="preview-video" href="#">
             			<img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" width="53" height="48" alt="Invite to video chat" />
 						<span>Invite to video chat</span>
@@ -112,6 +112,43 @@
 	</div>
 
 <div class="profile-preview-bottom">
+  <div id="content" class="container clearfix">
+    
+    
+    <div class="item">
+    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image02.jpg" alt="Photo gallery" />
+    </div>
+
+    <div class="item featured">
+    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image03.jpg" alt="Photo gallery" />
+    </div>
+
+    <div class="item">
+    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image05.jpg" alt="Photo gallery" />
+    </div>
+    
+    <div class="item featured">
+    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image06.jpg" alt="Photo gallery" />
+    </div>
+    
+    <div class="item">
+    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image07.jpg" alt="Photo gallery" />
+    </div>
+    
+    <div class="item">
+    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image04.jpg" alt="Photo gallery" />
+    </div>
+    
+    <div class="item">
+    	<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image08.jpg" alt="Photo gallery" />
+    </div>
+    
+  </div>
+</div>
+
+
+
+<!-- <div class="profile-preview-bottom">
 	<div class="grid">
   <div class="grid-sizer"></div>
   <div class="grid-item">
@@ -139,7 +176,7 @@
     <img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/image08.jpg" alt="Photo gallery" />
   </div>
 </div>
-</div>
+</div> -->
 
 
 
