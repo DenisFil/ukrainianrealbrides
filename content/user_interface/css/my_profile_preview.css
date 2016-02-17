@@ -240,7 +240,7 @@
 }
 
 /* =============================================================================
-   Chrome Frame Prompt
+   Masonry
    ========================================================================== */
 
 .chromeframe {
@@ -273,9 +273,9 @@
     transition: left .4s ease-in-out, top .4s ease-in-out .4s;
 }
 
-.item:nth-child(3n) {
+/* .item:nth-child(3n) {
     margin-right: 0;
-}
+} */
 
 .item img {
     width: 333px;
