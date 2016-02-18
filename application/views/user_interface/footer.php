@@ -72,7 +72,7 @@
     <script src="http://jcrop-cdn.tapmodo.com/v2.0.0-RC1/js/Jcrop.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery-ui.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/script.js"></script>
+    <!--<script type="text/javascript" src="<?php /*echo base_url(); */?>content/user_interface/js/script.js"></script>-->
 
     </body>
 </html>

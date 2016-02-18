@@ -338,6 +338,7 @@ $(document).ready(function () {
         var result;
         $('.form-error-message').each(function (index) {
             var newResult;
+            console.log($('.form-error-message').eq(index).text());
             if ($('.form-error-message').eq(index).text() != '') {
                 newResult = 0;
                 result = newResult;
@@ -377,11 +378,14 @@ $(document).ready(function () {
         $('.nav-tabs li').each(function (index) {
             var className = $(this).attr('class');
             if (className == 'active') {
-                $('.tab-body').eq(index + 1).children().next().next().removeClass('successfully-saved');
+                var selector = '.tab-body';
+                $(selector).eq(index).children().next().next().addClass('successfully-saved');
+                $(selector).eq(index + 1).children().next().next().removeClass('successfully-saved');
                 saveData(index);
             }
         });
         var errors = checkErrors();
+        console.log(errors);
         if (errors != 0) {
             setTimeout(function () {
                 tabChange('next');
