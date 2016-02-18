@@ -172,13 +172,22 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 .invite-friend a {
     font-family: 'latosemibold';
 	padding: 0px 20px 2px 23px;
-	color: rgba(0,0,0,0.5);
+	color: #cccccc;
 	font-size: 16px;
 	line-height: 18px;
-	border: 1px solid rgba(0,0,0,0.5);
+	border: 1px solid #cccccc;
 	border-radius: 10px;
 	margin-bottom: 14px;
 	text-decoration: none;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+}
+.invite-friend a:hover {
+	color: #fff;
+	background: #cccccc;
 }
 .profile-main ul .balance {
 	border:none;
@@ -189,8 +198,22 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 	border: 1px solid #fff;
 	color: #fff;
 }
+.balance a:hover {
+	color: #009993;
+	background: #fff;
+}
 .balance h4 {
 	color: #fff;
+}
+.profile-main ul .balance.your-gifts {
+	background: #009993 url("../img/personal-area/ico-gifts.png") no-repeat 97% 113%;
+	padding: 16px 0 18px 18px;
+}
+.profile-main ul .balance.your-gifts a {
+    padding: 0px 26px 1px 25px;
+}
+.profile-main ul .balance.your-gifts h4{
+	text-transform: none;
 }
 .profile-bottom {
 	width: 100%;
@@ -231,7 +254,8 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 }
 .profile-photos {
 	width: 100%;
-	overflow: hidden;
+	overflow-x: auto;
+	height: 128px;
 }
 .middle-photo {
 	display: block;

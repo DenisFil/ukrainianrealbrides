@@ -17,7 +17,7 @@
 	    	<div class="tab-body">
                 <h2>Profile information</h2>     
                 <p>All fields with <em> * </em> are required. Please, set your profile info in fields below.</p>
-                <span class="save-message-block">All changes are successfully saved.</span>
+                <span class="save-message-block"><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/saved.png" width="24" height="24" alt="Successfully saved message"> All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>First name <em>*</em></span>
@@ -90,6 +90,13 @@
 		                	</div>
 		                </div>	
 	                </div>
+	                <div class="profile-form-row">
+	                	<span>City</span>
+		                <div class="form-block">
+		                	<input class="profile-form form-control" type="text" placeholder="Your city" id="#">
+							<strong class="form-error-message"></strong>
+						</div>
+	                </div>
 				</form>
 				<div class="buttons-row">
 					<!-- <button type="button" class="btn">Previous</button> -->
@@ -103,7 +110,7 @@
 	    	<div class="tab-body">
                 <h2>Personal</h2>     
                 <p>Select your personal information</p>
-                <span class="save-message-block">All changes are successfully saved.</span>
+                <span class="save-message-block"><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/saved.png" width="24" height="24" alt="Successfully saved message">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Height</span>
@@ -217,7 +224,7 @@
 	    	<div class="tab-body">
                 <h2>Background</h2>     
                 <p>Select your additional information</p>
-                <span class="save-message-block">All changes are successfully saved.</span>
+                <span class="save-message-block"><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/saved.png" width="24" height="24" alt="Successfully saved message">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Education</span>
@@ -258,19 +265,19 @@
 							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
-	                <div class="profile-form-row">
-	                	<span>Hobbies</span>
-	                	<div class="form-block">
-	                		<input class="profile-form" type="text" placeholder="Your hobbies" id="hobbies">
-							<strong class="form-error-message"></strong>
-	                	</div>	
-	                </div>
 	                <div class="profile-form-row aboutme">
 	                	<span>About me</span>
 	                	<div class="form-block">
 	                		<textarea placeholder="Write something about you" class="profile-form"  cols="30" rows="5" id="about"></textarea>
 							<strong class="form-error-message"></strong>
 	                	</div>
+	                </div>
+	                <div class="profile-form-row aboutme">
+	                	<span>Hobbies</span>
+	                	<div class="form-block">
+	                		<textarea placeholder="Write something about your hobbies" class="profile-form"  cols="30" rows="5" id="hobbies"></textarea>
+							<strong class="form-error-message"></strong>
+	                	</div>	
 	                </div>
 				</form>
 				<div class="buttons-row">
@@ -286,7 +293,7 @@
 	    	<div class="tab-body">
                 <h2>Partner</h2>     
                 <p>In the fields below , select the preferences of your partner</p>
-                <span class="save-message-block">All changes are successfully saved.</span>
+                <span class="save-message-block"><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/saved.png" width="24" height="24" alt="Successfully saved message"> All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
 	                	<span>Age</span>
@@ -358,7 +365,7 @@
 	    	<div class="tab-body">
                 <h2>Security</h2>     
                 <p>Here you can change your account settings.</p>
-                <span class="save-message-block">All changes are successfully saved.</span>
+                <span class="save-message-block"><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/saved.png" width="24" height="24" alt="Successfully saved message">All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row separate">
 	                	<span>E-mail</span>
@@ -414,5 +421,4 @@
 	    </div>
 	  </div>
 	</div>
-	<!-- Services page END -->
 </div>

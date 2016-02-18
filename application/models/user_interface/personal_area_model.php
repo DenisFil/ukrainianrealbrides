@@ -27,17 +27,27 @@
         public function user_credits($id)
         {
             $query = $this->db->    select('credits')->
-                                    from('men_details')->
+                                    from('user_details')->
                                     where('user_id', $id)->
                                     get()->
                                     result();
             return $query[0]->credits;
         }
 
+        public function user_gifts($id)
+        {
+            $query = $this->db->    select()->
+                                    from('user_gifts')->
+                                    where('id_to', $id)->
+                                    get()->
+                                    result();
+            return count($query);
+        }
+
         public function get_avatar($id)
         {
             $query = $this->db->    select('avatar')->
-                                    from('men_details')->
+                                    from('user_details')->
                                     where('user_id', $id)->
                                     get()->
                                     result();
@@ -48,13 +58,13 @@
         {
             $id = $data['user_id'];
             unset($data['user_id']);
-            $query = $this->db->update('men_details', $data, array('user_id' => $id));
+            $query = $this->db->update('user_details', $data, array('user_id' => $id));
             return $query;
         }
 
         public function delete_avatar($id)
         {
-            $this->db->update('men_details', array('avatar' => ''), array('user_id' => $id));
+            $this->db->update('user_details', array('avatar' => ''), array('user_id' => $id));
         }
 
         public function get_photos($id)

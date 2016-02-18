@@ -10,7 +10,7 @@
                                             get()->
                                             result());
             array_push($query, $this->db->      select('birthday, country, height, weight, eyes_color, hair_color, children, religion, education, drinking, smoking, hobbies, about_me')->
-                                                from('men_details')->
+                                                from('user_details')->
                                                 where('user_id', $id)->
                                                 get()->
                                                 result());
@@ -71,9 +71,19 @@
                 'birthday' => $data['birthday'],
                 'country' => $country[0]->country_id
             );
+
+            if ($data['gender'] == 'Male')
+            {
+                $data['gender'] = 1;
+            }
+            else
+            {
+                $data['gender'] = 2;
+            }
+
             unset($data['birthday'], $data['country']);
             $query_profile = $this->db->update('user_profiles', $data, array('id' => $id));
-            $query_details = $this->db->update('men_details', $data_details, array('user_id' => $id));
+            $query_details = $this->db->update('user_details', $data_details, array('user_id' => $id));
 
             if ($query_profile === TRUE && $query_details === TRUE)
             {
@@ -87,13 +97,13 @@
 
         public function insert_personal_data($data, $id)
         {
-            $query = $this->db->update('men_details', $data, array('user_id' => $id));
+            $query = $this->db->update('user_details', $data, array('user_id' => $id));
             return $query;
         }
 
         public function insert_background_data($data, $id)
         {
-            $query = $this->db->update('men_details', $data, array('user_id' => $id));
+            $query = $this->db->update('user_details', $data, array('user_id' => $id));
             return $query;
         }
 

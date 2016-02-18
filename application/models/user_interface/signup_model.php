@@ -40,19 +40,19 @@
                                                 get()->
                                                 result();
                     $get_from_credits = $this->db-> select('credits')->
-                                                    from('men_details')->
+                                                    from('user_details')->
                                                     where('user_id', $from_user_id[0]->invite_from_user)->
                                                     get()->
                                                     result();
                     $credits = $get_from_credits[0]->credits + 100;
 
-                    $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 50));
-                    $this->db->update('men_details', array('credits' => $credits), array('user_id' => $from_user_id[0]->invite_from_user));
+                    $query_credits = $this->db->insert('user_details', array('user_id' => $user_id[0]->id, 'credits' => 50));
+                    $this->db->update('user_details', array('credits' => $credits), array('user_id' => $from_user_id[0]->invite_from_user));
                     $query_invite = $this->db->update('invites', array('user_id' => $user_id[0]->id), array('invite_code' => $invite));
                 }
                 else
                 {
-                    $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
+                    $query_credits = $this->db->insert('user_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
                 }
 
                 if ($query && $query_email && $query_credits === TRUE)
@@ -77,7 +77,7 @@
             $email_data['user_id'] = $user_id[0]->id;
             $email_data['email_status'] = 1;
             $query_email = $this->db->insert('confirm_email', $email_data);
-            $query_credits = $this->db->insert('men_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
+            $query_credits = $this->db->insert('user_details', array('user_id' => $user_id[0]->id, 'credits' => 0));
             $query_notifications = $this->db->insert('notifications', array('user_id' => $user_id[0]->id));
                 if ($query && $query_email && $query_credits === TRUE && $query_notifications == TRUE)
                 {

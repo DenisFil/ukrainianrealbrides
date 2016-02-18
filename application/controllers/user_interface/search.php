@@ -1,5 +1,5 @@
 <?php
-    class Profile_preview extends CI_Controller
+    class Search extends CI_Controller
     {
         public function index()
         {
@@ -11,16 +11,25 @@
 
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
                 $data['users_online'] = $this->personal_area_model->users_online(time());
-                $data['credits'] = $this->personal_area_model->user_credits($user_id);
-                $data['css'] = 'profile_preview';
+
+                $data['css'] = 'search';
                 $data['gender'] = '';
                 if ($this->session->userdata('gender'))
                 {
                     $data['gender'] = $this->session->userdata('gender');
                 }
 
+                if ($data['gender'] == 0 || $data['gender'] == 1)
+                {
+                    $data['credits'] = $this->personal_area_model->user_credits($user_id);
+                }
+                else
+                {
+                    $data['gifts'] = $this->personal_area_model->user_gifts($user_id);
+                }
+
                 $this->load->view('user_interface/header', $data);
-                $this->load->view('user_interface/profile_preview');
+                $this->load->view('user_interface/search');
                 $this->load->view('user_interface/footer');
             }
         }
