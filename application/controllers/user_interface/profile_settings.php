@@ -108,6 +108,15 @@
         public function insert_partner_data()
         {
             $data = $this->input->post();
+            if ($data['tours'] == 'Yes')
+            {
+                $data['tours'] = 1;
+            }
+            else
+            {
+                $data['tours'] = 0;
+            }
+
             $query = $this->profile_settings_model->insert_partner_data($data, $this->session->userdata('id'));
 
             if ($query === TRUE)

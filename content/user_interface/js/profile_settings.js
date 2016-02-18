@@ -120,10 +120,7 @@ $(document).ready(function () {
     }
 
 //Проверка введенных данных
-    $('#user-name, #user-country').blur(function () {
-        var field = '#' + $(this).attr('id');
-        required(field);
-    }).focus(function () {
+    $('#user-name, #user-country').focus(function () {
         var field = '#' + $(this).attr('id');
         onFocus(field);
     });
@@ -326,7 +323,8 @@ $(document).ready(function () {
                     partner_children: $('#partner-children').val(),
                     partner_drinking: $('#partner-drinking').val(),
                     partner_smoking: $('#partner-smoking').val(),
-                    about_my_partner: $('#about-my-partner').val()
+                    about_my_partner: $('#about-my-partner').val(),
+                    tours: $('#partner-romance-tours').val()
                 };
                 dataName = 'partner';
                 ajaxRequest(partnerData, dataName);
@@ -338,7 +336,6 @@ $(document).ready(function () {
         var result;
         $('.form-error-message').each(function (index) {
             var newResult;
-            console.log($('.form-error-message').eq(index).text());
             if ($('.form-error-message').eq(index).text() != '') {
                 newResult = 0;
                 result = newResult;
