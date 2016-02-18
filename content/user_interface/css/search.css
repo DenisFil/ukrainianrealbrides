@@ -3,7 +3,7 @@
 }
 .search {
 	max-width: 1170px;
-	margin: 0 auto;
+	margin: 0 auto 100px;
 }
 .sub-heading {
 	display: block;
@@ -20,7 +20,7 @@
 .search-id {
 	width: 12%;
 	float: left;
-	margin-left: 3%;
+	margin-right: 1.7%;
 }
 .search-title {
 	display: block;
@@ -52,7 +52,8 @@
 .search-id-field {
 	height: 50px;
 	width: 138px;
-	border: 1px solid #000;
+	border: 1px solid rgba(0,0,0,0.4);
+	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 	border-radius: 10px;
 	overflow: hidden;
 	padding: 0;
@@ -71,7 +72,7 @@
 	outline: none;
 }
 
-.search-content select {
+/* .search-content select {
     margin: 0;
     outline:none;
     display: inline-block;
@@ -82,7 +83,7 @@
    	background: #fff;
 	border: 1px solid rgba(0,0,0,0.4);
 	border-radius: 10px;
-	width: 300px;
+	width: 268px;
 	height: 50px;
 	font-style: normal;
     font-size: 20px;
@@ -91,8 +92,131 @@
 	padding: 0 21px;
 	color: rgba(0,0,0,0.5);
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
-}
+} */
 .search-age {
 	width: 27%;
 	float:left;
+	margin-right: 19px;
+}
+
+/* slider */
+.search-range:focus {
+	border: none;
+	background: none;
+	box-shadow: none;
+}
+.search-range:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.search-range {
+    padding-bottom: 36px;
+}
+.search-age.search-title {
+	margin-bottom: 18px;	
+}
+.left-range,
+.right-range {
+	color: #cdcdcd;
+    font-family: 'LatoRegular';
+    font-size: 17px;
+    line-height: 19px;
+    font-style: normal;
+}
+.left-range,
+.right-range {
+		float: left;
+		width: 28px;
+		text-align: left;
+}
+.right-range {
+		text-align: right;
+}
+.slider-wrap {
+	float: left;
+	width: 256px;
+	margin-top: 9px;
+}
+.value {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin: 0 0 0 -20px;
+    width: 40px;
+    text-align: center;
+    display: block;
+    font-weight: normal;
+    font-family: 'latosemibold';
+    font-size: 20px;
+    line-height: 22px;
+}
+.price-range-both.value {
+  width: 100px;
+
+}
+
+.price-range-both {
+  display: none; 
+      font-family: 'latosemibold';
+    font-size: 20px;
+    line-height: 22px;
+      top: 30px;
+  left: 50%;
+}
+.search-country {
+	width: 23%;
+	float: left;
+}
+
+
+/* search results */
+
+.search-results {
+	width: 1170px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.search-profile-block {
+	width: 31%;
+	margin-right: 3.41%;
+	float: left;
+	border: 1px solid #000;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.search-profile-block>img {
+	float: left;
+	margin-right: 7%;
+}
+.search-profile-info {
+	float: left;
+}
+.search-profile-block strong {
+	display: block;
+	padding-top: 22px;
+    font-family: 'BanderaProMedium';
+	font-size: 21px;
+	line-height: 23px;
+	font-weight: normal;
+	margin-bottom: 0;
+}
+.search-profile-block span {
+	display: block;
+	color: #a0a0a0;
+    font-family: 'LatoRegular';
+	font-size: 14px;
+	line-height: 16px;
+	margin-bottom: 0;
+}
+.search-profile-block em {
+	display: block;
+	font-style: normal;
+	color: #26a19c;
+    font-family: 'LatoRegular';
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 10px;
+    background: url("../img/search/online-ico.png") no-repeat 0 0;
+    margin-bottom: 0;
 }
