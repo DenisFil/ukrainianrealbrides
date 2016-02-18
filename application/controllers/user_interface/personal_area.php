@@ -86,7 +86,7 @@
                     );
 
                     //Загрузка библиотеки с конфигом в зависимости от размера исходного фото
-                    if ($data['upload_data']['image_width'] > $data['upload_data']['image_height'])
+                    if ($data['upload_data']['image_width'] >= $data['upload_data']['image_height'])
                     {
                         $this->load->library('image_lib', $config['image_lib']['width']);
                     }
@@ -261,7 +261,7 @@
                     );
 
                     //Загрузка библиотеки с конфигом в зависимости от размера исходного фото
-                    if ($data['upload_data']['image_width'] > $data['upload_data']['image_height'])
+                    if ($data['upload_data']['image_width'] >= $data['upload_data']['image_height'])
                     {
                         $this->load->library('image_lib', $config['image_lib']['width']);
                     }

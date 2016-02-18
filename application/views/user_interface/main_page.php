@@ -109,7 +109,7 @@
                 <mark>Invest your time to meet your Bride</mark>
             </div>
         </div>
-        <a class="content-bottom-button" href="#">Try the best with us</a>
+        <a class="content-bottom-button" href="#signUp-modal" role="button" data-toggle="modal">Try the best with us</a>
     </div>
     <div class="watch-us-holder">
         <h2>Watch Us</h2>

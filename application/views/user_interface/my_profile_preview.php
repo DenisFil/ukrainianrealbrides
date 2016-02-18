@@ -121,11 +121,9 @@
 									<div class="characters-left">
 										<span>About my partner:</span>
 									</div>
-									<span class="characters-right" id="about-my-partner">I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
-									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for QuentinI am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
-									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for QuentinI am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
-									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for QuentinI am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin
-									I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin I am looking for i am looking for Quentin</span>
+									<span class="characters-right" id="about-my-partner">
+										<?php echo $all_data[2][0]->about_my_partner; ?>
+									</span>
 									<button type="button" style="display:none;">Show more</button>
 								</li>
 							</ul>

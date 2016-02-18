@@ -9,7 +9,7 @@
                                             where('id', $id)->
                                             get()->
                                             result());
-            array_push($query, $this->db->      select('birthday, country, height, weight, eyes_color, hair_color, children, religion, education, drinking, smoking, hobbies, about_me')->
+            array_push($query, $this->db->      select('birthday, country, city, height, weight, eyes_color, hair_color, children, religion, education, drinking, smoking, hobbies, about_me')->
                                                 from('user_details')->
                                                 where('user_id', $id)->
                                                 get()->
@@ -69,7 +69,8 @@
                                     result();
             $data_details = array(
                 'birthday' => $data['birthday'],
-                'country' => $country[0]->country_id
+                'country' => $country[0]->country_id,
+                'city' => $data['city']
             );
 
             if ($data['gender'] == 'Male')
@@ -81,7 +82,7 @@
                 $data['gender'] = 2;
             }
 
-            unset($data['birthday'], $data['country']);
+            unset($data['birthday'], $data['country'], $data['city']);
             $query_profile = $this->db->update('user_profiles', $data, array('id' => $id));
             $query_details = $this->db->update('user_details', $data_details, array('user_id' => $id));
 

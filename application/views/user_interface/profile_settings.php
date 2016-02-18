@@ -93,7 +93,7 @@
 	                <div class="profile-form-row">
 	                	<span>City</span>
 		                <div class="form-block">
-		                	<input class="profile-form form-control" type="text" placeholder="Your city" id="#">
+		                	<input class="profile-form form-control" type="text" placeholder="Your city" id="user_city">
 							<strong class="form-error-message"></strong>
 						</div>
 	                </div>
@@ -269,14 +269,14 @@
 	                	<span>About me</span>
 	                	<div class="form-block">
 	                		<textarea placeholder="Write something about you" class="profile-form"  cols="30" rows="5" id="about"></textarea>
-							<strong class="form-error-message"></strong>
+							<strong class="form-error-message" style="opacity:0; ">You have used <sprong></sprong> of 1000 characters.</strong>
 	                	</div>
 	                </div>
 	                <div class="profile-form-row aboutme">
 	                	<span>Hobbies</span>
 	                	<div class="form-block">
 	                		<textarea placeholder="Write something about your hobbies" class="profile-form"  cols="30" rows="5" id="hobbies"></textarea>
-							<strong class="form-error-message"></strong>
+							<strong class="form-error-message" style="opacity:0; ">You have used <strong></strong> of 500 characters.</strong>
 	                	</div>	
 	                </div>
 				</form>
@@ -348,7 +348,7 @@
 	                	<span>About my partner</span>
 	                	<div class="form-block">
 	                		<textarea placeholder="Write something about the way you see your partner" class="profile-form"  cols="30" rows="5" id="about-my-partner"></textarea>
-							<strong class="form-error-message"></strong>
+							<strong class="form-error-message" style="opacity:0; ">You have used <sprong></sprong> of 1000 characters.</strong>
 	                	</div>
 	                </div>
 				</form>

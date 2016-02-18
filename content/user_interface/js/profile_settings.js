@@ -25,6 +25,7 @@ $(document).ready(function () {
                 $('#month').val(data[1][0].birthday[1]);
                 $('#year').val(data[1][0].birthday[2]);
             }
+            $('#user_city').val(data[1][0].city);
             $('#height').val(data[1][0].height);
             $('#weight').val(data[1][0].weight);
             $('#eyes').val(data[1][0].eyes_color);
@@ -275,7 +276,8 @@ $(document).ready(function () {
                     lastname: $('#user-lastname').val(),
                     gender: $('#gender').val(),
                     birthday: birthday.day + '.' + birthday.month + '.' + birthday.year,
-                    country: $('#user-country').val()
+                    country: $('#user-country').val(),
+                    city: $('#user_city').val()
                 };
 
                 var dataArray = [generalData.name, generalData.lastname, generalData.gender, generalData.birthday, generalData.country];
@@ -424,5 +426,32 @@ $(document).ready(function () {
                 }
             }
         });
+    });
+
+//Проверка количества введенных символов
+    $('#about, #about-my-partner, #hobbies').focus(function(){
+        var text = $(this).val();
+        $(this).next().children().text(text.length);
+        $(this).next().css('opacity', 1);
+    }).blur(function(){
+        $(this).next().css('opacity', 0);
+    });
+
+    function textLimited(length, field){
+        var text = $(field).val();
+        $(field).next().children().text(text.length);
+
+        if (text.length >= length){
+            $(field).val($(field).val().substr(0, length));
+        }
+    }
+
+    $(document).on('input', '#about, #about-my-partner, #hobbies', function(){
+        var field = '#' + $(this).attr('id');
+        if (field == '#hobbies'){
+            textLimited(500, field);
+        }else{
+            textLimited(1000, field);
+        }
     });
 });
