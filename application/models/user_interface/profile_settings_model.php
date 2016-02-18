@@ -62,6 +62,16 @@
 
         public function insert_general_data($data, $id)
         {
+            $query_partner = $this->db->    select()->
+                                            from('about_my_partner')->
+                                            where('user_id', $id)->
+                                            get()->
+                                            result();
+            if (empty($query_partner))
+            {
+                $this->db->insert('about_my_partner', array('user_id' => $id));
+            }
+
             $country = $this->db->  select('country_id')->
                                     from('countries')->
                                     where('country_name', $data['country'])->
