@@ -53,15 +53,29 @@
                     <h4>Invite Friend</h4>
                     <a href="#invite-modal" data-toggle="modal">Send</a>
                 </li>
+                <?php if ($gender == 0 || $gender == 1): ?>
                 <li class="balance">
                     <h4>Balance: <?php echo $credits; ?>cr</h4>
                     <a href="<?php echo base_url(); ?>/user_interface/payment">Refill</a>
                 </li>
+                <?php else: ?>
+                <li class="balance your-gifts">
+                    <h4>Your gifts: <?php echo $gifts; ?></h4>
+                    <a href="#">Get</a>
+                </li>
+                <?php endif; ?>
             </ul>
             <div class="profile-bottom">
                 <div class="profile-bottom-left">
                     <h4>My Photo</h4>
-                    <span class="photo-page-number"><?php echo $photo_count; ?>/7</span>
+                    <span class="photo-page-number">
+                        <?php echo $photo_count; ?>/
+                        <?php if ($gender == 0 || $gender == 1): ?>
+                            7
+                        <?php else: ?>
+                            15
+                        <?php endif; ?>
+                    </span>
                     <div class="profile-photos">
                         <div class="profile-photos-block">
                             <?php if($photo_count == 0): ?>
@@ -76,7 +90,12 @@
 
                             </span>
                             <?php else: ?>
-                                <?php if ($photo_count >= 1 && $photo_count <= 6): ?>
+                                <?php if ($gender == 0 || $gender == 1): ?>
+                                    <?php $max_photo_count = 6; ?>
+                                <?php else:  ?>
+                                    <?php $max_photo_count = 14; ?>
+                                <?php endif; ?>
+                                <?php if ($photo_count >= 1 && $photo_count <= $max_photo_count): ?>
                                     <span class="middle-photo">
                                         <a href="#photo-modal" role="button" data-toggle="modal" class="photo-view">
                                             <img src="<?php echo base_url(); ?>content/profiles/photo/<?php echo $this->session->userdata('id'); ?>/<?php echo $photos[0]->photo_link; ?>_preview.jpg" width="196" height="116" alt="Middle profile photo">

@@ -71,6 +71,16 @@
                 'birthday' => $data['birthday'],
                 'country' => $country[0]->country_id
             );
+
+            if ($data['gender'] == 'Male')
+            {
+                $data['gender'] = 1;
+            }
+            else
+            {
+                $data['gender'] = 2;
+            }
+
             unset($data['birthday'], $data['country']);
             $query_profile = $this->db->update('user_profiles', $data, array('id' => $id));
             $query_details = $this->db->update('user_details', $data_details, array('user_id' => $id));

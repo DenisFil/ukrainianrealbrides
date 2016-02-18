@@ -34,6 +34,16 @@
             return $query[0]->credits;
         }
 
+        public function user_gifts($id)
+        {
+            $query = $this->db->    select()->
+                                    from('user_gifts')->
+                                    where('id_to', $id)->
+                                    get()->
+                                    result();
+            return count($query);
+        }
+
         public function get_avatar($id)
         {
             $query = $this->db->    select('avatar')->

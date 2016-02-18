@@ -637,6 +637,12 @@ h4 {
 	background-position: -37px 0;
 	width: 13px;
 }
+.status-bar .credit-status.gift-status a span{
+	background: url("../img/personal-area/ico-gift-small.png") no-repeat 27% 0;
+    width: 13px;
+    height: 12px;
+    margin-top: 5px;
+}
 .status-bar .credit-status {
 	margin: 0;
 }
