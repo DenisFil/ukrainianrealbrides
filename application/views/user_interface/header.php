@@ -84,12 +84,20 @@
                                 </a>
                                 <em><?php echo $users_online; ?></em>
                             </li>
+                            <!-- 
                             <li class="credit-status">
                                 <a href="<?php echo base_url(); ?>/user_interface/payment">
                                     <span></span>
                                 </a>
                                 <em><?php echo $credits; ?></em>
                             </li>
+                             -->
+                            <li class="credit-status gift-status">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em><?php echo $credits; ?></em>
+                            </li> 
                         </ul>
                         <div class="profile-panel">
                             <a href="<?php echo base_url(); ?>/user_interface/profile_settings"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings"></a>
