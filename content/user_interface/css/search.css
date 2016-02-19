@@ -178,12 +178,15 @@
 	overflow: hidden;
 }
 .search-profile-block {
-	width: 31%;
-	margin-right: 3.41%;
+	width: 31.2%;
+	margin: 0 3.2% 64px 0;
 	float: left;
 	border: 1px solid #000;
 	border-radius: 10px;
 	overflow: hidden;
+}
+.search-profile-block:nth-child(3n) {
+	margin: 0 0 64px 0;
 }
 .search-profile-block>img {
 	float: left;
@@ -191,32 +194,95 @@
 }
 .search-profile-info {
 	float: left;
+	padding-top: 18px;
 }
-.search-profile-block strong {
+.search-profile-info>strong {
 	display: block;
-	padding-top: 22px;
     font-family: 'BanderaProMedium';
 	font-size: 21px;
 	line-height: 23px;
 	font-weight: normal;
 	margin-bottom: 0;
 }
-.search-profile-block span {
+.search-profile-info>strong>span {
+	font-size: 14px;
+	line-height: 16px;
+}
+.search-profile-info>span {
 	display: block;
 	color: #a0a0a0;
     font-family: 'LatoRegular';
 	font-size: 14px;
 	line-height: 16px;
-	margin-bottom: 0;
+	margin-bottom: 3px;
 }
-.search-profile-block em {
+.search-profile-info>em {
 	display: block;
 	font-style: normal;
 	color: #26a19c;
     font-family: 'LatoRegular';
     font-size: 14px;
     line-height: 16px;
-    padding-left: 10px;
-    background: url("../img/search/online-ico.png") no-repeat 0 0;
-    margin-bottom: 0;
+    padding-left: 13px;
+    background: url("../img/search/online-ico.png") no-repeat 1px 4px;
+    margin-bottom: 16px;
+}
+.search-profile-info ul li {
+	display: block;
+	width: 91%;
+	margin-bottom: 9px;
+}
+.search-profile-info ul li:last-child {
+	margin-bottom: 19px;
+}
+.search-profile-info ul li a{
+	display: block;
+	border: 1px solid #000;
+	padding: 7px 0 7px 10px;
+	overflow: hidden;
+	border-radius: 10px;
+}
+.search-profile-info ul li a img{
+	display: block;
+	float: left;
+	margin-right: 8px;
+}
+.search-profile-info ul li a span{
+	display: block;
+	float: left;
+	width: 60%;
+	font-family: 'BanderaProMedium';
+	font-size: 11px;
+	line-height: 13px;
+	margin-top: 6px;
+}
+.search-profile-info ul .search-chat-invite a{
+    padding: 4px 0 7px 12px;
+}
+.search-profile-info ul .search-chat-invite a img{
+	margin-right: 8px;
+}
+.search-profile-info ul .search-chat-invite a span{
+	margin-top: 0;
+}
+.search-profile-info ul .search-send-gift a{
+    padding: 2px 0 6px 14px;
+}
+.search-profile-info ul .search-send-gift a img{
+	margin-right: 5px;
+}
+.search-profile-info ul .search-send-gift a span{
+	margin-top: 8px;
+}
+.view-profile-button {
+	width: 91%;
+    font-family: 'LatoRegular';
+    font-size: 14px;
+    line-height: 16px;
+    padding: 7px 0;
+    display: block;
+    background: #ff382d;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
 }
