@@ -1,6 +1,14 @@
 $(document).ready(function(){
 	//$('select').customSelect();
-	$('select:not(".row1 select")').customSelect();
+	setInterval(function(){
+		$('.nav-tabs li').each(function(){
+			var className = $(this).attr('class');
+			if (className == 'active'){
+				$('select:not(".header-left")').customSelect();
+			}
+		});
+	}, 10);
+	
 	//$('select.custom-select').customSelect();
 	$('input:radio').customRadio();
 	$('input:checkbox').customCheckbox();
@@ -103,6 +111,7 @@ return this.each(function() {
 }
 
 // custom radios module
+/*
 jQuery.fn.customRadio = function(_options){
 	var _options = jQuery.extend({
 		radioStructure: '<div></div>',
@@ -175,3 +184,4 @@ jQuery.fn.customCheckbox = function(_options){
 		else _this.get(0)._replaced.removeClass().addClass(_options.checkboxDefault);
 	}
 }
+*/

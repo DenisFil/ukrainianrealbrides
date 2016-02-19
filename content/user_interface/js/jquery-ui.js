@@ -4528,7 +4528,7 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
 // // slider call
 function fromTo(){
 	var age = {
-		from: 25,
+		from: 23,
 		to: 40
 	};
 
@@ -4549,25 +4549,15 @@ var age = fromTo();
 
 $('#slider').slider({
       range: true,
-      min: 18,
-      max: 90,
+      min: 21,
+      max: 50,
       values: [age.from, age.to],
       slide: function(event, ui) {
 
             $('.ui-slider-handle:eq(0) .price-range-min').html('' + ui.values[0]);
             $('.ui-slider-handle:eq(1) .price-range-max').html('' + ui.values[1]);
-            $('.price-range-both').html('<i>' + ui.values[0] + ' - </i>' + ui.values[1]);
 
-            //
-
-            if (ui.values[0] == ui.values[1]) {
-                  $('.price-range-both i').css('display', 'none');
-            } else {
-                  $('.price-range-both i').css('display', 'inline');
-            }
-
-            //
-
+			/*
             if (collision($('.price-range-min'), $('.price-range-max')) == true) {
                   $('.price-range-min, .price-range-max').css('opacity', '0');
                   $('.price-range-both').css('display', 'block');
@@ -4575,6 +4565,7 @@ $('#slider').slider({
                   $('.price-range-min, .price-range-max').css('opacity', '1');
                   $('.price-range-both').css('display', 'none');
             }
+            */
 
       }
 });
