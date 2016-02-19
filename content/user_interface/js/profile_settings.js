@@ -21,9 +21,16 @@ $(document).ready(function () {
                 $('#user-country').val(data[1][0].country);
             }
             if (data[1][0].birthday != 0) {
-                $('#day').val(data[1][0].birthday[0]);
+                /*$('#day').val(data[1][0].birthday[0]);
                 $('#month').val(data[1][0].birthday[1]);
-                $('#year').val(data[1][0].birthday[2]);
+                $('#year').val(data[1][0].birthday[2]);*/
+                $('#day option').each(function () {
+                    var day = $(this).text();
+                    console.log(day);
+                    if (day == data[1][0].birthday[0]){
+                        $(this).removeAttr('selected');
+                    }
+                });
             }
             $('#user_city').val(data[1][0].city);
             $('#height').val(data[1][0].height);
@@ -43,13 +50,13 @@ $(document).ready(function () {
                 $('#partner-smoking').val(data[2][0].partner_smoking);
                 $('#about-my-partner').val(data[2][0].about_my_partner);
             }
-            if (data[3][0].news == 0){
+            if (data[3][0].news == 0) {
                 $('#news-checkbox').removeAttr('checked');
             }
-            if (data[3][0].messages == 0){
+            if (data[3][0].messages == 0) {
                 $('#messages-checkbox').removeAttr('checked');
             }
-            if (data[3][0].promo == 0){
+            if (data[3][0].promo == 0) {
                 $('#promo-checkbox').removeAttr('checked');
             }
 
@@ -214,7 +221,7 @@ $(document).ready(function () {
     function notificationsChange() {
         var notifications = [];
         $('.squaredThree input').each(function (index) {
-            if ($(this).prop('checked')){
+            if ($(this).prop('checked')) {
                 notifications.push(index);
             }
         });
@@ -288,6 +295,9 @@ $(document).ready(function () {
                 var errors = checkErrors();
                 if (errors != 0) {
                     ajaxRequest(generalData, dataName);
+                    return true;
+                } else {
+                    return false;
                 }
                 break;
             case 1:
@@ -332,19 +342,6 @@ $(document).ready(function () {
         }
     }
 
-    function checkErrors() {
-        var result;
-        $('.form-error-message').each(function (index) {
-            var newResult;
-            if ($('.form-error-message').eq(index).text() != '') {
-                newResult = 0;
-                result = newResult;
-                return false;
-            }
-        });
-        return result;
-    }
-
     function tabChange(direction) {
         $('.nav-tabs li').each(function (index) {
             var className = $(this).attr('class');
@@ -375,20 +372,34 @@ $(document).ready(function () {
         $('.nav-tabs li').each(function (index) {
             var className = $(this).attr('class');
             if (className == 'active') {
-                var selector = '.tab-body';
-                $(selector).eq(index).children().next().next().addClass('successfully-saved');
-                $(selector).eq(index + 1).children().next().next().removeClass('successfully-saved');
-                saveData(index);
+                var save = saveData(index);
+                console.log(save);
+                if (save === true) {
+                    var selector = '.tab-body';
+                    $(selector).eq(index).children().next().next().addClass('successfully-saved');
+                    $(selector).eq(index + 1).children().next().next().removeClass('successfully-saved');
+
+                    setTimeout(function () {
+                        tabChange('next');
+                    }, 2000);
+                }
+                return false;
             }
         });
-        var errors = checkErrors();
-        console.log(errors);
-        if (errors != 0) {
-            setTimeout(function () {
-                tabChange('next');
-            }, 2000);
-        }
     });
+
+    function checkErrors() {
+        var result;
+        $('.form-error-message').each(function (index) {
+            var newResult;
+            if ($('.form-error-message').eq(index).text() != '') {
+                newResult = 0;
+                result = newResult;
+                return false;
+            }
+        });
+        return result;
+    }
 
     $('.prev').click(function () {
         $('.nav-tabs li').each(function (index) {
@@ -404,7 +415,7 @@ $(document).ready(function () {
         }, 2000);
     });
 
-    $('#save-notifications').click(function() {
+    $('#save-notifications').click(function () {
         var notifications = notificationsChange();
         notifications = {
             0: notifications[0],
@@ -416,8 +427,8 @@ $(document).ready(function () {
             data: notifications,
             url: baseUrl + 'user_interface/profile_settings/notifications',
             dataType: 'json',
-            success: function(data){
-                if (data.result == 1){
+            success: function (data) {
+                if (data.result == 1) {
                     $('.nav-tabs li').each(function (index) {
                         var className = $(this).attr('class');
                         if (className == 'active') {
@@ -430,28 +441,28 @@ $(document).ready(function () {
     });
 
 //Проверка количества введенных символов
-    $('#about, #about-my-partner, #hobbies').focus(function(){
+    $('#about, #about-my-partner, #hobbies').focus(function () {
         var text = $(this).val();
         $(this).next().children().text(text.length);
         $(this).next().css('opacity', 1);
-    }).blur(function(){
+    }).blur(function () {
         $(this).next().css('opacity', 0);
     });
 
-    function textLimited(length, field){
+    function textLimited(length, field) {
         var text = $(field).val();
         $(field).next().children().text(text.length);
 
-        if (text.length >= length){
+        if (text.length >= length) {
             $(field).val($(field).val().substr(0, length));
         }
     }
 
-    $(document).on('input', '#about, #about-my-partner, #hobbies', function(){
+    $(document).on('input', '#about, #about-my-partner, #hobbies', function () {
         var field = '#' + $(this).attr('id');
-        if (field == '#hobbies'){
+        if (field == '#hobbies') {
             textLimited(500, field);
-        }else{
+        } else {
             textLimited(1000, field);
         }
     });
