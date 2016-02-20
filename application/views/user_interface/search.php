@@ -26,12 +26,29 @@
 			</div>
 			<div class="search-country">
 				<span class="search-title">Country</span>
-				<select >
-					<option selected value="">Ukraine</option>
-					<option value="">Ukraine</option>
-					<option value="">Ukraine</option>
-					<option value="">Ukraine</option>
-				</select>
+		        <input class="profile-form form-control" type="text" placeholder="Your location" id="user-country">
+				<strong class="form-error-message"></strong>
+				<!-- 
+		        <div class="location-drop">
+		            <?php foreach ($countries as $value): ?>
+						<span class="country"><?php echo $value->country_name; ?></span>
+						<?php endforeach; ?>
+		        </div>
+		         -->
+			</div>
+			<div class="search-status">
+				<span class="search-title">Status</span>
+					<label class="switch-light switch-candy" onclick="">
+					  <input type="checkbox">
+					  <span>
+					    <span>All</span>
+					    <span>Online</span>
+					    <a></a>
+					  </span>
+					</label>			
+
+
+
 			</div>
 		</form>
 	</div>
