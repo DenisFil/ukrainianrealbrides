@@ -438,7 +438,7 @@
     border: 1px solid #333;
     /* border-radius: 3px; */
     /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45); */
-    background-color: #cbcbcb;
+    background-color: #cbcbcb;}
     /* background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), transparent); */
     /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent); */
   .switch-candy-blue a {
@@ -575,7 +575,7 @@
     top: 0.1875em;
     width: 3.25em;
     height: 1.5em;
-    min-height: auto;
+    height: auto;
     border-radius: 1em;
     background: rgba(0, 0, 0, 0.26); }
   .switch-material.switch-light span span {

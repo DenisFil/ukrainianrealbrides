@@ -59,6 +59,7 @@
                         $first_result[$key]->birthday = floor(($today_days - $birthday_days)/365);
                     }
                 }
+            shuffle($first_result);
             echo json_encode($first_result);
         }
     }
