@@ -5,23 +5,19 @@
 		<form class="search-content" action="#">
 			<div class="search-id">
 				<span class="search-title">ID</span>
-				<div class="search-id-field">
-	                <input class="id-form" type="text" placeholder="023" id="#" >
-	                <span>
-	                	<a href="#">
-	                		<img src="<?php echo base_url(); ?>content/user_interface/img/search/search-id.png" width="22" height="22" alt="Question icon">
-	                	</a>
-	                </span>
+				<div class="search-id-holder">
+		            <input class="search-form" type="text" placeholder="023" id="#" >
+					<button type="button" class="search-id-button"></button>
 				</div>
 			</div>
 			<div class="search-age">
 				<span class="search-title">Age</span>
 	            <div class="search-range">
-	                <em class="left-range">21</em>
+	                <em class="left-range">18</em>
 	               	<div class="slider-wrap">
 	                	<div id="slider"></div>
 	                </div>
-	                <em class="right-range">50</em>
+	                <em class="right-range">90</em>
 				</div>	
 			</div>
 			<div class="search-country">
@@ -40,19 +36,132 @@
 				<span class="search-title">Status</span>
 					<label class="switch-light switch-candy" onclick="">
 					  <input type="checkbox">
-					  <span>
-					    <span>All</span>
-					    <span>Online</span>
+					  <span class="switch-holder">
+					    <span class="left-switch">All</span>
+					    <span class="right-switch">Online</span>
 					    <a></a>
 					  </span>
 					</label>			
-
-
-
 			</div>
+			<button type="button" class="view-profile-button search-top">Search</button>
 		</form>
 	</div>
 	<div class="search-results">
-		
+		<div class="search-profile-block">
+			<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/preview-avatar.jpg" alt="Profile photo" width="196" height="298" >
+			<div class="search-profile-info">
+				<strong>Anastasia, 25</strong>
+				<span>Ukraine, Kharkiv</span>
+				<em>Online</em>
+				<ul>
+					<li>
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" />
+							<span>Send Letter</span>
+						</a>
+					</li>
+					<li class="search-chat-invite">
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" />
+							<span>Invite to chat</span>
+						</a>
+					</li>
+					<li class="search-send-gift">
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" />
+							<span>Send Gift</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="view-profile-button">View Profile</a>
+			</div>
+		</div>
+		<div class="search-profile-block">
+			<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/preview-avatar.jpg" alt="Profile photo" width="196" height="298" >
+			<div class="search-profile-info">
+				<strong>Anastasia, 25</strong>
+				<span>Ukraine, Kharkiv</span>
+				<em>Online</em>
+				<ul>
+					<li>
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" />
+							<span>Send Letter</span>
+						</a>
+					</li>
+					<li class="search-chat-invite">
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" />
+							<span>Invite to chat</span>
+						</a>
+					</li>
+					<li class="search-send-gift">
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" />
+							<span>Send Gift</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="view-profile-button">View Profile</a>
+			</div>
+		</div>
+		<div class="search-profile-block">
+			<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/preview-avatar.jpg" alt="Profile photo" width="196" height="298" >
+			<div class="search-profile-info">
+				<strong>Anastasia, 25</strong>
+				<span>Ukraine, Kharkiv</span>
+				<em>Online</em>
+				<ul>
+					<li>
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" />
+							<span>Send Letter</span>
+						</a>
+					</li>
+					<li class="search-chat-invite">
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" />
+							<span>Invite to chat</span>
+						</a>
+					</li>
+					<li class="search-send-gift">
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" />
+							<span>Send Gift</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="view-profile-button">View Profile</a>
+			</div>
+		</div>
+		<div class="search-profile-block">
+			<img src="<?php echo base_url(); ?>content/user_interface/img/profile-preview/preview-avatar.jpg" alt="Profile photo" width="196" height="298" >
+			<div class="search-profile-info">
+				<strong>Anastasia, 25</strong>
+				<span>Ukraine, Kharkiv</span>
+				<em>Online</em>
+				<ul>
+					<li>
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" />
+							<span>Send Letter</span>
+						</a>
+					</li>
+					<li class="search-chat-invite">
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" />
+							<span>Invite to chat</span>
+						</a>
+					</li>
+					<li class="search-send-gift">
+						<a href="#">
+            				<img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" />
+							<span>Send Gift</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="view-profile-button">View Profile</a>
+			</div>
+		</div>
 	</div>
 </div>

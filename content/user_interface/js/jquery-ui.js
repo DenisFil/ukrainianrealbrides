@@ -4528,8 +4528,8 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
 // // slider call
 function fromTo(){
 	var age = {
-		from: 23,
-		to: 40
+		from: 21,
+		to: 45
 	};
 
 	$.ajax({
@@ -4549,8 +4549,8 @@ var age = fromTo();
 
 $('#slider').slider({
       range: true,
-      min: 21,
-      max: 50,
+      min: 18,
+      max: 90,
       values: [age.from, age.to],
       slide: function(event, ui) {
 

@@ -17,8 +17,12 @@
 }
 
 .search-content {
-    width: 100%;
-    overflow: hidden;
+	width: 100%;
+}
+.search-content:after {
+	content: "";
+	display: block;
+	clear: both;
 }
 
 .search-id {
@@ -35,51 +39,46 @@
     line-height: 27px;
     margin-bottom: 18px;
 }
-
-.search-form,
-.search-id-field {
-    background: #fff;
-    padding: 0 22px;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    outline: none;
+.search-form {
+	background: #fff;
+	padding: 0 22px;
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	border: 1px solid rgba(0,0,0,0.4);
+	outline: none;
     font-family: 'LatoRegular';
     font-size: 20px;
     line-height: 22px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
 }
 
-.search-form:focus,
-.search-id-field:focus {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.3) inset;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+.search-form:focus
+.search-id .search-form:focus {
+	box-shadow: 0 0 3px rgba(0,0,0,0.3), 0 0 2px rgba(0,0,0,0.3) inset;
+	border: 1px solid rgba(0,0,0,0.3);
 }
-
-.search-id-field {
-    height: 50px;
-    width: 138px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 0;
+.search-id .search-form {
+	position: relative;
+	height: 50px;
+	width: 138px;
+	border: 1px solid rgba(0,0,0,0.4);
+	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
+	border-radius: 10px;
+	overflow: hidden;
+	padding-left: 22px;
 }
-
-.search-id-field span {
-    float: right;
-    width: 33px;
-    padding-top: 12px;
+.search-id-holder {
+	position: relative;
 }
-
-.id-form {
-    width: 103px;
-    height: 50px;
-    padding-left: 22px;
-    float: left;
-    border: none;
-    outline: none;
+.search-id .search-id-button {
+	position:absolute;
+	display: block;
+	right: 13px;
+    top: 12px;
+	width: 22px;
+	height: 22px;
+	background: url("../img/search/search-id.png") no-repeat 0 0;
 }
 
 /* .search-content select {
@@ -185,21 +184,20 @@
 .search-country {
 	width: 23%;
 	float: left;
-	margin-right: 3%;
+	margin-right: 2%;
 }
 .form-control {
 	width: 100%;
 }
 .search-status {
 	float: left;
-	width: 16%;
+	width: 15.4%;
+    margin-right: 1.89%;
 }
-
-
-
 .switch-toggle a,
 .switch-light span span {
   display: none; }
+
 
 /* We can't test for a specific feature,
  * so we only target browsers with support for media queries.
@@ -210,6 +208,10 @@
   .switch-light {
     position: relative;
     display: block;
+    font-family: 'LatoRegular';
+    font-size: 22px;
+    line-height: 24px;
+    text-shadow: none;
     /* simulate default browser focus outlines on the switch,
    * when the inputs are focused.
    */ }
@@ -253,7 +255,7 @@
     opacity: 0;
     z-index: 3; }
   .switch-light input:checked ~ span a {
-    right: 0%; }
+    right: 0%; background: #cbcbcb}
   /* inherit from label
  */
   .switch-light strong {
@@ -273,7 +275,7 @@
     z-index: 2;
     display: block;
     float: left;
-    width: 50%;
+/*     width: 50%; */
     text-align: center;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -281,13 +283,16 @@
     user-select: none; }
   .switch-light a {
     position: absolute;
-    right: 50%;
+    right: 108px;
     top: 0;
     z-index: 1;
     display: block;
-    width: 50%;
+    width: 108px;
     height: 100%;
-    padding: 0; }
+    padding: 0;
+    background: #cbcbcb;
+    box-shadow: 5px 0 8px -5px #a8a8a8 inset, -5px 0 8px -5px #a8a8a8 inset; 
+}
   /* Radio Switch
  */
   .switch-toggle {
@@ -330,9 +335,7 @@
       vertical-align: middle; }
     .switch-toggle input:focus ~ span a,
     .switch-toggle input:focus + label {
-      outline-width: 2px;
-      outline-style: solid;
-      outline-color: Highlight;
+
       /* Chrome/Opera gets its native focus styles.
      */ } }
     @media only screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -421,21 +424,24 @@
     background-color: #fff;
     border-radius: 10px;
     /* box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2); */
-    border: 1px solid #000; }
+    border: 1px solid #000; 
+	height: 50px;}
   .switch-light.switch-candy span span,
   .switch-light.switch-candy input:checked ~ span span:first-child,
   .switch-toggle.switch-candy label {
-    color: #fff;
-    font-weight: bold;
+	color: #e83c32 ;
+    font-weight: normal;
     text-align: center;
-    text-shadow: 1px 1px 1px #191b1e; }
+	height: 100%;
+}
   .switch-light.switch-candy input ~ span span:first-child,
   .switch-light.switch-candy input:checked ~ span span:nth-child(2),
   .switch-candy input:checked + label {
-    color: #333;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); }
+    color: #a0a0a0;
+    text-shadow: none }
   .switch-candy a {
-    border: 1px solid #333;
+    border: none;
+    outline: none !important;
     /* border-radius: 3px; */
     /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45); */
     background-color: #cbcbcb;}
@@ -448,7 +454,7 @@
   /* iOS Theme
 */
   .switch-ios.switch-light span span {
-    color: #888b92; }
+    color: #888b92;  }
   .switch-ios.switch-light a {
     left: 0;
     top: 0;
@@ -735,10 +741,32 @@
     -webkit-transform: translate3d(0, 0, 0); } }
 
 /*# sourceMappingURL=toggle-switch.css.map */
-
-
-
-
+	.switch-holder {
+		width: 180px;
+	}
+	.left-switch {
+		width: 70px;
+	}
+	.right-switch {
+		width: 108px;
+	}
+.view-profile-button.search-top {
+	margin-top: 45px;
+	width: 15.39%;
+    box-shadow: 0px 1px 4px #7a7a7a;
+    font-family: 'LatoRegular';
+    font-size: 25px;
+    line-height: 27px;
+    padding: 11px 0 12px 0;
+    display: block;
+    background: #ff382d;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    float: left;
+    border: none;
+    outline: none;
+}
 
 /* search results */
 
@@ -774,20 +802,15 @@
 .search-profile-info > strong {
     display: block;
     font-family: 'BanderaProMedium';
-    font-size: 21px;
-    line-height: 23px;
-    font-weight: normal;
-    margin-bottom: 0;
+	font-size: 21px;
+	line-height: 23px;
+	font-weight: normal;
+	margin-bottom: 0;
 }
 
-.search-profile-info > strong > span {
-    font-size: 14px;
-    line-height: 16px;
-}
-
-.search-profile-info > span {
-    display: block;
-    color: #a0a0a0;
+.search-profile-info>span {
+	display: block;
+	color: #a0a0a0;
     font-family: 'LatoRegular';
     font-size: 14px;
     line-height: 16px;
