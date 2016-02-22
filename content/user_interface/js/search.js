@@ -94,14 +94,47 @@ $(document).ready(function () {
 
     $('.switch-holder').click(function() { switcher(); });
 
+    function onlineStatus() {
+        var newIndex;
+        $('.switch-holder span').each(function (index) {
+            var className = $(this).attr('class').split(' ');
+            if (className.length > 1){
+                newIndex = index;
+            }
+        });
+        return newIndex;
+    }
+
     $('#search-top').click(function () {
         var data = {
             id: $('#id-top').val(),
             from: $('.price-range-min').text(),
             to: $('.price-range-max').text(),
             country: $('#country-top').val(),
-            online: $('#online-top').text()
+            online: onlineStatus()
         };
-        console.log(data);
+
+        $.ajax({
+            type: 'post',
+            data: data,
+            url: baseUrl + 'user_interface/search/search',
+            dataType: 'json',
+            success: function(data){
+                console.log(data);
+                $('.search-results').empty();
+
+                for (var i = 0; i < data.length; i++){
+                    var html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + data[i].id + '/' + data[i].avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + data[i].name + ', ' + '<span>' + data[i].birthday + '</span></strong><span>' + data[i].country_name + ', ' + data[i].city + '</span><em>Online</em><ul><li><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="#" class="view-profile-button">View Profile</a></div></div>';
+
+                    $('.search-results').append(html);
+                }
+
+                /*$.each(data, function (value) {
+                    var html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + value.name + ', ' + '<span>' + value.birthday + '</span></strong><span>' + value.country_name + ', ' + value.city + '</span><em>Online</em><ul><li><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="#" class="view-profile-button">View Profile</a></div></div>';
+
+                    $('.search-results').append(html);
+                });*/
+            }
+        });
     });
 });
