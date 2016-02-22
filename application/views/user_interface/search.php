@@ -15,7 +15,7 @@
 	            <div class="search-range">
 	                <em class="left-range">18</em>
 	               	<div class="slider-wrap">
-	                	<div id="search-age-slider"></div>
+	                	<div id="search"></div>
 	                </div>
 	                <em class="right-range">90</em>
 				</div>	
@@ -62,13 +62,14 @@
 		            <div class="search-range">
 		                <em class="left-range">18</em>
 		               	<div class="slider-wrap">
-		                	<div id="slider"></div>
+		                	<div id="slider1"></div>
 		                </div>
 		                <em class="right-range">90</em>
 					</div>	
 				</div>
 				<div class="search-country">
 					<span class="search-title">Country</span>
+					<div class="search-country-block">
 				        <input class="profile-form form-control location-arrow" type="text" placeholder="Select country" id="country">
 						<strong class="form-error-message"></strong>
 				        <div class="location-drop">
@@ -76,6 +77,7 @@
 								<span class="country"><?php echo $value->country_name; ?></span>
 							<?php endforeach; ?>
 				        </div>
+				    </div>
 				</div>
 				<div class="search-status">
 					<span class="search-title">Status</span>
@@ -92,38 +94,80 @@
 			<div class="search-form-row">
 				<div class="search-first-column">
 					<span class="search-title">Name</span>
-			        <input class="profile-form form-control" type="text" placeholder="Name" id="country">
+			        <input class="profile-form form-control" type="text" placeholder="Name" id="#">
 				</div>
 				<div class="search-age">
 					<span class="search-title">Weight</span>
 		            <div class="search-range">
 		                <em class="left-range">18</em>
 		               	<div class="slider-wrap">
-		                	<div id="slider"></div>
+		                	<div id="slider1"></div>
 		                </div>
 		                <em class="right-range">90</em>
 					</div>	
 				</div>
 				<div class="search-country">
 					<span class="search-title">City</span>
-				        <input class="profile-form form-control location-arrow" type="text" placeholder="Select country" id="country">
-						<strong class="form-error-message"></strong>
-				        <div class="location-drop">
-				            <?php foreach ($countries as $value): ?>
-								<span class="country"><?php echo $value->country_name; ?></span>
-							<?php endforeach; ?>
-				        </div>
+			        <input class="profile-form form-control" type="text" placeholder="City" id="#">
 				</div>
 				<div class="search-status">
-					<span class="search-title">Status</span>
-					<label class="switch-light switch-candy" onclick="">
-						 <input type="checkbox">
-						 <span class="switch-holder">
-							 <span class="left-switch">All</span>
-							 <span class="right-switch">Online</span>
-							 <a></a>
-						 </span>
-					</label>			
+					<span class="search-title">Eyes color</span>
+		                <label>
+							<select id="eyes">
+								<option selected></option>
+							    <?php $eyes = array('Amber', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'); ?>
+								<?php foreach ($eyes as $value): ?>
+								<option><?php echo $value; ?></option>
+								<?php endforeach; ?>
+							</select>
+						</label>		
+				</div>
+			</div>
+			<div class="search-form-row">
+				<div class="search-first-column">
+					<span class="search-title">Children</span>
+		                	<label>
+							    <select id="children">
+							        <option selected>None</option>
+									<?php for ($i = 1; $i <= 5; $i++): ?>
+										<option><?php echo $i; ?></option>
+									<?php endfor; ?>
+							    </select>
+							</label>
+				</div>
+				<div class="search-age">
+					<span class="search-title">Height</span>
+		            <div class="search-range">
+		                <em class="left-range">-</em>
+		               	<div class="slider-wrap">
+		                	<div id="slider1"></div>
+		                </div>
+		                <em class="right-range">+</em>
+					</div>	
+				</div>
+				<div class="search-country">
+					<span class="search-title">Religion</span>
+		                	<label>
+							    <select id="religion">
+							        <option selected></option>
+									<?php $religion = array('Christian', 'Buddhist', 'Catholik', 'Jewish', 'Muslin', 'Hindu', 'Atheist', 'Other'); ?>
+									<?php foreach ($religion as $value): ?>
+										<option><?php echo $value; ?></option>
+									<?php endforeach; ?>
+							    </select>
+							</label>
+				</div>
+				<div class="search-status">
+					<span class="search-title">Eyes color</span>
+		                <label>
+							<select id="eyes">
+								<option selected></option>
+							    <?php $eyes = array('Amber', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'); ?>
+								<?php foreach ($eyes as $value): ?>
+								<option><?php echo $value; ?></option>
+								<?php endforeach; ?>
+							</select>
+						</label>		
 				</div>
 			</div>
 		</form>

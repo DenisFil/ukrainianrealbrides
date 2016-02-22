@@ -1213,9 +1213,10 @@ label {
 	margin: 0;
 }
 .search select {
-	width: 268px;
+	width: 100%;
 }
 .selectArea {
+	width: 100%;
 	position: relative;
 	height: 50px;
     outline:none;

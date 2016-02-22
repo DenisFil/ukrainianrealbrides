@@ -6,7 +6,6 @@
     max-width: 1170px;
     margin: 0 auto 100px;
 }
-
 .sub-heading {
     display: block;
     text-align: center;
@@ -15,7 +14,6 @@
     line-height: 21px;
     margin-bottom: 40px;
 }
-
 .search-content {
 	width: 100%;
     margin-bottom: 7px;
@@ -25,13 +23,11 @@
 	display: block;
 	clear: both;
 }
-
 .search-first-column {
     width: 12%;
     float: left;
     margin-right: 1.7%;
 }
-
 .search-title {
     display: block;
     text-align: center;
@@ -54,7 +50,6 @@
     line-height: 22px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
 }
-
 .search-form:focus
 .search-first-column .search-form:focus {
 	box-shadow: 0 0 3px rgba(0,0,0,0.3), 0 0 2px rgba(0,0,0,0.3) inset;
@@ -182,7 +177,9 @@
     top: 30px;
     left: 50%;
 }
-
+.search-country-block {
+	position: relative;
+}
 .search-country {
 	width: 23%;
 	float: left;
@@ -224,7 +221,10 @@
 }
 .search-form-row {
 	width: 100%;
+	overflow: hidden;
+	margin-bottom: 17px;
 }
+
 .advanced-search-button {
 	margin: 0 auto 142px;
 	display: block;
@@ -823,7 +823,6 @@
     margin: 0 auto;
     overflow: hidden;
 }
-
 .search-profile-block {
     width: 31.2%;
     margin: 0 3.2% 64px 0;
@@ -832,21 +831,17 @@
     border-radius: 10px;
     overflow: hidden;
 }
-
 .search-profile-block:nth-child(3n) {
     margin: 0 0 64px 0;
 }
-
 .search-profile-block > img {
     float: left;
     margin-right: 7%;
 }
-
 .search-profile-info {
     float: left;
     padding-top: 18px;
 }
-
 .search-profile-info > strong {
     display: block;
     font-family: 'BanderaProMedium';
@@ -855,7 +850,6 @@
 	font-weight: normal;
 	margin-bottom: 0;
 }
-
 .search-profile-info>span {
 	display: block;
 	color: #a0a0a0;
@@ -864,7 +858,6 @@
     line-height: 16px;
     margin-bottom: 3px;
 }
-
 .search-profile-info > em {
     display: block;
     font-style: normal;
@@ -876,17 +869,14 @@
     background: url("../img/search/online-ico.png") no-repeat 1px 4px;
     margin-bottom: 16px;
 }
-
 .search-profile-info ul li {
     display: block;
     width: 112px;
     margin-bottom: 9px;
 }
-
 .search-profile-info ul li:last-child {
     margin-bottom: 19px;
 }
-
 .search-profile-info ul li a {
     display: block;
     border: 1px solid #000;
@@ -894,13 +884,11 @@
     overflow: hidden;
     border-radius: 10px;
 }
-
 .search-profile-info ul li a img {
     display: block;
     float: left;
     margin-right: 8px;
 }
-
 .search-profile-info ul li a span {
     display: block;
     float: left;
@@ -910,31 +898,24 @@
     line-height: 13px;
     margin-top: 6px;
 }
-
 .search-profile-info ul .search-chat-invite a {
     padding: 4px 0 7px 12px;
 }
-
 .search-profile-info ul .search-chat-invite a img {
     margin-right: 8px;
 }
-
 .search-profile-info ul .search-chat-invite a span {
     margin-top: 0;
 }
-
 .search-profile-info ul .search-send-gift a {
     padding: 2px 0 6px 14px;
 }
-
 .search-profile-info ul .search-send-gift a img {
     margin-right: 5px;
 }
-
 .search-profile-info ul .search-send-gift a span {
     margin-top: 8px;
 }
-
 .view-profile-button {
     width: 112px;
     font-family: 'LatoRegular';
