@@ -69,7 +69,7 @@
 	position:absolute;
 	display: block;
 	right: 13px;
-    top: 12px;
+    top: 14px;
 	width: 22px;
 	height: 22px;
 	background: url("../img/search/search-id.png") no-repeat 0 0;
@@ -170,6 +170,28 @@
 	width: 23%;
 	float: left;
 	margin-right: 2%;
+}
+.location-drop {
+	display: none;
+	position: absolute;
+	top: 53px;
+	right: 0;
+	height: auto;
+	max-height: 150px;
+	width: 300px;
+	overflow: auto;
+	padding: 0;
+	z-index: 10;
+}
+.location-drop span {
+    display: block;
+    transition: all 0.5s;
+	padding: 5px;
+}
+.location-drop span:hover {
+    background: #e83c32;
+    color: #fff;
+	cursor: pointer;
 }
 .form-control {
 	width: 100%;
@@ -728,6 +750,7 @@
 /*# sourceMappingURL=toggle-switch.css.map */
 	.switch-holder {
 		width: 180px;
+		cursor: pointer;
 	}
 	.left-switch {
 		width: 70px;
