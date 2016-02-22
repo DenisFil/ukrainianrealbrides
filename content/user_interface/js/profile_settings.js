@@ -10,44 +10,113 @@ $(document).ready(function () {
             $('#user-name').val(data[0][0].name);
             $('#user-lastname').val(data[0][0].lastname);
             $('#email-change').val(data[0][0].email);
-
-            if (data[0][0].gender == 1 || data[0][0].gender == 0) {
-                $('#gender').val('Male');
-            }
             if (data[0][0].gender == 2) {
-                $('#gender').val('Female');
+                $('#gender option').each(function () {
+                    var gender = $(this).text();
+                    if (gender == 'Female'){
+                        $(this).attr('selected', true);
+                    }
+                }).eq(0).removeAttr('selected');
             }
             if (data[1][0].country != 0) {
                 $('#user-country').val(data[1][0].country);
             }
             if (data[1][0].birthday != 0) {
-                /*$('#day').val(data[1][0].birthday[0]);
-                $('#month').val(data[1][0].birthday[1]);
-                $('#year').val(data[1][0].birthday[2]);*/
                 $('#day option').each(function () {
                     var day = $(this).text();
-                    console.log(day);
                     if (day == data[1][0].birthday[0]){
-                        $(this).removeAttr('selected');
+                        $(this).attr('selected', true);
                     }
-                });
+                }).eq(0).removeAttr('selected');
+                $('#month option').each(function () {
+                    var month = $(this).text();
+                    if (month == data[1][0].birthday[1]){
+                        $(this).attr('selected', true);
+                    }
+                }).eq(0).removeAttr('selected');
+                $('#year option').each(function () {
+                    var year = $(this).text();
+                    if (year == data[1][0].birthday[2]){
+                        $(this).attr('selected', true);
+                    }
+                }).eq(0).removeAttr('selected');
             }
             $('#user_city').val(data[1][0].city);
-            $('#height').val(data[1][0].height);
-            $('#weight').val(data[1][0].weight);
-            $('#eyes').val(data[1][0].eyes_color);
-            $('#hair').val(data[1][0].hair_color);
-            $('#children').val(data[1][0].children);
-            $('#religion').val(data[1][0].religion);
-            $('#education').val(data[1][0].education);
-            $('#drinking').val(data[1][0].drinking);
-            $('#smoking').val(data[1][0].smoking);
+            $('#height option').each(function () {
+                var height = $(this).text();
+                if (height == data[1][0].height){
+                    $(this).attr('selected', true);
+                }
+            }).eq(0).removeAttr('selected');
+            $('#weight option').each(function () {
+                var weight = $(this).text();
+                if (weight == data[1][0].weight){
+                    $(this).attr('selected', true);
+                }
+            }).eq(0).removeAttr('selected');
+            $('#eyes option').each(function () {
+                var eyes = $(this).text();
+                if (eyes == data[1][0].eyes_color){
+                    $(this).attr('selected', true);
+                }
+            }).eq(0).removeAttr('selected');
+            $('#hair option').each(function () {
+                var hair = $(this).text();
+                if (hair == data[1][0].hair_color){
+                    $(this).attr('selected', true);
+                }
+            }).eq(0).removeAttr('selected');
+            $('#children option').each(function () {
+                var children = $(this).text();
+                if (children == data[1][0].children){
+                    $(this).attr('selected', true);
+                }
+            });
+            $('#religion option').each(function () {
+                var religion = $(this).text();
+                if (religion == data[1][0].religion){
+                    $(this).attr('selected', true);
+                }
+            }).eq(0).removeAttr('selected');
+            $('#education option').each(function () {
+                var education = $(this).text();
+                if (education == data[1][0].education){
+                    $(this).attr('selected', true);
+                }
+            }).eq(0).removeAttr('selected');
+            $('#drinking option').each(function () {
+                var drinking = $(this).text();
+                if (drinking == data[1][0].drinking){
+                    $(this).attr('selected', true);
+                }
+            });
+            $('#smoking option').each(function () {
+                var smoking = $(this).text();
+                if (smoking == data[1][0].smoking){
+                    $(this).attr('selected', true);
+                }
+            });
             $('#hobbies').val(data[1][0].hobbies);
             $('#about').val(data[1][0].about_me);
             if (data[2].length > 0) {
-                $('#partner-children').val(data[2][0].partner_children);
-                $('#partner-drinking').val(data[2][0].partner_drinking);
-                $('#partner-smoking').val(data[2][0].partner_smoking);
+                $('#partner-children option').each(function () {
+                    var children = $(this).text();
+                    if (children == data[2][0].partner_children){
+                        $(this).attr('selected', true);
+                    }
+                });
+                $('#partner-drinking option').each(function () {
+                    var drinking = $(this).text();
+                    if (drinking == data[2][0].partner_drinking){
+                        $(this).attr('selected', true);
+                    }
+                });
+                $('#partner-smoking option').each(function () {
+                    var smoking = $(this).text();
+                    if (smoking == data[2][0].partner_smoking){
+                        $(this).attr('selected', true);
+                    }
+                });
                 $('#about-my-partner').val(data[2][0].about_my_partner);
             }
             if (data[3][0].news == 0) {
@@ -311,6 +380,7 @@ $(document).ready(function () {
                 };
                 dataName = 'personal';
                 ajaxRequest(personalData, dataName);
+                return true;
                 break;
             case 2:
                 var backgroundData = {
@@ -322,6 +392,7 @@ $(document).ready(function () {
                 };
                 dataName = 'background';
                 ajaxRequest(backgroundData, dataName);
+                return true;
                 break;
             case 3:
                 var ageRange = {
@@ -338,6 +409,7 @@ $(document).ready(function () {
                 };
                 dataName = 'partner';
                 ajaxRequest(partnerData, dataName);
+                return true;
                 break;
         }
     }
@@ -405,7 +477,9 @@ $(document).ready(function () {
         $('.nav-tabs li').each(function (index) {
             var className = $(this).attr('class');
             if (className == 'active') {
-                $('.tab-body').eq(index - 1).children().next().next().removeClass('successfully-saved');
+                var selector = '.tab-body';
+                $(selector).eq(index).children().next().next().addClass('successfully-saved');
+                $(selector).eq(index - 1).children().next().next().removeClass('successfully-saved');
                 saveData(index);
             }
         });

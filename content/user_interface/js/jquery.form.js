@@ -1,13 +1,16 @@
 $(document).ready(function(){
 	//$('select').customSelect();
-	setInterval(function(){
-		$('.nav-tabs li').each(function(){
-			var className = $(this).attr('class');
-			if (className == 'active'){
-				$('select:not(".header-left")').customSelect();
-			}
-		});
-	}, 10);
+	setTimeout(function () {
+		setInterval(function(){
+			$('.nav-tabs li').each(function(){
+				var className = $(this).attr('class');
+				if (className == 'active'){
+					$('select:not(".header-left")').customSelect();
+				}
+			});
+		}, 10);
+	}, 5);
+
 	
 	//$('select.custom-select').customSelect();
 	$('input:radio').customRadio();
