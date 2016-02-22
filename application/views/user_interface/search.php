@@ -6,7 +6,7 @@
 			<div class="search-id">
 				<span class="search-title">ID</span>
 				<div class="search-id-holder">
-		            <input class="search-form" type="text" placeholder="023" id="#" >
+		            <input class="search-form" type="text" placeholder="023" id="id-top" >
 					<button type="button" class="search-id-button"></button>
 				</div>
 			</div>
@@ -22,7 +22,7 @@
 			</div>
 			<div class="search-country">
 				<span class="search-title">Country</span>
-		        <input class="profile-form form-control" type="text" placeholder="Your location" id="country">
+		        <input class="profile-form form-control" type="text" placeholder="Your location" id="country-top">
 				<strong class="form-error-message"></strong>
 		        <div class="location-drop">
 		            <?php foreach ($countries as $value): ?>
@@ -33,7 +33,7 @@
 			<div class="search-status">
 				<span class="search-title">Status</span>
 					<label class="switch-light switch-candy" onclick="">
-					  <input type="checkbox">
+					  <input type="checkbox" id="online-top">
 					  <span class="switch-holder">
 					    <span class="left-switch">All</span>
 					    <span class="right-switch">Online</span>
@@ -41,7 +41,7 @@
 					  </span>
 					</label>			
 			</div>
-			<button type="button" class="view-profile-button search-top">Search</button>
+			<button type="button" class="view-profile-button search-top" id="search-top">Search</button>
 		</form>
 	</div>
 	<div class="search-results"></div>

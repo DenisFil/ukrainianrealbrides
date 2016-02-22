@@ -36,7 +36,19 @@ $(document).ready(function () {
     });
 
     //Страна
-    $('#country').focus(function () {
+    $('#country-top').focus(function () {
         $('.location-drop').show();
+    });
+
+    /*****************************************Быстрый поиск****************************************/
+    $('#search-top').click(function () {
+        var data = {
+            id: $('#id-top').val(),
+            from: $('.price-range-min').text(),
+            to: $('.price-range-max').text(),
+            country: $('#country-top').val(),
+            online: $('#online-top :checked').val()
+        };
+        console.log(data);
     });
 });
