@@ -22,13 +22,15 @@
 			</div>
 			<div class="search-country">
 				<span class="search-title">Country</span>
-		        <input class="profile-form form-control" type="text" placeholder="Your location" id="country-top">
-				<strong class="form-error-message"></strong>
-		        <div class="location-drop">
-		            <?php foreach ($countries as $value): ?>
-						<span class="country"><?php echo $value->country_name; ?></span>
-					<?php endforeach; ?>
-		        </div>
+				<div class="search-country-block">
+			        <input class="profile-form form-control" type="text" placeholder="Your location" id="country">
+					<strong class="form-error-message"></strong>
+			        <div class="location-drop">
+			            <?php foreach ($countries as $value): ?>
+							<span class="country"><?php echo $value->country_name; ?></span>
+						<?php endforeach; ?>
+			        </div>
+				</div>	
 			</div>
 			<div class="search-status">
 				<span class="search-title">Status</span>
