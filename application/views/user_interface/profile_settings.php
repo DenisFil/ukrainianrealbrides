@@ -81,7 +81,7 @@
 	                <div class="profile-form-row">
 	                	<span>Country <em>*</em></span>
 	                	<div class="form-block">
-		                	<input class="profile-form form-control" type="text" placeholder="Your location" id="user-country">
+		                	<input class="profile-form form-control location-arrow" type="text" placeholder="Your location" id="user-country">
 							<strong class="form-error-message"></strong>
 		                	<div class="location-drop">
 		                		<?php foreach ($countries as $value): ?>

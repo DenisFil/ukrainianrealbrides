@@ -18,6 +18,7 @@
 
 .search-content {
 	width: 100%;
+    margin-bottom: 7px;
 }
 .search-content:after {
 	content: "";
@@ -25,7 +26,7 @@
 	clear: both;
 }
 
-.search-id {
+.search-first-column {
     width: 12%;
     float: left;
     margin-right: 1.7%;
@@ -55,14 +56,14 @@
 }
 
 .search-form:focus
-.search-id .search-form:focus {
+.search-first-column .search-form:focus {
 	box-shadow: 0 0 3px rgba(0,0,0,0.3), 0 0 2px rgba(0,0,0,0.3) inset;
 	border: 1px solid rgba(0,0,0,0.3);
 }
-.search-id .search-form {
+.search-first-column .search-form {
 	position: relative;
 	height: 50px;
-	width: 138px;
+	width: 100%;
 	border: 1px solid rgba(0,0,0,0.4);
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 	border-radius: 10px;
@@ -72,7 +73,7 @@
 .search-id-holder {
 	position: relative;
 }
-.search-id .search-id-button {
+.search-first-column .search-id-button {
 	position:absolute;
 	display: block;
 	right: 13px;
@@ -209,16 +210,36 @@
     color: #fff;
 	cursor: pointer;
 }
-.search-country-block {
-	position: relative;
+.profile-form.form-control.location-arrow {
+    background:  #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
 }
 .form-control {
 	width: 100%;
+	padding: 0 22px;
 }
 .search-status {
 	float: left;
 	width: 15.4%;
     margin-right: 1.89%;
+}
+.search-form-row {
+	width: 100%;
+}
+.advanced-search-button {
+	margin: 0 auto 142px;
+	display: block;
+	color: #e83c32;
+    font-family: 'BanderaProMedium';
+	font-size: 22px;
+	line-height: 24px;
+	text-decoration: underline;
+}
+.advanced-search .search-first-column {
+	width: 23%;
+}
+.advanced-search .search-status {
+	margin-right: 0;
+	width: 21.68%;
 }
 .switch-toggle a,
 .switch-light span span {
@@ -309,11 +330,11 @@
     user-select: none; }
   .switch-light a {
     position: absolute;
-    right: 108px;
+    right: 61%;
     top: 0;
     z-index: 1;
     display: block;
-    width: 108px;
+    width: 61%;
     height: 100%;
     padding: 0;
     background: #cbcbcb;
@@ -768,14 +789,14 @@
 
 /*# sourceMappingURL=toggle-switch.css.map */
 	.switch-holder {
-		width: 180px;
+		width: 100%;
 		cursor: pointer;
 	}
 	.left-switch {
-		width: 70px;
+		width: 39%;
 	}
 	.right-switch {
-		width: 108px;
+		width: 61%;
 	}
 .view-profile-button.search-top {
 	margin-top: 45px;
@@ -858,7 +879,7 @@
 
 .search-profile-info ul li {
     display: block;
-    width: 91%;
+    width: 112px;
     margin-bottom: 9px;
 }
 
@@ -915,7 +936,7 @@
 }
 
 .view-profile-button {
-    width: 91%;
+    width: 112px;
     font-family: 'LatoRegular';
     font-size: 14px;
     line-height: 16px;
