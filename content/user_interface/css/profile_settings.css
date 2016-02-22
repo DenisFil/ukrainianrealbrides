@@ -122,6 +122,9 @@
     line-height: 22px;
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 }
+.profile-form.form-control.location-arrow {
+    background:  #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
+}
 .profile-form-row .form-block .profile-form:focus,
 .profile-form-row .form-block textarea:focus,
 .profile-form-row label select:focus {
