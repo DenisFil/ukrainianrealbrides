@@ -34,4 +34,9 @@ $(document).ready(function () {
             }, 100);
         }
     });
+
+    //Страна
+    $('#country').focus(function () {
+        $('.location-drop').show();
+    });
 });

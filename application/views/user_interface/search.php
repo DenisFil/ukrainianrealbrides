@@ -22,7 +22,7 @@
 			</div>
 			<div class="search-country">
 				<span class="search-title">Country</span>
-		        <input class="profile-form form-control" type="text" placeholder="Your location" id="user-country">
+		        <input class="profile-form form-control" type="text" placeholder="Your location" id="country">
 				<strong class="form-error-message"></strong>
 		        <div class="location-drop">
 		            <?php foreach ($countries as $value): ?>
