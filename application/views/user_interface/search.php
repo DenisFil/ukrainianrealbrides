@@ -15,7 +15,7 @@
 	            <div class="search-range">
 	                <em class="left-range">18</em>
 	               	<div class="slider-wrap">
-	                	<div id="search-age-slider"></div>
+	                	<div id="search"></div>
 	                </div>
 	                <em class="right-range">90</em>
 				</div>	

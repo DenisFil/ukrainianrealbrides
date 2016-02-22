@@ -1,5 +1,34 @@
 $(document).ready(function(){
 	//$('select').customSelect();
+	$('select:not(".header-left select")').customSelect();
+	//$('select.custom-select').customSelect();
+
+	// tabs
+	//$("#tabs").tabs();
+});
+
+$(document).ready(function(){
+	//$('select').customSelect();
+	setTimeout(function () {
+		setInterval(function(){
+			$('.nav-tabs li').each(function(){
+				var className = $(this).attr('class');
+				if (className == 'active'){
+					$('select:not(".header-left")').customSelect();
+				}
+			});
+		}, 10);
+	}, 15);
+
+	
+	//$('select.custom-select').customSelect();
+	$('input:radio').customRadio();
+	$('input:checkbox').customCheckbox();
+	// tabs
+	//$("#tabs").tabs();
+});
+$(document).ready(function(){
+	//$('select').customSelect();
 	setTimeout(function () {
 		setInterval(function(){
 			$('.nav-tabs li').each(function(){
