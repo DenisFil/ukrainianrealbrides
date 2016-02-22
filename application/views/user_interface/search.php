@@ -30,7 +30,7 @@
 							<span class="country"><?php echo $value->country_name; ?></span>
 						<?php endforeach; ?>
 			        </div>
-				</div>	
+				</div>
 			</div>
 			<div class="search-status">
 				<span class="search-title">Status</span>
