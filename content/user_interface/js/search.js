@@ -36,18 +36,71 @@ $(document).ready(function () {
     });
 
     //Страна
-    $('#country-top').focus(function () {
+    var selector = '#country-top';
+
+    function dropCountry() {
+        var pattern = $(selector).val();
+        $('.location-drop span').each(function () {
+            var search = $(this).text().indexOf(pattern) + 1;
+            if (search == 0) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+    }
+
+    $(selector).focus(function () {
+        dropCountry();
         $('.location-drop').show();
+    }).blur(function () {
+        setTimeout(function () {
+            $('.location-drop').hide();
+        }, 100);
+        dropCountry();
+    });
+
+    $(document).on('input', selector, function () {
+        dropCountry();
+    });
+
+    $(document).on('click', '.country', function () {
+        var country = $(this).text();
+        $(selector).val(country);
+        dropCountry();
     });
 
     /*****************************************Быстрый поиск****************************************/
+    function switcher(){
+        var selector = '.switch-holder span';
+
+        $(selector).each(function (index) {
+            switch(index){
+                case 0:
+                    var className = $(selector).eq(index).attr('class').split(' ');
+                    if (className.length > 1){
+                        console.log('hello');
+                        $(selector).eq(index).removeClass('active');
+                        $(selector).eq(index + 1).addClass('active');
+                    }else{
+                        console.log('hi');
+                        $(selector).eq(index).addClass('active');
+                        $(selector).eq(index + 1).removeClass('active');
+                    }
+                    break;
+            }
+        });
+    }
+
+    $('.switch-holder').click(function() { switcher(); });
+
     $('#search-top').click(function () {
         var data = {
             id: $('#id-top').val(),
             from: $('.price-range-min').text(),
             to: $('.price-range-max').text(),
             country: $('#country-top').val(),
-            online: $('#online-top :checked').val()
+            online: $('#online-top').text()
         };
         console.log(data);
     });

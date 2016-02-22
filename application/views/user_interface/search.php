@@ -23,7 +23,7 @@
 			<div class="search-country">
 				<span class="search-title">Country</span>
 				<div class="search-country-block">
-			        <input class="profile-form form-control" type="text" placeholder="Your location" id="country">
+			        <input class="profile-form form-control" type="text" placeholder="Your location" id="country-top">
 					<strong class="form-error-message"></strong>
 			        <div class="location-drop">
 			            <?php foreach ($countries as $value): ?>
@@ -38,7 +38,7 @@
 					  <input type="checkbox" id="online-top">
 					  <span class="switch-holder">
 					    <span class="left-switch">All</span>
-					    <span class="right-switch">Online</span>
+					    <span class="right-switch active">Online</span>
 					    <a></a>
 					  </span>
 					</label>			
