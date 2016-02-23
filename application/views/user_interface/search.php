@@ -44,14 +44,14 @@
 						</span>
 					</label>			
 				</div>
-				<button type="button" class="view-profile-button search-top">Search</button>
+				<button type="button" class="search-button search-top">Search</button>
 			</div>
 			<button type="button" class="advanced-search-button">Advanced Search</button>
 		</form>
 	</div>
 	<div class="advanced-search">
 		<form class="search-content" action="#">
-			<div class="search-form-row">
+			<div class="search-form-row last-search-row">
 				<div class="search-first-column">
 					<span class="search-title">ID</span>
 					<div class="search-id-holder">
@@ -159,18 +159,19 @@
 					</label>
 				</div>
 				<div class="search-forth-column">
-					<span class="search-title">Eyes color</span>
+					<span class="search-title">Hair color</span>
 		            <label>
-						<select id="eyes">
-							<option selected></option>
-							<?php $eyes = array('Amber', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'); ?>
-							<?php foreach ($eyes as $value): ?>
-							<option><?php echo $value; ?></option>
-							<?php endforeach; ?>
+						<select id="hair">
+						<option selected></option>
+						<?php $hair = array('Black', 'Brown', 'Blond', 'Auburn', 'Chestnut', 'Red', 'Gray and white'); ?>
+						<?php foreach ($hair as $value): ?>
+						<option><?php echo $value; ?></option>
+						<?php endforeach; ?>
 						</select>
 					</label>		
 				</div>
 			</div>
+			<button type="button" class="search-button search-bottom">Search</button>
 		</form>
 	</div>
 	<div class="search-results"></div>
