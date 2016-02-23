@@ -64,4 +64,37 @@
             shuffle($first_result);
             echo json_encode($first_result);
         }
+
+        public function search()
+        {
+            $search_data = $this->input->post();
+                foreach ($search_data as $key => $value)
+                {
+                    if ($value == '')
+                    {
+                        unset($search_data[$key]);
+                    }
+                }
+            $search_query = $this->search_model->search($search_data, $this->session->userdata('gender'));
+            $search_result = array();
+                foreach ($search_query as $key => $value) {
+                    $this->load->helper('date');
+
+                    $date_string = '%j.%n.%Y';
+                    $today = mdate($date_string, time());
+                    $today = explode('.', $today);
+                    $today_days = ($today[2] * 365) + ($today[1] * 30) + $today[0];
+                    $birthday = explode('.', $value->birthday);
+                    $birthday_days = ($birthday[2] * 365) + ($birthday[1] * 30) + $birthday[0];
+                    $value->birthday = floor(($today_days - $birthday_days) / 365);
+                        if ($value->birthday < $search_data['from'] || $value->birthday > $search_data['from']) {
+                            unset($search_query[$key]);
+                        }
+                }
+
+                foreach ($search_query as $value) {
+                    array_push($search_result, $value);
+                }
+            echo json_encode($search_result);
+        }
     }

@@ -22,10 +22,14 @@
 	padding-bottom: 30px;
    	font-family: 'BanderaProMedium';
    	float: left;
+   	transition: box-shadow 0.3s;
+   	-webkit-transition: box-shadow 0.3s;
+   	-moz-transition: box-shadow 0.3s;
+   	-ms-transition: box-shadow 0.3s;
+   	-o-transition: box-shadow 0.3s;
 }
 .credits-box:hover {
-    border: 1px solid #e83c32;
-    box-shadow: 0 0 3px #e83c32;
+    box-shadow: 5px 5px 0 #e1e1e1;
 }
 .credits-box img {
 	display: inline-block;
@@ -46,12 +50,11 @@
     margin: 0 0 42px 8px;
 }
 .credits-box.silver strong {
-    margin-bottom: 23px;
+    margin-bottom: 10px;
 }
 .credits-box.silver span {
-    margin-bottom: 17px;
+    margin-bottom: 30px;
 }
-
 .credits-box.gold{
 	width: 24.85%;
 	margin-top: -18px;
