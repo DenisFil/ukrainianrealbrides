@@ -46,7 +46,7 @@
 			<button type="button" class="view-profile-button search-top" id="search-top">Search</button>
 		</form>
 		<button type="button" class="advanced-search-button">Advanced Search</button>
-	<div class="advanced-search">
+	<div class="advanced-search" style="display: none;">
 		<form class="search-content" action="#">
 			<div class="search-form-row">
 				<div class="search-first-column">
