@@ -254,6 +254,7 @@ h4 {
 }
 
 #header .header-top .header-left .selectArea {
+	height: 100%;
 	position: relative;
 	color: rgba(0,0,0,0.7);
 	background: #fff;
@@ -275,7 +276,10 @@ h4 {
 	display:block;
 	padding:0 0 0 7px ;
 	height: 24px;
-	line-height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #acacac;
+    font-family: 'LatoWebMedium';
 }
 #header .header-top .header-left .outtaHere {
 	position:absolute;
@@ -307,6 +311,8 @@ h4 {
 	display: block;
 	height:1%;
 	padding: 2px 4px;
+	font-size: 14px;
+	line-height: 16px;
 }
 #header .header-top .header-left .optionsDivVisible a:hover {
 	background: rgba(232,60,50,0.7);
@@ -1290,3 +1296,6 @@ label {
 }
 
 /* JQuery Forms END */
+.active-link {
+	color: #e83c32;
+}
