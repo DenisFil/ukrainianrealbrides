@@ -228,7 +228,6 @@
 	margin-bottom: 50px;
 }
 .advanced-search-button {
-	width: 100%;
 	margin: 0 auto;
 	display: block;
 	color: #e83c32;
@@ -812,6 +811,9 @@
     text-align: center;
     color: #fff;
     border-radius: 10px;
+}
+.search-button:active {
+    box-shadow: 0px 1px 4px #7a7a7a, 0px 0px 12px #af2f28 inset;
 }
 .search-button.search-top {
 	margin-top: 45px;
