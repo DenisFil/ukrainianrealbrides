@@ -1211,7 +1211,7 @@ label {
 .search select {
 	width: 100%;
 }
-.selectArea {
+.selectArea:not(.header-left) {
 	width: 100%;
 	position: relative;
 	height: 50px;

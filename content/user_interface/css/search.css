@@ -14,15 +14,7 @@
     line-height: 21px;
     margin-bottom: 40px;
 }
-.search-content {
-	width: 100%;
-    margin-bottom: 7px;
-}
-.search-content:after {
-	content: "";
-	display: block;
-	clear: both;
-}
+
 .search-first-column {
     width: 12%;
     float: left;
@@ -99,7 +91,7 @@
 	color: rgba(0,0,0,0.5);
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 } */
-.search-age {
+.search-second-column {
     width: 27%;
     float: left;
     margin-right: 19px;
@@ -122,7 +114,7 @@
     padding-bottom: 36px;
 }
 
-.search-age.search-title {
+.search-second-column.search-title {
     margin-bottom: 18px;
 }
 
@@ -181,7 +173,7 @@
 .search-country-block {
 	position: relative;
 }
-.search-country {
+.search-third-column {
 	width: 23%;
 	float: left;
 	margin-right: 2%;
@@ -209,25 +201,30 @@
 	cursor: pointer;
 }
 .profile-form.form-control.location-arrow {
+	cursor: pointer;
     background:  #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
 }
 .form-control {
 	width: 100%;
 	padding: 0 22px;
 }
-.search-status {
+.search-forth-column {
 	float: left;
 	width: 15.4%;
     margin-right: 1.89%;
 }
 .search-form-row {
 	width: 100%;
-	overflow: hidden;
 	margin-bottom: 28px;
 }
-
+.search-form-row:after {
+	content: "";
+	display: block;
+	clear: both;
+}
 .advanced-search-button {
-	margin: 0 auto 142px;
+	width: 100%;
+	margin: 0 auto;
 	display: block;
 	color: #e83c32;
     font-family: 'BanderaProMedium';
@@ -238,7 +235,7 @@
 .advanced-search .search-first-column {
 	width: 23%;
 }
-.advanced-search .search-status {
+.advanced-search .search-forth-column {
 	margin-right: 0;
 	width: 21.68%;
 }
