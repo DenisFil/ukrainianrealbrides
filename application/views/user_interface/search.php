@@ -1,6 +1,7 @@
+<div class="search-holder">
+	<h2>Search</h2>
+	<span class="sub-heading">Sub heading</span>
 	<div class="search">
-		<h2>Search</h2>
-		<span class="sub-heading">Sub heading</span>
 		<form action="#">
 			<div class="search-form-row">
 				<div class="search-first-column">
@@ -31,24 +32,23 @@
 							<?php endforeach; ?>
 				        </div>
 					</div>	
-
 				</div>
 				<div class="search-forth-column">
 					<span class="search-title">Status</span>
-						<label class="switch-light switch-candy" onclick="">
-						  <input type="checkbox">
-						  <span class="switch-holder">
-						    <span class="left-switch">All</span>
+					<label class="switch-light switch-candy" onclick="">
+						<input type="checkbox">
+						<span class="switch-holder">
+						<span class="left-switch">All</span>
 						    <span class="right-switch">Online</span>
 						    <a></a>
-						  </span>
-						</label>			
+						</span>
+					</label>			
 				</div>
 				<button type="button" class="view-profile-button search-top">Search</button>
 			</div>
 			<button type="button" class="advanced-search-button">Advanced Search</button>
 		</form>
-
+	</div>
 	<div class="advanced-search">
 		<form class="search-content" action="#">
 			<div class="search-form-row">
@@ -127,14 +127,14 @@
 			<div class="search-form-row">
 				<div class="search-first-column">
 					<span class="search-title">Children</span>
-		                	<label>
-							    <select id="children">
-							        <option selected>None</option>
-									<?php for ($i = 1; $i <= 5; $i++): ?>
-										<option><?php echo $i; ?></option>
-									<?php endfor; ?>
-							    </select>
-							</label>
+		            <label>
+						<select id="children">
+							<option selected>None</option>
+							<?php for ($i = 1; $i <= 5; $i++): ?>
+							<option><?php echo $i; ?></option>
+							<?php endfor; ?>
+						</select>
+					</label>
 				</div>
 				<div class="search-second-column">
 					<span class="search-title">Height</span>
@@ -148,31 +148,30 @@
 				</div>
 				<div class="search-third-column">
 					<span class="search-title">Religion</span>
-		                	<label>
-							    <select id="religion">
-							        <option selected></option>
-									<?php $religion = array('Christian', 'Buddhist', 'Catholik', 'Jewish', 'Muslin', 'Hindu', 'Atheist', 'Other'); ?>
-									<?php foreach ($religion as $value): ?>
-										<option><?php echo $value; ?></option>
-									<?php endforeach; ?>
-							    </select>
-							</label>
+		            <label>
+						<select id="religion">
+							<option selected></option>
+							<?php $religion = array('Christian', 'Buddhist', 'Catholik', 'Jewish', 'Muslin', 'Hindu', 'Atheist', 'Other'); ?>
+							<?php foreach ($religion as $value): ?>
+							<option><?php echo $value; ?></option>
+							<?php endforeach; ?>
+						</select>
+					</label>
 				</div>
 				<div class="search-forth-column">
 					<span class="search-title">Eyes color</span>
-		                <label>
-							<select id="eyes">
-								<option selected></option>
-							    <?php $eyes = array('Amber', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'); ?>
-								<?php foreach ($eyes as $value): ?>
-								<option><?php echo $value; ?></option>
-								<?php endforeach; ?>
-							</select>
-						</label>		
+		            <label>
+						<select id="eyes">
+							<option selected></option>
+							<?php $eyes = array('Amber', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'); ?>
+							<?php foreach ($eyes as $value): ?>
+							<option><?php echo $value; ?></option>
+							<?php endforeach; ?>
+						</select>
+					</label>		
 				</div>
 			</div>
 		</form>
-	</div>
 	</div>
 	<div class="search-results"></div>
 </div>

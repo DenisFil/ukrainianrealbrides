@@ -1208,10 +1208,10 @@ label {
 	display: block;
 	margin: 0;
 }
-.search select {
+.search-holder select {
 	width: 100%;
 }
-.selectArea:not(.header-left) {
+.selectArea {
 	width: 100%;
 	position: relative;
 	height: 50px;

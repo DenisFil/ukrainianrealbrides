@@ -1,10 +1,9 @@
 .search-holder {
-    width: 100%;
-}
-
-.search {
     max-width: 1170px;
     margin: 0 auto 100px;
+}
+.search {
+	width: 100%;
 }
 .sub-heading {
     display: block;
@@ -14,7 +13,6 @@
     line-height: 21px;
     margin-bottom: 40px;
 }
-
 .search-first-column {
     width: 12%;
     float: left;
@@ -221,6 +219,9 @@
 	content: "";
 	display: block;
 	clear: both;
+}
+.advanced-search {
+	width: 100%;
 }
 .advanced-search-button {
 	width: 100%;
