@@ -21,6 +21,11 @@
                                             where('user_id', $id)->
                                             get()->
                                             result());
+            array_push($query, $this->db->  select('name, lastname')->
+                                            from('user_profiles')->
+                                            where('id', $id)->
+                                            get()->
+                                            result());
             return $query;
         }
     }

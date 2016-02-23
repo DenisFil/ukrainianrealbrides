@@ -3,13 +3,13 @@
         <h2>Profile view</h2>
         <div class="profile-preview-left">
             <img
-                src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id'); ?>/<?php echo $avatar; ?>_avatar.jpg"
+                src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $id; ?>/<?php echo $avatar; ?>_avatar.jpg"
                 alt="Profile photo" width="297" height="450">
             <button class="add-to-favorites" type="button"></button>
         </div>
         <div class="profile-preview-center">
             <span class="profile-preview-name">
-				<?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?>
+				<?php echo $all_data[3][0]->name . ' ' . $all_data[3][0]->lastname; ?>
                 , <?php echo $all_data[1][0]->birthday; ?>
 			</span>
             <span class="profile-preview-status">
