@@ -15,7 +15,7 @@
 	            <div class="search-range">
 	                <em class="left-range">18</em>
 	               	<div class="slider-wrap">
-	                	<div id="search"></div>
+	                	<div id="slider-age"></div>
 	                </div>
 	                <em class="right-range">90</em>
 				</div>	
@@ -62,7 +62,7 @@
 		            <div class="search-range">
 		                <em class="left-range">18</em>
 		               	<div class="slider-wrap">
-		                	<div id="slider1"></div>
+		                	<div id="slider-age-advanced"></div>
 		                </div>
 		                <em class="right-range">90</em>
 					</div>	
@@ -71,7 +71,6 @@
 					<span class="search-title">Country</span>
 					<div class="search-country-block">
 				        <input class="profile-form form-control location-arrow" type="text" placeholder="Select country" id="country">
-						<strong class="form-error-message"></strong>
 				        <div class="location-drop">
 				            <?php foreach ($countries as $value): ?>
 								<span class="country"><?php echo $value->country_name; ?></span>
@@ -99,11 +98,11 @@
 				<div class="search-age">
 					<span class="search-title">Weight</span>
 		            <div class="search-range">
-		                <em class="left-range">18</em>
+		                <em class="left-range">40</em>
 		               	<div class="slider-wrap">
-		                	<div id="slider1"></div>
+		                	<div id="slider-weight"></div>
 		                </div>
-		                <em class="right-range">90</em>
+		                <em class="right-range">100</em>
 					</div>	
 				</div>
 				<div class="search-country">
@@ -140,7 +139,7 @@
 		            <div class="search-range">
 		                <em class="left-range">-</em>
 		               	<div class="slider-wrap">
-		                	<div id="slider1"></div>
+		                	<div id="slider-height"></div>
 		                </div>
 		                <em class="right-range">+</em>
 					</div>	

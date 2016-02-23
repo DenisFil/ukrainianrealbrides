@@ -166,7 +166,8 @@
     line-height: 22px;
 }
 
-.price-range-both.value {
+.price-range-both.value,
+.price-range-both-2.value {
   width: 100px;
 }
 .price-range-both {
@@ -222,7 +223,7 @@
 .search-form-row {
 	width: 100%;
 	overflow: hidden;
-	margin-bottom: 17px;
+	margin-bottom: 28px;
 }
 
 .advanced-search-button {

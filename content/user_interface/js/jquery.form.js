@@ -1,12 +1,10 @@
+/*
 $(document).ready(function(){
 	//$('select').customSelect();
 	$('select:not(".header-left select")').customSelect();
 	//$('select.custom-select').customSelect();
-
-	// tabs
-	//$("#tabs").tabs();
 });
-
+*/
 $(document).ready(function(){
 	//$('select').customSelect();
 	setTimeout(function () {

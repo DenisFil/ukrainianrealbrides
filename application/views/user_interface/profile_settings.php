@@ -300,7 +300,7 @@
 	                	<div class="form-block settings-range">
 	                		<em class="left-range">18</em>
 	                		<div class="slider-wrap">
-	                			<div id="slider"></div>
+	                			<div id="slider-age"></div>
 	                		</div>
 	                		<em class="right-range">90</em>
 						</div>	

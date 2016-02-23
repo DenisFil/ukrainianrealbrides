@@ -202,16 +202,16 @@ h4 {
 	height: 190px;
 	margin-left: -144.5px;
 }
-.header-left {
+#header .header-top .header-left {
 	overflow: hidden;
 	line-height: 26px;
 	float: left;
 }
-.header-left>span {
+#header .header-top .header-left>span {
 	float: left;
 	padding: 0 6px 0 0; 
  }
-.header-left select {
+#header .header-top .header-left select {
     margin: 0;
     outline:none;
     display: inline-block;
@@ -236,12 +236,12 @@ h4 {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     select {padding-right:18px}
 }
-.header-left label {
+#header .header-top .header-left label {
 	position:relative;
 	margin: 0;
 	float: left;
 }
-.header-left label:after {
+#header .header-top .header-left label:after {
     content:'';
     clear: both;
     display: block;
@@ -252,20 +252,18 @@ h4 {
     width: 17px;
     height: 25px;
 }
-/* 
-Header SELECT
 
-.selectArea {
+#header .header-top .header-left .selectArea {
 	position: relative;
 	color: rgba(0,0,0,0.7);
 	background: #fff;
 	border: 1px solid rgba(0,0,0,0.7);
 	border-radius: 10px;
 }
-.select {
+#header .header-top .header-left select {
 	width: 57px;
 }
-.selectArea a.selectButton {
+#header .header-top .header-left .selectArea a.selectButton {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -273,18 +271,18 @@ Header SELECT
 	height:100%;
 	background: url(../img/header/select.png) no-repeat 95% 0;
 }
-.selectArea .center{
+#header .header-top .header-left .selectArea .center{
 	display:block;
 	padding:0 0 0 7px ;
 	height: 24px;
 	line-height: 24px;
 }
-.outtaHere {
+#header .header-top .header-left .outtaHere {
 	position:absolute;
 	left:-3000px;
 }
-.optionsDivInvisible,
-.optionsDivVisible {
+#header .header-top .header-left .optionsDivInvisible,
+#header .header-top .header-left .optionsDivVisible {
 	position: absolute;
 	background: #fff;
 	border: 1px solid rgba(0,0,0,0.7);
@@ -296,27 +294,25 @@ Header SELECT
 	overflow: hidden;
 
 }
-.optionsDivInvisible {display: none;}
-.optionsDivVisible ul {
+#header .header-top .header-left .optionsDivInvisible {display: none;}
+#header .header-top .header-left .optionsDivVisible ul {
 	margin:0;
 	padding:0;
 	list-style: none;
 
 }
-.optionsDivVisible a {
+#header .header-top .header-left .optionsDivVisible a {
 	color: #9e9e9e;
 	text-decoration: none;
 	display: block;
 	height:1%;
 	padding: 2px 4px;
 }
-.optionsDivVisible a:hover {
+#header .header-top .header-left .optionsDivVisible a:hover {
 	background: rgba(232,60,50,0.7);
 	color: #fff;
 	text-decoration:none;
 }
-
-Header SELECT END */
 
  .header-right {
  	float: right;

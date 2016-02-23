@@ -213,6 +213,7 @@
     font-family: 'LatoBold';
     font-size: 23px;
     line-height: 25px;
+    background: #ebebeb;
 }
 #personal-tab .buttons-row .btn,
 #background-tab .buttons-row .btn,
