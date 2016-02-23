@@ -4547,7 +4547,7 @@ function fromTo(){
 }
 var age = fromTo();
 
-$('#slider').slider({
+$('#slider-age').slider({
       range: true,
       min: 18,
       max: 90,
@@ -4570,9 +4570,162 @@ $('#slider').slider({
       }
 });
 
-$('.ui-slider-range').append('<span class="price-range-both value"><i>$' + $('#slider').slider('values', 0) + ' - </i>' + $('#slider').slider('values', 1) + '</span>');
+$('.ui-slider-range').append('<span class="price-range-both value"><i>$' + $('#slider-age').slider('values', 0) + ' - </i>' + $('#slider-age').slider('values', 1) + '</span>');
 
-$('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#slider').slider('values', 0) + '</span>');
+$('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#slider-age').slider('values', 0) + '</span>');
 
-$('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#slider').slider('values', 1) + '</span>');
+$('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#slider-age').slider('values', 1) + '</span>');
 
+// // slider call
+function fromTo(){
+	var age = {
+		from: 21,
+		to: 45
+	};
+
+	$.ajax({
+		type: 'post',
+		async: false,
+		url: baseUrl + 'user_interface/profile_settings/user_data_age',
+		dataType: 'json',
+		success: function(data){
+			age.from = data[0];
+			age.to = data[1];
+		}
+	});
+
+	return age;
+}
+var age = fromTo();
+
+$('#slider-age-advanced').slider({
+      range: true,
+      min: 18,
+      max: 90,
+      values: [age.from, age.to],
+      slide: function(event, ui) {
+
+            $('.ui-slider-handle:eq(2) .price-range-min-1').html('' + ui.values[0]);
+            $('.ui-slider-handle:eq(3) .price-range-max-1').html('' + ui.values[1]);
+
+			/*
+            if (collision($('.price-range-min'), $('.price-range-max')) == true) {
+                  $('.price-range-min, .price-range-max').css('opacity', '0');
+                  $('.price-range-both').css('display', 'block');
+            } else {
+                  $('.price-range-min, .price-range-max').css('opacity', '1');
+                  $('.price-range-both').css('display', 'none');
+            }
+            */
+
+      }
+});
+
+$('.ui-slider-range:eq(1)').append('<span class="price-range-both value"><i>$' + $('#slider-age-advanced').slider('values', 0) + ' - </i>' + $('#slider-age-advanced').slider('values', 1) + '</span>');
+
+$('.ui-slider-handle:eq(2)').append('<span class="price-range-min-1 value">' + $('#slider-age-advanced').slider('values', 0) + '</span>');
+
+$('.ui-slider-handle:eq(3)').append('<span class="price-range-max-1 value">' + $('#slider-age-advanced').slider('values', 1) + '</span>');
+
+
+// // slider call
+function fromTo(){
+	var age = {
+		from: 21,
+		to: 45
+	};
+
+	$.ajax({
+		type: 'post',
+		async: false,
+		url: baseUrl + 'user_interface/profile_settings/user_data_age',
+		dataType: 'json',
+		success: function(data){
+			age.from = data[0];
+			age.to = data[1];
+		}
+	});
+
+	return age;
+}
+var age = fromTo();
+
+$('#slider-weight').slider({
+      range: true,
+      min: 40,
+      max: 100,
+      values: [age.from, age.to],
+      slide: function(event, ui) {
+
+            $('.ui-slider-handle:eq(4) .price-range-min-2').html('' + ui.values[0]);
+            $('.ui-slider-handle:eq(5) .price-range-max-2').html('' + ui.values[1]);
+
+			/*
+            if (collision($('.price-range-min'), $('.price-range-max')) == true) {
+                  $('.price-range-min, .price-range-max').css('opacity', '0');
+                  $('.price-range-both').css('display', 'block');
+            } else {
+                  $('.price-range-min, .price-range-max').css('opacity', '1');
+                  $('.price-range-both').css('display', 'none');
+            }
+            */
+
+      }
+});
+
+$('.ui-slider-range:eq(2)').append('<span class="price-range-both value"><i>$' + $('#slider-weight').slider('values', 0) + ' - </i>' + $('#slider-weight').slider('values', 1) + '</span>');
+
+$('.ui-slider-handle:eq(4)').append('<span class="price-range-min-2 value">' + $('#slider-weight').slider('values', 0) + '</span>');
+
+$('.ui-slider-handle:eq(5)').append('<span class="price-range-max-2 value">' + $('#slider-weight').slider('values', 1) + '</span>');
+
+// // slider call
+function fromTo(){
+	var age = {
+		from: 80,
+		to: 100
+	};
+
+	$.ajax({
+		type: 'post',
+		async: false,
+		url: baseUrl + 'user_interface/profile_settings/user_data_age',
+		dataType: 'json',
+		success: function(data){
+			age.from = data[0];
+			age.to = data[1];
+		}
+	});
+
+	return age;
+}
+var age = fromTo();
+
+$('#slider-height').slider({
+      range: true,
+      min: 0,
+      max: 100,
+      values: [age.from, age.to],
+      slide: function(event, ui) {
+
+            $('.ui-slider-handle:eq(6) .price-range-min-3').html('' + ui.values[0]);
+            $('.ui-slider-handle:eq(7) .price-range-max-3').html('' + ui.values[1]);
+
+			/*
+            if (collision($('.price-range-min'), $('.price-range-max')) == true) {
+                  $('.price-range-min, .price-range-max').css('opacity', '0');
+                  $('.price-range-both').css('display', 'block');
+            } else {
+                  $('.price-range-min, .price-range-max').css('opacity', '1');
+                  $('.price-range-both').css('display', 'none');
+            }
+            */
+
+      }
+});
+
+$('.ui-slider-range:eq(3)').append('<span class="price-range-both value"><i>$' + $('#slider-height').slider('values', 0) + ' - </i>' + $('#slider-height').slider('values', 1) + '</span>');
+
+$('.ui-slider-handle:eq(6)').append('<span class="price-range-min-3 value">' + $('#slider-height').slider('values', 0) + '</span>');
+
+$('.ui-slider-handle:eq(7)').append('<span class="price-range-max-3 value">' + $('#slider-height').slider('values', 1) + '</span>');
