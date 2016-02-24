@@ -236,31 +236,17 @@
     max-width: 1170px;
     margin: 0 auto;
     padding-top: 26px;
-    /* 	padding: 0 4.9% 0 5%; */
 }
-
-/* =============================================================================
-   Masonry
-   ========================================================================== */
-
 .chromeframe {
     margin: 0.2em 0;
     background: #ccc;
     color: black;
     padding: 0.2em 0;
 }
-
-/* ==|== primary styles =====================================================
-   Author: Luke Shumard (lukeshumard.com)
-   ========================================================================== */
-
 #content {
-    /*width: 980px;*/
-    /*width: 95%;*/
     width: 100%;
     margin: 0 auto;
 }
-
 .item {
     display: block;
     float: left;
@@ -279,38 +265,31 @@
     width: 375px;
     height: auto;
 }
-
 .container {
     padding: 0;
 }
 
 /* modal */
-
 #photo-modal .modal-dialog {
     max-width: 644px;
     /*min-width: 384px;*/
     width: auto;
     text-align: center;
 }
-
 #photo-modal .modal-body {
     padding: 10px;
 }
-
 #photo-modal .modal-content {
     display: inline-block;
 }
-
 #photo-modal .modal-body img {
     max-width: 604px;
     max-height: 604px;
     display: inline-block;
 }
-
 .modal-bottom span {
     padding: 0 12px;
 }
-
 #user-photo {
     border: none;
     padding: 0;
@@ -318,7 +297,6 @@
     outline: none;
     transition: all 0.5s;
 }
-
 .modal-body span {
     margin-bottom: 10px;
     font-size: 18px;
