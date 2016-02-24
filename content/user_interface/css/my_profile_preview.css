@@ -1,24 +1,25 @@
 .profile-preview-holder {
     width: 100%;
 }
-
 .profile-preview {
-    max-width: 1046px;
+    max-width: 1170px;
     margin: 0 auto;
-    overflow: hidden;
     /* 	padding: 0 4.9% 0 5%; */
-    padding-bottom: 21px;
+    padding-bottom: 25px;
     border-bottom: 2px solid #b2b2b2;
 }
-
+.profile-preview:after {
+    content: "";
+    display: block;
+    clear: both;
+}
 .profile-preview-left {
-    width: 28.4%;
+    width: 25.4%;
     float: left;
     position: relative;
     margin-right: 2.2%;
     border-top: 3px solid #ff382d;
 }
-
 .add-to-favorites {
     content: "";
     display: inline-block;
@@ -36,7 +37,6 @@
     outline: none;
     padding: 0;
 }
-
 .profile-preview-left img {
     width: 100%;
     height: auto;
@@ -44,7 +44,7 @@
 
 .profile-preview-center {
     float: left;
-    width: 46.8%;
+    width: 52.3%;
     padding-top: 22px;
     margin-right: 2.2%;
 }
@@ -55,7 +55,7 @@
     font-size: 30px;
     line-height: 32px;
     padding-left: 3%;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
 }
 
 .profile-preview-status {
@@ -65,7 +65,7 @@
     line-height: 21px;
     color: #a0a0a0;
     padding-left: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 38px;
 }
 .profile-preview-status em {
     color: #03c4bc;
@@ -88,7 +88,18 @@
     overflow: auto;
     padding: 27px 0 0 18px;
 }
-
+.tab-body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+.tab-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.tab-body::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;
+  outline: 1px solid slategrey;
+}
 .nav-tabs.nav-justified > li > a {
     border-bottom: 2px solid #a0a0a0;
     border-radius: 10px 10px 0 0;
@@ -97,8 +108,7 @@
 
 .nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
-    background-color: #fff;
-    border-top: none;
+    background-color: #eee;
 }
 
 .nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus {
@@ -110,7 +120,7 @@
 .profile-characters li {
     display: block;
     overflow: hidden;
-    margin-bottom: 17px;
+    margin-bottom: 15px;
 }
 
 .profile-characters li:last-child {
@@ -130,6 +140,9 @@
 	background: none;
 	margin-bottom: 10px;
 }
+.about-block {
+    overflow: hidden;
+}
 .profile-characters .about-block .characters-right {
 	width: 100%;
 }
@@ -145,37 +158,35 @@
     font-size: 18px;
     line-height: 25px;
 }
-
-.characters-right a {
-
-}
-
 .profile-preview-right {
     float: left;
-    width: 20.4%;
+    width: 17.9%;
 }
-
 .profile-preview-right ul li {
-    margin-bottom: 11px;
+    margin-bottom: 13px;
 }
-
 .profile-preview-right ul li:last-child {
     margin-bottom: 0;
 }
-
 .profile-preview-right ul li a {
     border: 1px solid #000;
-    padding: 18px 0 18px 18px;
+    padding: 18px 0 16px 18px;
     display: block;
     border-radius: 10px;
     overflow: hidden;
+    transition: box-shadow 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition: box-shadow 0.3s;
+    -ms-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
 }
-
+.profile-preview-right ul li a:hover {
+    box-shadow: 3px 3px 0 #e1e1e1;
+}
 .profile-preview-right ul li a img {
     float: left;
     margin-right: 19px;
 }
-
 .profile-preview-right ul li a span {
     float: left;
     width: 60%;
@@ -184,60 +195,47 @@
     line-height: 22px;
     padding-top: 13px;
 }
-
 .profile-preview-right ul li .preview-gift {
-    padding: 8px 0 17px 22px;
+    padding: 8px 0 15px 22px;
 }
-
 .profile-preview-right ul li .preview-gift img {
     margin-right: 19px;
 }
-
 .profile-preview-right ul li .preview-gift span {
     padding-top: 18px;
 }
-
 .profile-preview-right ul li .preview-tour {
-    padding: 7px 0 7px 15px;
+    padding: 7px 0 5px 15px;
 }
-
 .profile-preview-right ul li .preview-tour img {
     margin-right: 14px;
     margin-top: 9px;
 }
-
 .profile-preview-right ul li .preview-tour span {
     padding-top: 0;
 }
-
 .profile-preview-right ul li .preview-chat {
-    padding: 17px 0 16px 19px;
+    padding: 17px 0 14px 19px;
 }
-
 .profile-preview-right ul li .preview-chat img {
     margin-right: 15px;
 }
-
 .profile-preview-right ul li .preview-chat span {
     padding-top: 2px;
 }
-
 .profile-preview-right ul li .preview-video {
-    padding: 16px 0 16px 16px;
+    padding: 16px 0 14px 16px;
 }
-
 .profile-preview-right ul li .preview-video img {
     margin-right: 19px;
 }
-
 .profile-preview-right ul li .preview-video span {
     padding-top: 2px;
 }
-
 .profile-preview-bottom {
     max-width: 1046px;
     margin: 0 auto;
-    padding-top: 21px;
+    padding-top: 26px;
     /* 	padding: 0 4.9% 0 5%; */
 }
 
@@ -327,4 +325,16 @@
     line-height: 20px;
     font-family: 'BanderaProBold';
     display: block;
+}
+.read-more-button {
+    color: #707070;
+    font-family: 'LatoWebMedium';
+    font-size: 14px;
+    line-height: 16px;
+    display: inline-block;
+    text-align: right;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    padding: 5px 10px;
+    float: right;
 }

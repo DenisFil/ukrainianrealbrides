@@ -12,7 +12,7 @@ $(document).ready(function(){
 			$('.nav-tabs li').each(function(){
 				var className = $(this).attr('class');
 				if (className == 'active'){
-					$('select:not(".header-left")').customSelect();
+					$('select:not(".header-left select")').customSelect();
 				}
 			});
 		}, 10);

@@ -23,7 +23,7 @@
 				</div>
 				<div class="search-third-column">
 					<span class="search-title">Country</span>
-					<div class="search-country-block">
+					<div class="search-location-block">
 				        <input class="profile-form form-control location-arrow" type="text" placeholder="Select country" id="country-top">
 						<strong class="form-error-message"></strong>
 				        <div class="location-drop">
@@ -71,7 +71,7 @@
 				</div>
 				<div class="search-third-column">
 					<span class="search-title">Country</span>
-					<div class="search-country-block">
+					<div class="search-location-block">
 				        <input class="profile-form form-control location-arrow" type="text" placeholder="Select country" id="country">
 				        <div class="location-drop">
 				            <?php foreach ($countries as $value): ?>
@@ -109,7 +109,12 @@
 				</div>
 				<div class="search-third-column">
 					<span class="search-title">City</span>
-			        <input class="profile-form form-control" type="text" placeholder="City" id="#">
+					<div class="search-location-block">
+				        <input class="profile-form form-control location-arrow" type="text" placeholder="Select city" id="#">
+				        <div class="location-drop">
+
+				        </div>
+				    </div>
 				</div>
 				<div class="search-forth-column">
 					<span class="search-title">Eyes color</span>
