@@ -87,7 +87,7 @@
                     $birthday = explode('.', $value->birthday);
                     $birthday_days = ($birthday[2] * 365) + ($birthday[1] * 30) + $birthday[0];
                     $value->birthday = floor(($today_days - $birthday_days) / 365);
-                        if ($value->birthday < $search_data['from'] || $value->birthday > $search_data['from']) {
+                        if ($value->birthday < $search_data['from'] || $value->birthday > $search_data['to']) {
                             unset($search_query[$key]);
                         }
                 }

@@ -7,7 +7,7 @@
 				<div class="search-first-column">
 					<span class="search-title">ID</span>
 					<div class="search-id-holder">
-			            <input class="search-form" type="text" placeholder="023" id="#" >
+			            <input class="search-form" type="text" placeholder="023" id="id-top" >
 						<button type="button" class="search-id-button"></button>
 					</div>
 				</div>
@@ -44,12 +44,12 @@
 						</span>
 					</label>			
 				</div>
-				<button type="button" class="search-button search-top">Search</button>
+				<button type="button" class="search-button search-top" id="search-top">Search</button>
 			</div>
-			<button type="button" class="advanced-search-button">Advanced Search</button>
+			<button type="button" class="advanced-search-button" style="margin-bottom: 50px; ">Advanced Search</button>
 		</form>
 	</div>
-	<div class="advanced-search">
+	<div class="advanced-search" style="display: none; ">
 		<form class="search-content" action="#">
 			<div class="search-form-row last-search-row">
 				<div class="search-first-column">
