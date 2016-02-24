@@ -199,7 +199,6 @@
 	cursor: pointer;
 }
 .profile-form.form-control.location-arrow {
-	cursor: pointer;
     background:  #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
 }
 .form-control {

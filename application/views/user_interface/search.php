@@ -24,7 +24,11 @@
 				<div class="search-third-column">
 					<span class="search-title">Country</span>
 					<div class="search-location-block">
-				        <input class="profile-form form-control location-arrow" type="text" placeholder="Select country" id="country-top">
+						<?php if ($gender == 0 || $gender == 1): ?>
+							<input class="profile-form form-control location-arrow" type="text" placeholder="Select country" id="country-top" value="Ukraine" disabled>
+						<?php else: ?>
+				        	<input class="profile-form form-control location-arrow" type="text" placeholder="Select country" id="country-top" style="cursor: pointer;">
+						<?php endif; ?>
 						<strong class="form-error-message"></strong>
 				        <div class="location-drop">
 				            <?php foreach ($countries as $value): ?>
@@ -39,7 +43,7 @@
 						<input type="checkbox">
 						<span class="switch-holder">
 						<span class="left-switch">All</span>
-						    <span class="right-switch">Online</span>
+						    <span class="right-switch active">Online</span>
 						    <a></a>
 						</span>
 					</label>			
