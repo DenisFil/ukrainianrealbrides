@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	// Initialize Masonry
 	$('#content').masonry({
-		columnWidth: 348,
+		columnWidth: 395,
 		itemSelector: '.item',
 		isFitWidth: true
 	}).imagesLoaded(function() {

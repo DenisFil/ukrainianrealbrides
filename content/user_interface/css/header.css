@@ -220,7 +220,7 @@ h4 {
     appearance:none;
     cursor:pointer;
 	font-style: normal;
-	border: 1px solid rgba(0,0,0,0.7);
+	border: 1px solid #808080;
 	border-radius: 10px;
 	color: rgba(0,0,0,0.7);
 	background: #fff;
@@ -369,12 +369,6 @@ h4 {
 	text-align: center;
 
 }
-.form-control{
-	border: 1px solid #000;
-	font-size: 22px;
-	height: 48px;
-	border-radius: 10px;
-}
 .modal-bottom{
 	background: url("../img/pop-ups/modal-bg.png") repeat-x 0 0;
 	font-size: 20px;
@@ -404,6 +398,7 @@ h4 {
 }
 .form-control{
 	border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	font-size: 22px;
 	line-height: 24px;
 	width: 281px;
@@ -1166,7 +1161,7 @@ label {
 	border-radius: 10px;
 	font-weight: normal;
 	font-style: normal;
-	border: 1px solid rgba(0,0,0,0.4);
+	border: 1px solid rgba(0,0,0,0.3);
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 }
 .selectArea a.selectButton {
@@ -1175,6 +1170,7 @@ label {
 	right: 0;
 	width: 100%;
 	height:100%;
+	border-radius: 10px;
     background: url(../img/header/select-settings.png) no-repeat 94% 50%;
 }
 .birthday-block .selectArea a.selectButton {

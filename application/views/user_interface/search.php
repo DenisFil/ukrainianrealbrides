@@ -7,7 +7,7 @@
 				<div class="search-first-column">
 					<span class="search-title">ID</span>
 					<div class="search-id-holder">
-			            <input class="search-form" type="text" placeholder="023" id="#" >
+			            <input class="form-control" type="text" placeholder="023" id="#" >
 						<button type="button" class="search-id-button"></button>
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 				<div class="search-first-column">
 					<span class="search-title">ID</span>
 					<div class="search-id-holder">
-			            <input class="search-form" type="text" placeholder="023" id="#" >
+			            <input class="form-control" type="text" placeholder="023" id="#" >
 						<button type="button" class="search-id-button"></button>
 					</div>
 				</div>
@@ -119,7 +119,7 @@
 				<div class="search-forth-column">
 					<span class="search-title">Eyes color</span>
 		                <label>
-							<select id="eyes">
+							<select id="eyes form-control">
 								<option selected></option>
 							    <?php $eyes = array('Amber', 'Blue', 'Brown', 'Gray', 'Green', 'Hazel'); ?>
 								<?php foreach ($eyes as $value): ?>
