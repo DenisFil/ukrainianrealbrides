@@ -114,7 +114,7 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 .profile-main ul li {
 	overflow: hidden;
     padding: 15px 0 17px 14px;
-	border: 1px solid #000;
+	border: 1px solid #5d5d5d;
 	border-radius: 9px;
 	width: 186px;
 	float: left;
@@ -240,6 +240,7 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 .profile-bottom-right {
 	width: 39.52%;
 	float: right;
+	padding-bottom: 13px;
 }
 .photo-page-number,
 .video-page-number {
@@ -335,7 +336,7 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
     margin: 0 auto;
     position: relative;
     margin: 0 auto 20px;
-    border: 1px solid #000;
+    border: 1px solid #5d5d5d;
     border-radius: 10px;
     padding: 13px 56px 31px 56px;
     text-align: center;

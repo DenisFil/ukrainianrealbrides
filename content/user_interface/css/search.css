@@ -189,17 +189,18 @@
 	z-index: 10;
 }
 .location-drop span {
-    display: block;
-    transition: all 0.5s;
+  display: block;
+  transition: all 0.5s;
 	padding: 5px;
 }
 .location-drop span:hover {
-    background: #e83c32;
-    color: #fff;
+  background: #e83c32;
+  color: #fff;
 	cursor: pointer;
 }
-.profile-form.form-control.location-arrow {
-    background:  #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
+.form-control.location-arrow {
+	cursor: pointer;
+  background:  #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
 }
 .form-control {
 	width: 100%;
@@ -472,7 +473,7 @@
     background-color: #fff;
     border-radius: 10px;
     /* box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2); */
-    border: 1px solid #000; 
+    border: 1px solid rgba(0,0,0,0.4); 
 	height: 50px;}
   .switch-light.switch-candy span span,
   .switch-light.switch-candy input:checked ~ span span:first-child,
@@ -848,7 +849,7 @@
 }
 .search-profile-block > img {
     float: left;
-    margin-right: 7%;
+    margin-right: 5%;
 }
 .search-profile-info {
     float: left;
@@ -883,7 +884,7 @@
 }
 .search-profile-info ul li {
     display: block;
-    width: 112px;
+    width: 125px;
     margin-bottom: 9px;
 }
 .search-profile-info ul li:last-child {
@@ -892,9 +893,16 @@
 .search-profile-info ul li a {
     display: block;
     border: 1px solid #000;
-    padding: 7px 0 7px 10px;
+    padding: 7px 0 7px 12px;
     overflow: hidden;
     border-radius: 10px;
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition: box-shadow 0.3s;
+    -ms-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+}
+.search-profile-info ul li a:hover {
+  box-shadow: 2px 2px 0 #e1e1e1;
 }
 .search-profile-info ul li a img {
     display: block;
@@ -904,32 +912,32 @@
 .search-profile-info ul li a span {
     display: block;
     float: left;
-    width: 60%;
+    width: 70%;
     font-family: 'BanderaProMedium';
     font-size: 11px;
     line-height: 13px;
     margin-top: 6px;
 }
 .search-profile-info ul .search-chat-invite a {
-    padding: 4px 0 7px 12px;
+    padding: 6px 0 5px 10px;
 }
 .search-profile-info ul .search-chat-invite a img {
     margin-right: 8px;
 }
 .search-profile-info ul .search-chat-invite a span {
-    margin-top: 0;
+    margin-top: 5px;
 }
 .search-profile-info ul .search-send-gift a {
-    padding: 2px 0 6px 14px;
+    padding: 3px 0 4px 13px;
 }
 .search-profile-info ul .search-send-gift a img {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 .search-profile-info ul .search-send-gift a span {
-    margin-top: 8px;
+    margin-top: 9px;
 }
 .view-profile-button {
-    width: 112px;
+    width: 125px;
     font-family: 'LatoRegular';
     font-size: 14px;
     line-height: 16px;
@@ -938,5 +946,14 @@
     background: #ff382d;
     text-align: center;
     color: #fff;
+    border: 1px solid #ff382d;
     border-radius: 10px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+.view-profile-button:hover {
+    background: #fff;
+    color: #ff382d;
 }

@@ -219,7 +219,7 @@
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
                 <h2>Chat</h2>     
                 <span>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</span>
-                <button type="button" class="btn btn-danger">To Service</button>
+                <a href="<?php echo base_url(); ?>/user_interface/chat"><button type="button" class="btn btn-danger">To Service</button></a>
             </div>
         </div>
     </div>

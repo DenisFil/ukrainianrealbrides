@@ -220,7 +220,7 @@ h4 {
     appearance:none;
     cursor:pointer;
 	font-style: normal;
-	border: 1px solid rgba(0,0,0,0.7);
+	border: 1px solid #808080;
 	border-radius: 10px;
 	color: rgba(0,0,0,0.7);
 	background: #fff;
@@ -251,6 +251,72 @@ h4 {
     background: url(../img/header/select.png) no-repeat 0 0;
     width: 17px;
     height: 25px;
+}
+#header .header-top .header-left .selectArea {
+	height: 100%;
+	position: relative;
+	color: rgba(0,0,0,0.7);
+	background: #fff;
+	border: 1px solid rgba(0,0,0,0.7);
+	border-radius: 10px;
+}
+#header .header-top .header-left select {
+	width: 57px;
+}
+#header .header-top .header-left .selectArea a.selectButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width:100%;
+	height:100%;
+	background: url(../img/header/select.png) no-repeat 95% 0;
+}
+#header .header-top .header-left .selectArea .center{
+	display:block;
+	padding:0 0 0 7px ;
+	height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #acacac;
+    font-family: 'LatoWebMedium';
+}
+#header .header-top .header-left .outtaHere {
+	position:absolute;
+	left:-3000px;
+}
+#header .header-top .header-left .optionsDivInvisible,
+#header .header-top .header-left .optionsDivVisible {
+	position: absolute;
+	background: #fff;
+	border: 1px solid rgba(0,0,0,0.7);
+	display: block;
+	z-index: 30;
+	border-radius: 10px;
+	border-top:none;
+	text-align: center;
+	overflow: hidden;
+
+}
+#header .header-top .header-left .optionsDivInvisible {display: none;}
+#header .header-top .header-left .optionsDivVisible ul {
+	margin:0;
+	padding:0;
+	list-style: none;
+
+}
+#header .header-top .header-left .optionsDivVisible a {
+	color: #9e9e9e;
+	text-decoration: none;
+	display: block;
+	height:1%;
+	padding: 2px 4px;
+	font-size: 14px;
+	line-height: 16px;
+}
+#header .header-top .header-left .optionsDivVisible a:hover {
+	background: rgba(232,60,50,0.7);
+	color: #fff;
+	text-decoration:none;
 }
  .header-right {
  	float: right;
@@ -369,12 +435,6 @@ h4 {
 	text-align: center;
 
 }
-.form-control{
-	border: 1px solid #000;
-	font-size: 22px;
-	height: 48px;
-	border-radius: 10px;
-}
 .modal-bottom{
 	background: url("../img/pop-ups/modal-bg.png") repeat-x 0 0;
 	font-size: 20px;
@@ -404,6 +464,7 @@ h4 {
 }
 .form-control{
 	border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	font-size: 22px;
 	line-height: 24px;
 	width: 281px;
@@ -1166,7 +1227,7 @@ label {
 	border-radius: 10px;
 	font-weight: normal;
 	font-style: normal;
-	border: 1px solid rgba(0,0,0,0.4);
+	border: 1px solid rgba(0,0,0,0.3);
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 }
 .selectArea a.selectButton {
@@ -1175,6 +1236,7 @@ label {
 	right: 0;
 	width: 100%;
 	height:100%;
+	border-radius: 10px;
     background: url(../img/header/select-settings.png) no-repeat 94% 50%;
 }
 .birthday-block .selectArea a.selectButton {
