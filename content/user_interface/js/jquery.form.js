@@ -17,13 +17,6 @@ $(document).ready(function(){
 			});
 		}, 10);
 	}, 15);
-
-	
-	//$('select.custom-select').customSelect();
-	$('input:radio').customRadio();
-	$('input:checkbox').customCheckbox();
-	// tabs
-	//$("#tabs").tabs();
 });
 $(document).ready(function(){
 	//$('select').customSelect();
@@ -39,11 +32,11 @@ $(document).ready(function(){
 	}, 15);
 
 	
-	//$('select.custom-select').customSelect();
+/*	//$('select.custom-select').customSelect();
 	$('input:radio').customRadio();
 	$('input:checkbox').customCheckbox();
 	// tabs
-	//$("#tabs").tabs();
+	//$("#tabs").tabs();*/
 });
 // custom selects module
 jQuery.fn.customSelect = function(_options) {
