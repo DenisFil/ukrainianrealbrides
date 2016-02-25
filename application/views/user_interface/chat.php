@@ -29,7 +29,7 @@
                         		<div class="dialog-partner-left">
                         			<button class="dialog-partner-avatar">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
-                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        				<span class="dialog-avatar-status online-avatar-status"></span>
                         			</button>
                         			<div class="dialog-partner-info">
                         				<a href="#">Lena</a>
@@ -48,7 +48,7 @@
                         		<div class="dialog-partner-left">
                         			<button class="dialog-partner-avatar">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
-                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        				<span class="dialog-avatar-status offline-avatar-status"></span>
                         			</button>
                         			<div class="dialog-partner-info">
                         				<a href="#">Marina</a>
@@ -68,7 +68,7 @@
                         		<div class="dialog-partner-left">
                         			<button class="dialog-partner-avatar offline-avatar-status">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
-                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        				<span class="dialog-avatar-status offline-avatar-status"></span>
                         			</button>
                         			<div class="dialog-partner-info">
                         				<a href="#">Ira</a>
@@ -87,7 +87,7 @@
                         		<div class="dialog-partner-left">
                         			<button class="dialog-partner-avatar offline-avatar-status">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
-                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        				<span class="dialog-avatar-status online-avatar-status"></span>
                         			</button>
                         			<div class="dialog-partner-info">
                         				<a href="#">Ekaterina</a>
@@ -106,7 +106,7 @@
                         		<div class="dialog-partner-left">
                         			<button class="dialog-partner-avatar">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
-                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        				<span class="dialog-avatar-status online-avatar-status"></span>
                         			</button>
                         			<div class="dialog-partner-info">
                         				<a href="#">Olga</a>
@@ -126,7 +126,7 @@
                         		<div class="dialog-partner-left">
                         			<button class="dialog-partner-avatar">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
-                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        				<span class="dialog-avatar-status online-avatar-status"></span>
                         			</button>
                         			<div class="dialog-partner-info">
                         				<a href="#">Natasha</a>
@@ -145,7 +145,7 @@
                         		<div class="dialog-partner-left">
                         			<button class="dialog-partner-avatar offline-avatar-status">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
-                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        				<span class="dialog-avatar-status online-avatar-status"></span>
                         			</button>
                         			<div class="dialog-partner-info">
                         				<a href="#">Ira</a>
@@ -171,6 +171,34 @@
 				</div>
 			</div>
 			<!-- Chat TABS END -->
+		</div>
+		<div class="chat-field">
+			<div class="chat-field-header">
+				<div class="chat-header-left">
+                    <button class="chat-partner-avatar offline-avatar-status">
+                        <img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
+                        <span class="chat-avatar-status online-avatar-status"></span>
+                    </button>
+                    <div class="chat-partner-info">
+                    	<div class="chat-partner-name">
+                    		<button type="button"><img src="<?php echo base_url(); ?>content/user_interface/img/chat/add-favorite.png" width="15" height="20" ></button>
+							<a href="#">Marina Khvorostova</a>
+                    	</div>
+                        <em>Ukraine, Kharkiv</em>
+                        <span>Online</em>
+                    </div>
+				</div>
+				<div class="chat-header-right">
+					<a href="#" class="chat-header-nav send-gift-button">
+            			<img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" width="27" height="36" alt="Send gift" />
+						<span>Send Gift</span>
+					</a>
+					<a href="#" class="chat-header-nav">
+            			<img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" width="35" height="32" alt="Video chat" />
+						<span>Video chat</span>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

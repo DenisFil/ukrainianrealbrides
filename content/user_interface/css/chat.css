@@ -1,6 +1,7 @@
+
 .chat-holder {
 	max-width: 1170px;
-	margin: 0 auto;
+	margin: 0 auto 66px;
 }
 .chat-content {
 	width: 100%;
@@ -8,6 +9,7 @@
 }
 .chat-sidebar {
 	width: 30.76%;
+	float: left;
 }
 
 /* tabs styles */
@@ -28,18 +30,9 @@
     padding: 17px 0 11px 11px;
 }
 .tab-content {
-	height: 430px;
+	height: 425px;
     overflow-y: scroll;
 }
-/* .tab-body::-webkit-scrollbar {
-    width: 1em;
-}
-.tab-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-.tab-body::-webkit-scrollbar-thumb {
-  background-color: #a0a0a0;
-} */
 .nav-tabs.nav-justified > li > a {
     border-radius: 0;
     color: #a0a0a0;
@@ -60,6 +53,10 @@
     color: #000;
     background: #c5c5c5;
     border: none;
+}
+.nav-tabs.nav-justified>li>a {
+    border: none;
+    border-radius: 0;
 }
 .dialog-partner {
 	width: 100%;
@@ -111,7 +108,7 @@
 }
 .dialog-partner-left {
 	float: left;
-	width: 56.3%;
+	width: 56%;
 	overflow: hidden;
 }
 .dialog-partner-avatar {
@@ -203,3 +200,177 @@
 	font-size: 13px;
 	line-height: 15px;
 }
+.chat-field {
+	width: 69.24%;
+	height: 522px;
+	float: left;
+	padding: 96px 27px 0 20px;
+	border-top: 3px solid #efefef;
+	border-bottom: 3px solid #efefef;
+	border-right: 1px solid #efefef;
+	border-radius: 0 10px 10px 0;
+	overflow-y: scroll; 
+	position: relative;
+	z-index: 10;
+}
+.chat-field::-webkit-scrollbar-button:start {
+    background: #e6e6e6 url("../img/chat/scrollbar.png") no-repeat 50% 50%;
+}
+.chat-field-header {
+	width: 96.4%;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    padding: 18px 9px 20px 0;
+	border-bottom: 1px solid #a8a8a8;
+}
+.chat-field-header:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.chat-header-left {
+	float: left;
+	width: 60%;
+	overflow: hidden;
+}
+.chat-partner-avatar {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	float: left;
+	margin: 5px 13px 0 0;
+	padding: 0;
+}
+.chat-partner-avatar img {
+	border-radius: 30px;
+	width: 100%;
+	height: auto;
+}
+.chat-avatar-status {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: 15px;
+	height: 14px;
+}
+.chat-avatar-status.online-avatar-status {
+	background: url("../img/chat/avatar-online.png") no-repeat 0 0;
+	background-size: 15px;
+	height: 14px;
+}
+.chat-avatar-status.offline-avatar-status {
+	background: url("../img/chat/avatar-offline.png") no-repeat 0 0;
+	background-size: 15px;
+	height: 14px;
+}
+.chat-partner-info {
+	float: left;
+	width: 72%;
+}
+.chat-partner-name {
+	display: block;
+	overflow: hidden;
+}
+.chat-partner-name button {
+	float: left;
+    margin: 5px 7px 0 0;
+    padding: 0;
+}
+.chat-partner-name a{
+	float: left;
+	display: inline-block;
+    font-family: 'BanderaProMedium';
+    font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 2px;
+}
+
+.chat-partner-info em,
+.chat-partner-info span {
+	display: inline-block;
+	color: #a0a0a0;
+	margin-right: 5px;
+    font-family: 'LatoRegular';
+    font-size: 19px;
+    line-height: 21px;
+    font-style: normal;
+    float: left;
+}
+.chat-partner-info span {
+	display: inline-block;
+	color: #009993;
+}
+.chat-header-right {
+	width: 40%;
+	float: right;
+    margin-top: 2px;
+}
+.chat-header-right:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.chat-header-nav {
+	float: right;
+	width: 139px;
+	padding: 5px 0 9px 12px;
+	margin-left: 9px;
+	border: 1px solid #5d5d5d;
+	border-radius: 10px;
+	transition: box-shadow 0.3s;
+}
+.chat-header-nav:hover {
+    box-shadow: 3px 3px 0 #e1e1e1;
+}
+.chat-header-nav img {
+	float: left;
+    margin: 5px 4px 0 0;
+}
+.chat-header-nav span {
+	float: left;
+    font-family: 'BanderaProMedium';
+    font-size: 14px;
+    line-height: 16px;
+	margin-top: 12px;
+}
+.chat-header-nav.send-gift-button {
+    padding: 1px 0 9px 17px;
+}
+.chat-header-nav.send-gift-button img{
+    margin: 5px 7px 0 0;
+}
+.chat-header-nav.send-gift-button span{
+	margin-top: 15px;
+}
+
+
+
+
+
+
+
+.chat-field::-webkit-scrollbar,
+.tab-content::-webkit-scrollbar { 
+    width: 11px;
+    height: 2em;
+}
+.chat-field::-webkit-scrollbar-button:start,
+.tab-content::-webkit-scrollbar-button:start {
+    background: #efefef url("../img/chat/scrollbar.png") no-repeat 50% 50%;
+    border-radius: 0 4px 0 0;
+}
+.chat-field::-webkit-scrollbar-button:end,
+.tab-content::-webkit-scrollbar-button:end  {
+    background: #efefef url("../img/chat/scrollbar-bottom.png") no-repeat 50% 50%;
+    border-radius: 0 0 4px 0;
+}
+.chat-field::-webkit-scrollbar-track-piece,
+.tab-content::-webkit-scrollbar-track-piece {
+	background: #efefef;
+}
+.chat-field::-webkit-scrollbar-thumb,
+.tab-content::-webkit-scrollbar-thumb {
+    background: #c3c3c3;
+}​
