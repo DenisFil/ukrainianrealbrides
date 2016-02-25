@@ -2,9 +2,11 @@
     max-width: 1170px;
     margin: 0 auto 100px;
 }
+
 .search {
-	width: 100%;
+    width: 100%;
 }
+
 .sub-heading {
     display: block;
     text-align: center;
@@ -13,11 +15,13 @@
     line-height: 21px;
     margin-bottom: 40px;
 }
+
 .search-first-column {
     width: 12%;
     float: left;
     margin-right: 1.7%;
 }
+
 .search-title {
     display: block;
     text-align: center;
@@ -26,46 +30,51 @@
     line-height: 27px;
     margin-bottom: 18px;
 }
+
 .search-form,
 .location-drop {
-	background: #fff;
-	padding: 0 22px;
-	width: 100%;
-	height: auto;
-	border-radius: 10px;
-	border: 1px solid rgba(0,0,0,0.4);
-	outline: none;
+    background: #fff;
+    padding: 0 22px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    outline: none;
     font-family: 'LatoRegular';
     font-size: 20px;
     line-height: 22px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
 }
+
 .search-form:focus
 .search-first-column .search-form:focus {
-	box-shadow: 0 0 3px rgba(0,0,0,0.3), 0 0 2px rgba(0,0,0,0.3) inset;
-	border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.3) inset;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
+
 .search-first-column .search-form {
-	position: relative;
-	height: 50px;
-	width: 100%;
-	border: 1px solid rgba(0,0,0,0.4);
-	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
-	border-radius: 10px;
-	overflow: hidden;
-	padding-left: 22px;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 22px;
 }
+
 .search-id-holder {
-	position: relative;
+    position: relative;
 }
+
 .search-first-column .search-id-button {
-	position:absolute;
-	display: block;
-	right: 13px;
+    position: absolute;
+    display: block;
+    right: 13px;
     top: 14px;
-	width: 22px;
-	height: 22px;
-	background: url("../img/search/search-id.png") no-repeat 0 0;
+    width: 22px;
+    height: 22px;
+    background: url("../img/search/search-id.png") no-repeat 0 0;
 }
 
 /* .search-content select {
@@ -145,11 +154,11 @@
 .value {
     position: absolute;
     top: 30px;
-    left: 50%;
+    left: 0;
     margin: 0 0 0 -20px;
-    width: 40px;
+    width: 145px;
     text-align: center;
-    display: block;
+    display: none;
     font-weight: normal;
     font-family: 'latosemibold';
     font-size: 20px;
@@ -157,9 +166,11 @@
 }
 
 .price-range-both.value,
-.price-range-both-2.value {
-  width: 100px;
+.price-range-both-2.value,
+.price-range-both-3.value {
+    top: 20px;
 }
+
 .price-range-both {
     display: none;
     font-family: 'latosemibold';
@@ -168,638 +179,856 @@
     top: 30px;
     left: 50%;
 }
+
 .search-location-block {
-	position: relative;
+    position: relative;
 }
+
 .search-third-column {
-	width: 23%;
-	float: left;
-	margin-right: 2%;
+    width: 23%;
+    float: left;
+    margin-right: 2%;
 }
+
 .location-drop {
-	display: none;
-	position: absolute;
-	top: 53px;
-	right: 0;
-	height: auto;
-	max-height: 150px;
-	width: 100%;
-	overflow: auto;
-	padding: 0;
-	z-index: 10;
+    display: none;
+    position: absolute;
+    top: 53px;
+    right: 0;
+    height: auto;
+    max-height: 150px;
+    width: 100%;
+    overflow: auto;
+    padding: 0;
+    z-index: 10;
 }
+
 .location-drop span {
-  display: block;
-  transition: all 0.5s;
-	padding: 5px;
+    display: block;
+    transition: all 0.5s;
+    padding: 5px;
 }
+
 .location-drop span:hover {
-  background: #e83c32;
-  color: #fff;
-	cursor: pointer;
+    background: #e83c32;
+    color: #fff;
+    cursor: pointer;
 }
+
 .form-control.location-arrow {
-	cursor: pointer;
-  background:  #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
+    background: #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
 }
+
 .form-control {
-	width: 100%;
-	padding: 0 22px;
+    width: 100%;
+    padding: 0 22px;
 }
+
 .search-forth-column {
-	float: left;
-	width: 15.4%;
+    float: left;
+    width: 15.4%;
     margin-right: 1.89%;
 }
+
 .search-form-row {
-	width: 100%;
-	margin-bottom: 28px;
+    width: 100%;
+    margin-bottom: 28px;
 }
+
 .search-form-row.last-search-row {
-	margin-bottom: 36px; 
+    margin-bottom: 36px;
 }
+
 .search-form-row:after {
-	content: "";
-	display: block;
-	clear: both;
+    content: "";
+    display: block;
+    clear: both;
 }
+
 .advanced-search {
-	width: 100%;
-	margin-bottom: 50px;
+    width: 100%;
+    margin-bottom: 50px;
 }
+
 .advanced-search-button {
-	margin: 0 auto;
-	display: block;
-	color: #e83c32;
+    margin: 0 auto;
+    display: block;
+    color: #e83c32;
     font-family: 'BanderaProMedium';
-	font-size: 22px;
-	line-height: 24px;
-	text-decoration: underline;
+    font-size: 22px;
+    line-height: 24px;
+    text-decoration: underline;
 }
+
 .advanced-search .search-first-column {
-	width: 23%;
+    width: 23%;
 }
+
 .advanced-search .search-forth-column {
-	margin-right: 0;
-	width: 21.68%;
+    margin-right: 0;
+    width: 21.68%;
 }
+
 .switch-toggle a,
 .switch-light span span {
-  display: none; }
-
+    display: none;
+}
 
 /* We can't test for a specific feature,
  * so we only target browsers with support for media queries.
  */
 @media only screen {
-  /* Checkbox
- */
-  .switch-light {
-    position: relative;
-    display: block;
-    font-family: 'LatoRegular';
-    font-size: 22px;
-    line-height: 24px;
-    text-shadow: none;
-    /* simulate default browser focus outlines on the switch,
-   * when the inputs are focused.
-   */ }
+    /* Checkbox
+   */
+    .switch-light {
+        position: relative;
+        display: block;
+        font-family: 'LatoRegular';
+        font-size: 22px;
+        line-height: 24px;
+        text-shadow: none;
+        /* simulate default browser focus outlines on the switch,
+       * when the inputs are focused.
+       */
+    }
+
     .switch-light::after {
-      clear: both;
-      content: "";
-      display: table; }
+        clear: both;
+        content: "";
+        display: table;
+    }
+
     .switch-light *,
     .switch-light *:before,
     .switch-light *:after {
-      box-sizing: border-box; }
+        box-sizing: border-box;
+    }
+
     .switch-light a {
-      display: block;
-      -webkit-transition: all 0.2s ease-out;
-      -moz-transition: all 0.2s ease-out;
-      transition: all 0.2s ease-out; }
+        display: block;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
     .switch-light label,
     .switch-light > span {
-      /* breathing room for bootstrap/foundation classes.
-     */
-      line-height: 2em;
-      vertical-align: middle; }
+        /* breathing room for bootstrap/foundation classes.
+       */
+        line-height: 2em;
+        vertical-align: middle;
+    }
+
     .switch-light input:focus ~ span a,
     .switch-light input:focus + label {
-      outline-width: 2px;
-      outline-style: solid;
-      outline-color: Highlight;
-      /* Chrome/Opera gets its native focus styles.
-     */ } }
-    @media only screen and (-webkit-min-device-pixel-ratio: 0) {
-      .switch-light input:focus ~ span a,
-      .switch-light input:focus + label {
+        outline-width: 2px;
+        outline-style: solid;
+        outline-color: Highlight;
+        /* Chrome/Opera gets its native focus styles.
+       */
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 0) {
+    .switch-light input:focus ~ span a,
+    .switch-light input:focus + label {
         outline-color: -webkit-focus-ring-color;
-        outline-style: auto; } }
+        outline-style: auto;
+    }
+}
 
 @media only screen {
-  /* don't hide the input from screen-readers and keyboard access
- */
-  .switch-light input {
-    position: absolute;
-    opacity: 0;
-    z-index: 3; }
-  .switch-light input:checked ~ span a {
-    right: 0%; background: #cbcbcb}
-  /* inherit from label
- */
-  .switch-light strong {
-    font-weight: inherit; }
-  .switch-light > span {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    min-height: 2em;
-    /* overwrite 3rd party classes padding
-   * eg. bootstrap .well
+    /* don't hide the input from screen-readers and keyboard access
    */
-    padding: 0;
-    text-align: left; }
-  .switch-light span span {
-    position: relative;
-    z-index: 2;
-    display: block;
-    float: left;
-/*     width: 50%; */
-    text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .switch-light a {
-    position: absolute;
-    right: 61%;
-    top: 0;
-    z-index: 1;
-    display: block;
-    width: 61%;
-    height: 100%;
-    padding: 0;
-    background: #cbcbcb;
-    box-shadow: 5px 0 8px -5px #a8a8a8 inset, -5px 0 8px -5px #a8a8a8 inset; 
-}
-  /* Radio Switch
- */
-  .switch-toggle {
-    position: relative;
-    display: block;
-    /* simulate default browser focus outlines on the switch,
-   * when the inputs are focused.
+    .switch-light input {
+        position: absolute;
+        opacity: 0;
+        z-index: 3;
+    }
+
+    .switch-light input:checked ~ span a {
+        right: 0%;
+        background: #cbcbcb
+    }
+
+    /* inherit from label
    */
-    /* For callout panels in foundation
-  */
-    padding: 0 !important;
-    /* 2 items
+    .switch-light strong {
+        font-weight: inherit;
+    }
+
+    .switch-light > span {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        min-height: 2em;
+        /* overwrite 3rd party classes padding
+       * eg. bootstrap .well
+       */
+        padding: 0;
+        text-align: left;
+    }
+
+    .switch-light span span {
+        position: relative;
+        z-index: 2;
+        display: block;
+        float: left;
+        /*     width: 50%; */
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .switch-light a {
+        position: absolute;
+        right: 61%;
+        top: 0;
+        z-index: 1;
+        display: block;
+        width: 61%;
+        height: 100%;
+        padding: 0;
+        background: #cbcbcb;
+        box-shadow: 5px 0 8px -5px #a8a8a8 inset, -5px 0 8px -5px #a8a8a8 inset;
+    }
+
+    /* Radio Switch
    */
-    /* 3 items
-   */
-    /* 4 items
-   */
-    /* 5 items
-   */
-    /* 6 items
-   */ }
+    .switch-toggle {
+        position: relative;
+        display: block;
+        /* simulate default browser focus outlines on the switch,
+       * when the inputs are focused.
+       */
+        /* For callout panels in foundation
+      */
+        padding: 0 !important;
+        /* 2 items
+       */
+        /* 3 items
+       */
+        /* 4 items
+       */
+        /* 5 items
+       */
+        /* 6 items
+       */
+    }
+
     .switch-toggle::after {
-      clear: both;
-      content: "";
-      display: table; }
+        clear: both;
+        content: "";
+        display: table;
+    }
+
     .switch-toggle *,
     .switch-toggle *:before,
     .switch-toggle *:after {
-      box-sizing: border-box; }
+        box-sizing: border-box;
+    }
+
     .switch-toggle a {
-      display: block;
-      -webkit-transition: all 0.2s ease-out;
-      -moz-transition: all 0.2s ease-out;
-      transition: all 0.2s ease-out; }
+        display: block;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
     .switch-toggle label,
     .switch-toggle > span {
-      /* breathing room for bootstrap/foundation classes.
-     */
-      line-height: 2em;
-      vertical-align: middle; }
+        /* breathing room for bootstrap/foundation classes.
+       */
+        line-height: 2em;
+        vertical-align: middle;
+    }
+
     .switch-toggle input:focus ~ span a,
     .switch-toggle input:focus + label {
 
-      /* Chrome/Opera gets its native focus styles.
-     */ } }
-    @media only screen and (-webkit-min-device-pixel-ratio: 0) {
-      .switch-toggle input:focus ~ span a,
-      .switch-toggle input:focus + label {
+        /* Chrome/Opera gets its native focus styles.
+       */
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 0) {
+    .switch-toggle input:focus ~ span a,
+    .switch-toggle input:focus + label {
         outline-color: -webkit-focus-ring-color;
-        outline-style: auto; } }
+        outline-style: auto;
+    }
+}
 
 @media only screen {
     .switch-toggle input {
-      position: absolute;
-      left: 0;
-      opacity: 0; }
+        position: absolute;
+        left: 0;
+        opacity: 0;
+    }
+
     .switch-toggle input + label {
-      position: relative;
-      z-index: 2;
-      display: block;
-      float: left;
-      padding: 0 0.5em;
-      margin: 0;
-      text-align: center; }
+        position: relative;
+        z-index: 2;
+        display: block;
+        float: left;
+        padding: 0 0.5em;
+        margin: 0;
+        text-align: center;
+    }
+
     .switch-toggle a {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 0;
-      z-index: 1;
-      width: 10px;
-      height: 100%; }
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        z-index: 1;
+        width: 10px;
+        height: 100%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(4),
     .switch-toggle label:nth-child(2):nth-last-child(4) ~ label,
     .switch-toggle label:nth-child(2):nth-last-child(4) ~ a {
-      width: 50%; }
+        width: 50%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(4) ~ input:checked:nth-child(3) + label ~ a {
-      left: 50%; }
+        left: 50%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(6),
     .switch-toggle label:nth-child(2):nth-last-child(6) ~ label,
     .switch-toggle label:nth-child(2):nth-last-child(6) ~ a {
-      width: 33.33%; }
+        width: 33.33%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(6) ~ input:checked:nth-child(3) + label ~ a {
-      left: 33.33%; }
+        left: 33.33%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(6) ~ input:checked:nth-child(5) + label ~ a {
-      left: 66.66%; }
+        left: 66.66%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(8),
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ label,
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ a {
-      width: 25%; }
+        width: 25%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(3) + label ~ a {
-      left: 25%; }
+        left: 25%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(5) + label ~ a {
-      left: 50%; }
+        left: 50%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(7) + label ~ a {
-      left: 75%; }
+        left: 75%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(10),
     .switch-toggle label:nth-child(2):nth-last-child(10) ~ label,
     .switch-toggle label:nth-child(2):nth-last-child(10) ~ a {
-      width: 20%; }
+        width: 20%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(3) + label ~ a {
-      left: 20%; }
+        left: 20%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(5) + label ~ a {
-      left: 40%; }
+        left: 40%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(7) + label ~ a {
-      left: 60%; }
+        left: 60%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(9) + label ~ a {
-      left: 80%; }
+        left: 80%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(12),
     .switch-toggle label:nth-child(2):nth-last-child(12) ~ label,
     .switch-toggle label:nth-child(2):nth-last-child(12) ~ a {
-      width: 16.6%; }
+        width: 16.6%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(3) + label ~ a {
-      left: 16.6%; }
+        left: 16.6%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(5) + label ~ a {
-      left: 33.2%; }
+        left: 33.2%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(7) + label ~ a {
-      left: 49.8%; }
+        left: 49.8%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(9) + label ~ a {
-      left: 66.4%; }
+        left: 66.4%;
+    }
+
     .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(11) + label ~ a {
-      left: 83%; }
-  /* Candy Theme
- * Based on the "Sort Switches / Toggles (PSD)" by Ormal Clarck
- * http://www.premiumpixels.com/freebies/sort-switches-toggles-psd/
- */
-  .switch-toggle.switch-candy,
-  .switch-light.switch-candy > span {
-    background-color: #fff;
-    border-radius: 10px;
-    /* box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2); */
-    border: 1px solid rgba(0,0,0,0.4); 
-	height: 50px;}
-  .switch-light.switch-candy span span,
-  .switch-light.switch-candy input:checked ~ span span:first-child,
-  .switch-toggle.switch-candy label {
-	color: #e83c32 ;
-    font-weight: normal;
-    text-align: center;
-	height: 100%;
-}
-  .switch-light.switch-candy input ~ span span:first-child,
-  .switch-light.switch-candy input:checked ~ span span:nth-child(2),
-  .switch-candy input:checked + label {
-    color: #a0a0a0;
-    text-shadow: none }
-  .switch-candy a {
-    border: none;
-    outline: none !important;
-    /* border-radius: 3px; */
-    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45); */
-    background-color: #cbcbcb;}
+        left: 83%;
+    }
+
+    /* Candy Theme
+   * Based on the "Sort Switches / Toggles (PSD)" by Ormal Clarck
+   * http://www.premiumpixels.com/freebies/sort-switches-toggles-psd/
+   */
+    .switch-toggle.switch-candy,
+    .switch-light.switch-candy > span {
+        background-color: #fff;
+        border-radius: 10px;
+        /* box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2); */
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        height: 50px;
+    }
+
+    .switch-light.switch-candy span span,
+    .switch-light.switch-candy input:checked ~ span span:first-child,
+    .switch-toggle.switch-candy label {
+        color: #e83c32;
+        font-weight: normal;
+        text-align: center;
+        height: 100%;
+    }
+
+    .switch-light.switch-candy input ~ span span:first-child,
+    .switch-light.switch-candy input:checked ~ span span:nth-child(2),
+    .switch-candy input:checked + label {
+        color: #a0a0a0;
+        text-shadow: none
+    }
+
+    .switch-candy a {
+        border: none;
+        outline: none !important;
+        /* border-radius: 3px; */
+        /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45); */
+        background-color: #cbcbcb;
+    }
+
     /* background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), transparent); */
     /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent); */
-  .switch-candy-blue a {
-    background-color: #38a3d4; }
-  .switch-candy-yellow a {
-    background-color: #f5e560; }
-  /* iOS Theme
-*/
-  .switch-ios.switch-light span span {
-    color: #888b92;  }
-  .switch-ios.switch-light a {
-    left: 0;
-    top: 0;
-    width: 2em;
-    height: 2em;
-    background-color: #fff;
-    border-radius: 100%;
-    border: 0.25em solid #D8D9DB;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out; }
-  .switch-ios.switch-light > span {
-    display: block;
-    width: 100%;
-    height: 2em;
-    background-color: #D8D9DB;
-    border-radius: 1.75em;
-    -webkit-transition: all 0.4s ease-out;
-    -moz-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out; }
-  .switch-ios.switch-light > span span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    line-height: 1.875em;
-    vertical-align: middle;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out; }
+    .switch-candy-blue a {
+        background-color: #38a3d4;
+    }
+
+    .switch-candy-yellow a {
+        background-color: #f5e560;
+    }
+
+    /* iOS Theme
+  */
+    .switch-ios.switch-light span span {
+        color: #888b92;
+    }
+
+    .switch-ios.switch-light a {
+        left: 0;
+        top: 0;
+        width: 2em;
+        height: 2em;
+        background-color: #fff;
+        border-radius: 100%;
+        border: 0.25em solid #D8D9DB;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
+    .switch-ios.switch-light > span {
+        display: block;
+        width: 100%;
+        height: 2em;
+        background-color: #D8D9DB;
+        border-radius: 1.75em;
+        -webkit-transition: all 0.4s ease-out;
+        -moz-transition: all 0.4s ease-out;
+        transition: all 0.4s ease-out;
+    }
+
+    .switch-ios.switch-light > span span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        line-height: 1.875em;
+        vertical-align: middle;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
     .switch-ios.switch-light > span span:first-of-type {
-      opacity: 1;
-      padding-left: 1.875em; }
+        opacity: 1;
+        padding-left: 1.875em;
+    }
+
     .switch-ios.switch-light > span span:last-of-type {
-      padding-right: 1.875em; }
-  .switch-ios.switch-light input:checked ~ span a {
-    left: 100%;
-    border-color: #4BD865;
-    margin-left: -2em; }
-  .switch-ios.switch-light input:checked ~ span {
-    border-color: #4BD865;
-    box-shadow: inset 0 0 0 30px #4BD865; }
-  .switch-ios.switch-light input:checked ~ span span:first-of-type {
-    opacity: 0; }
-  .switch-ios.switch-light input:checked ~ span span:last-of-type {
-    opacity: 1;
-    color: #fff; }
-  .switch-ios.switch-toggle {
-    background-color: #D8D9DB;
-    border-radius: 30px;
-    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0; }
+        padding-right: 1.875em;
+    }
+
+    .switch-ios.switch-light input:checked ~ span a {
+        left: 100%;
+        border-color: #4BD865;
+        margin-left: -2em;
+    }
+
+    .switch-ios.switch-light input:checked ~ span {
+        border-color: #4BD865;
+        box-shadow: inset 0 0 0 30px #4BD865;
+    }
+
+    .switch-ios.switch-light input:checked ~ span span:first-of-type {
+        opacity: 0;
+    }
+
+    .switch-ios.switch-light input:checked ~ span span:last-of-type {
+        opacity: 1;
+        color: #fff;
+    }
+
+    .switch-ios.switch-toggle {
+        background-color: #D8D9DB;
+        border-radius: 30px;
+        box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
+    }
+
     .switch-ios.switch-toggle a {
-      background-color: #4BD865;
-      border: 0.125em solid #D8D9DB;
-      border-radius: 1.75em;
-      -webkit-transition: all 0.12s ease-out;
-      -moz-transition: all 0.12s ease-out;
-      transition: all 0.12s ease-out; }
+        background-color: #4BD865;
+        border: 0.125em solid #D8D9DB;
+        border-radius: 1.75em;
+        -webkit-transition: all 0.12s ease-out;
+        -moz-transition: all 0.12s ease-out;
+        transition: all 0.12s ease-out;
+    }
+
     .switch-ios.switch-toggle label {
-      height: 2.4em;
-      color: #888b92;
-      line-height: 2.4em;
-      vertical-align: middle; }
-  .switch-ios input:checked + label {
-    color: #3e4043; }
-  /* Holo Theme
- */
-  .switch-toggle.switch-holo,
-  .switch-light.switch-holo > span {
-    background-color: #464747;
-    border-radius: 1px;
-    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
-    color: #fff;
-    text-transform: uppercase; }
-  .switch-holo label {
-    color: #fff; }
-  .switch-holo > span span {
-    opacity: 0;
-    -webkit-transition: all 0.1s;
-    -moz-transition: all 0.1s;
-    transition: all 0.1s; }
+        height: 2.4em;
+        color: #888b92;
+        line-height: 2.4em;
+        vertical-align: middle;
+    }
+
+    .switch-ios input:checked + label {
+        color: #3e4043;
+    }
+
+    /* Holo Theme
+   */
+    .switch-toggle.switch-holo,
+    .switch-light.switch-holo > span {
+        background-color: #464747;
+        border-radius: 1px;
+        box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .switch-holo label {
+        color: #fff;
+    }
+
+    .switch-holo > span span {
+        opacity: 0;
+        -webkit-transition: all 0.1s;
+        -moz-transition: all 0.1s;
+        transition: all 0.1s;
+    }
+
     .switch-holo > span span:first-of-type {
-      opacity: 1; }
-  .switch-holo > span span,
-  .switch-holo label {
-    font-size: 85%;
-    line-height: 2.15625em; }
-  .switch-holo a {
-    background-color: #666;
-    border-radius: 1px;
-    box-shadow: inset rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.3) 0 -1px 0; }
-  /* Selected ON switch-light
-*/
-  .switch-holo.switch-light input:checked ~ span a {
-    background-color: #0E88B1; }
-  .switch-holo.switch-light input:checked ~ span span:first-of-type {
-    opacity: 0; }
-  .switch-holo.switch-light input:checked ~ span span:last-of-type {
-    opacity: 1; }
-  /* Material Theme
- */
-  /* switch-light
- */
-  .switch-light.switch-material a {
-    top: -0.1875em;
-    width: 1.75em;
-    height: 1.75em;
-    border-radius: 50%;
-    background: #fafafa;
-    box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.14), 0 0.1875em 0.125em -0.125em rgba(0, 0, 0, 0.2), 0 0.125em 0.25em 0 rgba(0, 0, 0, 0.12);
-    -webkit-transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    -moz-transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
-  .switch-material.switch-light {
-    overflow: visible; }
+        opacity: 1;
+    }
+
+    .switch-holo > span span,
+    .switch-holo label {
+        font-size: 85%;
+        line-height: 2.15625em;
+    }
+
+    .switch-holo a {
+        background-color: #666;
+        border-radius: 1px;
+        box-shadow: inset rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.3) 0 -1px 0;
+    }
+
+    /* Selected ON switch-light
+  */
+    .switch-holo.switch-light input:checked ~ span a {
+        background-color: #0E88B1;
+    }
+
+    .switch-holo.switch-light input:checked ~ span span:first-of-type {
+        opacity: 0;
+    }
+
+    .switch-holo.switch-light input:checked ~ span span:last-of-type {
+        opacity: 1;
+    }
+
+    /* Material Theme
+   */
+    /* switch-light
+   */
+    .switch-light.switch-material a {
+        top: -0.1875em;
+        width: 1.75em;
+        height: 1.75em;
+        border-radius: 50%;
+        background: #fafafa;
+        box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.14), 0 0.1875em 0.125em -0.125em rgba(0, 0, 0, 0.2), 0 0.125em 0.25em 0 rgba(0, 0, 0, 0.12);
+        -webkit-transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .switch-material.switch-light {
+        overflow: visible;
+    }
+
     .switch-material.switch-light::after {
-      clear: both;
-      content: "";
-      display: table; }
-  .switch-material.switch-light > span {
-    overflow: visible;
-    position: relative;
-    top: 0.1875em;
-    width: 3.25em;
-    height: 1.5em;
-    height: auto;
-    border-radius: 1em;
-    background: rgba(0, 0, 0, 0.26); }
-  .switch-material.switch-light span span {
-    position: absolute;
-    clip: rect(0 0 0 0); }
-  .switch-material.switch-light input:checked ~ span a {
-    right: 0;
-    background: #3f51b5;
-    box-shadow: 0 0.1875em 0.25em 0 rgba(0, 0, 0, 0.14), 0 0.1875em 0.1875em -0.125em rgba(0, 0, 0, 0.2), 0 0.0625em 0.375em 0 rgba(0, 0, 0, 0.12); }
-  .switch-material.switch-light input:checked ~ span {
-    background: rgba(63, 81, 181, 0.5); }
-  /* switch-toggle
- */
-  .switch-toggle.switch-material {
-    overflow: visible; }
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    .switch-material.switch-light > span {
+        overflow: visible;
+        position: relative;
+        top: 0.1875em;
+        width: 3.25em;
+        height: 1.5em;
+        height: auto;
+        border-radius: 1em;
+        background: rgba(0, 0, 0, 0.26);
+    }
+
+    .switch-material.switch-light span span {
+        position: absolute;
+        clip: rect(0 0 0 0);
+    }
+
+    .switch-material.switch-light input:checked ~ span a {
+        right: 0;
+        background: #3f51b5;
+        box-shadow: 0 0.1875em 0.25em 0 rgba(0, 0, 0, 0.14), 0 0.1875em 0.1875em -0.125em rgba(0, 0, 0, 0.2), 0 0.0625em 0.375em 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .switch-material.switch-light input:checked ~ span {
+        background: rgba(63, 81, 181, 0.5);
+    }
+
+    /* switch-toggle
+   */
+    .switch-toggle.switch-material {
+        overflow: visible;
+    }
+
     .switch-toggle.switch-material::after {
-      clear: both;
-      content: "";
-      display: table; }
-  .switch-toggle.switch-material a {
-    top: 48%;
-    width: 0.375em !important;
-    height: 0.375em;
-    margin-left: 0.25em;
-    background: #3f51b5;
-    border-radius: 100%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-transition: -webkit-transform;
-    -moz-transition: -moz-transform;
-    transition: transform; }
-  .switch-toggle.switch-material label {
-    color: rgba(0, 0, 0, 0.54);
-    font-size: 1em; }
-  .switch-toggle.switch-material label:before {
-    content: '';
-    position: absolute;
-    top: 48%;
-    left: 0;
-    display: block;
-    width: 0.875em;
-    height: 0.875em;
-    border-radius: 100%;
-    border: 0.125em solid rgba(0, 0, 0, 0.54);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%); }
-  .switch-toggle.switch-material input:checked + label:before {
-    border-color: #3f51b5; }
-  /* ripple
- */
-  .switch-light.switch-material > span:before,
-  .switch-light.switch-material > span:after,
-  .switch-toggle.switch-material label:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    display: block;
-    width: 4em;
-    height: 4em;
-    border-radius: 100%;
-    background: #3f51b5;
-    opacity: .4;
-    margin-left: -1.25em;
-    margin-top: -1.25em;
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    -webkit-transition: opacity 0.4s ease-in;
-    -moz-transition: opacity 0.4s ease-in;
-    transition: opacity 0.4s ease-in; }
-  .switch-light.switch-material > span:after {
-    left: auto;
-    right: 0;
-    margin-left: 0;
-    margin-right: -1.25em; }
-  .switch-toggle.switch-material label:after {
-    width: 3.25em;
-    height: 3.25em;
-    margin-top: -0.75em; }
-  @-webkit-keyframes materialRipple {
-    0% {
-      -webkit-transform: scale(0); }
-    20% {
-      -webkit-transform: scale(1); }
-    100% {
-      opacity: 0;
-      -webkit-transform: scale(1); } }
-  @-moz-keyframes materialRipple {
-    0% {
-      -moz-transform: scale(0); }
-    20% {
-      -moz-transform: scale(1); }
-    100% {
-      opacity: 0;
-      -moz-transform: scale(1); } }
-  @keyframes materialRipple {
-    0% {
-      -webkit-transform: scale(0);
-      -moz-transform: scale(0);
-      -ms-transform: scale(0);
-      -o-transform: scale(0);
-      transform: scale(0); }
-    20% {
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1); }
-    100% {
-      opacity: 0;
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1); } }
-  .switch-material.switch-light input:not(:checked) ~ span:after,
-  .switch-material.switch-light input:checked ~ span:before,
-  .switch-toggle.switch-material input:checked + label:after {
-    -webkit-animation: materialRipple 0.4s ease-in;
-    -moz-animation: materialRipple 0.4s ease-in;
-    animation: materialRipple 0.4s ease-in; }
-  /* trick to prevent the default checked ripple animation from showing
- * when the page loads.
- * the ripples are hidden by default, and shown only when the input is focused.
- */
-  .switch-light.switch-material.switch-light input ~ span:before,
-  .switch-light.switch-material.switch-light input ~ span:after,
-  .switch-material.switch-toggle input + label:after {
-    visibility: hidden; }
-  .switch-light.switch-material.switch-light input:focus:checked ~ span:before,
-  .switch-light.switch-material.switch-light input:focus:not(:checked) ~ span:after,
-  .switch-material.switch-toggle input:focus:checked + label:after {
-    visibility: visible; } }
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    .switch-toggle.switch-material a {
+        top: 48%;
+        width: 0.375em !important;
+        height: 0.375em;
+        margin-left: 0.25em;
+        background: #3f51b5;
+        border-radius: 100%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: -webkit-transform;
+        -moz-transition: -moz-transform;
+        transition: transform;
+    }
+
+    .switch-toggle.switch-material label {
+        color: rgba(0, 0, 0, 0.54);
+        font-size: 1em;
+    }
+
+    .switch-toggle.switch-material label:before {
+        content: '';
+        position: absolute;
+        top: 48%;
+        left: 0;
+        display: block;
+        width: 0.875em;
+        height: 0.875em;
+        border-radius: 100%;
+        border: 0.125em solid rgba(0, 0, 0, 0.54);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .switch-toggle.switch-material input:checked + label:before {
+        border-color: #3f51b5;
+    }
+
+    /* ripple
+   */
+    .switch-light.switch-material > span:before,
+    .switch-light.switch-material > span:after,
+    .switch-toggle.switch-material label:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: block;
+        width: 4em;
+        height: 4em;
+        border-radius: 100%;
+        background: #3f51b5;
+        opacity: .4;
+        margin-left: -1.25em;
+        margin-top: -1.25em;
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: opacity 0.4s ease-in;
+        -moz-transition: opacity 0.4s ease-in;
+        transition: opacity 0.4s ease-in;
+    }
+
+    .switch-light.switch-material > span:after {
+        left: auto;
+        right: 0;
+        margin-left: 0;
+        margin-right: -1.25em;
+    }
+
+    .switch-toggle.switch-material label:after {
+        width: 3.25em;
+        height: 3.25em;
+        margin-top: -0.75em;
+    }
+
+    @-webkit-keyframes materialRipple {
+        0% {
+            -webkit-transform: scale(0);
+        }
+        20% {
+            -webkit-transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            -webkit-transform: scale(1);
+        }
+    }
+    @-moz-keyframes materialRipple {
+        0% {
+            -moz-transform: scale(0);
+        }
+        20% {
+            -moz-transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            -moz-transform: scale(1);
+        }
+    }
+    @keyframes materialRipple {
+        0% {
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0);
+        }
+        20% {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+    .switch-material.switch-light input:not(:checked) ~ span:after,
+    .switch-material.switch-light input:checked ~ span:before,
+    .switch-toggle.switch-material input:checked + label:after {
+        -webkit-animation: materialRipple 0.4s ease-in;
+        -moz-animation: materialRipple 0.4s ease-in;
+        animation: materialRipple 0.4s ease-in;
+    }
+
+    /* trick to prevent the default checked ripple animation from showing
+   * when the page loads.
+   * the ripples are hidden by default, and shown only when the input is focused.
+   */
+    .switch-light.switch-material.switch-light input ~ span:before,
+    .switch-light.switch-material.switch-light input ~ span:after,
+    .switch-material.switch-toggle input + label:after {
+        visibility: hidden;
+    }
+
+    .switch-light.switch-material.switch-light input:focus:checked ~ span:before,
+    .switch-light.switch-material.switch-light input:focus:not(:checked) ~ span:after,
+    .switch-material.switch-toggle input:focus:checked + label:after {
+        visibility: visible;
+    }
+}
 
 /* Bugfix for older Webkit, including mobile Webkit. Adapted from
  * http://css-tricks.com/webkit-sibling-bug/
  */
 @media only screen and (-webkit-max-device-pixel-ratio: 2) and (max-device-width: 80em) {
-  .switch-light,
-  .switch-toggle {
-    -webkit-animation: webkitSiblingBugfix infinite 1s; } }
+    .switch-light,
+    .switch-toggle {
+        -webkit-animation: webkitSiblingBugfix infinite 1s;
+    }
+}
 
 @-webkit-keyframes webkitSiblingBugfix {
-  from {
-    -webkit-transform: translate3d(0, 0, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0); } }
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
 
 /*# sourceMappingURL=toggle-switch.css.map */
-	.switch-holder {
-		width: 100%;
-		cursor: pointer;
-	}
-	.left-switch {
-		width: 39%;
-	}
-	.right-switch {
-		width: 61%;
-	}
+.switch-holder {
+    width: 100%;
+    cursor: pointer;
+}
+
+.left-switch {
+    width: 39%;
+}
+
+.right-switch {
+    width: 61%;
+}
+
 .search-button {
     box-shadow: 0px 1px 4px #7a7a7a;
     font-family: 'LatoRegular';
@@ -812,23 +1041,28 @@
     color: #fff;
     border-radius: 10px;
 }
+
 .search-button:active {
     box-shadow: 0px 1px 4px #7a7a7a, 0px 0px 12px #af2f28 inset;
 }
+
 .search-button.search-top {
-	margin-top: 45px;
-	width: 15.39%;
+    margin-top: 45px;
+    width: 15.39%;
     float: left;
 }
+
 .search-button.search-bottom {
-	width: 21.68%;
-	float: right;
+    width: 21.68%;
+    float: right;
 }
+
 .search-content:after {
-	content: "";
-	display: block;
-	clear: both;
+    content: "";
+    display: block;
+    clear: both;
 }
+
 /* search results */
 
 .search-results {
@@ -836,6 +1070,7 @@
     margin: 0 auto;
     overflow: hidden;
 }
+
 .search-profile-block {
     width: 31.2%;
     margin: 0 3.2% 64px 0;
@@ -844,33 +1079,39 @@
     border-radius: 10px;
     overflow: hidden;
 }
+
 .search-profile-block:nth-child(3n) {
     margin: 0 0 64px 0;
 }
+
 .search-profile-block > img {
     float: left;
     margin-right: 5%;
 }
+
 .search-profile-info {
     float: left;
     padding-top: 18px;
 }
+
 .search-profile-info > strong {
     display: block;
     font-family: 'BanderaProMedium';
-	font-size: 21px;
-	line-height: 23px;
-	font-weight: normal;
-	margin-bottom: 0;
+    font-size: 21px;
+    line-height: 23px;
+    font-weight: normal;
+    margin-bottom: 0;
 }
-.search-profile-info>span {
-	display: block;
-	color: #a0a0a0;
+
+.search-profile-info > span {
+    display: block;
+    color: #a0a0a0;
     font-family: 'LatoRegular';
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 3px;
 }
+
 .search-profile-info > em {
     display: block;
     font-style: normal;
@@ -882,14 +1123,17 @@
     background: url("../img/search/online-ico.png") no-repeat 1px 4px;
     margin-bottom: 16px;
 }
+
 .search-profile-info ul li {
     display: block;
     width: 125px;
     margin-bottom: 9px;
 }
+
 .search-profile-info ul li:last-child {
     margin-bottom: 19px;
 }
+
 .search-profile-info ul li a {
     display: block;
     border: 1px solid #000;
@@ -901,14 +1145,17 @@
     -ms-transition: box-shadow 0.3s;
     -o-transition: box-shadow 0.3s;
 }
+
 .search-profile-info ul li a:hover {
-  box-shadow: 2px 2px 0 #e1e1e1;
+    box-shadow: 2px 2px 0 #e1e1e1;
 }
+
 .search-profile-info ul li a img {
     display: block;
     float: left;
     margin-right: 8px;
 }
+
 .search-profile-info ul li a span {
     display: block;
     float: left;
@@ -918,24 +1165,31 @@
     line-height: 13px;
     margin-top: 6px;
 }
+
 .search-profile-info ul .search-chat-invite a {
     padding: 6px 0 5px 10px;
 }
+
 .search-profile-info ul .search-chat-invite a img {
     margin-right: 8px;
 }
+
 .search-profile-info ul .search-chat-invite a span {
     margin-top: 5px;
 }
+
 .search-profile-info ul .search-send-gift a {
     padding: 3px 0 4px 13px;
 }
+
 .search-profile-info ul .search-send-gift a img {
     margin-right: 8px;
 }
+
 .search-profile-info ul .search-send-gift a span {
     margin-top: 9px;
 }
+
 .view-profile-button {
     width: 125px;
     font-family: 'LatoRegular';
@@ -953,7 +1207,63 @@
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
 }
+
 .view-profile-button:hover {
     background: #fff;
     color: #ff382d;
+}
+
+.price-range-min-3, .price-range-max-3 {
+    width: 64px;
+    display: block;
+    text-align: center;
+}
+
+.price-range-both-3 {
+    display: none;
+    text-align: center;
+    width: 100%;
+    left: 20px;
+    top: 30px !important;
+}
+
+.price-range-both-3 span {
+    display: block;
+}
+
+.price-range-both-3 section {
+    display: inline-block;
+    text-align: center;
+}
+
+.price-range-min-2, .price-range-max-2 {
+    left: -15px;
+    width: 92px;
+    display: block;
+    text-align: center;
+}
+
+.price-range-both-2 {
+    width: 205px;
+    left: 24%;
+    top: 30px !important;
+}
+
+.price-range-both-2 section {
+    display: inline-block;
+    text-align: center;
+}
+
+.both-holder {
+    position: relative;
+}
+
+.price-range-min-1, .price-range-max-1 {
+    display: block;
+    left: -43px;
+}
+
+.price-range-min, .price-range-max {
+    display: block;
+    left: -43px;
 }

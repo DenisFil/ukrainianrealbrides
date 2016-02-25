@@ -75,9 +75,7 @@ $(document).ready(function () {
     });
 
     /*******************************Быстрый поиск******************************/
-    function switcher() {
-        var selector = '.switch-holder span';
-
+    function switcher(selector) {
         $(selector).each(function (index) {
             switch (index) {
                 case 0:
@@ -96,9 +94,11 @@ $(document).ready(function () {
         });
     }
 
-    $('.switch-holder').click(function () {
-        switcher();
+    $('#switch-holder-top').click(function () {
+        switcher('#switch-holder-top span');
     });
+
+    $(document).on('click', '#switch-holder-bottom', function () { switcher('#switch-holder-bottom span'); });
 
     function onlineStatus() {
         var newIndex;
@@ -152,6 +152,17 @@ $(document).ready(function () {
     });
 
     /******************************Расширенный поиск***************************/
+    $.ajax({
+        type: 'post',
+        url: baseUrl + 'user_interface/search/cities',
+        dataType: 'json',
+        success: function (data) {
+            if (data.cities.length > 0){
+                $('#city').removeAttr('disabled');
+            }
+        }
+    });
+
     $('.advanced-search-button').click(function () {
         $('.search').animate({'opacity': 'hide', 'height': '492px'}, 1000);
         setTimeout(function () {

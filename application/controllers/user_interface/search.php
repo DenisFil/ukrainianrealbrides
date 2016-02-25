@@ -43,6 +43,25 @@
             }
         }
 
+        public function cities()
+        {
+            $query_cities = $this->search_model->get_cities();
+            $cities = array('cities' => array());
+             foreach ($query_cities as $value)
+             {
+                 if ($value->city != NULL)
+                 {
+                     var_dump('hello');
+                     $search = array_search($value->city, $cities);
+                     if ($search === FALSE)
+                     {
+                         array_push($cities['cities'], $value->city);
+                     }
+                 }
+             }
+            echo json_encode($cities);
+        }
+
         public function first_get_profiles()
         {
             $first_result = $this->search_model->first_get_profiles($this->session->userdata('gender'));
@@ -68,13 +87,6 @@
         public function search()
         {
             $search_data = $this->input->post();
-                foreach ($search_data as $key => $value)
-                {
-                    if ($value == '')
-                    {
-                        unset($search_data[$key]);
-                    }
-                }
             $search_query = $this->search_model->search($search_data, $this->session->userdata('gender'));
             $search_result = array();
                 foreach ($search_query as $key => $value) {
