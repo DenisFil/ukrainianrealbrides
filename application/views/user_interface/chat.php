@@ -27,15 +27,18 @@
                         			<span>0</span>
                         		</div>
                         		<div class="dialog-partner-left">
-                        			<div class="dialog-partner-avatar">
+                        			<button class="dialog-partner-avatar">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
                         				<span class="chat-avatar-status online-avatar-status"></span>
-                        			</div>
+                        			</button>
                         			<div class="dialog-partner-info">
-                        				<span>Lena</span>
+                        				<a href="#">Lena</a>
                         				<em>Ukraine, Kiev</em>
                         			</div>
                         		</div>
+								<div class="dialog-partner-right">
+                        			<button class="start-dialog">Start a dialogue</button>
+								</div>
                         	</div>
                         	<div class="dialog-partner active-dialog">
                         		<div class="new-message-count">
@@ -43,15 +46,19 @@
                         			<span>0</span>
                         		</div>
                         		<div class="dialog-partner-left">
-                        			<div class="dialog-partner-avatar">
+                        			<button class="dialog-partner-avatar">
                         				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
                         				<span class="chat-avatar-status online-avatar-status"></span>
-                        			</div>
+                        			</button>
                         			<div class="dialog-partner-info">
-                        				<span>Marina</span>
+                        				<a href="#">Marina</a>
                         				<em>Ukraine, Kharkiv</em>
                         			</div>
                         		</div>
+								<div class="dialog-partner-right">
+									<span>10:23</span>
+                        			<button class="stop-dialog">Stop</button>
+								</div>
                         	</div>
                         	<div class="dialog-partner">
                         		<div class="new-message-count">
@@ -59,15 +66,95 @@
                         			<span>0</span>
                         		</div>
                         		<div class="dialog-partner-left">
-                        			<div class="dialog-partner-avatar">
-                        				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/1.jpg" width="35" height="35" >
+                        			<button class="dialog-partner-avatar offline-avatar-status">
+                        				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
                         				<span class="chat-avatar-status online-avatar-status"></span>
-                        			</div>
+                        			</button>
                         			<div class="dialog-partner-info">
-                        				<span>Ira</span>
+                        				<a href="#">Ira</a>
                         				<em>Ukraine, Lviv</em>
                         			</div>
                         		</div>
+								<div class="dialog-partner-right">
+                        			<button class="start-dialog">Start a dialogue</button>
+								</div>
+                        	</div>
+                        	<div class="dialog-partner">
+                        		<div class="new-message-count">
+                        			<em></em>
+                        			<span>0</span>
+                        		</div>
+                        		<div class="dialog-partner-left">
+                        			<button class="dialog-partner-avatar offline-avatar-status">
+                        				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
+                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        			</button>
+                        			<div class="dialog-partner-info">
+                        				<a href="#">Ekaterina</a>
+                        				<em>Ukraine, Kiev</em>
+                        			</div>
+                        		</div>
+								<div class="dialog-partner-right">
+                        			<button class="start-dialog">Start a dialogue</button>
+								</div>
+                        	</div>
+                        	<div class="dialog-partner">
+                        		<div class="new-message-count new-message-active">
+                        			<em></em>
+                        			<span>7</span>
+                        		</div>
+                        		<div class="dialog-partner-left">
+                        			<button class="dialog-partner-avatar">
+                        				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
+                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        			</button>
+                        			<div class="dialog-partner-info">
+                        				<a href="#">Olga</a>
+                        				<em>Ukraine, Zaporozhye</em>
+                        			</div>
+                        		</div>
+								<div class="dialog-partner-right">
+									<span>7:17</span>
+                        			<button class="stop-dialog">Stop</button>
+								</div>
+                        	</div>
+                        	<div class="dialog-partner">
+                        		<div class="new-message-count">
+                        			<em></em>
+                        			<span>0</span>
+                        		</div>
+                        		<div class="dialog-partner-left">
+                        			<button class="dialog-partner-avatar">
+                        				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
+                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        			</button>
+                        			<div class="dialog-partner-info">
+                        				<a href="#">Natasha</a>
+                        				<em>Ukraine, Kharkiv</em>
+                        			</div>
+                        		</div>
+								<div class="dialog-partner-right">
+                        			<button class="start-dialog">Start a dialogue</button>
+								</div>
+                        	</div>
+                        	<div class="dialog-partner">
+                        		<div class="new-message-count">
+                        			<em></em>
+                        			<span>0</span>
+                        		</div>
+                        		<div class="dialog-partner-left">
+                        			<button class="dialog-partner-avatar offline-avatar-status">
+                        				<img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
+                        				<span class="chat-avatar-status online-avatar-status"></span>
+                        			</button>
+                        			<div class="dialog-partner-info">
+                        				<a href="#">Ira</a>
+                        				<em>Ukraine, Lviv</em>
+                        			</div>
+                        		</div>
+								<div class="dialog-partner-right">
+                        			<button class="start-dialog">Start a dialogue</button>
+								</div>
                         	</div>
 						</div>
 					</div>
