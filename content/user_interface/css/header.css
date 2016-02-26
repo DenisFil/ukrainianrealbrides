@@ -92,6 +92,17 @@
          url('../fonts/LatoBoldItalic.ttf') format('truetype'),
          url('../fonts/LatoBoldItalic.svg#LatoBoldItalic') format('svg');
 }
+@font-face {
+    font-family: 'latoheavy';
+    src: url('../fonts/lato-heavy-webfont.eot');
+    src: url('../fonts/lato-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-heavy-webfont.woff2') format('woff2'),
+         url('../fonts/lato-heavy-webfont.woff') format('woff'),
+         url('../fonts/lato-heavy-webfont.ttf') format('truetype'),
+         url('../fonts/lato-heavy-webfont.svg#latoheavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
 	margin: 0 auto 0;
@@ -119,6 +130,7 @@ button {
 	border: none;
 	outline: none;
 	background: none;
+	padding: 0;
 }
 mark {background: none;}
 ul, ol {margin: 0; padding: 0; list-style: none;}
