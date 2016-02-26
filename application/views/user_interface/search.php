@@ -8,7 +8,7 @@
 					<span class="search-title">ID</span>
 					<div class="search-id-holder">
 			            <input class="form-control" type="text" placeholder="023" id="#" >
-						<button type="button" class="search-id-button"></button>
+						<button type="button" data-tooltip="Write here partners ID" class="search-id-button" ></button>
 					</div>
 				</div>
 				<div class="search-second-column">
@@ -56,7 +56,7 @@
 					<span class="search-title">ID</span>
 					<div class="search-id-holder">
 			            <input class="form-control" type="text" placeholder="023" id="#" >
-						<button type="button" class="search-id-button"></button>
+						<button type="button" class="search-id-button"data-tooltip="Write here partners ID" ></button>
 					</div>
 				</div>
 				<div class="search-second-column">
