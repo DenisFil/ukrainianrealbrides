@@ -298,7 +298,13 @@
   				<div class="chat-footer-right">
   					<button type="button" class="emoji-launch">
   						<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji-ico.png" width="21" height="21" >
-  						<div class="emoji-block">dfsdfsdfsdf</div>
+  						<div class="emoji-block">
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+  						</div>
   					</button>
   					<button type="button" class="send-message-button">Send</button>
   				</div>

@@ -493,7 +493,10 @@
 	box-shadow: 0 0 10px #ebebeb;
 	padding: 10px;
 }
-
+.emoji-block img {
+	display: inline-block;
+	margin-right: 5px;
+}
 
 
 
