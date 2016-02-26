@@ -17,13 +17,6 @@ $(document).ready(function(){
 			});
 		}, 10);
 	}, 15);
-
-	
-	//$('select.custom-select').customSelect();
-	$('input:radio').customRadio();
-	$('input:checkbox').customCheckbox();
-	// tabs
-	//$("#tabs").tabs();
 });
 $(document).ready(function(){
 	//$('select').customSelect();
@@ -32,18 +25,18 @@ $(document).ready(function(){
 			$('.nav-tabs li').each(function(){
 				var className = $(this).attr('class');
 				if (className == 'active'){
-					$('select:not(".header-left")').customSelect();
+					$('select:not(".header-left select")').customSelect();
 				}
 			});
 		}, 10);
 	}, 15);
 
 	
-	//$('select.custom-select').customSelect();
+/*	//$('select.custom-select').customSelect();
 	$('input:radio').customRadio();
 	$('input:checkbox').customCheckbox();
 	// tabs
-	//$("#tabs").tabs();
+	//$("#tabs").tabs();*/
 });
 // custom selects module
 jQuery.fn.customSelect = function(_options) {
