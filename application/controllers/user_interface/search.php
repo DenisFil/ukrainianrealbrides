@@ -84,29 +84,81 @@
             echo json_encode($first_result);
         }
 
+        private function age($data)
+        {
+            foreach ($data as $value)
+            {
+                $this->load->helper('date');
+
+                $date_string = '%j.%n.%Y';
+                $today = mdate($date_string, time());
+                $today = explode('.', $today);
+                $today_days = ($today[2] * 365) + ($today[1] * 30) + $today[0];
+                $birthday = explode('.', $value->birthday);
+                $birthday_days = ($birthday[2] * 365) + ($birthday[1] * 30) + $birthday[0];
+                $value->birthday = floor(($today_days - $birthday_days) / 365);
+            }
+            return $data;
+        }
+
         public function search()
         {
             $search_data = $this->input->post();
             $search_query = $this->search_model->search($search_data, $this->session->userdata('gender'));
             $search_result = array();
+            if ($search_data['id'] != '')
+            {
+                $search_result = $this->age($search_query);
+                echo json_encode($search_result);
+            }
+            else
+            {
+                $search_query = $this->age($search_query);
                 foreach ($search_query as $key => $value) {
-                    $this->load->helper('date');
 
-                    $date_string = '%j.%n.%Y';
-                    $today = mdate($date_string, time());
-                    $today = explode('.', $today);
-                    $today_days = ($today[2] * 365) + ($today[1] * 30) + $today[0];
-                    $birthday = explode('.', $value->birthday);
-                    $birthday_days = ($birthday[2] * 365) + ($birthday[1] * 30) + $birthday[0];
-                    $value->birthday = floor(($today_days - $birthday_days) / 365);
-                        if ($value->birthday < $search_data['from'] || $value->birthday > $search_data['to']) {
-                            unset($search_query[$key]);
-                        }
+                    if ($value->birthday < $search_data['from'] || $value->birthday > $search_data['to']) {
+                        unset($search_query[$key]);
+                    }
                 }
 
                 foreach ($search_query as $value) {
                     array_push($search_result, $value);
                 }
-            echo json_encode($search_result);
+                echo json_encode($search_result);
+            }
+        }
+
+        public function full_search()
+        {
+            $search_data = $this->input->post();
+            $search_query = $this->search_model->full_search($search_data, $this->session->userdata('gender'));
+            if ($search_data['id'] != '')
+            {
+                $search_result = $this->age($search_query);
+                echo json_encode($search_result);
+            }
+            else
+            {
+                $search_query = $this->age($search_query);
+                foreach ($search_query as $key => $value)
+                {
+                    $weight = explode(' ', $value->weight);
+                    $weight_from = explode(' ', $search_data['weight_from']);
+                    $weight_to = explode(' ', $search_data['weight_to']);
+                    if ($weight[0] < $weight_from[0] || $weight[0] > $weight_to[0])
+                    {
+                        unset($search_query[$key]);
+                    }
+
+                    $height = explode(' ', $value->height);
+                    $height_from = explode(' ', $search_data['height_from']);
+                    $height_to = explode(' ', $search_data['height_to']);
+                    if ($height[0] < $height_from[0] || $height[0] > $height_to[0])
+                    {
+                        unset($search_query[$key]);
+                    }
+                }
+                echo json_encode($search_query);
+            }
         }
     }

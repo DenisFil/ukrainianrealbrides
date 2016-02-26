@@ -4586,21 +4586,22 @@ $('#slider-age').slider({
 
         $('.ui-slider-handle:eq(0) .price-range-min').html('' + ui.values[0]);
         $('.ui-slider-handle:eq(1) .price-range-max').html('' + ui.values[1]);
+        $('.both-holder:eq(0) .price-range-both').html(ui.values[0] + ' - ' + ui.values[1]);
 
-        /*
-         if (collision($('.price-range-min'), $('.price-range-max')) == true) {
-         $('.price-range-min, .price-range-max').css('opacity', '0');
-         $('.price-range-both').css('display', 'block');
+
+         if (collision($('.price-range-min'), $('.price-range-max'), 30) == true) {
+             $('.price-range-min, .price-range-max').css('opacity', '0');
+             $('.price-range-both').css('display', 'block');
          } else {
-         $('.price-range-min, .price-range-max').css('opacity', '1');
-         $('.price-range-both').css('display', 'none');
+             $('.price-range-min, .price-range-max').css('opacity', '1');
+             $('.price-range-both').css('display', 'none');
          }
-         */
+
 
     }
 });
 
-$('.ui-slider-range').append('<span class="price-range-both value"><i>$' + $('#slider-age').slider('values', 0) + ' - </i>' + $('#slider-age').slider('values', 1) + '</span>');
+$('.both-holder:eq(0)').append('<span class="price-range-both value"><i>' + $('#slider-age').slider('values', 0) + ' - </i>' + $('#slider-age').slider('values', 1) + '</span>');
 
 $('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#slider-age').slider('values', 0) + '</span>');
 
@@ -4617,21 +4618,22 @@ $('#slider-age-advanced').slider({
 
         $('.ui-slider-handle:eq(2) .price-range-min-1').html('' + ui.values[0]);
         $('.ui-slider-handle:eq(3) .price-range-max-1').html('' + ui.values[1]);
+        $('.both-holder:eq(1) .price-range-both-1').html(ui.values[0] + ' - ' + ui.values[1]);
 
-        /*
-         if (collision($('.price-range-min'), $('.price-range-max')) == true) {
-         $('.price-range-min, .price-range-max').css('opacity', '0');
-         $('.price-range-both').css('display', 'block');
+
+         if (collision($('.price-range-min-1'), $('.price-range-max-1'), 30) == true) {
+         $('.price-range-min-1, .price-range-max-1').css('opacity', '0');
+         $('.price-range-both-1').css('display', 'block');
          } else {
-         $('.price-range-min, .price-range-max').css('opacity', '1');
-         $('.price-range-both').css('display', 'none');
+         $('.price-range-min-1, .price-range-max-1').css('opacity', '1');
+         $('.price-range-both-1').css('display', 'none');
          }
-         */
+
 
     }
 });
 
-$('.ui-slider-range:eq(1)').append('<span class="price-range-both value"><i>$' + $('#slider-age-advanced').slider('values', 0) + ' - </i>' + $('#slider-age-advanced').slider('values', 1) + '</span>');
+$('.both-holder:eq(1)').append('<span class="price-range-both-1 value"><i>' + $('#slider-age-advanced').slider('values', 0) + ' - </i>' + $('#slider-age-advanced').slider('values', 1) + '</span>');
 
 $('.ui-slider-handle:eq(2)').append('<span class="price-range-min-1 value">' + $('#slider-age-advanced').slider('values', 0) + '</span>');
 
@@ -4655,7 +4657,7 @@ $('#slider-weight').slider({
 
         $('.ui-slider-handle:eq(4) .price-range-min-2').html('' + ui.values[0]);
         $('.ui-slider-handle:eq(5) .price-range-max-2').html('' + ui.values[1]);
-        $('.both-holder:eq(0) .price-range-both-2').html(ui.values[0] + ' - ' + ui.values[1]);
+        $('.both-holder:eq(2) .price-range-both-2').html(ui.values[0] + ' - ' + ui.values[1]);
 
 
          if (collision($('.price-range-min-2'), $('.price-range-max-2'), 90) == true) {
@@ -4686,7 +4688,7 @@ $(document).ready(function () {
     var startMaxWeight = '<section><span style="display: block; ">' + maxWeight + '</span><span> (' + lbs + 'lbs)</span></section>';
 
     $('.ui-slider-handle:eq(5)').append('<span class="price-range-max-2 value">' + startMaxWeight + '</span>');
-    $('.both-holder:eq(0)').append('<span class="price-range-both-2 value"><i>' + startMinWeight + ' - </i>' + startMaxWeight + '</span>');
+    $('.both-holder:eq(2)').append('<span class="price-range-both-2 value"><i>' + startMinWeight + ' - </i>' + startMaxWeight + '</span>');
 });
 
 // // slider call
@@ -4712,7 +4714,7 @@ $('#slider-height').slider({
 
         $('.ui-slider-handle:eq(6) .price-range-min-3').html('' + ui.values[0]);
         $('.ui-slider-handle:eq(7) .price-range-max-3').html('' + ui.values[1]);
-        $('.both-holder:eq(1) .price-range-both-3').html(ui.values[0] + ' - ' + ui.values[1]);
+        $('.both-holder:eq(3) .price-range-both-3').html(ui.values[0] + ' - ' + ui.values[1]);
 
 
         if (collision($('.price-range-min-3'), $('.price-range-max-3'), 60) == true) {
@@ -4754,5 +4756,5 @@ $(document).ready(function () {
     $('.ui-slider-handle:eq(7)').append('<span class="price-range-max-3 value">' + startMaxHeight + '</span>');
     var newMaxHeight = '<span>' + maxHeight + ' (' + ft_intermediate + "' " + inches + "'')</span>";
 
-    $('.both-holder:eq(1)').append('<span class="price-range-both-3 value"><i>' + newMinHeight + ' - </i>' + newMaxHeight + '</span>');
+    $('.both-holder:eq(3)').append('<span class="price-range-both-3 value"><i>' + newMinHeight + ' - </i>' + newMaxHeight + '</span>');
 });

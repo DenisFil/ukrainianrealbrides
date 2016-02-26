@@ -144,7 +144,7 @@
 							        <option selected></option>
 									<?php for ($i = 40; $i <= 130; $i++): ?>
 										<?php $lbs = round($i*2.20462, 1); ?>
-										<option><?php echo $i . 'kg (' . $lbs . ' lbs)'; ?></option>
+										<option><?php echo $i . ' kg (' . $lbs . ' lbs)'; ?></option>
 									<?php endfor; ?>
 							    </select>
 							</label>

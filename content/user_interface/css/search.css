@@ -1267,3 +1267,15 @@
     display: block;
     left: -43px;
 }
+
+.price-range-both {
+    width: 66px !important;
+    left: 55% !important;
+    top: 30px !important;
+}
+
+.price-range-both-1 {
+    width: 66px;
+    left: 45%;
+    top: 30px;
+}

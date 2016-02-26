@@ -40,13 +40,7 @@
                                     <div class="characters-left">
                                         <span>Height</span>
                                     </div>
-									<span class="characters-right">
-										<?php if ($all_data[1][0]->height): ?>
-                                            <?php echo $all_data[1][0]->height; ?>
-                                        <?php else: ?>
-                                            <a href="#">Ask information</a>
-                                        <?php endif; ?>
-									</span>
+									<span class="characters-right"><?php echo $all_data[1][0]->height; ?></span>
 								</li>
 								<li>
 									<div class="characters-left">

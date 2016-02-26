@@ -2,6 +2,29 @@ $(document).ready(function () {
     var baseUrl = 'http://ukrainianrealbrides.int/';
     var firstData;
 
+    function output_search_results(data)
+    {
+        var selector = '.search-results';
+        var heightResults = Math.ceil(data.length/3) * 363;
+        $(selector).animate({ 'height' : heightResults, 'opacity' : 0 }, 300);
+
+        setTimeout(function () {
+            $(selector).empty();
+
+            setTimeout(function () {
+                for (var i = 0; i < data.length; i++) {
+                    var html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + data[i].id + '/' + data[i].avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + data[i].name + ', ' + '<span>' + data[i].birthday + '</span></strong><span>' + data[i].country_name + ', ' + data[i].city + '</span><em>Online</em><ul><li><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + data[i].id + '" class="view-profile-button">View Profile</a></div></div>';
+
+                    $(selector).append(html);
+                }
+            }, 200);
+        }, 400);
+
+        setTimeout(function () {
+            $(selector).animate({ 'height' : heightResults, 'opacity' : 1 }, 300);
+        }, 600);
+    }
+
     //Вывод профилей
     $.ajax({
         type: 'post',
@@ -128,25 +151,7 @@ $(document).ready(function () {
             url: baseUrl + 'user_interface/search/search',
             dataType: 'json',
             success: function (data) {
-                var selector = '.search-results';
-                var heightResults = Math.ceil(data.length/3) * 363;
-                $(selector).animate({ 'height' : heightResults, 'opacity' : 0 }, 300);
-
-                setTimeout(function () {
-                    $(selector).empty();
-
-                    setTimeout(function () {
-                        for (var i = 0; i < data.length; i++) {
-                            var html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + data[i].id + '/' + data[i].avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + data[i].name + ', ' + '<span>' + data[i].birthday + '</span></strong><span>' + data[i].country_name + ', ' + data[i].city + '</span><em>Online</em><ul><li><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="#" class="view-profile-button">View Profile</a></div></div>';
-
-                            $(selector).append(html);
-                        }
-                    }, 200);
-                }, 400);
-
-                setTimeout(function () {
-                    $(selector).animate({ 'height' : heightResults, 'opacity' : 1 }, 300);
-                }, 600);
+                output_search_results(data);
             }
         });
     });
@@ -159,8 +164,23 @@ $(document).ready(function () {
         success: function (data) {
             if (data.cities.length > 0){
                 $('#city').removeAttr('disabled');
+                $.each(data.cities, function () {
+                    var html = '<span class="city">' + this + '</span>';
+                    $('#city').next().append(html);
+                });
             }
         }
+    });
+
+    $('#city').focus(function () {
+        $(this).next().show();
+    }).blur(function () {
+        $(this).next().hide();
+    });
+
+    $('.city').click(function () {
+        var city = $(this).val();
+        $('#city').val(city);
     });
 
     $('.advanced-search-button').click(function () {
@@ -168,5 +188,37 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.advanced-search').animate({'opacity': 'show'}, 1000);
         }, 1000);
+    });
+
+    $('#search-bottom').click(function () {
+        var data = {
+            id: $('#id-bottom').val(),
+            age_from: $('.price-range-min-1').text(),
+            age_to: $('.price-range-max-1').text(),
+            country: $('#country-bottom').val(),
+            online: onlineStatus(),
+            name: $('#name-bottom').val(),
+            weight_from: $('.price-range-min-2').text(),
+            weight_to: $('.price-range-max-2').text(),
+            city: $('#city').val(),
+            eyes_color: $('#eyes').val(),
+            children: $('#children').val(),
+            height_from: $('.price-range-min-3').text(),
+            height_to: $('.price-range-max-3').text(),
+            religion: $('#religion').val(),
+            hair_color: $('#hair').val()
+        };
+
+        firstData = null;
+
+        $.ajax({
+            type: 'post',
+            data: data,
+            url: baseUrl + 'user_interface/search/full_search',
+            dataType: 'json',
+            success: function (data) {
+                output_search_results(data);
+            }
+        });
     });
 });
