@@ -21,13 +21,15 @@
             <div class="profile-prewiev-tabs">
                 <!-- Tabs nav -->
                 <ul class="nav nav-tabs nav-justified" role="tablist">
-                    <li role="presentation" class="active"><a href="#preview-personal-tab"
-                                                              aria-controls="preview-personal-tab" role="tab"
-                                                              data-toggle="tab">Personal</a></li>
-                    <li role="presentation"><a href="#preview-about-me-tab" aria-controls="preview-about-me-tab"
-                                               role="tab" data-toggle="tab">About me</a></li>
-                    <li role="presentation"><a href="#preview-about-partner-tab" aria-controls="preview-aboutme-tab"
-                                               role="tab" data-toggle="tab">About partner</a></li>
+                    <li role="presentation" class="active">
+                    	<a href="#preview-personal-tab" aria-controls="preview-personal-tab" role="tab" data-toggle="tab">Personal</a>
+                    </li>
+                    <li role="presentation">
+                    	<a href="#preview-about-me-tab" aria-controls="preview-about-me-tab" role="tab" data-toggle="tab">About me</a>
+                    </li>
+                    <li role="presentation">
+                    	<a href="#preview-about-partner-tab" aria-controls="preview-aboutme-tab" role="tab" data-toggle="tab">About partner</a>
+                    </li>
                 </ul>
 
                 <div class="tab-content">
@@ -38,13 +40,7 @@
                                     <div class="characters-left">
                                         <span>Height</span>
                                     </div>
-									<span class="characters-right">
-										<?php if ($all_data[1][0]->height): ?>
-                                            <?php echo $all_data[1][0]->height; ?>
-                                        <?php else: ?>
-                                            <a href="#">Ask information</a>
-                                        <?php endif; ?>
-									</span>
+									<span class="characters-right"><?php echo $all_data[1][0]->height; ?></span>
 								</li>
 								<li>
 									<div class="characters-left">
@@ -87,7 +83,20 @@
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="preview-about-me-tab">
 					    <div class="tab-body">
-							<?php echo $all_data[1][0]->about_me; ?>
+							<ul class="profile-characters">
+								<li class="about-block">
+									<div class="characters-left">
+										<span>About me:</span>
+									</div>
+									<span class="characters-right"><?php echo $all_data[1][0]->about_me; ?></span>
+								</li>
+								<li class="about-block">
+									<div class="characters-left">
+										<span>My hobbies:</span>
+									</div>
+									<span class="characters-right"></span>
+								</li>
+							</ul>
 					    </div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="preview-about-partner-tab">
@@ -124,7 +133,7 @@
 									<span class="characters-right" id="about-my-partner">
 										<?php echo $all_data[2][0]->about_my_partner; ?>
 									</span>
-									<button type="button" style="display:none;">Show more</button>
+									<button class="read-more-button" type="button" style="display:none;">Show more</button>
 								</li>
 							</ul>
 						</div>

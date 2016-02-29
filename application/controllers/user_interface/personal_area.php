@@ -82,6 +82,13 @@
                             'new_image' => './content/profiles/avatars/' . $user_id . '/' . $data['upload_data']['raw_name'] . '_full.jpg',
                             'maintain_ratio' => TRUE,
                             'height' => '604'
+                        ),
+                        'height_400' => array(
+                            'image_library' => 'gd2',
+                            'source_image' => './content/profiles/avatars/' . $user_id . '/' . $data['upload_data']['file_name'],
+                            'new_image' => './content/profiles/avatars/' . $user_id . '/' . $data['upload_data']['raw_name'] . '_full.jpg',
+                            'maintain_ratio' => TRUE,
+                            'height' => '400'
                         )
                     );
 
@@ -95,6 +102,13 @@
                         $this->load->library('image_lib', $config['image_lib']['height']);
                     }
                     $this->image_lib->resize();
+                    $height = getimagesize('./content/profiles/avatars/' . $user_id . '/' . $data['upload_data']['raw_name'] . '_full.jpg');
+                    if ($height[1] < 400)
+                    {
+                        unlink('./content/profiles/avatars/' . $user_id . '/' . $data['upload_data']['raw_name'] . '_full.jpg');
+                        $this->image_lib->initialize($config['image_lib']['height_400']);
+                        var_dump($this->image_lib->resize());exit;
+                    }
                     unlink('./content/profiles/avatars/' . $user_id . '/' . $data['upload_data']['file_name']);
 
                     //Сохранение фото
