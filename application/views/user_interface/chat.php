@@ -213,7 +213,7 @@
 				<div class="chat-header-left">
                     <button class="chat-partner-avatar offline-avatar-status">
                         <img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35" height="35" >
-                        <span class="chat-avatar-status online-avatar-status"></span>
+                        <span class="chat-avatar-status offline-avatar-status"></span>
                     </button>
                     <div class="chat-partner-info">
                     	<div class="chat-partner-name">
@@ -284,6 +284,12 @@
 					</div>
 					<span class="chat-row-right">14:20</span>
 				</div>
+				<div class="chat-field-row">
+					<div class="chat-row-left">
+						<span class="chat-message incoming-message">I'm a tooltip! Or am I a speech bubble?</span>
+					</div>
+					<span class="chat-row-right">14:20</span>
+				</div>
 			</div>
 			<div class="chat-body-footer">
 				<form action="#" >
@@ -292,6 +298,13 @@
   				<div class="chat-footer-right">
   					<button type="button" class="emoji-launch">
   						<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji-ico.png" width="21" height="21" >
+  						<div class="emoji-block">
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+							<img src="<?php echo base_url(); ?>content/user_interface/img/chat/emoji.png" width="20" height="20" >
+  						</div>
   					</button>
   					<button type="button" class="send-message-button">Send</button>
   				</div>
