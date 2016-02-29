@@ -6,7 +6,6 @@
 .search {
     width: 100%;
 }
-
 .sub-heading {
     display: block;
     text-align: center;
@@ -179,8 +178,9 @@
     top: 30px;
     left: 50%;
 }
+
 .search-location-block {
-	position: relative;
+    position: relative;
 }
 
 .search-third-column {
@@ -203,19 +203,19 @@
 }
 
 .location-drop span {
-  display: block;
-  transition: all 0.5s;
-	padding: 5px;
+    display: block;
+    transition: all 0.5s;
+    padding: 5px;
 }
 
 .location-drop span:hover {
-  background: #e83c32;
-  color: #fff;
-	cursor: pointer;
+    background: #e83c32;
+    color: #fff;
+    cursor: pointer;
 }
+
 .form-control.location-arrow {
-	cursor: pointer;
-  background:  #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
+    background: #fff url(../img/header/select-settings.png) no-repeat 94% 50%;
 }
 
 .form-control {
@@ -574,37 +574,46 @@
     }
 
     .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(11) + label ~ a {
-      left: 83%; }
-  /* Candy Theme
- * Based on the "Sort Switches / Toggles (PSD)" by Ormal Clarck
- * http://www.premiumpixels.com/freebies/sort-switches-toggles-psd/
- */
-  .switch-toggle.switch-candy,
-  .switch-light.switch-candy > span {
-    background-color: #fff;
-    border-radius: 10px;
-    /* box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2); */
-    border: 1px solid rgba(0,0,0,0.4); 
-	height: 50px;}
-  .switch-light.switch-candy span span,
-  .switch-light.switch-candy input:checked ~ span span:first-child,
-  .switch-toggle.switch-candy label {
-	color: #e83c32 ;
-    font-weight: normal;
-    text-align: center;
-	height: 100%;
-}
-  .switch-light.switch-candy input ~ span span:first-child,
-  .switch-light.switch-candy input:checked ~ span span:nth-child(2),
-  .switch-candy input:checked + label {
-    color: #a0a0a0;
-    text-shadow: none }
-  .switch-candy a {
-    border: none;
-    outline: none !important;
-    /* border-radius: 3px; */
-    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45); */
-    background-color: #cbcbcb;}
+        left: 83%;
+    }
+
+    /* Candy Theme
+   * Based on the "Sort Switches / Toggles (PSD)" by Ormal Clarck
+   * http://www.premiumpixels.com/freebies/sort-switches-toggles-psd/
+   */
+    .switch-toggle.switch-candy,
+    .switch-light.switch-candy > span {
+        background-color: #fff;
+        border-radius: 10px;
+        /* box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2); */
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        height: 50px;
+    }
+
+    .switch-light.switch-candy span span,
+    .switch-light.switch-candy input:checked ~ span span:first-child,
+    .switch-toggle.switch-candy label {
+        color: #e83c32;
+        font-weight: normal;
+        text-align: center;
+        height: 100%;
+    }
+
+    .switch-light.switch-candy input ~ span span:first-child,
+    .switch-light.switch-candy input:checked ~ span span:nth-child(2),
+    .switch-candy input:checked + label {
+        color: #a0a0a0;
+        text-shadow: none
+    }
+
+    .switch-candy a {
+        border: none;
+        outline: none !important;
+        /* border-radius: 3px; */
+        /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45); */
+        background-color: #cbcbcb;
+    }
+
     /* background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), transparent); */
     /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent); */
     .switch-candy-blue a {
@@ -1135,9 +1144,6 @@
     -ms-transition: box-shadow 0.3s;
     -o-transition: box-shadow 0.3s;
 }
-.search-profile-info ul li a:hover {
-  box-shadow: 2px 2px 0 #e1e1e1;
-}
 
 .search-profile-info ul li a:hover {
     box-shadow: 2px 2px 0 #e1e1e1;
@@ -1200,18 +1206,84 @@
     -ms-transition: all 0.4s;
     -o-transition: all 0.4s;
 }
+
 .view-profile-button:hover {
     background: #fff;
     color: #ff382d;
 }
+.price-range-min-3, .price-range-max-3 {
+    width: 64px;
+    display: block;
+    text-align: center;
+}
 
-/* Tooltip */
+.price-range-both-3 {
+    display: none;
+    text-align: center;
+    width: 100%;
+    left: 20px;
+    top: 30px !important;
+}
+
+.price-range-both-3 span {
+    display: block;
+}
+
+.price-range-both-3 section {
+    display: inline-block;
+    text-align: center;
+}
+
+.price-range-min-2, .price-range-max-2 {
+    left: -15px;
+    width: 92px;
+    display: block;
+    text-align: center;
+}
+
+.price-range-both-2 {
+    width: 205px;
+    left: 24%;
+    top: 30px !important;
+}
+
+.price-range-both-2 section {
+    display: inline-block;
+    text-align: center;
+}
+
+.both-holder {
+    position: relative;
+}
+
+.price-range-min-1, .price-range-max-1 {
+    display: block;
+    left: -43px;
+}
+
+.price-range-min, .price-range-max {
+    display: block;
+    left: -43px;
+}
+
+.price-range-both {
+    width: 66px !important;
+    left: 55% !important;
+    top: 30px !important;
+}
+
+.price-range-both-1 {
+    width: 66px;
+    left: 45%;
+    top: 30px;
+}
 [data-tooltip] {
   position: relative;
   z-index: 2;
   cursor: pointer;
 }
 
+/* Hide the tooltip content by default */
 [data-tooltip]:before,
 [data-tooltip]:after {
   visibility: hidden;
@@ -1220,6 +1292,8 @@
   opacity: 0;
   pointer-events: none;
 }
+
+/* Position tooltip above the element */
 [data-tooltip]:before {
   position: absolute;
   bottom: 150%;
@@ -1227,26 +1301,29 @@
   margin-bottom: 5px;
   margin-left: -80px;
   padding: 7px;
-  width: 200px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  background-color: rgba(228,228,228,0.95);
-  color: #000;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
   content: attr(data-tooltip);
   text-align: center;
-    font-family: 'LatoRegular';
-  font-size: 16px;
-  line-height: 18px;
+  font-family: 'LatoRegular';
+  font-size: 14px;
+  line-height: 1.2;
 }
+
+/* Triangle hack to make tooltip look like a speech bubble */
 [data-tooltip]:after {
   position: absolute;
   bottom: 150%;
   left: 50%;
   margin-left: -5px;
   width: 0;
-  border-top: 5px solid rgba(228,228,228,0.95);
-  border-top: 5px solid rgba(228,228,228,0.95);
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
   content: " ";

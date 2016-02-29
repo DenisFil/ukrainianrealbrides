@@ -263,9 +263,7 @@
                             'source_image' => './content/profiles/photo/' . $user_id . '/' . $data['upload_data']['file_name'],
                             'new_image' => './content/profiles/photo/' . $user_id . '/' . $data['upload_data']['raw_name'] . '_full.jpg',
                             'maintain_ratio' => TRUE,
-                            'width' => '604',
-                            'height' => '400',
-                            'master_dim' => 'height'
+                            'width' => '604'
                         ),
                         'height' => array(
                             'image_library' => 'gd2',
