@@ -1201,18 +1201,17 @@
     text-align: center;
     color: #fff;
     border: 1px solid #ff382d;
-    border-radius: 10px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
+    border-radius: 7px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
 }
 
 .view-profile-button:hover {
     background: #fff;
     color: #ff382d;
 }
-
 .price-range-min-3, .price-range-max-3 {
     width: 64px;
     display: block;
