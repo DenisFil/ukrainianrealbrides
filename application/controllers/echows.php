@@ -1,26 +1,26 @@
 <?php
 
 error_reporting(E_ALL); //Выводим все ошибки и предупреждения
-set_time_limit(180);	//Время выполнения скрипта ограничено 180 секундами
-ob_implicit_flush();	//Включаем вывод без буферизации 
+//set_time_limit(180);    //Время выполнения скрипта ограничено 180 секундами
+ob_implicit_flush();    //Включаем вывод без буферизации
 
-$starttime = round(microtime(true),2);
+$starttime = round(microtime(true), 2);
 
 echo "try to start...<br />";
-$socket = stream_socket_server("tcp://127.0.0.1:80", $errno, $errstr);
+$socket = stream_socket_server("tcp://127.0.0.1:8000", $errno, $errstr);
 
-if (!$socket) {
-	echo "socket unavailable<br />";
-    die($errstr. "(" .$errno. ")\n");
-}
+/*if (!$socket) {
+    echo "socket unavailable<br />";
+    die($errstr . "(" . $errno . ")\n");
+}*/
 
 
 $connects = array();
 while (true) {
-	echo "main while...<br />";
+    echo "main while...<br />";
     //формируем массив прослушиваемых сокетов:
     $read = $connects;
-    $read []= $socket;
+    $read [] = $socket;
     $write = $except = null;
 
     if (!stream_select($read, $write, $except, null)) {//ожидаем сокеты доступные для чтения (без таймаута)
@@ -30,24 +30,25 @@ while (true) {
     if (in_array($socket, $read)) {//есть новое соединение то обязательно делаем handshake
         //принимаем новое соединение и производим рукопожатие:
         if (($connect = stream_socket_accept($socket, -1)) && $info = handshake($connect)) {
-			echo "new connection...<br />";            
-			echo "connect=".$connect.", info=".$info."<br />OK<br />";          
-			//echo "info<br />";     
-			//var_dump($info); 
+            var_dump($connect);
+            echo "new connection...<br />";
+            echo "connect=" . $connect . ", info=" . $info . "<br />OK<br />";
+            //echo "info<br />";
+            //var_dump($info);
 
-			$connects[] = $connect;//добавляем его в список необходимых для обработки
+            $connects[] = $connect;//добавляем его в список необходимых для обработки
             onOpen($connect, $info);//вызываем пользовательский сценарий
         }
-        unset($read[ array_search($socket, $read) ]);
+        unset($read[array_search($socket, $read)]);
     }
 
-    foreach($read as $connect) {//обрабатываем все соединения
+    foreach ($read as $connect) {//обрабатываем все соединения
         $data = fread($connect, 100000);
 
         if (!$data) { //соединение было закрыто
-			echo "connection closed...<br />";    
-			fclose($connect);
-            unset($connects[ array_search($connect, $connects) ]);
+            echo "connection closed...<br />";
+            fclose($connect);
+            unset($connects[array_search($connect, $connects)]);
             onClose($connect);//вызываем пользовательский сценарий
             continue;
         }
@@ -55,19 +56,19 @@ while (true) {
         onMessage($connect, $data);//вызываем пользовательский сценарий
     }
 
-	if( ( round(microtime(true),2) - $starttime) > 100) { 
-		echo "time = ".(round(microtime(true),2) - $starttime); 
-		echo "exit <br />\r\n"; 
-		fclose($socket);
-		echo "connection closed OK<br />\r\n"; 
-		exit();
-	}
+    if ((round(microtime(true), 2) - $starttime) > 100) {
+        echo "time = " . (round(microtime(true), 2) - $starttime);
+        echo "exit <br />\r\n";
+        fclose($socket);
+        echo "connection closed OK<br />\r\n";
+        exit();
+    }
 }
 
 fclose($socket);
 
-
-function handshake($connect) { //Функция рукопожатия
+function handshake($connect)
+{ //Функция рукопожатия
     $info = array();
 
     $line = fgets($connect);
@@ -97,13 +98,13 @@ function handshake($connect) { //Функция рукопожатия
     $upgrade = "HTTP/1.1 101 Web Socket Protocol Handshake\r\n" .
         "Upgrade: websocket\r\n" .
         "Connection: Upgrade\r\n" .
-        "Sec-WebSocket-Accept:".$SecWebSocketAccept."\r\n\r\n";
+        "Sec-WebSocket-Accept:" . $SecWebSocketAccept . "\r\n\r\n";
     fwrite($connect, $upgrade);
 
     return $info;
 }
 
-function encode($payload, $type = 'text', $masked = false) 
+function encode($payload, $type = 'text', $masked = false)
 {
     $frameHead = array();
     $payloadLength = strlen($payload);
@@ -265,19 +266,21 @@ function decode($data)
 
 //пользовательские сценарии:
 
-function onOpen($connect, $info) {
+function onOpen($connect, $info)
+{
     echo "open OK<br />\n";
-    //fwrite($connect, encode('Привет, мы соеденены'));
+    fwrite($connect, encode('Привет, мы соеденены'));
 }
 
-function onClose($connect) {
+function onClose($connect)
+{
     echo "close OK<br />\n";
 }
 
-function onMessage($connect, $data) {
+function onMessage($connect, $data)
+{
     $f = decode($data);
-	echo "Message:";
-	echo $f['payload'] . "<br />\n";
+    echo "Message:";
+    echo $f['payload'] . "<br />\n";
     fwrite($connect, encode($f['payload']));
 }
-
