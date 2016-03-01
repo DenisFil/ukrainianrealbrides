@@ -1,4 +1,24 @@
 <?php
+class Chat_messages extends CI_Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->load->model('chat_messages_model');
+    }
+
+    public function get_messages()
+    {
+        $messages_query = $this->chat_messages_model->get_messages($this->session->userdata('id'));
+        $messages = array();
+        foreach ($messages_query as $value)
+        {
+            array_push($messages, $value->message);
+        }
+        return $messages;
+    }
+}
 
 error_reporting(E_ALL); //Выводим все ошибки и предупреждения
 //set_time_limit(180);    //Время выполнения скрипта ограничено 180 секундами
@@ -30,13 +50,13 @@ while (true) {
     if (in_array($socket, $read)) {//есть новое соединение то обязательно делаем handshake
         //принимаем новое соединение и производим рукопожатие:
         if (($connect = stream_socket_accept($socket, -1)) && $info = handshake($connect)) {
-            var_dump($connect);
             echo "new connection...<br />";
-            echo "connect=" . $connect . ", info=" . $info . "<br />OK<br />";
-            //echo "info<br />";
-            //var_dump($info);
+            echo "connect=" . $connect . ", info=" . $info['ip'] . ':' . $info['port'] . "<br />OK<br />";
+            /*echo "info<br />";
+            var_dump($info)*/;
 
             $connects[] = $connect;//добавляем его в список необходимых для обработки
+
             onOpen($connect, $info);//вызываем пользовательский сценарий
         }
         unset($read[array_search($socket, $read)]);
@@ -52,20 +72,21 @@ while (true) {
             onClose($connect);//вызываем пользовательский сценарий
             continue;
         }
-
         onMessage($connect, $data);//вызываем пользовательский сценарий
     }
 
-    if ((round(microtime(true), 2) - $starttime) > 100) {
+    /*if ((round(microtime(true), 2) - $starttime) > 100) {
         echo "time = " . (round(microtime(true), 2) - $starttime);
         echo "exit <br />\r\n";
         fclose($socket);
         echo "connection closed OK<br />\r\n";
         exit();
-    }
+    }*/
 }
 
 fclose($socket);
+
+
 
 function handshake($connect)
 { //Функция рукопожатия
@@ -268,7 +289,7 @@ function decode($data)
 
 function onOpen($connect, $info)
 {
-    echo "open OK<br />\n";
+    echo 'open OK<br />\n';
     fwrite($connect, encode('Привет, мы соеденены'));
 }
 
@@ -280,7 +301,18 @@ function onClose($connect)
 function onMessage($connect, $data)
 {
     $f = decode($data);
-    echo "Message:";
-    echo $f['payload'] . "<br />\n";
-    fwrite($connect, encode($f['payload']));
+    if ($f['payload'] != '')
+    {
+        fwrite($connect, encode($f['payload']));
+    }
+    else
+    {
+        $chat_messages = new Chat_messages();
+        $messages = $chat_messages->get_messages();
+        fwrite($connect, $messages);
+    }
+    /*echo 'Message:';
+    echo $f['payload'] . '<br />\n';*/
+
 }
+
