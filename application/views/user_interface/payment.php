@@ -1,4 +1,4 @@
-<div class="payments">
+<div class="content-wrapper">
 	<div class="credit-packs">
 		<h2>Сhoose your Credits Pack</h2>
 		<span>Sub Hender</span>	

@@ -1,4 +1,4 @@
-<div class="support-holder">
+<div class="content-wrapper">
 	<div class="support">
 		<h2>Do you need help?</h2>
 		<span class="support-title">

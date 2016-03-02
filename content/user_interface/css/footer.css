@@ -1,14 +1,17 @@
 /*Footer starts here*/
 #footer {
+	height: 485px;
+	position: absolute;
+	bottom: 0;
+	display: block;
 	width: 100%;
 	background: #ebebeb;
-
 }
 .footer-holder {
 	width: 1170px;
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 64px 0 0 0;
+	padding-top: 64px;
 }
 .footer-left {
 	float: left;

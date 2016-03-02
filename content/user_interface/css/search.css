@@ -1,8 +1,7 @@
 .search-holder {
     max-width: 1170px;
-    margin: 0 auto 100px;
+    margin: 0 auto;
 }
-
 .search {
     width: 100%;
 }
@@ -16,7 +15,7 @@
 }
 
 .search-first-column {
-    width: 12%;
+    width: 11.3%;
     float: left;
     margin-right: 1.7%;
 }
@@ -98,7 +97,7 @@
 	box-shadow: 0 0 2px rgba(0,0,0,0.3) inset;
 } */
 .search-second-column {
-    width: 27%;
+    width: 27.7%;
     float: left;
     margin-right: 19px;
 }
@@ -136,7 +135,7 @@
 .left-range,
 .right-range {
     float: left;
-    width: 28px;
+    width: 34px;
     text-align: left;
 }
 
@@ -260,7 +259,7 @@
 }
 
 .advanced-search .search-first-column {
-    width: 23%;
+    width: 22.3%;
 }
 
 .advanced-search .search-forth-column {

@@ -23,7 +23,7 @@
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script type="text/javascript">
         $(function(){
-     var shrinkHeader = 194;
+     var shrinkHeader = 50;
       $(window).scroll(function() {
         var scroll = getCurrentScroll();
           if ( scroll >= shrinkHeader ) {
@@ -53,11 +53,11 @@
         <div class="header-top">
             <div class="header-left">
                 <span>Language:</span>
-                    <label>
-                        <select>
-                            <option selected>Eng</option>
-                        </select>
-                    </label>
+                <label>
+                    <select>
+                        <option selected>Eng</option>
+                    </select>
+                </label>
             </div>
             <div class="header-right">
                 <?php if($this->session->userdata('id')): ?>
@@ -104,6 +104,63 @@
                             <a href="<?php echo base_url(); ?>/user_interface/profile_settings"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings"></a>
                             <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out.png" width="14" height="14" alt="Log out"></a>
                         </div>
+                    </div>
+
+                <?php else: ?>
+                    <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Log in</button></a>
+                    <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
+                <?php endif; ?>
+            </div>
+            <div class="header-right-shrink">
+                <?php if($this->session->userdata('id')): ?>
+                    <div class="header-signed">
+
+                        <ul class="status-bar">
+                            <li class="mail-status">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em>Message: <big><?php echo $new_messages; ?></big></em>
+                            </li>
+                            <li class="chat-status">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em>Chat: <big><?php echo $users_online; ?></big></em>
+                            </li>
+                            <li class="video-chat-status">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em>Video chat: <big><?php echo $users_online; ?></big></em>
+                            </li>
+                            <?php if ($gender == 0 || $gender == 1): ?>
+                            <li class="credit-status">
+                                <a href="<?php echo base_url(); ?>/user_interface/payment">
+                                    <span></span>
+                                </a>
+                                <em>Credits: <big><?php echo $credits; ?></big></em>
+                            </li>
+                            <?php else: ?>
+                            <li class="credit-status gift-status">
+                                <a href="#">
+                                    <span></span>
+                                </a>
+                                <em><?php echo $gifts; ?></em>
+                            </li>
+                            <?php endif; ?>
+                        </ul>
+                        <div class="profile-panel">
+                            <a href="<?php echo base_url(); ?>/user_interface/profile_settings"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings-shrink.png" width="18" height="17" alt="Profile settings"></a>
+                            <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out-shrink.png" width="18" height="17" alt="Log out"></a>
+                        </div>
+                        <span class="profile-name">
+                            <span class="header-avatar">
+                                <img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="41" height="41" alt="Profile avatar">
+                            </span>
+                            <a href="<?php echo base_url(); ?>user_interface/personal_area"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></a>
+                        </span>
+
                     </div>
 
                 <?php else: ?>

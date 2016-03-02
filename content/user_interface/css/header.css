@@ -111,8 +111,12 @@ body {
 	font: 15px/17px 'Lato-Light';
 	overflow-x:hidden;
 	min-width: 1170px;
+	margin-bottom: 485px;
 }
-
+html {
+	position: relative;
+	min-height: 100%;
+}
 /* General reset */
 form, fieldset {
 	margin: 0;
@@ -184,11 +188,19 @@ h4 {
 }
 /* General settings */
 
+.content-wrapper {
+	width: 100%;
+	padding-top: 194px;
+	padding-bottom: 70px;
+}
 /*Header Starts Here*/
 .header-holder {
 	width: 100%;
 	background: url("../img/header/bg-line.png") repeat-x 0 41px;
 	padding-bottom: 67px;
+	position: absolute;
+	right: 0;
+	left: 0;
 }
 #header {
 	width: 1170px;
@@ -198,10 +210,15 @@ h4 {
 .header-top {
 	width: 100%;
 	padding: 9px 0 69px 0;
-	overflow: hidden;
+
 	font-family: 'LatoWebMedium';
 	font-size: 14px;
 	line-height: 16px;
+}
+.header-top:after {
+	content: "";
+	display: block;
+	clear: both;
 }
 .logo {
 	font-size: 0;
@@ -1312,4 +1329,103 @@ label {
 /* JQuery Forms END */
 .active-link {
 	color: #e83c32;
+}
+.header-holder.shrink {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 50px;
+	background: #fff url("../img/header/bg-line-shrink.png") repeat-x 0 100%;
+	height: 81px;
+	z-index: 1000;
+}
+
+.header-holder.shrink .header-left,
+.header-holder.shrink .nav{
+	display: none;
+}
+.header-holder.shrink .logo {
+	font-size: 0;
+	position: absolute;
+	left: 146px;
+	top: 12px;
+	background: url("../img/header/logo-shrink.png") 0 0;
+	display: block;
+	width: 177px;
+	height: 69px;
+}
+
+.header-holder.shrink .header-top {
+	padding-top: 14px;
+}
+.header-holder.shrink .header-top .profile-name {
+	display: inline-block;
+	overflow: hidden;
+	float: right;
+}
+.header-holder.shrink .header-top .profile-name a {
+	font-size: 17px;
+	float: left;
+    padding: 13px 15px 0 0;
+}
+.header-holder.shrink .header-right {
+	display: none;
+}
+.header-holder .header-right-shrink {
+	display: none;
+}
+.header-holder.shrink .header-right-shrink {
+	display: block;
+	float: right;
+	width: 74.2%;
+}
+.header-avatar {
+	display: block;
+	float: left;
+	width: 41px;
+	height: 41px;
+	border: 1px solid #e33b31;
+	border-radius: 30px;
+	margin: 0 6px 0 0;
+    display: block;
+}
+.header-avatar img {
+	width: 100%;
+	height: auto;
+}
+.header-holder.shrink .status-bar {
+	border: none;
+    padding: 9px 0 0 0;
+}
+.header-holder.shrink .status-bar li a {
+	width: 25px;
+	height: 25px;
+}
+.header-holder.shrink .status-bar li em {
+	font-size: 16px;
+    padding-top: 6px;
+}
+.header-holder.shrink .status-bar li {
+    padding: 0 21px 0 15px;
+    margin: 0;
+    border-right: 1px solid #ccc;
+}
+.header-holder.shrink .status-bar li:first-child {
+    padding: 0 21px 0 0;
+}
+.header-holder.shrink .status-bar li:last-child {
+	border: none;
+	padding-right: 0;
+}
+.header-holder.shrink .status-bar li a span {
+	margin-top: 8px;
+}
+.header-holder.shrink .profile-panel {
+	float: right;
+    border-left: 1px solid #ccc;
+    margin-top: 10px;
+    padding: 2px 0 6px 0;
+}
+.header-holder.shrink .profile-panel a {
+    margin-left: 11px;
 }

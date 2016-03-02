@@ -1,9 +1,6 @@
-.services-wrap {
-	width: 100%;
-}
 .tabs-holder {
 	max-width: 1173px;
-	margin: 0 auto 50px;
+	margin: 0 auto;
 }
 .tabs-holder ul li a {
 	font-family: 'LatoWebMedium';

@@ -1,5 +1,5 @@
 <!-- Services page -->
-<div class="settings-wrap">
+<div class="content-wrapper">
 	<div class="tabs-holder">
 	<h2>Profile Settings</h2>
 	  <!-- Nav tabs -->
