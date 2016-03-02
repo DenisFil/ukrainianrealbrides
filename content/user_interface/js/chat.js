@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('.start-dialog').click(function () {
         var socketUrl = 'ukrainianrealbrides.int:8000/';
-        var socket = new WebSocket ('ws://' + socketUrl + 'echows');
+        var socket = new WebSocket ('ws://' + socketUrl + 'web_socket_server');
 
         $('.send-message-button').click(function () {
             var selector = '.message-field';

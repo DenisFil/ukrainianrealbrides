@@ -1,0 +1,19 @@
+{
+    "name": "denis/ratchet",
+    "autoload": {
+        "psr-0": {
+            "MyApp": "src"
+        }
+    },
+    
+    "require": {
+        "cboden/ratchet": "^0.3.4"
+    },
+
+    "authors": [
+        {
+            "name": "Denis Filippov",
+            "email": "filippov.den92@gmail.com"
+        }
+    ]
+}
