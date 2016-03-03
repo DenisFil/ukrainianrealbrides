@@ -22,15 +22,19 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>content/videosliderengine/amazingslider-1.css">
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script type="text/javascript">
-        $(function(){
-     var shrinkHeader = 50;
+        $(document).ready(function(){
       $(window).scroll(function() {
         var scroll = getCurrentScroll();
-          if ( scroll >= shrinkHeader ) {
-               $('.header-holder').addClass('shrink');
+        console.log(scroll);
+          if ( scroll > 100 && scroll <= 200) {
+               $('.header-holder').animate({ opacity: '0' }, 50);
+               setTimeout(function () { $('.header-holder').addClass('shrink'); }, 60);
+               $('.header-holder').animate({ opacity: '1' }, 500);
             }
-            else {
-                $('.header-holder').removeClass('shrink');
+            if (scroll < 200 && scroll >= 100) {
+                $('.header-holder').animate({ opacity: '0' }, 50);
+               setTimeout(function () { $('.header-holder').removeClass('shrink'); }, 60);
+               $('.header-holder').animate({ opacity: '1' }, 500);
             }
       });
     function getCurrentScroll() {
@@ -164,8 +168,27 @@
                     </div>
 
                 <?php else: ?>
-                    <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Log in</button></a>
-                    <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
+                    <ul class="shrink-nav">
+                        <?php if ($this->session->userdata('id')): ?>
+                            <?php if ($gender == 1 || $gender == ''): ?>
+                                <li><a href="#">Women profiles</a></li>
+                            <?php elseif ($gender == 2): ?>
+                                <li><a href="#">Men profiles</a></li>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <li><a href="#">Women profiles</a></li>
+                        <?php endif; ?>
+                        <li><a href="<?php echo base_url(); ?>/user_interface/search">Search</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="<?php echo base_url(); ?>/user_interface/support">Support</a></li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                    <div class="shrink-buttons">
+                        <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Log in</button></a>
+                        <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
+                    </div>
+
                 <?php endif; ?>
             </div>
         </div>

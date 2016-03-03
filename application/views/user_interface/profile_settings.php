@@ -292,7 +292,7 @@
 	    <div role="tabpanel" class="tab-pane fade" id="partner-tab">
 	    	<div class="tab-body">
                 <h2>Partner</h2>     
-                <p>In the fields below , select the preferences of your partner</p>
+                <p>In the fields below, select the preferences of your partner</p>
                 <span class="save-message-block"><img src="<?php echo base_url(); ?>content/user_interface/img/personal-area/saved.png" width="24" height="24" alt="Successfully saved message"> All changes are successfully saved.</span>
                 <form class="settings-form" action="#">
 	                <div class="profile-form-row">
