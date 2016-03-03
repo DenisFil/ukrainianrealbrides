@@ -22,7 +22,7 @@ class Chat implements MessageComponentInterface
         /*$numRecv = count($this->clients) - 1;
         echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
             , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');*/
-        
+var_dump($msg);
         foreach ($this->clients as $client) {
 
             if ($from !== $client) {
