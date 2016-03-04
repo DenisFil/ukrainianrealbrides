@@ -21,29 +21,65 @@
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/font-awesome.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>content/videosliderengine/amazingslider-1.css">
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script type="text/javascript">
-        $(document).ready(function(){
-      $(window).scroll(function() {
-        var scroll = getCurrentScroll();
-        console.log(scroll);
-          if ( scroll > 100 && scroll <= 200) {
+<!-- 
+ <script type="text/javascript">
+       $(document).ready(function(){
+       $(window).scroll(function() {
+       var scroll = getCurrentScroll();
+       console.log(scroll);
+         if ( scroll >= 100) {
+              $('.header-holder').animate({ opacity: '0' }, 50);
+              setTimeout(function () { $('.header-holder').addClass('shrink'); }, 60);
+              $('.header-holder').animate({ opacity: '1' }, 500);
+           }
+           if (scroll < 100 && scroll >= 100) {
                $('.header-holder').animate({ opacity: '0' }, 50);
-               setTimeout(function () { $('.header-holder').addClass('shrink'); }, 60);
-               $('.header-holder').animate({ opacity: '1' }, 500);
-            }
-            if (scroll < 200 && scroll >= 100) {
-                $('.header-holder').animate({ opacity: '0' }, 50);
-               setTimeout(function () { $('.header-holder').removeClass('shrink'); }, 60);
-               $('.header-holder').animate({ opacity: '1' }, 500);
-            }
-      });
-    function getCurrentScroll() {
-        return window.pageYOffset || document.documentElement.scrollTop;
-        }
-    });
+              setTimeout(function () { $('.header-holder').removeClass('shrink'); }, 60);
+              $('.header-holder').animate({ opacity: '1' }, 500);
+           }
+     });
+   function getCurrentScroll() {
+       return window.pageYOffset || document.documentElement.scrollTop;
+       }
+   });
+ </script>
+ -->
+
+<script>
+   $(function(){
+var shrinkHeader = 50;
+ $(window).scroll(function() {
+   var scroll = getCurrentScroll();
+     if ( scroll >= shrinkHeader ) {
+          $('.header-holder').addClass('shrink');
+       }
+       else {
+           $('.header-holder').removeClass('shrink');
+       }
+ });
+function getCurrentScroll() {
+   return window.pageYOffset || document.documentElement.scrollTop;
+   }
+});
 </script>
 
-
+<!-- 
+<script>
+    function init() {
+  window.addEventListener('scroll', function(e){
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+        shrinkOn = 200,
+        header = document.querySelector("header");
+    if (distanceY > shrinkOn) {
+      header.setAttribute("class","smaller");
+    } else {
+        header.removeAttribute("class");
+    }
+  });
+}
+window.onload = init();
+</script>
+ -->
 </head>
 
 
@@ -214,7 +250,23 @@
             </ul>
         </nav>
     </header>
+
+    <div class="message-notifier">
+        <div class="notifier-avatar">
+            <img src="<?php echo base_url(); ?>content/user_interface/img/header/message-notifier-avatar.jpg" width="100" height="148" alt="Profile photo">            
+        </div>
+        <div class="notifier-right">
+            <span>Tatyana</span>
+            <em>Hello you liked me Let's meet...</em>
+            <div class="notifier-buttons">
+                <button type="button" class="notifier-button">Accept</button>
+                <button type="button" class="notifier-link">Decline</button>
+            </div>
+        </div>
+    </div>
+
 </div>
+
 <!-- Header Ends Here -->
 
 <?php if(!$this->session->userdata('id')): ?>

@@ -197,11 +197,10 @@ h4 {
 .header-holder {
 	width: 100%;
 	background: url("../img/header/bg-line.png") repeat-x 0 41px;
-	padding-bottom: 67px;
+	margin-bottom: 67px;
 	position: absolute;
 	right: 0;
 	left: 0;
-
 }
 #header {
 	width: 1170px;
@@ -1489,4 +1488,102 @@ label {
 /* JQuery Forms END */
 .active-link {
 	color: #e83c32;
+}
+.message-notifier {
+	display: block;
+	position: absolute;
+	top: 160px; right: 0;
+	width: 307px;
+	border-top: 3px solid #ff382d;
+	box-shadow: 0 0 15px #e8e8e8;
+	z-index: 1001;
+	background: #fff;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-ms-transition: all 1s;
+	-o-transition: all 1s;
+}
+.header-holder.shrink .message-notifier {
+	top: 115px;
+}
+.notifier-avatar {
+	float: left;
+	position: relative;
+	width: 32%;
+}
+.notifier-avatar img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.notifier-avatar:after {
+	content: "";
+	position: absolute;
+	display: block;
+	right: 0;
+	top:17px;
+	width: 6px;
+	height: 12px;
+	background: url("../img/header/message-notifier-arrow.png") no-repeat 0 0;
+}
+.message-notifier:before {
+	content: "";
+	display: block;
+	width: 57px;
+	height: 57px;
+	position: absolute;
+	left: -25px; top: -24px;
+	z-index: 100;
+	background: url("../img/header/message-notifier-ico.png") no-repeat 0 0;
+}
+.message-notifier:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.notifier-right {
+	float: right;
+	width: 61%;
+	padding: 11px 28px 15px 0;
+}
+.notifier-right span {
+	display: block;
+    font-family: 'latosemibold';
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 11px;
+}
+.notifier-right em {
+	display: block;
+    font-family: 'LatoItalic';
+    font-size: 17px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    margin-left: 4px;
+}
+.notifier-buttons {
+    margin-left: 4px;
+    font-family: 'LatoLight';
+}
+.notifier-button {
+    padding: 4px 15px 7px 15px;
+    margin-right: 12px;
+    color: #fff;
+    background: #e83c32;
+    font-size: 16px;
+    line-height: 18px;
+    border-radius: 10px;
+}
+.notifier-button:hover {
+	background: #ff4136;
+}
+.notifier-link {
+	font-size: 12px;
+	line-height: 14px;
+	color: #eb564d;
+	text-decoration: underline;
+}
+.notifier-link:hover {
+	color: #ff4136;
 }
