@@ -29,7 +29,7 @@ console.log(socket);
             url: 'ws://127.0.0.1:8000/',
             realm: 'realm1'
         });
-
+        
         connection.onopen = function (session) {
             alert('Connection done');
             // 1) subscribe to a topic
@@ -56,5 +56,7 @@ console.log(socket);
         };
 
         connection.open();
+        $('.stop-dialog').click(function () { connection.close(); });
+        $('.send-message-button').click(function () { connection.call('Hello'); });
     });
 });
