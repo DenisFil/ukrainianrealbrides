@@ -1,5 +1,5 @@
 <?php
-    class Personal_area extends CI_Controller
+    class Personal_area extends MY_Controller
     {
         public function __construct()
         {

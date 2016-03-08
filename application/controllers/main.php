@@ -1,5 +1,5 @@
 <?php
-    class Main extends CI_Controller
+    class Main extends MY_Controller
     {
         public function index()
         {

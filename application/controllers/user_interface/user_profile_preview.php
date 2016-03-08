@@ -1,6 +1,6 @@
 <?php
 
-class User_profile_preview extends CI_Controller
+class User_profile_preview extends MY_Controller
 {
     public function index()
     {
