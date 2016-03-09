@@ -1,8 +1,3 @@
-
-
-.personal-area {
-	width: 100%;
-}
 .profile-block h2 {
 	display: block;
     margin-top: 6px;
@@ -37,6 +32,7 @@
 	margin: 0 10px 0 0;
 	border-radius: 10px;
 	opacity: 0.5;
+	font-weight: normal;
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
@@ -123,7 +119,7 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 .profile-main ul li:first-child {
 	margin-left: 0;
 }
-.personal-area h4{
+.profile-main h4{
 	font-family: 'BanderaProBold';
 	font-size: 20px;
 	line-height: 22px;
@@ -306,7 +302,7 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
     display: block;
 }
 .file-upload input[type=file],
-.edit input[type=file]{
+#avatar input[type=file]{
     position: absolute;
     left: 0;
     top: 0;
@@ -447,7 +443,7 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 	padding-left: 0;
 }
 #new-avatar p {
-	margin-top: 10px;
+	margin: 10px 0;
 }
 .modal-bottom span {
 	padding: 0 12px;
@@ -472,4 +468,26 @@ url("../img/personal-area/preview.png") no-repeat 12% 48%;
 	line-height: 20px;
     font-family: 'BanderaProBold';
     display: block;
+}
+.btn-save-photo,
+.btn-delete-photo {
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    width: 200px;
+    font-family: 'LatoBold';
+    font-size: 20px;
+    line-height: 22px;
+    padding: 10px 15px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+.btn-save-photo {
+    background: #009993;
+}
+.btn-delete-photo {
+    background: #e83c32;
+}
+.btn-save-photo:hover {
+	background: #00a8a1;
 }

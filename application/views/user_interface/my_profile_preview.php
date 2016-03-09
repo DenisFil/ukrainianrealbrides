@@ -1,4 +1,4 @@
-<div class="profile-preview-holder">
+<div class="content-wrapper">
     <div class="profile-preview">
         <h2>Profile view</h2>
         <div class="profile-preview-left">
