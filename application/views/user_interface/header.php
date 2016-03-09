@@ -251,7 +251,7 @@ window.onload = init();
         </nav>
     </header>
 
-    <div class="message-notifier">
+    <div class="message-notifier" style="display: none;">
         <div class="notifier-avatar">
             <img src="<?php echo base_url(); ?>content/user_interface/img/header/message-notifier-avatar.jpg" width="100" height="148" alt="Profile photo">            
         </div>

@@ -1,5 +1,5 @@
 <?php
-    class Login extends CI_Controller
+    class Login extends MY_Controller
     {
         public function index()
         {

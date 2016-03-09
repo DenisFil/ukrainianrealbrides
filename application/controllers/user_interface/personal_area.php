@@ -1,5 +1,5 @@
 <?php
-    class Personal_area extends CI_Controller
+    class Personal_area extends MY_Controller
     {
         public function __construct()
         {
@@ -106,8 +106,9 @@
                     if ($height[1] < 400)
                     {
                         unlink('./content/profiles/avatars/' . $user_id . '/' . $data['upload_data']['raw_name'] . '_full.jpg');
+                        $this->image_lib->clear();
                         $this->image_lib->initialize($config['image_lib']['height_400']);
-                        var_dump($this->image_lib->resize());exit;
+                        $this->image_lib->resize();
                     }
                     unlink('./content/profiles/avatars/' . $user_id . '/' . $data['upload_data']['file_name']);
 

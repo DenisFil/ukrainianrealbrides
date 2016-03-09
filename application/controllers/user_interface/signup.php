@@ -1,5 +1,5 @@
 <?php
-    class Signup extends CI_Controller
+    class Signup extends MY_Controller
     {
         public function __construct()
         {

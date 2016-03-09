@@ -1,6 +1,13 @@
 <?php
-    class Chat extends CI_Controller
+    class Chat extends MY_Controller
     {
+        public function __construct()
+        {
+            parent::__construct();
+
+            $this->load->model('user_interface/chat_messages_model');
+        }
+
         public function index()
         {
             $this->load->model('user_interface/personal_area_model');
@@ -29,9 +36,18 @@
                     $data['gifts'] = $this->personal_area_model->user_gifts($user_id);
                 }
 
+                $users_online = array('users_online' => $this->chat_messages_model->users_online($this->session->userdata('gender')));
+
                 $this->load->view('user_interface/header', $data);
-                $this->load->view('user_interface/chat');
+                $this->load->view('user_interface/chat', $users_online);
                 $this->load->view('user_interface/footer');
             }
+        }
+
+        public function users_online()
+        {
+            $users_online = $this->chat_messages_model->users_online($this->session->userdata('gender'));
+
+            echo json_encode($users_online);
         }
     }

@@ -1210,12 +1210,12 @@
     background: #fff;
     color: #ff382d;
 }
+
 .price-range-min-3, .price-range-max-3 {
     width: 64px;
     display: block;
     text-align: center;
 }
-
 .price-range-both-3 {
     display: none;
     text-align: center;

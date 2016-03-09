@@ -1,5 +1,5 @@
 <?php
-    class My_profile_preview extends CI_Controller
+    class My_profile_preview extends MY_Controller
     {
         public function index()
         {

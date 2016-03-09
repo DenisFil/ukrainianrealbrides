@@ -74,6 +74,6 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/jquery.form.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>content/user_interface/js/script.js"></script>
-
+<script src="https://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
     </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-    class Support extends CI_Controller
+    class Support extends MY_Controller
     {
         public function index()
         {

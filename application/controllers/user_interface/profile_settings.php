@@ -1,5 +1,5 @@
 <?php
-    class Profile_settings extends CI_Controller
+    class Profile_settings extends MY_Controller
     {
         public function __construct()
         {

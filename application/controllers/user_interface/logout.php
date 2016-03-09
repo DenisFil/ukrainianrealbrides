@@ -1,5 +1,5 @@
 <?php
-    class Logout extends CI_Controller
+    class Logout extends MY_Controller
     {
         public function index()
         {
