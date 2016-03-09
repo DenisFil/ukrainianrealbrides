@@ -230,6 +230,7 @@
 	clear: both;
 }
 .chat-header-left {
+	display: none;
 	float: left;
 	width: 60%;
 	overflow: hidden;

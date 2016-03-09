@@ -37,12 +37,14 @@
                                             <span class="chat-avatar-status online-avatar-status"></span>
                                         </button>
                                         <div class="dialog-partner-info">
-                                            <a href="#"><?php echo $value->name; ?></a>
+                                            <a href="<?php echo base_url(); ?>user_interface/user_profile_preview?id=<?php echo $value->id; ?>" target="_blank"><?php echo $value->name; ?></a>
                                             <em>
-                                                <?php echo $value->country_name; ?>
                                                 <?php if ($value->city != NULL): ?>
-                                                    , <?php echo $value->city; ?>
+                                                    <?php $country = $value->country_name . ', ' . $value->city; ?>
+                                                <?php else: ?>
+                                                    <?php $country = $value->country_name; ?>
                                                 <?php endif; ?>
+                                                <?php echo $country; ?>
                                             </em>
                                         </div>
                                     </div>
@@ -52,7 +54,7 @@
                                 </div>
                             <?php endforeach; ?>
 
-                            <div class="dialog-partner active-dialog">
+                            <!--<div class="dialog-partner active-dialog">
                                 <div class="new-message-count">
                                     <em></em>
                                     <span>0</span>
@@ -60,7 +62,7 @@
                                 <div class="dialog-partner-left">
                                     <button class="dialog-partner-avatar">
                                         <img
-                                            src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png"
+                                            src="<?php /*echo base_url(); */?>content/user_interface/img/chat/profile-mini.png"
                                             width="35" height="35">
                                         <span class="chat-avatar-status offline-avatar-status"></span>
                                     </button>
@@ -82,7 +84,7 @@
                                 <div class="dialog-partner-left">
                                     <button class="dialog-partner-avatar offline-avatar-status">
                                         <img
-                                            src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png"
+                                            src="<?php /*echo base_url(); */?>content/user_interface/img/chat/profile-mini.png"
                                             width="35" height="35">
                                         <span class="chat-avatar-status offline-avatar-status"></span>
                                     </button>
@@ -103,7 +105,7 @@
                                 <div class="dialog-partner-left">
                                     <button class="dialog-partner-avatar offline-avatar-status">
                                         <img
-                                            src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png"
+                                            src="<?php /*echo base_url(); */?>content/user_interface/img/chat/profile-mini.png"
                                             width="35" height="35">
                                         <span class="chat-avatar-status online-avatar-status"></span>
                                     </button>
@@ -124,7 +126,7 @@
                                 <div class="dialog-partner-left">
                                     <button class="dialog-partner-avatar">
                                         <img
-                                            src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png"
+                                            src="<?php /*echo base_url(); */?>content/user_interface/img/chat/profile-mini.png"
                                             width="35" height="35">
                                         <span class="chat-avatar-status online-avatar-status"></span>
                                     </button>
@@ -146,7 +148,7 @@
                                 <div class="dialog-partner-left">
                                     <button class="dialog-partner-avatar">
                                         <img
-                                            src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png"
+                                            src="<?php /*echo base_url(); */?>content/user_interface/img/chat/profile-mini.png"
                                             width="35" height="35">
                                         <span class="chat-avatar-status online-avatar-status"></span>
                                     </button>
@@ -167,7 +169,7 @@
                                 <div class="dialog-partner-left">
                                     <button class="dialog-partner-avatar offline-avatar-status">
                                         <img
-                                            src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png"
+                                            src="<?php /*echo base_url(); */?>content/user_interface/img/chat/profile-mini.png"
                                             width="35" height="35">
                                         <span class="chat-avatar-status online-avatar-status"></span>
                                     </button>
@@ -179,9 +181,10 @@
                                 <div class="dialog-partner-right">
                                     <button class="start-dialog">Start a dialogue</button>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
+
                     <div role="tabpanel" class="tab-pane fade" id="favorites-tab">
                         <div class="tab-body">
                             <div class="dialog-partner">
@@ -207,6 +210,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div role="tabpanel" class="tab-pane fade" id="history-tab">
                         <div class="tab-body">
                             <div class="dialog-partner">
@@ -239,19 +243,19 @@
         <div class="chat-body">
             <div class="chat-body-header">
                 <div class="chat-header-left">
-                    <button class="chat-partner-avatar offline-avatar-status">
-                        <img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="35"
+                    <button class="chat-partner-avatar">
+                        <img src="" width="35"
                              height="35">
-                        <span class="chat-avatar-status offline-avatar-status"></span>
+                        <span class="chat-avatar-status online-avatar-status"></span>
                     </button>
                     <div class="chat-partner-info">
                         <div class="chat-partner-name">
                             <button type="button"><img
                                     src="<?php echo base_url(); ?>content/user_interface/img/chat/add-favorite.png"
                                     width="15" height="20"></button>
-                            <a href="#">Marina Khvorostova</a>
+                            <a href="<?php echo base_url(); ?>user_interface/user_profile_preview?id=<?php echo $value->id; ?>" class="name-href" target="_blank"></a>
                         </div>
-                        <em>Ukraine, Kharkiv</em>
+                        <em></em>
                         <span>Online</span>
                     </div>
                 </div>
@@ -269,7 +273,7 @@
                 </div>
             </div>
             <div class="chat-field">
-                <div class="chat-field-row">
+                <!--<div class="chat-field-row">
                     <div class="chat-row-left">
                         <span class="chat-message incoming-message">I'm a tooltip! Or am I a speech bubble? I'm a tooltip! Or am I a speech.</span>
                     </div>
@@ -322,7 +326,7 @@
                         <span class="chat-message incoming-message">I'm a tooltip! Or am I a speech bubble?</span>
                     </div>
                     <span class="chat-row-right">14:20</span>
-                </div>
+                </div>-->
             </div>
             <div class="chat-body-footer">
                 <form action="#">

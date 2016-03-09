@@ -14,7 +14,7 @@
 
             $online = time() - 300;
 
-            $query = $this->db->    select('user_profiles.name, user_profiles.lastname, user_profiles.id, user_details.avatar, user_details.city, countries.country_name')->
+            $query = $this->db->    select('user_profiles.name, user_profiles.lastname, user_profiles.id, user_details.avatar, user_details.credits, user_details.city, countries.country_name')->
                                     from('user_profiles')->
                                     join('user_details', 'user_profiles.id = user_details.user_id')->
                                     join('countries', 'countries.country_id = user_details.country')->
