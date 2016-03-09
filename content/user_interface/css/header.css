@@ -599,7 +599,7 @@ h4 {
 	color:#e83c32;
 }
 
-/*Sign-up, login modal's*/
+/*Sign-up, login, credits modal's*/
 .modal-content {
 	border-radius: 9px;
 }
@@ -764,6 +764,27 @@ h4 {
 }
 #login-modal .modal-bottom {
 	margin: 15px 0 0 0;
+}
+#get-credits-modal h2{
+	font-size: 30px;
+	line-height: 34px;
+    padding: 0 25px 41px 25px;
+}
+#get-credits-modal .btn.btn-danger{
+	font-size: 25px;
+    line-height: 27px;
+    width: auto;
+    height: auto;
+    padding: 6px 37px 10px;
+}
+#get-credits-modal img{
+	padding: 0;
+}
+#get-credits-modal .modal-dialog .modal-body {
+	padding: 35px 0 39px 0;
+}
+#get-credits-modal .modal-dialog {
+	width: 473px;
 }
 /*Signed in header*/
 .header-signed {
