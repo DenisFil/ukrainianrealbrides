@@ -1,14 +1,14 @@
-<div class="support-holder">
+<div class="content-wrapper">
+	<h2>Do you need help?</h2>
+	<span class="support-title">
+		<p>
+			Please take a look at this page. You will find answers for a domestic questions. 
+		</p>
+		<p>
+			If you don't find an answer to your question on this page, do not hesitate to contact us with your question
+		</p>
+	</span>
 	<div class="support">
-		<h2>Do you need help?</h2>
-		<span class="support-title">
-			<p>
-				Please take a look at this page. You will find answers for a domestic questions. 
-			</p>
-			<p>
-				If you don't find an answer to your question on this page, do not hesitate to contact us with your question
-			</p>
-		</span>
 		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 	  		<div class="panel collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
 	    		<div class="panel-heading" role="tab" id="headingOne" >
@@ -210,7 +210,6 @@
 	    		</div>
 	   			<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
 			      	<div class="panel-body">
-	<span>
 			      			<p class="question">Q. - How do I start chatting with the woman?</p>
 							<p>A. - Select a lady you want to chat with by clicking on her name and write her a Hello. If you accept a lady's invitation the chat session is started automatically.</p>
 			      		</span>
@@ -323,7 +322,16 @@
 			      	</div>
 	    		</div>
 	  		</div>
-
+		</div>
+		<div class="contact-us-form">
+			<h3>Can`t find answer?
+			Contact us!</h3>
+            <form action="#">
+                <input class="form-control" type="text" placeholder="Name" id="#" >
+                <input class="form-control" type="text" placeholder="Email" id="#" >
+	            <textarea placeholder="Please, enter your question" class="form-control formfield"  cols="30" rows="5" id="about" ></textarea>
+	            <button type="button" class="btn btn-danger">Submit</button>
+			</form>
 		</div>
 	</div>
 </div>

@@ -1,5 +1,5 @@
 <!-- Services page -->
-<div class="services-wrap">
+<div class="content-wrapper">
 	<div class="tabs-holder">
 	<h2>Our Services</h2>
 	  <!-- Nav tabs -->

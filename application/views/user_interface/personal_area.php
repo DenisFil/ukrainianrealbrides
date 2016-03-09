@@ -1,4 +1,4 @@
-<div class="personal-area">
+<div class="content-wrapper">
     <div class="profile-block">
         <h2>Welcome <?php echo $this->session->userdata('name'); ?></h2>
 		<span class="profile-photo">
@@ -14,9 +14,12 @@
             <div class="avatar-buttons">
                 <label class="edit">
                     <span>Edit</span>
+
                     <form id="avatar">
-                        <input type="file" class="change-avatar" name="avatar">
+                        <input type="file" class="change-avatar" name="avatar">  
                     </form>
+
+
                 </label>
 
                 <a class="preview" href="<?php echo base_url(); ?>/user_interface/my_profile_preview">Preview</a>
@@ -160,7 +163,6 @@
             </div>
         </div>
     </div>
-</div>
 
 <!-- jcarousel photo gallery -->
 <div class="jcarousel-wrapper">
@@ -210,6 +212,8 @@
 </div>
 <!-- jcarousel photo gallery END -->
 
+</div>
+
 <!-- Profile photo crop modal -->
 <a href="#new-avatar" id="avatar-link" role="button" data-toggle="modal"></a>
 <div class="modal fade" id="new-avatar">
@@ -222,7 +226,7 @@
                 <h4>Create your avatar</h4>
                 <img src="" class="new-user-avatar" id="target">
                 <p>Crop your profile photo here</p>
-                <button type="button" class="btn btn-success" id="save-avatar">Save photo</button>
+                <button type="button" class="btn-save-photo" id="save-avatar">Save photo</button>
             </div>
         </div>
     </div>
@@ -271,7 +275,7 @@
                 <button type="button" id="user-photo">
                     <img src="">
                 </button>
-                <button type="button" class="btn btn-danger delete-photo-button">Delete</button>
+                <button type="button" class="btn-delete-photo delete-photo-button">Delete photo</button>
             </div>
         </div>
     </div>
