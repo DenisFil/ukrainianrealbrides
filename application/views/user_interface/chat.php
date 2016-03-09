@@ -1,3 +1,4 @@
+<div class="content-wrapper">
 <div class="chat-holder">
     <h2>Chat</h2>
     <div class="chat-content">
@@ -244,8 +245,7 @@
             <div class="chat-body-header">
                 <div class="chat-header-left">
                     <button class="chat-partner-avatar">
-                        <img src="" width="35"
-                             height="35">
+                        <img src="" width="35" height="35">
                         <span class="chat-avatar-status online-avatar-status"></span>
                     </button>
                     <div class="chat-partner-info">
@@ -253,12 +253,13 @@
                             <button type="button"><img
                                     src="<?php echo base_url(); ?>content/user_interface/img/chat/add-favorite.png"
                                     width="15" height="20"></button>
-                            <a href="<?php echo base_url(); ?>user_interface/user_profile_preview?id=<?php echo $value->id; ?>" class="name-href" target="_blank"></a>
+                            <a href="" class="name-href" target="_blank"></a>
                         </div>
                         <em></em>
                         <span>Online</span>
                     </div>
                 </div>
+
                 <div class="chat-header-right">
                     <a href="#" class="chat-header-nav send-gift-button">
                         <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" width="27"
@@ -355,4 +356,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
