@@ -12,6 +12,7 @@
         {
             $this->load->model('user_interface/personal_area_model');
             $this->load->model('user_interface/profile_settings_model');
+            $this->load->model('user_interface/main_model');
 
             if ($this->session->userdata('id'))
             {
@@ -35,6 +36,7 @@
                 {
                     $data['gifts'] = $this->personal_area_model->user_gifts($user_id);
                 }
+                $data['avatar'] = $this->main_model->get_avatar($user_id);
 
                 $users_online = array('users_online' => $this->chat_messages_model->users_online($this->session->userdata('gender')));
 
@@ -46,8 +48,20 @@
 
         public function users_online()
         {
-            $users_online = $this->chat_messages_model->users_online($this->session->userdata('gender'));
+            $users_online_query = $this->chat_messages_model->users_online($this->session->userdata('gender'));
+            $users_online = array();
+            foreach ($users_online_query as $value)
+            {
+                $users_online[$value->id] = $value;
+            }
 
             echo json_encode($users_online);
+        }
+
+        public function invite_to_chat()
+        {
+            $to_user_id = $this->input->post('to_user_id');
+
+
         }
     }

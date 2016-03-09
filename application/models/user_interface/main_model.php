@@ -18,4 +18,14 @@
                 $this->db->insert('users_online', $time);
             }
         }
+
+        public function get_avatar($id)
+        {
+            $query = $this->db->    select('avatar')->
+                                    from('user_details')->
+                                    where('user_id', $id)->
+                                    get()->
+                                    result();
+            return $query[0]->avatar;
+        }
     }

@@ -151,6 +151,7 @@ window.onload = init();
                     <a href="#signUp-modal" role="button" data-toggle="modal" id="signup-button"><button type="button" class="sign-up">Sign up</button></a>
                 <?php endif; ?>
             </div>
+
             <div class="header-right-shrink">
                 <?php if($this->session->userdata('id')): ?>
                     <div class="header-signed">
@@ -196,7 +197,7 @@ window.onload = init();
                         </div>
                         <span class="profile-name">
                             <span class="header-avatar">
-                                <img src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png" width="41" height="41" alt="Profile avatar">
+                                <img src="<?php echo base_url(); ?>content/profiles/avatars/<?php echo $this->session->userdata('id'); ?>/<?php echo $avatar; ?>_preview.jpg" width="41" height="41" alt="Profile avatar">
                             </span>
                             <a href="<?php echo base_url(); ?>user_interface/personal_area"><?php echo $this->session->userdata('name') . ' ' . $this->session->userdata('lastname'); ?></a>
                         </span>

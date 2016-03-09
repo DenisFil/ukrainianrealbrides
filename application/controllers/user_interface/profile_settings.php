@@ -14,6 +14,7 @@
             {
                 $user_id = $this->session->userdata('id');
                 $this->load->model('user_interface/personal_area_model');
+                $this->load->model('user_interface/main_model');
                 
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
                 $data['users_online'] = $this->personal_area_model->users_online(time());
@@ -34,6 +35,7 @@
                 {
                     $data['gifts'] = $this->personal_area_model->user_gifts($user_id);
                 }
+                $data['avatar'] = $this->main_model->get_avatar($user_id);
 
                 $this->load->view('user_interface/header', $data);
                 $this->load->view('user_interface/profile_settings');
