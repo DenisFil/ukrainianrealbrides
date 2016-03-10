@@ -251,21 +251,6 @@ window.onload = init();
             </ul>
         </nav>
     </header>
-
-    <div class="message-notifier" style="display: none;">
-        <div class="notifier-avatar">
-            <img src="<?php echo base_url(); ?>content/user_interface/img/header/message-notifier-avatar.jpg" width="100" height="148" alt="Profile photo">            
-        </div>
-        <div class="notifier-right">
-            <span>Tatyana</span>
-            <em>Hello you liked me Let's meet...</em>
-            <div class="notifier-buttons">
-                <button type="button" class="notifier-button">Accept</button>
-                <button type="button" class="notifier-link">Decline</button>
-            </div>
-        </div>
-    </div>
-
 </div>
 
 <!-- Header Ends Here -->

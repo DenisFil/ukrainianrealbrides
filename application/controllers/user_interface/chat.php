@@ -60,8 +60,19 @@
 
         public function invite_to_chat()
         {
-            $to_user_id = $this->input->post('to_user_id');
+            $invite_data = array(
+                'to_user_id' => $this->input->post('to_user_id'),
+                'from_user_id' => $this->session->userdata('id'),
+                'invite_code' => md5(time() + $this->input->post('to_user_id'))
+            );
 
+            $this->chat_messages_model->invite_to_chat($invite_data);
+        }
 
+        public function check_invites_chat ()
+        {
+            $invites_data = $this->chat_messages_model->check_invites_chat($this->session->userdata('id'));
+
+            echo json_encode($invites_data);
         }
     }

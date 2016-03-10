@@ -98,11 +98,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'post',
             data: toUserId,
-            url: baseUrl + 'user_interface/chat/invite_to_chat',
-            dataType: 'json',
-            success: function () {
-
-            }
+            url: baseUrl + 'user_interface/chat/invite_to_chat'
         });
     });
 });
