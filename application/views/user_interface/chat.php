@@ -357,4 +357,20 @@
         </div>
     </div>
 </div>
+
+<!--Photo modal-->
+<div class="modal fade" id="photo-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
+                <span></span>
+                <button type="button" id="user-photo">
+                    <img src=" " alt="Photo gallery" />
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
+<!--Photo modal END-->
+

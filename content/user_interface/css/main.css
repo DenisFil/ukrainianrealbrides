@@ -1,7 +1,4 @@
-.main-h1 {
-	margin: 0 auto;
-	width: 1170px;
-}
+
 
 /*Jquery gallery slider*/
 .gallery-holder{
@@ -198,13 +195,12 @@
 }
 .detail-box.chat-box img {
 	margin-bottom: 35px;
-    margin-right: 7px;
 }
 .detail-box.video-chat-box h3 {
 	margin-bottom: 44px;
 }
 .detail-box.video-chat-box img {
-	margin: 0 10px 33px 0;
+	margin-bottom: 33px;
 }
 .detail-box.gift-box h3 {
 	margin-bottom: 28px;
@@ -232,7 +228,8 @@
     box-shadow: 3px 3px 0 #e1e1e1;
 }
 .detail-box img {
-	display: inline-block;
+	display: block;
+	margin: 0 auto;
 }
 .content-middle {
 	width: 100%;
@@ -392,12 +389,13 @@
 .watch-us-holder {
 	width: 100%;
 	background: #ebebeb;
-	padding: 77px 0 88px 0;
 	text-align: center;
 }
 .watch-us {
 	width: 1170px;
 	margin: 0 auto;
+	padding-top: 77px;
+	padding-bottom: 88px;
 }
 .watch-us-holder h2{
 	margin: 0 0 47px 0;

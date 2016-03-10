@@ -220,9 +220,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <h4>Create your avatar</h4>
                 <img src="" class="new-user-avatar" id="target">
                 <p>Crop your profile photo here</p>
