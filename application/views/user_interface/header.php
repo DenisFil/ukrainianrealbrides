@@ -275,9 +275,7 @@ window.onload = init();
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <h2>Registration</h2>
                 <form class="form-horizontal" id="signup-form">
                     <div class="form-row">
@@ -319,9 +317,7 @@ window.onload = init();
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <h2>Login</h2>
                 <form class="form-horizontal" id="login-form">
                     <div class="form-row">
@@ -350,9 +346,7 @@ window.onload = init();
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <h2>So sad... You dont have enough credits...</h2>     
                 <img src="<?php echo base_url(); ?>content/user_interface/img/header/get-credits.jpg" alt="Get credits" />
                 <button type="button" class="btn btn-danger">Get credits</button>

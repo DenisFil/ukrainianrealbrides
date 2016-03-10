@@ -363,9 +363,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <span></span>
                 <button type="button" id="user-photo">
                     <img src=" " alt="Photo gallery" />

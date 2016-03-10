@@ -462,7 +462,7 @@ h4 {
 	height: 69px;
 }
 .header-holder.shrink .header-top {
-	padding-top: 14px;
+	padding: 14px 0 24px 0;
 }
 .header-holder.shrink .header-top .profile-name {
 	display: inline-block;
@@ -909,13 +909,13 @@ h4 {
 	outline: none;
 }
 .detail-button {
-	display: block;
+	display: inline-block;
+    margin: 0 auto;
     border-radius: 10px;
     color: #df3a2e;
     border: 2px solid #e83c32;
 	padding: 4px 12px 7px 15px;
     font-family: 'LatoRegular';
-    margin: 0 auto;
     font-size: 19px;
     line-height: 21px;
 	outline: none;

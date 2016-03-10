@@ -1,8 +1,5 @@
 <div class="content-wrapper">
-    <div class="main-h1">
-        <h1>Life only starts when love comes, start your life with us</h1>
-    </div>
-
+    <h1>Life only starts when love comes, start your life with us</h1>
     <!-- Gallery main-top -->
     <div class="gallery-holder">
         <ul id="gallery" class="list">
@@ -38,36 +35,33 @@
             <div class="detail-box messaging-box">
                 <h3>Messaging</h3>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" width="63" height="71" alt="Messaging" />
-                <a href="#messaging-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+                <a href="#messaging-modal" data-toggle="modal" class="detail-button">Detail</a>
             </div>
             <div class="detail-box chat-box">
                 <h3>Chat</h3>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" width="76" height="74" alt="Chat" />
-                <a href="#chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+                <a href="#chat-modal" data-toggle="modal" class="detail-button">Detail</a>
             </div>
             <div class="detail-box video-chat-box">
                 <h3>Video Chat</h3>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" width="81" height="79" alt="Video chat" />
-                <a href="#video-chat-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+                <a href="#video-chat-modal" data-toggle="modal" class="detail-button">Detail</a>
             </div>
             <div class="detail-box gift-box">
                 <h3>Gift service</h3>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" width="69" height="98" alt="Gift service" />
-                <a href="#gift-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+                <a href="#gift-modal" data-toggle="modal" class="detail-button">Detail</a>
             </div>
             <div class="detail-box important-box">
                 <h3>Very important service</h3>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" width="100" height="73" alt="Very important service" />
-                <a href="#important-service-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+                <a href="#important-service-modal" data-toggle="modal" class="detail-button">Detail</a>
             </div>
             <div class="detail-box romance-box">
                 <h3>Romance tours</h3>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" width="83" height="67" alt="Romance tours" />
-                <a href="#romance-tours-modal" data-toggle="modal"><button class="detail-button">Detail</button></a>
+                <a href="#romance-tours-modal" data-toggle="modal" class="detail-button">Detail</a>
             </div>
-
-
-
         </div>
         <div class="content-middle">
             <h2>Girls of the month</h2>
@@ -201,9 +195,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" alt="Messaging" />
                 <h2>Messaging</h2>     
                 <span>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</span>
@@ -216,9 +208,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
                 <h2>Chat</h2>     
                 <span>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</span>
@@ -231,9 +221,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
                 <h2>Video chat</h2>     
                 <span>What can be better than live communication with the beautiful women, who are here just waiting for you? That is why we have our additional service – video chat. Yes, chat to her and get to know each other better. Don’t hesitate and just chat to Ukrainian Real Brides!</span>
@@ -246,9 +234,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" alt="Gift service" />
                 <h2>Gift Service</h2>     
                 <span> You can express your feelings and send your romantic gift.</span>
@@ -261,9 +247,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" alt="Very important service" />
                 <h2>Very important service</h2>     
                 <span>You feel it is time to meet Ladies in real? Time to touch her hand, see her eyes and listen to her wonderful voice? You want to hug your lady and feel the smell of her beautiful hair? You desire to start the life full of romance and tender emotions? Then come to Ukraine as soon as possible! One meeting is worth lots of words. We will be very glad to meet you and help with everything in your romantic Tour.</span>
@@ -276,9 +260,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                <div class="exit"></div>
-                </button>
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                  <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" alt="Romance tours" />
                 <h2>Romance tours</h2>     
                 <span>You feel it is time to meet Ladies in real? Time to touch her hand, see her eyes and listen to her wonderful voice? You want to hug your lady and feel the smell of her beautiful hair? You desire to start the life full of romance and tender emotions? Then come to Ukraine as soon as possible! One meeting is worth lots of words. We will be very glad to meet you and help with everything in your romantic Tour.</span>
