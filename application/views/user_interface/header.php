@@ -251,6 +251,7 @@ window.onload = init();
             </ul>
         </nav>
     </header>
+    <div class="notification-holder"></div>
 </div>
 
 <!-- Header Ends Here -->
@@ -343,3 +344,4 @@ window.onload = init();
 
 <!--Login modal ends-->
 <?php endif; ?>
+
