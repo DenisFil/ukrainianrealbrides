@@ -4,6 +4,7 @@
         public function index()
         {
             $this->load->model('user_interface/personal_area_model');
+            $this->load->model('user_interface/main_model');
             $user_id = $this->session->userdata('id');
 
             $data['css'] = 'services';
@@ -25,6 +26,7 @@
                     $data['gifts'] = $this->personal_area_model->user_gifts($user_id);
                 }
             }
+            $data['avatar'] = $this->main_model->get_avatar($user_id);
 
             $this->load->view('user_interface/header', $data);
             $this->load->view('user_interface/services');

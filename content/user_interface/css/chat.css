@@ -231,7 +231,6 @@
 }
 .chat-header-left {
 	display: none;
-	/*visibility: hidden;*/
 	float: left;
 	width: 60%;
 	overflow: hidden;

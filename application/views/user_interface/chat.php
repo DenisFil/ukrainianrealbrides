@@ -25,7 +25,7 @@
                     <div role="tabpanel" class="active tab-pane" id="online-tab">
                         <div class="tab-body">
                             <?php foreach ($users_online as $value): ?>
-                                <div class="dialog-partner">
+                                <div class="dialog-partner" id="<?php echo $value->id; ?>">
                                     <div class="new-message-count">
                                         <em></em>
                                         <span>0</span>
@@ -50,7 +50,7 @@
                                         </div>
                                     </div>
                                     <div class="dialog-partner-right">
-                                        <button class="start-dialog">Start a dialogue</button>
+                                        <button class="start-dialog" id="13">Start a dialogue</button>
                                     </div>
                                 </div>
                             <?php endforeach; ?>

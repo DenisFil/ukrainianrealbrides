@@ -4,6 +4,7 @@
         public function index()
         {
             $this->load->model('user_interface/personal_area_model');
+            $this->load->model('user_interface/main_model');
             $data = array();
             if ($this->session->userdata('id'))
             {
@@ -31,6 +32,7 @@
             {
                 $data['css'] = 'support';
             }
+            $data['avatar'] = $this->main_model->get_avatar($user_id);
 
             $this->load->view('user_interface/header', $data);
             $this->load->view('user_interface/support');

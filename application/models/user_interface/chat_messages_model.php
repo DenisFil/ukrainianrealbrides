@@ -25,4 +25,34 @@
                                     result();
             return $query;
         }
+
+        public function invite_to_chat ($data)
+        {
+            $this->db->insert('chat_invites', $data);
+        }
+
+        public function check_invites_chat($id)
+        {
+            $query = $this->db->    select('from_user_id')->
+                                    from('chat_invites')->
+                                    where('to_user_id', $id)->
+                                    where('invite_status', 2)->
+                                    get()->
+                                    result();
+            if (!empty($query))
+            {
+                $invites_data = array();
+                foreach ($query as $value)
+                {
+                    $data = $this->db-> select('user_profiles.name, user_profiles.id, user_details.avatar')->
+                                        from('user_profiles')->
+                                        join('user_details', 'user_details.user_id = user_profiles.id')->
+                                        where('id', $value->from_user_id)->
+                                        get()->
+                                        result();
+                    array_push($invites_data, $data[0]);
+                }
+                return $invites_data;
+            }
+        }
     }

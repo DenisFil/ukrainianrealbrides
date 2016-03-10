@@ -497,6 +497,7 @@ h4 {
 .header-avatar img {
 	width: 100%;
 	height: auto;
+	border-radius: 30px;
 }
 .header-holder.shrink .status-bar {
 	border: none;
