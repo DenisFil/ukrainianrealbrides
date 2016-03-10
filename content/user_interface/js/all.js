@@ -4,7 +4,7 @@ $(document).ready(function () {
     setInterval(function () {
         $.ajax({
             type: 'post',
-            url: baseUrl + 'user_interface/chat/check_invites_chat',
+            url: baseUrl + 'user_interface/chat_engine/check_invites_chat',
             dataType: 'json',
             success: function (data) {
                 $.each(data, function (key, value) {

@@ -52,7 +52,7 @@ $(document).ready(function () {
     setInterval(function () {
         $.ajax({
             type: 'post',
-            url: baseUrl + 'user_interface/chat/users_online',
+            url: baseUrl + 'user_interface/chat_engine/users_online',
             dataType: 'json',
             success: function (data) {
                 var dataLength = data.length;
@@ -66,6 +66,7 @@ $(document).ready(function () {
         var link = $(this).attr('src');
         link = link.split('_');
         link = link[0] + '_full.jpg';
+        $('#user-photo').attr('src', link);
 
     });
 
@@ -98,7 +99,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'post',
             data: toUserId,
-            url: baseUrl + 'user_interface/chat/invite_to_chat'
+            url: baseUrl + 'user_interface/chat_engine/invite_to_chat'
         });
     });
 });
