@@ -343,3 +343,6 @@ window.onload = init();
 
 <!--Login modal ends-->
 <?php endif; ?>
+
+
+<div class="notification-holder"></div>
