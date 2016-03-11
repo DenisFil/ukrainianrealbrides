@@ -5,10 +5,10 @@ $(document).ready(function() {
 		columnWidth: 390,
 		itemSelector: '.item',
 		isFitWidth: true
-	}).imagesLoaded(function() {
+	})/*.imagesLoaded(function() {
 		$(this).masonry('reload');
 	});
-
+*/
 });
 $('#content').masonry({
   // other masonry options

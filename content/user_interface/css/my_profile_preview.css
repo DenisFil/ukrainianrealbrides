@@ -240,7 +240,7 @@
     padding: 0.2em 0;
 }
 #content {
-    width: 100%;
+    width: 1156px !important;
     margin: 0 auto;
 }
 .item {
@@ -258,7 +258,7 @@
     margin-right: 0;
 }
 .item img {
-    width: 375px;
+    width: 100%;
     height: auto;
 }
 .item a {
