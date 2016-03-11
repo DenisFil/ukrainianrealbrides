@@ -261,6 +261,9 @@
     width: 375px;
     height: auto;
 }
+.item a {
+    display: block;
+}
 .container {
     padding: 0;
 }

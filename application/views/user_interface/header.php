@@ -161,26 +161,26 @@ window.onload = init();
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em>Message: <big><?php echo $new_messages; ?></big></em>
+                                <em>Message: <span><?php echo $new_messages; ?></span></em>
                             </li>
                             <li class="chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em>Chat: <big><?php echo $users_online; ?></big></em>
+                                <em>Chat: <span><?php echo $users_online; ?></span></em>
                             </li>
                             <li class="video-chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em>Video chat: <big><?php echo $users_online; ?></big></em>
+                                <em>Video chat: <span><?php echo $users_online; ?></span></em>
                             </li>
                             <?php if ($gender == 0 || $gender == 1): ?>
                             <li class="credit-status">
                                 <a href="<?php echo base_url(); ?>/user_interface/payment">
                                     <span></span>
                                 </a>
-                                <em>Credits: <big><?php echo $credits; ?></big></em>
+                                <em>Credits: <span><?php echo $credits; ?></span></em>
                             </li>
                             <?php else: ?>
                             <li class="credit-status gift-status">

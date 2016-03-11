@@ -1,4 +1,3 @@
-/*
 $(document).ready(function() {
 
 	// Initialize Masonry
@@ -25,4 +24,5 @@ jQuery.each(jQuery('textarea[data-autoresize]'), function() {
     };
     jQuery(this).on('keyup input', function() { resizeTextarea(this); }).removeAttr('data-autoresize');
 });
-*/
+
+
