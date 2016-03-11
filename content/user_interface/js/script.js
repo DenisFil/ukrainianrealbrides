@@ -1,4 +1,3 @@
-/*
 $(document).ready(function() {
 
 	// Initialize Masonry
@@ -6,10 +5,10 @@ $(document).ready(function() {
 		columnWidth: 390,
 		itemSelector: '.item',
 		isFitWidth: true
-	}).imagesLoaded(function() {
+	})/*.imagesLoaded(function() {
 		$(this).masonry('reload');
 	});
-
+*/
 });
 $('#content').masonry({
   // other masonry options
@@ -25,4 +24,5 @@ jQuery.each(jQuery('textarea[data-autoresize]'), function() {
     };
     jQuery(this).on('keyup input', function() { resizeTextarea(this); }).removeAttr('data-autoresize');
 });
-*/
+
+

@@ -1032,7 +1032,9 @@ h4 {
 .status-bar .credit-status em {
     color: #e83c32;
 }
-
+.status-bar>li>em>span {
+	font-size: 20px;
+}
 .profile-panel {
     float: left;
     overflow: hidden;
@@ -1853,7 +1855,7 @@ label {
 .notifier-link {
     font-size: 12px;
     line-height: 14px;
-    color: #eb564d;
+    color: #999999;
     text-decoration: underline;
 }
 
