@@ -1,6 +1,6 @@
 <?php
 
-class User_profile_preview extends MY_Controller
+class User_profile_preview extends CI_Controller
 {
     public function index()
     {
@@ -28,7 +28,6 @@ class User_profile_preview extends MY_Controller
             $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
             $data['id'] = $user_id;
             $data['new_messages'] = $this->personal_area_model->get_new_messages($my_id);
-            $data['users_online'] = $this->personal_area_model->users_online(time());
 
             $data['css'] = 'my_profile_preview';
             $data['gender'] = '';

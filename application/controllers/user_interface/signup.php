@@ -1,5 +1,5 @@
 <?php
-    class Signup extends MY_Controller
+    class Signup extends CI_Controller
     {
         public function __construct()
         {
@@ -7,6 +7,7 @@
 
             $this->load->model('user_interface/signup_model');
             $this->load->model('user_interface/login_model');
+            $this->load->model('user_interface/main_model');
         }
 
 //  Валидация данных формы и запись нового пользователя
@@ -90,6 +91,9 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                         'id' => $query_data[0]->id
                     );
                     $this->session->set_userdata($session_data);
+
+                    $this->main_model->set_online($query_data[0]->id);
+
                     $result['result'] = TRUE;
 
                     echo json_encode($result);
@@ -120,6 +124,7 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                         'id' => $query_data[0]->id
                     );
                     $this->session->set_userdata($session_data);
+                    $this->main_model->set_online($query_data[0]->id);
 
                     echo json_encode($result);
                 }
@@ -141,6 +146,9 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                         'id' => $query_data[0]->id
                     );
                     $this->session->set_userdata($session_data);
+
+                    $this->main_model->set_online($query_data[0]->id);
+
                     $result['result'] = TRUE;
 
                     echo json_encode($result);
@@ -164,6 +172,8 @@ Please follow the link below to finish your registration at ukrainianrealbrides.
                         'id' => $query_data[0]->id
                     );
                     $this->session->set_userdata($session_data);
+
+                    $this->main_model->set_online($query_data[0]->id);
 
                     echo json_encode($query);
                 }

@@ -1,5 +1,5 @@
 <?php
-    class Services extends MY_Controller
+    class Services extends CI_Controller
     {
         public function index()
         {
@@ -16,7 +16,6 @@
             if ($user_id != '')
             {
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
-                $data['users_online'] = $this->personal_area_model->users_online(time());
                 if ($data['gender'] == 0 || $data['gender'] == 1)
                 {
                     $data['credits'] = $this->personal_area_model->user_credits($user_id);

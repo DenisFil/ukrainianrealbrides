@@ -41,7 +41,7 @@
                          width="48" height="50" alt="Messaging">
                     <div class="profile-box-right">
                         <h4>Chat</h4>
-                        <a class="inbox-online" href="">Online: <span><?php echo $users_online; ?></span></a>
+                        <a class="inbox-online" href="<?php echo base_url(); ?>user_interface/chat">Online: <span><?php echo $users_online; ?></span></a>
                     </div>
                 </li>
                 <li class="video-chat">
@@ -49,7 +49,7 @@
                          width="49" height="50" alt="Messaging">
                     <div class="profile-box-right">
                         <h4>Video Chat</h4>
-                        <a class="inbox-online" href="">Online: <span><?php echo $users_online; ?></span></a>
+                        <a class="inbox-online" href="<?php echo base_url(); ?>user_interface/chat">Online: <span><?php echo $users_online; ?></span></a>
                     </div>
                 </li>
                 <li class="invite-friend">

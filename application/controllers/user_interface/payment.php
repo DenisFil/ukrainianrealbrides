@@ -1,5 +1,5 @@
 <?php
-    class Payment extends MY_Controller
+    class Payment extends CI_Controller
     {
         public function __construct()
         {
@@ -16,7 +16,6 @@
                 $user_id = $this->session->userdata('id');
 
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
-                $data['users_online'] = $this->personal_area_model->users_online(time());
 
                 $data['css'] = 'payment';
                 $data['gender'] = '';

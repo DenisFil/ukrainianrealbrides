@@ -12,7 +12,7 @@
                 $gender = 1;
             }
 
-            $online = time() - 300;
+            $online = time();
 
             $query = $this->db->    select('user_profiles.name, user_profiles.lastname, user_profiles.id, user_details.avatar, user_details.credits, user_details.city, countries.country_name')->
                                     from('user_profiles')->

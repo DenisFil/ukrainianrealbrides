@@ -1,6 +1,13 @@
 <?php
     class Chat_engine extends CI_Controller
     {
+        public function __construct()
+        {
+            parent::__construct();
+
+            $this->load->model('user_interface/chat_messages_model');
+        }
+
         public function users_online()
         {
             $users_online_query = $this->chat_messages_model->users_online($this->session->userdata('gender'));
@@ -9,7 +16,6 @@
             {
                 $users_online[$value->id] = $value;
             }
-
             echo json_encode($users_online);
         }
 

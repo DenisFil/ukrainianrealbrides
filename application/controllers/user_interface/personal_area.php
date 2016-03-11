@@ -1,5 +1,5 @@
 <?php
-    class Personal_area extends MY_Controller
+    class Personal_area extends CI_Controller
     {
         public function __construct()
         {
@@ -33,7 +33,7 @@
                 $photos['photos'] = array_reverse($photos['photos']);
                 $data['photo_count'] = count($photos['photos']);
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
-                $data['users_online'] = $this->personal_area_model->users_online(time());
+                $data['users_online'] = $this->personal_area_model->users_online(time(), $this->session->userdata('gender'));
                 $data['css'] = 'personal_area';
 
                 $this->load->view('user_interface/header', $data);

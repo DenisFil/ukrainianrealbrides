@@ -1,9 +1,10 @@
 <?php
-    class Login extends MY_Controller
+    class Login extends CI_Controller
     {
         public function index()
         {
             $this->load->model('user_interface/login_model');
+            $this->load->model('user_interface/main_model');
 
             $user_data = $this->input->post();
             $user_data['password'] = md5($user_data['password']);
@@ -25,6 +26,8 @@
                             'id' => $query[0]->id
                         );
                         $this->session->set_userdata($data);
+
+                        $this->main_model->set_online($query[0]->id);
 
                         $result['result'] = 1;
                     }

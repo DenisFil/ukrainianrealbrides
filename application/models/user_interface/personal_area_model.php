@@ -12,13 +12,21 @@
             return count($query);
         }
 
-        public function users_online($time)
+        public function users_online($time, $gender)
         {
+            if ($gender == 1 || $gender == 0)
+            {
+                $gender = 2;
+            }
+            else
+            {
+                $gender = 1;
+            }
             $query = $this->db->    select('user_id')->
                                     from('users_online')->
                                     join('user_profiles', 'user_profiles.id=users_online.user_id')->
                                     where('last_online >', $time)->
-                                    where('gender', 2)->
+                                    where('gender', $gender)->
                                     get()->
                                     result();
             return count($query);

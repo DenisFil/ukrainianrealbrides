@@ -113,16 +113,16 @@ window.onload = init();
                                 <em><?php echo $new_messages; ?></em>
                             </li>
                             <li class="chat-status">
-                                <a href="#">
+                                <a href="<?php echo base_url(); ?>user_interface/chat">
                                     <span></span>
                                 </a>
-                                <em><?php echo $users_online; ?></em>
+                                <em><?php echo 0; ?></em>
                             </li>
                             <li class="video-chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em><?php echo $users_online; ?></em>
+                                <em><?php echo 0; ?></em>
                             </li>
                             <?php if ($gender == 0 || $gender == 1): ?>
                             <li class="credit-status">
@@ -164,16 +164,16 @@ window.onload = init();
                                 <em>Message: <big><?php echo $new_messages; ?></big></em>
                             </li>
                             <li class="chat-status">
-                                <a href="#">
+                                <a href="<?php echo base_url(); ?>user_interface/chat">
                                     <span></span>
                                 </a>
-                                <em>Chat: <big><?php echo $users_online; ?></big></em>
+                                <em>Chat: <big><?php echo 0; ?></big></em>
                             </li>
                             <li class="video-chat-status">
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em>Video chat: <big><?php echo $users_online; ?></big></em>
+                                <em>Video chat: <big><?php echo 0; ?></big></em>
                             </li>
                             <?php if ($gender == 0 || $gender == 1): ?>
                             <li class="credit-status">
@@ -318,8 +318,8 @@ window.onload = init();
                     </div>
                         <span class="forget-password"><a href="#">Forgot login or password?</a></span>
                     <button type="button" class="btn btn-danger" id="login">Log In</button>
-                    <a href="#"><button type="button" class="btn btn-social btn-xs btn-facebook" id="fb-button-login"><i class="fa fa-facebook"></i> | Log In with Facebook</button></a>
-                    <a href="#"><button class="btn btn-social btn-xs btn-google-plus"><i class="fa fa-google-plus"></i>  | Log in with Google+</button></a>
+                    <button type="button" class="btn btn-social btn-xs btn-facebook" id="fb-button-login"><i class="fa fa-facebook"></i> | Log In with Facebook</button>
+                    <button type="button" class="btn btn-social btn-xs btn-google-plus" id="google-signup-login"><i class="fa fa-google-plus"></i>  | Log in with Google+</button>
                 </form>
             </div>
             <div class="modal-bottom">

@@ -248,7 +248,7 @@ console.log(data);
     });
 
   /******************************Google авторизация****************************/
-        $('#google-signup').click(function(){
+        $('#google-signup, #google-signup-login').click(function(){
         initGapi();
 
         function initGapi()
