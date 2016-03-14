@@ -297,7 +297,7 @@
 		   <h2>Anna Lyashenko</h2>
 	    </div>
 	    <div class="row text-center">
-		   <h4>ID 001</h2>
+		   <h4>ID 001</h4>
 	    </div>
 		<h4>E-mail: ann_l@gmail.com</h4> 	
 		<h4>Телефон: +38 050 000 00 01</h4> 	
@@ -322,7 +322,7 @@
 		   <h2>Kate Lington</h2>
 	    </div>
 	    <div class="row text-center">
-		   <h4>ID 201</h2>
+		   <h4>ID 201</h4>
 	    </div>
 			<h4>Текущий баланс: <span class="bg-success">200 cr</span></h4> 	
 			<h4>Выберите действие:</h4> 	

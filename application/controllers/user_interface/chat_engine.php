@@ -30,10 +30,24 @@
             $this->chat_messages_model->invite_to_chat($invite_data);
         }
 
-        public function check_invites_chat ()
+        public function check_invites_chat()
         {
             $invites_data = $this->chat_messages_model->check_invites_chat($this->session->userdata('id'));
 
             echo json_encode($invites_data);
+        }
+
+        public function open_room()
+        {
+            $open_room = $this->chat_messages_model->open_room($this->session->userdata('id'), $this->input->post('partner_id'));
+            if ($open_room === TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
         }
     }

@@ -1,6 +1,33 @@
 $(document).ready(function () {
     var baseUrl = 'http://ukrainianrealbrides.int/';
 
+    var chatId = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    if (chatId.length > 0) {
+        chatId = chatId[0].split('=');
+        $('.dialog-partner').each(function () {
+            var blockId = $(this).attr('id');
+            if (blockId == chatId[1]) {
+                var index = $(this).index();
+                dialogActivation(index);
+
+                $('.dialog-partner').each(function () {
+                    var className = $(this).attr('class');
+                    className = className.split(' ');
+                    if (className.length > 1) {
+                        $(this).removeClass('active-dialog');
+                    }
+                });
+
+                $(this).addClass('active-dialog');
+
+                var link = $(this).children().next().children().children().attr('src');
+
+                $('.chat-partner-avatar').children().attr('src', link);
+                $('.chat-header-left').show();
+            }
+        });
+    }
+
     //Активация диалогового окна
     function dialogActivation(index) {
         var selector = '.dialog-partner-info';

@@ -55,4 +55,13 @@
                 return $invites_data;
             }
         }
+
+        public function open_room($my_id, $partner_id)
+        {
+            $data = array('invite_status' => 1);
+            $this->db->where('from_user_id', $partner_id);
+            $this->db->where('to_user_id', $my_id);
+            $query = $this->db->update('chat_invites', $data);
+            return $query;
+        }
     }
