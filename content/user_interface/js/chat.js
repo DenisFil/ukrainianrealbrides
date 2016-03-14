@@ -5,21 +5,58 @@ $(document).ready(function () {
     //Проверка состояния запросов
     setInterval(function () {
         if (chatRooms.length > 0) {
-            var rooms = {};
-            $.each(chatRooms, function (key, value) {
-                rooms.value = value;
-            });
+            var rooms = {
+                rooms: chatRooms
+            };
             $.ajax({
                 type: 'post',
                 data: rooms,
                 url: baseUrl + 'user_interface/chat_engine/check_chat_status',
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);
+                    $.each(data, function (key, value) {
+                        var search = $.inArray(key, chatRooms);
+                        if (search != -1) {
+                            if (value[0].invite_status == 1) {
+                                var text = $('#' + key + ' .time').text();
+                                if (text == '') {
+                                    $('#' + key).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').parent().prepend('<span class="time">0:00</span>');
+                                }
+                            }
+                        }
+                    });
                 }
             });
         }
     }, 1000);
+
+    //Время чата
+    function chatTime () {
+        setInterval(function () { trackTime(); }, 1000);
+        var seconds = 0;
+        var minutes = 0;
+
+        function trackTime () {
+            seconds += 1;
+            if (seconds > 9 && seconds < 60) {
+                var timeStr = minutes + ':' + seconds;
+            } else {
+                timeStr = minutes + ':0' + seconds;
+                if (seconds >= 60) {
+                    minutes += 1;
+                    seconds = 0;
+                    if (seconds > 9 && seconds < 60) {
+                        timeStr = minutes + ':' + seconds;
+                    } else {
+                        timeStr = minutes + ':0' + seconds;
+                    }
+                }
+            }
+            console.log(timeStr);
+            $('.time').text(timeStr);
+        }
+
+    }
 
     //Проверка перехода по приглашению
     var searchGET = window.location.href.indexOf('?') + 1;
@@ -32,33 +69,10 @@ $(document).ready(function () {
                 if ($(this).attr('id') == chatId[1]) {
                     dialogActivation($(this).index());
                     $(this).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').parent().prepend('<span class="time">0:00</span>');
+                    chatTime();
                 }
             });
         }
-    }
-
-    //Время чата
-    setInterval(function () { trackTime(); }, 1000);
-    var seconds = 0;
-    var minutes = 0;
-
-    function trackTime () {
-        seconds += 1;
-        if (seconds > 9 && seconds < 60) {
-            var timeStr = minutes + ':' + seconds;
-        } else {
-            timeStr = minutes + ':0' + seconds;
-            if (seconds >= 60) {
-                minutes += 1;
-                seconds = 0;
-                if (seconds > 9 && seconds < 60) {
-                    timeStr = minutes + ':' + seconds;
-                } else {
-                    timeStr = minutes + ':0' + seconds;
-                }
-            }
-        }
-        $('.time').text(timeStr);
     }
 
     //Активация диалогового окна

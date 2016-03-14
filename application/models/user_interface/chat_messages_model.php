@@ -70,7 +70,7 @@
             $query = array();
             foreach ($rooms as $key => $value)
             {
-                $query[$key] = $this->db->  select('invite_status')->
+                $query[$value['to_user_id']] = $this->db->  select('invite_status')->
                                             from('chat_invites')->
                                             where('from_user_id', $value['from_user_id'])->
                                             where('to_user_id', $value['to_user_id'])->

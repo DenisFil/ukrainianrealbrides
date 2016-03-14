@@ -53,8 +53,7 @@
 
         public function check_chat_status()
         {
-            $rooms = $this->input->post();
-            var_dump($rooms);exit;
+            $rooms = $this->input->post('rooms');
             foreach ($rooms as $key => $value)
             {
                 $rooms[$key] = array('from_user_id' => $this->session->userdata('id'), 'to_user_id' => $value);
