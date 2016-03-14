@@ -1,31 +1,64 @@
 $(document).ready(function () {
     var baseUrl = 'http://ukrainianrealbrides.int/';
+    var chatRooms = [];
 
-    var chatId = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    if (chatId.length > 0) {
-        chatId = chatId[0].split('=');
-        $('.dialog-partner').each(function () {
-            var blockId = $(this).attr('id');
-            if (blockId == chatId[1]) {
-                var index = $(this).index();
-                dialogActivation(index);
+    //Проверка состояния запросов
+    setInterval(function () {
+        if (chatRooms.length > 0) {
+            var rooms = {};
+            $.each(chatRooms, function (key, value) {
+                rooms.value = value;
+            });
+            $.ajax({
+                type: 'post',
+                data: rooms,
+                url: baseUrl + 'user_interface/chat_engine/check_chat_status',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    }, 1000);
 
-                $('.dialog-partner').each(function () {
-                    var className = $(this).attr('class');
-                    className = className.split(' ');
-                    if (className.length > 1) {
-                        $(this).removeClass('active-dialog');
-                    }
-                });
+    //Проверка перехода по приглашению
+    var searchGET = window.location.href.indexOf('?') + 1;
+    if (searchGET != 0) {
+        var chatId = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
 
-                $(this).addClass('active-dialog');
+        if (chatId.length > 0) {
+            chatId = chatId[0].split('=');
+            $('.dialog-partner').each(function () {
+                if ($(this).attr('id') == chatId[1]) {
+                    dialogActivation($(this).index());
+                    $(this).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').parent().prepend('<span class="time">0:00</span>');
+                }
+            });
+        }
+    }
 
-                var link = $(this).children().next().children().children().attr('src');
+    //Время чата
+    setInterval(function () { trackTime(); }, 1000);
+    var seconds = 0;
+    var minutes = 0;
 
-                $('.chat-partner-avatar').children().attr('src', link);
-                $('.chat-header-left').show();
+    function trackTime () {
+        seconds += 1;
+        if (seconds > 9 && seconds < 60) {
+            var timeStr = minutes + ':' + seconds;
+        } else {
+            timeStr = minutes + ':0' + seconds;
+            if (seconds >= 60) {
+                minutes += 1;
+                seconds = 0;
+                if (seconds > 9 && seconds < 60) {
+                    timeStr = minutes + ':' + seconds;
+                } else {
+                    timeStr = minutes + ':0' + seconds;
+                }
             }
-        });
+        }
+        $('.time').text(timeStr);
     }
 
     //Активация диалогового окна
@@ -35,6 +68,22 @@ $(document).ready(function () {
         var location = $(selector).eq(index).children().eq(1).text();
         var link = $(selector).eq(index).children().eq(0).attr('href');
         $('.chat-partner-name').children().next().attr('href', link).text(name).parent().next().text(location);
+
+        selector = '.dialog-partner';
+        $(selector).each(function () {
+            var className = $(this).attr('class');
+            className = className.split(' ');
+            if (className.length > 1) {
+                $(this).removeClass('active-dialog');
+            }
+        });
+
+        $(selector).eq(index).addClass('active-dialog');
+
+        link = $(selector).eq(index).children().next().children().children().attr('src');
+
+        $('.chat-partner-avatar').children().attr('src', link);
+        $('.chat-header-left').show();
     }
 
     //Проверка актуальности online`а
@@ -101,27 +150,14 @@ $(document).ready(function () {
     $(document).on('click', '.dialog-partner', function () {
         var index = $(this).index();
         dialogActivation(index);
-
-        $('.dialog-partner').each(function () {
-            var className = $(this).attr('class');
-            className = className.split(' ');
-            if (className.length > 1) {
-                $(this).removeClass('active-dialog');
-            }
-        });
-
-        $(this).addClass('active-dialog');
-
-        var link = $(this).children().next().children().children().attr('src');
-
-        $('.chat-partner-avatar').children().attr('src', link);
-        $('.chat-header-left').show();
     });
 
     $(document).on('click', '.start-dialog', function () {
         var toUserId = {
             to_user_id: $(this).parent().prev().prev().parent().attr('id')
         };
+
+        chatRooms.push(toUserId.to_user_id);
 
         $.ajax({
             type: 'post',

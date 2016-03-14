@@ -64,4 +64,19 @@
             $query = $this->db->update('chat_invites', $data);
             return $query;
         }
+
+        public function check_chat_status ($rooms)
+        {
+            $query = array();
+            foreach ($rooms as $key => $value)
+            {
+                $query[$key] = $this->db->  select('invite_status')->
+                                            from('chat_invites')->
+                                            where('from_user_id', $value['from_user_id'])->
+                                            where('to_user_id', $value['to_user_id'])->
+                                            get()->
+                                            result();
+            }
+            return $query;
+        }
     }
