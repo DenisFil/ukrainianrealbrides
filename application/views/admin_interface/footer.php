@@ -19,10 +19,12 @@
 	  });
 
 	</script>
+
 	<script>
 		$(document).ready(function() {
-    $('#profiles-data').DataTable();
-} );
+    		$('#profiles-data').DataTable();
+		} );
 	</script>
+
   </body>
 </html>

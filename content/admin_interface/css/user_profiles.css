@@ -61,3 +61,36 @@ textarea {
 .action-dialog h4 {
 	margin-bottom: 40px;
 }
+.profileName h2 {
+	margin: 10px 0 0 0;
+}
+.checkbox-column label,
+.checkbox-column input {
+	margin: 0;
+}
+table tbody tr .checkbox-column {
+	padding: 3px 0 0 0; 
+	text-align: center;
+}
+.profile-link:hover {
+	text-decoration: none;
+}
+.action-select,
+.credits-column {
+	text-align: center;
+	vertical-align: middle;
+	padding: 3px !important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+}
+.credits-status {
+	vertical-align: middle;
+    padding: 3px 8px;
+    font-size: 15px;
+    line-height: 17px;
+    border-radius: 3px;
+}
+.form-group-sm select.form-control {
+	cursor: pointer;
+}

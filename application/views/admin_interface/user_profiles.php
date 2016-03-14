@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-9">
+		<div class="col-lg-12s">
 			<ul class="nav nav-justified nav-pills">
 			  <li role="presentation" class="active"><a href="#">Все</a></li>
 			  <li role="presentation"><a href="#">Активные <span class="bg-danger profiles-notification">1</span></a> </li>
@@ -9,14 +9,16 @@
 			  <li role="presentation"><a href="#">Заблокированные <span class="bg-danger profiles-notification">1</span></a></li>
 			</ul>
 		</div>
-		<div class="col-lg-3">
-		  	      <form class="navbar-form navbar-left" role="search">
-	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Поиск">
-	        </div>
-	        <button type="submit" class="btn btn-default">Найти</button>
-	      </form>
-		</div>
+<!-- 
+        <div class="col-lg-3">
+                    <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Поиск">
+            </div>
+            <button type="submit" class="btn btn-default">Найти</button>
+          </form>
+        </div>
+-->
 	</div>
 	<div class="row property-row">
 		<div class="col-lg-12">
@@ -47,239 +49,46 @@
 <table id="profiles-data" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
+                <th></th>
                 <th>ID</th>
                 <th>Имя</th>
+                <th>Страна</th>
                 <th>Агенство (id)</th>
                 <th>Дата регистрации</th>
                 <th>Время регистрации</th>
                 <th>Статус</th>
-				<th>Кредиты</th>
-				<th>Инфориация</th>
-				<th>Действия</th>
+				<th>Баланс счёта</th>
             </tr>
         </thead>
         <tbody>
             <tr>
+                <td class="checkbox-column">
+                      <label><input type="checkbox" value=""></label>
+                </td>
                 <td>1</td>
-                <td>Valeria Bila</td>
-                <td>Happy Bride (1)</td>
-                <td>27/06/2015</td>
-                <td>16:05:01</td>
-                <td>Активная</td>
-                <td>Девушка</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Milana Znatok</td>
-                <td>Happy Bride (1)</td>
-                <td>02/03/2015</td>
-                <td>10:05:01</td>
-                <td>Активная</td>
-                <td>Девушка</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Vladlena Nos</td>
-                <td>Happy Bride (1)</td>
-                <td>15/03/2015</td>
-                <td>13:22:00</td>
-                <td>Активная</td>
-                <td>Девушка</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Svetlana Petrova</td>
-                <td>Happy Bride (1)</td>
-                <td>18/03/2015</td>
-                <td>12:12:00</td>
-                <td>Активная</td>
-                <td>Девушка</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Viktoria Tkach</td>
-                <td>Happy Bride (1)</td>
+                <td><a href="#" class="profile-link">Anna Lyashenko</a></td>
+                <td>Ukraine</td>
+                <td>none</td>
                 <td>12/07/2015</td>
                 <td>11:12:00</td>
-                <td>Активная</td>
-                <td>Девушка</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
+                <td class="action-select">
+                    <div class="form-group-sm">
+                      <select class="form-control" id="#">
+                        <option>Активная</option>
+                        <option>Не активная</option>
+                        <option>Заблокировать</option>
+                      </select>
+                      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">Изменить</button>
+                    </div>
                 </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Galina Semenova</td>
-                <td>Happy Bride (1)</td>
-                <td>12/07/2015</td>
-                <td>11:12:00</td>
-                <td>Активная</td>
-                <td>Девушка</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
+                <td class="credits-column">
+                    <div class="form-group-sm">
+                        <span class="bg-success credits-status">500 Cr</span>
+                        <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#modalCredits">Добавить / Снять</button>
+                    </div>
                 </td>
             </tr>
-            <tr>
-                <td>8</td>
-                <td>Richard Watson</td>
-                <td>None</td>
-                <td>12/07/2015</td>
-                <td>11:12:00</td>
-                <td>Активная</td>
-                <td>1200</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Anna Lyashenko</td>
-                <td>Девушка</td>
-                <td>12/07/2015</td>
-                <td>11:12:00</td>
-                <td>Активная</td>
-                <td>500</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Bekky Thompsnn</td>
-                <td>None</td>
-                <td>12/07/2015</td>
-                <td>11:12:00</td>
-                <td>Активная</td>
-                <td>500</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>John Peterson</td>
-                <td>None</td>
-                <td>12/07/2015</td>
-                <td>11:12:00</td>
-                <td>Активная</td>
-                <td>500</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>John Peterson</td>
-                <td>None</td>
-                <td>12/07/2015</td>
-                <td>11:12:00</td>
-                <td>Активная</td>
-                <td>500</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>John Peterson</td>
-                <td>None</td>
-                <td>12/07/2015</td>
-                <td>11:12:00</td>
-                <td>Активная</td>
-                <td>500</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>John Peterson</td>
-                <td>None</td>
-                <td>12/07/2015</td>
-                <td>11:12:00</td>
-                <td>Активная</td>
-                <td>500</td>
-                <td>
-					<a href="#" role="button" type="button" data-toggle="modal" data-target="#modalProfileInfo">Показать</a>
-                </td>
-                <td class="buttons-cell">
-					<button class="btn btn-success" type="button">Active</button>
-					<button class="btn btn-danger" type="button" type="button" data-toggle="modal" data-target="#modalAction">Delete</button>
-					<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#modalCredits">Credits</button>
-                </td>
-            </tr>
+            
         </tbody>
     </table>
 </div>
@@ -297,11 +106,13 @@
 		   <h2>Anna Lyashenko</h2>
 	    </div>
 	    <div class="row text-center">
-		   <h4>ID 001</h2>
+		   <h4>ID 001</h4>
 	    </div>
 		<h4>E-mail: ann_l@gmail.com</h4> 	
-		<h4>Телефон: +38 050 000 00 01</h4> 	
-		<img src="http://blog.atlasrfidstore.com/wp-content/uploads/2014/06/biometric-passport.png" alt="#" class="img-thumbnail" width="268">	
+		<h4>Телефон: +38 050 000 00 01</h4>
+		<a href="#" type="button">
+			<img src="http://blog.atlasrfidstore.com/wp-content/uploads/2014/06/biometric-passport.png" alt="#" class="img-thumbnail" width="268">
+		</a> 		
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-label="Close">Закрыть</button>
@@ -318,11 +129,11 @@
         <h3 class="modal-title text-center" id="myModalLabel">Кредиты</h3>
       </div>
       <div class="modal-body text-left">
-	    <div class="row text-center">
-		   <h2>Kate Lington</h2>
+	    <div class="row text-center profileName">
+		   <h2>Jacob Green</h2>
 	    </div>
 	    <div class="row text-center">
-		   <h4>ID 201</h2>
+		   <h4>ID 201</h4>
 	    </div>
 			<h4>Текущий баланс: <span class="bg-success">200 cr</span></h4> 	
 			<h4>Выберите действие:</h4> 	
@@ -340,8 +151,8 @@
 			</div>
 			<div class="form-group">
 				<form action="#">
-				  <input type="text" class="form-control messageSubject" id="#" placeholder="Тема сообщения" disabled>
-				  <textarea class="form-control" rows="3" resize="none" placeholder="Введите текст" disabled></textarea>
+				  <input type="text" class="form-control messageSubject" id="" placeholder="Тема сообщения" disabled>
+				  <textarea class="form-control" rows="3" placeholder="Введите текст" disabled></textarea>
 				</form>
 			</div>
       </div>
@@ -393,6 +204,7 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalActionSuccess" data-dismiss="modal" aria-label="Close">Выполнить</button>
       </div>
     </div>
+
   </div>
 </div>
 
