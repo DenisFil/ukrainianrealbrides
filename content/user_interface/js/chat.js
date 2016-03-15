@@ -108,7 +108,7 @@ $(document).ready(function () {
         var messageData = {
             message: $(messageFiledSelector).val(),
             to_user_id: $('.active-dialog').attr('id'),
-            date: date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() + ' ' + date.getHours() + ':' + date.getMinutes()
+            date: date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
         };
 
         $(messageFiledSelector).val('');
@@ -148,6 +148,8 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 $.each(data, function (key, value) {
+                    var time = data[key].time_message.split(':');
+                    data[key].time_message = time[0] + ':' + time[1];
                     var newMessage = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + data[key].message +'</span></div><span class="chat-row-right">' + data[key].time_message + '</span></div>';
                     $('.chat-field').append(newMessage);
                 });
@@ -219,6 +221,28 @@ $(document).ready(function () {
     $(document).on('click', '.dialog-partner', function () {
         var index = $(this).index();
         dialogActivation(index);
+
+        $.ajax({
+            type: 'post',
+            data: { partner_id: $(this).attr('id') },
+            url: baseUrl + 'user_interface/chat_engine/load_history',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $.each(data, function (key, value) {
+                    console.log(value);
+                    var date = value.date.split(' ');
+                    var dialogId = $('.active-dialog').attr('id');
+                    if (value.from_user_id == dialogId) {
+                        var message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message +'</span></div><span class="chat-row-right">' + date[1] + '</span></div>';
+                        $('.chat-field').append(message);
+                    } else {
+                        message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message +'</span></div><span class="chat-row-right">' + date[1] + '</span></div>';
+                        $('.chat-field').append(message);
+                    }
+                });
+            }
+        });
     });
 
     $(document).on('click', '.start-dialog', function () {

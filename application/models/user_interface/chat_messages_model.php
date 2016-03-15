@@ -100,4 +100,22 @@
             }
             return $query;
         }
+
+        public function load_history($id, $my_id)
+        {
+            $query = array();
+            array_push($query, $this->db->  select('message, date, from_user_id')->
+                                            from('chat_messages')->
+                                            where('from_user_id', $my_id)->
+                                            where('to_user_id', $id)->
+                                            get()->
+                                            result());
+            array_push($query, $this->db->  select('message, date, status, from_user_id')->
+                                            from('chat_messages')->
+                                            where('from_user_id', $id)->
+                                            where('to_user_id', $my_id)->
+                                            get()->
+                                            result());
+            return $query;
+        }
     }
