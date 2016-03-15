@@ -61,4 +61,22 @@
             $chats_status = $this->chat_messages_model->check_chat_status($rooms);
             echo json_encode($chats_status);
         }
+
+        public function send_message()
+        {
+            $message_data = $this->input->post();
+            $message_data['from_user_id'] = $this->session->userdata('id');
+            $this->chat_messages_model->send_message($message_data);
+        }
+
+        public function check_new_messages()
+        {
+            $from_user_id = $this->input->post('from_user_id');
+            $new_messages = $this->chat_messages_model->check_new_messages($this->session->userdata('id'), $from_user_id);
+            $message_time = explode(' ', $new_messages[0]->date);
+            $new_messages[0]->date_message = $message_time[0];
+            $new_messages[0]->time_message = $message_time[1];
+
+            echo json_encode($new_messages);
+        }
     }

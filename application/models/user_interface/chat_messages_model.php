@@ -79,4 +79,25 @@
             }
             return $query;
         }
+
+        public function send_message ($data)
+        {
+            $this->db->insert('chat_messages', $data);
+        }
+
+        public function check_new_messages($id, $from_user_id)
+        {
+            $query = $this->db->    select('message_id, message, date')->
+                                    from('chat_messages')->
+                                    where('to_user_id', $id)->
+                                    where('status', 0)->
+                                    where('from_user_id', $from_user_id)->
+                                    get()->
+                                    result();
+            foreach ($query as $value)
+            {
+                $this->db->update('chat_messages', array('status' => 1), array('message_id' => $value->message_id));
+            }
+            return $query;
+        }
     }
