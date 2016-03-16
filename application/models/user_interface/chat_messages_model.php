@@ -56,6 +56,16 @@
             }
         }
 
+        public function check_credits($id)
+        {
+            $query = $this->db->    select('credits')->
+                                    from('user_details')->
+                                    where('user_id', $id)->
+                                    get()->
+                                    result();
+            return $query[0]->credits;
+        }
+
         public function open_room($my_id, $partner_id)
         {
             $data = array('invite_status' => 1);
@@ -65,19 +75,36 @@
             return $query;
         }
 
+        public function close_room($invite_code)
+        {
+            $query = $this->db->update('chat_invites', array('invite_status' => 0), array('invite_code' => $invite_code));
+            return $query;
+        }
+
         public function check_chat_status ($rooms)
         {
             $query = array();
             foreach ($rooms as $key => $value)
             {
-                $query[$value['to_user_id']] = $this->db->  select('invite_status')->
-                                            from('chat_invites')->
-                                            where('from_user_id', $value['from_user_id'])->
-                                            where('to_user_id', $value['to_user_id'])->
-                                            get()->
-                                            result();
+                $query[$value['to_user_id']] = $this->db->  select('invite_status, invite_code')->
+                                                            from('chat_invites')->
+                                                            where('from_user_id', $value['from_user_id'])->
+                                                            where('to_user_id', $value['to_user_id'])->
+                                                            get()->
+                                                            result();
             }
             return $query;
+        }
+
+        public function get_invite_code($partner_id, $my_id)
+        {
+            $query = $this->db->    select('invite_code')->
+                                    from('chat_invites')->
+                                    where('from_user_id', $partner_id)->
+                                    where('to_user_id', $my_id)->
+                                    get()->
+                                    result();
+            return $query[0]->invite_code;
         }
 
         public function send_message ($data)

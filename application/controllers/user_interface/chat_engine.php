@@ -33,8 +33,32 @@ class Chat_engine extends CI_Controller
     public function check_invites_chat()
     {
         $invites_data = $this->chat_messages_model->check_invites_chat($this->session->userdata('id'));
+        /*var_dump($invites_data);*/
 
         echo json_encode($invites_data);
+    }
+
+    public function check_credits()
+    {
+        $gender = $this->session->userdata('gender');
+        if ($gender == 1)
+        {
+            $credits = $this->chat_messages_model->check_credits($this->session->userdata('id'));
+            if ($credits > 0)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+        }
+        else
+        {
+            $result['result'] = 1;
+        }
+
+        echo json_encode($result);
     }
 
     public function open_room()
@@ -43,6 +67,27 @@ class Chat_engine extends CI_Controller
         if ($open_room === TRUE) {
             $result['result'] = 1;
         } else {
+            $result['result'] = 0;
+        }
+        echo json_encode($result);
+    }
+
+    public function get_invite_code()
+    {
+        $partner_id = $this->input->post('partner_id');
+        $invite_code['invite_code'] = $this->chat_messages_model->get_invite_code($partner_id, $this->session->userdata('id'));
+        echo json_encode($invite_code);
+    }
+
+    public function close_room()
+    {
+        $close = $this->chat_messages_model->close_room($this->input->post('invite_code'));
+        if ($close === TRUE)
+        {
+            $result['result'] = 1;
+        }
+        else
+        {
             $result['result'] = 0;
         }
         echo json_encode($result);

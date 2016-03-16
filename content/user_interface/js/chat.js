@@ -2,7 +2,7 @@ $(document).ready(function () {
     var baseUrl = 'http://ukrainianrealbrides.int/';
     var chatRooms = [];
 
-    //Проверка состояния запросов
+    //Проверка состояния инвайтов
     setInterval(function () {
         if (chatRooms.length > 0) {
             var rooms = {
@@ -20,9 +20,11 @@ $(document).ready(function () {
                             if (value[0].invite_status == 1) {
                                 var text = $('#' + key + ' .time').text();
                                 if (text == '') {
-                                    $('#' + key).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').parent().prepend('<span class="time">0:00</span>');
+                                    $('#' + key).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', value[0].invite_code).parent().prepend('<span class="time">0:00</span>');
                                     chatTime();
                                 }
+                            } else {
+                                $('#' + value[0].invite_code).addClass('start-dialog').removeClass('stop-dialog').text('Start a dialogue').prev().remove();
                             }
                         }
                     });
@@ -32,12 +34,14 @@ $(document).ready(function () {
     }, 1000);
 
     //Время чата
-    function chatTime () {
-        setInterval(function () { trackTime(); }, 1000);
+    function chatTime() {
+        setInterval(function () {
+            trackTime();
+        }, 1000);
         var seconds = 0;
         var minutes = 0;
 
-        function trackTime () {
+        function trackTime() {
             seconds += 1;
             if (seconds > 9 && seconds < 60) {
                 var timeStr = minutes + ':' + seconds;
@@ -67,9 +71,20 @@ $(document).ready(function () {
             chatId = chatId[0].split('=');
             $('.dialog-partner').each(function () {
                 if ($(this).attr('id') == chatId[1]) {
-                    dialogActivation($(this).index());
-                    $(this).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').parent().prepend('<span class="time">0:00</span>');
-                    chatTime();
+                    var index = $(this).index();
+                    chatRooms.push($(this).attr('id'));
+                    $.ajax({
+                        type: 'post',
+                        data: { partner_id: $(this).attr('id') },
+                        url: baseUrl + 'user_interface/chat_engine/get_invite_code',
+                        dataType: 'json',
+                        success: function (data) {
+                            dialogActivation(index);
+                            $('.dialog-partner').eq(index).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', data.invite_code).parent().prepend('<span class="time">0:00</span>');
+                            chatTime();
+                            loadHistory(index);
+                        }
+                    });
                 }
             });
         }
@@ -114,7 +129,7 @@ $(document).ready(function () {
         $(messageFiledSelector).val('');
 
         date = date.getHours() + ':' + date.getMinutes();
-        var myMessageHtml = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + messageData.message +'</span></div><span class="chat-row-right">' + date + '</span></div>';
+        var myMessageHtml = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + messageData.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
         $('.chat-field').append(myMessageHtml);
 
         $.ajax({
@@ -130,31 +145,34 @@ $(document).ready(function () {
 
     //Проверка новых сообщений
     setInterval(function () {
-        var fromUserId = {};
-        $('.dialog-partner').each(function () {
-            var blockClass = $(this).attr('class');
-            blockClass = blockClass.split(' ');
-            if (blockClass.length > 1) {
-                fromUserId = {
-                    from_user_id: $(this).attr('id')
+        var activeBlock = $('.dialog-partner').is('.active-dialog');
+        if (activeBlock === true) {
+            var fromUserId = {};
+            $('.dialog-partner').each(function () {
+                var blockClass = $(this).attr('class');
+                blockClass = blockClass.split(' ');
+                if (blockClass.length > 1) {
+                    fromUserId = {
+                        from_user_id: $(this).attr('id')
+                    }
                 }
-            }
-        });
+            });
 
-        $.ajax({
-            type: 'post',
-            data: fromUserId,
-            url: baseUrl + 'user_interface/chat_engine/check_new_messages',
-            dataType: 'json',
-            success: function (data) {
-                $.each(data, function (key, value) {
-                    var time = data[key].time_message.split(':');
-                    data[key].time_message = time[0] + ':' + time[1];
-                    var newMessage = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + data[key].message +'</span></div><span class="chat-row-right">' + data[key].time_message + '</span></div>';
-                    $('.chat-field').append(newMessage);
-                });
-            }
-        });
+            $.ajax({
+                type: 'post',
+                data: fromUserId,
+                url: baseUrl + 'user_interface/chat_engine/check_new_messages',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        var time = data[key].time_message.split(':');
+                        data[key].time_message = time[0] + ':' + time[1];
+                        var newMessage = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + data[key].message + '</span></div><span class="chat-row-right">' + data[key].time_message + '</span></div>';
+                        $('.chat-field').append(newMessage);
+                    });
+                }
+            });
+        }
     }, 1000);
 
     //Проверка актуальности online`а
@@ -163,33 +181,35 @@ $(document).ready(function () {
             var className = $(this).attr('class');
             if (className == 'active') {
                 var index = $(this).index();
-                var selector = '.tab-body:eq(' + index + ') .dialog-partner';
-                var length = $(selector).length;
-                var usersId = [];
+                if (index == 0) {
+                    var selector = '.tab-body:eq(' + index + ') .dialog-partner';
+                    var length = $(selector).length;
+                    var usersId = [];
 
-                if (dataLength != length) {
-                    $(selector).each(function () {
-                        var userId = $(this).attr('id');
-                        if (!data[userId]) {
-                            $('#' + userId).remove();
-                        }
-                        usersId.push(userId);
-                    });
-
-                    $.each(data, function (key, value) {
-                        var search = $.inArray(key, usersId);
-                        if (search == -1) {
-                            if (value.city != null) {
-                                var location = value.country_name + ', ' + value.city;
-                            } else {
-                                location = value.country_name;
+                    if (dataLength != length) {
+                        $(selector).each(function () {
+                            var userId = $(this).attr('id');
+                            if (!data[userId]) {
+                                $('#' + userId).remove();
                             }
+                            usersId.push(userId);
+                        });
 
-                            var html =  '<div class="dialog-partner" id="' + value.id + '"><div class="new-message-count"><em></em><span>0</span></div><div class="dialog-partner-left"><button class="dialog-partner-avatar"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_preview.jpg" width="35" height="35"><span class="chat-avatar-status online-avatar-status"></span></button><div class="dialog-partner-info"><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + value.id + '" target="_blank">' + value.name + '</a><em>' + location + '</em></div></div><div class="dialog-partner-right"><button class="start-dialog">Start a dialogue</button></div></div>';
+                        $.each(data, function (key, value) {
+                            var search = $.inArray(key, usersId);
+                            if (search == -1) {
+                                if (value.city != null) {
+                                    var location = value.country_name + ', ' + value.city;
+                                } else {
+                                    location = value.country_name;
+                                }
 
-                            $('.tab-body:eq(' + index + ')').append(html);
-                        }
-                    });
+                                var html = '<div class="dialog-partner" id="' + value.id + '"><div class="new-message-count"><em></em><span>0</span></div><div class="dialog-partner-left"><button class="dialog-partner-avatar"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_preview.jpg" width="35" height="35"><span class="chat-avatar-status online-avatar-status"></span></button><div class="dialog-partner-info"><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + value.id + '" target="_blank">' + value.name + '</a><em>' + location + '</em></div></div><div class="dialog-partner-right"><button class="start-dialog">Start a dialogue</button></div></div>';
+
+                                $('.tab-body:eq(' + index + ')').append(html);
+                            }
+                        });
+                    }
                 }
             }
         });
@@ -206,7 +226,30 @@ $(document).ready(function () {
                 checkExistence(dataLength, data);
             }
         });
-    }, 1000);
+    }, 10000);
+
+    //Загрузка истории
+    function loadHistory (index) {
+        $.ajax({
+            type: 'post',
+            data: {partner_id: $('.dialog-partner').eq(index).attr('id')},
+            url: baseUrl + 'user_interface/chat_engine/load_history',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    var date = value.date.split(' ');
+                    var dialogId = $('.active-dialog').attr('id');
+                    if (value.from_user_id == dialogId) {
+                        var message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + date[1] + '</span></div>';
+                        $('.chat-field').append(message);
+                    } else {
+                        message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message + '</span></div><span class="chat-row-right">' + date[1] + '</span></div>';
+                        $('.chat-field').append(message);
+                    }
+                });
+            }
+        });
+    }
 
     //Просмотр аватара
     $('.dialog-partner-avatar').children().click(function () {
@@ -221,41 +264,50 @@ $(document).ready(function () {
     $(document).on('click', '.dialog-partner', function () {
         var index = $(this).index();
         dialogActivation(index);
+        var chatContent = $('.chat-field').html();
+        if (chatContent == 0) {
+            loadHistory(index);
+        }
 
+        chatRooms.push($(this).attr('id'));
+    });
+
+    $(document).on('click', '.start-dialog', function () {
         $.ajax({
             type: 'post',
-            data: { partner_id: $(this).attr('id') },
-            url: baseUrl + 'user_interface/chat_engine/load_history',
+            url: baseUrl + 'user_interface/chat_engine/check_credits',
             dataType: 'json',
             success: function (data) {
-                console.log(data);
-                $.each(data, function (key, value) {
-                    console.log(value);
-                    var date = value.date.split(' ');
-                    var dialogId = $('.active-dialog').attr('id');
-                    if (value.from_user_id == dialogId) {
-                        var message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message +'</span></div><span class="chat-row-right">' + date[1] + '</span></div>';
-                        $('.chat-field').append(message);
-                    } else {
-                        message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message +'</span></div><span class="chat-row-right">' + date[1] + '</span></div>';
-                        $('.chat-field').append(message);
-                    }
-                });
+                if (data.result == 0) {
+                    $('#credits-modal').click();
+                } else {
+                    var toUserId = {
+                        to_user_id: $('.start-dialog').parent().prev().prev().parent().attr('id')
+                    };
+
+                    $.ajax({
+                        type: 'post',
+                        data: toUserId,
+                        url: baseUrl + 'user_interface/chat_engine/invite_to_chat'
+                    });
+                }
             }
         });
     });
 
-    $(document).on('click', '.start-dialog', function () {
-        var toUserId = {
-            to_user_id: $(this).parent().prev().prev().parent().attr('id')
-        };
-
-        chatRooms.push(toUserId.to_user_id);
-
+    //Закрытие чата
+    $(document).on('click', '.stop-dialog', function () {
+        var index = $(this).index();
         $.ajax({
             type: 'post',
-            data: toUserId,
-            url: baseUrl + 'user_interface/chat_engine/invite_to_chat'
+            data: { invite_code: $(this).attr('id') },
+            url: baseUrl + 'user_interface/chat_engine/close_room',
+            dataType: 'json',
+            success: function (data) {
+                if (data.result == 1) {
+                    $('.stop-dialog').eq(index - 1).addClass('start-dialog').removeClass('stop-dialog').text('Start a dialogue').prev().remove();
+                }
+            }
         });
     });
 });

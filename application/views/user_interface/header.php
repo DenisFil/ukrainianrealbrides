@@ -328,20 +328,20 @@ window.onload = init();
         </div>
     </div>
 </div>
+<!--Login modal ends-->
+<?php endif; ?>
 
+<a href="#get-credits-modal" role="button" data-toggle="modal" id="credits-modal"></a>
 <div class="modal fade services-modal" id="get-credits-modal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
-                <h2>So sad... You dont have enough credits...</h2>     
+                <h2>So sad... You dont have enough credits...</h2>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/header/get-credits.jpg" alt="Get credits" />
-                <button type="button" class="btn btn-danger">Get credits</button>
+                <a href="<?php echo base_url(); ?>user_interface/payment" target="_blank"><button type="button" class="btn btn-danger">Get credits</button></a>
             </div>
         </div>
     </div>
 </div>
-
-<!--Login modal ends-->
-<?php endif; ?>
 
