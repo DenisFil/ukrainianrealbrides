@@ -93,7 +93,23 @@
                                                             get()->
                                                             result();
             }
+            var_dump($query);
             return $query;
+        }
+
+        public function check_life_status($invite_codes)
+        {
+            $chat_life = array();
+            foreach ($invite_codes as $value)
+            {
+                $query = $this->db->    select('invite_status, invite_code')->
+                                        from('chat_invites')->
+                                        where('invite_code', $value)->
+                                        get()->
+                                        result();
+                array_push($chat_life, $query);
+            }
+            return $chat_life;
         }
 
         public function get_invite_code($partner_id, $my_id)

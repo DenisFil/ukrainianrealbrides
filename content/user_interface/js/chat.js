@@ -1,31 +1,29 @@
 $(document).ready(function () {
     var baseUrl = 'http://ukrainianrealbrides.int/';
     var chatRooms = [];
+    var chatRoom = [];
 
-    //Проверка состояния инвайтов
+    //Проверка активности чата
     setInterval(function () {
-        if (chatRooms.length > 0) {
-            var rooms = {
-                rooms: chatRooms
-            };
+        if (chatRoom.length > 0) {
             $.ajax({
                 type: 'post',
-                data: rooms,
-                url: baseUrl + 'user_interface/chat_engine/check_chat_status',
+                data: {rooms: chatRoom},
+                url: baseUrl + 'user_interface/chat_engine/check_life_status',
                 dataType: 'json',
                 success: function (data) {
                     $.each(data, function (key, value) {
-                        var search = $.inArray(key, chatRooms);
-                        if (search != -1) {
-                            if (value[0].invite_status == 1) {
-                                var text = $('#' + key + ' .time').text();
-                                if (text == '') {
-                                    $('#' + key).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', value[0].invite_code).parent().prepend('<span class="time">0:00</span>');
-                                    chatTime();
-                                }
-                            } else {
-                                $('#' + value[0].invite_code).addClass('start-dialog').removeClass('stop-dialog').text('Start a dialogue').prev().remove();
-                            }
+                        if (value[0].invite_status == 1) {
+                            $('.dialog-partner').each(function () {
+                                /*var text = $('.dialog-partner:eq(' + inspection + ') .time').text();
+                                if (text == '') {*/
+                                    $('#' + value[0].invite_code).removeClass('start-dialog').addClass('stop-dialog').text('Stop')/*.parent().prepend('<span class="time">0:00</span>')*/;
+                                    /*chatTime();*/
+                                /*}*/
+                            });
+                        }
+                        if (value[0].invite_status == 0) {
+                            $('#' + value[0].invite_code).removeClass('stop-dialog').addClass('start-dialog').text('Start a dialogue')/*.prev().remove()*/;
                         }
                     });
                 }
@@ -33,8 +31,37 @@ $(document).ready(function () {
         }
     }, 1000);
 
+    //Проверка состояния инвайтов
+    /*setInterval(function () {
+     if (chatRooms.length > 0) {
+     var rooms = {
+     rooms: chatRooms
+     };
+     $.ajax({
+     type: 'post',
+     data: rooms,
+     url: baseUrl + 'user_interface/chat_engine/check_chat_status',
+     dataType: 'json',
+     success: function (data) {
+     $.each(data, function (key, value) {
+     var search = $.inArray(key, chatRooms);
+     if (search != -1) {
+     if (value[0].invite_status == 1) {
+     var text = $('#' + key + ' .time').text();
+     if (text == '') {
+     $('#' + key).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', value[0].invite_code).parent().prepend('<span class="time">0:00</span>');
+     chatTime();
+     }
+     }
+     }
+     });
+     }
+     });
+     }
+     }, 1000);*/
+
     //Время чата
-    function chatTime() {
+    /*function chatTime() {
         setInterval(function () {
             trackTime();
         }, 1000);
@@ -60,7 +87,7 @@ $(document).ready(function () {
             $('.time').text(timeStr);
         }
 
-    }
+    }*/
 
     //Проверка перехода по приглашению
     var searchGET = window.location.href.indexOf('?') + 1;
@@ -75,13 +102,13 @@ $(document).ready(function () {
                     chatRooms.push($(this).attr('id'));
                     $.ajax({
                         type: 'post',
-                        data: { partner_id: $(this).attr('id') },
+                        data: {partner_id: $(this).attr('id')},
                         url: baseUrl + 'user_interface/chat_engine/get_invite_code',
                         dataType: 'json',
                         success: function (data) {
                             dialogActivation(index);
-                            $('.dialog-partner').eq(index).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', data.invite_code).parent().prepend('<span class="time">0:00</span>');
-                            chatTime();
+                            $('.dialog-partner').eq(index).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', data.invite_code)/*.parent().prepend('<span class="time">0:00</span>')*/;
+                            /*chatTime();*/
                             loadHistory(index);
                         }
                     });
@@ -229,7 +256,7 @@ $(document).ready(function () {
     }, 10000);
 
     //Загрузка истории
-    function loadHistory (index) {
+    function loadHistory(index) {
         $.ajax({
             type: 'post',
             data: {partner_id: $('.dialog-partner').eq(index).attr('id')},
@@ -273,6 +300,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.start-dialog', function () {
+        var userId = $(this).parent().prev().prev().parent().attr('id');
         $.ajax({
             type: 'post',
             url: baseUrl + 'user_interface/chat_engine/check_credits',
@@ -282,13 +310,18 @@ $(document).ready(function () {
                     $('#credits-modal').click();
                 } else {
                     var toUserId = {
-                        to_user_id: $('.start-dialog').parent().prev().prev().parent().attr('id')
+                        to_user_id: userId
                     };
 
                     $.ajax({
                         type: 'post',
                         data: toUserId,
-                        url: baseUrl + 'user_interface/chat_engine/invite_to_chat'
+                        url: baseUrl + 'user_interface/chat_engine/invite_to_chat',
+                        dataType: 'json',
+                        success: function (data) {
+                            $('#' + userId).children().next().next().children().attr('id', data.invite_code);
+                            chatRoom.push(data.invite_code);
+                        }
                     });
                 }
             }
@@ -300,7 +333,7 @@ $(document).ready(function () {
         var index = $(this).index();
         $.ajax({
             type: 'post',
-            data: { invite_code: $(this).attr('id') },
+            data: {invite_code: $('.stop-dialog').eq(index).attr('id')},
             url: baseUrl + 'user_interface/chat_engine/close_room',
             dataType: 'json',
             success: function (data) {

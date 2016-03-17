@@ -28,6 +28,8 @@ class Chat_engine extends CI_Controller
         );
 
         $this->chat_messages_model->invite_to_chat($invite_data);
+        $invite_code['invite_code'] = $invite_data['invite_code'];
+        echo json_encode($invite_code);
     }
 
     public function check_invites_chat()
@@ -70,6 +72,13 @@ class Chat_engine extends CI_Controller
             $result['result'] = 0;
         }
         echo json_encode($result);
+    }
+
+    public function check_life_status()
+    {
+        $invite_codes = $this->input->post('rooms');
+        $chat_life = $this->chat_messages_model->check_life_status($invite_codes);
+        echo json_encode($chat_life);
     }
 
     public function get_invite_code()

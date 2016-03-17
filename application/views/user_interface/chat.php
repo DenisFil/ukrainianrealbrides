@@ -52,7 +52,7 @@
                                             </div>
                                         </div>
                                         <div class="dialog-partner-right">
-                                            <button class="start-dialog" id="13">Start a dialogue</button>
+                                            <button class="start-dialog">Start a dialogue</button>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
