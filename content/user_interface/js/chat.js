@@ -1,31 +1,120 @@
 $(document).ready(function () {
     var baseUrl = 'http://ukrainianrealbrides.int/';
+    var chatRooms = [];
+    var chatRoom = [];
 
-    var chatId = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    if (chatId.length > 0) {
-        chatId = chatId[0].split('=');
-        $('.dialog-partner').each(function () {
-            var blockId = $(this).attr('id');
-            if (blockId == chatId[1]) {
-                var index = $(this).index();
-                dialogActivation(index);
+    //Проверка активности чата
+    setInterval(function () {
+        if (chatRoom.length > 0) {
+            $.ajax({
+                type: 'post',
+                data: {rooms: chatRoom},
+                url: baseUrl + 'user_interface/chat_engine/check_life_status',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        if (value[0].invite_status == 1) {
+                            $('.dialog-partner').each(function () {
+                                /*var text = $('.dialog-partner:eq(' + inspection + ') .time').text();
+                                if (text == '') {*/
+                                    $('#' + value[0].invite_code).removeClass('start-dialog').addClass('stop-dialog').text('Stop')/*.parent().prepend('<span class="time">0:00</span>')*/;
+                                    /*chatTime();*/
+                                /*}*/
+                            });
+                        }
+                        if (value[0].invite_status == 0) {
+                            $('#' + value[0].invite_code).removeClass('stop-dialog').addClass('start-dialog').text('Start a dialogue')/*.prev().remove()*/;
+                        }
+                    });
+                }
+            });
+        }
+    }, 1000);
 
-                $('.dialog-partner').each(function () {
-                    var className = $(this).attr('class');
-                    className = className.split(' ');
-                    if (className.length > 1) {
-                        $(this).removeClass('active-dialog');
+    //Проверка состояния инвайтов
+    /*setInterval(function () {
+     if (chatRooms.length > 0) {
+     var rooms = {
+     rooms: chatRooms
+     };
+     $.ajax({
+     type: 'post',
+     data: rooms,
+     url: baseUrl + 'user_interface/chat_engine/check_chat_status',
+     dataType: 'json',
+     success: function (data) {
+     $.each(data, function (key, value) {
+     var search = $.inArray(key, chatRooms);
+     if (search != -1) {
+     if (value[0].invite_status == 1) {
+     var text = $('#' + key + ' .time').text();
+     if (text == '') {
+     $('#' + key).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', value[0].invite_code).parent().prepend('<span class="time">0:00</span>');
+     chatTime();
+     }
+     }
+     }
+     });
+     }
+     });
+     }
+     }, 1000);*/
+
+    //Время чата
+    /*function chatTime() {
+        setInterval(function () {
+            trackTime();
+        }, 1000);
+        var seconds = 0;
+        var minutes = 0;
+
+        function trackTime() {
+            seconds += 1;
+            if (seconds > 9 && seconds < 60) {
+                var timeStr = minutes + ':' + seconds;
+            } else {
+                timeStr = minutes + ':0' + seconds;
+                if (seconds >= 60) {
+                    minutes += 1;
+                    seconds = 0;
+                    if (seconds > 9 && seconds < 60) {
+                        timeStr = minutes + ':' + seconds;
+                    } else {
+                        timeStr = minutes + ':0' + seconds;
                     }
-                });
-
-                $(this).addClass('active-dialog');
-
-                var link = $(this).children().next().children().children().attr('src');
-
-                $('.chat-partner-avatar').children().attr('src', link);
-                $('.chat-header-left').show();
+                }
             }
-        });
+            $('.time').text(timeStr);
+        }
+
+    }*/
+
+    //Проверка перехода по приглашению
+    var searchGET = window.location.href.indexOf('?') + 1;
+    if (searchGET != 0) {
+        var chatId = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+        if (chatId.length > 0) {
+            chatId = chatId[0].split('=');
+            $('.dialog-partner').each(function () {
+                if ($(this).attr('id') == chatId[1]) {
+                    var index = $(this).index();
+                    chatRooms.push($(this).attr('id'));
+                    $.ajax({
+                        type: 'post',
+                        data: {partner_id: $(this).attr('id')},
+                        url: baseUrl + 'user_interface/chat_engine/get_invite_code',
+                        dataType: 'json',
+                        success: function (data) {
+                            dialogActivation(index);
+                            $('.dialog-partner').eq(index).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', data.invite_code)/*.parent().prepend('<span class="time">0:00</span>')*/;
+                            /*chatTime();*/
+                            loadHistory(index);
+                        }
+                    });
+                }
+            });
+        }
     }
 
     //Активация диалогового окна
@@ -35,7 +124,83 @@ $(document).ready(function () {
         var location = $(selector).eq(index).children().eq(1).text();
         var link = $(selector).eq(index).children().eq(0).attr('href');
         $('.chat-partner-name').children().next().attr('href', link).text(name).parent().next().text(location);
+
+        selector = '.dialog-partner';
+        $(selector).each(function () {
+            var className = $(this).attr('class');
+            className = className.split(' ');
+            if (className.length > 1) {
+                $(this).removeClass('active-dialog');
+            }
+        });
+
+        $(selector).eq(index).addClass('active-dialog');
+
+        link = $(selector).eq(index).children().next().children().children().attr('src');
+
+        $('.chat-partner-avatar').children().attr('src', link);
+        $('.chat-header-left').show();
     }
+
+    //Отправка сообщений
+    $('.send-message-button').click(function () {
+        var messageFiledSelector = '.message-field';
+        var date = new Date();
+
+        var messageData = {
+            message: $(messageFiledSelector).val(),
+            to_user_id: $('.active-dialog').attr('id'),
+            date: date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+        };
+
+        $(messageFiledSelector).val('');
+
+        date = date.getHours() + ':' + date.getMinutes();
+        var myMessageHtml = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + messageData.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
+        $('.chat-field').append(myMessageHtml);
+
+        $.ajax({
+            type: 'post',
+            data: messageData,
+            url: baseUrl + 'user_interface/chat_engine/send_message',
+            dataType: 'json',
+            success: function () {
+
+            }
+        });
+    });
+
+    //Проверка новых сообщений
+    setInterval(function () {
+        var activeBlock = $('.dialog-partner').is('.active-dialog');
+        if (activeBlock === true) {
+            var fromUserId = {};
+            $('.dialog-partner').each(function () {
+                var blockClass = $(this).attr('class');
+                blockClass = blockClass.split(' ');
+                if (blockClass.length > 1) {
+                    fromUserId = {
+                        from_user_id: $(this).attr('id')
+                    }
+                }
+            });
+
+            $.ajax({
+                type: 'post',
+                data: fromUserId,
+                url: baseUrl + 'user_interface/chat_engine/check_new_messages',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        var time = data[key].time_message.split(':');
+                        data[key].time_message = time[0] + ':' + time[1];
+                        var newMessage = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + data[key].message + '</span></div><span class="chat-row-right">' + data[key].time_message + '</span></div>';
+                        $('.chat-field').append(newMessage);
+                    });
+                }
+            });
+        }
+    }, 1000);
 
     //Проверка актуальности online`а
     function checkExistence(dataLength, data) {
@@ -43,33 +208,35 @@ $(document).ready(function () {
             var className = $(this).attr('class');
             if (className == 'active') {
                 var index = $(this).index();
-                var selector = '.tab-body:eq(' + index + ') .dialog-partner';
-                var length = $(selector).length;
-                var usersId = [];
+                if (index == 0) {
+                    var selector = '.tab-body:eq(' + index + ') .dialog-partner';
+                    var length = $(selector).length;
+                    var usersId = [];
 
-                if (dataLength != length) {
-                    $(selector).each(function () {
-                        var userId = $(this).attr('id');
-                        if (!data[userId]) {
-                            $('#' + userId).remove();
-                        }
-                        usersId.push(userId);
-                    });
-
-                    $.each(data, function (key, value) {
-                        var search = $.inArray(key, usersId);
-                        if (search == -1) {
-                            if (value.city != null) {
-                                var location = value.country_name + ', ' + value.city;
-                            } else {
-                                location = value.country_name;
+                    if (dataLength != length) {
+                        $(selector).each(function () {
+                            var userId = $(this).attr('id');
+                            if (!data[userId]) {
+                                $('#' + userId).remove();
                             }
+                            usersId.push(userId);
+                        });
 
-                            var html =  '<div class="dialog-partner" id="' + value.id + '"><div class="new-message-count"><em></em><span>0</span></div><div class="dialog-partner-left"><button class="dialog-partner-avatar"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_preview.jpg" width="35" height="35"><span class="chat-avatar-status online-avatar-status"></span></button><div class="dialog-partner-info"><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + value.id + '" target="_blank">' + value.name + '</a><em>' + location + '</em></div></div><div class="dialog-partner-right"><button class="start-dialog">Start a dialogue</button></div></div>';
+                        $.each(data, function (key, value) {
+                            var search = $.inArray(key, usersId);
+                            if (search == -1) {
+                                if (value.city != null) {
+                                    var location = value.country_name + ', ' + value.city;
+                                } else {
+                                    location = value.country_name;
+                                }
 
-                            $('.tab-body:eq(' + index + ')').append(html);
-                        }
-                    });
+                                var html = '<div class="dialog-partner" id="' + value.id + '"><div class="new-message-count"><em></em><span>0</span></div><div class="dialog-partner-left"><button class="dialog-partner-avatar"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_preview.jpg" width="35" height="35"><span class="chat-avatar-status online-avatar-status"></span></button><div class="dialog-partner-info"><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + value.id + '" target="_blank">' + value.name + '</a><em>' + location + '</em></div></div><div class="dialog-partner-right"><button class="start-dialog">Start a dialogue</button></div></div>';
+
+                                $('.tab-body:eq(' + index + ')').append(html);
+                            }
+                        });
+                    }
                 }
             }
         });
@@ -86,7 +253,30 @@ $(document).ready(function () {
                 checkExistence(dataLength, data);
             }
         });
-    }, 1000);
+    }, 10000);
+
+    //Загрузка истории
+    function loadHistory(index) {
+        $.ajax({
+            type: 'post',
+            data: {partner_id: $('.dialog-partner').eq(index).attr('id')},
+            url: baseUrl + 'user_interface/chat_engine/load_history',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    var date = value.date.split(' ');
+                    var dialogId = $('.active-dialog').attr('id');
+                    if (value.from_user_id == dialogId) {
+                        var message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + date[1] + '</span></div>';
+                        $('.chat-field').append(message);
+                    } else {
+                        message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message + '</span></div><span class="chat-row-right">' + date[1] + '</span></div>';
+                        $('.chat-field').append(message);
+                    }
+                });
+            }
+        });
+    }
 
     //Просмотр аватара
     $('.dialog-partner-avatar').children().click(function () {
@@ -101,32 +291,56 @@ $(document).ready(function () {
     $(document).on('click', '.dialog-partner', function () {
         var index = $(this).index();
         dialogActivation(index);
+        var chatContent = $('.chat-field').html();
+        if (chatContent == 0) {
+            loadHistory(index);
+        }
 
-        $('.dialog-partner').each(function () {
-            var className = $(this).attr('class');
-            className = className.split(' ');
-            if (className.length > 1) {
-                $(this).removeClass('active-dialog');
-            }
-        });
-
-        $(this).addClass('active-dialog');
-
-        var link = $(this).children().next().children().children().attr('src');
-
-        $('.chat-partner-avatar').children().attr('src', link);
-        $('.chat-header-left').show();
+        chatRooms.push($(this).attr('id'));
     });
 
     $(document).on('click', '.start-dialog', function () {
-        var toUserId = {
-            to_user_id: $(this).parent().prev().prev().parent().attr('id')
-        };
-
+        var userId = $(this).parent().prev().prev().parent().attr('id');
         $.ajax({
             type: 'post',
-            data: toUserId,
-            url: baseUrl + 'user_interface/chat_engine/invite_to_chat'
+            url: baseUrl + 'user_interface/chat_engine/check_credits',
+            dataType: 'json',
+            success: function (data) {
+                if (data.result == 0) {
+                    $('#credits-modal').click();
+                } else {
+                    var toUserId = {
+                        to_user_id: userId
+                    };
+
+                    $.ajax({
+                        type: 'post',
+                        data: toUserId,
+                        url: baseUrl + 'user_interface/chat_engine/invite_to_chat',
+                        dataType: 'json',
+                        success: function (data) {
+                            $('#' + userId).children().next().next().children().attr('id', data.invite_code);
+                            chatRoom.push(data.invite_code);
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+    //Закрытие чата
+    $(document).on('click', '.stop-dialog', function () {
+        var index = $(this).index();
+        $.ajax({
+            type: 'post',
+            data: {invite_code: $('.stop-dialog').eq(index).attr('id')},
+            url: baseUrl + 'user_interface/chat_engine/close_room',
+            dataType: 'json',
+            success: function (data) {
+                if (data.result == 1) {
+                    $('.stop-dialog').eq(index - 1).addClass('start-dialog').removeClass('stop-dialog').text('Start a dialogue').prev().remove();
+                }
+            }
         });
     });
 });
