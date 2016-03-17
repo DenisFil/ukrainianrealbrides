@@ -56,12 +56,109 @@
             }
         }
 
+        public function check_credits($id)
+        {
+            $query = $this->db->    select('credits')->
+                                    from('user_details')->
+                                    where('user_id', $id)->
+                                    get()->
+                                    result();
+            return $query[0]->credits;
+        }
+
         public function open_room($my_id, $partner_id)
         {
             $data = array('invite_status' => 1);
             $this->db->where('from_user_id', $partner_id);
             $this->db->where('to_user_id', $my_id);
             $query = $this->db->update('chat_invites', $data);
+            return $query;
+        }
+
+        public function close_room($invite_code)
+        {
+            $query = $this->db->update('chat_invites', array('invite_status' => 0), array('invite_code' => $invite_code));
+            return $query;
+        }
+
+        public function check_chat_status ($rooms)
+        {
+            $query = array();
+            foreach ($rooms as $key => $value)
+            {
+                $query[$value['to_user_id']] = $this->db->  select('invite_status, invite_code')->
+                                                            from('chat_invites')->
+                                                            where('from_user_id', $value['from_user_id'])->
+                                                            where('to_user_id', $value['to_user_id'])->
+                                                            get()->
+                                                            result();
+            }
+            var_dump($query);
+            return $query;
+        }
+
+        public function check_life_status($invite_codes)
+        {
+            $chat_life = array();
+            foreach ($invite_codes as $value)
+            {
+                $query = $this->db->    select('invite_status, invite_code')->
+                                        from('chat_invites')->
+                                        where('invite_code', $value)->
+                                        get()->
+                                        result();
+                array_push($chat_life, $query);
+            }
+            return $chat_life;
+        }
+
+        public function get_invite_code($partner_id, $my_id)
+        {
+            $query = $this->db->    select('invite_code')->
+                                    from('chat_invites')->
+                                    where('from_user_id', $partner_id)->
+                                    where('to_user_id', $my_id)->
+                                    get()->
+                                    result();
+            return $query[0]->invite_code;
+        }
+
+        public function send_message ($data)
+        {
+            $this->db->insert('chat_messages', $data);
+        }
+
+        public function check_new_messages($id, $from_user_id)
+        {
+            $query = $this->db->    select('message_id, message, date')->
+                                    from('chat_messages')->
+                                    where('to_user_id', $id)->
+                                    where('status', 0)->
+                                    where('from_user_id', $from_user_id)->
+                                    get()->
+                                    result();
+            foreach ($query as $value)
+            {
+                $this->db->update('chat_messages', array('status' => 1), array('message_id' => $value->message_id));
+            }
+            return $query;
+        }
+
+        public function load_history($id, $my_id)
+        {
+            $query = array();
+            array_push($query, $this->db->  select('message, date, from_user_id')->
+                                            from('chat_messages')->
+                                            where('from_user_id', $my_id)->
+                                            where('to_user_id', $id)->
+                                            get()->
+                                            result());
+            array_push($query, $this->db->  select('message, date, status, from_user_id')->
+                                            from('chat_messages')->
+                                            where('from_user_id', $id)->
+                                            where('to_user_id', $my_id)->
+                                            get()->
+                                            result());
             return $query;
         }
     }

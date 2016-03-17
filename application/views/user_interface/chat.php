@@ -52,7 +52,7 @@
                                             </div>
                                         </div>
                                         <div class="dialog-partner-right">
-                                            <button class="start-dialog" id="13">Start a dialogue</button>
+                                            <button class="start-dialog">Start a dialogue</button>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -277,62 +277,9 @@
                         </a>
                     </div>
                 </div>
-                <div class="chat-field">
-                    <!--<div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message incoming-message">I'm a tooltip! Or am I a speech bubble? I'm a tooltip! Or am I a speech.</span>
-                        </div>
-                        <span class="chat-row-right">14:10</span>
-                    </div>
-                    <div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message outgoing-message">Or am I a speech</span>
-                        </div>
-                        <span class="chat-row-right">14:12</span>
-                    </div>
-                    <div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message outgoing-message">I'm a tooltip! Or am I a speech bubble? Or am I a speech</span>
-                        </div>
-                        <span class="chat-row-right">14:16</span>
-                    </div>
-                    <div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message incoming-message">I'm a tooltip! Or am I a speech bubble?</span>
-                        </div>
-                        <span class="chat-row-right">14:18</span>
-                    </div>
-                    <div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message outgoing-message">I'm a tooltip! Or am I a speech bubble?</span>
-                        </div>
-                        <span class="chat-row-right">14:20</span>
-                    </div>
-                    <div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message incoming-message">I'm a tooltip! Or am I a speech bubble? Or am I a speech</span>
-                        </div>
-                        <span class="chat-row-right">14:16</span>
-                    </div>
-                    <div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message outgoing-message">I'm a tooltip! Or am I a speech bubble?</span>
-                        </div>
-                        <span class="chat-row-right">14:18</span>
-                    </div>
-                    <div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message incoming-message">I'm a tooltip! Or am I a speech bubble?</span>
-                        </div>
-                        <span class="chat-row-right">14:20</span>
-                    </div>
-                    <div class="chat-field-row">
-                        <div class="chat-row-left">
-                            <span class="chat-message incoming-message">I'm a tooltip! Or am I a speech bubble?</span>
-                        </div>
-                        <span class="chat-row-right">14:20</span>
-                    </div>-->
-                </div>
+
+                <div class="chat-field"></div>
+
                 <div class="chat-body-footer">
                     <form action="#">
                     <textarea placeholder="Write your message" data-autoresize class="message-field" cols="1" rows="1"
