@@ -7,14 +7,12 @@
     <title>Admin Panel</title>
 
     <!-- Bootstrap -->
+    <link media="all" rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/header.css"
-          type="text/css"/>
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/user_profiles.css"
-          type="text/css"/>
-    <link media="all" rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css"
-          type="text/css"/>
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/header.css" type="text/css"/>
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/user_profiles.css" type="text/css"/>
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/add_user.css" type="text/css"/>
 </head>
 <body>
 
@@ -88,7 +86,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url(); ?>admin_interface/main_admin" title="На главную">
+                        <a href="<?php echo base_url(); ?>" title="На главную">
                             <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                         </a>
                     </li>

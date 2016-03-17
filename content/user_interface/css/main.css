@@ -233,6 +233,7 @@
 }
 .content-middle {
 	width: 100%;
+	overflow-x: hidden;
 	padding: 53px 0 130px 0;
 	background: #ebebeb;
 	position: relative;

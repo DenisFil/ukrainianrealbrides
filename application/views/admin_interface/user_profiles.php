@@ -21,7 +21,7 @@
 -->
 	</div>
 	<div class="row property-row">
-		<div class="col-lg-12">
+		<div class="col-md-10">
 			<div class="form-group select-property">
 			  <select class="form-control" id="#">
 			    <option>Пол</option>
@@ -43,6 +43,9 @@
 			</div>
 			<button class="btn btn-success btn-show">Показать</button>
 		</div>
+        <div class="col-md-2 text-right">
+            <a href="<?php echo base_url(); ?>admin_interface/add_user" class="btn btn-danger btn-md">+ Добавить анкету</a>     
+        </div>
 	</div>
 </div>
 <div class="container-fluid table-holder">

@@ -116,7 +116,6 @@ body {
     color: #000;
     background: #fff;
     font: 15px/17px 'Lato-Light';
-    overflow-x: hidden;
     min-width: 1170px;
     margin-bottom: 485px;
 }
@@ -1755,13 +1754,14 @@ label {
 }
 
 .message-notifier {
-    position: relative;
+    position: absolute;
     display: block;
     width: 100%;
     border-top: 3px solid #ff382d;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     background: #fff;
     margin-bottom: 20px;
+    right: -400px;
 }
 
 .header-holder.shrink .notification-holder {

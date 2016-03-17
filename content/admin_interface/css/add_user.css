@@ -1,0 +1,306 @@
+.h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+.thumbnail {
+    margin-bottom: 0;
+}
+.avatar-thumb {
+	margin: 0;
+}
+.profile-photos .small-photo {
+    float: left;
+    width: 13.17%;
+    height: 32px;
+	margin: 2px;
+}
+.profile-photos a img {
+	display: inline-block;
+	width: 100%;
+	height: auto;
+}
+.profile-photos .new-photo {
+	margin: 0;
+}
+.profile-photos a span {
+	margin: 0;
+	padding: 0;
+}
+.video-block a {
+	display: inline-block;
+	width: 48%;
+}
+.video-block ,
+.pass-block  {
+	padding: 0;
+}
+.video-block a img,
+.pass-block a img {
+	float: none;
+	display: inline-block;
+	width: 100%;
+	height: auto;
+}
+.pass-block a,
+.pass-block .fileUpload{
+	display:inline-block;
+	float: left;
+    width: 46%;
+    margin: 2px;
+}
+.pass-block .fileUpload {
+    padding: 15px 0 0 0;
+    height: 49px;
+}
+.pass-block:nth-child(2n) {
+	float: right;
+}
+.general-info {
+	padding: 0;
+}
+.general-info h4 {
+	text-align: center;
+}
+.general-info div {
+	padding: 0;
+	margin: 0;
+}
+.left-col,
+.general-info .left-col {
+	padding-right: 5px;
+}
+.left-col,
+.general-info .right-col {
+	padding-left: 5px;
+}
+.error-message {
+	visibility: hidden;
+    display: block;
+    color: #ea0000;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 1px 0;
+    min-height: 13px;
+}
+.birth-date .row-push {
+	padding-right: 5px;
+}
+.form-control {
+	padding-right: 2px;
+}
+.selects-colls select {
+	margin-bottom: 14px;
+}
+.about-me {
+	padding-right: 5px;
+}
+.about-partner {
+	padding-left: 5px;
+}
+.left-side-reset {
+	padding-left: 0;
+}
+.button-submit {
+	margin-top: 6px;
+	width: 100%;
+}
+.general-info .checkbox {
+	margin-bottom: 10px;
+}
+.general-headings h4 {
+    margin-bottom: 3px;
+    margin-top: 9px;
+}
+.general-headings h6 {
+	color: #0010a8;
+	margin-bottom:5px;
+}
+.general-info .area-sm {
+	height: 82px;
+}
+.general-info .bottom-push {
+	margin-bottom: 5px;
+}
+.fileUpload {
+	float: left;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px dotted #e0e0e0;
+	font-size: 14px;
+	line-height: 16px;
+	background: transparent;
+	color: #c5c5c5;
+    margin: 2px;
+    padding-top: 6px;
+    text-align: center;
+    border-radius: 3px;
+    width: 13.17%;
+    height: 32px;
+}
+.fileUpload:hover {
+	background: #afafb0;
+	color: #fff;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.video-block {
+	overflow: hidden;
+}
+.video-block a {
+	float: left;
+}
+.video-block .fileUpload {
+	margin: 0;
+	width: 48%;
+	height: 57px;
+	padding-top: 16px;
+	font-size: 20px;
+	float: right;
+}
+.pass-block .left-pass {
+	float: left;
+}
+.pass-block .right-pass {
+	float: right;
+}
+.avatar-fixes {
+	padding-right: 5px;
+}
+.video-passport h4{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.notifications-heading {
+    margin: 6px 0 5px 0;
+}
+.about-me-form {
+	height: 99px;
+}
+.hobby-form {
+	height: 129px;
+}
+.tooltip {
+    position: absolute;
+    display: block;
+    right: 13px;
+    top: 14px;
+}
+[data-tooltip] {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+[data-tooltip]:hover:before, [data-tooltip]:hover:after {
+    visibility: visible;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+[data-tooltip]:before {
+    position: absolute;
+    bottom: 150%;
+    left: -50%;
+    margin-bottom: 5px;
+    margin-left: -80px;
+    padding: 7px;
+    width: 220px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    color: #fff;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+}
+[data-tooltip]:before, [data-tooltip]:after {
+    visibility: hidden;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    pointer-events: none;
+}
+.tool-tip span {
+    font-size: 15px;
+    margin-left: 3px;
+}
+.avatar-upload {
+	width:100%;
+	height: 256px;
+	padding: 0;
+}
+.avatar-upload .fileUpload {
+    border: none;
+    float: none;
+    width: 100%;
+    padding-top: 61%;
+    height: 100%;
+    font-size: 30px;
+    margin: 0;
+}
+.avatar-upload .fileUpload input.upload {
+    height: 100%;
+}
+.general-info [data-tooltip]:before {
+	bottom: 110%;
+    left: -30%;
+    margin-bottom: 0;
+   	margin-left: 0;
+    padding: 7px;
+}
+.about-partner [data-tooltip]:before {
+	bottom: 110%;
+    left: 12%;
+    margin-bottom: 0;
+   	margin-left: 0;
+    padding: 7px;
+}
+/* 
+.thumbnail {
+	margin-bottom: 2px;
+	padding: 2px;
+}
+.profile-photos li {
+	padding: 2px;
+}
+.profile-photos {
+	margin: 0 0 10px 0;
+	padding: 0;
+	list-style: none;
+	min-height: 139px;
+}
+.thumbnail.new-photo { 
+	padding: 10px;
+}
+.video-pas div {
+	padding: 2px;
+}
+.video-pas h3 {
+	margin: 0;
+}
+.video-block img {
+	height: 45px;
+}
+.pass-block img {
+	height: 102px;
+}
+.add-video {
+	padding: 15px 0 14px 0;
+}
+.video-block-height {
+	height: 121px;
+}
+ */
