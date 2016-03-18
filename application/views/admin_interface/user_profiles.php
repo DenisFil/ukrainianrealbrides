@@ -63,6 +63,17 @@
 				<th>Баланс счёта</th>
             </tr>
         </thead>
+        <tfoot>
+                <th></th>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Страна</th>
+                <th>Агенство (id)</th>
+                <th>Дата регистрации</th>
+                <th>Время регистрации</th>
+                <th>Статус</th>
+                <th>Баланс счёта</th>
+        </tfoot>
         <tbody>
             <tr>
                 <td class="checkbox-column">
