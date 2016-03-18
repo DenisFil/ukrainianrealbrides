@@ -25,7 +25,8 @@ class User_profile_preview extends CI_Controller
             $data['all_data'][2][0]->age = $partner_age[0] . ' - ' . $partner_age[1];
 
             $data['photos'] = $this->personal_area_model->get_photos($user_id);
-            $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
+            $data['avatar'] = $this->personal_area_model->get_avatar($my_id);
+            $data['user_avatar'] = $this->personal_area_model->get_avatar($user_id);
             $data['id'] = $user_id;
             $data['new_messages'] = $this->personal_area_model->get_new_messages($my_id);
 
