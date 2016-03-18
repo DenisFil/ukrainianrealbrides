@@ -49,8 +49,8 @@
     margin: 2px;
 }
 .pass-block .fileUpload {
-    padding: 15px 0 0 0;
-    height: 49px;
+    padding: 11px 0 0 0;
+    height: 42px;
 }
 .pass-block:nth-child(2n) {
 	float: right;
@@ -164,7 +164,7 @@
 	margin: 0;
 	width: 48%;
 	height: 50px;
-	padding-top: 16px;
+	padding-top: 12px;
 	font-size: 20px;
 	float: right;
 }
@@ -267,6 +267,15 @@
     margin-bottom: 0;
    	margin-left: 0;
     padding: 7px;
+}
+.pass-block a:nth-child(2n) {
+	float:right;
+}
+.pass-block a:nth-child(2n-1) {
+	float:left;
+}
+.pass-block .fileUpload {
+	float: right;
 }
 /* 
 .thumbnail {

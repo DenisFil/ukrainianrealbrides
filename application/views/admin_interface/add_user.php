@@ -83,16 +83,16 @@
 						Скан паспорта<span class="tool-tip" aria-hidden="true" data-tooltip="Загрузите скан или фотографии вашего паспорта (страницы с фото и прописка)"><span class="glyphicon glyphicon-question-sign"></span></span>
 						</h4>
 					<div class="col-md-12 text-center">
-						<a href="#" class="left-pass">
+						<a href="#">
 							<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="">
 						</a>
-						<a href="#" class="right-pass">
+						<a href="#">
 							<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="">
 						</a>
-						<a href="#" class="left-pass">
+						<a href="#">
 							<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="">
 						</a>
-						<div class="fileUpload right-pass" >
+						<div class="fileUpload" >
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 							<input type="file" class="upload" />
 						</div>
@@ -196,7 +196,7 @@
 
 		</div>
 		<div class="col-md-12">
-			<textarea id="" class="form-control about-me-form" cols="30" rows="5" placeholder="Обо мне"></textarea>
+			<textarea id="" class="form-control about-me-form" cols="30" rows="5" placeholder="Обо мне / About me"></textarea>
 			<span class="error-message">Error message</span>
 		</div>
 		<div class="col-md-12">
@@ -230,7 +230,7 @@
 			</select>
 		</div>
 		<div class="col-md-12">
-			<textarea id="" class="form-control area-sm" cols="30" rows="3" placeholder="О партнере (About partner)"></textarea>
+			<textarea id="" class="form-control area-sm" cols="30" rows="3" placeholder="О партнере / About partner"></textarea>
 			<span class="error-message">Error message</span>
 		</div>
 		<div class="col-md-12 tool-tip" aria-hidden="true" data-tooltip="Выберите оператора за которым будет закреплена анкета. Вы сможете изменить его на вкладке Анкеты">
