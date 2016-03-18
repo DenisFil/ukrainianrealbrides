@@ -165,6 +165,7 @@ class Chat_engine extends CI_Controller
         $this->load->helper('date');
         foreach ($history as $value)
         {
+            var_dump($value->date);echo '<br>';
             $time_string = '%j %F %Y %G:%i:%s';
             $value->date = mdate($time_string, $value->date);
         }

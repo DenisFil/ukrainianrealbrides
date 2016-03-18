@@ -167,6 +167,15 @@ $(document).ready(function () {
 
                 var myMessageHtml = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + messageData.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
                 $('.chat-field').append(myMessageHtml);
+
+                var chatRowsSelector = '.chat-field-row';
+                var rows = $(chatRowsSelector).length;
+                $(chatRowsSelector).eq(rows - 2).removeClass('last-message');
+                $(chatRowsSelector).eq(rows - 1).addClass('last-message');
+
+                var selector = '.chat-field';
+                var height = $(selector).height();
+                $(selector).scrollTop(height);
             }
         });
     });
@@ -192,13 +201,21 @@ $(document).ready(function () {
                 url: baseUrl + 'user_interface/chat_engine/check_new_messages',
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);
                     $.each(data, function (key, value) {
                         var time = value.date.split(' ');
                         time = time[3].split(':');
                         time = time[0] + ':' + time[1];
                         var newMessage = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + time + '</span></div>';
                         $('.chat-field').append(newMessage);
+
+                        var chatRowsSelector = '.chat-field-row';
+                        var rows = $(chatRowsSelector).length;
+                        $(chatRowsSelector).eq(rows - 2).removeClass('last-message');
+                        $(chatRowsSelector).eq(rows - 1).addClass('last-message');
+
+                        var selector = '.chat-field';
+                        var height = $(selector).height();
+                        $(selector).scrollTop(height);
                     });
                 }
             });
@@ -273,7 +290,8 @@ $(document).ready(function () {
                     date = date[0] + ':' + date[1];
                     var dialogId = $('.active-dialog').attr('id');
                     var chatDivider = '<div class="chat-divider"><span>' + day + '</span></div>';
-                    if (key == 0) {
+
+                    function addMessageDivider() {
                         if (value.from_user_id == dialogId) {
                             var message = chatDivider + '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
                             $('.chat-field').append(message);
@@ -281,6 +299,19 @@ $(document).ready(function () {
                             message = chatDivider + '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
                             $('.chat-field').append(message);
                         }
+                    }
+                    function addMessage() {
+                        if (value.from_user_id == dialogId) {
+                            message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
+                            $('.chat-field').append(message);
+                        } else {
+                            message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
+                            $('.chat-field').append(message);
+                        }
+                    }
+
+                    if (key == 0) {
+                        addMessageDivider();
                     } else {
                         var dates = [];
                         $('.chat-divider').each(function () {
@@ -288,27 +319,20 @@ $(document).ready(function () {
                         });
                         var search = $.inArray(day, dates);
                         if (search == -1) {
-                            if (value.from_user_id == dialogId) {
-                                message = chatDivider + '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
-                                $('.chat-field').append(message);
-                            } else {
-                                message = chatDivider + '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
-                                $('.chat-field').append(message);
-                            }
+                            addMessageDivider();
                         } else {
-                            if (value.from_user_id == dialogId) {
-                                message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
-                                $('.chat-field').append(message);
-                            } else {
-                                message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
-                                $('.chat-field').append(message);
-                            }
+                            addMessage();
                         }
                     }
                 });
 
-                var height = $('.chat-field').height();
-                $('.chat-field').scrollTop(height);
+                var chatRowsSelector = '.chat-field-row';
+                var rows = $(chatRowsSelector).length;
+                $(chatRowsSelector).eq(rows - 1).addClass('last-message');
+
+                var selector = '.chat-field';
+                var height = $(selector).height();
+                $(selector).scrollTop(height);
             }
         });
     }
