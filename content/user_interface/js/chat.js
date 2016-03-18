@@ -12,15 +12,18 @@ $(document).ready(function () {
                 url: baseUrl + 'user_interface/chat_engine/check_life_status',
                 dataType: 'json',
                 success: function (data) {
+                    console.log(data);
                     $.each(data, function (key, value) {
+                        console.log(value);
                         if (value[0].invite_status == 1) {
-                            $('.dialog-partner').each(function () {
+                            console.log('hello');
+                            /*$('.dialog-partner').each(function () {*/
                                 /*var text = $('.dialog-partner:eq(' + inspection + ') .time').text();
                                 if (text == '') {*/
                                     $('#' + value[0].invite_code).removeClass('start-dialog').addClass('stop-dialog').text('Stop')/*.parent().prepend('<span class="time">0:00</span>')*/;
                                     /*chatTime();*/
                                 /*}*/
-                            });
+                            /*});*/
                         }
                         if (value[0].invite_status == 0) {
                             $('#' + value[0].invite_code).removeClass('stop-dialog').addClass('start-dialog').text('Start a dialogue')/*.prev().remove()*/;
@@ -108,6 +111,7 @@ $(document).ready(function () {
                         success: function (data) {
                             dialogActivation(index);
                             $('.dialog-partner').eq(index).children().next().next().children().removeClass('start-dialog').addClass('stop-dialog').text('Stop').attr('id', data.invite_code)/*.parent().prepend('<span class="time">0:00</span>')*/;
+                            chatRoom.push(data.invite_code);
                             /*chatTime();*/
                             loadHistory(index);
                         }
@@ -119,6 +123,7 @@ $(document).ready(function () {
 
     //Активация диалогового окна
     function dialogActivation(index) {
+        $('.chat-field').empty();
         var selector = '.dialog-partner-info';
         var name = $(selector).eq(index).children().eq(0).text();
         var location = $(selector).eq(index).children().eq(1).text();
@@ -274,6 +279,9 @@ $(document).ready(function () {
                         $('.chat-field').append(message);
                     }
                 });
+
+                var height = $('.chat-field').height();
+                $('.chat-field').scrollTop(height);
             }
         });
     }
@@ -330,15 +338,15 @@ $(document).ready(function () {
 
     //Закрытие чата
     $(document).on('click', '.stop-dialog', function () {
-        var index = $(this).index();
+        var inviteCode = $(this).attr('id');
         $.ajax({
             type: 'post',
-            data: {invite_code: $('.stop-dialog').eq(index).attr('id')},
+            data: {invite_code: inviteCode},
             url: baseUrl + 'user_interface/chat_engine/close_room',
             dataType: 'json',
             success: function (data) {
                 if (data.result == 1) {
-                    $('.stop-dialog').eq(index - 1).addClass('start-dialog').removeClass('stop-dialog').text('Start a dialogue').prev().remove();
+                    $('#' + inviteCode).addClass('start-dialog').removeClass('stop-dialog').text('Start a dialogue').prev().remove();
                 }
             }
         });
