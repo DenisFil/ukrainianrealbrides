@@ -114,18 +114,24 @@ class Chat_engine extends CI_Controller
 
     public function send_message()
     {
+        $time = time();
+        $this->load->helper('date');
+        
         $message_data = $this->input->post();
         $message_data['from_user_id'] = $this->session->userdata('id');
+
+        $date_string = '%j %F %Y %G:%i:%s';
+        $date['date'] = mdate($date_string, $time);
+        $message_data['date'] = $date['date'];
         $this->chat_messages_model->send_message($message_data);
+        
+        echo json_encode($date);
     }
 
     public function check_new_messages()
     {
         $from_user_id = $this->input->post('from_user_id');
         $new_messages = $this->chat_messages_model->check_new_messages($this->session->userdata('id'), $from_user_id);
-        $message_time = explode(' ', $new_messages[0]->date);
-        $new_messages[0]->date_message = $message_time[0];
-        $new_messages[0]->time_message = $message_time[1];
 
         echo json_encode($new_messages);
     }
@@ -159,7 +165,7 @@ class Chat_engine extends CI_Controller
         $this->load->helper('date');
         foreach ($history as $value)
         {
-            $time_string = '%j.%n.%Y %G:%i';
+            $time_string = '%j %F %Y %G:%i:%s';
             $value->date = mdate($time_string, $value->date);
         }
         echo json_encode(array_reverse($history));
