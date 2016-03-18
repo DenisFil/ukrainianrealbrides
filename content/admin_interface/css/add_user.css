@@ -10,8 +10,8 @@
 }
 .profile-photos .small-photo {
     float: left;
-    width: 13.17%;
-    height: 32px;
+    width: 15.55%;
+    height: 33px;
 	margin: 2px;
 }
 .profile-photos a img {
@@ -123,6 +123,7 @@
 }
 .fileUpload {
 	float: left;
+    height: 33px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -135,8 +136,7 @@
     padding-top: 6px;
     text-align: center;
     border-radius: 3px;
-    width: 13.17%;
-    height: 32px;
+    width: 15%;
 }
 .fileUpload:hover {
 	background: #afafb0;
@@ -163,7 +163,7 @@
 .video-block .fileUpload {
 	margin: 0;
 	width: 48%;
-	height: 57px;
+	height: 50px;
 	padding-top: 16px;
 	font-size: 20px;
 	float: right;

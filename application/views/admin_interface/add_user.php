@@ -3,8 +3,8 @@
 		<div class="col-md-4 left-side-reset avatar-fixes">
 			<h4 class="text-center">Аватар</h4>
 <!-- 
-			<a class="thumbnail avatar-thumb">
-				<img src="http://adamkuszczak.azurewebsites.net/Files/AdamKuszczak_photo_empty.jpg" alt="Аватар профиля" width="186" height="281">
+			<a href="#" class="thumbnail avatar-thumb">
+				<img src="http://ukrainianrealbrides.int/content/profiles/avatars/22/126e3e21f3022ec2dd7af8a72d393e24_avatar.jpg" alt="Аватар профиля" width="186" height="281">
 			</a>
 -->
 			<a class="thumbnail avatar-upload">
@@ -18,52 +18,49 @@
 			<h4 class="text-center">Фотографии профиля</h4>
 			<div class="row thumbnail profile-photos">
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
-				</a>
-				<a href="#" class="small-photo">
-					<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Фото профиля">
+					<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Фото профиля">
 				</a>
 				<div class="fileUpload">
 					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -74,7 +71,7 @@
 				<div class="col-md-6 video-block left-col">
 					<h4 class="text-center">Видео</h4>
 					<a href="#">
-						<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="Видео профиля">
+						<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="Видео профиля">
 					</a>
 					<div class="fileUpload">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -87,13 +84,13 @@
 						</h4>
 					<div class="col-md-12 text-center">
 						<a href="#" class="left-pass">
-							<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="">
+							<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="">
 						</a>
 						<a href="#" class="right-pass">
-							<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="">
+							<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="">
 						</a>
 						<a href="#" class="left-pass">
-							<img class="image-responsive" src="http://www.manrepeller.com/wp-content/uploads/2014/03/selfiefbPP.jpg" alt="">
+							<img class="image-responsive" src="http://ukrainianrealbrides.int/content/profiles/photo/22/d5eaa9b41495274bed469ae50af733b1_preview.jpg" alt="">
 						</a>
 						<div class="fileUpload right-pass" >
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

@@ -187,7 +187,7 @@ window.onload = init();
                                 <a href="#">
                                     <span></span>
                                 </a>
-                                <em><?php echo $gifts; ?></em>
+                                <em>Gifts: <?php echo $gifts; ?></em>
                             </li>
                             <?php endif; ?>
                         </ul>

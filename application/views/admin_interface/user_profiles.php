@@ -102,7 +102,33 @@
                     </div>
                 </td>
             </tr>
-            
+            <tr>
+                <td class="checkbox-column">
+                      <label><input type="checkbox" value=""></label>
+                </td>
+                <td>1</td>
+                <td>Anya Lyashenko</td>
+                <td>Ukraine</td>
+                <td>none</td>
+                <td>12/07/2015</td>
+                <td>11:12:00</td>
+                <td class="action-select">
+                    <div class="form-group-sm">
+                      <select class="form-control" id="#">
+                        <option>Активная</option>
+                        <option>Не активная</option>
+                        <option>Заблокировать</option>
+                      </select>
+                      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">Изменить</button>
+                    </div>
+                </td>
+                <td class="credits-column">
+                    <div class="form-group-sm">
+                        <span class="bg-success credits-status">500 Cr</span>
+                        <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#modalCredits">Добавить / Снять</button>
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
