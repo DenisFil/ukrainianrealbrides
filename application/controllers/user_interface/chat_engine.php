@@ -73,10 +73,6 @@ class Chat_engine extends CI_Controller
         }
         echo json_encode($result);
     }
-
-<<<<<<< HEAD
-        public function check_invites_chat()
-=======
     public function check_life_status()
     {
         $invite_codes = $this->input->post('rooms');
@@ -95,7 +91,6 @@ class Chat_engine extends CI_Controller
     {
         $close = $this->chat_messages_model->close_room($this->input->post('invite_code'));
         if ($close === TRUE)
->>>>>>> backend
         {
             $result['result'] = 1;
         }
@@ -166,24 +161,6 @@ class Chat_engine extends CI_Controller
             $time_string = '%j.%n.%Y %G:%i';
             $value->date = mdate($time_string, $value->date);
         }
-<<<<<<< HEAD
-
-        public function open_room()
-        {
-            $open_room = $this->chat_messages_model->open_room($this->session->userdata('id'), $this->input->post('partner_id'));
-            if ($open_room === TRUE)
-            {
-                $result['result'] = 1;
-            }
-            else
-            {
-                $result['result'] = 0;
-            }
-            echo json_encode($result);
-        }
-    }
-=======
         echo json_encode(array_reverse($history));
     }
 }
->>>>>>> backend
