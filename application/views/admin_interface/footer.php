@@ -9,6 +9,7 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 	<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>content/admin_interface/js/user_profiles.js"></script>
 
 	<script>
 	  $(function () {

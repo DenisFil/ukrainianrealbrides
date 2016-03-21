@@ -35,8 +35,9 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="<?php echo base_url(); ?>admin_interface/user_profiles">Анкеты <span
-                                class="bg-success notification-number">0</a>
+                        <a href="<?php echo base_url(); ?>admin_interface/user_profiles">Анкеты
+                            <span class="bg-success notification-number"><?php echo $all_profiles; ?></span>
+                        </a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -89,7 +90,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url(); ?>" title="На главную">
+                        <a href="<?php echo base_url(); ?>" title="На главную" target="_blank">
                             <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                         </a>
                     </li>
