@@ -162,19 +162,16 @@ class Chat_engine extends CI_Controller
             $value->date = strtotime($value->date);
         }
         $count = count($history);
-        for ($i = 0; $i < $count; $i++)
+        for ($i = 0; $i < $count - 1; $i++)
         {
-            if ($history[$i]->date > $history[0]->date)
+            if ($history[$i + 1]->date < $history[$i]->date)
             {
-                $var = $history[$i];
-                unset($history[$i]);
-                array_unshift($history, $var);
+                list($history[$i], $history[$i + 1]) = array($history[$i + 1], $history[$i]);
             }
         }
         $this->load->helper('date');
         foreach ($history as $value)
         {
-            var_dump($value->date);echo '<br>';
             $time_string = '%j %F %Y %G:%i:%s';
             $value->date = mdate($time_string, $value->date);
         }

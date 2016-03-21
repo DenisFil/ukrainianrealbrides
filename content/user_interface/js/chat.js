@@ -147,37 +147,39 @@ $(document).ready(function () {
     //Отправка сообщений
     $('.send-message-button').click(function () {
         var messageFiledSelector = '.message-field';
+        var dialogStatus = $('.active-dialog .stop-dialog').length;
+        if (dialogStatus > 0) {
+            var messageData = {
+                message: $(messageFiledSelector).val(),
+                to_user_id: $('.active-dialog').attr('id')
+            };
 
-        var messageData = {
-            message: $(messageFiledSelector).val(),
-            to_user_id: $('.active-dialog').attr('id')
-        };
+            $(messageFiledSelector).val('');
 
-        $(messageFiledSelector).val('');
+            $.ajax({
+                type: 'post',
+                data: messageData,
+                url: baseUrl + 'user_interface/chat_engine/send_message',
+                dataType: 'json',
+                success: function (data) {
+                    var date = data.date.split(' ');
+                    date = date[3].split(':');
+                    date = date[0] + ':' + date[1];
 
-        $.ajax({
-            type: 'post',
-            data: messageData,
-            url: baseUrl + 'user_interface/chat_engine/send_message',
-            dataType: 'json',
-            success: function (data) {
-                var date = data.date.split(' ');
-                date = date[3].split(':');
-                date = date[0] + ':' + date[1];
+                    var myMessageHtml = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + messageData.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
+                    $('.chat-field').append(myMessageHtml);
 
-                var myMessageHtml = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + messageData.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
-                $('.chat-field').append(myMessageHtml);
+                    var chatRowsSelector = '.chat-field-row';
+                    var rows = $(chatRowsSelector).length;
+                    $(chatRowsSelector).eq(rows - 2).removeClass('last-message');
+                    $(chatRowsSelector).eq(rows - 1).addClass('last-message');
 
-                var chatRowsSelector = '.chat-field-row';
-                var rows = $(chatRowsSelector).length;
-                $(chatRowsSelector).eq(rows - 2).removeClass('last-message');
-                $(chatRowsSelector).eq(rows - 1).addClass('last-message');
-
-                var selector = '.chat-field';
-                var height = $(selector).height();
-                $(selector).scrollTop(height);
-            }
-        });
+                    var selector = '.chat-field';
+                    var height = $(selector).height();
+                    $(selector).scrollTop(height);
+                }
+            });
+        }
     });
 
     //Проверка новых сообщений
@@ -300,7 +302,7 @@ $(document).ready(function () {
             });
         }
     }
-    setInterval(function () { writeOffCredits(); }, 1000);
+    setInterval(function () { writeOffCredits(); }, 60000);
 
     //Загрузка истории
     function loadHistory(index) {
@@ -310,6 +312,7 @@ $(document).ready(function () {
             url: baseUrl + 'user_interface/chat_engine/load_history',
             dataType: 'json',
             success: function (data) {
+                console.log(data);
                 $.each(data, function (key, value) {
                     var date = value.date.split(' ');
                     var day = date[0] + ' ' + date[1] + ' ' + date[2];
@@ -329,7 +332,7 @@ $(document).ready(function () {
                     }
                     function addMessage() {
                         if (value.from_user_id == dialogId) {
-                            message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
+                            var message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message incoming-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
                             $('.chat-field').append(message);
                         } else {
                             message = '<div class="chat-field-row"><div class="chat-row-left"><span class="chat-message outgoing-message">' + value.message + '</span></div><span class="chat-row-right">' + date + '</span></div>';
