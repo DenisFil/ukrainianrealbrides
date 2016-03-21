@@ -36,3 +36,52 @@
 	padding: 15px;
 	margin: 0;
 }
+#add-agency-modal .modal-sm {
+    width: 600px;
+}
+#add-agency-modal .modal-col {
+    padding: 0 5px;
+}
+#add-agency-modal .btn {
+    width: 100%;
+    margin-bottom: 15px;
+}
+#add-agency-modal .error-message {
+    visibility: hidden;
+    display: block;
+    color: #ea0000;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 1px 0;
+    min-height: 13px;
+}
+.nav.navbar-nav.navbar-right>li>.add-agency-link {
+    color: #000000;
+    font-size: 15px;
+}
+.nav.navbar-nav.navbar-right>li>.add-agency-link:hover {
+    font-size: 15px;
+    color: #ef0101;
+}
+#add-agency-modal .modal-footer {
+    padding: 5px;
+}
+#add-agency-modal .btn-pass {
+    margin-bottom: 10px;
+}
+#add-agency-modal .requisite {
+    height: 131px;
+}
+#add-agency-modal .checkbox {
+    margin-top: 0;
+    margin-bottom: 4.5px;
+}
+#add-agency-modal .mail-notific {
+    margin-bottom: 5px;
+}
+#add-agency-modal .modal-body {
+    padding-bottom: 0;
+}
+#add-agency-modal .disabled-button {
+    visibility: hidden;
+}

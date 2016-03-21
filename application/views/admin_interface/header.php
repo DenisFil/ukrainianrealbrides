@@ -81,6 +81,9 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <a href="#add-agency-modal" data-toggle="modal" class="add-agency-link">+ Добавить агенство</a>
+                    </li>
+                    <li>
                         <a href="#" title="Настройки">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                         </a>
@@ -101,5 +104,69 @@
     </div>
 </div>
 
+<div class="modal fade" id="add-agency-modal" tabindex="-1" role="dialog" aria-labelledby="#">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title text-center">Добавить агенство</h3>
+      </div>
+      <div class="modal-body">
+      <div class="container-fluid text-center modal-col">
+        <div class="col-md-12 modal-col">
+            <div class="col-md-4 modal-col">
+                <h4>Общ. инфо</h4>
+                <input type="text" class="form-control" placeholder="Название агенства">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="ФИО владельца">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="ФИО контактоного лица">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Страна">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Город">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Адрес">
+                <span class="error-message">Error message</span>
+            </div>
+            <div class="col-md-4 modal-col">
+                <h4>Контакты</h4>
+                <input type="text" class="form-control" placeholder="Email адрес">
+                <span class="error-message">Error message</span> 
+                <input type="text" class="form-control" placeholder="Телефон владельца">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Телефон конт. лица">
+                <span class="error-message">Error message</span>
+                <textarea name="" id="" cols="1" rows="6" class="form-control requisite" placeholder="Реквизиты"></textarea>
+            </div>
+            <div class="col-md-4 modal-col text-left">
+                <h4 class="text-center">Безопасность</h4>
+                <input type="text" class="form-control" placeholder="Пароль">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Повт. пароль">
+                <span class="error-message">Error message</span>
+                <button class="btn btn-primary btn-pass disabled-button">Изменить пароль</button>
+                <h4 class="text-center mail-notific">E-mail оповещения</h4>
+                <div class="checkbox">
+                    <label for=""><input type="checkbox" checked>Акции</label>
+                </div>
+                <div class="checkbox">
+                    <label for=""><input type="checkbox" checked>Обновления</label>
+                </div>
+                <div class="checkbox">
+                    <label for=""><input type="checkbox" checked>Сообщения</label>
+                </div>
+                <button class="btn btn-primary">Добавить партнера</button>
+            </div>
+        </div>    
+      </div>
+      </div>
+        <div class="modal-footer">
+            <h5 class="text-center">С <a href="#">"Условиями использования"</a> и <a href="#">"Политикой конфинденциальности"</a> согласен</h5>  
+        </div>
+    </div>
+
+  </div>
+</div>
 
   

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container add-user-block">
 	<div class="col-md-6 left-side-reset">
 		<div class="col-md-4 left-side-reset avatar-fixes">
 			<h4 class="text-center">Аватар</h4>
@@ -239,7 +239,7 @@
 			</select>
 		</div>
 		<div class="col-md-12 text-left">
-			<h4 class="text-center notifications-heading">Оповещения</h4>
+			<h4 class="text-center notifications-heading">Email оповещения</h4>
 			<div class="checkbox">
 			  <label><input type="checkbox" value="" checked>Новости и обновления</label>
 			</div>

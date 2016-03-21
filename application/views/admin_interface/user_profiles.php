@@ -43,9 +43,6 @@
 			</div>
 			<button class="btn btn-success btn-show">Показать</button>
 		</div>
-        <div class="col-md-2 text-right">
-            <a href="<?php echo base_url(); ?>admin_interface/add_user" class="btn btn-danger btn-md">+ Добавить анкету</a>     
-        </div>
 	</div>
 </div>
 <div class="container-fluid table-holder">
@@ -60,7 +57,7 @@
                 <th>Дата регистрации</th>
                 <th>Время регистрации</th>
                 <th>Статус</th>
-				<th>Баланс счёта</th>
+				        <th>Баланс счёта</th>
             </tr>
         </thead>
         <tfoot>

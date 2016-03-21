@@ -1,11 +1,11 @@
-.h4, .h5, .h6, h4, h5, h6 {
+.add-user-block .h4, .h5, .h6, h4, h5, h6 {
     margin-top: 3px;
     margin-bottom: 10px;
 }
-.thumbnail {
+.add-user-block .thumbnail {
     margin-bottom: 0;
 }
-.avatar-thumb {
+.add-user-block .avatar-thumb {
 	margin: 0;
 }
 .profile-photos .small-photo {
@@ -73,7 +73,7 @@
 .general-info .right-col {
 	padding-left: 5px;
 }
-.error-message {
+.add-user-block .error-message {
 	visibility: hidden;
     display: block;
     color: #ea0000;
@@ -85,7 +85,7 @@
 .birth-date .row-push {
 	padding-right: 5px;
 }
-.form-control {
+.add-user-block .form-control {
 	padding-right: 2px;
 }
 .selects-colls select {
