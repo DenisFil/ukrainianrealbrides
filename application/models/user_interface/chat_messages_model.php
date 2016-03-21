@@ -33,7 +33,7 @@
 
         public function check_invites_chat($id)
         {
-            $query = $this->db->    select('from_user_id')->
+            $query = $this->db->    select('from_user_id, invite_code')->
                                     from('chat_invites')->
                                     where('to_user_id', $id)->
                                     where('invite_status', 2)->
@@ -50,6 +50,7 @@
                                         where('id', $value->from_user_id)->
                                         get()->
                                         result();
+                    $data[0]->invite_code = $value->invite_code;
                     array_push($invites_data, $data[0]);
                 }
                 return $invites_data;
@@ -66,11 +67,10 @@
             return $query[0]->credits;
         }
 
-        public function open_room($my_id, $partner_id)
+        public function open_room($invite_code)
         {
             $data = array('invite_status' => 1);
-            $this->db->where('from_user_id', $partner_id);
-            $this->db->where('to_user_id', $my_id);
+            $this->db->where('invite_code', $invite_code);
             $query = $this->db->update('chat_invites', $data);
             return $query;
         }
@@ -118,6 +118,7 @@
                                     from('chat_invites')->
                                     where('from_user_id', $partner_id)->
                                     where('to_user_id', $my_id)->
+                                    where('invite_status', 1)->
                                     get()->
                                     result();
             return $query[0]->invite_code;
@@ -160,5 +161,21 @@
                                             get()->
                                             result());
             return $query;
+        }
+
+        public function write_off_credits($user_id, $write_off_credits)
+        {
+            $credits = $this->db->  select('credits')->
+                                    from('user_details')->
+                                    where('user_id', $user_id)->
+                                    get()->
+                                    result();
+            $this->db->update('user_details', array('credits' => $credits[0]->credits - $write_off_credits), array('user_id' => $user_id));
+            $query = $this->db->    select('credits')->
+                                    from('user_details')->
+                                    where('user_id', $user_id)->
+                                    get()->
+                                    result();
+            return $query[0]->credits;
         }
     }

@@ -102,7 +102,7 @@ $(document).ready(function () {
                     chatRooms.push($(this).attr('id'));
                     $.ajax({
                         type: 'post',
-                        data: {partner_id: $(this).attr('id')},
+                        data: { partner_id: $(this).attr('id') },
                         url: baseUrl + 'user_interface/chat_engine/get_invite_code',
                         dataType: 'json',
                         success: function (data) {
@@ -275,6 +275,33 @@ $(document).ready(function () {
         });
     }, 10000);
 
+    //Списание средств с баланса
+    function writeOffCredits () {
+        var length = $('.stop-dialog').length;
+        if (length > 0) {
+            var sum = {
+                credits: length
+            };
+            $.ajax({
+                type: 'post',
+                data: sum,
+                url: baseUrl + 'user_interface/chat_engine/write_off_credits',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.credits == 0) {
+                        $('.stop-dialog').each(function () {
+                            $(this).click();
+                        });
+                        $('#credits-modal').click();
+                    } else {
+                        $('.credit-status').children().next().text(data.credits);
+                    }
+                }
+            });
+        }
+    }
+    setInterval(function () { writeOffCredits(); }, 1000);
+
     //Загрузка истории
     function loadHistory(index) {
         $.ajax({
@@ -358,6 +385,7 @@ $(document).ready(function () {
         chatRooms.push($(this).attr('id'));
     });
 
+    //Приглашение в чат
     $(document).on('click', '.start-dialog', function () {
         var userId = $(this).parent().prev().prev().parent().attr('id');
         $.ajax({
