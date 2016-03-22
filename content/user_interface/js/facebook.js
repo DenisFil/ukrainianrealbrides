@@ -1,7 +1,6 @@
 var baseUrl = 'http://ukrainianrealbrides.int/';
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
-    console.log(response);
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
@@ -53,7 +52,6 @@ window.fbAsyncInit = function() {
 
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
-        console.log(response.authResponse.accessToken)
     });
 
 };
@@ -83,7 +81,6 @@ document.getElementById('fb-button').addEventListener('click',function(){
     FB.login(function(response){
         if (response.status == 'connected'){
             FB.api('/me?fields=first_name,last_name,email,gender',function(response) {
-                console.log(JSON.stringify(response));
                 $.ajax({
                     type: 'post',
                     data: response,
@@ -97,7 +94,6 @@ document.getElementById('fb-button').addEventListener('click',function(){
                 });
             });
             FB.getLoginStatus(function(response){
-                console.log(response.authResponse.accessToken)
             });
         }
     }, {scope:'public_profile,email'})
@@ -108,7 +104,6 @@ document.getElementById('fb-button-login').addEventListener('click',function(){
     FB.login(function(response){
         if (response.status == 'connected'){
             FB.api('/me?fields=first_name,last_name,email,gender',function(response) {
-                console.log(JSON.stringify(response));
                 $.ajax({
                     type: 'post',
                     data: response,
@@ -122,7 +117,6 @@ document.getElementById('fb-button-login').addEventListener('click',function(){
                 });
             });
             FB.getLoginStatus(function(response){
-                console.log(response.authResponse.accessToken)
             });
         }
     }, {scope:'public_profile,email'})
