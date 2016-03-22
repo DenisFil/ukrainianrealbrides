@@ -276,7 +276,7 @@ window.onload = init();
                     <div class="form-row">
                         <input type="password" class="form-control" placeholder="Password" tabindex="2" id="user-password">
                         <span class="view-password">
-                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="">
+                            <img src="<?php echo base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="">
                         </span>
                         <span id="user-password-error-text" class="form-error-message"></span>
                     </div>
@@ -313,7 +313,7 @@ window.onload = init();
                     <div class="form-row last-form">
                         <input type="password" class="form-control" placeholder="Password" tabindex="2" id="login-user-password">
                         <span class="view-password">
-                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="login">
+                            <img src="<?php echo base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="login">
                         </span>
                     </div>
                         <span class="forget-password"><a href="#">Forgot login or password?</a></span>

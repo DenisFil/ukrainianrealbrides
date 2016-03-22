@@ -3,7 +3,7 @@ $(document).ready(function(){
 
     /****************************Смена модальных окон******************************/
         function changeModal(window){
-            $('.close').click();
+            $('.exit').click();
             setTimeout(function(){$('#' + window + '-button').click();}, 500);
         }
 

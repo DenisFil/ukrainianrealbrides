@@ -183,7 +183,7 @@ $(document).ready(function () {
         $('#city').val(city);
     });
 
-    $('.advanced-search-button').click(function () {
+    $('#advanced-search-button').click(function () {
         $('.search').animate({'opacity': 'hide', 'height': '492px'}, 1000);
         setTimeout(function () {
             $('.advanced-search').animate({'opacity': 'show'}, 1000);
