@@ -44,7 +44,7 @@
             <div class="footer-copyrights">
                 <span>UkrainianRealBrides 2001-<?php $year = getdate(); echo $year['year']; ?> &copy; All rights reserved.</span>
                 <ul>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#modal-contact" data-toggle="modal">Contact Us</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Termas And Conditions</a></li>
                 </ul>
@@ -54,6 +54,24 @@
     </div>
     <div class="page-bottom"></div>
 </footer>
+
+<!-- Modal contact us -->
+
+<div class="modal fade" id="modal-contact">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
+                <h2>Contact us</h2>
+                <input type="text" class="form-control" placeholder="E-mail">
+                <textarea class="form-control" name="" id="" cols="30" rows="8" placeholder="Write here your question please"></textarea>
+                <a href="#" type="button" class="btn btn-danger">Send</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal contact us END -->
 
 <!-- Footer Ends Here -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>

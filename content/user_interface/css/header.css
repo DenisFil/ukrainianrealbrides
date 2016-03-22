@@ -1076,7 +1076,20 @@ h4 {
     outline: none;
     text-shadow: none;
 }
-
+#modal-contact .form-control {
+    margin: 0 auto 15px;
+    padding: 15px;
+    resize: none;
+}
+#modal-contact .btn {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    padding: 10px 40px;
+}
+#modal-contact .modal-body {
+    padding: 22px 10px;
+}
 .btn:focus,
 .btn:active {
     outline: none;

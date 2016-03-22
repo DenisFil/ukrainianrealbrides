@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li role="presentation" class="nav-top">
-                    <a role="button" type="button">Проверить
+                    <a role="button" type="button">На проверке
                         <span class="bg-danger profiles-notification">1</span>
                     </a>
                 </li>
@@ -134,7 +134,7 @@
                 </td>
                 <td class="credits-column text-center form-group-sm">
                         <span class="bg-success credits-status"><?php echo $value->credits; ?> Cr</span>
-                        <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#modalCredits">Добавить / Снять</button>
+                        <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#modalCredits">Внесни/Снять</button>
                 </td>
             </tr>
         <?php endforeach; ?>

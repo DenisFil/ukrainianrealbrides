@@ -257,7 +257,9 @@ window.onload = init();
 <!-- Header Ends Here -->
 
 <?php if(!$this->session->userdata('id')): ?>
-<!--SignUp modal start-->
+
+<!--Modal's start-->
+
 <div class="modal fade" id="signUp-modal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -297,9 +299,7 @@ window.onload = init();
         </div>
     </div>
 </div>
-<!--SignUp modal ends-->
 
-<!--Login modal start-->
 <div class="modal fade" id="login-modal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -328,7 +328,7 @@ window.onload = init();
         </div>
     </div>
 </div>
-<!--Login modal ends-->
+
 <?php endif; ?>
 
 <a href="#get-credits-modal" role="button" data-toggle="modal" id="credits-modal"></a>
@@ -345,3 +345,4 @@ window.onload = init();
     </div>
 </div>
 
+<!--Modal's end-->
