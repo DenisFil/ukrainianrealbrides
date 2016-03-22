@@ -108,9 +108,10 @@
 <div class="modal fade" id="add-agency-modal" tabindex="-1" role="dialog" aria-labelledby="#">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header text-center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title text-center">Добавить агенство</h3>
+        <h3 class="modal-title">Добавить агенство</h3>
+        <h6>Необходимо вносить только достоверную информацию на английском языке</h6>
       </div>
       <div class="modal-body">
       <div class="container-fluid text-center modal-col">
@@ -144,9 +145,9 @@
                 <h4 class="text-center">Безопасность</h4>
                 <input type="text" class="form-control" placeholder="Пароль">
                 <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="Повт. пароль">
+                <input type="text" class="form-control hide-form" placeholder="Повт. пароль">
                 <span class="error-message">Error message</span>
-                <button class="btn btn-primary btn-pass disabled-button">Изменить пароль</button>
+                <button class="btn btn-primary btn-pass hide-form">Изменить пароль</button>
                 <h4 class="text-center mail-notific">E-mail оповещения</h4>
                 <div class="checkbox">
                     <label for=""><input type="checkbox" checked>Акции</label>

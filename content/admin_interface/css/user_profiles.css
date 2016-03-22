@@ -79,7 +79,7 @@ table tbody tr .checkbox-column {
 .credits-column {
 	text-align: center;
 	vertical-align: middle;
-	padding: 3px !important;
+    padding: 3px 15px !important;
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     vertical-align: middle;
@@ -94,15 +94,19 @@ table tbody tr .checkbox-column {
 .form-group-sm select.form-control {
 	cursor: pointer;
 }
-.select-group {
+.credits-column,
+.action-select {
+	overflow: hidden;
+}
+.action-select select,
+.credits-column .credits-status {
+	float: left;
 
 }
-.select-group select,
 .credits-column .credits-status {
-	display: inline-block;
-	margin-right: 5px;
+	margin-top: 4px;
 }
-.select-group .btn,
+.action-select .btn,
 .credits-column .btn {
-	display: inline-block;
+	float: right;
 }
