@@ -45,6 +45,24 @@
  </script>
  -->
 
+<!-- 
+<script>
+    function init() {
+  window.addEventListener('scroll', function(e){
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+        shrinkOn = 200,
+        header = document.querySelector("header");
+    if (distanceY > shrinkOn) {
+      header.setAttribute("class","smaller");
+    } else {
+        header.removeAttribute("class");
+    }
+  });
+}
+window.onload = init();
+</script>
+ -->
+
 <script>
    $(function(){
 var shrinkHeader = 50;
@@ -63,23 +81,6 @@ function getCurrentScroll() {
 });
 </script>
 
-<!-- 
-<script>
-    function init() {
-  window.addEventListener('scroll', function(e){
-    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-        shrinkOn = 200,
-        header = document.querySelector("header");
-    if (distanceY > shrinkOn) {
-      header.setAttribute("class","smaller");
-    } else {
-        header.removeAttribute("class");
-    }
-  });
-}
-window.onload = init();
-</script>
- -->
 </head>
 
 
@@ -240,7 +241,24 @@ window.onload = init();
                 <?php else: ?>
                     <li><a href="#">Women profiles</a></li>
                 <?php endif; ?>
-                <li><a href="<?php echo base_url(); ?>/user_interface/search">Search</a></li>
+                <li class="search-link">
+                    <a type="button" role="button" id="top-search-button">Search</a>
+                    <div class="search-drop form-group form-group-sm form-inline">
+                        <label>
+                            <select id="#" class="form-control">
+                                <option selected>1</option>
+
+                            </select>
+                        </label>
+                        <label>
+                            <select id="#" class="form-control">
+                                <option selected>1</option>
+                            </select>
+                        </label>
+                        <input type="text" class="form-control age-form" placeholder="ID">
+                        <button class="btn btn-default btn-sm">Search</button>
+                    </div>
+                </li>
                 <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
             </ul>
             <div class="logo-place"></div>

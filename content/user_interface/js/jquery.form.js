@@ -4,6 +4,9 @@ $(document).ready(function(){
 	$('.advanced-search-button').click(function () {
 		setTimeout(function () { $('select:not(".header-left select")').customSelect(); }, 1000);
 	});
+	$('#top-search-button').click(function () {
+		setTimeout(function () { $('select:not(".header-left select")').customSelect(); }, 10);
+	});
 	$('select:not(".header-left select")').customSelect();
 	//$('select.custom-select').customSelect();
 });

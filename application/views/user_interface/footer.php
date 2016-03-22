@@ -63,7 +63,8 @@
             <div class="modal-body">
                 <button type="button" class="exit" data-dismiss="modal" aria-hidden="true"></button>
                 <h2>Contact us</h2>
-                <input type="text" class="form-control" placeholder="E-mail">
+                <input type="text" class="form-control" placeholder="Name">
+                <input type="email" class="form-control" placeholder="E-mail">
                 <textarea class="form-control" name="" id="" cols="30" rows="8" placeholder="Write here your question please"></textarea>
                 <a href="#" type="button" class="btn btn-danger">Send</a>
             </div>
