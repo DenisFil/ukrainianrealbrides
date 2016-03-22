@@ -112,8 +112,8 @@
                 <td><?php echo $value->agency; ?></td>
                 <td><?php echo $value->register_date; ?></td>
                 <td><?php echo $value->register_time; ?></td>
-                <td class="action-select">
-                    <div class="form-group-sm select-group text-center">
+                <td class="action-select text-center form-group-sm">
+ 
                         <select class="form-control">
                             <?php if ($value->user_status == 0): ?>
                                 <option selected>Не активная</option>
@@ -130,13 +130,11 @@
                             <?php endif; ?>
                         </select>
                         <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">Изменить</button>
-                    </div>
+
                 </td>
-                <td class="credits-column">
-                    <div class="form-group-sm">
+                <td class="credits-column text-center form-group-sm">
                         <span class="bg-success credits-status"><?php echo $value->credits; ?> Cr</span>
                         <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#modalCredits">Добавить / Снять</button>
-                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>
