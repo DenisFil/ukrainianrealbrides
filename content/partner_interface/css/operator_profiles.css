@@ -1,0 +1,96 @@
+.navbar-form {
+	margin-top: 3px;
+}
+label{margin-left: 20px;}
+#datepicker{width:200px;}
+#datepicker > span:hover{cursor: pointer;}
+.select-property {
+	display: inline-block;
+	width: 200px;
+}
+.datepicker-holder {
+	display: inline-block;
+	vertical-align: middle;
+}
+.property-row {
+    padding-bottom: 15px;
+    padding-top: 15px;
+	border-bottom: 1px solid #a0a0a0;
+}
+.profiles-notification {
+	padding: 3px;
+	border-radius: 3px;
+	margin-left: 3px;
+	color: #000;
+}
+.btn-show {
+	padding: 6px 30px;
+	margin-left: 15px;
+}
+.buttons-cell {
+	padding: 0 !important;
+    text-align: center;
+    vertical-align: middle !important;
+}
+.buttons-cell .btn {
+	padding: 3px 12px;
+}
+.table-holder {
+	padding-top: 20px;
+}
+.modal-header {
+	background: #f4f4f4;
+	border-radius: 7px 7px 0 0;
+	padding: 10px;
+	color: #919090;
+	font-weight: bold;
+}
+textarea {
+	resize: none;
+}
+.messageSubject {
+	margin-bottom: 5px;
+}
+.modal-footer {
+	text-align: center;
+}
+.modal-body img {
+	width: 100%;
+	height: auto;
+}
+.action-dialog h4 {
+	margin-bottom: 40px;
+}
+.profileName h2 {
+	margin: 10px 0 0 0;
+}
+.checkbox-column label,
+.checkbox-column input {
+	margin: 0;
+}
+table tbody tr .checkbox-column {
+	padding: 3px 0 0 0; 
+	text-align: center;
+}
+.profile-link:hover {
+	text-decoration: none;
+}
+.action-select,
+.credits-column {
+	text-align: center;
+	vertical-align: middle;
+	padding: 3px !important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+}
+.credits-status {
+	vertical-align: middle;
+    padding: 3px 8px;
+    font-size: 15px;
+    line-height: 17px;
+    border-radius: 3px;
+}
+.form-group-sm select.form-control {
+	cursor: pointer;
+}
