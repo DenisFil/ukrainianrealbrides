@@ -1,6 +1,8 @@
 $(document).ready(function(){
     var baseUrl = 'http://ukrainianrealbrides.int/';
 
+    $('.to-service-button').delay(2000);
+
     function getUrlVars(){
         var vars = [], hash;
         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -40,5 +42,10 @@ $(document).ready(function(){
                 }
             }
         });
+    });
+
+    $('.to-service-button').click(function () {
+        $('body').css('padding-right', '0px');
+        $('.exit').click();
     });
 });

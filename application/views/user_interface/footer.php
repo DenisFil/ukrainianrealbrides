@@ -26,7 +26,6 @@
                     <li><a href="#">Help</a></li>
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Security</a></li>
                     <li><a href="#">Partners</a></li>
                 </ul>
             </div>

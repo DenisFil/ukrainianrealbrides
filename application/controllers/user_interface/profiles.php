@@ -83,7 +83,13 @@ class Profiles extends CI_Controller
             }
         }
         shuffle($first_result);
-        echo json_encode($first_result);
+        $data['first_result'] = $first_result;
+        if ($this->session->userdata('id')) {
+            $data['login'] = 1;
+        } else {
+            $data['login'] = 0;
+        }
+        echo json_encode($data);
     }
 
     private function age($data)

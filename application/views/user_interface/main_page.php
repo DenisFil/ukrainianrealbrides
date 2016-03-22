@@ -199,7 +199,15 @@
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/messaging.png" alt="Messaging" />
                 <h2>Messaging</h2>     
                 <span>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</span>
-                <button type="button" class="btn btn-danger">To Service</button>
+                <?php if ($login == 1): ?>
+                    <a href="" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php else: ?>
+                    <a href="#signUp-modal" data-toggle="modal" role="button" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -212,7 +220,15 @@
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/chat.png" alt="Chat" />
                 <h2>Chat</h2>     
                 <span>This is a special service which allows you to communicate with the ladies you like! There are no boundaries anymore! Just write to her and make the first step towards some exiting changes in your life! Ukrainian Real Brides - are waiting for you!</span>
-                <a href="<?php echo base_url(); ?>/user_interface/chat"><button type="button" class="btn btn-danger">To Service</button></a>
+                <?php if ($login == 1): ?>
+                    <a href="<?php echo base_url(); ?>/user_interface/chat" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php else: ?>
+                    <a href="#signUp-modal" data-toggle="modal" role="button" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -225,7 +241,15 @@
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/video-chat.png" alt="Video chat" />
                 <h2>Video chat</h2>     
                 <span>What can be better than live communication with the beautiful women, who are here just waiting for you? That is why we have our additional service – video chat. Yes, chat to her and get to know each other better. Don’t hesitate and just chat to Ukrainian Real Brides!</span>
-                <button type="button" class="btn btn-danger">To Service</button>
+                <?php if ($login == 1): ?>
+                    <a href="" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php else: ?>
+                    <a href="#signUp-modal" data-toggle="modal" role="button" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -238,7 +262,15 @@
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/gift-service.png" alt="Gift service" />
                 <h2>Gift Service</h2>     
                 <span> You can express your feelings and send your romantic gift.</span>
-                <button type="button" class="btn btn-danger">To Service</button>
+                <?php if ($login == 1): ?>
+                    <a href="" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php else: ?>
+                    <a href="#signUp-modal" data-toggle="modal" role="button" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -251,7 +283,15 @@
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/very-important-service.png" alt="Very important service" />
                 <h2>Very important service</h2>     
                 <span>You feel it is time to meet Ladies in real? Time to touch her hand, see her eyes and listen to her wonderful voice? You want to hug your lady and feel the smell of her beautiful hair? You desire to start the life full of romance and tender emotions? Then come to Ukraine as soon as possible! One meeting is worth lots of words. We will be very glad to meet you and help with everything in your romantic Tour.</span>
-                <button type="button" class="btn btn-danger">To Service</button>
+                <?php if ($login == 1): ?>
+                    <a href="" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php else: ?>
+                    <a href="#signUp-modal" data-toggle="modal" role="button" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -264,7 +304,15 @@
                  <img src="<?php echo base_url(); ?>content/user_interface/img/main/romance-tours.png" alt="Romance tours" />
                 <h2>Romance tours</h2>     
                 <span>You feel it is time to meet Ladies in real? Time to touch her hand, see her eyes and listen to her wonderful voice? You want to hug your lady and feel the smell of her beautiful hair? You desire to start the life full of romance and tender emotions? Then come to Ukraine as soon as possible! One meeting is worth lots of words. We will be very glad to meet you and help with everything in your romantic Tour.</span>
-                <button type="button" class="btn btn-danger">To Service</button>
+                <?php if ($login == 1): ?>
+                    <a href="" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php else: ?>
+                    <a href="#signUp-modal" data-toggle="modal" role="button" class="to-service-button">
+                        <button type="button" class="btn btn-danger">To Service</button>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>

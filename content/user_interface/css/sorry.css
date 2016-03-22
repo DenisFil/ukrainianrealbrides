@@ -1,0 +1,37 @@
+/*Ssory page starts here*/
+.sorry-page-holder {
+	width: 100%;
+}
+.sorry-page {
+	width: 1170px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 70px 0 150px 0;
+}
+.sorry-page .subscribe {
+	padding: 30px 0 0 0;
+	display: inline-block;
+	text-align: center;
+	width: auto;
+}
+.sorry-page h2 {
+	margin: 0 0 50px 0;
+}
+.sorry-page h3 {
+	padding: 0 0 20px 0;
+}
+.sorry-page .back-to-main {
+	display: block;
+	margin: 0 auto;
+	padding: 20px 0 0 0;
+}
+.sorry-page span a {
+	font-family: 'LatoRegular';
+	font-size: 18px;
+	line-height: 20px;
+	color: #000;
+	text-decoration: underline;
+}
+.sorry-page span a:hover {
+	text-decoration: none;
+}
