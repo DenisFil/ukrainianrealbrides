@@ -145,7 +145,7 @@
                         <li><span class="img-vector-one"></span>3 Years together</li>
                         <li><span class="img-vector-two"></span>1 Child</li>
                     </ul>
-                    <a class="gallery-second-button" href="">Read more Succesesful stories at our blog</a>
+                    <a class="gallery-second-button" href="<?php echo base_url(); ?>user_interface/sorry">Read more Succesesful stories at our blog</a>
                 </div>
             </li>
             <li>

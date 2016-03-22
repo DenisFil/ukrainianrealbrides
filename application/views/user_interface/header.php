@@ -209,16 +209,16 @@ function getCurrentScroll() {
                     <ul class="shrink-nav">
                         <?php if ($this->session->userdata('id')): ?>
                             <?php if ($gender == 1 || $gender == ''): ?>
-                                <li><a href="#">Women profiles</a></li>
+                                <li><a href="<?php echo base_url(); ?>user_interface/profiles">Women profiles</a></li>
                             <?php elseif ($gender == 2): ?>
-                                <li><a href="#">Men profiles</a></li>
+                                <li><a href="<?php echo base_url(); ?>user_interface/profiles">Men profiles</a></li>
                             <?php endif; ?>
                         <?php else: ?>
-                            <li><a href="#">Women profiles</a></li>
+                            <li><a href="<?php echo base_url(); ?>user_interface/profiles">Women profiles</a></li>
                         <?php endif; ?>
                         <li><a href="<?php echo base_url(); ?>user_interface/search">Search</a></li>
                         <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/sorry">Blog</a></li>
                         <li><a href="<?php echo base_url(); ?>user_interface/support">Support</a></li>
                         <li><a href="<?php echo base_url(); ?>user_interface/about_us">About us</a></li>
                     </ul>
@@ -263,7 +263,7 @@ function getCurrentScroll() {
             </ul>
             <div class="logo-place"></div>
             <ul class="nav-right">
-                <li><a href="#">Blog</a></li>
+                <li><a href="<?php echo base_url(); ?>user_interface/sorry">Blog</a></li>
                 <li><a href="<?php echo base_url(); ?>user_interface/support">Support</a></li>
                 <li><a href="<?php echo base_url(); ?>user_interface/about_us">About us</a></li>
             </ul>

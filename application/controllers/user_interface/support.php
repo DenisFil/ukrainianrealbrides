@@ -24,8 +24,10 @@ class Support extends CI_Controller
             }
 
             $data['avatar'] = $this->main_model->get_avatar($user_id);
+            $data['login'] = 1;
         } else {
             $data['css'] = 'support';
+            $data['login'] = 0;
         }
 
         $this->load->view('user_interface/header', $data);

@@ -5,28 +5,44 @@
             <div class="footer-left-box">
                 <h4>Services:</h4>
                 <ul>
-                    <li><a href="#">Chatting</a></li>
-                    <li><a href="#">Messaging</a></li>
-                    <li><a href="#">Gift Service</a></li>
-                    <li><a href="#">Romance Tour</a></li>
-                    <li><a href="#">Very important service</a></li>
+                    <?php if ($login == 1): ?>
+                        <li><a href="<?php echo base_url(); ?>user_interface/chat">Chatting</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/sorry">Messaging</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/sorry">Gift Service</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/sorry">Romance Tour</a></li>
+                    <?php else: ?>
+                        <li><a href="#signUp-modal" type="button" data-toggle="modal">Chatting</a></li>
+                        <li><a href="#signUp-modal" type="button" data-toggle="modal">Messaging</a></li>
+                        <li><a href="#signUp-modal" type="button" data-toggle="modal">Gift Service</a></li>
+                        <li><a href="#signUp-modal" type="button" data-toggle="modal">Romance Tour</a></li>
+                    <?php endif; ?>
+                    <li><a href="<?php echo base_url(); ?>user_interface/sorry">Very important service</a></li>
                 </ul>
             </div>
             <div class="footer-left-box">
                 <h4>Members:</h4>
                 <ul>
                     <li><a href="#">Search</a></li>
-                    <li><a href="#">Women profiels</a></li>
-                    <li><a href="#">Girls online</a></li>
+                    <?php if ($this->session->userdata('id')): ?>
+                        <?php if ($gender == 1 || $gender == ''): ?>
+                            <li><a href="<?php echo base_url(); ?>user_interface/profiles">Women profiles</a></li>
+                            <li><a href="#">Girls online</a></li>
+                        <?php elseif ($gender == 2): ?>
+                            <li><a href="<?php echo base_url(); ?>user_interface/profiles">Men profiles</a></li>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <li><a href="<?php echo base_url(); ?>user_interface/profiles">Women profiles</a></li>
+                        <li><a href="#">Girls online</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
             <div class="footer-left-box">
                 <h4>Information:</h4>
                 <ul>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Partners</a></li>
+                    <li><a href="<?php echo base_url(); ?>user_interface/support">Help</a></li>
+                    <li><a href="<?php echo base_url(); ?>user_interface/about_us">About us</a></li>
+                    <li><a href="<?php echo base_url(); ?>user_interface/sorry">Blog</a></li>
+                    <li><a href="<?php echo base_url(); ?>user_interface/sorry">Partners</a></li>
                 </ul>
             </div>
 
@@ -35,7 +51,7 @@
             <a class="footer-logo" href="<?php  echo base_url(); ?>"><img src="<?php echo base_url();?>content/user_interface/img/footer/footer-logo.png" alt="Ukrainian real brides" width="232px" height="131px" /></a>
             <ul>
                 <li class="youtube-sprite"><a href="https://www.youtube.com/channel/UCh3M5uJ4v01u-7VN7l1bFvQ" target="_blank"><span></span></a></li>
-                <li class="insta-sprite"><a href="#"><span></span></a></li>
+                <li class="insta-sprite"><a href="https://www.instagram.com/dating.urb" target="_blank"><span></span></a></li>
                 <li class="forsquare-sprite"><a href="#"><span></span></a></li>
             </ul>
         </div>
