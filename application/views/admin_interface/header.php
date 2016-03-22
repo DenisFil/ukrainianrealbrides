@@ -117,35 +117,35 @@
         <div class="col-md-12 modal-col">
             <div class="col-md-4 modal-col">
                 <h4>Общ. инфо</h4>
-                <input type="text" class="form-control" placeholder="Название агенства">
-                <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="ФИО владельца">
-                <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="ФИО конт. лица">
-                <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="Страна">
-                <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="Город">
-                <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="Адрес">
-                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Название агенства" id="agency-name">
+                <span class="error-message"></span>
+                <input type="text" class="form-control" placeholder="ФИО владельца" id="owner-name">
+                <span class="error-message"></span>
+                <input type="text" class="form-control" placeholder="ФИО конт. лица" id="contact-name">
+                <span class="error-message"></span>
+                <input type="text" class="form-control" placeholder="Страна" id="country">
+                <span class="error-message"></span>
+                <input type="text" class="form-control" placeholder="Город" id="city">
+                <span class="error-message"></span>
+                <input type="text" class="form-control" placeholder="Адрес" id="address">
+                <span class="error-message"></span>
             </div>
             <div class="col-md-4 modal-col">
                 <h4>Контакты</h4>
-                <input type="text" class="form-control" placeholder="Email адрес">
-                <span class="error-message">Error message</span> 
-                <input type="text" class="form-control" placeholder="Телефон владельца">
-                <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="Телефон конт. лица">
-                <span class="error-message">Error message</span>
-                <textarea name="" id="" cols="1" rows="6" class="form-control requisite" placeholder="Реквизиты"></textarea>
+                <input type="text" class="form-control" placeholder="Email адрес" id="email">
+                <span class="error-message"></span> 
+                <input type="text" class="form-control" placeholder="Телефон владельца" id="owner-number">
+                <span class="error-message"></span>
+                <input type="text" class="form-control" placeholder="Телефон конт. лица" id="contact-number">
+                <span class="error-message"></span>
+                <textarea name="" id="requisites" cols="1" rows="6" class="form-control requisite" placeholder="Реквизиты"></textarea>
             </div>
             <div class="col-md-4 modal-col text-left">
                 <h4 class="text-center">Безопасность</h4>
-                <input type="text" class="form-control" placeholder="Пароль">
-                <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="Повт. пароль">
-                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Пароль" id="password">
+                <span class="error-message"></span>
+                <input type="text" class="form-control" placeholder="Повт. пароль" id="confirm-password">
+                <span class="error-message"></span>
                 <button class="btn btn-primary btn-pass disabled-button">Изменить пароль</button>
                 <h4 class="text-center mail-notific">E-mail оповещения</h4>
                 <div class="checkbox">
@@ -157,7 +157,7 @@
                 <div class="checkbox">
                     <label for=""><input type="checkbox" checked>Сообщения</label>
                 </div>
-                <button class="btn btn-primary">Добавить партнера</button>
+                <button class="btn btn-primary" id="add-partner">Добавить партнера</button>
             </div>
         </div>    
       </div>
