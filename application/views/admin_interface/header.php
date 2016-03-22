@@ -143,7 +143,7 @@
             </div>
             <div class="col-md-4 modal-col text-left">
                 <h4 class="text-center">Безопасность</h4>
-                <input type="text" class="form-control" placeholder="Пароль">
+                <input type="text" class="form-control text-center" placeholder="Пароль">
                 <span class="error-message">Error message</span>
                 <input type="text" class="form-control hide-form" placeholder="Повт. пароль">
                 <span class="error-message">Error message</span>
