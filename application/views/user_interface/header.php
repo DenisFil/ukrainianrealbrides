@@ -265,7 +265,7 @@ function getCurrentScroll() {
             <ul class="nav-right">
                 <li><a href="#">Blog</a></li>
                 <li><a href="<?php echo base_url(); ?>/user_interface/support">Support</a></li>
-                <li><a href="#">About us</a></li>
+                <li><a href="<?php echo base_url(); ?>/user_interface/about_us">About us</a></li>
             </ul>
         </nav>
     </header>
