@@ -35,7 +35,6 @@ class Chat_engine extends CI_Controller
     public function check_invites_chat()
     {
         $invites_data = $this->chat_messages_model->check_invites_chat($this->session->userdata('id'));
-        /*var_dump($invites_data);*/
 
         echo json_encode($invites_data);
     }
@@ -43,20 +42,14 @@ class Chat_engine extends CI_Controller
     public function check_credits()
     {
         $gender = $this->session->userdata('gender');
-        if ($gender == 1)
-        {
+        if ($gender == 1) {
             $credits = $this->chat_messages_model->check_credits($this->session->userdata('id'));
-            if ($credits > 0)
-            {
+            if ($credits > 0) {
                 $result['result'] = 1;
-            }
-            else
-            {
+            } else {
                 $result['result'] = 0;
             }
-        }
-        else
-        {
+        } else {
             $result['result'] = 1;
         }
 
@@ -65,7 +58,7 @@ class Chat_engine extends CI_Controller
 
     public function open_room()
     {
-        $open_room = $this->chat_messages_model->open_room($this->session->userdata('id'), $this->input->post('partner_id'));
+        $open_room = $this->chat_messages_model->open_room($this->input->post('invite_code'));
         if ($open_room === TRUE) {
             $result['result'] = 1;
         } else {
@@ -88,15 +81,21 @@ class Chat_engine extends CI_Controller
         echo json_encode($invite_code);
     }
 
+    public function write_off_credits()
+    {
+        if ($this->session->userdata('gender') == 1) {
+            $credits = $this->input->post('credits');
+            $new_credits['credits'] = $this->chat_messages_model->write_off_credits($this->session->userdata('id'), $credits);
+            echo json_encode($new_credits);
+        }
+    }
+
     public function close_room()
     {
         $close = $this->chat_messages_model->close_room($this->input->post('invite_code'));
-        if ($close === TRUE)
-        {
+        if ($close === TRUE) {
             $result['result'] = 1;
-        }
-        else
-        {
+        } else {
             $result['result'] = 0;
         }
         echo json_encode($result);
@@ -114,20 +113,29 @@ class Chat_engine extends CI_Controller
 
     public function send_message()
     {
+        $time = time();
+        $this->load->helper('date');
         $message_data = $this->input->post();
         $message_data['from_user_id'] = $this->session->userdata('id');
+
+        $date_string = '%j %F %Y %G:%i:%s';
+        $date['date'] = mdate($date_string, $time);
+        $message_data['date'] = $date['date'];
         $this->chat_messages_model->send_message($message_data);
+        echo json_encode($date);
     }
 
     public function check_new_messages()
     {
-        $from_user_id = $this->input->post('from_user_id');
-        $new_messages = $this->chat_messages_model->check_new_messages($this->session->userdata('id'), $from_user_id);
-        $message_time = explode(' ', $new_messages[0]->date);
-        $new_messages[0]->date_message = $message_time[0];
-        $new_messages[0]->time_message = $message_time[1];
+        $partner_ids = $this->input->post();
+        $new_messages = $this->chat_messages_model->check_new_messages($this->session->userdata('id'), $partner_ids);
 
         echo json_encode($new_messages);
+    }
+    
+    public function read_message()
+    {
+        $this->chat_messages_model->read_message($this->input->post('message_id'));
     }
 
     public function load_history()
@@ -137,29 +145,27 @@ class Chat_engine extends CI_Controller
         $history = array();
         foreach ($query_history as $value) {
             $count = count($value);
-            for ($i = 0; $i < $count; $i++)
-            {
+            for ($i = 0; $i < $count; $i++) {
                 array_push($history, $value[$i]);
             }
         }
-        foreach ($history as $value)
-        {
+        foreach ($history as $value) {
             $value->date = strtotime($value->date);
         }
-        $count = count($history);
-        for ($i = 0; $i < $count; $i++)
-        {
-            if ($history[$i]->date > $history[0]->date)
-            {
-                $var = $history[$i];
-                unset($history[$i]);
-                array_unshift($history, $var);
+
+        for ($i = count($history); $i >= 0; $i--) {
+            foreach ($history as $key => $value) {
+                if ($key + 1 < count($history)){
+                    if ($history[$key + 1]->date < $history[$key]->date) {
+                        list($history[$key], $history[$key + 1]) = array($history[$key + 1], $history[$key]);
+                    }
+                }
             }
         }
+        $history = array_reverse($history);
         $this->load->helper('date');
-        foreach ($history as $value)
-        {
-            $time_string = '%j.%n.%Y %G:%i';
+        foreach ($history as $value) {
+            $time_string = '%j %F %Y %G:%i:%s';
             $value->date = mdate($time_string, $value->date);
         }
         echo json_encode(array_reverse($history));

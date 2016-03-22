@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Panel</title>
+    <title>Панель партнера</title>
 
     <!-- Bootstrap -->
     <link media="all" rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/header.css" type="text/css"/>
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/user_profiles.css" type="text/css"/>
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/add_user.css" type="text/css"/>
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/partner_interface/css/header.css" type="text/css"/>
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/partner_interface/css/operator_profiles.css" type="text/css"/>
 </head>
 <body>
 
@@ -28,15 +27,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo base_url(); ?>admin_interface/main_admin">Панель администратора</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>partner_interface/main_partner">Панель партнера</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
+                        <a href="<?php echo base_url(); ?>partner_interface/operator_profiles">Операторы
+                            <span class="bg-success notification-number">0</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url(); ?>admin_interface/user_profiles">Анкеты
-                            <span class="bg-success notification-number"><?php echo $all_profiles; ?></span>
+                            <span class="bg-success notification-number">0</span>
                         </a>
                     </li>
                     <li class="dropdown">
@@ -82,10 +86,10 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#add-agency-modal" data-toggle="modal" class="add-agency-link">+ Добавить агенство</a>
+                        <a href="<?php echo base_url(); ?>partner_interface/add_user" data-toggle="modal" class="add-agency-link">+ Добавить анкету</a>
                     </li>
                     <li>
-                        <a href="#" title="Настройки">
+                        <a href="#add-agency-modal" title="Настройки">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                         </a>
                     </li>
@@ -108,46 +112,45 @@
 <div class="modal fade" id="add-agency-modal" tabindex="-1" role="dialog" aria-labelledby="#">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <div class="modal-header text-center">
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Добавить агенство</h3>
-        <h6>Необходимо вносить только достоверную информацию на английском языке</h6>
+        <h3 class="modal-title text-center">Добавить агенство</h3>
       </div>
       <div class="modal-body">
       <div class="container-fluid text-center modal-col">
         <div class="col-md-12 modal-col">
             <div class="col-md-4 modal-col">
                 <h4>Общ. инфо</h4>
-                <input type="text" class="form-control" placeholder="Название агенства" id="agency-name">
-                <span class="error-message"></span>
-                <input type="text" class="form-control" placeholder="ФИО владельца" id="owner-name">
-                <span class="error-message"></span>
-                <input type="text" class="form-control" placeholder="ФИО конт. лица" id="contact-name">
-                <span class="error-message"></span>
-                <input type="text" class="form-control" placeholder="Страна" id="country">
-                <span class="error-message"></span>
-                <input type="text" class="form-control" placeholder="Город" id="city">
-                <span class="error-message"></span>
-                <input type="text" class="form-control" placeholder="Адрес" id="address">
-                <span class="error-message"></span>
+                <input type="text" class="form-control" placeholder="Название агенства">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="ФИО владельца">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="ФИО конт. лица">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Страна">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Город">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Адрес">
+                <span class="error-message">Error message</span>
             </div>
             <div class="col-md-4 modal-col">
                 <h4>Контакты</h4>
-                <input type="text" class="form-control" placeholder="Email адрес" id="email">
-                <span class="error-message"></span> 
-                <input type="text" class="form-control" placeholder="Телефон владельца" id="owner-number">
-                <span class="error-message"></span>
-                <input type="text" class="form-control" placeholder="Телефон конт. лица" id="contact-number">
-                <span class="error-message"></span>
-                <textarea name="" id="requisites" cols="1" rows="6" class="form-control requisite" placeholder="Реквизиты"></textarea>
+                <input type="text" class="form-control" placeholder="Email адрес">
+                <span class="error-message">Error message</span> 
+                <input type="text" class="form-control" placeholder="Телефон владельца">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Телефон конт. лица">
+                <span class="error-message">Error message</span>
+                <textarea name="" id="" cols="1" rows="6" class="form-control requisite" placeholder="Реквизиты"></textarea>
             </div>
             <div class="col-md-4 modal-col text-left">
                 <h4 class="text-center">Безопасность</h4>
-                <input type="text" class="form-control" placeholder="Пароль" id="password">
-                <span class="error-message"></span>
-                <input type="text" class="form-control hide-form" placeholder="Повт. пароль" id="confirm-password">
-                <span class="error-message"></span>
-                <button class="btn btn-primary btn-pass disabled-button hide-form">Изменить пароль</button>
+                <input type="text" class="form-control" placeholder="Пароль">
+                <span class="error-message">Error message</span>
+                <input type="text" class="form-control" placeholder="Повт. пароль">
+                <span class="error-message">Error message</span>
+                <button class="btn btn-primary btn-pass disabled-button">Изменить пароль</button>
                 <h4 class="text-center mail-notific">E-mail оповещения</h4>
                 <div class="checkbox">
                     <label for=""><input type="checkbox" checked>Акции</label>
@@ -158,7 +161,7 @@
                 <div class="checkbox">
                     <label for=""><input type="checkbox" checked>Сообщения</label>
                 </div>
-                <button class="btn btn-primary" id="add-partner">Добавить партнера</button>
+                <button class="btn btn-primary">Добавить партнера</button>
             </div>
         </div>    
       </div>

@@ -53,7 +53,11 @@
                     </div>
                     <button type="button" class="search-button search-top" id="search-top">Search</button>
                 </div>
-                <button type="button" class="advanced-search-button" style="margin-bottom: 50px; ">Advanced Search</button>
+                <?php if ($login == 0): ?>
+                    <a href="#signUp-modal" data-toggle="modal" type="button" class="advanced-search-button text-center" style="margin-bottom: 50px;">Advanced Search</a>
+                <?php else: ?>
+                    <a type="button" class="advanced-search-button text-center" style="margin-bottom: 50px;" id="advanced-search-button">Advanced Search</a>
+                <?php endif; ?>
             </form>
         </div>
         <div class="advanced-search" style="display: none; ">

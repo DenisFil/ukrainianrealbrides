@@ -233,14 +233,14 @@ window.onload = init();
             <ul class="nav-left">
                 <?php if ($this->session->userdata('id')): ?>
                     <?php if ($gender == 1 || $gender == ''): ?>
-                        <li><a href="#">Women profiles</a></li>
+                        <li><a href="<?php echo base_url(); ?>/user_interface/profiles">Women profiles</a></li>
                     <?php elseif ($gender == 2): ?>
-                        <li><a href="#">Men profiles</a></li>
+                        <li><a href="<?php echo base_url(); ?>/user_interface/profiles">Men profiles</a></li>
                     <?php endif; ?>
                 <?php else: ?>
-                    <li><a href="#">Women profiles</a></li>
+                    <li><a href="<?php echo base_url(); ?>/user_interface/profiles">Women profiles</a></li>
                 <?php endif; ?>
-                <li><a href="<?php echo base_url(); ?>/user_interface/search">Search</a></li>
+                <li><a href="#">Search</a></li>
                 <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
             </ul>
             <div class="logo-place"></div>
@@ -257,7 +257,9 @@ window.onload = init();
 <!-- Header Ends Here -->
 
 <?php if(!$this->session->userdata('id')): ?>
-<!--SignUp modal start-->
+
+<!--Modal's start-->
+
 <div class="modal fade" id="signUp-modal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -276,7 +278,7 @@ window.onload = init();
                     <div class="form-row">
                         <input type="password" class="form-control" placeholder="Password" tabindex="2" id="user-password">
                         <span class="view-password">
-                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="">
+                            <img src="<?php echo base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="">
                         </span>
                         <span id="user-password-error-text" class="form-error-message"></span>
                     </div>
@@ -297,9 +299,7 @@ window.onload = init();
         </div>
     </div>
 </div>
-<!--SignUp modal ends-->
 
-<!--Login modal start-->
 <div class="modal fade" id="login-modal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -313,7 +313,7 @@ window.onload = init();
                     <div class="form-row last-form">
                         <input type="password" class="form-control" placeholder="Password" tabindex="2" id="login-user-password">
                         <span class="view-password">
-                            <img src="<?php base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="login">
+                            <img src="<?php echo base_url(); ?>content/user_interface/img/pop-ups/password_button.png" class="icon" name="login">
                         </span>
                     </div>
                         <span class="forget-password"><a href="#">Forgot login or password?</a></span>
@@ -328,7 +328,7 @@ window.onload = init();
         </div>
     </div>
 </div>
-<!--Login modal ends-->
+
 <?php endif; ?>
 
 <a href="#get-credits-modal" role="button" data-toggle="modal" id="credits-modal"></a>
@@ -345,3 +345,4 @@ window.onload = init();
     </div>
 </div>
 
+<!--Modal's end-->

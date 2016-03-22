@@ -8,14 +8,14 @@
                 <li role="presentation" class="nav-top">
                     <a role="button" type="button">Активные
                         <span class="bg-danger profiles-notification">
-                            <?php echo $active; ?>
+                           <!--  <?php echo $active; ?>  -->
                         </span>
                     </a>
                 </li>
                 <li role="presentation" class="nav-top">
                     <a role="button" type="button">Неактивные
                         <span class="bg-danger profiles-notification">
-                            <?php echo $anactive; ?>
+                           <!--  <?php echo $anactive; ?>  -->
                         </span>
                     </a>
                 </li>
@@ -27,7 +27,7 @@
                 <li role="presentation" class="nav-top">
                     <a role="button" type="button">Заблокированные
                         <span class="bg-danger profiles-notification">
-                            <?php echo $locked; ?>
+                           <!--  <?php echo $locked; ?> -->
                         </span>
                     </a>
                 </li>
@@ -48,15 +48,7 @@
         <div class="col-md-10">
             <div class="form-group select-property">
                 <select class="form-control" id="#">
-                    <option>Пол</option>
-                    <option>Мужчина</option>
-                    <option>Женщина</option>
-                </select>
-            </div>
-            <div class="form-group select-property">
-                <select class="form-control" id="#">
-                    <option>Агенство</option>
-                    <option>Happy Brides</option>
+                    <option>Оператор</option>
                 </select>
             </div>
             <div class="datepicker-holder">
@@ -80,11 +72,11 @@
             <th>ID</th>
             <th>Имя</th>
             <th>Страна</th>
-            <th>Агенство (id)</th>
+            <th>Оператор</th>
             <th>Дата регистрации</th>
             <th>Время регистрации</th>
             <th>Статус</th>
-            <th>Баланс счёта</th>
+
         </tr>
         </thead>
         <tfoot>
@@ -92,28 +84,28 @@
         <th>ID</th>
         <th>Имя</th>
         <th>Страна</th>
-        <th>Агенство (id)</th>
+        <th>Оператор</th>
         <th>Дата регистрации</th>
         <th>Время регистрации</th>
         <th>Статус</th>
-        <th>Баланс счёта</th>
+
         </tfoot>
         <tbody id="table-body">
-        <?php foreach ($users_all_data as $value): ?>
+        <!--  <?php foreach ($users_all_data as $value): ?>  -->
             <tr>
                 <td class="checkbox-column">
                     <label><input type="checkbox" value=""></label>
                 </td>
-                <td><?php echo $value->id; ?></td>
+                <td><!--  <?php echo $value->id; ?>  --></td>
                 <td>
-                    <a href="<?php echo base_url(); ?>user_interface/user_profile_preview?id=<?php echo $value->id; ?>" class="profile-link" target="_blank"><?php echo $value->name; ?></a>
+                    <a href="<?php echo base_url(); ?>user_interface/user_profile_preview?id=<?php echo $value->id; ?>" class="profile-link" target="_blank"><!--  <?php echo $value->name; ?>  --></a>
                 </td>
-                <td><?php echo $value->country_name; ?></td>
+                <td> <?php echo $value->country_name; ?></td>
                 <td><?php echo $value->agency; ?></td>
                 <td><?php echo $value->register_date; ?></td>
                 <td><?php echo $value->register_time; ?></td>
-                <td class="action-select text-center form-group-sm">
- 
+                <td class="action-select">
+                    <div class="form-group-sm">
                         <select class="form-control">
                             <?php if ($value->user_status == 0): ?>
                                 <option selected>Не активная</option>
@@ -129,13 +121,12 @@
                                 <option>Активная</option>
                             <?php endif; ?>
                         </select>
-                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">Изменить</button>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">
+                            Изменить
+                        </button>
+                    </div>
+                </td>
 
-                </td>
-                <td class="credits-column text-center form-group-sm">
-                        <span class="bg-success credits-status"><?php echo $value->credits; ?> Cr</span>
-                        <button class="btn btn-warning btn-sm" type="button" data-toggle="modal" data-target="#modalCredits">Внесни/Снять</button>
-                </td>
             </tr>
         <?php endforeach; ?>
         <!--<tr>

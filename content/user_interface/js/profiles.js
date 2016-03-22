@@ -28,15 +28,19 @@ $(document).ready(function () {
     //Вывод профилей
     $.ajax({
         type: 'post',
-        url: baseUrl + 'user_interface/search/first_get_profiles',
+        url: baseUrl + 'user_interface/profiles/first_get_profiles',
         dataType: 'json',
         success: function (data) {
-            firstData = data;
+            firstData = data.first_result;
             var length = firstData.length;
 
             $.each(firstData, function (index, value) {
                 if (index <= 8) {
-                    var html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + value.name + ', ' + '<span>' + value.birthday + '</span></strong><span>' + value.country_name + ', ' + value.city + '</span><em>Online</em><ul><li><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + value.id + '" class="view-profile-button">View Profile</a></div></div>';
+                    if (data.login == 1) {
+                        var html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + value.name + ', ' + '<span>' + value.birthday + '</span></strong><span>' + value.country_name + ', ' + value.city + '</span><em>Online</em><ul><li><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + value.id + '" class="view-profile-button">View Profile</a></div></div>';
+                    } else {
+                        html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + value.name + ', ' + '<span>' + value.birthday + '</span></strong><span>' + value.country_name + ', ' + value.city + '</span><em>Online</em><ul><li><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="#signUp-modal" data-toggle="modal" class="view-profile-button">View Profile</a></div></div>';
+                    }
 
                     $('.search-results').append(html);
                 }
@@ -49,7 +53,11 @@ $(document).ready(function () {
                         for (var i = index; i <= index + 2; i++) {
                             if (firstData != null){
                                 if (i < length) {
-                                    var html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + firstData[i].id + '/' + firstData[i].avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + firstData[i].name + ', ' + '<span>' + firstData[i].birthday + '</span></strong><span>' + firstData[i].country_name + ', ' + firstData[i].city + '</span><em>Online</em><ul><li><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href="#"><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + firstData[i].id + '" class="view-profile-button">View Profile</a></div></div>';
+                                    if (data.login == 1) {
+                                        var html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + value.name + ', ' + '<span>' + value.birthday + '</span></strong><span>' + value.country_name + ', ' + value.city + '</span><em>Online</em><ul><li><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="' + baseUrl + 'user_interface/user_profile_preview?id=' + value.id + '" class="view-profile-button">View Profile</a></div></div>';
+                                    } else {
+                                        html = '<div class="search-profile-block"><img src="' + baseUrl + 'content/profiles/avatars/' + value.id + '/' + value.avatar + '_avatar.jpg" alt="Profile photo" width="196" height="298" ><div class="search-profile-info"><strong>' + value.name + ', ' + '<span>' + value.birthday + '</span></strong><span>' + value.country_name + ', ' + value.city + '</span><em>Online</em><ul><li><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/messaging.png" width="23" height="23" alt="Send letter" /><span>Send Letter</span></a></li><li class="search-chat-invite"><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/chat.png" width="25" height="25" alt="Invite to chat" /><span>Invite to chat</span></a></li><li class="search-send-gift"><a href=""><img src="' + baseUrl + 'content/user_interface/img/main/gift-service.png" width="22" height="29" alt="Send gift" /><span>Send Gift</span></a></li></ul><a href="#signUp-modal" data-toggle="modal" class="view-profile-button">View Profile</a></div></div>';
+                                    }
 
                                     $('.search-results').append(html);
                                 }
@@ -148,7 +156,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'post',
             data: data,
-            url: baseUrl + 'user_interface/search/search',
+            url: baseUrl + 'user_interface/profiles/search',
             dataType: 'json',
             success: function (data) {
                 output_search_results(data);
@@ -159,7 +167,7 @@ $(document).ready(function () {
     /******************************Расширенный поиск***************************/
     $.ajax({
         type: 'post',
-        url: baseUrl + 'user_interface/search/cities',
+        url: baseUrl + 'user_interface/profiles/cities',
         dataType: 'json',
         success: function (data) {
             if (data.cities.length > 0){
@@ -183,7 +191,7 @@ $(document).ready(function () {
         $('#city').val(city);
     });
 
-    $('.advanced-search-button').click(function () {
+    $('#advanced-search-button').click(function () {
         $('.search').animate({'opacity': 'hide', 'height': '492px'}, 1000);
         setTimeout(function () {
             $('.advanced-search').animate({'opacity': 'show'}, 1000);
@@ -214,7 +222,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'post',
             data: data,
-            url: baseUrl + 'user_interface/search/full_search',
+            url: baseUrl + 'user_interface/profiles/full_search',
             dataType: 'json',
             success: function (data) {
                 output_search_results(data);
