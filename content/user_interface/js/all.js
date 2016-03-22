@@ -129,4 +129,8 @@ $(document).ready(function () {
         });
         $('#' + partnerId.partner_id).hide();
     });
+
+    $('#top-search-button').click(function () {
+        $('.search-drop').show();
+    });
 });

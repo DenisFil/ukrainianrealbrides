@@ -54,33 +54,25 @@
                             <li><a href="#">Диалог / Чат</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Администрация <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Админы</a></li>
-                            <li><a href="#">Партнеры</a></li>
-                            <li><a href="#">Операторы</a></li>
-                            <li><a href="#">Рассылка</a></li>
-                        </ul>
+                    <li>
+                        <a href="#">
+                            Сообщения <span class="bg-success notification-number">0</span>
+                        </a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Техподдержка <span class="bg-success notification-number">0</span><span
+                           aria-expanded="false">Информация <span class="bg-success notification-number">0</span><span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Партнеры</a></li>
-                            <li><a href="#">Пользователи</a></li>
-                            <li><a href="#">Операторы</a></li>
+                            <li><a href="#">Договор</a></li>
+                            <li><a href="#">Правила</a></li>
+                            <li><a href="#">Техподдержка</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Аналитика <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Финансы</a></li>
-                            <li><a href="#">Пользователи</a></li>
-                        </ul>
+                    <li>
+                        <a href="#">
+                            Финансы <span class="bg-success notification-number">0</span>
+                        </a>
                     </li>
                 </ul>
 
