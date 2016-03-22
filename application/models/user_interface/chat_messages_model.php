@@ -129,32 +129,41 @@
             $this->db->insert('chat_messages', $data);
         }
 
-        public function check_new_messages($id, $from_user_id)
+        public function check_new_messages($id, $partner_ids)
         {
-            $query = $this->db->    select('message_id, message, date')->
-                                    from('chat_messages')->
-                                    where('to_user_id', $id)->
-                                    where('status', 0)->
-                                    where('from_user_id', $from_user_id)->
-                                    get()->
-                                    result();
-            foreach ($query as $value)
+            $query = array();
+            foreach ($partner_ids as $value)
             {
-                $this->db->update('chat_messages', array('status' => 1), array('message_id' => $value->message_id));
+                $query[$value] = $this->db->    select('message_id, message, date')->
+                                                from('chat_messages')->
+                                                where('to_user_id', $id)->
+                                                where('status', 0)->
+                                                where('from_user_id', $value)->
+                                                get()->
+                                                result();
+                foreach ($query[$value] as $val)
+                {
+                    $this->db->update('chat_messages', array('status' => 1), array('message_id' => $val->message_id));
+                }
             }
             return $query;
+        }
+
+        public function read_message($message_id)
+        {
+            $this->db->update('chat_messages', array('status' => 2), array('message_id' => $message_id));
         }
 
         public function load_history($id, $my_id)
         {
             $query = array();
-            array_push($query, $this->db->  select('message, date, from_user_id')->
+            array_push($query, $this->db->  select('message, date, from_user_id, message_id')->
                                             from('chat_messages')->
                                             where('from_user_id', $my_id)->
                                             where('to_user_id', $id)->
                                             get()->
                                             result());
-            array_push($query, $this->db->  select('message, date, status, from_user_id')->
+            array_push($query, $this->db->  select('message, date, status, from_user_id, message_id')->
                                             from('chat_messages')->
                                             where('from_user_id', $id)->
                                             where('to_user_id', $my_id)->
