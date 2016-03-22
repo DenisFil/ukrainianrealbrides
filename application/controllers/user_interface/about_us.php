@@ -1,5 +1,5 @@
 <?php
-class About_as extends CI_Controller
+class About_us extends CI_Controller
 {
     public function index() {
         $this->load->model('user_interface/personal_area_model');
@@ -33,7 +33,7 @@ class About_as extends CI_Controller
         }
 
         $this->load->view('user_interface/header', $data);
-        $this->load->view('user_interface/about_as');
+        $this->load->view('user_interface/about_us');
         $this->load->view('user_interface/footer');
     }
 }

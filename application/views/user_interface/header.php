@@ -127,7 +127,7 @@ function getCurrentScroll() {
                             </li>
                             <?php if ($gender == 0 || $gender == 1): ?>
                             <li class="credit-status">
-                                <a href="<?php echo base_url(); ?>/user_interface/payment">
+                                <a href="<?php echo base_url(); ?>user_interface/payment">
                                     <span></span>
                                 </a>
                                 <em><?php echo $credits; ?></em>
@@ -142,7 +142,7 @@ function getCurrentScroll() {
                             <?php endif; ?>
                         </ul>
                         <div class="profile-panel">
-                            <a href="<?php echo base_url(); ?>/user_interface/profile_settings"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings"></a>
+                            <a href="<?php echo base_url(); ?>user_interface/profile_settings"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings.png" width="14" height="14" alt="Profile settings"></a>
                             <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out.png" width="14" height="14" alt="Log out"></a>
                         </div>
                     </div>
@@ -178,7 +178,7 @@ function getCurrentScroll() {
                             </li>
                             <?php if ($gender == 0 || $gender == 1): ?>
                             <li class="credit-status">
-                                <a href="<?php echo base_url(); ?>/user_interface/payment">
+                                <a href="<?php echo base_url(); ?>user_interface/payment">
                                     <span></span>
                                 </a>
                                 <em>Credits: <span><?php echo $credits; ?></span></em>
@@ -193,7 +193,7 @@ function getCurrentScroll() {
                             <?php endif; ?>
                         </ul>
                         <div class="profile-panel">
-                            <a href="<?php echo base_url(); ?>/user_interface/profile_settings"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings-shrink.png" width="18" height="17" alt="Profile settings"></a>
+                            <a href="<?php echo base_url(); ?>user_interface/profile_settings"><img src="<?php echo base_url(); ?>content/user_interface/img/header/settings-shrink.png" width="18" height="17" alt="Profile settings"></a>
                             <a href="<?php echo base_url(); ?>user_interface/logout"><img src="<?php echo base_url(); ?>content/user_interface/img/header/log-out-shrink.png" width="18" height="17" alt="Log out"></a>
                         </div>
                         <span class="profile-name">
@@ -216,11 +216,11 @@ function getCurrentScroll() {
                         <?php else: ?>
                             <li><a href="#">Women profiles</a></li>
                         <?php endif; ?>
-                        <li><a href="<?php echo base_url(); ?>/user_interface/search">Search</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/search">Search</a></li>
                         <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="<?php echo base_url(); ?>/user_interface/support">Support</a></li>
-                        <li><a href="#">About us</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/support">Support</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/about_us">About us</a></li>
                     </ul>
                     <div class="shrink-buttons">
                         <a href="#login-modal" role="button" data-toggle="modal" id="login-button"><button type="button" class="login">Log in</button></a>
@@ -234,12 +234,12 @@ function getCurrentScroll() {
             <ul class="nav-left">
                 <?php if ($this->session->userdata('id')): ?>
                     <?php if ($gender == 1 || $gender == ''): ?>
-                        <li><a href="<?php echo base_url(); ?>/user_interface/profiles">Women profiles</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/profiles">Women profiles</a></li>
                     <?php elseif ($gender == 2): ?>
-                        <li><a href="<?php echo base_url(); ?>/user_interface/profiles">Men profiles</a></li>
+                        <li><a href="<?php echo base_url(); ?>user_interface/profiles">Men profiles</a></li>
                     <?php endif; ?>
                 <?php else: ?>
-                    <li><a href="<?php echo base_url(); ?>/user_interface/profiles">Women profiles</a></li>
+                    <li><a href="<?php echo base_url(); ?>user_interface/profiles">Women profiles</a></li>
                 <?php endif; ?>
                 <li class="search-link">
                     <a type="button" role="button" id="top-search-button">Search</a>
@@ -264,8 +264,8 @@ function getCurrentScroll() {
             <div class="logo-place"></div>
             <ul class="nav-right">
                 <li><a href="#">Blog</a></li>
-                <li><a href="<?php echo base_url(); ?>/user_interface/support">Support</a></li>
-                <li><a href="<?php echo base_url(); ?>/user_interface/about_us">About us</a></li>
+                <li><a href="<?php echo base_url(); ?>user_interface/support">Support</a></li>
+                <li><a href="<?php echo base_url(); ?>user_interface/about_us">About us</a></li>
             </ul>
         </nav>
     </header>
