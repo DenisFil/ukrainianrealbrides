@@ -73,6 +73,7 @@ class Chat_engine extends CI_Controller
         }
         echo json_encode($result);
     }
+
     public function check_life_status()
     {
         $invite_codes = $this->input->post('rooms');
