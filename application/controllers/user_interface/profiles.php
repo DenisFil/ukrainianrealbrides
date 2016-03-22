@@ -38,8 +38,7 @@ class Profiles extends CI_Controller
             $this->load->view('user_interface/header', $data);
             $this->load->view('user_interface/profiles');
             $this->load->view('user_interface/footer');
-        }
-        else {
+        } else {
             $data['css'] = 'profiles';
             $data['gender'] = 1;
             $data['login'] = 0;
@@ -80,6 +79,12 @@ class Profiles extends CI_Controller
                 $today = explode('.', $today);
                 $today_days = ($today[2] * 365) + ($today[1] * 30) + $today[0];
                 $first_result[$key]->birthday = floor(($today_days - $birthday_days) / 365);
+
+                if ($value->last_online > time()) {
+                    $value->last_online = 1;
+                } else {
+                    $value->last_online = 0;
+                }
             }
         }
         shuffle($first_result);

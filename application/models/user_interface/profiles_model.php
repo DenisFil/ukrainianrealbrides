@@ -21,10 +21,11 @@
                 $gender = 1;
             }
 
-            $query = $this->db->    select('user_profiles.name, user_profiles.id, user_details.avatar, user_details.birthday, user_details.city, countries.country_name')->
+            $query = $this->db->    select('user_profiles.name, user_profiles.id, user_details.avatar, user_details.birthday, user_details.city, countries.country_name, users_online.last_online')->
                                     from('user_profiles')->
                                     join('user_details', 'user_details.user_id = user_profiles.id')->
-                                    join('countries', 'countries.country_id=user_details.country')->
+                                    join('countries', 'countries.country_id = user_details.country')->
+                                    join('users_online', 'users_online.user_id = user_profiles.id')->
                                     where('gender', $gender)->
                                     get()->
                                     result();
