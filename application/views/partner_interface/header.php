@@ -125,7 +125,7 @@
                 <span class="error-message">Error message</span>
                 <input type="text" class="form-control" placeholder="ФИО владельца">
                 <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="ФИО контактоного лица">
+                <input type="text" class="form-control" placeholder="ФИО конт. лица">
                 <span class="error-message">Error message</span>
                 <input type="text" class="form-control" placeholder="Страна">
                 <span class="error-message">Error message</span>

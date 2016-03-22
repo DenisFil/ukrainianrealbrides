@@ -113,7 +113,7 @@
                 <td><?php echo $value->register_date; ?></td>
                 <td><?php echo $value->register_time; ?></td>
                 <td class="action-select">
-                    <div class="form-group-sm">
+                    <div class="form-group-sm select-group text-center">
                         <select class="form-control">
                             <?php if ($value->user_status == 0): ?>
                                 <option selected>Не активная</option>
@@ -129,9 +129,7 @@
                                 <option>Активная</option>
                             <?php endif; ?>
                         </select>
-                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">
-                            Изменить
-                        </button>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">Изменить</button>
                     </div>
                 </td>
                 <td class="credits-column">

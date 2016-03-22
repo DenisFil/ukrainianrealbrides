@@ -94,3 +94,15 @@ table tbody tr .checkbox-column {
 .form-group-sm select.form-control {
 	cursor: pointer;
 }
+.select-group {
+
+}
+.select-group select,
+.credits-column .credits-status {
+	display: inline-block;
+	margin-right: 5px;
+}
+.select-group .btn,
+.credits-column .btn {
+	display: inline-block;
+}
