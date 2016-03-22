@@ -76,4 +76,10 @@
             }
             return $user_profiles_data;
         }
+
+        public function add_new_partner($data)
+        {
+            $query = $this->db->insert('partner_profiles', $data);
+            return $query;
+        }
     }

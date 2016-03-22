@@ -28,7 +28,7 @@ $(document).ready(function () {
     //Вывод профилей
     $.ajax({
         type: 'post',
-        url: baseUrl + 'user_interface/search/first_get_profiles',
+        url: baseUrl + 'user_interface/profiles/first_get_profiles',
         dataType: 'json',
         success: function (data) {
             firstData = data;
@@ -148,7 +148,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'post',
             data: data,
-            url: baseUrl + 'user_interface/search/search',
+            url: baseUrl + 'user_interface/profiles/search',
             dataType: 'json',
             success: function (data) {
                 output_search_results(data);
@@ -159,7 +159,7 @@ $(document).ready(function () {
     /******************************Расширенный поиск***************************/
     $.ajax({
         type: 'post',
-        url: baseUrl + 'user_interface/search/cities',
+        url: baseUrl + 'user_interface/profiles/cities',
         dataType: 'json',
         success: function (data) {
             if (data.cities.length > 0){
@@ -214,7 +214,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'post',
             data: data,
-            url: baseUrl + 'user_interface/search/full_search',
+            url: baseUrl + 'user_interface/profiles/full_search',
             dataType: 'json',
             success: function (data) {
                 output_search_results(data);

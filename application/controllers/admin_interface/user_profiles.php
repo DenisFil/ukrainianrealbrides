@@ -101,4 +101,19 @@
 
             echo json_encode($user_profiles);
         }
+        
+        public function add_new_partner()
+        {
+            $data = $this->input->post();
+            $query = $this->main_admin_model->add_new_partner($data);
+            if ($query == TRUE)
+            {
+                $result['result'] = 1;
+            }
+            else
+            {
+                $result['result'] = 0;
+            }
+            echo json_encode($result);
+        }
     }

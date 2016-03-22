@@ -90,7 +90,9 @@ $(document).ready(function () {
                 url: baseUrl + 'admin_interface/user_profiles/add_new_partner',
                 dataType: 'json',
                 success: function (data) {
-                    
+                    if (data.result == 1) {
+                        $('.close').click();
+                    }
                 }
             });
         }

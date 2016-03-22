@@ -1,11 +1,11 @@
 <?php
-    class Search extends CI_Controller
+    class Profiles extends CI_Controller
     {
         public function __construct()
         {
             parent::__construct();
 
-            $this->load->model('user_interface/search_model');
+            $this->load->model('user_interface/profiles_model');
         }
 
         public function index()
@@ -21,7 +21,7 @@
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
                 $data['countries'] = $this->profile_settings_model->get_countries();
 
-                $data['css'] = 'search';
+                $data['css'] = 'profiles';
                 $data['gender'] = '';
                 if ($this->session->userdata('gender'))
                 {
@@ -39,14 +39,14 @@
                 $data['avatar'] = $this->main_model->get_avatar($user_id);
 
                 $this->load->view('user_interface/header', $data);
-                $this->load->view('user_interface/search');
+                $this->load->view('user_interface/profiles');
                 $this->load->view('user_interface/footer');
             }
         }
 
         public function cities()
         {
-            $query_cities = $this->search_model->get_cities();
+            $query_cities = $this->profiles_model->get_cities();
             $cities = array('cities' => array());
              foreach ($query_cities as $value)
              {
@@ -65,7 +65,7 @@
 
         public function first_get_profiles()
         {
-            $first_result = $this->search_model->first_get_profiles($this->session->userdata('gender'));
+            $first_result = $this->profiles_model->first_get_profiles($this->session->userdata('gender'));
                 if ($first_result[0]->birthday != 0)
                 {
                     $this->load->helper('date');
@@ -105,7 +105,7 @@
         public function search()
         {
             $search_data = $this->input->post();
-            $search_query = $this->search_model->search($search_data, $this->session->userdata('gender'));
+            $search_query = $this->profiles_model->search($search_data, $this->session->userdata('gender'));
             $search_result = array();
             if ($search_data['id'] != '')
             {
@@ -132,7 +132,7 @@
         public function full_search()
         {
             $search_data = $this->input->post();
-            $search_query = $this->search_model->full_search($search_data, $this->session->userdata('gender'));
+            $search_query = $this->profiles_model->full_search($search_data, $this->session->userdata('gender'));
             if ($search_data['id'] != '')
             {
                 $search_result = $this->age($search_query);
