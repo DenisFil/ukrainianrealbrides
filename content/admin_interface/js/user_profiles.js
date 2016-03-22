@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var baseUrl = 'http://ukrainianrealbrides.int/';
 
+    //Переход по вкладкам
     $('.nav-top').click(function () {
         $('.nav-top').each(function () {
             var classBlock = $(this).attr('class');
@@ -52,4 +53,7 @@ $(document).ready(function () {
             }
         });
     });
+
+    //Изменение статуса анкеты
+    $('.')
 });

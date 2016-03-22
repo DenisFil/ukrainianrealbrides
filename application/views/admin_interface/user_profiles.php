@@ -129,9 +129,7 @@
                                 <option>Активная</option>
                             <?php endif; ?>
                         </select>
-                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">
-                            Изменить
-                        </button>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalActionSuccess">Изменить</button>
                     </div>
                 </td>
                 <td class="credits-column">
