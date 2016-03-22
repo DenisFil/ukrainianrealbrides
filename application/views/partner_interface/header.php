@@ -10,9 +10,8 @@
     <link media="all" rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/header.css" type="text/css"/>
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/user_profiles.css" type="text/css"/>
-    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/admin_interface/css/add_user.css" type="text/css"/>
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/partner_interface/css/header.css" type="text/css"/>
+    <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/partner_interface/css/operator_profiles.css" type="text/css"/>
 </head>
 <body>
 
@@ -28,15 +27,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo base_url(); ?>admin_interface/main_admin">Панель партнера</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>partner_interface/main_partner">Панель партнера</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
+                        <a href="<?php echo base_url(); ?>partner_interface/operator_profiles">Операторы
+                            <span class="bg-success notification-number">0</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url(); ?>admin_interface/user_profiles">Анкеты
-                            <span class="bg-success notification-number"><?php echo $all_profiles; ?></span>
+                            <span class="bg-success notification-number">0</span>
                         </a>
                     </li>
                     <li class="dropdown">
@@ -81,7 +85,9 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-
+                    <li>
+                        <a href="<?php echo base_url(); ?>partner_interface/add_user" data-toggle="modal" class="add-agency-link">+ Добавить анкету</a>
+                    </li>
                     <li>
                         <a href="#add-agency-modal" title="Настройки">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
@@ -119,7 +125,7 @@
                 <span class="error-message">Error message</span>
                 <input type="text" class="form-control" placeholder="ФИО владельца">
                 <span class="error-message">Error message</span>
-                <input type="text" class="form-control" placeholder="ФИО контактоного лица">
+                <input type="text" class="form-control" placeholder="ФИО конт. лица">
                 <span class="error-message">Error message</span>
                 <input type="text" class="form-control" placeholder="Страна">
                 <span class="error-message">Error message</span>

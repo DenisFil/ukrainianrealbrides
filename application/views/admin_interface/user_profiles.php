@@ -113,7 +113,7 @@
                 <td><?php echo $value->register_date; ?></td>
                 <td><?php echo $value->register_time; ?></td>
                 <td class="action-select">
-                    <div class="form-group-sm">
+                    <div class="form-group-sm select-group text-center">
                         <select class="form-control">
                             <?php if ($value->user_status == 0): ?>
                                 <option selected>Не активная</option>
