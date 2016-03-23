@@ -25,7 +25,8 @@
                 $data['all_data'][2][0]->age = $partner_age[0] . ' - ' . $partner_age[1];
 
                 $data['photos'] = $this->personal_area_model->get_photos($user_id);
-                $data['avatar'] = $this->personal_area_model->get_avatar($user_id);
+                $data['user_avatar'] = $this->personal_area_model->get_avatar($user_id);
+                $data['avatar'] = $data['user_avatar'];
                 $data['id'] = $user_id;
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
 
@@ -44,7 +45,6 @@
                 {
                     $data['gifts'] = $this->personal_area_model->user_gifts($user_id);
                 }
-                $data['avatar'] = $this->main_model->get_avatar($user_id);
                 $data['login'] = 1;
 
                 $this->load->view('user_interface/header', $data);

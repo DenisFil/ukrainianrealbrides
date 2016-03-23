@@ -164,4 +164,6 @@ class Profiles extends CI_Controller
             echo json_encode($search_query);
         }
     }
+
+    
 }

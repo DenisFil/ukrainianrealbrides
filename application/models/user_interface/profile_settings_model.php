@@ -95,8 +95,9 @@
             unset($data['birthday'], $data['country'], $data['city']);
             $query_profile = $this->db->update('user_profiles', $data, array('id' => $id));
             $query_details = $this->db->update('user_details', $data_details, array('user_id' => $id));
+            $query_status = $this->db->update('user_profiles', array('user_status' => 1), array('id' => $id));
 
-            if ($query_profile === TRUE && $query_details === TRUE)
+            if ($query_profile === TRUE && $query_details === TRUE && $query_status === TRUE)
             {
                 return TRUE;
             }

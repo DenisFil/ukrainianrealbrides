@@ -27,6 +27,7 @@
                                     join('countries', 'countries.country_id = user_details.country')->
                                     join('users_online', 'users_online.user_id = user_profiles.id')->
                                     where('gender', $gender)->
+                                    where('user_status', 2)->
                                     get()->
                                     result();
             return $query;
