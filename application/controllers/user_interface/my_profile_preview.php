@@ -45,6 +45,7 @@
                     $data['gifts'] = $this->personal_area_model->user_gifts($user_id);
                 }
                 $data['avatar'] = $this->main_model->get_avatar($user_id);
+                $data['login'] = 1;
 
                 $this->load->view('user_interface/header', $data);
                 $this->load->view('user_interface/my_profile_preview');

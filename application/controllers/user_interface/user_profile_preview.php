@@ -51,10 +51,15 @@ class User_profile_preview extends CI_Controller
                     }
                 }
             }
-
-            $this->load->view('user_interface/header', $data);
-            $this->load->view('user_interface/my_profile_preview');
-            $this->load->view('user_interface/footer');
+            $data['login'] = 1;
+        } else {
+            $data['login'] = 0;
+            $data['gender'] = 1;
+            $data['css'] = 'my_profile_preview';
         }
+        
+        $this->load->view('user_interface/header', $data);
+        $this->load->view('user_interface/my_profile_preview');
+        $this->load->view('user_interface/footer');
     }
 }

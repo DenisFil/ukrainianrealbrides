@@ -28,6 +28,7 @@
                         $this->session->set_userdata($data);
 
                         $this->main_model->set_online($query[0]->id);
+                        $result['user_status'] = $this->main_model->get_profile_status($query[0]->id);
 
                         $result['result'] = 1;
                     }

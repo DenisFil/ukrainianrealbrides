@@ -173,7 +173,6 @@ $(document).ready(function(){
               }else{
                   invite = 0;
               }
-      console.log(letter);
           //Получение введенных данных
           var data = {
               name: $('#user-name').val(),
@@ -185,7 +184,6 @@ $(document).ready(function(){
                 data.invite = letter.invite_code;
             }
           var html = '<h3>Thank you!</h3><p>For complete registration we sent to your ' + data.email + ' mail.</p><p>Please check you email.</p>';
-console.log(data);
           //Запись в базу
           $.ajax({
               type: 'post',
@@ -217,7 +215,11 @@ console.log(data);
                 dataType: 'json',
                 success: function(data){
                     if (data.result == 1){
-                        location.replace(baseUrl + 'user_interface/personal_area');
+                        if (data.user_status == 0) {
+                            location.replace(baseUrl + 'user_interface/profile_settings');
+                        } else {
+                            location.replace(baseUrl + 'user_interface/personal_area');
+                        }
                     }else{
                         alert(data.error);
                     }

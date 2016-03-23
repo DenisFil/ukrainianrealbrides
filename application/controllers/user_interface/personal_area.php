@@ -35,6 +35,7 @@
                 $data['new_messages'] = $this->personal_area_model->get_new_messages($user_id);
                 $data['users_online'] = $this->personal_area_model->users_online(time(), $this->session->userdata('gender'));
                 $data['css'] = 'personal_area';
+                $data['login'] = 1;
 
                 $this->load->view('user_interface/header', $data);
                 $this->load->view('user_interface/personal_area', $photos);

@@ -27,6 +27,7 @@ class Support extends CI_Controller
             $data['login'] = 1;
         } else {
             $data['css'] = 'support';
+            $data['gender'] = 1;
             $data['login'] = 0;
         }
 
