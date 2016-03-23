@@ -7,21 +7,33 @@
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800" height="642" alt="">
                 <div class="gallery-box">
                     <span>Start <br> chat now!</span>
-                    <a class="girls-online" href="#">Girls online</a>
+                    <?php if ($gender == 0 || $gender == 1): ?>
+                        <a class="girls-online" href="<?php echo base_url(); ?>user_interface/profiles?online=1">Girls online</a>
+                    <?php else: ?>
+                        <a class="girls-online" href="<?php echo base_url(); ?>user_interface/profiles?online=1">Men online</a>
+                    <?php endif; ?>
                 </div>
             </li>
             <li class="first">
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800" height="642" alt="">
                 <div class="gallery-box">
                     <span>Start <br> chat now!</span>
-                    <a class="girls-online" href="#">Girls online</a>
+                    <?php if ($gender == 0 || $gender == 1): ?>
+                        <a class="girls-online" href="<?php echo base_url(); ?>user_interface/profiles?online=1">Girls online</a>
+                    <?php else: ?>
+                        <a class="girls-online" href="<?php echo base_url(); ?>user_interface/profiles?online=1">Men online</a>
+                    <?php endif; ?>
                 </div>
             </li>
             <li>
                 <img src="<?php echo base_url(); ?>content/user_interface/img/main/bg-gallery.jpg" width="1800" height="642" alt="">
                 <div class="gallery-box">
                     <span>Start <br> chat now!</span>
-                    <a class="girls-online" href="#">Girls online</a>
+                    <?php if ($gender == 0 || $gender == 1): ?>
+                        <a class="girls-online" href="<?php echo base_url(); ?>user_interface/profiles?online=1">Girls online</a>
+                    <?php else: ?>
+                        <a class="girls-online" href="<?php echo base_url(); ?>user_interface/profiles?online=1">Men online</a>
+                    <?php endif; ?>
                 </div>
             </li>
         </ul>

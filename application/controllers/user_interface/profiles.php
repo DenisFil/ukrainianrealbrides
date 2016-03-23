@@ -67,7 +67,9 @@ class Profiles extends CI_Controller
 
     public function first_get_profiles()
     {
-        $first_result = $this->profiles_model->first_get_profiles($this->session->userdata('gender'));
+        $online = $this->input->post('online');
+        
+        $first_result = $this->profiles_model->first_get_profiles($this->session->userdata('gender'), $online);
         if ($first_result[0]->birthday != 0) {
             $this->load->helper('date');
 
@@ -164,6 +166,4 @@ class Profiles extends CI_Controller
             echo json_encode($search_query);
         }
     }
-
-    
 }

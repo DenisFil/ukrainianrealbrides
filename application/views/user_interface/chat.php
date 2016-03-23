@@ -190,7 +190,7 @@
 
                         <div role="tabpanel" class="tab-pane fade" id="favorites-tab">
                             <div class="tab-body">
-                                <div class="dialog-partner">
+                                <!--<div class="dialog-partner">
                                     <div class="new-message-count">
                                         <em></em>
                                         <span>0</span>
@@ -198,7 +198,7 @@
                                     <div class="dialog-partner-left">
                                         <button class="dialog-partner-avatar offline-avatar-status">
                                             <img
-                                                src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png"
+                                                src="<?php /*echo base_url(); */?>content/user_interface/img/chat/profile-mini.png"
                                                 width="35" height="35">
                                             <span class="chat-avatar-status online-avatar-status"></span>
                                         </button>
@@ -210,13 +210,13 @@
                                     <div class="dialog-partner-right">
                                         <button class="start-dialog">Start a dialogue</button>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
 
                         <div role="tabpanel" class="tab-pane fade" id="history-tab">
                             <div class="tab-body">
-                                <div class="dialog-partner">
+                                <!--<div class="dialog-partner">
                                     <div class="new-message-count">
                                         <em></em>
                                         <span>0</span>
@@ -224,7 +224,7 @@
                                     <div class="dialog-partner-left">
                                         <button class="dialog-partner-avatar offline-avatar-status">
                                             <img
-                                                src="<?php echo base_url(); ?>content/user_interface/img/chat/profile-mini.png"
+                                                src="<?php /*echo base_url(); */?>content/user_interface/img/chat/profile-mini.png"
                                                 width="35" height="35">
                                             <span class="chat-avatar-status online-avatar-status"></span>
                                         </button>
@@ -236,7 +236,7 @@
                                     <div class="dialog-partner-right">
                                         <button class="start-dialog">Start a dialogue</button>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 <?php 
-	class Sorry_result extends MY_Controller
+	class Sorry_result extends CI_Controller
 	{
 		public function index()
 		{

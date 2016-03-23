@@ -25,9 +25,17 @@ $(document).ready(function () {
         }, 600);
     }
 
+    var searchLink = window.location.href.indexOf('?');
+    if (searchLink >= 0) {
+        var data = { online: 1 };
+    } else {
+        data = { online: 0 };
+    }
+
     //Вывод профилей
     $.ajax({
         type: 'post',
+        data: data,
         url: baseUrl + 'user_interface/profiles/first_get_profiles',
         dataType: 'json',
         success: function (data) {

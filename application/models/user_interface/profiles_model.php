@@ -10,7 +10,7 @@
             return $query;
         }
 
-        public function first_get_profiles($gender)
+        public function first_get_profiles($gender, $online)
         {
             if ($gender == 1 || $gender == 0)
             {
@@ -21,12 +21,15 @@
                 $gender = 1;
             }
 
-            $query = $this->db->    select('user_profiles.name, user_profiles.id, user_details.avatar, user_details.birthday, user_details.city, countries.country_name, users_online.last_online')->
-                                    from('user_profiles')->
-                                    join('user_details', 'user_details.user_id = user_profiles.id')->
-                                    join('countries', 'countries.country_id = user_details.country')->
-                                    join('users_online', 'users_online.user_id = user_profiles.id')->
-                                    where('gender', $gender)->
+            $this->db-> select('user_profiles.name, user_profiles.id, user_details.avatar, user_details.birthday, user_details.city, countries.country_name, users_online.last_online')->
+                        from('user_profiles')->
+                        join('user_details', 'user_details.user_id = user_profiles.id')->
+                        join('countries', 'countries.country_id = user_details.country')->
+                        join('users_online', 'users_online.user_id = user_profiles.id');
+            if ($online == 1) {
+                $this->db->where('last_online >', time());
+            }
+            $query = $this->db->    where('gender', $gender)->
                                     where('user_status', 2)->
                                     get()->
                                     result();

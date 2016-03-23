@@ -28,7 +28,7 @@
                         boundaries anymore! Just write to her and make the first step towards some exiting changes in
                         your life! Ukrainian Real Brides - are waiting for you!</p>
                     <?php if ($login == 1): ?>
-                        <a href="">
+                        <a href="<?php echo base_url(); ?>user_interface/sorry">
                             <button type="button" class="btn btn-danger">To Service</button>
                         </a>
                     <?php else: ?>
@@ -46,7 +46,7 @@
                         boundaries anymore! Just write to her and make the first step towards some exiting changes in
                         your life! Ukrainian Real Brides - are waiting for you!</p>
                     <?php if ($login == 1): ?>
-                        <a href="<?php echo base_url(); ?>/user_interface/chat">
+                        <a href="<?php echo base_url(); ?>user_interface/chat">
                             <button type="button" class="btn btn-danger">To Service</button>
                         </a>
                     <?php else: ?>
@@ -65,7 +65,7 @@
                         for you? That is why we have our additional service – video chat. Yes, chat to her and get to
                         know each other better. Don’t hesitate and just chat to Ukrainian Real Brides!</p>
                     <?php if ($login == 1): ?>
-                        <a href="">
+                        <a href="<?php echo base_url(); ?>user_interface/sorry">
                             <button type="button" class="btn btn-danger">To Service</button>
                         </a>
                     <?php else: ?>
@@ -82,7 +82,7 @@
                     <h2>Gift service</h2>
                     <p>You can express your feelings and send your romantic gift.</p>
                     <?php if ($login == 1): ?>
-                        <a href="">
+                        <a href="<?php echo base_url(); ?>user_interface/sorry">
                             <button type="button" class="btn btn-danger">To Service</button>
                         </a>
                     <?php else: ?>
@@ -103,7 +103,7 @@
                         possible! One meeting is worth lots of words. We will be very glad to meet you and help with
                         everything in your romantic Tour.</p>
                     <?php if ($login == 1): ?>
-                        <a href="">
+                        <a href="<?php echo base_url(); ?>user_interface/sorry">
                             <button type="button" class="btn btn-danger">To Service</button>
                         </a>
                     <?php else: ?>
@@ -124,7 +124,7 @@
                         possible! One meeting is worth lots of words. We will be very glad to meet you and help with
                         everything in your romantic Tour.</p>
                     <?php if ($login == 1): ?>
-                        <a href="">
+                        <a href="<?php echo base_url(); ?>user_interface/sorry">
                             <button type="button" class="btn btn-danger">To Service</button>
                         </a>
                     <?php else: ?>

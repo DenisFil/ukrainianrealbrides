@@ -26,7 +26,11 @@
                     <?php if ($this->session->userdata('id')): ?>
                         <?php if ($gender == 1 || $gender == ''): ?>
                             <li><a href="<?php echo base_url(); ?>user_interface/profiles">Women profiles</a></li>
-                            <li><a href="#">Girls online</a></li>
+                            <?php if ($gender == 0 || $gender == 1): ?>
+                                <a class="girls-online" href="<?php echo base_url(); ?>user_interface/profiles?online=1">Girls online</a>
+                            <?php else: ?>
+                                <a class="girls-online" href="<?php echo base_url(); ?>user_interface/profiles?online=1">Men online</a>
+                            <?php endif; ?>
                         <?php elseif ($gender == 2): ?>
                             <li><a href="<?php echo base_url(); ?>user_interface/profiles">Men profiles</a></li>
                         <?php endif; ?>
