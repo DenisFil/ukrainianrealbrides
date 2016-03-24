@@ -1,14 +1,15 @@
 /*Footer starts here*/
 #footer {
+	min-width: 1170px;
+	width: 100%;
 	height: 485px;
 	position: absolute;
 	bottom: 0;
 	display: block;
-	width: 100%;
 	background: #ebebeb;
 }
 .footer-holder {
-	width: 1170px;
+	max-width: 1170px;
 	margin: 0 auto;
 	overflow: hidden;
 	padding-top: 64px;
@@ -86,7 +87,7 @@
 	display: block;
 }
 .footer-right ul {
-	padding: 47px 0 0 0;
+	margin-top: 47px;
 	overflow: hidden;
 }
 .footer-right ul li {
@@ -94,58 +95,32 @@
 	margin: 0 23px 0 0;
 	text-align: center;
 }
-.footer-right ul li a span {
-	width: 26px;
-	height: 31px;
-	display: inline-block;
-	background: url("../img/footer/social-sprites.png") no-repeat;
+.footer-right ul li a{
+	width: 62px;
+	height: 62px;
+	border-radius: 40px;
+	border: 2px solid #e83c32;
+	display: block;
+	transition: all 0.2s;
+	-webkit-transition:all 0.2s;
+	-moz-transition:all 0.2s;
+	-ms-transition:all 0.2s;
+	-o-transition:all 0.2s;
+}
+.footer-right ul li a i {
 	margin-top: 13px;
+	font-size: 32px;
+	line-height: 34px;
 }
-.footer-right ul .insta-sprite a span {
-	background-position: -26px 0;
-	width: 28px;
-}
-.footer-right ul .forsquare-sprite a span {
-	background-position: -54px 0;
-}
-.footer-right ul .youtube-sprite a:hover,
-.footer-right ul .insta-sprite a:hover,
-.footer-right ul .forsquare-sprite a:hover {
+.footer-right ul li a:hover {
 	background-color: #e83c32;
-}
-.footer-right ul .youtube-sprite a:hover span,
-.footer-right ul .insta-sprite a:hover span,
-.footer-right ul .forsquare-sprite a:hover span {
-	background: url("../img/footer/social-sprites-hover.png") no-repeat;
-	transition: all 0.6s;
-	-webkit-transition:all 0.6s;
-	-moz-transition:all 0.6s;
-	-ms-transition:all 0.6s;
-	-o-transition:all 0.6s;
-}
-.footer-right ul .youtube-sprite a:hover span {
-	background-position: 0 0;
-}
-.footer-right ul .insta-sprite a:hover span {
-	background-position: -26px 0;
-}
-.footer-right ul .forsquare-sprite a:hover span {
-	background-position: -54px 0;
+	color: #fff;
 }
 .footer-right ul li:last-child {
 	margin: 0;
 }
-.footer-right ul li a{
-	width: 62px;
-	height: 62px;
-	border-radius: 100px;
-	border: 2px solid #e83c32;
-	display: block;
-	transition: all 0.6s;
-	-webkit-transition:all 0.6s;
-	-moz-transition:all 0.6s;
-	-ms-transition:all 0.6s;
-	-o-transition:all 0.6s;
+.footer-right ul li a .fa-facebook-square {
+    margin-left: 2px;
 }
 .page-bottom {
 	width: 100%;

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="88d0f031-8105-4c37-86a2-bcab2ba6be53" name="ukrainianrealbrides" url="http://ftp.ukrainianrealbrides.com">
+        <fileTransfer host="ftp.ukrainianrealbrides.com" port="21" rootFolder="/public_html" password="dfe1dfc5dfd9df9bdf99df9bdf9cdf9ddf92" username="urbwork">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

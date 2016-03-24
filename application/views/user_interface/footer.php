@@ -35,9 +35,21 @@
         <div class="footer-right">
             <a class="footer-logo" href="<?php  echo base_url(); ?>"><img src="<?php echo base_url();?>content/user_interface/img/footer/footer-logo.png" alt="Ukrainian real brides" width="232px" height="131px" /></a>
             <ul>
-                <li class="youtube-sprite"><a href="https://www.youtube.com/channel/UCh3M5uJ4v01u-7VN7l1bFvQ" target="_blank"><span></span></a></li>
-                <li class="insta-sprite"><a href="#"><span></span></a></li>
-                <li class="forsquare-sprite"><a href="#"><span></span></a></li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCh3M5uJ4v01u-7VN7l1bFvQ" target="_blank">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/dating.urb/" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="footer-bottom">

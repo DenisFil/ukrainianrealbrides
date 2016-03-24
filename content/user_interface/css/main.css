@@ -113,7 +113,8 @@
 	bottom: 0;
 	text-align: center;
 	font-family: 'LatoLight';
-	background: rgba(235,229,223,0.8) no-repeat 0 0;
+    background: -webkit-linear-gradient(left, #000, #000) repeat-x 0 6px, rgba(235,229,223,0.8);
+    background-size: 100% 3px, 100% 100%;
 }
 .list li .girls-online{
 	margin: 0 auto;
@@ -141,14 +142,14 @@
 	color: #e83c32;
 	background: rgba(0,0,0,0);
 }
-.list li .gallery-box span:before {
+.list li .gallery-box:before {
 	content: "";
 	display: block;
 	position: absolute;
-	left: 0px;
-	top: -19px;
+    right: -24px;
+    top: -19px;
 	background: url("../img/main/bg-gallery-box.png") no-repeat;
-	width: 267px;
+	width: 57px;
 	height: 55px;
 	opacity: 1;
 }

@@ -3,7 +3,8 @@
 <head>
     <title>Ukrainian Real Brides</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
 
@@ -21,47 +22,6 @@
     <link media="all" rel="stylesheet" href="<?php echo base_url(); ?>content/user_interface/css/font-awesome.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>content/videosliderengine/amazingslider-1.css">
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<!-- 
- <script type="text/javascript">
-       $(document).ready(function(){
-       $(window).scroll(function() {
-       var scroll = getCurrentScroll();
-       console.log(scroll);
-         if ( scroll >= 100) {
-              $('.header-holder').animate({ opacity: '0' }, 50);
-              setTimeout(function () { $('.header-holder').addClass('shrink'); }, 60);
-              $('.header-holder').animate({ opacity: '1' }, 500);
-           }
-           if (scroll < 100 && scroll >= 100) {
-               $('.header-holder').animate({ opacity: '0' }, 50);
-              setTimeout(function () { $('.header-holder').removeClass('shrink'); }, 60);
-              $('.header-holder').animate({ opacity: '1' }, 500);
-           }
-     });
-   function getCurrentScroll() {
-       return window.pageYOffset || document.documentElement.scrollTop;
-       }
-   });
- </script>
- -->
-
-<!-- 
-<script>
-    function init() {
-  window.addEventListener('scroll', function(e){
-    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-        shrinkOn = 200,
-        header = document.querySelector("header");
-    if (distanceY > shrinkOn) {
-      header.setAttribute("class","smaller");
-    } else {
-        header.removeAttribute("class");
-    }
-  });
-}
-window.onload = init();
-</script>
- -->
 
 <script>
    $(function(){
@@ -243,20 +203,31 @@ function getCurrentScroll() {
                 <?php endif; ?>
                 <li class="search-link">
                     <a type="button" role="button" id="top-search-button">Search</a>
-                    <div class="search-drop form-group form-group-sm form-inline">
-                        <label>
+                    <div class="search-drop">
+                        <span class="drop-col drop-text">Age</span>
+                        <label class="drop-col">
                             <select id="#" class="form-control">
-                                <option selected>1</option>
-
+                                <option selected>From</option>
+                                <option >18</option>
+                                <option >19</option>
+                                <option >20</option>
+                                <option >21</option>
                             </select>
-                        </label>
-                        <label>
+                        </label>   
+                        <label class="drop-col">
                             <select id="#" class="form-control">
-                                <option selected>1</option>
+                                <option selected>To</option>
+                                <option >18</option>
+                                <option >19</option>
+                                <option >20</option>
+                                <option >21</option>
                             </select>
-                        </label>
-                        <input type="text" class="form-control age-form" placeholder="ID">
-                        <button class="btn btn-default btn-sm">Search</button>
+                        </label> 
+                        <div class="search-id age-form drop-col form-control">
+                            <input type="text" class="" placeholder="ID">
+                            <span data-tooltip="Write here partners ID"></span>
+                        </div>
+                        <button class="btn drop-col btn-danger">Search</button>   
                     </div>
                 </li>
                 <li><a href="<?php echo base_url(); ?>user_interface/services">Services</a></li>
